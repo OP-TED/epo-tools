@@ -1,0 +1,191 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix ex: <http://example.org/> .
+
+<file://assets/common-vocabularies/dc-terms.ttl> {
+	dcterms:issued rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	dcterms:title rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	dcterms:Location rdfs:subClassOf dcterms:LocationPeriodOrJurisdiction ;
+		a rdfs:Class .
+
+	dcterms:alternative rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	dcterms:description a rdf:Property .
+
+	dcterms:type a rdf:Property .
+
+	dcterms:hasPart a rdf:Property .
+
+	dcterms:isReplacedBy a rdf:Property .
+
+	dcterms:requires a rdf:Property .
+
+	dcterms:replaces a rdf:Property .
+}
+
+<file://assets/common-vocabularies/m8g.ttl> {
+	m8g:Channel a owl:Class .
+
+	m8g:Constraint rdfs:subClassOf m8g:Requirement ;
+		a owl:Class, rdfs:Class .
+
+	m8g:Requirement a owl:Class, rdfs:Class .
+
+	m8g:InformationConcept a owl:Class, rdfs:Class .
+
+	m8g:hasRequirement a rdf:Property, owl:ObjectProperty .
+
+	m8g:Criterion rdfs:subClassOf m8g:Requirement ;
+		a owl:Class, rdfs:Class .
+
+	m8g:Evidence a owl:Class .
+
+	m8g:PublicOrganisation a owl:Class .
+
+	m8g:bias a rdf:Property, owl:ObjectProperty .
+
+	m8g:confidentialityLevelType a rdf:Property, owl:ObjectProperty .
+
+	m8g:supportsRequirement a rdf:Property, owl:ObjectProperty .
+
+	m8g:weight a rdf:Property, owl:ObjectProperty .
+
+	m8g:weightingConsiderationDescription a rdf:Property, owl:DatatypeProperty .
+}
+
+<file://assets/common-vocabularies/foaf.rdf> {
+	<http://xmlns.com/foaf/0.1/Agent> a owl:Class, rdfs:Class .
+
+	<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent>, <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> ;
+		a owl:Class, rdfs:Class .
+
+	<http://xmlns.com/foaf/0.1/familyName> rdfs:range rdfs:Literal ;
+		a rdf:Property, owl:DatatypeProperty ;
+		rdfs:domain <http://xmlns.com/foaf/0.1/Person> .
+
+	<http://xmlns.com/foaf/0.1/name> rdfs:range rdfs:Literal ;
+		a rdf:Property, owl:DatatypeProperty ;
+		rdfs:domain owl:Thing .
+
+	<http://xmlns.com/foaf/0.1/givenName> a rdf:Property, owl:DatatypeProperty .
+}
+
+<file://assets/common-vocabularies/w3c-person.ttl> {
+	<http://www.w3.org/ns/person#Person> rdfs:subClassOf schema:Person, <http://xmlns.com/foaf/0.1/Person> ;
+		a rdfs:Class .
+
+	<http://www.w3.org/ns/person#birthName> rdfs:range rdfs:Literal ;
+		a rdf:Property, owl:DatatypeProperty ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	<http://www.w3.org/ns/person#patronymicName> rdfs:range rdfs:Literal ;
+		a rdf:Property, owl:DatatypeProperty ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+}
+
+<file://assets/common-vocabularies/w3c-org.ttl> {
+	<http://www.w3.org/ns/org#Organization> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
+		a owl:Class, rdfs:Class .
+
+	<http://www.w3.org/ns/org#subOrganizationOf> rdfs:range <http://www.w3.org/ns/org#Organization> ;
+		a rdf:Property, owl:ObjectProperty ;
+		rdfs:domain <http://www.w3.org/ns/org#Organization> .
+}
+
+<file://assets/common-vocabularies/w3c-time.ttl> {
+	<http://www.w3.org/2006/time#unitType> rdfs:range <http://www.w3.org/2006/time#TemporalUnit> ;
+		a owl:ObjectProperty .
+
+	<http://www.w3.org/2006/time#numericDuration> rdfs:range xsd:decimal ;
+		a owl:DatatypeProperty ;
+		rdfs:domain <http://www.w3.org/2006/time#Duration> .
+
+	<http://www.w3.org/2006/time#Duration> a owl:Class .
+}
+
+<file://assets/common-vocabularies/w3c-adms.ttl> {
+	<http://www.w3.org/ns/adms#schemaAgency> rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty ;
+		rdfs:domain <http://www.w3.org/ns/adms#Identifier> .
+
+	<http://www.w3.org/ns/adms#Identifier> a owl:Class .
+
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		a owl:ObjectProperty ;
+		rdfs:domain rdfs:Resource .
+}
+
+<file://assets/common-vocabularies/w3c-skos.rdf> {
+	<http://www.w3.org/2004/02/skos/core#notation> a rdf:Property, owl:DatatypeProperty .
+
+	<http://www.w3.org/2004/02/skos/core#prefLabel> a rdf:Property, owl:AnnotationProperty .
+}
+
+<file://assets/common-vocabularies/w3c-locn.ttl> {
+	locn:addressArea rdfs:range rdfs:Literal ;
+		a rdf:Property ;
+		rdfs:domain locn:Address .
+
+	locn:Address a rdfs:Class .
+
+	locn:adminUnitL1 a rdf:Property ;
+		rdfs:domain locn:Address .
+
+	locn:adminUnitL2 a rdf:Property ;
+		rdfs:domain locn:Address .
+
+	locn:fullAddress rdfs:range rdfs:Literal ;
+		a rdf:Property ;
+		rdfs:domain locn:Address .
+
+	locn:geometry rdfs:range locn:Geometry ;
+		a rdf:Property .
+
+	locn:Geometry a rdfs:Class .
+
+	locn:postCode rdfs:range rdfs:Literal ;
+		a rdf:Property ;
+		rdfs:domain locn:Address .
+
+	locn:postName rdfs:range rdfs:Literal ;
+		a rdf:Property ;
+		rdfs:domain locn:Address .
+
+	locn:thoroughfare rdfs:range rdfs:Literal ;
+		a rdf:Property ;
+		rdfs:domain locn:Address .
+
+	locn:address rdfs:range locn:Address ;
+		a rdf:Property .
+
+	locn:geographicName a rdf:Property .
+
+	locn:locatorDesignator a rdf:Property .
+
+	locn:locatorName a rdf:Property .
+}
+
+<file://assets/common-vocabularies/w3c-22-rdf-syntax-ns.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
+<file://assets/common-vocabularies/rdf.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
