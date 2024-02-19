@@ -5,7 +5,7 @@ import rdf from 'rdf-ext'
 
 const { Parser } = pkg
 
-function getTriplestore ({ assets }) {
+function createTriplestore ({ assets }) {
   const store = new Store()
   for (const { path, dataset } of assets) {
     for (const quad of [...dataset]) {
@@ -42,9 +42,7 @@ function getTriplestore ({ assets }) {
   return store
 }
 
-async function queryAssets ({ assets, query }) {
-  const store = getTriplestore({ assets })
-
+async function queryAssets ({ store, query }) {
   const result = []
 
   // This is here because Oxygraph parser does not give feedback.
@@ -80,4 +78,4 @@ function termInstance (term) {
   }
 }
 
-export { queryAssets }
+export { queryAssets, createTriplestore }

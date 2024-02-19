@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { getRdfAssets } from '../io/assets.js'
 import { rdfArrayToCSV } from '../io/serialization.js'
-import { queryAssets } from '../io/sparql.js'
+import { createTriplestore, queryAssets } from '../io/sparql.js'
 import { EPO } from '../variables.js'
 
 const { localDirectory } = EPO
@@ -18,8 +18,8 @@ SELECT ?s ?p ?o {
  }
 }
 `
-
-const data = await queryAssets({ assets: assets, query })
+const store = createTriplestore({ assets })
+const data = await queryAssets({ store, query })
 
 if (data.length) {
   const directory = 'outputs/checkers'
