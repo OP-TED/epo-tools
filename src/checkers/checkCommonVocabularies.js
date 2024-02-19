@@ -4,16 +4,15 @@ import rdf from 'rdf-ext'
 import { getRdfAssets } from '../io/assets.js'
 import { prettyPrintTrig } from '../io/serialization.js'
 import { queryAssets } from '../io/sparql.js'
-import { EPO } from '../variables.js'
+import { EPO, COMMON_VOCABS } from '../variables.js'
 
 const { localDirectory } = EPO
 const globPattern = `${localDirectory}/implementation/**/*.{ttl,rdf}`
-
 const cleanNamedGraph = (path) => rdf.namedNode(
-  `file://${path.replaceAll('assets/ePO', '')}`)
+  `file://${path.replaceAll(localDirectory, '')}`)
 
 const checkCommonVocabularies = await getRdfAssets(
-  { globPattern: `assets/common-vocabularies/*` }, cleanNamedGraph)
+  { globPattern: `${COMMON_VOCABS.localDirectory}/*` }, cleanNamedGraph)
 
 const assets = await getRdfAssets({ globPattern }, cleanNamedGraph)
 
@@ -56,19 +55,19 @@ for (const { path, dataset } of assets) {
   }
 }
 
-const directory = 'outputs/checkers'
-fs.mkdirSync(directory, { recursive: true })
+const checkerReportOutputdir = 'outputs/checkers'
+fs.mkdirSync(checkerReportOutputdir, { recursive: true })
 
 const csv = stringify(data)
-fs.writeFileSync(`${directory}/do-not-redefine.csv`, csv)
+fs.writeFileSync(`${checkerReportOutputdir}/do-not-redefine.csv`, csv)
 
-const offendingQuadsPath = `${directory}/rewritten-triples.trig`
+const offendingQuadsPath = `${checkerReportOutputdir}/rewritten-triples.trig`
 fs.writeFileSync(offendingQuadsPath,
   await prettyPrintTrig({ dataset: offendingQuads }))
 console.log(
   `wrote ${offendingQuads.size} offending quads at ${offendingQuadsPath}`)
 
-const officialQuadsPath = `${directory}/reference-triples.trig`
+const officialQuadsPath = `${checkerReportOutputdir}/reference-triples.trig`
 fs.writeFileSync(officialQuadsPath,
   await prettyPrintTrig({ dataset: officialQuads }))
 console.log(
