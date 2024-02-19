@@ -28,7 +28,8 @@ const globPattern = `${EPO.localDirectory}/implementation/**/!(*_restrictions|*_
 const assets = await getRdfAssets({ globPattern })
 const store = createTriplestore({ assets })
 
-app.use(['/'], (req, res) => {
+// Through a construct
+app.use(['/all'], (req, res) => {
   const query = `
   CONSTRUCT {
     ?subject ?predicate ?object
@@ -67,6 +68,18 @@ app.use(['/'], (req, res) => {
 //   res.writeHead(200, { 'Content-Type': 'text/html' })
 //   res.end(toHTML({ dataset, root, maxLevel: 1 }))
 // })
+
+const getApiPath = (str) => str.match(/\/owl_ontology\/([^/]+)\.ttl$/)?.[1] ||
+  null
+
+for (const { path, dataset } of assets) {
+  const apiPath = `/${getApiPath(path)}`
+  console.log('module', apiPath)
+  app.use([apiPath], (req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html' })
+    res.end(toHTML({ dataset, maxLevel: 1 }))
+  })
+}
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT,
