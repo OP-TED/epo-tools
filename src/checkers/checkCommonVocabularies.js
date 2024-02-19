@@ -3,7 +3,7 @@ import fs from 'fs'
 import rdf from 'rdf-ext'
 import { getRdfAssets } from '../io/assets.js'
 import { prettyPrintTrig } from '../io/serialization.js'
-import { createTriplestore, queryAssets } from '../io/sparql.js'
+import { createTriplestore, doSelect } from '../io/sparql.js'
 import { EPO, COMMON_VOCABS } from '../variables.js'
 
 const { localDirectory } = EPO
@@ -28,7 +28,7 @@ WHERE {
 `
 
 const store = createTriplestore({ assets: checkCommonVocabularies })
-const forbiddenOnes = await queryAssets({ store, query })
+const forbiddenOnes = doSelect({ store, query })
 
 const offendingQuads = rdf.dataset()
 const officialQuads = rdf.dataset()

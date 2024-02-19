@@ -42,7 +42,7 @@ function createTriplestore ({ assets }) {
   return store
 }
 
-async function queryAssets ({ store, query }) {
+function doSelect ({ store, query }) {
   const result = []
 
   // This is here because Oxygraph parser does not give feedback.
@@ -58,6 +58,17 @@ async function queryAssets ({ store, query }) {
     result.push(item)
   }
   console.log(`store: ${store.size} elements, results: ${result.length}`)
+  return result
+}
+
+function doConstruct ({ store, query }) {
+  const result = rdf.dataset()
+  for (const current of store.query(query)) {
+    const quad = rdf.quad(termInstance(current.subject),
+      termInstance(current.predicate), termInstance(current.object))
+    result.add(quad)
+  }
+  console.log(`store: ${store.size} elements, results: ${result.size}`)
   return result
 }
 
@@ -78,4 +89,4 @@ function termInstance (term) {
   }
 }
 
-export { queryAssets, createTriplestore }
+export { createTriplestore, doSelect, doConstruct }

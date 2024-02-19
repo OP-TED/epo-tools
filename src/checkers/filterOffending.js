@@ -3,7 +3,7 @@ import { dirname } from 'path'
 import rdf from 'rdf-ext'
 import { getRdfAssets } from '../io/assets.js'
 import { prettyPrintTurtle } from '../io/serialization.js'
-import { createTriplestore, queryAssets } from '../io/sparql.js'
+import { createTriplestore, doSelect } from '../io/sparql.js'
 import { EPO, COMMON_VOCABS } from '../variables.js'
 
 const query = `
@@ -24,7 +24,7 @@ const commonVocabsRDF = await getRdfAssets(
   { globPattern: `${COMMON_VOCABS.localDirectory}/*` })
 
 const store = createTriplestore({ assets: commonVocabsRDF })
-const forbiddenOnes = await queryAssets({ store, query })
+const forbiddenOnes = doSelect({ store, query })
 
 function isForbiddenQuad (quad) {
   for (const { graph, s, p, o } of forbiddenOnes) {
