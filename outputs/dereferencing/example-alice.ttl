@@ -1,0 +1,20 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex: <http://example.org/> .
+@prefix dbpedia: <http://dbpedia.org/resource/> .
+@prefix eurovoc: <http://publications.europa.eu/resource/authority/eurovoc/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix agrovoc: <http://aims.fao.org/aos/agrovoc/> .
+
+ex:Alice a schema:Person ;
+	schema:name "Alice" ;
+	foaf:interest ex:IceCream .
+
+ex:IceCream a eurovoc:303 ;
+  a dbpedia:Ice_cream ;
+  a agrovoc:c_3784 ;
+  schema:name "Ice cream"@en .
+
+eurovoc:303 ex:hasAlternativeRepresentation <https://op.europa.eu/en/web/eu-vocabularies/concept/-/resource?uri=http://eurovoc.europa.eu/303> .
+agrovoc:c_3784 ex:hasAlternativeRepresentation <https://agrovoc.fao.org/browse/agrovoc/en/page/?clang=it&uri=c_3784> .
