@@ -4,7 +4,7 @@ import rdf from 'rdf-ext'
 import { getRdfAssets } from '../io/assets.js'
 import { prettyPrintTrig } from '../io/serialization.js'
 import { createTriplestore, doSelect } from '../io/sparql.js'
-import { EPO, COMMON_VOCABS } from '../variables.js'
+import { EPO, COMMON_VOCABS } from '../config.js'
 
 const { localDirectory } = EPO
 const globPattern = `${localDirectory}/implementation/**/*.{ttl,rdf}`

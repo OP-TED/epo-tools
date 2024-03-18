@@ -1,4 +1,4 @@
-import { EPO } from '../variables.js'
-import { fetchLatestRelease } from './github.js'
+import { EPO } from '../config.js'
+import { fetchFromGithub } from './github.js'
 
-await fetchLatestRelease(EPO)
+await fetchFromGithub(EPO)

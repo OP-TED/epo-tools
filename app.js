@@ -1,9 +1,8 @@
 import cors from 'cors'
 import express from 'express'
-import rdf from 'rdf-ext'
 import { getRdfAssets } from './src/io/assets.js'
 import { createTriplestore, doConstruct } from './src/io/sparql.js'
-import { EPO } from './src/variables.js'
+import { EPO } from './src/config.js'
 import { toHTML, toTable } from './src/io/html.js'
 
 const app = express()

@@ -2,7 +2,7 @@ import fs from 'fs'
 import { getRdfAssets } from '../io/assets.js'
 import { rdfArrayToCSV } from '../io/serialization.js'
 import { createTriplestore, doSelect } from '../io/sparql.js'
-import { EPO } from '../variables.js'
+import { EPO } from '../config.js'
 
 const { localDirectory } = EPO
 const globPattern = `${localDirectory}/implementation/**/*.{ttl,rdf}`

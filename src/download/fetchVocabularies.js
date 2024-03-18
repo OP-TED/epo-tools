@@ -1,7 +1,7 @@
 import { promises as fs, mkdirSync } from 'fs'
 import fetch from 'node-fetch'
 import { join } from 'path'
-import { COMMON_VOCABS } from '../variables.js'
+import { COMMON_VOCABS } from '../config.js'
 
 const vocabularies = [
   { filename: 'w3c-time.ttl', url: 'http://www.w3.org/2006/time#' },

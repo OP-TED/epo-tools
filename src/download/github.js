@@ -42,4 +42,25 @@ async function fetchLatestRelease ({ owner, repo, localDirectory }) {
   return await writeLocal({ repo, tarballUrl, localDirectory })
 }
 
-export { fetchLatestRelease }
+async function fetchFromTag ({ owner, repo, tag, localDirectory }) {
+  const tarballUrl = `https://github.com/${owner}/${repo}/archive/refs/tags/${tag}.tar.gz`
+  return await writeLocal({ repo, tarballUrl, localDirectory })
+}
+
+async function fetchFromBranch ({ owner, repo, branch, localDirectory }) {
+  const tarballUrl = `https://github.com/${owner}/${repo}/archive/refs/heads/${branch}.tar.gz`
+  await writeLocal({ repo, tarballUrl, localDirectory })
+}
+
+async function fetchFromGithub (target) {
+  if (target.latest) {
+    return fetchLatestRelease(target)
+  } else if (target.branch) {
+    return fetchFromBranch(target)
+  } else if (target.tag) {
+    return fetchFromTag(target)
+  }
+  throw Error('Invalid repo')
+}
+
+export { fetchFromGithub }
