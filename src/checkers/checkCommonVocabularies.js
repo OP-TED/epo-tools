@@ -32,8 +32,8 @@ WHERE {
   const store = createTriplestore({ assets: commonVocabulariesAssets })
   const forbiddenOnes = doSelect({ store, query })
 
-  const offendingQuads = rdf.dataset()
-  const officialQuads = rdf.dataset()
+  const rewrittenTriples = rdf.dataset()
+  const referenceTriples = rdf.dataset()
 
   const data = [
     [
@@ -49,8 +49,8 @@ WHERE {
       for (const { graph, s, p, o } of forbiddenOnes) {
         if (quad.subject.value === s.value && quad.predicate.value ===
           p.value) {
-          offendingQuads.add(quad)
-          officialQuads.add(rdf.quad(quad.subject, quad.predicate, o, graph))
+          rewrittenTriples.add(quad)
+          referenceTriples.add(rdf.quad(quad.subject, quad.predicate, o, graph))
           data.push(
             [path, graph.value, s.value, p.value, o.value, quad.object.value])
         }
@@ -62,17 +62,17 @@ WHERE {
   const csv = stringify(data)
   fs.writeFileSync(`${targetDirectory}/do-not-redefine.csv`, csv)
 
-  const offendingQuadsPath = `${targetDirectory}/rewritten-triples.trig`
-  fs.writeFileSync(offendingQuadsPath,
-    await prettyPrintTrig({ dataset: offendingQuads }))
+  const rewrittenTriplesPath = `${targetDirectory}/rewritten-triples.trig`
+  fs.writeFileSync(rewrittenTriplesPath,
+    await prettyPrintTrig({ dataset: rewrittenTriples }))
   console.log(
-    `wrote ${offendingQuads.size} offending quads at ${offendingQuadsPath}`)
+    `wrote ${rewrittenTriples.size} triples at ${rewrittenTriplesPath}`)
 
-  const officialQuadsPath = `${targetDirectory}/reference-triples.trig`
-  fs.writeFileSync(officialQuadsPath,
-    await prettyPrintTrig({ dataset: officialQuads }))
+  const referenceTriplesPath = `${targetDirectory}/reference-triples.trig`
+  fs.writeFileSync(referenceTriplesPath,
+    await prettyPrintTrig({ dataset: referenceTriples }))
   console.log(
-    `wrote ${officialQuads.size} redefined quads at ${officialQuadsPath}`)
+    `wrote ${referenceTriples.size} triples at ${referenceTriplesPath}`)
 
 }
 

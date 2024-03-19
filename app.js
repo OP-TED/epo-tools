@@ -45,29 +45,6 @@ app.use(['/all'], (req, res) => {
 
 })
 
-// Hashes (#) defeat simple dereferenciation. This would require some javascript in the client.
-// app.use(['/entity'], (req, res) => {
-//   let uriSrt = req.query.uri
-//   if (!uriSrt) {
-//     return res.status(400).send('requires uri')
-//   }
-//   const root = uriSrt ? rdf.namedNode(uriSrt) : undefined
-//   const query = `
-//   CONSTRUCT {
-//     <${uriSrt}> ?predicate ?object
-//   }
-//   WHERE {
-//     GRAPH ?g {
-//       <${uriSrt}> ?predicate ?object
-//     }
-//   }
-// `
-//   console.log(query)
-//   const dataset = doConstruct({ store, query })
-//   res.writeHead(200, { 'Content-Type': 'text/html' })
-//   res.end(toHTML({ dataset, root, maxLevel: 1 }))
-// })
-
 const getApiPath = (str) => str.match(/\/owl_ontology\/([^/]+)\.ttl$/)?.[1] ||
   null
 
