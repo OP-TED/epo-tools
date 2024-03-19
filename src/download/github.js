@@ -26,10 +26,15 @@ async function writeLocal ({ repo, tarballUrl, localDirectory }) {
   }
   try {
     const response = await got.stream(tarballUrl)
-    response.pipe(tar.x({
-      strip: 1, C: localDirectory,
-    }))
     console.log('fetching', tarballUrl, 'into', localDirectory)
+    const extractPromise = new Promise((resolve, reject) => {
+      response.pipe(tar.x({
+        strip: 1, C: localDirectory,
+      }))
+      .on('end', () => resolve())
+      .on('error', (error) => reject(error));
+    });
+    await extractPromise
   } catch (error) {
     console.error('Error updating latest release:', error.message)
     process.exit(1)
@@ -54,13 +59,15 @@ async function fetchFromBranch ({ owner, repo, branch, localDirectory }) {
 
 async function fetchFromGithub (target) {
   if (target.latest) {
-    return fetchLatestRelease(target)
+    await fetchLatestRelease(target)
   } else if (target.branch) {
-    return fetchFromBranch(target)
+    await fetchFromBranch(target)
   } else if (target.tag) {
-    return fetchFromTag(target)
+    await fetchFromTag(target)
+  } else {
+    throw Error('Invalid repo')
   }
-  throw Error('Invalid repo')
+
 }
 
 export { fetchFromGithub }

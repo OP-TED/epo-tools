@@ -23,7 +23,7 @@ async function applyGlob (globPattern) {
     console.log('No files found')
     console.log({ workingDir: process.cwd(), globPattern })
   } else {
-    console.log('loading', files.length, 'files')
+    console.log('loading', files.length, 'files from', globPattern)
   }
   return files
 }

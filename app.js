@@ -2,7 +2,7 @@ import cors from 'cors'
 import express from 'express'
 import { getRdfAssets } from './src/io/assets.js'
 import { createTriplestore, doConstruct } from './src/io/sparql.js'
-import { EPO } from './src/config.js'
+import { EPO_LATEST } from './src/config.js'
 import { toHTML, toTable } from './src/io/html.js'
 
 const app = express()
@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
 })
 
 // Leaving out OWL and SHACL.
-const globPattern = `${EPO.localDirectory}/implementation/**/!(*_restrictions|*_shapes).ttl`
+const globPattern = `${EPO_LATEST.localDirectory}/implementation/**/!(*_restrictions|*_shapes).ttl`
 const assets = await getRdfAssets({ globPattern })
 const store = createTriplestore({ assets })
 

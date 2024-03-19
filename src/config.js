@@ -1,9 +1,12 @@
-const EPO = {
-  owner: 'OP-TED', repo: 'ePO', localDirectory: 'assets/ePO', latest: true,
+const EPO_LATEST = {
+  owner: 'OP-TED',
+  repo: 'ePO',
+  localDirectory: 'assets/ePO/master',
+  latest: true,
 }
 
 const COMMON_VOCABS = {
   localDirectory: 'assets/common-vocabularies',
 }
 
-export { EPO, COMMON_VOCABS }
+export { EPO_LATEST, COMMON_VOCABS }
