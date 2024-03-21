@@ -3,8 +3,9 @@ import fs from 'fs'
 import { xml2js } from 'xml-js'
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
+import { UNDER_REVIEW } from '../config.js'
 
-const assetsPath = 'assets/ePO/release/4.1.0'
+const assetsPath = UNDER_REVIEW.localDirectory
 
 async function getNameSetFromXMI () {
   const globPattern = `${assetsPath}/implementation/**/xmi_conceptual_model/*.xml`
@@ -14,9 +15,16 @@ async function getNameSetFromXMI () {
 
   function traverse (items) {
     for (const { name, elements, attributes } of items ?? []) {
-      if (attributes && attributes.name && attributes.name.startsWith('epo')) {
-        result.add(attributes.name)
+
+      if (attributes) {
+        if (['uml:Class', 'uml:Property', 'uml:Enumeration'].includes(
+          attributes['xmi:type']) || name === 'role') {
+          if (attributes.name && attributes.name.startsWith('epo')) {
+            result.add(attributes.name)
+          }
+        }
       }
+
       traverse(elements)
     }
   }
@@ -45,11 +53,15 @@ function getNameSetFromDB () {
     map(x => x.Name).
     filter(x => x && x.startsWith('epo'))
 
-  const connectors = reader.getTable('t_connector').
+  const connectorsSource = reader.getTable('t_connector').
+    getData().
+    map(x => x.SourceRole).filter(x => x && x.startsWith('epo'))
+  const connectorsDest = reader.getTable('t_connector').
     getData().
     map(x => x.DestRole).filter(x => x && x.startsWith('epo'))
 
-  return new Set([...objects, ...attributes, ...connectors])
+  return new Set(
+    [...objects, ...attributes, ...connectorsSource, ...connectorsDest])
 }
 
 const set1 = await getNameSetFromXMI()
@@ -61,6 +73,7 @@ const differenceSet1 = new Set([...set1].filter(x => !set2.has(x)))
 // Find elements in set2 that are not in set1
 const differenceSet2 = new Set([...set2].filter(x => !set1.has(x)))
 
+console.log('Set1 size', set1.size, 'Set2 size', set2.size)
 console.log('Elements in set1 but not in set2:', [...differenceSet1])
 console.log('Elements in set2 but not in set1:', [...differenceSet2])
 

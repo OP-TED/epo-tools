@@ -9,4 +9,12 @@ const COMMON_VOCABS = {
   localDirectory: 'assets/common-vocabularies',
 }
 
-export { EPO_LATEST, COMMON_VOCABS }
+const branchName = 'release/4.1.0'
+const UNDER_REVIEW = {
+  owner: 'OP-TED',
+  repo: 'ePO',
+  localDirectory: `assets/ePO/${branchName}`,
+  branch: branchName,
+}
+
+export { EPO_LATEST, UNDER_REVIEW, COMMON_VOCABS }

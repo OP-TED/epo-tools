@@ -10,7 +10,7 @@ async function checkAuthorityTables ({ sourceDirectory, targetDirectory }) {
 
   const query = `
 PREFIX ns: <http://publications.europa.eu/resource/authority>
-SELECT ?s ?p ?o {
+SELECT ?g ?s ?p ?o {
  GRAPH ?g { 
    ?s  ?p  ?o
    FILTER (isURI(?s) && STRSTARTS(str(?s), str(ns:) ) )
