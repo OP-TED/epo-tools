@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
+import { UNDER_REVIEW } from '../config.js'
 
-const assetsPath = 'assets/ePO/release/4.1.0'
+const assetsPath = UNDER_REVIEW.localDirectory
 
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
 console.log('reading database', databasePath)
@@ -23,5 +24,4 @@ function searchEnterpriseArchitect (text) {
   }
 }
 
-// search('epo:isBeneficialOwnerOf')
 searchEnterpriseArchitect('epo-acc')

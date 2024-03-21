@@ -2,7 +2,6 @@ import fs from 'fs'
 import rdf from 'rdf-ext'
 import { EPO_LATEST, UNDER_REVIEW } from '../config.js'
 import { getRdfAssets } from '../io/assets.js'
-import { toHTML } from '../io/html.js'
 import { prettyPrintTrig, prettyPrintTurtle } from '../io/serialization.js'
 
 const targetDirectory = `assets/diff/${UNDER_REVIEW.branch}`
@@ -11,33 +10,22 @@ fs.mkdirSync(targetDirectory, { recursive: true })
 const oldAssets = await load(EPO_LATEST.localDirectory)
 const newAssets = await load(UNDER_REVIEW.localDirectory)
 
-// Generate HTML representations of new files
 const newFilesTogether = rdf.dataset()
 const newFiles = newAssets.filter(
   x => !oldAssets.map(x => x.path).includes(x.path))
 for (const { path, dataset } of newFiles) {
   console.log('new file added:', path)
-  // const htmlFilePath = `${targetDirectory}/${path.split('/').pop()}.html`
-  // fs.writeFileSync(htmlFilePath, toHTML({ dataset, maxLevel: 10 }))
-  // console.log('wrote', htmlFilePath)
-
   newFilesTogether.addAll(dataset)
 }
-// fs.writeFileSync(`${targetDirectory}/newFilesTogether.html`,
-//   toHTML({ dataset: newFilesTogether, maxLevel: 10 }))
-fs.writeFileSync(`${targetDirectory}/newFiles.trig`,
+
+fs.writeFileSync(`${targetDirectory}/new-files.trig`,
   await prettyPrintTrig({ dataset: newFilesTogether }))
 
-fs.writeFileSync(`${targetDirectory}/newFiles.ttl`, await prettyPrintTurtle({
-  dataset: newFilesTogether.map(
-    quad => rdf.quad(quad.subject, quad.predicate, quad.object)),
-}))
-
-// WARNING
-// I cannot do a review with so many exported elements.
-fs.writeFileSync(`${targetDirectory}/filtered.trig`, await prettyPrintTrig({
-  dataset: newFilesTogether.filter(quad => quad.subject.value.startsWith()),
-}))
+fs.writeFileSync(`${targetDirectory}/new-files-bundle.ttl`,
+  await prettyPrintTurtle({
+    dataset: newFilesTogether.map(
+      quad => rdf.quad(quad.subject, quad.predicate, quad.object)),
+  }))
 
 // Generate Diffs
 const { added, removed } = await diff(oldAssets, newAssets)
