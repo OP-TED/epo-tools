@@ -2,7 +2,7 @@ import { checkAuthorityTables } from '../checkers/checkAuthorityTables.js'
 import { checkCommonVocabularies } from '../checkers/checkCommonVocabularies.js'
 import { fetchFromGithub } from '../download/github.js'
 
-const branches = ['release/4.1.0', 'feature/4.1.0-rc.2']
+const branches = ['release/4.1.0', 'master']
 
 for (const branchName of branches) {
   console.log('branch', branchName)

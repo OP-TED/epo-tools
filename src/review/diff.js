@@ -1,15 +1,13 @@
 import chardet from 'chardet'
 import fs from 'fs'
 import rdf from 'rdf-ext'
+import { EPO_LATEST } from '../config.js'
 import { getRdfAssets } from '../io/assets.js'
 import { toHTML } from '../io/html.js'
 import { prettyPrintTrig } from '../io/serialization.js'
 
 async function load (dir) {
-
-  // Leaving out OWL and SHACL.
-  const globPattern = `${dir}/implementation/**/!(*_restrictions|*_shapes).ttl`
-
+  const globPattern = `${dir}/implementation/**/*.ttl`
   const assets = await getRdfAssets({ globPattern })
   return assets.map(x => {
     const path = x.path.replace(dir, '')
@@ -38,9 +36,9 @@ async function diff (oldAssets, newAssets) {
   return { added, removed }
 }
 
-const oldAssetsPath = 'assets/ePO/release/4.1.0'
-const newAssetsPath = 'assets/ePO/feature/4.1.0-rc.2'
-const targetDirectory = 'assets/diff/feature/4.1.0-rc.2'
+const oldAssetsPath = EPO_LATEST.localDirectory
+const newAssetsPath = 'assets/ePO/release/4.1.0'
+const targetDirectory = 'assets/diff/release/4.1.0'
 
 const oldAssets = await load(oldAssetsPath)
 const newAssets = await load(newAssetsPath)
@@ -49,15 +47,22 @@ fs.mkdirSync(targetDirectory, { recursive: true })
 const newFiles = newAssets.filter(
   x => !oldAssets.map(x => x.path).includes(x.path))
 for (const { path, dataset } of newFiles) {
-  console.log('new file:', path, 'encoding', getEncoding(`${newAssetsPath}${path}`))
+  console.log('new file:', path, 'encoding',
+    getEncoding(`${newAssetsPath}${path}`))
   const htmlFilePath = `${targetDirectory}/${path.split('/').pop()}.html`
   fs.writeFileSync(htmlFilePath, toHTML({ dataset, maxLevel: 1 }))
   console.log('wrote', htmlFilePath)
 }
 const { added, removed } = await diff(oldAssets, newAssets)
 
+if (!added.size) {
+  console.log('no triples added')
+}
 fs.writeFileSync(`${targetDirectory}/added.trig`,
   await prettyPrintTrig({ dataset: added }))
+if (!removed.size) {
+  console.log('no triples added')
+}
 fs.writeFileSync(`${targetDirectory}/removed.trig`,
   await prettyPrintTrig({ dataset: removed }))
 
