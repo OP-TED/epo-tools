@@ -2,7 +2,7 @@ import cors from 'cors'
 import express from 'express'
 import { getRdfAssets } from './src/io/assets.js'
 import { createTriplestore, doConstruct } from './src/io/sparql.js'
-import { EPO } from './src/config.js'
+import { EPO_LATEST } from './src/config.js'
 import { toHTML, toTable } from './src/io/html.js'
 
 const app = express()
@@ -23,7 +23,7 @@ app.use((err, req, res, next) => {
 })
 
 // Leaving out OWL and SHACL.
-const globPattern = `${EPO.localDirectory}/implementation/**/!(*_restrictions|*_shapes).ttl`
+const globPattern = `${EPO_LATEST.localDirectory}/implementation/**/!(*_restrictions|*_shapes).ttl`
 const assets = await getRdfAssets({ globPattern })
 const store = createTriplestore({ assets })
 
@@ -44,29 +44,6 @@ app.use(['/all'], (req, res) => {
   res.end(toHTML({ dataset, maxLevel: 1 }))
 
 })
-
-// Hashes (#) defeat simple dereferenciation. This would require some javascript in the client.
-// app.use(['/entity'], (req, res) => {
-//   let uriSrt = req.query.uri
-//   if (!uriSrt) {
-//     return res.status(400).send('requires uri')
-//   }
-//   const root = uriSrt ? rdf.namedNode(uriSrt) : undefined
-//   const query = `
-//   CONSTRUCT {
-//     <${uriSrt}> ?predicate ?object
-//   }
-//   WHERE {
-//     GRAPH ?g {
-//       <${uriSrt}> ?predicate ?object
-//     }
-//   }
-// `
-//   console.log(query)
-//   const dataset = doConstruct({ store, query })
-//   res.writeHead(200, { 'Content-Type': 'text/html' })
-//   res.end(toHTML({ dataset, root, maxLevel: 1 }))
-// })
 
 const getApiPath = (str) => str.match(/\/owl_ontology\/([^/]+)\.ttl$/)?.[1] ||
   null

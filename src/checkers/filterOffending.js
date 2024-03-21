@@ -4,7 +4,7 @@ import rdf from 'rdf-ext'
 import { getRdfAssets } from '../io/assets.js'
 import { prettyPrintTurtle } from '../io/serialization.js'
 import { createTriplestore, doSelect } from '../io/sparql.js'
-import { EPO, COMMON_VOCABS } from '../config.js'
+import { EPO_LATEST, COMMON_VOCABS } from '../config.js'
 
 const query = `
 SELECT distinct ?graph ?s ?p ?o
@@ -18,7 +18,7 @@ WHERE {
 `
 
 const ontologyRDF = await getRdfAssets(
-  { globPattern: `${EPO.localDirectory}/implementation/**/*.ttl` })
+  { globPattern: `${EPO_LATEST.localDirectory}/implementation/**/*.ttl` })
 
 const commonVocabsRDF = await getRdfAssets(
   { globPattern: `${COMMON_VOCABS.localDirectory}/*` })
