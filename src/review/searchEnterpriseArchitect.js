@@ -11,7 +11,7 @@ const buffer = readFileSync(databasePath)
 const reader = new MDBReader(buffer)
 
 function searchEnterpriseArchitect (text) {
-  for (const table of ['t_object', 't_connector']) { // reader.getTableNames()
+  for (const table of ['t_object', 't_connector', 't_attribute']) { // reader.getTableNames()
     const data = reader.getTable(table).
       getData()
     for (const row of data) {
@@ -24,4 +24,4 @@ function searchEnterpriseArchitect (text) {
   }
 }
 
-searchEnterpriseArchitect('epo-acc')
+searchEnterpriseArchitect('Rejected')
