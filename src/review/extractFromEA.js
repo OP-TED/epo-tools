@@ -3,7 +3,8 @@ import MDBReader from 'mdb-reader'
 
 // const toExport = name => name.startsWith('epo-acc')
 // const toExport = name => name.startsWith('epo-sub')
-const toExport = name => name.startsWith('epo')
+const toExport = name => name.startsWith('epo-acc') ||
+  name.startsWith('epo-sub')
 
 function getQuantifier (value) {
   if (value === '0..1') {
@@ -36,9 +37,12 @@ function extract ({ databasePath }) {
     getData()) {
     if (Name) {
       objectIndex[Object_ID] = Name
-      classes.push({
-        class: Name, description: Note,
-      })
+      if (toExport(Name)) {
+        classes.push({
+          class: Name, description: Note,
+        })
+      }
+
     }
   }
   for (const {
