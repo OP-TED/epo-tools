@@ -9,12 +9,16 @@ const assetsPath = UNDER_REVIEW.localDirectory
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
 const { classes, attributes, predicates } = extract({ databasePath })
 
+function shapeIRI ({ source, predicate, target }) {
+  return `${source}Shape`
+}
+
 function skosDefinition (def) {
   // return def ? `skos:definition """${def}"""" ;` : ''
-  // return def ? `skos:definition "${(def.split(/\s+/).
-  //   map(x => x.trim()).
-  //   join(' ')).replaceAll('"', '')}" ;` : ''
-  return ''
+  return def ? `skos:definition "${(def.split(/\s+/).
+    map(x => x.trim()).
+    join(' ')).replaceAll('"', '')}" ;` : ''
+  // return ''
 }
 
 function hasCurie (Name) {
@@ -27,14 +31,12 @@ function hasCurie (Name) {
 const lines = []
 
 for (const { class: clazz, description } of classes) {
-
   if (hasCurie(clazz)) {
     lines.push(`${clazz}
         ${skosDefinition(description)}
         a owl:Class .
         `)
   }
-
 }
 
 for (const {
@@ -46,11 +48,14 @@ for (const {
         rdfs:domain  ${source} ;
         rdfs:range  ${target} .
 
-    ${predicate}Shape a sh:PropertyShape ;
-      sh:path ${predicate} ;
-      ${min ? `sh:minCount ${min} ;` : ''}
-      ${max ? `sh:maxCount ${max} ;` : ''}
-      sh:datatype ${target} .
+    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
+      sh:targetClass ${source} ;
+      sh:property [
+        sh:path ${predicate} ;
+        sh:datatype ${target} ;
+        ${min ? `sh:minCount ${min} ;` : ''}
+        ${max ? `sh:maxCount ${max} ;` : ''}
+      ] .
     `)
 }
 
@@ -69,11 +74,15 @@ for (const {
         rdfs:domain  ${source} ;
         rdfs:range  ${target} .
 
-    ${predicate}Shape a sh:PropertyShape ;
-      sh:path ${predicate} ;
-      ${min ? `sh:minCount ${min} ;` : ''}
-      ${max ? `sh:maxCount ${max} ;` : ''}
-      sh:targetClass ${target} .
+    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
+      sh:targetClass ${source} ;
+      sh:property [
+        sh:path ${predicate} ;
+        sh:nodeKind sh:IRI ;
+        ${min ? `sh:minCount ${min} ;` : ''}
+        ${max ? `sh:maxCount ${max} ;` : ''}
+         sh:targetClass ${target} ;
+      ] .
     `)
   } else {
     console.log(target)

@@ -3,8 +3,9 @@ import MDBReader from 'mdb-reader'
 
 // const toExport = name => name.startsWith('epo-acc')
 // const toExport = name => name.startsWith('epo-sub')
-const toExport = name => name.startsWith('epo-acc') ||
-  name.startsWith('epo-sub')
+// const toExport = name => name.startsWith('epo-acc') ||
+//   name.startsWith('epo-sub')
+const toExport = name => name.startsWith('epo')
 
 function getQuantifier (value) {
   if (value === '0..1') {
