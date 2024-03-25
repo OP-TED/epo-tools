@@ -57,7 +57,12 @@ for (const {
 for (const {
   source, predicate, target, min, max, noQuantifier, description
 } of predicates) {
-  if (hasCurie(target)) {
+
+  if (predicate === 'rdfs:subClassOf') {
+    lines.push(`
+    ${source} ${predicate} ${target} .
+    `)
+  } else if (hasCurie(target)) {
     lines.push(`
     ${predicate} a owl:ObjectProperty ;
         ${skosDefinition(description)}
@@ -114,7 +119,6 @@ const turtle = `
 ${lines.join('\n')}
 `
 // console.log(turtle)
-fs.writeFileSync(`assets/debug.turtle`, turtle)
 const dataset = rdf.dataset().addAll([...new Parser().parse(turtle)])
 const pretty = await prettyPrintTurtle({ dataset })
-console.log(pretty)
+fs.writeFileSync(`assets/debug.turtle`, pretty)
