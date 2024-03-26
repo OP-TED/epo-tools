@@ -1,10 +1,6 @@
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
 
-// const toExport = name => name.startsWith('epo-acc')
-// const toExport = name => name.startsWith('epo-sub')
-// const toExport = name => name.startsWith('epo-acc') ||
-//   name.startsWith('epo-sub')
 const toExport = name => name.startsWith('epo')
 
 function getQuantifier (value) {
@@ -16,11 +12,46 @@ function getQuantifier (value) {
     return { min: 1 }
   } else if (value === '0..*') {
     return {}
-  } else {
-    return {
-      noQuantifier: `cannot recognize ${value}`,
-    } // Note that undefined != null
+  } else return {
+    noQuantifier: true,
   }
+}
+
+function hasCurie (name) {
+  if (name.split(':').length === 2) {
+    return true
+  }
+}
+
+// Code smell
+function getWarnings ({ source, predicate, target, isLiteral }, noQuantifiers) {
+
+  const warnings = []
+
+  const requiresQuantifiers = predicate !== 'rdfs:subClassOf'
+  const requiresTargetPrefix = !isLiteral
+
+  if (noQuantifiers && requiresQuantifiers) {
+    warnings.push(`No quantifiers defined`)
+  }
+  if (!source) {
+    warnings.push(`No source defined`)
+  } else if (!hasCurie(source)) {
+    warnings.push(`No prefix for source [${source}]`)
+  }
+
+  if (!predicate) {
+    warnings.push(`No predicate defined`)
+  } else if (!hasCurie(predicate)) {
+    warnings.push(`No prefix for predicate [${predicate}]`)
+  }
+  if (!target) {
+    warnings.push(`No target defined`)
+  } else if (requiresTargetPrefix && !hasCurie(target)) {
+    warnings.push(`No prefix for target [${target}]`)
+  }
+
+  return warnings
 }
 
 function extract ({ databasePath }) {
@@ -29,23 +60,26 @@ function extract ({ databasePath }) {
   const buffer = readFileSync(databasePath)
   const reader = new MDBReader(buffer)
 
-  const classes = []
-  const attributes = []
-  const predicates = []
+  const nodes = []
+  const relations = []
 
   const objectIndex = {}
   for (const { Object_ID, Name, Note } of reader.getTable('t_object').
     getData()) {
     if (Name) {
       objectIndex[Object_ID] = Name
+
+      const warnings = hasCurie(Name) ? [] : [`no prefix for ${Name}`]
+
       if (toExport(Name)) {
-        classes.push({
-          name: Name, description: Note,
+        nodes.push({
+          name: Name, description: Note, warnings,
         })
       }
 
     }
   }
+
   for (const {
     Object_ID, Name, Notes, LowerBound, UpperBound, Type
   } of reader.getTable('t_attribute').getData()) {
@@ -57,15 +91,19 @@ function extract ({ databasePath }) {
         const min = LowerBound
         const max = UpperBound === '*' ? undefined : UpperBound
 
-        attributes.push({
+        const result = {
           source: domain,
           predicate: Name,
           target: Type,
           min,
           max,
-          noQuantifier: !(LowerBound || UpperBound),
           description: Notes,
-        })
+          isLiteral: true,
+        }
+
+        const noQuantifiers = !(LowerBound || UpperBound)
+        result.warnings = getWarnings(result, noQuantifiers)
+        relations.push(result)
       } else {
         console.error(domain, Name, Type)
       }
@@ -102,18 +140,24 @@ function extract ({ databasePath }) {
         // console.log('Bidirectional',domain, predicate, range)
       }
 
-      if (domain && predicate && range) {
-        predicates.push({
-          source: domain, predicate, target: range, ...getQuantifier(DestCard), description: Notes,
-        })
-      } else {
-        // console.error(domain, predicate, range)
+      const { min, max, noQuantifier } = getQuantifier(DestCard)
+      const result = {
+        source: domain,
+        predicate,
+        target: range,
+        description: Notes,
+        min,
+        max,
+        isLiteral: false,
       }
+
+      result.warnings = getWarnings(result, noQuantifier)
+      relations.push(result)
 
     }
   }
 
-  return { classes, predicates, attributes }
+  return { nodes, relations }
 }
 
 export { extract }

@@ -7,11 +7,13 @@ import { extract } from './extractFromEA.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
-const { classes, attributes, predicates } = extract({ databasePath })
+const { nodes, relations } = extract({ databasePath })
 
 function shapeIRI ({ source, predicate, target }) {
   return `${source}Shape`
 }
+
+const noWarnings = x => x.warnings.length === 0
 
 function skosDefinition (def) {
   // return def ? `skos:definition """${def}"""" ;` : ''
@@ -21,28 +23,27 @@ function skosDefinition (def) {
   // return ''
 }
 
-function hasCurie (name) {
-  if (name.split(':').length === 2) {
-    return true
-  }
-  console.log('Warning, expected curie in ', name)
-}
-
 const lines = []
 
-for (const { name, description } of classes) {
-  if (hasCurie(name)) {
-    lines.push(`${name}
+for (const { name, description, warnings } of nodes.filter(noWarnings)) {
+  lines.push(`${name}
         ${skosDefinition(description)}
         a owl:Class .
         `)
-  }
 }
 
 for (const {
-  source, predicate, target, min, max, noQuantifier, description
-} of attributes) {
-  lines.push(`
+  source, predicate, target, min, max, description, isLiteral,
+} of relations.filter(noWarnings)) {
+
+  if (predicate === 'rdfs:subClassOf') {
+    lines.push(`
+    ${source} ${predicate} ${target} .
+    `)
+  } else {
+
+    if (isLiteral) {
+      lines.push(`
     ${predicate} a owl:DatatypeProperty ;
         ${skosDefinition(description)}
         rdfs:domain  ${source} ;
@@ -57,18 +58,8 @@ for (const {
         ${max ? `sh:maxCount ${max} ;` : ''}
       ] .
     `)
-}
-
-for (const {
-  source, predicate, target, min, max, noQuantifier, description
-} of predicates) {
-
-  if (predicate === 'rdfs:subClassOf') {
-    lines.push(`
-    ${source} ${predicate} ${target} .
-    `)
-  } else if (hasCurie(target)) {
-    lines.push(`
+    } else {
+      lines.push(`
     ${predicate} a owl:ObjectProperty ;
         ${skosDefinition(description)}
         rdfs:domain  ${source} ;
@@ -84,8 +75,8 @@ for (const {
          sh:targetClass ${target} ;
       ] .
     `)
-  } else {
-    console.log(target)
+    }
+
   }
 
 }
@@ -127,7 +118,9 @@ const turtle = `
 
 ${lines.join('\n')}
 `
-// console.log(turtle)
 const dataset = rdf.dataset().addAll([...new Parser().parse(turtle)])
 const pretty = await prettyPrintTurtle({ dataset })
-fs.writeFileSync(`assets/debug.turtle`, pretty)
+
+const debugPath = `assets/debug.turtle`
+fs.writeFileSync(debugPath, pretty)
+console.log('wrote', dataset.size, 'quads at', debugPath)
