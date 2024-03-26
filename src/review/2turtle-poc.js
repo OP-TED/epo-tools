@@ -21,18 +21,18 @@ function skosDefinition (def) {
   // return ''
 }
 
-function hasCurie (Name) {
-  if (Name.split(':').length === 2) {
+function hasCurie (name) {
+  if (name.split(':').length === 2) {
     return true
   }
-  console.log('Warning, expected curie in ', Name)
+  console.log('Warning, expected curie in ', name)
 }
 
 const lines = []
 
-for (const { class: clazz, description } of classes) {
-  if (hasCurie(clazz)) {
-    lines.push(`${clazz}
+for (const { name, description } of classes) {
+  if (hasCurie(name)) {
+    lines.push(`${name}
         ${skosDefinition(description)}
         a owl:Class .
         `)

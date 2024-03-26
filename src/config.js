@@ -9,7 +9,7 @@ const COMMON_VOCABS = {
   localDirectory: 'assets/common-vocabularies',
 }
 
-const branchName = 'release/4.1.0'
+const branchName = 'develop'
 const UNDER_REVIEW = {
   owner: 'OP-TED',
   repo: 'ePO',

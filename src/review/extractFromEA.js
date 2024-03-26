@@ -40,7 +40,7 @@ function extract ({ databasePath }) {
       objectIndex[Object_ID] = Name
       if (toExport(Name)) {
         classes.push({
-          class: Name, description: Note,
+          name: Name, description: Note,
         })
       }
 
@@ -104,7 +104,7 @@ function extract ({ databasePath }) {
 
       if (domain && predicate && range) {
         predicates.push({
-          source: domain, predicate, target: range, ...getQuantifier(DestCard),
+          source: domain, predicate, target: range, ...getQuantifier(DestCard), description: Notes,
         })
       } else {
         // console.error(domain, predicate, range)

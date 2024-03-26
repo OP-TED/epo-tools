@@ -24,4 +24,4 @@ function searchEnterpriseArchitect (text) {
   }
 }
 
-searchEnterpriseArchitect('WG approval 12/03/2024')
+searchEnterpriseArchitect('cccev:')

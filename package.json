@@ -34,7 +34,6 @@
     "rdf-entity-webcomponent": "^0.7.5",
     "rdf-ext": "^2.5.1",
     "sparqljs": "^3.7.1",
-    "tar": "^6.2.0",
-    "xml-js": "^1.6.11"
+    "tar": "^6.2.0"
   }
 }
