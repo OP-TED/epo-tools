@@ -3,8 +3,9 @@ import { Parser } from 'n3'
 import rdf from 'rdf-ext'
 import { UNDER_REVIEW } from '../config.js'
 import { prettyPrintTurtle } from '../io/serialization.js'
-import { addEdgeWarnings, addNodeWarnings, extract } from './extractFromEA.js'
+import { extract } from './extractFromEA.js'
 import { getTurtle } from './get-turtle.js'
+import { addEdgeWarnings, addNodeWarnings } from './validations.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
@@ -34,5 +35,9 @@ for (const module of new Set(allNodes.map(x => x.name.split(':')[0]))) {
 
 }
 
-
-
+const turtle = getTurtle({ nodes: allNodes, edges: allEdges })
+const dataset = rdf.dataset().addAll([...new Parser().parse(turtle)])
+const pretty = await prettyPrintTurtle({ dataset })
+const allPath = `assets/epo-all.ttl`
+fs.writeFileSync(`assets/epo-all.ttl`, pretty)
+console.log('wrote', dataset.size, 'quads at', allPath)

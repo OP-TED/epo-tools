@@ -1,6 +1,7 @@
 import fs from 'fs'
 import { UNDER_REVIEW } from '../../config.js'
-import { addEdgeWarnings, addNodeWarnings, extract } from '../extractFromEA.js'
+import { extract } from '../extractFromEA.js'
+import { addEdgeWarnings, addNodeWarnings } from '../validations.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
