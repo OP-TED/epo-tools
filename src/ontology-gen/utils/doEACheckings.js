@@ -1,3 +1,4 @@
+import fs from 'fs'
 import { UNDER_REVIEW } from '../../config.js'
 import { addEdgeWarnings, addNodeWarnings, extract } from '../extractFromEA.js'
 
@@ -8,9 +9,9 @@ const withWarnings = x => x.warnings.length > 0
 
 const jsonExport = extract({ databasePath })
 
-const allNodes = jsonExport.nodes.map(addNodeWarnings).filter(withWarnings)
-const allEdges = jsonExport.edges.map(addEdgeWarnings).filter(withWarnings)
-console.log('--- Nodes')
-console.log(allNodes)
-console.log('--- Relations')
-console.log(allEdges)
+const modulePath = `assets/ea-checks-with-warnings.json`
+fs.writeFileSync(modulePath, JSON.stringify({
+  nodes: jsonExport.nodes.map(addNodeWarnings).filter(withWarnings),
+  edges: jsonExport.edges.map(addEdgeWarnings).filter(withWarnings),
+}, null, 2))
+console.log('wrote report at', modulePath)
