@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
-import { UNDER_REVIEW } from '../config.js'
+import { UNDER_REVIEW } from '../../config.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
 

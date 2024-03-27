@@ -28,7 +28,7 @@ fs.writeFileSync(`${targetDirectory}/new-files-bundle.ttl`,
   }))
 
 // Generate Diffs
-const { added, removed } = await diff(oldAssets, newAssets)
+const { added, removed } = await rdfDiff(oldAssets, newAssets)
 
 if (!added.size) {
   console.log('no triples added')
@@ -56,7 +56,7 @@ async function load (dir) {
   })
 }
 
-async function diff (oldAssets, newAssets) {
+async function rdfDiff (oldAssets, newAssets) {
   const added = rdf.dataset()
   const removed = rdf.dataset()
   for (const { path, dataset } of oldAssets) {

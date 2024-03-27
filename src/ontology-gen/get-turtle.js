@@ -1,47 +1,19 @@
-import fs from 'fs'
-import { Parser } from 'n3'
-import rdf from 'rdf-ext'
-import { UNDER_REVIEW } from '../config.js'
-import { prettyPrintTurtle } from '../io/serialization.js'
-import { addEdgeWarnings, addNodeWarnings, extract } from './extractFromEA.js'
-
-const assetsPath = UNDER_REVIEW.localDirectory
-const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
-const jsonExport = extract({ databasePath })
-
-const { nodes, edges } = jsonExport
-
-function shapeIRI ({ source, predicate, target }) {
-  return `${source}Shape`
-}
-
-const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
-
-function skosDefinition (def) {
-  // return def ? `skos:definition """${def}"""" ;` : ''
-  return def ? `skos:definition "${(def.split(/\s+/).
-    map(x => x.trim()).
-    join(' ')).replaceAll('"', '')}" ;` : ''
-}
-
-const classDefinitions = nodes.map(addNodeWarnings).
-  filter(hasNoErrors).map(x => `${x.name}
+function getTurtle ({ nodes, edges }) {
+  const classDefinitions = nodes.map(x => `${x.name}
         ${skosDefinition(x.description)}
         a owl:Class .
         `)
+  const relations = []
+  for (const {
+    source, predicate, target, min, max, description, isLiteral,
+  } of edges) {
 
-const relations = []
-
-for (const {
-  source, predicate, target, min, max, description, isLiteral,
-} of edges.map(addEdgeWarnings).filter(hasNoErrors)) {
-
-  if (predicate === 'rdfs:subClassOf') {
-    relations.push(`
+    if (predicate === 'rdfs:subClassOf') {
+      relations.push(`
     ${source} ${predicate} ${target} .
     `)
-  } else if (isLiteral) {
-    relations.push(`
+    } else if (isLiteral) {
+      relations.push(`
     ${predicate} a owl:DatatypeProperty ;
         ${skosDefinition(description)}
         rdfs:domain  ${source} ;
@@ -56,8 +28,8 @@ for (const {
         ${max ? `sh:maxCount ${max} ;` : ''}
       ] .
     `)
-  } else {
-    relations.push(`
+    } else {
+      relations.push(`
     ${predicate} a owl:ObjectProperty ;
         ${skosDefinition(description)}
         rdfs:domain  ${source} ;
@@ -73,11 +45,10 @@ for (const {
          sh:targetClass ${target} ;
       ] .
     `)
+    }
   }
 
-}
-
-const turtle = `
+  return `
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -112,19 +83,20 @@ const turtle = `
 @prefix at-voc: <http://publications.europa.eu/resource/authority/> . # Authority tables
 @prefix at-voc-new: <http://unknown/> . # Authority tables
 
-  ${classDefinitions.join('\n')}
 
-  ${relations.join('\n')}
+  ${[...classDefinitions, ...relations].join('\n')}
 `
+}
 
-// fs.writeFileSync(`assets/ugly.ttl`, turtle)
+function shapeIRI ({ source, predicate, target }) {
+  return `${source}Shape`
+}
 
-const dataset = rdf.dataset().addAll([...new Parser().parse(turtle)])
-const jsonDebugPath = `assets/debug.json`
-fs.writeFileSync(jsonDebugPath, JSON.stringify(jsonExport, null, 2))
-console.log('wrote json at', jsonDebugPath)
+function skosDefinition (def) {
+  // return def ? `skos:definition """${def}"""" ;` : ''
+  return def ? `skos:definition "${(def.split(/\s+/).
+    map(x => x.trim()).
+    join(' ')).replaceAll('"', '')}" ;` : ''
+}
 
-const debugPath = `assets/debug.turtle`
-const pretty = await prettyPrintTurtle({ dataset })
-fs.writeFileSync(debugPath, pretty)
-console.log('wrote', dataset.size, 'quads at', debugPath)
+export { getTurtle }
