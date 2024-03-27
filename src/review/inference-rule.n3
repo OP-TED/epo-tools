@@ -1,0 +1,16 @@
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# If a child subclasses from parent
+# Then it's shape inherits it's properties
+
+{
+    ?child rdfs:subClassOf ?parent .
+    ?parentShape a shacl:NodeShape ;
+        shacl:targetClass ?parent ;
+        shacl:property ?parentProperty .
+    ?childShape a shacl:NodeShape ;
+        shacl:targetClass ?child .
+} => {
+    ?childShape shacl:property ?parentProperty .
+}
