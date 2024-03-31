@@ -14,7 +14,7 @@ const epoJson = exportEpo(jsonExport)
 
 const modulePath = `assets/ea-checks-with-warnings.json`
 fs.writeFileSync(modulePath, JSON.stringify({
-  nodes: epoJson.nodes.map(addNodeWarnings),
-  edges: epoJson.edges.map(addEdgeWarnings),
+  nodes: epoJson.nodes.map(addNodeWarnings).filter(withWarnings),
+  edges: epoJson.edges.map(addEdgeWarnings).filter(withWarnings),
 }, null, 2))
 console.log('wrote report at', modulePath)
