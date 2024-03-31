@@ -1,10 +1,7 @@
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
 
-const defaultExport = name => name && name.startsWith('epo')
-
-function extract ({ databasePath, filter }) {
-  const toExport = filter ?? defaultExport
+function extract ({ databasePath }) {
 
   const buffer = readFileSync(databasePath)
   const reader = new MDBReader(buffer)
@@ -19,7 +16,7 @@ function extract ({ databasePath, filter }) {
   const nodes = objectTable.
     map(x => ({
       name: nodeIndex[x.Object_ID], description: x.Note,
-    })).filter(x => toExport(x.name))
+    }))
 
   const literals = reader.getTable('t_attribute').
     getData().
@@ -32,9 +29,7 @@ function extract ({ databasePath, filter }) {
       noQuantifiers: !(x.LowerBound || x.UpperBound),
       description: x.Notes,
       isLiteral: true,
-    })).
-    filter(
-      x => toExport(x.source) || toExport(x.predicate) || toExport(x.target))
+    }))
 
   const relations = reader.getTable('t_connector').
     getData().
@@ -69,9 +64,7 @@ function extract ({ databasePath, filter }) {
         description: Notes,
         isLiteral: false,
       }
-    }).
-    filter(
-      x => toExport(x.source) || toExport(x.predicate) || toExport(x.target))
+    })
   const edges = [...literals, ...relations]
 
   return { nodes, edges }
