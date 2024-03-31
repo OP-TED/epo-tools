@@ -1,19 +1,11 @@
-function getTurtle ({ nodes, edges }) {
-  const classDefinitions = nodes.map(x => `${x.name}
-        ${skosDefinition(x.description)}
+const nodeTemplate = ({ name, description }) => `${name}
+        ${skosDefinition(description)}
         a owl:Class .
-        `)
-  const relations = []
-  for (const {
-    source, predicate, target, min, max, description, isLiteral,
-  } of edges) {
+        `
 
-    if (predicate === 'rdfs:subClassOf') {
-      relations.push(`
-    ${source} ${predicate} ${target} .
-    `)
-    } else if (isLiteral) {
-      relations.push(`
+const literalTemplate = ({
+  source, predicate, target, description, min, max,
+}) => `
     ${predicate} a owl:DatatypeProperty ;
         ${skosDefinition(description)}
         rdfs:domain  ${source} ;
@@ -27,9 +19,11 @@ function getTurtle ({ nodes, edges }) {
         ${min ? `sh:minCount ${min} ;` : ''}
         ${max ? `sh:maxCount ${max} ;` : ''}
       ] .
-    `)
-    } else {
-      relations.push(`
+    `
+
+const objectTemplate = ({
+  source, predicate, target, description, min, max,
+}) => `
     ${predicate} a owl:ObjectProperty ;
         ${skosDefinition(description)}
         rdfs:domain  ${source} ;
@@ -44,9 +38,24 @@ function getTurtle ({ nodes, edges }) {
         ${max ? `sh:maxCount ${max} ;` : ''}
          sh:targetClass ${target} ;
       ] .
-    `)
+    `
+
+const subclassTemplate = ({ source, predicate, target }) => `
+    ${source} ${predicate} ${target} .
+    `
+
+function getTurtle ({ nodes, edges }) {
+  const classDefinitions = nodes.map(nodeTemplate)
+
+  const relations = edges.map(edge => {
+    if (edge.predicate === 'rdfs:subClassOf') {
+      return subclassTemplate(edge)
+    } else if (edge.isLiteral) {
+      return literalTemplate(edge)
+    } else {
+      return objectTemplate(edge)
     }
-  }
+  })
 
   return `
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
