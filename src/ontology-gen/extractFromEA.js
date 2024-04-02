@@ -28,7 +28,7 @@ function extract ({ databasePath }) {
       max: x.UpperBound === '*' ? undefined : x.UpperBound,
       noQuantifiers: !(x.LowerBound || x.UpperBound),
       description: x.Notes,
-      isLiteral: true,
+      type: ATTRIBUTE,
     }))
 
   const relations = reader.getTable('t_connector').
@@ -45,9 +45,11 @@ function extract ({ databasePath }) {
       } = x
 
       const source = nodeIndex[Start_Object_ID]
-      const predicate = Connector_Type === 'Generalization'
-        ? 'rdfs:subClassOf'
-        : DestRole
+
+      const type = Connector_Type === 'Generalization'
+        ? INHERITANCE
+        : RELATIONSHIP
+      const predicate = DestRole
       const target = nodeIndex[End_Object_ID]
 
       if (Direction !== 'Source -> Destination') { // Apparently this is not taken into account
@@ -62,7 +64,7 @@ function extract ({ databasePath }) {
         predicate,
         target, ...parseQuantifierString(DestCard),
         description: Notes,
-        isLiteral: false,
+        type,
       }
     })
   const edges = [...literals, ...relations]
@@ -84,4 +86,7 @@ function parseQuantifierString (str) {
   }
 }
 
-export { extract }
+const ATTRIBUTE = 'attribute'
+const INHERITANCE = 'inheritance-relationship'
+const RELATIONSHIP = 'relationship'
+export { extract, ATTRIBUTE, INHERITANCE, RELATIONSHIP }

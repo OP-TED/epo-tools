@@ -1,3 +1,5 @@
+import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from './extractFromEA.js'
+
 const nodeTemplate = ({ name, description }) => `${name}
         ${skosDefinition(description)}
         a owl:Class .
@@ -41,20 +43,24 @@ const objectTemplate = ({
     `
 
 const subclassTemplate = ({ source, predicate, target }) => `
-    ${source} ${predicate} ${target} .
+    ${source} rdfs:subClassOf ${target} .
     `
 
 function getTurtle ({ nodes, edges }) {
   const classDefinitions = nodes.map(nodeTemplate)
 
   const relations = edges.map(edge => {
-    if (edge.predicate === 'rdfs:subClassOf') {
+
+    if (edge.type === INHERITANCE) {
       return subclassTemplate(edge)
-    } else if (edge.isLiteral) {
+    } else if (edge.type === ATTRIBUTE) {
       return literalTemplate(edge)
-    } else {
+    } else if (edge.type === RELATIONSHIP) {
       return objectTemplate(edge)
+    } else {
+      throw Error(`type '${edge.type}' not implemented`)
     }
+
   })
 
   return `
