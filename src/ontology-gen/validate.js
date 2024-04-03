@@ -1,3 +1,5 @@
+import { ATTRIBUTE, INHERITANCE } from './extractFromEA.js'
+
 function addNodeWarnings (node) {
   const warnings = hasCurie(node.name) ? [] : [
     {
@@ -8,11 +10,13 @@ function addNodeWarnings (node) {
 
 function addEdgeWarnings (edge) {
   const {
-    source, predicate, target, isLiteral, noQuantifiers,
+    source, predicate, target, type, noQuantifiers,
   } = edge
   const warnings = []
-  const requiresQuantifiers = predicate !== 'rdfs:subClassOf'
-  const requiresTargetPrefix = !isLiteral
+
+  const requiresTargetPrefix = type !== ATTRIBUTE
+  const requiresQuantifiers = type !== INHERITANCE
+  const requiresPredicate = type !== INHERITANCE
 
   if (noQuantifiers && requiresQuantifiers) {
     warnings.push({
@@ -28,15 +32,19 @@ function addEdgeWarnings (edge) {
       severity: 'error', desc: `No prefix for source [${source}]`,
     })
   }
-  if (!predicate) {
-    warnings.push({
-      severity: 'error', desc: `No predicate defined`,
-    })
-  } else if (!hasCurie(predicate)) {
-    warnings.push({
-      severity: 'error', desc: `No prefix for predicate [${predicate}]`,
-    })
+
+  if (requiresPredicate) {
+    if (!predicate) {
+      warnings.push({
+        severity: 'error', desc: `No predicate defined`,
+      })
+    } else if (!hasCurie(predicate)) {
+      warnings.push({
+        severity: 'error', desc: `No prefix for predicate [${predicate}]`,
+      })
+    }
   }
+
   if (!target) {
     warnings.push({
       severity: 'error', desc: `No target defined`,

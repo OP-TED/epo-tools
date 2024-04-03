@@ -1,0 +1,24 @@
+
+
+```plantuml
+@startuml
+
+class "epo:Animal" {
+
+}
+
+class "epo:Person" {
+  epo:name xsd:String
+  epo:has-address ex:Address
+}
+note left: The class of people
+
+class "epo:Address" {
+   epo:street-name : xsd:String
+}
+
+"epo:Person" ---|> "epo:Animal"
+"epo:Person" -- "1..*" "epo:Address"
+@enduml
+
+```

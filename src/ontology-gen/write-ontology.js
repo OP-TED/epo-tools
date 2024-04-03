@@ -4,8 +4,8 @@ import rdf from 'rdf-ext'
 import { UNDER_REVIEW } from '../config.js'
 import { prettyPrintTurtle } from '../io/serialization.js'
 import { extract } from './extractFromEA.js'
-import { exportEpo } from './filter.js'
-import { getTurtle } from './templates.js'
+import { exportEpo } from './filter-epo.js'
+import { getTurtle } from './turtle-template.js'
 import { addEdgeWarnings, addNodeWarnings } from './validate.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory

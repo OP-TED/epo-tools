@@ -11,7 +11,8 @@ const buffer = readFileSync(databasePath)
 const reader = new MDBReader(buffer)
 
 function searchEnterpriseArchitect (text) {
-  for (const table of ['t_object', 't_connector', 't_attribute']) { // reader.getTableNames()
+  const allTables = reader.getTableNames() // ['t_object', 't_connector', 't_attribute']
+  for (const table of allTables) {
     const data = reader.getTable(table).
       getData()
     for (const row of data) {

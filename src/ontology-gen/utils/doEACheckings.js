@@ -1,7 +1,7 @@
 import fs from 'fs'
 import { UNDER_REVIEW } from '../../config.js'
 import { extract } from '../extractFromEA.js'
-import { exportEpo } from '../filter.js'
+import { exportEpo } from '../filter-epo.js'
 import { addEdgeWarnings, addNodeWarnings } from '../validate.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
