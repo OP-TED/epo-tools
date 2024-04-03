@@ -3,12 +3,16 @@
 ```plantuml
 @startuml
 
-class "epo:Animal" {
+!function $generated($a)
+!return "<color:#0000ff>" + $a + " <<generated>></color>"
+!endfunction
 
+class "epo:Animal" {
+  $generated("id : uuid")
 }
 
 class "epo:Person" {
-  epo:name xsd:String
+  + {Color_1} epo:name xsd:String
   epo:has-address ex:Address
 }
 note left: The class of people

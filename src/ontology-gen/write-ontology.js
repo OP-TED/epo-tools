@@ -36,8 +36,8 @@ for (const module of new Set(
   epoOntology.nodes.map(x => x.name.split(':')[0]))) {
   const epoModule = {
     nodes: epoOntology.nodes.filter(x => x.name.startsWith(`${module}:`)),
-    edges: epoOntology.edges.filter(x => x.source.startsWith(`${module}:`) |
-      x.predicate.startsWith(`${module}:`)),
+    edges: epoOntology.edges.filter(x => x.source.startsWith(`${module}:`) ||
+      (x.predicate && x.predicate.startsWith(`${module}:`))),
   }
   await exportToTurtle({ json: epoModule, path: `assets/${module}.ttl` })
 }

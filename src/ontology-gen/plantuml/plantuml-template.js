@@ -1,12 +1,12 @@
 import { INHERITANCE, RELATIONSHIP } from '../extractFromEA.js'
 
 const nodeTemplate = ({ name }, edges) => `class "${name}" {
-  ${edges.map(x => `${x.predicate} ${x.target}`).join('\n')}
+  ${edges.map(x => `  ${x.predicate} ${x.target}`).join('\n')}
 }
 `
 const subclassTemplate = ({
   source, predicate, target,
-}) => `"${source}" --|> "${target}"`
+}) => `"${target}" <|-- "${source}"`
 
 const relationTemplate = ({
   source, predicate, target,
@@ -22,7 +22,10 @@ function getPlantUML ({ nodes, edges }) {
 
   const relations = [
     ...edges.filter(x => x.type === INHERITANCE).map(subclassTemplate),
-    ...edges.filter(x => x.type === RELATIONSHIP).map(relationTemplate)]
+    ...edges.filter(
+      x => x.target.startsWith('epo')). // Make this epo independent somehow
+      filter(x => x.type === RELATIONSHIP).
+      map(relationTemplate)]
 
   return `
 @startuml
