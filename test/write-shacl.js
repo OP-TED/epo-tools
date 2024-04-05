@@ -1,7 +1,10 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
+import { Parser } from 'n3'
+import rdf from 'rdf-ext'
 import { UNDER_REVIEW } from '../src/config.js'
+import { prettyPrintTurtle } from '../src/io/serialization.js'
 import {
   addEdgeWarnings,
   addNodeWarnings,
@@ -20,7 +23,7 @@ describe('write-shacl', () => {
 
   const jsonExport = toJson({ databasePath })
 
-  it(`generates shacl for ${assetsPath}`, function () {
+  it(`generates shacl for ${assetsPath}`, async function () {
 
     const { nodes, edges } = narrowToEpo(jsonExport)
     const epoOntology = {
@@ -29,8 +32,10 @@ describe('write-shacl', () => {
     }
 
     const uglyTurtle = toTurtle(epoOntology)
+    const dataset = rdf.dataset().addAll([...new Parser().parse(uglyTurtle)])
+    const pretty = await prettyPrintTurtle({ dataset })
 
-    expect(uglyTurtle).toMatchSnapshot(this)
+    expect(pretty).toMatchSnapshot(this)
   })
 })
 
