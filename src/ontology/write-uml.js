@@ -1,19 +1,16 @@
 import { writeFileSync } from 'fs'
-import { UNDER_REVIEW } from '../../config.js'
-import { extract } from '../extractFromEA.js'
-import { exportSomeClassesEpo } from '../filter-epo.js'
-import { addEdgeWarnings, addNodeWarnings } from '../validate.js'
-import { getPlantUML } from './plantuml-template.js'
+import { UNDER_REVIEW } from '../config.js'
+import { addEdgeWarnings, addNodeWarnings } from './ea/add-warnings.js'
+import { toJson } from './ea/ea-to-json.js'
+import { getPlantUML } from './templates/plantuml-template.js'
+import { narrowToEpoClasses } from './views/epo-views.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
-const jsonExport = extract({ databasePath })
+const jsonExport = toJson({ databasePath })
 
-// const filter = ['epo:Notice',  'epo:Document']
-const filter = [
-  'epo:Notice',
-  'epo:Document',
-  // 'epo:Procedure',
+const classes = [
+  'epo:Notice', 'epo:Document', // 'epo:Procedure',
   // 'epo:Lot',
   // 'epo:LotAwardOutcome',
   // 'epo:AwardOutcome',
@@ -24,9 +21,10 @@ const filter = [
 ]
 
 const options = {
-  onlyClassesOf: new Set(filter), includeIncoming: false,
+  onlyClassesOf: new Set(classes), includeIncoming: false,
 }
-const { nodes, edges } = exportSomeClassesEpo(jsonExport, options)
+
+const { nodes, edges } = narrowToEpoClasses(jsonExport, options)
 // const {nodes, edges} = exportEpo(jsonExport) // All, do not try at home
 
 const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')

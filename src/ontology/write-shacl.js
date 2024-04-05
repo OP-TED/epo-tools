@@ -3,19 +3,15 @@ import { Parser } from 'n3'
 import rdf from 'rdf-ext'
 import { UNDER_REVIEW } from '../config.js'
 import { prettyPrintTurtle } from '../io/serialization.js'
-import { extract } from './extractFromEA.js'
-import { exportEpo } from './filter-epo.js'
-import { getTurtle } from './turtle-template.js'
-import { addEdgeWarnings, addNodeWarnings } from './validate.js'
+import { addEdgeWarnings, addNodeWarnings } from './ea/add-warnings.js'
+import { toJson } from './ea/ea-to-json.js'
+import { getTurtle } from './templates/turtle-template.js'
+import { narrowToEpo } from './views/epo-views.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
-const jsonExport = extract({ databasePath })
-const { nodes, edges } = exportEpo(jsonExport)
-
-// const jsonDebugPath = `assets/debug.json`
-// fs.writeFileSync(jsonDebugPath, JSON.stringify(epoJson, null, 2))
-// console.log('wrote debug at', jsonDebugPath)
+const jsonExport = toJson({ databasePath })
+const { nodes, edges } = narrowToEpo(jsonExport)
 
 const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
 

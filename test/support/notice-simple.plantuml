@@ -1,0 +1,16 @@
+
+@startuml
+class "epo:Document" {
+  dct:title rdf:PlainLiteral
+  epo:hasPublicationDate xsd:date
+}
+
+class "epo:Notice" {
+  epo:refersToLot epo:Lot
+  epo:refersToProcedure epo:Procedure
+}
+
+"epo:Document" <|-- "epo:Notice"
+"epo:Notice" --> "epo:Lot"
+"epo:Notice" --> "epo:Procedure"
+@enduml

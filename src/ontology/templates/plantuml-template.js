@@ -1,4 +1,4 @@
-import { INHERITANCE, RELATIONSHIP } from '../extractFromEA.js'
+import { INHERITANCE, RELATIONSHIP } from '../const.js'
 
 const nodeTemplate = ({ name }, edges) => `class "${name}" {
   ${edges.map(x => `  ${x.predicate} ${x.target}`).join('\n')}

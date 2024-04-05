@@ -1,4 +1,4 @@
-import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from './extractFromEA.js'
+import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
 
 const nodeTemplate = ({ name, description }) => `${name}
         ${skosDefinition(description)}

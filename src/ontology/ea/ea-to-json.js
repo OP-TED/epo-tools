@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
+import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
 
-function extract ({ databasePath }) {
+function toJson ({ databasePath }) {
 
   const buffer = readFileSync(databasePath)
   const reader = new MDBReader(buffer)
@@ -86,7 +87,4 @@ function parseQuantifierString (str) {
   }
 }
 
-const ATTRIBUTE = 'attribute'
-const INHERITANCE = 'inheritance-relationship'
-const RELATIONSHIP = 'relationship'
-export { extract, ATTRIBUTE, INHERITANCE, RELATIONSHIP }
+export { toJson }

@@ -1,4 +1,4 @@
-import { ATTRIBUTE, INHERITANCE } from './extractFromEA.js'
+import { ATTRIBUTE, INHERITANCE } from '../const.js'
 
 function addNodeWarnings (node) {
   const warnings = hasCurie(node.name) ? [] : [

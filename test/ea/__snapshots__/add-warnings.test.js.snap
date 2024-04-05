@@ -1,0 +1,3531 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`read-enterprise-architect-database generates warnings for assets/ePO/develop 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:PreMarketConsultationNotice",
+      "target": "pmc",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [pmc]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:ContractModificationNotice",
+      "target": "can-modif",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [can-modif]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice10",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice11",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice13",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice15",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice16",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice19",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice20",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice21",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice24",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice23",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice38",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice39",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice40",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:PINProfileNotice",
+      "target": "pin-buyer",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [pin-buyer]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:PINOnlyNotice",
+      "target": "pin-only",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [pin-only]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CANSocial-D25",
+      "target": "Form6",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form6]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:DesignContestResult-D24",
+      "target": "Form13",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form13]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:PINTimeLimitNotice",
+      "target": "pin-rtl",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [pin-rtl]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:CompletionNotice",
+      "target": "compl",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [compl]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:PIN-CFCStandardNotice",
+      "target": "pin-cfc-standard",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [pin-cfc-standard]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:PIN-CFCSocialNotice",
+      "target": "pin-cfc-social",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [pin-cfc-social]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:QSNotice",
+      "target": "qu-sy",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [qu-sy]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:CNStandardNotice",
+      "target": "cn-standard",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [cn-standard]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:SubcontractNotice",
+      "target": "subco",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [subco]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:DesignContestNotice",
+      "target": "cn-desg",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [cn-desg]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:CNSocialNotice",
+      "target": "cn-social",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [cn-social]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PINOnly-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CNStandard-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PINOnly-D24",
+      "target": "Form1",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form1]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasImplementingRegulation",
+      "source": "epo-not:eFormsNotice",
+      "target": "(EU) 2019/1780",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [(EU) 2019/1780]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:CANStandardNotice",
+      "target": "can-standard",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [can-standard]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:CANSocialNotice",
+      "target": "can-social",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [can-social]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:DesignContestResultNotice",
+      "target": "can-desg",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [can-desg]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice1",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice2",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice3",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice4",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice5",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice6",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice7",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice8",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice9",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice25",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice26",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice27",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice28",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice18",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice22",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice17",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice14",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice12",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CANStandard-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PINProfile-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:DesignContest-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:DesignContestResult-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:VEAT-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo-not:hasLegalBasis",
+      "source": "epo-not:Modification-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:SocialAndOtherSpecificServices-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CNStandard-D24",
+      "target": "Form2",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form2]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice31",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice30",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice34",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice37",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice29",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice33",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice35",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice32",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Notice36",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form1",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form1]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form2",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form2]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form3",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form3]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form4",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form4]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:ConcessionNotice-D23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CANStandard-D24",
+      "target": "Form3",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form3]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PINProfile-D24",
+      "target": "Form8",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form8]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:DesignContest-D24",
+      "target": "Form12",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form12]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:VEAT-D24",
+      "target": "Form15",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form15]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Modification-D24",
+      "target": "Form20",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form20]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:SocialAndOtherSpecificServices-D24",
+      "target": "Form21",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form21]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:SocialAndOtherSpecificServices-D24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CNSocial-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CANSocial-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:QS-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PINProfile-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form22",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form22]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form23",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form23]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form25",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form25]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form24",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form24]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice12",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice13",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice14",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice10",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice15",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form6",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form6]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form7",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form7]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:ConcessionAwardNotice-D23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice17",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice16",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice18",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice19",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice20",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice21",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice22",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice24",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice25",
+      "target": "dir-awa-pre",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [dir-awa-pre]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:DesignContest-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:DesignContestResult-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:VEAT-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PIN-CFCSocialNotice-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PIN-RTL-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PIN-CFCStandard-D24",
+      "target": "Directive 24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PIN-RTL-D24",
+      "target": "Form1",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form1]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PINOnly-D25",
+      "target": "Form4",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form4]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PIN-RTL-D25",
+      "target": "Form4",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form4]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PIN-CFCStandard-D24",
+      "target": "Form1",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form1]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PIN-RTL-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PIN-CFCSocial-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CNSocial-D25",
+      "target": "Form5",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form5]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice9",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:PlanningNotice",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form5",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form5]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form17",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form17]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:QS-D25",
+      "target": "Form7",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form7]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PINProfile-D25",
+      "target": "Form8",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form8]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:DesignContest-D25",
+      "target": "Form12",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form12]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:DesignContestResult-D25",
+      "target": "Form13",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form13]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:VEAT-D25",
+      "target": "Form15",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form15]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Modification-D25",
+      "target": "Form20",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form20]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PIN-CFCSocialNotice-D25",
+      "target": "Form22",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form22]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:VEAT-D23",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Modification-D23",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice36",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice37",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice38",
+      "target": "cont-modif",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [cont-modif]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice39",
+      "target": "cont-modif",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [cont-modif]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice40",
+      "target": "cont-modif",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [cont-modif]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:ConcessionAwardNotice-D23",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:SocialAndOtherSpecificServices-D23",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:VEAT-D23",
+      "target": "Form15",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form15]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Modification-D23",
+      "target": "Form20",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form20]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:ConcessionAwardNotice-D23",
+      "target": "Form25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:SocialAndOtherSpecificServices-D23",
+      "target": "Form23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:SocialAndOtherSpecificServices-D23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PINProfile-D81",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:VEAT-D81",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PINDefence-D81",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CANDefence-D81",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Subcontract-D81",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PINDefence-D81",
+      "target": "Form16",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form16]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:VEAT-D81",
+      "target": "Form15",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form15]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo:ProcurementServiceProvider",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form16",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form16]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice1",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice2",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice3",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice4",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice6",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice7",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PINProfile-D81",
+      "target": "Form8",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form8]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:PINDefence-D81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:CNDefence-D81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-not:CANDefence-D81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CNDefence-D81",
+      "target": "Form17",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form17]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Subcontract-D81",
+      "target": "Form19",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form19]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasImplementingRegulation",
+      "source": "epo-not:StandardFormsNotice",
+      "target": "(EU) 2015/1986",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [(EU) 2015/1986]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice8",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form18",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form18]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form19",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form19]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form20",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form20]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form21",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form21]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice27",
+      "target": "dir-awa-pre",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [dir-awa-pre]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:Modification-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 1,
+      "predicate": "epo:hasNoticeType",
+      "source": "epo-not:VoluntaryEx-AnteTransparencyNotice",
+      "target": "veat",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [veat]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form8",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form8]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form12",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form12]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form13",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form13]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form14",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form14]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": "Form15",
+      "target": "epo-not:StandardForm",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No prefix for source [Form15]",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice28",
+      "target": "dir-awa-pre",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [dir-awa-pre]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice26",
+      "target": "dir-awa-pre",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [dir-awa-pre]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice29",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice30",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice31",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice32",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice33",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice34",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice35",
+      "target": "result",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [result]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-ord:OrderResponse",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-cat:Manufacturer",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice5",
+      "target": "planning",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [planning]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice23",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:Notice11",
+      "target": "competition",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [competition]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:PINOnly-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:QSNotice-D25",
+      "target": "Form22",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form22]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CNSocialNotice-D25",
+      "target": "Form22",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form22]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CANSocialNotice-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CANSocialNotice-D25",
+      "target": "Form22",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form22]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:QSNotice-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CNSocialNotice-D25",
+      "target": "Directive 25",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 25]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:ConcessionNotice-D23",
+      "target": "Directive 23",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 23]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasLegalBasis",
+      "source": "epo-not:CNDefence-D81",
+      "target": "Directive 81",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Directive 81]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:CANDefence-D81",
+      "target": "Form18",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form18]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:ConcessionNotice-D23",
+      "target": "Form24",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form24]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "max": 1,
+      "min": 0,
+      "predicate": "epo:hasFormType",
+      "source": "epo-not:PIN-CFCSocial-D25",
+      "target": "Form4",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No prefix for target [Form4]",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-ord:Consignee",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-ord:Originator",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-ord:Seller",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-ful:Despatcher",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo-ful:TransportEquipment",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": "epo:indicatesInvoiceeContactPoint",
+      "source": "epo:Buyer",
+      "target": "cpov:ContactPoint",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": "URI reference to external item information or specifications, e.g. web address.
+",
+      "noQuantifiers": true,
+      "predicate": "epo-cat:hasExternalSpecification",
+      "source": "epo-cat:Item",
+      "target": "epo:Document",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo:ChangeInformation",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": "Security classification assigned to an Evidence e.g. classified, sensitive, public.
+
+Additional Information:
+
+Classifications should be defined by an organisation/country as an outcome of a security assessment.",
+      "noQuantifiers": true,
+      "predicate": "cccev:confidentialityLevelType",
+      "source": "epo-sub:Response",
+      "target": "at-voc:access-rights",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+      ],
+    },
+    Object {
+      "description": null,
+      "noQuantifiers": true,
+      "predicate": null,
+      "source": null,
+      "target": "epo:PlannedProcurementPart",
+      "type": "relation",
+      "warnings": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No source defined",
+          "severity": "error",
+        },
+        Object {
+          "desc": "No predicate defined",
+          "severity": "error",
+        },
+      ],
+    },
+  ],
+  "nodes": Array [],
+}
+`;

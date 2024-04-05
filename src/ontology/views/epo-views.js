@@ -1,6 +1,6 @@
 const startsWithEpo = name => name && name.startsWith('epo')
 
-function exportEpo ({ nodes, edges }) {
+function narrowToEpo ({ nodes, edges }) {
   const toExport = startsWithEpo
   return {
     nodes: nodes.filter(x => toExport(x.name)),
@@ -9,7 +9,8 @@ function exportEpo ({ nodes, edges }) {
   }
 }
 
-function exportSomeEpo ({ nodes, edges }, { onlyClassesOf, includeIncoming }) {
+function narrowToEpoClasses (
+  { nodes, edges }, { onlyClassesOf, includeIncoming }) {
 
   const toExport = (x) => startsWithEpo(x) && onlyClassesOf.has(x)
 
@@ -26,4 +27,4 @@ function exportSomeEpo ({ nodes, edges }, { onlyClassesOf, includeIncoming }) {
   }
 }
 
-export { exportEpo, exportSomeEpo }
+export { narrowToEpo, narrowToEpoClasses }

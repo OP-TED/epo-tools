@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "snapshot": "mocha",
     "fetch-repos": "node src/download/fetchRepos.js",
     "fetch-vocabularies": "node src/download/fetchVocabularies.js"
   },
@@ -35,5 +36,11 @@
     "rdf-ext": "^2.5.1",
     "sparqljs": "^3.7.1",
     "tar": "^6.2.0"
+  },
+  "devDependencies": {
+    "chai": "^5.1.0",
+    "expect": "^29.7.0",
+    "expect-mocha-snapshot": "^2.1.5",
+    "mocha": "^10.4.0"
   }
 }
