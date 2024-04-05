@@ -1,7 +1,9 @@
 import formats from '@rdfjs/formats'
 import fs from 'fs'
 import { glob } from 'glob'
+import { Parser } from 'n3'
 import rdf from 'rdf-ext'
+import { prettyPrintTurtle } from './serialization.js'
 
 function getMimetype (path) {
   if (path.endsWith('.rdf')) {
@@ -52,4 +54,11 @@ async function getRdfAssets ({ globPattern }, graphFactory = getGraph) {
   return assets
 }
 
-export { getRdfAssets, applyGlob }
+async function writePrettyTurtle (uglyTurtle, path) {
+  const dataset = rdf.dataset().addAll([...new Parser().parse(uglyTurtle)])
+  const pretty = await prettyPrintTurtle({ dataset })
+  fs.writeFileSync(path, pretty)
+  console.log('wrote', dataset.size, 'quads at', path)
+}
+
+export { getRdfAssets, applyGlob, writePrettyTurtle }

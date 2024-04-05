@@ -10,17 +10,17 @@ function addNodeWarnings (node) {
 
 function addEdgeWarnings (edge) {
   const {
-    source, predicate, target, type, noQuantifiers,
+    type, source, predicate, target, quantifiers: { quantifiersDeclared },
   } = edge
   const warnings = []
 
   const requiresTargetPrefix = type !== ATTRIBUTE
-  const requiresQuantifiers = type !== INHERITANCE
   const requiresPredicate = type !== INHERITANCE
+  const requiresQuantifiers = type !== INHERITANCE
 
-  if (noQuantifiers && requiresQuantifiers) {
+  if (!quantifiersDeclared && requiresQuantifiers) {
     warnings.push({
-      severity: 'error', desc: `No quantifiers defined`,
+      severity: 'warning', desc: `No quantifiers defined`,
     })
   }
   if (!source) {

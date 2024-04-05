@@ -12,7 +12,7 @@ const relationTemplate = ({
   source, predicate, target,
 }) => `"${source}" --> "${target}"`
 
-function getPlantUML ({ nodes, edges }) {
+function toPlantuml ({ nodes, edges }) {
 
   const classDefinitions = nodes.map(node => {
     const nodeEdges = edges.filter(edge => edge.source === node.name).
@@ -35,4 +35,4 @@ ${relations.join('\n')}
 `
 }
 
-export { getPlantUML }
+export { toPlantuml }

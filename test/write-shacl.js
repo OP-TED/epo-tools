@@ -7,25 +7,30 @@ import {
   addNodeWarnings,
 } from '../src/ontology/ea/add-warnings.js'
 import { toJson } from '../src/ontology/ea/ea-to-json.js'
+import { toTurtle } from '../src/ontology/templates/turtle-template.js'
 import { narrowToEpo } from '../src/ontology/views/epo-views.js'
 
 expect.extend({ toMatchSnapshot })
 
-const withWarnings = x => x.warnings.length > 0
+const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
 
-describe('add-warnings', () => {
+describe('write-shacl', () => {
   const assetsPath = UNDER_REVIEW.localDirectory
   const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
 
-  const json = toJson({ databasePath })
-  const epoJson = narrowToEpo(json)
+  const jsonExport = toJson({ databasePath })
 
-  it(`adds warnings for ${assetsPath}`, function () {
-    const warnings = {
-      nodes: epoJson.nodes.map(addNodeWarnings).filter(withWarnings),
-      edges: epoJson.edges.map(addEdgeWarnings).filter(withWarnings),
+  it(`generates shacl for ${assetsPath}`, function () {
+
+    const { nodes, edges } = narrowToEpo(jsonExport)
+    const epoOntology = {
+      nodes: nodes.map(addNodeWarnings).filter(hasNoErrors),
+      edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
     }
-    expect(warnings).toMatchSnapshot(this)
+
+    const uglyTurtle = toTurtle(epoOntology)
+
+    expect(uglyTurtle).toMatchSnapshot(this)
   })
 })
 

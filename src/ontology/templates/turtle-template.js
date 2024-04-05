@@ -1,15 +1,15 @@
 import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
 
 const nodeTemplate = ({ name, description }) => `${name}
-        ${skosDefinition(description)}
+        ${skosDefinitionTemplate(description)}
         a owl:Class .
         `
 
 const literalTemplate = ({
-  source, predicate, target, description, min, max,
+  source, predicate, target, description, quantifiers,
 }) => `
     ${predicate} a owl:DatatypeProperty ;
-        ${skosDefinition(description)}
+        ${skosDefinitionTemplate(description)}
         rdfs:domain  ${source} ;
         rdfs:range  ${target} .
 
@@ -18,16 +18,15 @@ const literalTemplate = ({
       sh:property [
         sh:path ${predicate} ;
         sh:datatype ${target} ;
-        ${min ? `sh:minCount ${min} ;` : ''}
-        ${max ? `sh:maxCount ${max} ;` : ''}
+        ${quantifiersTemplate(quantifiers)}
       ] .
     `
 
 const objectTemplate = ({
-  source, predicate, target, description, min, max,
+  source, predicate, target, description, quantifiers,
 }) => `
     ${predicate} a owl:ObjectProperty ;
-        ${skosDefinition(description)}
+        ${skosDefinitionTemplate(description)}
         rdfs:domain  ${source} ;
         rdfs:range  ${target} .
 
@@ -36,8 +35,7 @@ const objectTemplate = ({
       sh:property [
         sh:path ${predicate} ;
         sh:nodeKind sh:IRI ;
-        ${min ? `sh:minCount ${min} ;` : ''}
-        ${max ? `sh:maxCount ${max} ;` : ''}
+        ${quantifiersTemplate(quantifiers)}
          sh:targetClass ${target} ;
       ] .
     `
@@ -46,7 +44,7 @@ const subclassTemplate = ({ source, predicate, target }) => `
     ${source} rdfs:subClassOf ${target} .
     `
 
-function getTurtle ({ nodes, edges }) {
+function toTurtle ({ nodes, edges }) {
   const classDefinitions = nodes.map(nodeTemplate)
 
   const relations = edges.map(edge => {
@@ -107,11 +105,18 @@ function shapeIRI ({ source, predicate, target }) {
   return `${source}Shape`
 }
 
-function skosDefinition (def) {
+const quantifiersTemplate = ({
+  min, max, quantifiersDeclared,
+}) => `
+${quantifiersDeclared && max ? `sh:minCount ${min} ;` : ''}
+${quantifiersDeclared && max ? `sh:maxCount ${max} ;` : ''}
+`
+
+function skosDefinitionTemplate (def) {
   // return def ? `skos:definition """${def}"""" ;` : ''
   return def ? `skos:definition "${(def.split(/\s+/).
     map(x => x.trim()).
     join(' ')).replaceAll('"', '')}" ;` : ''
 }
 
-export { getTurtle }
+export { toTurtle }

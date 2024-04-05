@@ -21,16 +21,17 @@ function toJson ({ databasePath }) {
 
   const literals = reader.getTable('t_attribute').
     getData().
-    map(x => ({
-      source: nodeIndex[x.Object_ID],
-      predicate: x.Name,
-      target: x.Type,
-      min: x.LowerBound,
-      max: x.UpperBound === '*' ? undefined : x.UpperBound,
-      noQuantifiers: !(x.LowerBound || x.UpperBound),
-      description: x.Notes,
-      type: ATTRIBUTE,
-    }))
+    map(x => {
+      const { Object_ID, Name, Type, LowerBound, UpperBound, Notes } = x
+      return {
+        type: ATTRIBUTE,
+        source: nodeIndex[Object_ID],
+        predicate: Name,
+        target: Type,
+        quantifiers: getQuantifierFromBounds({ LowerBound, UpperBound }),
+        description: Notes,
+      }
+    })
 
   const relations = reader.getTable('t_connector').
     getData().
@@ -61,11 +62,12 @@ function toJson ({ databasePath }) {
       }
 
       return {
+        type,
         source,
         predicate,
-        target, ...parseQuantifierString(DestCard),
+        target,
+        quantifiers: getQuantifierFromString(DestCard),
         description: Notes,
-        type,
       }
     })
   const edges = [...literals, ...relations]
@@ -73,17 +75,28 @@ function toJson ({ databasePath }) {
   return { nodes, edges }
 }
 
-function parseQuantifierString (str) {
+function getQuantifierFromBounds ({ LowerBound, UpperBound }) {
+
+  return !(LowerBound || UpperBound) ? {
+    quantifiersDeclared: false,
+  } : {
+    min: LowerBound,
+    max: UpperBound === '*' ? undefined : UpperBound,
+    quantifiersDeclared: true,
+  }
+}
+
+function getQuantifierFromString (str) {
   if (str === '0..1') {
-    return { min: 0, max: 1 }
+    return { min: 0, max: 1, quantifiersDeclared: true }
   } else if (str === '1') {
-    return { min: 1, max: 1 }
+    return { min: 1, max: 1, quantifiersDeclared: true }
   } else if (str === '1..*') {
-    return { min: 1 }
+    return { min: 1, quantifiersDeclared: true }
   } else if (str === '0..*') {
-    return {}
+    return { quantifiersDeclared: true }
   } else return {
-    noQuantifiers: true,
+    quantifiersDeclared: false,
   }
 }
 

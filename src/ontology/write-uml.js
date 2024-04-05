@@ -2,7 +2,7 @@ import { writeFileSync } from 'fs'
 import { UNDER_REVIEW } from '../config.js'
 import { addEdgeWarnings, addNodeWarnings } from './ea/add-warnings.js'
 import { toJson } from './ea/ea-to-json.js'
-import { getPlantUML } from './templates/plantuml-template.js'
+import { toPlantuml } from './templates/plantuml-template.js'
 import { narrowToEpoClasses } from './views/epo-views.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
@@ -34,7 +34,7 @@ const epoOntology = {
   edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
 }
 
-const plantUML = getPlantUML(epoOntology)
+const plantUML = toPlantuml(epoOntology)
 const plantumlPath = `assets/epo.plantuml`
 writeFileSync(plantumlPath, plantUML)
 console.log('wrote', plantumlPath)

@@ -1,11 +1,8 @@
-import fs from 'fs'
-import { Parser } from 'n3'
-import rdf from 'rdf-ext'
 import { UNDER_REVIEW } from '../config.js'
-import { prettyPrintTurtle } from '../io/serialization.js'
+import { writePrettyTurtle } from '../io/assets.js'
 import { addEdgeWarnings, addNodeWarnings } from './ea/add-warnings.js'
 import { toJson } from './ea/ea-to-json.js'
-import { getTurtle } from './templates/turtle-template.js'
+import { toTurtle } from './templates/turtle-template.js'
 import { narrowToEpo } from './views/epo-views.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
@@ -20,25 +17,19 @@ const epoOntology = {
   edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
 }
 
-async function exportToTurtle ({ json, path }) {
-  const turtle = getTurtle(json)
-  const dataset = rdf.dataset().addAll([...new Parser().parse(turtle)])
-  const pretty = await prettyPrintTurtle({ dataset })
-  fs.writeFileSync(path, pretty)
-  console.log('wrote', dataset.size, 'quads at', path)
-}
+await writePrettyTurtle(toTurtle(epoOntology), `assets/epo.ttl`)
 
-for (const module of new Set(
-  epoOntology.nodes.map(x => x.name.split(':')[0]))) {
+const allPrefixes = new Set(epoOntology.nodes.map(x => x.name.split(':')[0]))
+for (const module of allPrefixes) {
   const epoModule = {
     nodes: epoOntology.nodes.filter(x => x.name.startsWith(`${module}:`)),
     edges: epoOntology.edges.filter(x => x.source.startsWith(`${module}:`) ||
       (x.predicate && x.predicate.startsWith(`${module}:`))),
   }
-  await exportToTurtle({ json: epoModule, path: `assets/${module}.ttl` })
+  await writePrettyTurtle(toTurtle(epoModule), `assets/${module}.ttl`)
 }
 
-await exportToTurtle({ json: epoOntology, path: `assets/epo-all.ttl` })
+
 
 
 

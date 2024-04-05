@@ -1,0 +1,2655 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`write-plantuml generates plantuml for assets/ePO/develop 1`] = `
+"
+@startuml
+class \\"epo:RequestForClarification\\" {
+  
+}
+
+class \\"epo-sub:ESPDResponse\\" {
+    epo-sub:providesInformationOn org:Organization
+  epo-sub:relatesToESPDRequest epo-acc:ESPDRequest
+  epo-sub:refersToOtherESPDResponse epo-sub:ESPDResponse
+  epo:answersExclusionGround epo:ExclusionGround
+  epo:answersSelectionCriteria epo:SelectionCriterion
+  epo-sub:specifiesResponse epo-sub:Response
+}
+
+class \\"epo:ExpressionOfInterest\\" {
+  
+}
+
+class \\"epo:RequestForParticipation\\" {
+  
+}
+
+class \\"epo:Estimate\\" {
+  
+}
+
+class \\"epo:SubcontractingEstimate\\" {
+    dct:description rdf:PlainLiteral
+  epo:hasEstimatedPercentage xsd:decimal
+  epo:hasSubjectMatter rdf:PlainLiteral
+  epo:hasSubcontractingEstimatedValue epo:MonetaryValue
+}
+
+class \\"epo:ConcessionEstimate\\" {
+    epo:hasCalculationMethod rdf:PlainLiteral
+  epo:hasEstimatedBuyerConcessionRevenue epo:MonetaryValue
+  epo:hasEstimatedUserConcessionRevenue epo:MonetaryValue
+  epo:hasConcessionEstimatedValue epo:MonetaryValue
+}
+
+class \\"epo-ord:Originator\\" {
+  
+}
+
+class \\"epo-ful:Carrier\\" {
+  
+}
+
+class \\"epo-ord:OrderResponse\\" {
+    epo-ord:hasResponseDescription rdf:PlainLiteral
+  epo-ord:specifiesBuyer epo:Buyer
+  epo-ord:specifiesOrderResponseInformation epo-ord:OrderResponseInformation
+  epo-ord:implementsContract epo:Contract
+  epo-ord:specifiesSeller epo-ord:Seller
+  epo-ord:comprisesOrderResponseLine epo-ord:OrderResponseLine
+  epo-ord:isSubmittedForOrder epo-ord:Order
+}
+
+class \\"epo:AwardOutcome\\" {
+    epo:hasAwardStatus at-voc:winner-selection-status
+  epo:comprisesTenderAwardOutcome epo:TenderAwardOutcome
+  epo:hasAwardedValue epo:MonetaryValue
+  epo:hasNonAwardJustification at-voc:non-award-justification
+  epo:hasBargainPrice epo:MonetaryValue
+}
+
+class \\"epo:AccessTerm\\" {
+    epo:isProcurementDocumentRestricted xsd:boolean
+  epo:hasAdditionalInformationDeadline xsd:dateTime
+  epo:hasRestrictedAccessURL xsd:anyURI
+  epo:hasPublicAccessURL xsd:anyURI
+  epo:definesCatalogueProvider epo:CatalogueProvider
+  epo:involvesProcurementDocument epo:ProcurementDocument
+  epo:hasDocumentRestrictionJustification at-voc:communication-justification
+  epo:definesProcurementProcedureInformationProvider epo:ProcurementProcedureInformationProvider
+  epo:definesOfflineAccessProvider epo:OfflineAccessProvider
+  epo:refersToPlannedPart epo:PlannedProcurementPart
+  epo:definesCatalogueReceiver epo:CatalogueReceiver
+}
+
+class \\"epo:AwardCriterion\\" {
+    epo:hasFixedValue xsd:decimal
+  epo:hasAwardCriteriaStatedInProcurementDocuments xsd:boolean
+  epo:hasFixedValueType at-voc:number-fixed
+  epo:hasAwardCriterionType at-voc:award-criterion-type
+}
+
+class \\"epo:AwardDecision\\" {
+    epo:hasAwardDecisionDate xsd:dateTime
+  epo:hasAdditionalNonAwardJustification rdf:PlainLiteral
+  epo:comprisesAwardOutcome epo:AwardOutcome
+}
+
+class \\"epo:Business\\" {
+    epo:isListedCompany xsd:boolean
+  epo:hasBeneficialOwner person:Person
+  epo:hasBusinessSize at-voc:economic-operator-size
+}
+
+class \\"epo:Buyer\\" {
+    epo:isContractingEntity xsd:boolean
+  epo:hasActivityDescription rdf:PlainLiteral
+  epo:hasBuyerProfile xsd:anyURI
+  epo:signsAwardDecision epo:AwardDecision
+  epo:delegatesAncillaryActivitiesTo epo:ProcurementServiceProvider
+  epo:exposesInvoiceeChannel cv:Channel
+  epo:indicatesInvoiceeContactPoint cpov:ContactPoint
+}
+
+class \\"epo:LotSpecificTerm\\" {
+  
+}
+
+class \\"epo:CentralPurchasingBody\\" {
+  
+}
+
+class \\"epo:Contract\\" {
+    epo:hasContractConclusionDate xsd:date
+  epo:hasEntryIntoForceDate xsd:date
+  epo:isFundedBy epo:Fund
+  epo:specifiesDeliverable epo-con:Deliverable
+  epo:signedByContractor epo:Contractor
+  epo:hasContractValue epo:MonetaryValue
+  epo:hasPurpose epo:Purpose
+  epo:hasEstimatedDuration epo:Duration
+  epo:hasLotReference epo:Lot
+  epo:includesTender epo:Tender
+  epo:bindsContractor epo:Contractor
+  epo:isSubjectToContractSpecificTerm epo:ContractSpecificTerm
+  epo:signedByBuyer epo:Buyer
+  epo:bindsBuyer epo:Buyer
+  epo-ord:hasTaxInformation epo-ord:TaxInformation
+}
+
+class \\"epo:Contractor\\" {
+    epo:needsToBeAWinner epo:Winner
+}
+
+class \\"epo:ContractTerm\\" {
+    epo:hasOptions xsd:boolean
+  epo:hasEOrdering xsd:boolean
+  epo:hasEPayment xsd:boolean
+  epo:hasEInvoicing xsd:boolean
+  epo:isRenewalIndicator xsd:boolean
+  epo:hasMaximumNumberOfRenewals xsd:integer
+  epo:hasRenewalDescription rdf:PlainLiteral
+  epo:hasPaymentArrangement rdf:PlainLiteral
+  epo:hasPlaceOfPerformanceAdditionalInformation rdf:PlainLiteral
+  epo:hasPerformanceConditions rdf:PlainLiteral
+  epo:hasOptionsDescription rdf:PlainLiteral
+  epo:hasLegalFormRequirement rdf:PlainLiteral
+  epo:definesContractPeriod epo:Period
+  epo:definesContractDuration epo:Duration
+  epo:definesSpecificPlaceOfPerformance dct:Location
+  epo:definesPaymentExecutor epo:PaymentExecutor
+  epo:hasEInvoicingPermission at-voc:permission
+  epo:hasAdditionalContractNature at-voc:contract-nature
+  epo:hasContractNatureType at-voc:contract-nature
+  epo:definesSubcontractingTerm epo:SubcontractTerm
+  epo:hasBroadPlaceOfPerformance at-voc:other-place-service
+  epo:hasReservedExecution at-voc:applicability
+}
+
+class \\"epo:DesignContestRegimeTerm\\" {
+    epo:hasDescriptionOfPrizes rdf:PlainLiteral
+  epo:isJuryDecisionBinding xsd:boolean
+  epo:hasParticipationPayment rdf:PlainLiteral
+  epo:hasFollowupContract xsd:boolean
+  epo:hasFollowupContractInformation rdf:PlainLiteral
+  epo:definesPrize epo:Prize
+}
+
+class \\"epo:DirectAwardTerm\\" {
+    epo:hasJustification rdf:PlainLiteral
+  epo:refersToPreviousProcedure epo:Procedure
+  epo:refersToPreviousProcedureLot epo:Lot
+  epo:hasDirectAwardJustification at-voc:direct-award-justification
+}
+
+class \\"epo:Document\\" {
+    epo:hasAccessURL xsd:anyURI
+  dct:title rdf:PlainLiteral
+  epo:hasReceptionDate xsd:date
+  epo:hasDispatchDate xsd:dateTime
+  epo:hasPublicationDate xsd:date
+  dct:issued xsd:dateTime
+  epo:hasVersion rdf:PlainLiteral
+  dct:description rdf:PlainLiteral
+  adms:identifier adms:Identifier
+  epo:hasUUID adms:Identifier
+  epo:hasElectronicSignature epo:ElectronicSignature
+  epo:refersToPrevious epo:Document
+  epo:hasUnofficialLanguage at-voc:language
+  epo:hasOfficialLanguage at-voc:language
+  epo:associatedWith epo:Document
+  epo:hasElectronicDigest epo:Document
+}
+
+class \\"epo:DynamicPurchaseSystemTechnique\\" {
+    epo:hasDPSScope at-voc:dps-usage
+}
+
+class \\"epo:EAuctionTechnique\\" {
+  
+}
+
+class \\"epo:OfferingParty\\" {
+  
+}
+
+class \\"epo:AcquiringCentralPurchasingBody\\" {
+  
+}
+
+class \\"epo:ReviewRequester\\" {
+  
+}
+
+class \\"epo-ful:DespatchAdvice\\" {
+    epo-ful:specifiesDespatcher epo-ful:Despatcher
+  epo-ful:specifiesConsignee epo-ord:Consignee
+  epo-ful:specifiesOriginator epo-ord:Originator
+  epo-ful:refersToOrder epo-ord:Order
+  epo-ful:comprisesDespatchLine epo-ful:DespatchLine
+  epo-ful:specifiesShipment epo-ful:ShipmentInformation
+  epo-ful:specifiesTransportHandlingUnits epo-ful:TransportHandlingUnit
+  epo-ful:hasAssociatedDocument epo:Document
+  epo-ful:refersToConsignment epo-ful:Consignment
+  epo-ful:hasDespatchAdviceType at-voc-new:despatch-advice-type
+  epo-ful:refersToShipmentAgreement epo-ful:ShipmentAgreement
+}
+
+class \\"epo-not:PreMarketConsultationNotice\\" {
+  
+}
+
+class \\"epo:EvaluationTerm\\" {
+  
+}
+
+class \\"epo:ExclusionGround\\" {
+  
+}
+
+class \\"epo:FrameworkAgreement\\" {
+    epo:resultsFromLotAwardOutcome epo:LotAwardOutcome
+}
+
+class \\"epo:FrameworkAgreementTechnique\\" {
+  
+}
+
+class \\"epo:FrameworkAgreementTerm\\" {
+    epo:hasMaximumParticipantsNumber xsd:integer
+  epo:hasBuyerCategoryDescription rdf:PlainLiteral
+  epo:hasDurationExtensionJustification rdf:PlainLiteral
+  epo:hasFrameworkAgreementType at-voc:framework-agreement
+}
+
+class \\"epo:Fund\\" {
+    dct:description rdf:PlainLiteral
+  dct:title rdf:PlainLiteral
+  epo:hasURL xsd:anyURI
+  epo:hasFundProgramme at-voc:EU-programme
+  adms:identifier adms:Identifier
+}
+
+class \\"epo:GreenProcurement\\" {
+    epo:usesCleanVehicleDirective xsd:boolean
+  epo:fulfillsRequirement at-voc:green-public-procurement-criteria
+  epo:fulfillsRequirement at-voc:environmental-impact
+}
+
+class \\"epo:CatalogueReceiver\\" {
+  
+}
+
+class \\"epo:CatalogueProvider\\" {
+  
+}
+
+class \\"epo:AwardingCentralPurchasingBody\\" {
+  
+}
+
+class \\"epo:ContractLotCompletionInformation\\" {
+    epo:hasPaymentValueDiscrepancyJustification rdf:PlainLiteral
+  epo:refersToContract epo:Contract
+  epo:describesLotCompletion epo:Lot
+  epo:providesContractTotalPaymentValue epo:MonetaryValue
+  epo:providesContractTotalPenaltyValue epo:MonetaryValue
+}
+
+class \\"epo:InnovativeProcurement\\" {
+    epo:fulfillsRequirement at-voc:innovative-acquisition
+}
+
+class \\"epo:Lot\\" {
+    epo:specifiesProcurementCriterion epo:ProcurementCriterion
+  epo:isSubjectToLotSpecificTerm epo:LotSpecificTerm
+}
+
+class \\"epo:LotGroup\\" {
+    dct:title rdf:PlainLiteral
+  dct:description rdf:PlainLiteral
+  epo:specifiesProcurementCriterion epo:ProcurementCriterion
+  epo:hasInternalIdentifier adms:Identifier
+  epo:hasLaunchFrameworkAgreementMaximumValue epo:MonetaryValue
+  epo:hasEstimatedValue epo:MonetaryValue
+  epo:setsGroupingContextForLot epo:Lot
+  adms:identifier adms:Identifier
+}
+
+class \\"epo:Mediator\\" {
+  
+}
+
+class \\"epo:MultipleStageProcedureTerm\\" {
+    epo:hasQualificationSystemRenewalDescription rdf:PlainLiteral
+  epo:hasMaximumNumberOfCandidates xsd:integer
+  epo:hasSuccessiveReduction xsd:boolean
+  epo:hasMinimumNumberOfCandidates xsd:integer
+  epo:hasEstimatedInvitationToTenderDate xsd:date
+  epo:hasNoNegotiationNecessary xsd:boolean
+  epo:hasEstimatedInvitationToExpressInterestDate xsd:date
+  epo:hasQualificationSystemDuration epo:Duration
+}
+
+class \\"epo:Notice\\" {
+    epo:hasAdditionalInformation rdf:PlainLiteral
+  epo:hasOJSIssueNumber xsd:integer
+  epo:hasOJSType rdf:PlainLiteral
+  epo:hasNoticePublicationNumber rdf:PlainLiteral
+  epo:hasFormNumber rdf:PlainLiteral
+  epo:hasEFormsSubtype xsd:integer
+  epo:hasESenderDispatchDate xsd:dateTime
+  epo:refersToLot epo:Lot
+  epo:refersToNotice epo:Notice
+  epo:isBasedOnImplementingRegulation at-voc:legal-basis
+  epo:hasNoticeType at-voc:notice-type
+  epo:conformsToLegalBasis at-voc:legal-basis
+  epo:hasFormType at-voc:form-type
+  epo:refersToProcedure epo:Procedure
+}
+
+class \\"epo:OpeningTerm\\" {
+    epo:hasOpeningURL xsd:anyURI
+  epo:hasOpeningDateTime xsd:dateTime
+  epo:hasOpeningDescription rdf:PlainLiteral
+  epo:definesOpeningPlace locn:Address
+}
+
+class \\"epo:OrganisationGroup\\" {
+    epo:hasGroupType rdf:PlainLiteral
+  epo:leadBy org:Organization
+  epo:hasMember org:Organization
+}
+
+class \\"epo:VehicleInformation\\" {
+    epo:hasTotalVehicles xsd:integer
+  epo:hasZeroEmissionVehicles xsd:integer
+  epo:hasCleanVehicles xsd:integer
+  epo:specifiesCleanVehicleDirectiveContractType at-voc:cvd-contract-type
+  epo:specifiesCleanVehicleDirectiveVehicleCategory at-voc:vehicle-category
+  epo:concernsGreenProcurement epo:GreenProcurement
+}
+
+class \\"epo:NonPublishedInformation\\" {
+    epo:hasAccessibilityDate xsd:date
+  epo:hasConfidentialityJustification rdf:PlainLiteral
+  epo:concernsNotice epo:Notice
+  epo:relatesToEFormSectionIdentifier adms:Identifier
+  epo:hasNonPublicationJustification at-voc:non-publication-justification
+}
+
+class \\"epo-con:ContractModificationInformation\\" {
+    epo:hasModificationDescription rdf:PlainLiteral
+  epo:hasModificationReasonDescription rdf:PlainLiteral
+  epo:relatesToEFormSectionIdentifier adms:Identifier
+  epo:concernsContractAmendment epo-con:ContractAmendment
+  epo:hasModificationJustification at-voc:modification-justification
+}
+
+class \\"epo-con:ContractAmendment\\" {
+    epo:updatesContractValue epo:MonetaryValue
+  epo:amendsContract epo:Contract
+}
+
+class \\"epo:Period\\" {
+    epo:hasBeginning xsd:dateTime
+  epo:hasEnd xsd:dateTime
+  epo:hasTimePeriod at-voc:timeperiod
+}
+
+class \\"epo:PlannedProcurementPart\\" {
+    epo:foreseesProcurementObject epo:ProcurementObject
+  epo:hasPlannedPeriod epo:Period
+  epo:hasPlannedDuration epo:Duration
+  epo:foreseesTechnique epo:Technique
+}
+
+class \\"epo:SelectionEvaluationTerm\\" {
+  
+}
+
+class \\"epo:AwardEvaluationTerm\\" {
+    epo:hasAwardCriteriaOrderJustification rdf:PlainLiteral
+  epo:hasAwardCriteriaEvaluationFormula rdf:PlainLiteral
+  epo:hasOverallQualityAwardCriteriaPonderation xsd:decimal
+  epo:hasOverallPriceAwardCriteriaPonderation xsd:decimal
+  epo:hasOverallCostAwardCriteriaPonderation xsd:decimal
+}
+
+class \\"epo:ReviewTerm\\" {
+    epo:hasReviewProcedure rdf:PlainLiteral
+  epo:hasReviewDeadline xsd:dateTime
+  epo:hasReviewDeadlineInformation rdf:PlainLiteral
+  epo:definesReviewProcedureInformationProvider epo:ReviewProcedureInformationProvider
+  epo:definesReviewer epo:Reviewer
+}
+
+class \\"epo-ord:OrderResponseInformation\\" {
+    epo-ord:isSpecificToOrderResponseLine epo-ord:OrderResponseLine
+  epo-ord:hasDeliveryPeriod epo:Period
+  epo-ord:hasAcceptanceStatus at-voc-new:ResponseStatus
+}
+
+class \\"epo-cat:PostAwardDocument\\" {
+    epo-cat:hasDocumentType at-voc-new:document-type
+  epo:hasDocumentStatus at-voc-new:document-status
+}
+
+class \\"epo:Prize\\" {
+    epo:hasPrizeRank xsd:integer
+  epo:hasPrizeValue epo:MonetaryValue
+}
+
+class \\"epo:Procedure\\" {
+    epo:isDesignContest xsd:boolean
+  epo:isJointProcurement xsd:boolean
+  epo:isAccelerated xsd:boolean
+  epo:hasAcceleratedProcedureJustification rdf:PlainLiteral
+  epo:hasMainFeature rdf:PlainLiteral
+  epo:involvesBuyer epo:Buyer
+  epo:isExecutedByProcurementServiceProvider epo:ProcurementServiceProvider
+  epo:isSubjectToProcedureSpecificTerm epo:ProcedureSpecificTerm
+  epo:hasProcedureType at-voc:procurement-procedure-type
+  epo:isResponsibilityOfBuyer epo:Buyer
+  epo:hasProcurementScopeDividedIntoLot epo:Lot
+  epo:specifiesProcurementCriteriaSummary epo:ProcurementCriteriaSummary
+}
+
+class \\"epo-cat:Catalogue\\" {
+    epo-cat:hasSpecificPaymentArrangement rdf:PlainLiteral
+  epo:specifiesCatalogueReceiver epo:CatalogueReceiver
+  epo:specifiesCatalogueProvider epo:CatalogueProvider
+  epo-cat:isSubordinatedToContract epo:Contract
+  epo-cat:comprisesCatalogueLine epo-cat:CatalogueLine
+  epo:specifiesBuyer epo:Buyer
+  epo-cat:hasActivityCode at-voc-new:activity-code
+  epo:specifiesSeller epo-ord:Seller
+  epo:hasValidityPeriod epo:Period
+}
+
+class \\"epo:ParticipationRequestTerm\\" {
+    epo:definesParticipationRequestReceiver epo:ParticipationRequestReceiver
+  epo:definesParticipationRequestProcessor epo:ParticipationRequestProcessor
+}
+
+class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
+  
+}
+
+class \\"epo-not:PIN-CFCStandardNotice\\" {
+  
+}
+
+class \\"epo-not:PIN-CFCSocialNotice\\" {
+  
+}
+
+class \\"epo-not:QSNotice\\" {
+  
+}
+
+class \\"epo-not:CNStandardNotice\\" {
+  
+}
+
+class \\"epo-not:CNSocialNotice\\" {
+  
+}
+
+class \\"epo-not:DesignContestNotice\\" {
+  
+}
+
+class \\"epo-not:CANStandardNotice\\" {
+  
+}
+
+class \\"epo:ProcedureTerm\\" {
+    epo:hasCrossBorderLaw rdf:PlainLiteral
+  epo:isAwardedByCPB xsd:boolean
+  epo:isSubmissionForAllLotsRequired xsd:boolean
+  epo:isOneLotOnlyAllowed xsd:boolean
+  epo:hasLotAwardCombination rdf:PlainLiteral
+  epo:hasNationalProcedureRules xsd:anyURI
+  epo:hasMaximumLotSubmissionAllowed xsd:integer
+  epo:hasMaximumNumberOfLotsToBeAwarded xsd:integer
+  epo:hasGroupLotEvaluationMethod rdf:PlainLiteral
+  epo:definesInformationProvider epo:AuxiliaryParty
+  epo:definesMediator epo:Mediator
+  epo:definesLotGroup epo:LotGroup
+  epo:definesBudgetProvider epo:BudgetProvider
+}
+
+class \\"epo:ProcurementCriterion\\" {
+    epo:hasAdditionalInformation rdf:PlainLiteral
+  epo:hasFormula rdf:PlainLiteral
+  epo:hasPerformingStaffQualificationInformation at-voc:requirement-stage
+  epo:hasWeightValueType at-voc:number-weight
+  epo:hasConstraint cccev:Constraint
+}
+
+class \\"epo:TenderGroup\\" {
+    dct:title rdf:PlainLiteral
+  dct:description rdf:PlainLiteral
+  epo:isSubmittedForLotGroup epo:LotGroup
+  adms:identifier adms:Identifier
+  epo:comprisesTender epo:Tender
+  epo:hasTotalValue epo:MonetaryValue
+}
+
+class \\"epo:Duration\\" {
+  
+}
+
+class \\"epo-ord:Consignee\\" {
+  
+}
+
+class \\"epo:ProcurementDocument\\" {
+  
+}
+
+class \\"epo:ProcurementServiceProvider\\" {
+    epo:actsOnBehalfOf epo:Buyer
+}
+
+class \\"epo-cat:CatalogueLine\\" {
+    epo-cat:isOrderable xsd:boolean
+  epo-cat:hasOrderableUnitFactorRate xsd:decimal
+  epo-cat:hasOrderableQuantityIncrement xsd:integer
+  epo-cat:hasWarrantyInformation rdf:PlainLiteral
+  epo-cat:isContractedItem xsd:boolean
+  epo-cat:hasTransactionConditions rdf:PlainLiteral
+  epo-cat:hasCatalogueLineValidity epo:Period
+  epo-cat:hasMaximumOrderQuantity epo:Quantity
+  epo-cat:hasMinimumQuantityGuaranteedForDelivery epo:Quantity
+  epo-cat:hasOrderableUnit at-voc-new:orderable-unit
+  epo-cat:hasTransactionConditionsCode at-voc-new:transaction-conditions
+  epo-cat:hasPrice epo-cat:Price
+  epo-cat:hasActivityCode at-voc-new:activity-code
+  epo-cat:hasStandardisedUnitPrice epo-cat:Price
+  epo-cat:foreseesPackage epo-ful:Package
+  epo-cat:hasChargeInformation epo-cat:ChargeInformation
+}
+
+class \\"epo:ProcedureSpecificTerm\\" {
+  
+}
+
+class \\"epo-cat:ItemRequirement\\" {
+  
+}
+
+class \\"epo:NonDisclosureAgreementTerm\\" {
+    dct:description rdf:PlainLiteral
+  epo:isNonDisclosureAgreementRequired xsd:boolean
+}
+
+class \\"epo:PurchaseContract\\" {
+    epo:followsRulesSetBy epo:FrameworkAgreement
+  epo:resultsFromMiniCompetitionAwardOutcome epo:MiniCompetitionAwardOutcome
+}
+
+class \\"epo:Purpose\\" {
+    epo:hasAdditionalClassification at-voc:cpv
+  epo:hasMainClassification at-voc:cpv
+  epo:hasTotalQuantity epo:Quantity
+}
+
+class \\"epo:Reviewer\\" {
+    epo:hasReviewBodyType at-voc:review-body-type
+}
+
+class \\"epo:Offer\\" {
+  
+}
+
+class \\"epo:SecurityClearanceTerm\\" {
+    epo:hasDeadline xsd:dateTime
+  dct:description rdf:PlainLiteral
+  epo:isSecurityClearanceRequired xsd:boolean
+}
+
+class \\"epo:SelectionCriterion\\" {
+    epo:isUsedForCandidateRestriction xsd:boolean
+  epo:hasSelectionCriteriaUsage at-voc:usage
+  epo:hasSelectionCriterionType at-voc:selection-criterion
+}
+
+class \\"epo:SocialProcurement\\" {
+    epo:fulfillsRequirement at-voc:social-objective
+}
+
+class \\"epo:StatisticalInformation\\" {
+  
+}
+
+class \\"epo:StrategicProcurement\\" {
+    epo:hasStrategicProcurementDescription rdf:PlainLiteral
+  epo:hasNonAccessibilityCriterionJustification rdf:PlainLiteral
+  epo:includesAccessibilityCriterion at-voc:accessibility
+}
+
+class \\"epo:Subcontractor\\" {
+  
+}
+
+class \\"epo:SubcontractTerm\\" {
+    dct:description rdf:PlainLiteral
+  epo:hasMaximumShare xsd:decimal
+  epo:hasMinimumShare xsd:decimal
+  epo:hasSubcontractingInvolved xsd:boolean
+  epo:hasMinimumSubcontractorsProposedObligation xsd:decimal
+  epo:hasSubcontractorsProposedAboveObligation xsd:decimal
+  epo:hasSubcontractingObligation at-voc:subcontracting-obligation
+}
+
+class \\"epo:SubmissionTerm\\" {
+    epo:hasSubmissionURL xsd:anyURI
+  epo:hasEAuctionURL xsd:anyURI
+  epo:hasReceiptPreliminaryMarketConsultationDeadline xsd:dateTime
+  epo:hasReceiptParticipationRequestDeadline xsd:dateTime
+  epo:hasReceiptTenderDeadline xsd:dateTime
+  epo:hasReceiptExpressionDeadline xsd:dateTime
+  epo:hasReceiptDeadline xsd:dateTime
+  epo:isGuaranteeRequired xsd:boolean
+  epo:hasGuaranteeDescription rdf:PlainLiteral
+  epo:hasNonElectronicSubmissionDescription rdf:PlainLiteral
+  epo:isAdvancedElectronicSignatureRequired xsd:boolean
+  epo:isMultipleTenderSubmissionAllowed xsd:boolean
+  epo:hasLateSubmissionInformationDescription rdf:PlainLiteral
+  epo:hasLanguage at-voc:language
+  epo:hasECataloguePermission at-voc:permission
+  epo:hasTenderSubcontractingInformation at-voc:subcontracting-indication
+  epo:hasESubmissionPermission at-voc:permission
+  epo:hasNonElectronicSubmissionJustification at-voc:communication-justification
+  epo:definesTenderProcessor epo:TenderProcessor
+  epo:definesTenderReceiver epo:TenderReceiver
+  epo:hasLateSubmissionPermission at-voc:missing-info-submission
+  epo:hasTenderValidityPeriod epo:Period
+  epo:hasTenderValidityDuration epo:Duration
+  epo:hasVariantPermission at-voc:permission
+}
+
+class \\"epo:System\\" {
+    dct:description rdf:PlainLiteral
+  epo:isOwnedByAgent foaf:Agent
+}
+
+class \\"epo:TechnicalSpecification\\" {
+  
+}
+
+class \\"epo:Technique\\" {
+    dct:description rdf:PlainLiteral
+  epo:hasValidityPeriod epo:Period
+  epo:hasUsage at-voc:usage
+}
+
+class \\"epo:Tenderer\\" {
+    epo:substantiatesExclusionGround epo:ExclusionGround
+}
+
+class \\"epo:Tender\\" {
+    epo:hasElectronicSubmission xsd:boolean
+  epo:isVariant xsd:boolean
+  epo:hasFinancialOfferValue epo:MonetaryValue
+  epo:isSubmitedBy epo:Tenderer
+  epo:foreseesConcession epo:ConcessionEstimate
+  epo:hasSubcontracting at-voc:applicability
+  epo:foreseesSubcontracting epo:SubcontractingEstimate
+  epo:hasItemCountryOfOrigin at-voc:country
+  epo:specifiesSubcontractors epo:Subcontractor
+  epo:isSubjectToGrouping epo:LotGroup
+  epo:isSubmittedForLot epo:Lot
+  epo:isSupportedBy epo-sub:ESPDResponse
+}
+
+class \\"epo:MonetaryValue\\" {
+    epo:hasCurrencyCodeListAgencyID rdf:PlainLiteral
+  epo:hasCurrencyCodeListAgencyName rdf:PlainLiteral
+  epo:hasCurrencyCodeListID rdf:PlainLiteral
+  epo:hasAmountValue xsd:decimal
+  epo:hasCurrency at-voc:currency
+}
+
+class \\"epo:Winner\\" {
+    epo:needsToBeATenderer epo:Tenderer
+}
+
+class \\"epo-cat:Item\\" {
+    dct:description rdf:PlainLiteral
+  dct:title rdf:PlainLiteral
+  epo-cat:hasKeyword rdf:PlainLiteral
+  epo-cat:isInStock xsd:boolean
+  epo-cat:hasDimensionDescription rdf:PlainLiteral
+  epo-cat:hasHazardousClass rdf:PlainLiteral
+  epo-cat:hasBrand epo-cat:Brand
+  epo-cat:hasQualifiedItemRelation epo-cat:ItemRelation
+  epo-cat:hasModel epo-cat:ItemModel
+  epo-cat:hasItemClassification at-voc-new:item-classification
+  dct:hasPart epo-cat:Item
+  epo:hasManufacturerItemID adms:Identifier
+  epo:hasSellerItemID adms:Identifier
+  epo:hasItemStandardID adms:Identifier
+  epo-cat:hasNetQuantity epo:Quantity
+  epo-cat:hasCountryOfOrigin at-voc:country
+  epo-cat:hasDeliveryClassification at-voc-new:delivery-item-type
+  epo:hasCertification epo:Certificate
+  epo-cat:hasAccessoryItem epo-cat:Item
+  dct:isReplacedBy epo-cat:Item
+  epo-cat:hasSpecification epo-cat:ProductSpecification
+  epo-cat:hasComplementaryItem epo-cat:Item
+  epo-cat:hasManufacturer epo-cat:Manufacturer
+  epo-cat:hasHazardousItemUNDGCode at-voc-new:dangerous-goods-list
+  dct:requires epo-cat:Item
+  epo:hasBuyerItemID adms:Identifier
+  epo-cat:hasExternalSpecification epo:Document
+  epo:hasSerialID adms:Identifier
+  epo-ord:hasTaxInformation epo-ord:TaxInformation
+}
+
+class \\"epo:JuryMember\\" {
+    epo:playedBy person:Person
+}
+
+class \\"epo:ProcurementProcedureInformationProvider\\" {
+  
+}
+
+class \\"epo-not:PlanningNotice\\" {
+    epo:announcesRole epo:AgentInRole
+  epo:announcesPlannedProcurementPart epo:PlannedProcurementPart
+}
+
+class \\"epo-not:CompetitionNotice\\" {
+    epo:announcesRole epo:AgentInRole
+  epo:announcesProcedure epo:Procedure
+  epo:announcesLot epo:Lot
+  epo:announcesLotGroup epo:LotGroup
+}
+
+class \\"epo:Quantity\\" {
+    epo:hasQuantityValue xsd:decimal
+  epo:hasUnitDescription rdf:PlainLiteral
+  epo:hasUnitCode at-voc:measurement-unit
+}
+
+class \\"epo-not:DirectAwardPrenotificationNotice\\" {
+    epo:announcesNoticeAwardInformation epo:NoticeAwardInformation
+  epo:announcesProcedure epo:Procedure
+  epo:announcesLot epo:Lot
+  epo:announcesLotGroup epo:LotGroup
+  epo:announcesLotGroupAwardInformation epo:LotGroupAwardInformation
+  epo:announcesContract epo:Contract
+  epo:announcesRole epo:AgentInRole
+  epo:announcesAwardDecision epo:AwardDecision
+}
+
+class \\"epo-not:ResultNotice\\" {
+    epo:announcesLotGroupAwardInformation epo:LotGroupAwardInformation
+  epo:announcesContract epo:Contract
+  epo:refersToProcedure epo:Procedure
+  epo:refersToLot epo:Lot
+  epo-not:announcesRole epo:AgentInRole
+  epo:announcesNoticeAwardInformation epo:NoticeAwardInformation
+  epo:announcesAwardDecision epo:AwardDecision
+  epo:refersToLotGroup epo:LotGroup
+  epo-not:refersToRole epo:AgentInRole
+}
+
+class \\"epo-not:ContractModificationNotice\\" {
+    epo:refersToContractToBeModified epo:Contract
+  epo:announcesContractAmendment epo-con:ContractAmendment
+  epo:refersToProcedure epo:Procedure
+  epo:announcesRole epo:AgentInRole
+  epo:refersToNoticeAwardInformation epo:NoticeAwardInformation
+  epo:refersToLotGroup epo:LotGroup
+  epo:refersToLotGroupAwardInformation epo:LotGroupAwardInformation
+  epo:refersToAwardDecision epo:AwardDecision
+  epo:refersToLot epo:Lot
+}
+
+class \\"epo-not:CompletionNotice\\" {
+    epo:announcesCompletionOfContract epo:Contract
+  epo:refersToProcedure epo:Procedure
+  epo:refersToAwardDecision epo:AwardDecision
+  epo:refersToLot epo:Lot
+  epo:refersToLotGroup epo:LotGroup
+  epo:refersToLotGroupAwardInformation epo:LotGroupAwardInformation
+  epo:refersToNoticeAwardInformation epo:NoticeAwardInformation
+  epo:refersToRole epo:AgentInRole
+  epo:announcesRole epo:AgentInRole
+  epo:announcesReviewObject epo:ReviewObject
+}
+
+class \\"epo-cat:Price\\" {
+    epo-cat:hasDeliveryLocation dct:Location
+  epo-cat:hasPriceValidity epo:Period
+  epo-cat:hasNetMonetaryValue epo:MonetaryValue
+  epo-cat:hasOrderabableUnitFactorRate epo:Quantity
+  epo-cat:hasQuantityThreshold epo:Quantity
+  epo-cat:hasExpectedDeliveryTime epo:Duration
+  epo-cat:hasBaseQuantity epo:Quantity
+  epo:hasPriceSurchargeInformation epo-cat:ChargeInformation
+  epo-cat:hasPriceType at-voc-new:price-type
+  epo-ord:hasPriceDiscountInformation epo-ord:AllowanceInformation
+}
+
+class \\"epo-ful:Despatcher\\" {
+  
+}
+
+class \\"epo-ord:Seller\\" {
+  
+}
+
+class \\"epo-not:PINProfileNotice\\" {
+  
+}
+
+class \\"epo-not:PINOnlyNotice\\" {
+  
+}
+
+class \\"epo-not:PINTimeLimitNotice\\" {
+  
+}
+
+class \\"epo-ful:ShipmentInformation\\" {
+    epo-ful:despatchDate xsd:dateTime
+  dct:description rdf:PlainLiteral
+  epo-ful:specifiesPlaceOfDespatch dct:Location
+  epo-ful:isSpecificToDespatchLine epo-ful:DespatchLine
+  adms:identifier adms:Identifier
+  epo-ful:hasEstimatedDeliveryPeriod epo:Period
+  epo-ful:refersToDeliveryInformation epo-ord:DeliveryInformation
+}
+
+class \\"epo:OriginatorRequest\\" {
+  
+}
+
+class \\"epo-not:CANSocialNotice\\" {
+  
+}
+
+class \\"epo-not:DesignContestResultNotice\\" {
+  
+}
+
+class \\"epo-not:Notice10\\" {
+  
+}
+
+class \\"epo-not:Notice11\\" {
+  
+}
+
+class \\"epo-ful:TransportHandlingUnit\\" {
+    epo-ful:hasShippingMark rdf:PlainLiteral
+  epo-ful:hasHandlingInstruction rdf:PlainLiteral
+  epo-ful:transportsItemFrom epo-ful:DespatchLine
+  epo-ful:usesTransportEquipment epo-ful:TransportEquipment
+  epo-ful:hasHandlingInstructionCode at-voc-new:handling-instruction
+}
+
+class \\"epo-not:Notice25\\" {
+  
+}
+
+class \\"epo-not:Notice26\\" {
+  
+}
+
+class \\"epo-not:Notice27\\" {
+  
+}
+
+class \\"epo-not:Notice28\\" {
+  
+}
+
+class \\"epo-not:Notice29\\" {
+  
+}
+
+class \\"epo-not:Notice30\\" {
+  
+}
+
+class \\"epo-not:Notice31\\" {
+  
+}
+
+class \\"epo-not:Notice32\\" {
+  
+}
+
+class \\"epo-not:Notice33\\" {
+  
+}
+
+class \\"epo-not:Notice34\\" {
+  
+}
+
+class \\"epo-not:Notice35\\" {
+  
+}
+
+class \\"epo-not:Notice36\\" {
+  
+}
+
+class \\"epo-not:Notice37\\" {
+  
+}
+
+class \\"epo-not:Notice12\\" {
+  
+}
+
+class \\"epo-not:Notice13\\" {
+  
+}
+
+class \\"epo-not:Notice14\\" {
+  
+}
+
+class \\"epo-not:Notice15\\" {
+  
+}
+
+class \\"epo-not:Notice16\\" {
+  
+}
+
+class \\"epo-not:Notice17\\" {
+  
+}
+
+class \\"epo-not:Notice18\\" {
+  
+}
+
+class \\"epo-not:Notice19\\" {
+  
+}
+
+class \\"epo-not:Notice20\\" {
+  
+}
+
+class \\"epo-not:Notice21\\" {
+  
+}
+
+class \\"epo-not:Notice22\\" {
+  
+}
+
+class \\"epo-not:Notice23\\" {
+  
+}
+
+class \\"epo-not:Notice24\\" {
+  
+}
+
+class \\"epo-not:Notice38\\" {
+  
+}
+
+class \\"epo-not:Notice39\\" {
+  
+}
+
+class \\"epo-not:Notice40\\" {
+  
+}
+
+class \\"epo-not:Notice1\\" {
+  
+}
+
+class \\"epo-not:Notice2\\" {
+  
+}
+
+class \\"epo-not:Notice3\\" {
+  
+}
+
+class \\"epo-not:Notice4\\" {
+  
+}
+
+class \\"epo-not:Notice5\\" {
+  
+}
+
+class \\"epo-not:Notice6\\" {
+  
+}
+
+class \\"epo-not:Notice7\\" {
+  
+}
+
+class \\"epo-not:Notice8\\" {
+  
+}
+
+class \\"epo-not:Notice9\\" {
+  
+}
+
+class \\"epo-not:VEAT-D24\\" {
+  
+}
+
+class \\"epo-not:Modification-D24\\" {
+  
+}
+
+class \\"epo-not:SocialAndOtherSpecificServices-D24\\" {
+  
+}
+
+class \\"epo-not:PINOnly-D25\\" {
+  
+}
+
+class \\"epo-not:CNSocial-D25\\" {
+  
+}
+
+class \\"epo-not:CANSocial-D25\\" {
+  
+}
+
+class \\"epo-not:QS-D25\\" {
+  
+}
+
+class \\"epo-not:PINProfile-D25\\" {
+  
+}
+
+class \\"epo-not:DesignContest-D25\\" {
+  
+}
+
+class \\"epo-not:DesignContestResult-D25\\" {
+  
+}
+
+class \\"epo-not:VEAT-D25\\" {
+  
+}
+
+class \\"epo-not:StandardForm\\" {
+  
+}
+
+class \\"epo-not:eFormsNotice\\" {
+  
+}
+
+class \\"epo:PaymentExecutor\\" {
+  
+}
+
+class \\"epo:BudgetProvider\\" {
+  
+}
+
+class \\"epo:ParticipationRequestProcessor\\" {
+  
+}
+
+class \\"epo:ParticipationRequestReceiver\\" {
+  
+}
+
+class \\"epo:TenderReceiver\\" {
+  
+}
+
+class \\"epo:TenderProcessor\\" {
+  
+}
+
+class \\"epo:OfflineAccessProvider\\" {
+  
+}
+
+class \\"epo:ReviewProcedureInformationProvider\\" {
+  
+}
+
+class \\"epo-ful:DespatchLine\\" {
+    epo-ful:hasOutstandingQuantityReason rdf:PlainLiteral
+  epo-ful:refersToOrderLine epo-ord:OrderLine
+  epo-ful:hasDespatchedQuantity epo:Quantity
+  epo-ful:hasOutstandingQuantity epo:Quantity
+  epo-ful:hasAssociatedDocument epo:Document
+}
+
+class \\"epo-not:Modification-D25\\" {
+  
+}
+
+class \\"epo-not:PIN-CFCSocialNotice-D25\\" {
+  
+}
+
+class \\"epo-not:PIN-RTL-D24\\" {
+  
+}
+
+class \\"epo-not:PIN-CFCStandard-D24\\" {
+  
+}
+
+class \\"epo-not:PIN-RTL-D25\\" {
+  
+}
+
+class \\"epo-not:PIN-CFCSocial-D25\\" {
+  
+}
+
+class \\"epo-not:VEAT-D23\\" {
+  
+}
+
+class \\"epo-not:Modification-D23\\" {
+  
+}
+
+class \\"epo-not:SocialAndOtherSpecificServices-D23\\" {
+  
+}
+
+class \\"epo-not:ConcessionNotice-D23\\" {
+  
+}
+
+class \\"epo-not:ConcessionAwardNotice-D23\\" {
+  
+}
+
+class \\"epo-not:PINOnly-D24\\" {
+  
+}
+
+class \\"epo-not:CNStandard-D24\\" {
+  
+}
+
+class \\"epo-not:CANStandard-D24\\" {
+  
+}
+
+class \\"epo-not:PINProfile-D24\\" {
+  
+}
+
+class \\"epo-not:DesignContest-D24\\" {
+  
+}
+
+class \\"epo-not:DesignContestResult-D24\\" {
+  
+}
+
+class \\"epo:Term\\" {
+  
+}
+
+class \\"epo:TenderAwardOutcome\\" {
+    epo:hasAwardRank xsd:integer
+  epo:concernsTender epo:Tender
+  epo:indicatesAwardToWinner epo:Winner
+}
+
+class \\"epo:LotAwardOutcome\\" {
+    epo:hasNonAwardedContractTitle rdf:PlainLiteral
+  epo:hasNonAwardedContractNumber rdf:PlainLiteral
+  epo:concernsLot epo:Lot
+  epo:hasFrameworkAgreementMaximumValue epo:MonetaryValue
+  epo:hasApproximateFrameworkAgreementValue epo:MonetaryValue
+}
+
+class \\"epo:ReviewRequestSummary\\" {
+    epo:hasTotalNumberOfComplainants xsd:integer
+  epo:concernsReviewSummaryForLot epo:Lot
+  epo:hasReviewIrregularitySummary epo:ReviewIrregularitySummary
+}
+
+class \\"epo:LotGroupAwardInformation\\" {
+    epo:hasGroupFrameworkAgreementMaximumValue epo:MonetaryValue
+  epo:describesLotGroup epo:LotGroup
+}
+
+class \\"epo:NoticeAwardInformation\\" {
+    epo:describesDirectAwardPrenotificationNotice epo-not:DirectAwardPrenotificationNotice
+  epo:hasApproximateFrameworkAgreementValue epo:MonetaryValue
+  epo:hasTotalAwardedValue epo:MonetaryValue
+  epo:hasMaximumFrameworkAgreementAwardedValue epo:MonetaryValue
+  epo:describesResultNotice epo-not:ResultNotice
+  epo:hasProcurementLowestReceivedTenderValue epo:MonetaryValue
+  epo:hasProcurementHighestReceivedTenderValue epo:MonetaryValue
+}
+
+class \\"epo:ReviewDecision\\" {
+    epo:hasDecisionDate xsd:date
+  epo:hasConfirmedIrregularityType at-voc:irregularity-type
+  epo:hasReviewDecisionType at-voc:review-decision-type
+  epo:hasRemedyValue epo:MonetaryValue
+  epo:resolvesReviewRequest epo:ReviewRequest
+  epo:providesRulingOnRemedy at-voc:remedy-type
+}
+
+class \\"epo-cat:ProductSpecification\\" {
+  
+}
+
+class \\"epo:AgentInRole\\" {
+    dct:description rdf:PlainLiteral
+  dct:title rdf:PlainLiteral
+  epo:hasContactPointInRole cpov:ContactPoint
+  epo:playedBy foaf:Agent
+  epo:contextualisedBy epo:ProcurementObject
+  epo:exposesChannel cv:Channel
+}
+
+class \\"epo:TaxInformationProvider\\" {
+  
+}
+
+class \\"epo:EmploymentInformationProvider\\" {
+  
+}
+
+class \\"epo:EnvironmentalProtectionInformationProvider\\" {
+  
+}
+
+class \\"epo:Awarder\\" {
+  
+}
+
+class \\"epo:ReviewRequest\\" {
+    epo:hasRequestDate xsd:date
+  epo:hasNumberOfReviewRequests xsd:integer
+  epo:isWithdrawn xsd:boolean
+  epo:hasWithdrawalDate xsd:date
+  epo:hasWithdrawalReason rdf:PlainLiteral
+  epo:hasAllegedIrregularityType at-voc:irregularity-type
+  epo:requestsRemedyType at-voc:remedy-type
+  epo:hasReviewRequestFee epo:MonetaryValue
+}
+
+class \\"epo:SubmissionStatisticalInformation\\" {
+    epo:hasNonEUReceivedTenders xsd:integer
+  epo:hasEUReceivedTenders xsd:integer
+  epo:hasOtherCountriesReceivedTenders xsd:integer
+  epo:hasEEAReceivedTenders xsd:integer
+  epo:hasReceivedParticipationRequests xsd:integer
+  epo:hasNonEEAReceivedTenders xsd:integer
+  epo:hasSMEReceivedTenders xsd:integer
+  epo:hasReceivedMicroTenders xsd:integer
+  epo:hasReceivedSmallTenders xsd:integer
+  epo:hasMediumTenderPerLots xsd:integer
+  epo:hasReceivedTenders xsd:integer
+  epo:hasInadmissibleTenders xsd:integer
+  epo:hasAbnormallyLowTenders xsd:integer
+  epo:hasUnverifiedTenders xsd:integer
+  epo:hasElectronicTenders xsd:integer
+  epo:hasEstimatedTotalSubcontracts xsd:integer
+  epo:hasNumberOfTenderersInvited xsd:integer
+  epo:hasSMEReceivedTendersExcludingSubcontractors xsd:integer
+  epo:hasLowestReceivedTenderValue epo:MonetaryValue
+  epo:hasReceivedSubmissionType at-voc:received-submission-type
+  epo:hasHighestReceivedTenderValue epo:MonetaryValue
+  epo:summarisesInformationForAwardOutcome epo:AwardOutcome
+}
+
+class \\"epo-not:PINProfile-D81\\" {
+  
+}
+
+class \\"epo-not:VEAT-D81\\" {
+  
+}
+
+class \\"epo-not:PINDefence-D81\\" {
+  
+}
+
+class \\"epo-not:CNDefence-D81\\" {
+  
+}
+
+class \\"epo-not:CANDefence-D81\\" {
+  
+}
+
+class \\"epo-not:Subcontract-D81\\" {
+  
+}
+
+class \\"epo-not:StandardFormsNotice\\" {
+  
+}
+
+class \\"epo-not:SubcontractNotice\\" {
+  
+}
+
+class \\"epo-cat:ItemComposition\\" {
+  
+}
+
+class \\"epo-cat:ItemProperty\\" {
+    epo-cat:hasAttributeType rdf:PlainLiteral
+  epo-cat:hasClassificationScheme rdf:PlainLiteral
+  epo-cat:hasLiteralValue rdf:PlainLiteral
+  epo-cat:hasQualifiedValue epo:Quantity
+  epo-cat:describesItem epo-cat:Item
+}
+
+class \\"epo:ProcurementObject\\" {
+    epo:isSMESuitable xsd:boolean
+  epo:isUsingEUFunds xsd:boolean
+  epo:isRecurrent xsd:boolean
+  epo:hasRecurrenceDescription rdf:PlainLiteral
+  epo:isCoveredByGPA xsd:boolean
+  epo:hasAdditionalInformation rdf:PlainLiteral
+  epo:hasLegalBasisDescription rdf:PlainLiteral
+  epo:isSubjectToTerm epo:Term
+  epo:hasPurpose epo:Purpose
+  epo:isFundedBy epo:Fund
+  epo:foreseesContractSpecificTerm epo:ContractSpecificTerm
+  epo:hasLegalBasis at-voc:legal-basis
+  epo:fulfillsStrategicProcurement epo:StrategicProcurement
+  epo:hasLaunchFrameworkAgreementMaximumValue epo:MonetaryValue
+  epo:usesTechnique epo:Technique
+  epo:foreseesConcession epo:ConcessionEstimate
+}
+
+class \\"epo-ord:OrderLine\\" {
+    epo-ord:refersToCatalogueLine epo-cat:CatalogueLine
+  epo-cat:hasQuantity epo:Quantity
+  epo-cat:hasPrice epo-cat:Price
+}
+
+class \\"epo-ord:AllowanceInformation\\" {
+    epo-ord:isSpecificToOrderLine epo-ord:OrderLine
+}
+
+class \\"epo-ord:AllowanceChargeInformation\\" {
+    epo-cat:hasPercentage xsd:decimal
+  epo-ful:hasAllowanceChargeReasonDescription rdf:PlainLiteral
+  epo-cat:hasAmount epo:MonetaryValue
+  epo-ful:hasAllowanceChargeReason at-voc-new:allowance-charge-reason
+  epo:isCalculatedOn epo:MonetaryValue
+  epo-ord:hasTaxInformation epo-ord:TaxInformation
+}
+
+class \\"epo-cat:Manufacturer\\" {
+    epo:hasManufacturerID adms:Identifier
+}
+
+class \\"epo:ContextDescription\\" {
+  
+}
+
+class \\"epo:ContextualProjection\\" {
+  
+}
+
+class \\"epo-cat:Batch\\" {
+    epo-cat:hasManufactureDate xsd:dateTime
+  epo-cat:hasExpiryDate xsd:date
+  epo-cat:hasBestBeforeDate xsd:date
+  epo-cat:isProductionOf epo-cat:Item
+  epo:hasBatchID adms:Identifier
+}
+
+class \\"epo-cat:Brand\\" {
+    dct:title rdf:PlainLiteral
+}
+
+class \\"epo-cat:ItemModel\\" {
+    dct:title rdf:PlainLiteral
+}
+
+class \\"epo-not:QSNotice-D25\\" {
+  
+}
+
+class \\"epo-not:CNSocialNotice-D25\\" {
+  
+}
+
+class \\"epo-not:CANSocialNotice-D25\\" {
+  
+}
+
+class \\"epo-acc:ESPDRequest\\" {
+    epo:specifiesProcurementCriterion epo:ProcurementCriterion
+  epo-acc:refersToNotice epo:Notice
+  epo:concernsProcedure epo:Procedure
+}
+
+class \\"epo:ChangeInformation\\" {
+    epo:hasChangeDescription rdf:PlainLiteral
+  epo:isProcurementDocumentChanged xsd:boolean
+  epo:hasChangeReasonDescription rdf:PlainLiteral
+  epo:hasProcurementDocumentChangeDate xsd:dateTime
+  epo:hasAdditionalInformation rdf:PlainLiteral
+  epo:refersToPreviousNotice epo:Notice
+  epo:relatesToEFormSectionIdentifier adms:Identifier
+  epo:concernsNotice epo:Notice
+  epo:hasChangeJustification at-voc:change-corrig-justification
+}
+
+class \\"epo:ReviewObject\\" {
+    epo:hasElementReference xsd:anyURI
+  epo:hasReviewURL xsd:anyURI
+  epo:refersToPreviousReview epo:ReviewObject
+}
+
+class \\"epo:ReviewIrregularitySummary\\" {
+    epo:hasReviewIrregularityCount xsd:integer
+  epo:hasIrregularityType at-voc:irregularity-type
+}
+
+class \\"epo-ful:ReceiptAdvice\\" {
+    epo-ful:comprisesReceiptAdviceLine epo-ful:ReceiptAdviceLine
+  epo-ful:isSubmittedForDespatchAdvice epo-ful:DespatchAdvice
+  epo-ful:isSubmittedForShipment epo-ful:ShipmentInformation
+  epo-ful:specifiesDespatcher epo-ful:Despatcher
+  epo-ful:specifiesConsignee epo-ord:Consignee
+  epo-ful:specifiesBuyer epo:Buyer
+  epo-ful:specifiesSeller epo-ord:Seller
+  epo-ful:hasAssociatedDocument epo:Document
+}
+
+class \\"epo-ful:ReceiptAdviceLine\\" {
+    epo-ful:hasShortageAction at-voc-new:action-code
+  epo-ful:RejectionAction at-voc-new:action-code
+  epo-ful:hasRejectReason at-voc-new:reject-reason
+  epo-ful:hasShortQuantity epo:Quantity
+  epo-ful:hasReceivedQuantity epo:Quantity
+  epo-ful:hasOversupplyQuantity epo:Quantity
+  epo:hasRejectedQuantity epo:Quantity
+  epo-ful:isSubmittedForDespatchLine epo-ful:DespatchLine
+}
+
+class \\"epo-cat:ItemReplacement\\" {
+  
+}
+
+class \\"epo-sub:NationalPreQualificationData\\" {
+    epo-sub:providesOrganisationCompletedTaskDescription rdf:PlainLiteral
+  epo-sub:concernsOrganisation org:Organization
+  epo-sub:providesOrganisationEmployeeQuantity epo:Quantity
+  epo-sub:providesOrganisationFinancialCapability epo:MonetaryValue
+  epo-sub:providesOrganisationPreQualificationListingIdentifier adms:Identifier
+}
+
+class \\"epo-sub:Response\\" {
+    epo-sub:answersQuestion cccev:InformationRequirement
+  epo-sub:isReinforcedBy cccev:Evidence
+  cccev:supportsValue cccev:SupportedValue
+  cccev:confidentialityLevelType at-voc:access-rights
+  epo-sub:refersToApplicablePeriod epo:Period
+}
+
+class \\"epo-cat:CatalogueResponse\\" {
+    epo-cat:comprisesCatalogueResponseLine epo-cat:CatalogueResponseLine
+  epo-cat:refersToCatalogue epo-cat:Catalogue
+  epo:specifiesCatalogueReceiver epo:CatalogueReceiver
+  epo:specifiesCatalogueProvider epo:CatalogueProvider
+  epo-cat:specifiesCatalogueResponseInformation epo-cat:CatalogueResponseInformation
+}
+
+class \\"epo-cat:CatalogueResponseLine\\" {
+    epo-cat:refersToCatalogueLine epo-cat:CatalogueLine
+  epo:hasUUID adms:Identifier
+}
+
+class \\"epo-cat:CatalogueResponseInformation\\" {
+    epo-cat:isSpecificToCatalogueResponseLine epo-cat:CatalogueResponseLine
+  epo-ord:hasAcceptanceStatus at-voc-new:ResponseStatus
+}
+
+class \\"epo:ContractSpecificTerm\\" {
+  
+}
+
+class \\"epo:ConcessionContract\\" {
+  
+}
+
+class \\"epo:ProcessPlanningTerm\\" {
+    epo:hasAwardDateScheduled xsd:date
+  epo:hasEstimatedTenderInvitationDate xsd:date
+  epo:hasEstimatedContractNoticePublicationDate xsd:date
+}
+
+class \\"epo-cat:ItemRelation\\" {
+    epo-cat:hasFactor xsd:decimal
+  epo-cat:isRelatedToItem epo-cat:Item
+}
+
+class \\"epo-cat:ItemAccessoryRelation\\" {
+  
+}
+
+class \\"epo-cat:ItemComplementaryRelation\\" {
+  
+}
+
+class \\"epo:ProcurementProcessInformation\\" {
+    epo:isCompetitionTerminated xsd:boolean
+  epo:isToBeRelaunched xsd:boolean
+  epo:isDPSTerminated xsd:boolean
+  epo:concernsLot epo:Lot
+  epo:concernsProcedure epo:Procedure
+}
+
+class \\"epo:CertificationLabel\\" {
+    epo:hasReferenceURI xsd:anyURI
+  epo:hasLabelType at-voc-new:certification-label-type
+}
+
+class \\"epo:Certifier\\" {
+  
+}
+
+class \\"epo:Certificate\\" {
+    epo:hasCertificationNumber rdf:PlainLiteral
+  epo:attestedByLabel epo:CertificationLabel
+  epo:issuedByCertifier epo:Certifier
+}
+
+class \\"epo-cat:ChargeInformation\\" {
+    epo-ord:isSpecificToOrderLine epo-ord:OrderLine
+}
+
+class \\"epo-ord:DeliveryInformation\\" {
+    epo-ord:hasShippingMark rdf:PlainLiteral
+  epo-ord:hasDeliveryDeadline xsd:dateTime
+  epo-ord:concernsConsignee epo-ord:Consignee
+  epo-ord:specifiesPlaceOfDelivery dct:Location
+  epo-ord:hasDeliveryPeriod epo:Period
+  epo-ord:isSpecificToOrderLine epo-ord:OrderLine
+  epo-ord:specifiesGeneralDeliveryAgreement epo-ord:DeliveryAgreement
+  epo-ord:specifiesSpecificDeliveryAgreement epo-ord:DeliveryAgreement
+  epo-ful:hasTrackingID adms:Identifier
+}
+
+class \\"epo:AcquiringParty\\" {
+  
+}
+
+class \\"epo:AuxiliaryParty\\" {
+  
+}
+
+class \\"epo:OtherEntity\\" {
+  
+}
+
+class \\"epo:SpecificDuration\\" {
+    time:numericDuration xsd:decimal
+  time:unitType time:TemporalUnit
+}
+
+class \\"epo:IndefiniteDuration\\" {
+  
+}
+
+class \\"epo-ord:OrderResponseLine\\" {
+    epo-ord:isSubmittedForOrderLine epo-ord:OrderLine
+}
+
+class \\"epo:ProcurementElement\\" {
+    dct:description rdf:PlainLiteral
+  dct:title rdf:PlainLiteral
+  epo:usesChannel cv:Channel
+  epo:hasEstimatedValue epo:MonetaryValue
+  adms:identifier adms:Identifier
+  epo:hasInternalIdentifier adms:Identifier
+}
+
+class \\"epo:LeadBuyer\\" {
+  
+}
+
+class \\"epo-ord:ContractInformation\\" {
+    epo-ord:concernsContract epo:Contract
+  epo-ord:isSpecificToOrderLine epo-ord:OrderLine
+}
+
+class \\"epo-ord:OriginatorInformation\\" {
+    epo-ord:isSpecificToOrderLine epo-ord:OrderLine
+  epo-ord:concernsOriginator epo-ord:Originator
+  epo-ord:concernsOriginatorRequest epo:OriginatorRequest
+}
+
+class \\"epo-ord:DeliveryAgreement\\" {
+    dct:description rdf:PlainLiteral
+  epo-ord:specifiesDeliveryAgreementLocation dct:Location
+}
+
+class \\"epo:DirectContract\\" {
+    epo:resultsFromLotAwardOutcome epo:LotAwardOutcome
+}
+
+class \\"epo:AwardCriteriaSummary\\" {
+  
+}
+
+class \\"epo-ful:Consignment\\" {
+    epo-ful:hasVehicleDescription rdf:PlainLiteral
+  epo-ful:isHazardousRisk xsd:boolean
+  epo-ful:hasHandlingInstruction rdf:PlainLiteral
+  epo-ful:hasCarrierServiceInstruction rdf:PlainLiteral
+  epo-ful:hasSpecialInstruction rdf:PlainLiteral
+  epo-ful:hasDeliveryInstruction rdf:PlainLiteral
+  epo-ful:hasSpecialServiceInstruction rdf:PlainLiteral
+  epo-ful:hasGrossWeight epo:Quantity
+  epo-ful:hasGrossVolume epo:Quantity
+  epo-ful:hasHandlingInstructionCode at-voc-new:handling-instruction
+  epo-ful:hasCarrierConsignmentID adms:Identifier
+  epo-ful:hasNetWeight epo:Quantity
+  epo-ful:hasChargeableWeight epo:Quantity
+  epo-ful:hasConsignmentDeclaredStatisticsValue epo:MonetaryValue
+  epo-ful:hasConsignmentFreeOnBoardValue epo:MonetaryValue
+  epo:specifiesFreightForwarder epo-ful:FreightForwarder
+  epo-ful:containsTransportHandlingUnit epo-ful:TransportHandlingUnit
+  epo-ful:hasFreightAllowanceCharge epo-cat:ChargeInformation
+  adms:identifier adms:Identifier
+  epo-ful:hasRequestedPickUpInformation epo-ful:ShipmentInformation
+  epo-ful:hasTransportHandlingUnitQuantity epo:Quantity
+  epo:specifiesNotifier epo-ful:Notifier
+  epo-ful:hasMainCarriageShipmentStage epo-ful:ShipmentStage
+  epo-ful:hasPreCarriageShipmentStage epo-ful:ShipmentStage
+  epo-ful:hasOnCarriageShipmentStage epo-ful:ShipmentStage
+  epo-ful:hasConsigneeConsignmentID adms:Identifier
+  epo-ful:hasFreightForwarderConsignmentID adms:Identifier
+  epo-ful:hasTotalGoodsItemQuantity epo:Quantity
+  epo-ful:hasLoadingLength epo:Quantity
+  epo-ful:hasConsignmentInvoiceValue epo:MonetaryValue
+}
+
+class \\"epo-ful:FreightForwarder\\" {
+  
+}
+
+class \\"epo-ful:Notifier\\" {
+  
+}
+
+class \\"epo-ful:TransportEquipment\\" {
+    epo-ful:isReturnable xsd:boolean
+  epo-ful:isRefrigerated xsd:boolean
+  dct:description rdf:PlainLiteral
+  epo-ful:isPowerIndicated xsd:boolean
+  adms:identifier adms:Identifier
+  epo-ful:hasTransportEquipmentSeal epo-ful:TransportEquipmentSeal
+  epo-ful:hasTransportEquipmentType at-voc-new:transport-equipment-type
+  epo-ful:hasSizeType at-voc-new:size-type
+}
+
+class \\"epo-ful:Package\\" {
+    epo-ful:hasPackagingTypeDescription rdf:PlainLiteral
+  epo-ful:hasPackagingType at-voc-new:packaging-type
+  epo-ful:containsPackage epo-ful:Package
+  epo-ful:containsGoodsItem epo-ful:GoodsItem
+}
+
+class \\"epo-ful:ShipmentStage\\" {
+    epo-ful:isHazardousRisk xsd:boolean
+  epo:specifiesCarrier epo-ful:Carrier
+  epo-ful:usesTransportMeans epo-ful:TransportMeans
+  adms:identifier adms:Identifier
+  epo:hasArrivalShipmentInformation epo-ful:ShipmentInformation
+  epo-ful:hasDepartureShipmentInformation epo-ful:ShipmentInformation
+}
+
+class \\"epo-ful:TransportMeans\\" {
+    epo:hasDriverPerson epo-ful:TransportMeansOperator
+  epo-ful:hasTransportMode at-voc-new:transport-mode
+  epo-ful:hasVehicleID adms:Identifier
+  epo-ful:hasTransportMeansType at-voc-new:transport-means-type
+  epo-ful:hasVehicleSegmentID adms:Identifier
+}
+
+class \\"epo-ful:TransportEquipmentSeal\\" {
+    adms:identifier adms:Identifier
+}
+
+class \\"epo-ful:ShipmentAgreement\\" {
+    epo-ful:agreedByBuyer epo:Buyer
+  epo-ful:agreedBySeller epo-ord:Seller
+}
+
+class \\"epo:OfferIssuer\\" {
+    epo:distributesOffer epo:Offer
+}
+
+class \\"epo-cat:Line\\" {
+    dct:description rdf:PlainLiteral
+  epo-cat:specifiesItem epo-cat:Item
+  adms:identifier adms:Identifier
+}
+
+class \\"epo-cat:InformationHub\\" {
+    epo-cat:isSpecificToLine epo-cat:Line
+}
+
+class \\"epo:ParticipationCondition\\" {
+    epo:hasReservedProcurement at-voc:reserved-procurement
+}
+
+class \\"epo:ProcurementCriteriaSummary\\" {
+    epo:indicatesPerformingStaffInformationRequirement xsd:boolean
+}
+
+class \\"epo:ParticipationConditionsSummary\\" {
+    epo:describesObjectiveParticipationRules rdf:PlainLiteral
+  epo:describesVerificationMethod rdf:PlainLiteral
+  epo:hasReservedProcurement at-voc:reserved-procurement
+}
+
+class \\"epo:ExclusionGroundsSummary\\" {
+  
+}
+
+class \\"epo:SelectionCriteriaSummary\\" {
+    epo:hasSelectionCriteriaStatedInProcurementDocuments xsd:boolean
+  epo:describesMinimumLevelOfStandards rdf:PlainLiteral
+}
+
+class \\"epo-ful:GoodsItem\\" {
+    epo-ful:refersToDespatchLine epo-ful:DespatchLine
+  epo-ful:hasTraceID adms:Identifier
+  epo-ful:hasDeclaredStatisticalValue epo:MonetaryValue
+}
+
+class \\"epo-ord:TaxInformation\\" {
+    dct:description rdf:PlainLiteral
+  epo-cat:hasPercentage xsd:decimal
+  epo-cat:hasTaxCategory at-voc-new:tax-category
+  epo-cat:hasTaxScheme at-voc-new:tax-scheme
+  epo-cat:hasAmount epo:MonetaryValue
+  epo:isCalculatedOn epo:MonetaryValue
+}
+
+class \\"epo:Candidate\\" {
+  
+}
+
+class \\"epo-ful:TransportMeansOperator\\" {
+    epo:playedBy foaf:Person
+}
+
+class \\"epo-ful:AbstractContainer\\" {
+    epo-ful:isReturnableMaterial xsd:boolean
+  epo-ful:isHazardousRisk xsd:boolean
+  epo-ful:hasGrossWeight epo:Quantity
+  epo-ful:hasGrossVolume epo:Quantity
+  adms:identifier adms:Identifier
+  epo-ful:hasTotalGoodsItemQuantity epo:Quantity
+  epo-ful:hasNetVolume epo:Quantity
+  epo-ful:hasNetWeight epo:Quantity
+  epo-ful:hasTemperatureSpecification epo-ful:TemperatureSpecification
+  epo-ful:hasLength epo:Quantity
+  epo-ful:hasHeight epo:Quantity
+  epo-ful:hasWidth epo:Quantity
+}
+
+class \\"epo-ful:TemperatureSpecification\\" {
+    dct:description rdf:PlainLiteral
+  epo-ful:hasMinimumTemperature epo:Quantity
+  epo-ful:hasMaximumTemperature epo:Quantity
+}
+
+class \\"epo:Project\\" {
+    adms:identifier adms:Identifier
+}
+
+class \\"epo:SelectedCandidateList\\" {
+    epo:containsCandidate epo:Candidate
+  epo:hasStartDate epo:Period
+}
+
+class \\"epo:MiniCompetitionAwardOutcome\\" {
+    epo:resultsFromUsingCandidateList epo:SelectedCandidateList
+}
+
+class \\"epo:ElectronicSignature\\" {
+    dct:description rdf:PlainLiteral
+}
+
+class \\"epo:AdHocChannel\\" {
+  
+}
+
+class \\"epo-con:Deliverable\\" {
+    epo-cat:hasQuantity epo:Quantity
+  epo:hasTotalValue epo:MonetaryValue
+}
+
+class \\"epo-ord:Order\\" {
+    epo-ord:hasPaymentTerm rdf:PlainLiteral
+  epo-ord:hasCustomerReference xsd:boolean
+  epo-ord:hasAccountingCost rdf:PlainLiteral
+  epo:specifiesSeller epo-ord:Seller
+  epo-ord:refersToCatalogue epo-cat:Catalogue
+  epo-ord:specifiesDeliveryInformation epo-ord:DeliveryInformation
+  epo-ord:comprisesOrderLine epo-ord:OrderLine
+  epo-ord:specifiesContractInformation epo-ord:ContractInformation
+  epo-cat:specifiesChargeInformation epo-cat:ChargeInformation
+  epo:specifiesBuyer epo:Buyer
+  epo:specifiesDespatcher epo-ful:Despatcher
+  epo-ord:hasSellerOrderID adms:Identifier
+  epo-ord:specifiesAllowanceInformation epo-ord:AllowanceInformation
+  epo-ord:specifiesOriginatorInformation epo-ord:OriginatorInformation
+  epo:refersToProject epo:Project
+  epo-ord:hasTotalLineAmount epo:MonetaryValue
+  epo-ord:hasTotalTaxExclusiveAmount epo:MonetaryValue
+  epo-ord:hasTotalTaxInclusiveAmount epo:MonetaryValue
+  epo-ord:hasTotalAllowanceAmount epo:MonetaryValue
+  epo-ord:hasTotalChargeAmount epo:MonetaryValue
+  epo-ord:hasPrepaidAmount epo:MonetaryValue
+  epo-ord:hasRoundingAmount epo:MonetaryValue
+  epo-ord:hasAmountDueForPayment epo:MonetaryValue
+}
+
+class \\"epo-sub:LegalRepresentative\\" {
+    epo:actsOnBehalfOf epo:OfferingParty
+  epo-sub:hasPowerOfAttorney epo-sub:PowerOfAttorney
+  epo-sub:hasMandate epo-sub:Mandate
+}
+
+class \\"epo-sub:Mandate\\" {
+  
+}
+
+class \\"epo-sub:PowerOfAttorney\\" {
+  
+}
+
+class \\"epo:ProfessionalSuitabilitySummary\\" {
+    epo:describesProfessionRelevantLaw rdf:PlainLiteral
+  epo:hasServiceReservedToParticularProfession xsd:boolean
+  epo:describesProfession rdf:PlainLiteral
+}
+
+class \\"epo:EconomicStandingSummary\\" {
+  
+}
+
+class \\"epo:TechnicalAbilitySummary\\" {
+  
+}
+
+class \\"epo:QualificationCriteriaSummary\\" {
+    epo:hasQualificationCondition rdf:PlainLiteral
+  epo:hasConditionVerificationMethod rdf:PlainLiteral
+}
+
+class \\"epo:QualificationCriterion\\" {
+    epo:includesNationalCriterion epo:QualificationCriterion
+}
+
+class \\"epo-sub:CertificateInformation\\" {
+    dct:description rdf:PlainLiteral
+  epo-sub:coversAllSelectionCriteria xsd:boolean
+  epo-sub:summarisesInformationAboutCertificate epo:Certificate
+}
+
+\\"epo:Document\\" <|-- \\"epo-sub:ESPDResponse\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:Winner\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:Tenderer\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:OpeningTerm\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:ReviewRequester\\"
+\\"cccev:Criterion\\" <|-- \\"epo:ProcurementCriterion\\"
+\\"epo-not:ContractModificationNotice\\" <|-- \\"epo-not:Notice38\\"
+\\"epo-not:ContractModificationNotice\\" <|-- \\"epo-not:Notice39\\"
+\\"epo-not:ContractModificationNotice\\" <|-- \\"epo-not:Notice40\\"
+\\"epo:OfferingParty\\" <|-- \\"epo-ful:Despatcher\\"
+\\"epo:OfferingParty\\" <|-- \\"epo-ord:Seller\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo-ord:Consignee\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:SubmissionTerm\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:Buyer\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:NonDisclosureAgreementTerm\\"
+\\"epo:Estimate\\" <|-- \\"epo:ConcessionEstimate\\"
+\\"epo:Term\\" <|-- \\"epo:ProcedureSpecificTerm\\"
+\\"epo:Term\\" <|-- \\"epo:LotSpecificTerm\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:AccessTerm\\"
+\\"epo:ContractSpecificTerm\\" <|-- \\"epo:FrameworkAgreementTerm\\"
+\\"epo:ProcurementDocument\\" <|-- \\"epo:TechnicalSpecification\\"
+\\"cv:Channel\\" <|-- \\"epo:AdHocChannel\\"
+\\"epo-cat:Item\\" <|-- \\"epo-con:Deliverable\\"
+\\"foaf:Agent\\" <|-- \\"epo:System\\"
+\\"epo:Notice\\" <|-- \\"epo-not:PreMarketConsultationNotice\\"
+\\"epo-not:PlanningNotice\\" <|-- \\"epo-not:PINProfileNotice\\"
+\\"epo-not:PlanningNotice\\" <|-- \\"epo-not:PINOnlyNotice\\"
+\\"epo-not:PlanningNotice\\" <|-- \\"epo-not:PINTimeLimitNotice\\"
+\\"epo-not:PINProfileNotice\\" <|-- \\"epo-not:Notice1\\"
+\\"epo-not:PINProfileNotice\\" <|-- \\"epo-not:Notice2\\"
+\\"epo-not:PINProfileNotice\\" <|-- \\"epo-not:Notice3\\"
+\\"epo-not:PINOnlyNotice\\" <|-- \\"epo-not:Notice4\\"
+\\"epo-not:CompetitionNotice\\" <|-- \\"epo-not:DesignContestNotice\\"
+\\"epo-not:ResultNotice\\" <|-- \\"epo-not:CANStandardNotice\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice1\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice2\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice29\\"
+\\"epo-not:ResultNotice\\" <|-- \\"epo-not:CANSocialNotice\\"
+\\"epo-not:ResultNotice\\" <|-- \\"epo-not:DesignContestResultNotice\\"
+\\"epo-not:PIN-CFCStandardNotice\\" <|-- \\"epo-not:Notice10\\"
+\\"epo-not:PIN-CFCStandardNotice\\" <|-- \\"epo-not:Notice11\\"
+\\"epo:ContextualProjection\\" <|-- \\"epo:TenderAwardOutcome\\"
+\\"epo:Buyer\\" <|-- \\"epo:CentralPurchasingBody\\"
+\\"epo:StatisticalInformation\\" <|-- \\"epo:SubmissionStatisticalInformation\\"
+\\"epo-not:PINOnlyNotice\\" <|-- \\"epo-not:Notice5\\"
+\\"epo-not:PINOnlyNotice\\" <|-- \\"epo-not:Notice6\\"
+\\"epo-not:PINTimeLimitNotice\\" <|-- \\"epo-not:Notice7\\"
+\\"epo-not:PINTimeLimitNotice\\" <|-- \\"epo-not:Notice8\\"
+\\"epo-not:PINTimeLimitNotice\\" <|-- \\"epo-not:Notice9\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:Notice25\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:Notice26\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:Notice27\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:Notice28\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:ProcedureTerm\\"
+\\"epo-not:QSNotice\\" <|-- \\"epo-not:QSNotice-D25\\"
+\\"epo-not:CANStandardNotice\\" <|-- \\"epo-not:Notice29\\"
+\\"epo-not:CANStandardNotice\\" <|-- \\"epo-not:Notice30\\"
+\\"epo-not:CANStandardNotice\\" <|-- \\"epo-not:Notice31\\"
+\\"epo-not:CANStandardNotice\\" <|-- \\"epo-not:Notice32\\"
+\\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:Notice33\\"
+\\"epo-not:SubcontractNotice\\" <|-- \\"epo-not:Notice22\\"
+\\"epo-not:DesignContestNotice\\" <|-- \\"epo-not:Notice23\\"
+\\"epo-not:DesignContestNotice\\" <|-- \\"epo-not:Notice24\\"
+\\"epo-not:CompetitionNotice\\" <|-- \\"epo-not:PIN-CFCSocialNotice\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:PaymentExecutor\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:BudgetProvider\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:ParticipationRequestProcessor\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:ParticipationRequestReceiver\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:FrameworkAgreementTerm\\"
+\\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:Notice34\\"
+\\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:Notice35\\"
+\\"epo-not:DesignContestResultNotice\\" <|-- \\"epo-not:Notice36\\"
+\\"epo-not:DesignContestResultNotice\\" <|-- \\"epo-not:Notice37\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:TenderReceiver\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:TenderProcessor\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:ProcurementProcedureInformationProvider\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:OfflineAccessProvider\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:ReviewProcedureInformationProvider\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:NoticeAwardInformation\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:CatalogueReceiver\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:CatalogueProvider\\"
+\\"epo:Contract\\" <|-- \\"epo:ConcessionContract\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:ChangeInformation\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice3\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice4\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice5\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice6\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice7\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice8\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice9\\"
+\\"epo-ord:OrderLine\\" <|-- \\"epo-ord:OrderResponseLine\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-ord:TaxInformation\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:JuryMember\\"
+\\"epo:ContractSpecificTerm\\" <|-- \\"epo:SubcontractTerm\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:FrameworkAgreementTerm\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:DirectAwardTerm\\"
+\\"epo:AwardOutcome\\" <|-- \\"epo:LotAwardOutcome\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:ReviewTerm\\"
+\\"epo-not:PINProfileNotice\\" <|-- \\"epo-not:PINProfile-D81\\"
+\\"epo:ContextualProjection\\" <|-- \\"epo:AwardOutcome\\"
+\\"epo:Document\\" <|-- \\"epo-cat:PostAwardDocument\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:Estimate\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:NonPublishedInformation\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-ord:OrderResponseInformation\\"
+\\"epo:ContextDescription\\" <|-- \\"epo-con:ContractModificationInformation\\"
+\\"epo-not:PINOnlyNotice\\" <|-- \\"epo-not:PINOnly-D24\\"
+\\"epo-not:PINTimeLimitNotice\\" <|-- \\"epo-not:PIN-RTL-D24\\"
+\\"epo-not:CNStandardNotice\\" <|-- \\"epo-not:CNStandard-D24\\"
+\\"epo-not:CANStandardNotice\\" <|-- \\"epo-not:CANStandard-D24\\"
+\\"epo-not:PINProfileNotice\\" <|-- \\"epo-not:PINProfile-D24\\"
+\\"epo-not:ContractModificationNotice\\" <|-- \\"epo-not:Modification-D24\\"
+\\"epo-not:DesignContestResultNotice\\" <|-- \\"epo-not:DesignContestResult-D24\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:VEAT-D24\\"
+\\"epo-not:PINOnlyNotice\\" <|-- \\"epo-not:PINOnly-D25\\"
+\\"epo-not:PINTimeLimitNotice\\" <|-- \\"epo-not:PIN-RTL-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PIN-CFCSocial-D25\\"
+\\"epo-not:CNSocialNotice\\" <|-- \\"epo-not:CNSocial-D25\\"
+\\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:CANSocial-D25\\"
+\\"epo-not:DesignContestResultNotice\\" <|-- \\"epo-not:DesignContestResult-D25\\"
+\\"epo-not:ContractModificationNotice\\" <|-- \\"epo-not:Modification-D25\\"
+\\"epo-not:DesignContestNotice\\" <|-- \\"epo-not:DesignContest-D24\\"
+\\"epo-not:PlanningNotice\\" <|-- \\"epo-not:PINDefence-D81\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:DesignContest-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:DesignContest-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CNSocial-D25\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:VEAT-D25\\"
+\\"epo-not:PINProfileNotice\\" <|-- \\"epo-not:PINProfile-D25\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice21\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo:TaxInformationProvider\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo:EmploymentInformationProvider\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo:EnvironmentalProtectionInformationProvider\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:Awarder\\"
+\\"epo:CentralPurchasingBody\\" <|-- \\"epo:AcquiringCentralPurchasingBody\\"
+\\"epo:CentralPurchasingBody\\" <|-- \\"epo:AwardingCentralPurchasingBody\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:Subcontractor\\"
+\\"epo:StrategicProcurement\\" <|-- \\"epo:SocialProcurement\\"
+\\"epo:QualificationCriterion\\" <|-- \\"epo:SelectionCriterion\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:Reviewer\\"
+\\"epo-cat:PostAwardDocument\\" <|-- \\"epo-ord:OrderResponse\\"
+\\"epo:Contract\\" <|-- \\"epo:PurchaseContract\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:ProcurementServiceProvider\\"
+\\"epo:Document\\" <|-- \\"epo:ProcurementDocument\\"
+\\"epo:Term\\" <|-- \\"epo:ProcessPlanningTerm\\"
+\\"epo:QualificationCriterion\\" <|-- \\"epo:ExclusionGround\\"
+\\"epo:Notice\\" <|-- \\"epo-not:PlanningNotice\\"
+\\"epo:Notice\\" <|-- \\"epo-not:CompetitionNotice\\"
+\\"epo:Document\\" <|-- \\"epo:Notice\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo:Mediator\\"
+\\"epo:Notice\\" <|-- \\"epo-not:DirectAwardPrenotificationNotice\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-ord:DeliveryInformation\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:OpeningTerm\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:DesignContestRegimeTerm\\"
+\\"epo:StatisticalInformation\\" <|-- \\"epo:ReviewIrregularitySummary\\"
+\\"epo:Notice\\" <|-- \\"epo-not:ResultNotice\\"
+\\"epo:Estimate\\" <|-- \\"epo:SubcontractingEstimate\\"
+\\"epo:StrategicProcurement\\" <|-- \\"epo:InnovativeProcurement\\"
+\\"epo:Notice\\" <|-- \\"epo-not:ContractModificationNotice\\"
+\\"epo:Notice\\" <|-- \\"epo-not:CompletionNotice\\"
+\\"epo:StrategicProcurement\\" <|-- \\"epo:GreenProcurement\\"
+\\"epo:Technique\\" <|-- \\"epo:FrameworkAgreementTechnique\\"
+\\"epo:Contract\\" <|-- \\"epo:FrameworkAgreement\\"
+\\"epo:AgentInRole\\" <|-- \\"epo:OfferingParty\\"
+\\"epo:Technique\\" <|-- \\"epo:EAuctionTechnique\\"
+\\"epo:Technique\\" <|-- \\"epo:DynamicPurchaseSystemTechnique\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:ContractLotCompletionInformation\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:Contractor\\"
+\\"epo:ProcurementObject\\" <|-- \\"epo:Procedure\\"
+\\"org:Organization\\" <|-- \\"epo:OrganisationGroup\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo:Certifier\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" <|-- \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\"
+\\"epo-not:CompetitionNotice\\" <|-- \\"epo-not:PIN-CFCStandardNotice\\"
+\\"epo-not:CompetitionNotice\\" <|-- \\"epo-not:QSNotice\\"
+\\"epo-not:CompetitionNotice\\" <|-- \\"epo-not:CNStandardNotice\\"
+\\"epo-not:CompetitionNotice\\" <|-- \\"epo-not:SubcontractNotice\\"
+\\"epo-not:CompetitionNotice\\" <|-- \\"epo-not:CNSocialNotice\\"
+\\"epo-not:PIN-CFCSocialNotice\\" <|-- \\"epo-not:Notice12\\"
+\\"epo-not:PIN-CFCSocialNotice\\" <|-- \\"epo-not:Notice13\\"
+\\"epo-not:PIN-CFCSocialNotice\\" <|-- \\"epo-not:Notice14\\"
+\\"epo-not:QSNotice\\" <|-- \\"epo-not:Notice15\\"
+\\"epo-not:CNStandardNotice\\" <|-- \\"epo-not:Notice16\\"
+\\"epo-not:CNStandardNotice\\" <|-- \\"epo-not:Notice17\\"
+\\"epo-not:CNStandardNotice\\" <|-- \\"epo-not:Notice18\\"
+\\"epo-not:CNStandardNotice\\" <|-- \\"epo-not:Notice19\\"
+\\"epo-not:CNSocialNotice\\" <|-- \\"epo-not:Notice20\\"
+\\"epo-not:CNSocialNotice\\" <|-- \\"epo-not:Notice21\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice10\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice11\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice12\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:ReviewTerm\\"
+\\"org:Organization\\" <|-- \\"epo:Business\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:StatisticalInformation\\"
+\\"epo:ReviewObject\\" <|-- \\"epo:ReviewDecision\\"
+\\"epo:ProcurementCriterion\\" <|-- \\"epo:AwardCriterion\\"
+\\"epo:Document\\" <|-- \\"epo:Offer\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:OfferIssuer\\"
+\\"epo-not:QSNotice\\" <|-- \\"epo-not:QS-D25\\"
+\\"epo-not:DesignContestNotice\\" <|-- \\"epo-not:DesignContest-D25\\"
+\\"epo-not:PIN-CFCSocialNotice\\" <|-- \\"epo-not:PIN-CFCSocial-D25\\"
+\\"epo-not:PIN-CFCStandardNotice\\" <|-- \\"epo-not:PIN-CFCStandard-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PIN-CFCStandard-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:QS-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CNStandard-D24\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:VEAT-D23\\"
+\\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" <|-- \\"epo-not:VEAT-D81\\"
+\\"epo-not:ResultNotice\\" <|-- \\"epo-not:CANDefence-D81\\"
+\\"epo-ord:AllowanceChargeInformation\\" <|-- \\"epo-cat:ChargeInformation\\"
+\\"epo-ord:AllowanceChargeInformation\\" <|-- \\"epo-ord:AllowanceInformation\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-ord:AllowanceChargeInformation\\"
+\\"epo:ProcurementElement\\" <|-- \\"epo:ProcurementObject\\"
+\\"epo-not:ContractModificationNotice\\" <|-- \\"epo-not:Modification-D23\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PINOnly-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PINOnly-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PINProfile-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PINProfile-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PINProfile-D81\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PIN-RTL-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PIN-RTL-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:VEAT-D23\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:VEAT-D81\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CANDefence-D81\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:DesignContestResult-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:Modification-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:Modification-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:Modification-D23\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:ConcessionNotice-D23\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:ConcessionAwardNotice-D23\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:SocialAndOtherSpecificServices-D23\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:SocialAndOtherSpecificServices-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:PIN-CFCSocialNotice-D25\\"
+\\"epo-not:PIN-CFCSocialNotice\\" <|-- \\"epo-not:PIN-CFCSocialNotice-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:Subcontract-D81\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CNDefence-D81\\"
+\\"epo-not:SubcontractNotice\\" <|-- \\"epo-not:Subcontract-D81\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:VEAT-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:VEAT-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CANStandard-D24\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:DesignContestResult-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CANSocial-D25\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice13\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice14\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice15\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice16\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice17\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice18\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice19\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice20\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice22\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice23\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice24\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice25\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice26\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice27\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice28\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice30\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice31\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice32\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice33\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice34\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice35\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice36\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice37\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice38\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice39\\"
+\\"epo-not:eFormsNotice\\" <|-- \\"epo-not:Notice40\\"
+\\"epo-cat:PostAwardDocument\\" <|-- \\"epo-cat:ProductSpecification\\"
+\\"epo:EvaluationTerm\\" <|-- \\"epo:SelectionEvaluationTerm\\"
+\\"epo:EvaluationTerm\\" <|-- \\"epo:AwardEvaluationTerm\\"
+\\"epo:Term\\" <|-- \\"epo:ContractSpecificTerm\\"
+\\"epo:OfferingParty\\" <|-- \\"epo-cat:Manufacturer\\"
+\\"epo:ProcurementObject\\" <|-- \\"epo:Lot\\"
+\\"epo:ProcurementElement\\" <|-- \\"epo:PlannedProcurementPart\\"
+\\"epo:StatisticalInformation\\" <|-- \\"epo:ReviewRequestSummary\\"
+\\"epo:ReviewObject\\" <|-- \\"epo:ReviewRequest\\"
+\\"epo:ProcurementCriteriaSummary\\" <|-- \\"epo:QualificationCriteriaSummary\\"
+\\"epo:Document\\" <|-- \\"epo:RequestForClarification\\"
+\\"epo-not:CNSocialNotice\\" <|-- \\"epo-not:CNSocialNotice-D25\\"
+\\"epo:Document\\" <|-- \\"epo:RequestForParticipation\\"
+\\"epo:Document\\" <|-- \\"epo:ExpressionOfInterest\\"
+\\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:CANSocialNotice-D25\\"
+\\"epo:Document\\" <|-- \\"epo-acc:ESPDRequest\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:QSNotice-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CNSocialNotice-D25\\"
+\\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CANSocialNotice-D25\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:LotGroupAwardInformation\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:SubmissionTerm\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:DesignContestRegimeTerm\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:MultipleStageProcedureTerm\\"
+\\"epo:ContractSpecificTerm\\" <|-- \\"epo:ContractTerm\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:SecurityClearanceTerm\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:EvaluationTerm\\"
+\\"epo:LotSpecificTerm\\" <|-- \\"epo:ParticipationRequestTerm\\"
+\\"epo-cat:ItemRelation\\" <|-- \\"epo-cat:ItemComposition\\"
+\\"epo-cat:ItemRelation\\" <|-- \\"epo-cat:ItemRequirement\\"
+\\"cccev:InformationConcept\\" <|-- \\"epo:CertificationLabel\\"
+\\"epo:Contract\\" <|-- \\"epo-con:ContractAmendment\\"
+\\"epo-cat:ItemRelation\\" <|-- \\"epo-cat:ItemReplacement\\"
+\\"epo-cat:ItemRelation\\" <|-- \\"epo-cat:ItemComplementaryRelation\\"
+\\"epo-cat:ItemRelation\\" <|-- \\"epo-cat:ItemAccessoryRelation\\"
+\\"epo:ContextDescription\\" <|-- \\"epo:ProcurementProcessInformation\\"
+\\"cccev:Evidence\\" <|-- \\"epo:Certificate\\"
+\\"epo-cat:PostAwardDocument\\" <|-- \\"epo-ful:ReceiptAdvice\\"
+\\"epo-cat:Line\\" <|-- \\"epo-ful:ReceiptAdviceLine\\"
+\\"epo:AcquiringParty\\" <|-- \\"epo-ord:Originator\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo-ful:Carrier\\"
+\\"epo-cat:PostAwardDocument\\" <|-- \\"epo-cat:CatalogueResponse\\"
+\\"epo:Duration\\" <|-- \\"epo:SpecificDuration\\"
+\\"epo:Duration\\" <|-- \\"epo:IndefiniteDuration\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-cat:CatalogueResponseInformation\\"
+\\"epo:AgentInRole\\" <|-- \\"epo:AcquiringParty\\"
+\\"time:Duration\\" <|-- \\"epo:Duration\\"
+\\"epo:AgentInRole\\" <|-- \\"epo:AuxiliaryParty\\"
+\\"epo:ProcurementCriteriaSummary\\" <|-- \\"epo:AwardCriteriaSummary\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:OtherEntity\\"
+\\"epo:ContextDescription\\" <|-- \\"epo-sub:CertificateInformation\\"
+\\"epo:Buyer\\" <|-- \\"epo:LeadBuyer\\"
+\\"epo:ProcedureSpecificTerm\\" <|-- \\"epo:AccessTerm\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-ord:ContractInformation\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-ord:OriginatorInformation\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo-ful:Notifier\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo-ful:FreightForwarder\\"
+\\"epo:ContextDescription\\" <|-- \\"epo-cat:InformationHub\\"
+\\"epo-cat:Line\\" <|-- \\"epo-ful:DespatchLine\\"
+\\"epo-cat:Line\\" <|-- \\"epo-ord:OrderLine\\"
+\\"epo:Document\\" <|-- \\"epo:OriginatorRequest\\"
+\\"epo:Contract\\" <|-- \\"epo:DirectContract\\"
+\\"epo-cat:Line\\" <|-- \\"epo-cat:CatalogueLine\\"
+\\"epo:ProcurementCriterion\\" <|-- \\"epo:ParticipationCondition\\"
+\\"epo:QualificationCriteriaSummary\\" <|-- \\"epo:ExclusionGroundsSummary\\"
+\\"epo:ProcurementCriteriaSummary\\" <|-- \\"epo:ParticipationConditionsSummary\\"
+\\"epo:QualificationCriteriaSummary\\" <|-- \\"epo:SelectionCriteriaSummary\\"
+\\"epo:OfferingParty\\" <|-- \\"epo:Candidate\\"
+\\"cccev:Requirement\\" <|-- \\"epo:ProcurementCriteriaSummary\\"
+\\"epo-cat:PostAwardDocument\\" <|-- \\"epo-cat:Catalogue\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo-ful:TransportMeansOperator\\"
+\\"epo-ful:Package\\" <|-- \\"epo-ful:TransportHandlingUnit\\"
+\\"epo-ful:AbstractContainer\\" <|-- \\"epo-ful:Package\\"
+\\"epo-cat:InformationHub\\" <|-- \\"epo-ful:ShipmentInformation\\"
+\\"epo:AwardOutcome\\" <|-- \\"epo:MiniCompetitionAwardOutcome\\"
+\\"epo-cat:PostAwardDocument\\" <|-- \\"epo-ord:Order\\"
+\\"epo-cat:PostAwardDocument\\" <|-- \\"epo-ful:DespatchAdvice\\"
+\\"epo:AuxiliaryParty\\" <|-- \\"epo-sub:LegalRepresentative\\"
+\\"epo:Document\\" <|-- \\"epo-sub:PowerOfAttorney\\"
+\\"epo:Document\\" <|-- \\"epo-sub:Mandate\\"
+\\"epo:Document\\" <|-- \\"epo:Contract\\"
+\\"epo:SelectionCriteriaSummary\\" <|-- \\"epo:ProfessionalSuitabilitySummary\\"
+\\"epo:SelectionCriteriaSummary\\" <|-- \\"epo:EconomicStandingSummary\\"
+\\"epo:SelectionCriteriaSummary\\" <|-- \\"epo:TechnicalAbilitySummary\\"
+\\"epo:Document\\" <|-- \\"epo:Tender\\"
+\\"epo:Document\\" <|-- \\"epo:AwardDecision\\"
+\\"epo:Document\\" <|-- \\"epo:ReviewObject\\"
+\\"epo:ProcurementCriterion\\" <|-- \\"epo:QualificationCriterion\\"
+\\"epo:DesignContestRegimeTerm\\" --> \\"epo:Prize\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:LotGroupAwardInformation\\"
+\\"epo:ContractTerm\\" --> \\"epo:Period\\"
+\\"epo:Contract\\" --> \\"epo:Fund\\"
+\\"epo:Tender\\" --> \\"epo:MonetaryValue\\"
+\\"epo:Tender\\" --> \\"epo:Tenderer\\"
+\\"epo-cat:Batch\\" --> \\"epo-cat:Item\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:Brand\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:Contract\\"
+\\"epo-acc:ESPDRequest\\" --> \\"epo:ProcurementCriterion\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:Procedure\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:Lot\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo-cat:ItemRelation\\" --> \\"epo-cat:Item\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:ItemRelation\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:NoticeAwardInformation\\"
+\\"epo:Notice\\" --> \\"epo:Lot\\"
+\\"epo:Tender\\" --> \\"epo:ConcessionEstimate\\"
+\\"epo:ContractTerm\\" --> \\"epo:Duration\\"
+\\"epo-ord:Order\\" --> \\"epo-ord:Seller\\"
+\\"epo-ord:DeliveryInformation\\" --> \\"epo-ord:Consignee\\"
+\\"epo-cat:Catalogue\\" --> \\"epo:CatalogueReceiver\\"
+\\"epo-cat:ChargeInformation\\" --> \\"epo-ord:OrderLine\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ful:Despatcher\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ord:Consignee\\"
+\\"epo-con:ContractAmendment\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ProcedureTerm\\" --> \\"epo:AuxiliaryParty\\"
+\\"epo:Contract\\" --> \\"epo-con:Deliverable\\"
+\\"epo-con:Deliverable\\" --> \\"epo:Quantity\\"
+\\"epo-not:PlanningNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo:Contract\\" --> \\"epo:Contractor\\"
+\\"epo:TenderAwardOutcome\\" --> \\"epo:Tender\\"
+\\"epo:ProcedureTerm\\" --> \\"epo:Mediator\\"
+\\"epo:Contract\\" --> \\"epo:MonetaryValue\\"
+\\"epo:Winner\\" --> \\"epo:Tenderer\\"
+\\"epo:LotAwardOutcome\\" --> \\"epo:Lot\\"
+\\"epo:AwardOutcome\\" --> \\"epo:TenderAwardOutcome\\"
+\\"epo:FrameworkAgreement\\" --> \\"epo:LotAwardOutcome\\"
+\\"epo:Buyer\\" --> \\"epo:AwardDecision\\"
+\\"epo:Procedure\\" --> \\"epo:Buyer\\"
+\\"epo:Procedure\\" --> \\"epo:ProcurementServiceProvider\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:ItemModel\\"
+\\"epo:AccessTerm\\" --> \\"epo:CatalogueProvider\\"
+\\"epo-cat:Catalogue\\" --> \\"epo:CatalogueProvider\\"
+\\"epo:AccessTerm\\" --> \\"epo:ProcurementDocument\\"
+\\"epo:LotGroup\\" --> \\"epo:ProcurementCriterion\\"
+\\"epo:SubmissionTerm\\" --> \\"epo:TenderProcessor\\"
+\\"epo:SubmissionTerm\\" --> \\"epo:TenderReceiver\\"
+\\"epo:ContractLotCompletionInformation\\" --> \\"epo:Contract\\"
+\\"epo:NoticeAwardInformation\\" --> \\"epo-not:DirectAwardPrenotificationNotice\\"
+\\"epo:Contract\\" --> \\"epo:Purpose\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ord:Originator\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ord:Order\\"
+\\"epo-ord:OrderResponse\\" --> \\"epo:Buyer\\"
+\\"epo:ProcurementObject\\" --> \\"epo:Term\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ful:DespatchLine\\"
+\\"epo:ContractTerm\\" --> \\"epo:PaymentExecutor\\"
+\\"epo:Notice\\" --> \\"epo:Notice\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:Contract\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:NoticeAwardInformation\\"
+\\"epo:Contract\\" --> \\"epo:Duration\\"
+\\"epo:ContractLotCompletionInformation\\" --> \\"epo:Lot\\"
+\\"epo:ContractLotCompletionInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ProcurementObject\\" --> \\"epo:Purpose\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:Procedure\\"
+\\"epo:ProcurementObject\\" --> \\"epo:Fund\\"
+\\"epo:ContractLotCompletionInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:Contract\\" --> \\"epo:Lot\\"
+\\"epo:ProcurementObject\\" --> \\"epo:ContractSpecificTerm\\"
+\\"epo:PlannedProcurementPart\\" --> \\"epo:ProcurementObject\\"
+\\"epo:Contract\\" --> \\"epo:Tender\\"
+\\"epo:ChangeInformation\\" --> \\"epo:Notice\\"
+\\"epo-con:ContractAmendment\\" --> \\"epo:Contract\\"
+\\"epo:VehicleInformation\\" --> \\"epo:GreenProcurement\\"
+\\"epo:NonPublishedInformation\\" --> \\"epo:Notice\\"
+\\"epo-cat:CatalogueLine\\" --> \\"epo:Period\\"
+\\"epo-cat:Price\\" --> \\"epo:Period\\"
+\\"epo-cat:ItemProperty\\" --> \\"epo:Quantity\\"
+\\"epo:ChangeInformation\\" --> \\"epo:Notice\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:AwardDecision\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo-con:ContractAmendment\\"
+\\"epo-con:ContractModificationInformation\\" --> \\"epo-con:ContractAmendment\\"
+\\"epo:ReviewTerm\\" --> \\"epo:ReviewProcedureInformationProvider\\"
+\\"epo:ReviewTerm\\" --> \\"epo:Reviewer\\"
+\\"epo-ord:OrderResponse\\" --> \\"epo-ord:OrderResponseInformation\\"
+\\"epo-not:CompetitionNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo-not:CompetitionNotice\\" --> \\"epo:Procedure\\"
+\\"epo-ord:OrderResponseInformation\\" --> \\"epo-ord:OrderResponseLine\\"
+\\"epo-ord:OrderResponseInformation\\" --> \\"epo:Period\\"
+\\"epo-acc:ESPDRequest\\" --> \\"epo:Notice\\"
+\\"epo:SubmissionStatisticalInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:Item\\"
+\\"epo-acc:ESPDRequest\\" --> \\"epo:Procedure\\"
+\\"epo:Tender\\" --> \\"epo:SubcontractingEstimate\\"
+\\"epo:SubcontractingEstimate\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:Catalogue\\" --> \\"epo:Contract\\"
+\\"epo-cat:Catalogue\\" --> \\"epo-cat:CatalogueLine\\"
+\\"epo-sub:ESPDResponse\\" --> \\"epo-acc:ESPDRequest\\"
+\\"epo:ProcurementElement\\" --> \\"epo:MonetaryValue\\"
+\\"epo:Procedure\\" --> \\"epo:ProcedureSpecificTerm\\"
+\\"epo-not:PlanningNotice\\" --> \\"epo:PlannedProcurementPart\\"
+\\"epo:DirectAwardTerm\\" --> \\"epo:Procedure\\"
+\\"epo:Document\\" --> \\"epo:ElectronicSignature\\"
+\\"epo:Technique\\" --> \\"epo:Period\\"
+\\"epo:PlannedProcurementPart\\" --> \\"epo:Period\\"
+\\"epo:SubmissionTerm\\" --> \\"epo:Period\\"
+\\"epo:Procedure\\" --> \\"epo:Buyer\\"
+\\"epo:ProcedureTerm\\" --> \\"epo:LotGroup\\"
+\\"epo:AwardOutcome\\" --> \\"epo:MonetaryValue\\"
+\\"epo:NoticeAwardInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:Procedure\\" --> \\"epo:Lot\\"
+\\"epo:ProcurementServiceProvider\\" --> \\"epo:Buyer\\"
+\\"epo:Buyer\\" --> \\"epo:ProcurementServiceProvider\\"
+\\"epo-ord:OrderLine\\" --> \\"epo-cat:CatalogueLine\\"
+\\"epo:SubmissionTerm\\" --> \\"epo:Duration\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:LotGroup\\"
+\\"epo:Prize\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ConcessionEstimate\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:CatalogueLine\\" --> \\"epo:Quantity\\"
+\\"epo-ord:Order\\" --> \\"epo-cat:Catalogue\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:Procedure\\"
+\\"epo:ConcessionEstimate\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ProcurementObject\\" --> \\"epo:StrategicProcurement\\"
+\\"epo-cat:CatalogueLine\\" --> \\"epo:Quantity\\"
+\\"epo:ProcurementProcessInformation\\" --> \\"epo:Lot\\"
+\\"epo-cat:Item\\" --> \\"epo:Quantity\\"
+\\"epo-ord:Order\\" --> \\"epo-ord:DeliveryInformation\\"
+\\"epo:TenderGroup\\" --> \\"epo:LotGroup\\"
+\\"epo:LotGroup\\" --> \\"epo:MonetaryValue\\"
+\\"epo:PurchaseContract\\" --> \\"epo:FrameworkAgreement\\"
+\\"epo:Tenderer\\" --> \\"epo:ExclusionGround\\"
+\\"epo:Tender\\" --> \\"epo:Subcontractor\\"
+\\"epo-cat:Catalogue\\" --> \\"epo:Buyer\\"
+\\"epo:Document\\" --> \\"epo:Document\\"
+\\"epo:LotGroup\\" --> \\"epo:MonetaryValue\\"
+\\"epo:DirectAwardTerm\\" --> \\"epo:Lot\\"
+\\"epo:Purpose\\" --> \\"epo:Quantity\\"
+\\"epo:SubmissionStatisticalInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ContractTerm\\" --> \\"epo:SubcontractTerm\\"
+\\"epo-cat:CatalogueLine\\" --> \\"epo-cat:Price\\"
+\\"epo:SubmissionStatisticalInformation\\" --> \\"epo:AwardOutcome\\"
+\\"epo-cat:Price\\" --> \\"epo:MonetaryValue\\"
+\\"epo:AgentInRole\\" --> \\"epo:ProcurementObject\\"
+\\"epo-cat:Price\\" --> \\"epo:Quantity\\"
+\\"epo:ProcurementProcessInformation\\" --> \\"epo:Procedure\\"
+\\"epo:ProcurementObject\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:Price\\" --> \\"epo:Quantity\\"
+\\"epo-cat:Price\\" --> \\"epo:Duration\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo-ful:ReceiptAdviceLine\\"
+\\"epo:TenderGroup\\" --> \\"epo:Tender\\"
+\\"epo-cat:CatalogueLine\\" --> \\"epo-cat:Price\\"
+\\"epo-ord:Order\\" --> \\"epo-ord:OrderLine\\"
+\\"epo-ord:OrderResponse\\" --> \\"epo:Contract\\"
+\\"epo-ord:OrderLine\\" --> \\"epo:Quantity\\"
+\\"epo-ord:OrderResponseLine\\" --> \\"epo-ord:OrderLine\\"
+\\"epo-ord:OrderResponse\\" --> \\"epo-ord:Seller\\"
+\\"epo-ord:DeliveryInformation\\" --> \\"epo:Period\\"
+\\"epo-ord:Order\\" --> \\"epo-ord:ContractInformation\\"
+\\"epo-ord:Order\\" --> \\"epo-cat:ChargeInformation\\"
+\\"epo-ord:DeliveryInformation\\" --> \\"epo-ord:OrderLine\\"
+\\"epo-ord:AllowanceInformation\\" --> \\"epo-ord:OrderLine\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:Contract\\"
+\\"epo-not:CompetitionNotice\\" --> \\"epo:Lot\\"
+\\"epo:PlannedProcurementPart\\" --> \\"epo:Duration\\"
+\\"epo-cat:Price\\" --> \\"epo:Quantity\\"
+\\"epo:NoticeAwardInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:NoticeAwardInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:Contractor\\" --> \\"epo:Winner\\"
+\\"epo-not:CompetitionNotice\\" --> \\"epo:LotGroup\\"
+\\"epo-cat:Item\\" --> \\"epo:Certificate\\"
+\\"epo-ful:DespatchLine\\" --> \\"epo-ord:OrderLine\\"
+\\"epo-cat:Catalogue\\" --> \\"epo-ord:Seller\\"
+\\"epo:Procedure\\" --> \\"epo:ProcurementCriteriaSummary\\"
+\\"epo:Lot\\" --> \\"epo:ProcurementCriterion\\"
+\\"epo-ful:ReceiptAdviceLine\\" --> \\"epo:Quantity\\"
+\\"epo:ParticipationRequestTerm\\" --> \\"epo:ParticipationRequestReceiver\\"
+\\"epo:ParticipationRequestTerm\\" --> \\"epo:ParticipationRequestProcessor\\"
+\\"epo:ProcedureTerm\\" --> \\"epo:BudgetProvider\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:Item\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:Item\\"
+\\"epo:LotGroupAwardInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:TenderGroup\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:ProductSpecification\\"
+\\"epo:AccessTerm\\" --> \\"epo:ProcurementProcedureInformationProvider\\"
+\\"epo:AccessTerm\\" --> \\"epo:OfflineAccessProvider\\"
+\\"epo-ful:ShipmentInformation\\" --> \\"epo-ful:DespatchLine\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:Lot\\"
+\\"epo:AccessTerm\\" --> \\"epo:PlannedProcurementPart\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:Item\\"
+\\"epo:OfferIssuer\\" --> \\"epo:Offer\\"
+\\"epo:NoticeAwardInformation\\" --> \\"epo-not:ResultNotice\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:Manufacturer\\"
+\\"epo-cat:CatalogueLine\\" --> \\"epo-ful:Package\\"
+\\"epo:Document\\" --> \\"epo:Document\\"
+\\"epo-sub:ESPDResponse\\" --> \\"epo-sub:ESPDResponse\\"
+\\"epo:LotGroup\\" --> \\"epo:Lot\\"
+\\"epo:Tender\\" --> \\"epo:LotGroup\\"
+\\"epo:Tender\\" --> \\"epo:Lot\\"
+\\"epo-ful:ReceiptAdviceLine\\" --> \\"epo:Quantity\\"
+\\"epo-sub:ESPDResponse\\" --> \\"epo:ExclusionGround\\"
+\\"epo-sub:ESPDResponse\\" --> \\"epo:SelectionCriterion\\"
+\\"epo:Tender\\" --> \\"epo-sub:ESPDResponse\\"
+\\"epo:AwardDecision\\" --> \\"epo:AwardOutcome\\"
+\\"epo:Document\\" --> \\"epo:Document\\"
+\\"epo:ReviewRequestSummary\\" --> \\"epo:Lot\\"
+\\"epo-ful:ReceiptAdviceLine\\" --> \\"epo:Quantity\\"
+\\"epo-ful:ReceiptAdviceLine\\" --> \\"epo:Quantity\\"
+\\"epo-ful:ReceiptAdviceLine\\" --> \\"epo-ful:DespatchLine\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo-ful:DespatchAdvice\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo-ful:ShipmentInformation\\"
+\\"epo:ReviewObject\\" --> \\"epo:ReviewObject\\"
+\\"epo:ReviewDecision\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ReviewRequest\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ReviewRequestSummary\\" --> \\"epo:ReviewIrregularitySummary\\"
+\\"epo:AccessTerm\\" --> \\"epo:CatalogueReceiver\\"
+\\"epo-ful:Consignment\\" --> \\"epo:Quantity\\"
+\\"epo:Lot\\" --> \\"epo:LotSpecificTerm\\"
+\\"epo:Contract\\" --> \\"epo:Contractor\\"
+\\"epo:ReviewDecision\\" --> \\"epo:ReviewRequest\\"
+\\"epo:Certificate\\" --> \\"epo:CertificationLabel\\"
+\\"cccev:Evidence\\" --> \\"epo:Period\\"
+\\"epo-cat:ItemProperty\\" --> \\"epo-cat:Item\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo-ful:Despatcher\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo-ord:Consignee\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo:Buyer\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo-ord:Seller\\"
+\\"epo-cat:Item\\" --> \\"epo-cat:Item\\"
+\\"epo:NoticeAwardInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo:ProcurementObject\\" --> \\"epo:Technique\\"
+\\"epo:PlannedProcurementPart\\" --> \\"epo:Technique\\"
+\\"epo-ord:AllowanceChargeInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:CatalogueLine\\" --> \\"epo-cat:ChargeInformation\\"
+\\"epo-ful:Consignment\\" --> \\"epo:Quantity\\"
+\\"epo-ful:ShipmentStage\\" --> \\"epo-ful:Carrier\\"
+\\"epo-ful:ShipmentInformation\\" --> \\"epo:Period\\"
+\\"epo:ProcurementObject\\" --> \\"epo:ConcessionEstimate\\"
+\\"epo-ful:ReceiptAdvice\\" --> \\"epo:Document\\"
+\\"epo:Certificate\\" --> \\"epo:Certifier\\"
+\\"epo:NoticeAwardInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo-not:ResultNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo-cat:CatalogueResponse\\" --> \\"epo-cat:CatalogueResponseLine\\"
+\\"epo-cat:CatalogueResponseLine\\" --> \\"epo-cat:CatalogueLine\\"
+\\"epo-ord:OrderLine\\" --> \\"epo-cat:Price\\"
+\\"epo-ord:Order\\" --> \\"epo:Buyer\\"
+\\"epo-ord:OriginatorInformation\\" --> \\"epo-ord:OrderLine\\"
+\\"epo:Contract\\" --> \\"epo:ContractSpecificTerm\\"
+\\"epo-cat:CatalogueResponse\\" --> \\"epo-cat:Catalogue\\"
+\\"epo:Contract\\" --> \\"epo:Buyer\\"
+\\"epo-cat:CatalogueResponse\\" --> \\"epo:CatalogueReceiver\\"
+\\"epo-cat:CatalogueResponse\\" --> \\"epo:CatalogueProvider\\"
+\\"epo:MultipleStageProcedureTerm\\" --> \\"epo:Duration\\"
+\\"epo-ord:OrderResponse\\" --> \\"epo-ord:OrderResponseLine\\"
+\\"epo-ord:OrderResponse\\" --> \\"epo-ord:Order\\"
+\\"epo:LotAwardOutcome\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:CatalogueResponse\\" --> \\"epo-cat:CatalogueResponseInformation\\"
+\\"epo-cat:CatalogueResponseInformation\\" --> \\"epo-cat:CatalogueResponseLine\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ful:ShipmentInformation\\"
+\\"epo-ful:DespatchLine\\" --> \\"epo:Quantity\\"
+\\"epo-ful:DespatchLine\\" --> \\"epo:Quantity\\"
+\\"epo-ful:DespatchLine\\" --> \\"epo:Document\\"
+\\"epo-cat:Catalogue\\" --> \\"epo:Period\\"
+\\"epo-ful:TransportHandlingUnit\\" --> \\"epo-ful:DespatchLine\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ful:TransportHandlingUnit\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo-ord:Order\\" --> \\"epo-ful:Despatcher\\"
+\\"epo:TenderAwardOutcome\\" --> \\"epo:Winner\\"
+\\"epo:Contract\\" --> \\"epo:Buyer\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:Procedure\\"
+\\"epo-cat:Price\\" --> \\"epo-cat:ChargeInformation\\"
+\\"org:Organization\\" --> \\"epo:Certificate\\"
+\\"epo:ConcessionEstimate\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo:DirectContract\\" --> \\"epo:LotAwardOutcome\\"
+\\"epo:Contract\\" --> \\"epo-ord:TaxInformation\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:LotGroup\\"
+\\"epo:LotGroupAwardInformation\\" --> \\"epo:LotGroup\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:LotGroupAwardInformation\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:Contract\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:AwardDecision\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:Lot\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:LotGroup\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:LotGroupAwardInformation\\"
+\\"epo:QualificationCriterion\\" --> \\"epo:QualificationCriterion\\"
+\\"epo-sub:CertificateInformation\\" --> \\"epo:Certificate\\"
+\\"epo-sub:LegalRepresentative\\" --> \\"epo:OfferingParty\\"
+\\"epo:AwardOutcome\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:ContractInformation\\" --> \\"epo:Contract\\"
+\\"epo-ord:ContractInformation\\" --> \\"epo-ord:OrderLine\\"
+\\"epo-ord:Order\\" --> \\"epo-ord:AllowanceInformation\\"
+\\"epo-ord:OriginatorInformation\\" --> \\"epo-ord:Originator\\"
+\\"epo-ord:Order\\" --> \\"epo-ord:OriginatorInformation\\"
+\\"epo-ord:AllowanceChargeInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo:Document\\"
+\\"epo-ful:Consignment\\" --> \\"epo:Quantity\\"
+\\"epo-ful:Consignment\\" --> \\"epo:Quantity\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:NoticeAwardInformation\\"
+\\"epo-ful:Consignment\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ful:Consignment\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ful:ShipmentAgreement\\" --> \\"epo:Buyer\\"
+\\"epo-ful:ShipmentAgreement\\" --> \\"epo-ord:Seller\\"
+\\"epo-ord:DeliveryInformation\\" --> \\"epo-ord:DeliveryAgreement\\"
+\\"epo-ord:DeliveryInformation\\" --> \\"epo-ord:DeliveryAgreement\\"
+\\"foaf:Person\\" --> \\"epo:Certificate\\"
+\\"epo:LotAwardOutcome\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ful:Consignment\\" --> \\"epo-ful:FreightForwarder\\"
+\\"epo-ful:Consignment\\" --> \\"epo-ful:TransportHandlingUnit\\"
+\\"epo-ful:TransportHandlingUnit\\" --> \\"epo-ful:TransportEquipment\\"
+\\"epo-ful:Consignment\\" --> \\"epo-cat:ChargeInformation\\"
+\\"epo-ful:Consignment\\" --> \\"epo-ful:ShipmentInformation\\"
+\\"epo-con:Deliverable\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ful:Consignment\\"
+\\"epo-ful:ShipmentStage\\" --> \\"epo-ful:TransportMeans\\"
+\\"epo-ful:TransportMeans\\" --> \\"epo-ful:TransportMeansOperator\\"
+\\"epo-cat:Line\\" --> \\"epo-cat:Item\\"
+\\"epo-cat:InformationHub\\" --> \\"epo-cat:Line\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo-ful:ShipmentInformation\\" --> \\"epo-ord:DeliveryInformation\\"
+\\"epo:SelectedCandidateList\\" --> \\"epo:Candidate\\"
+\\"epo-ful:Consignment\\" --> \\"epo:Quantity\\"
+\\"epo:SelectedCandidateList\\" --> \\"epo:Period\\"
+\\"epo-ful:Consignment\\" --> \\"epo-ful:Notifier\\"
+\\"epo-ful:Consignment\\" --> \\"epo-ful:ShipmentStage\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo-ful:Consignment\\" --> \\"epo-ful:ShipmentStage\\"
+\\"epo-ful:Consignment\\" --> \\"epo-ful:ShipmentStage\\"
+\\"epo-ful:GoodsItem\\" --> \\"epo-ful:DespatchLine\\"
+\\"epo-ful:ShipmentStage\\" --> \\"epo-ful:ShipmentInformation\\"
+\\"epo-ful:ShipmentStage\\" --> \\"epo-ful:ShipmentInformation\\"
+\\"epo-ful:TransportEquipment\\" --> \\"epo-ful:TransportEquipmentSeal\\"
+\\"epo-ful:Consignment\\" --> \\"epo:Quantity\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo-ful:TemperatureSpecification\\" --> \\"epo:Quantity\\"
+\\"epo-ful:Package\\" --> \\"epo-ful:Package\\"
+\\"epo-ful:Package\\" --> \\"epo-ful:GoodsItem\\"
+\\"epo-ful:GoodsItem\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ful:Consignment\\" --> \\"epo:Quantity\\"
+\\"epo-ful:TemperatureSpecification\\" --> \\"epo:Quantity\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo-ful:TemperatureSpecification\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo-ful:AbstractContainer\\" --> \\"epo:Quantity\\"
+\\"epo-ful:DespatchAdvice\\" --> \\"epo-ful:ShipmentAgreement\\"
+\\"epo-ful:Consignment\\" --> \\"epo:MonetaryValue\\"
+\\"epo-not:CompletionNotice\\" --> \\"epo:ReviewObject\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:NoticeAwardInformation\\"
+\\"epo-ord:OriginatorInformation\\" --> \\"epo:OriginatorRequest\\"
+\\"epo-ord:Order\\" --> \\"epo:Project\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:LotGroup\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:LotGroupAwardInformation\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:AwardDecision\\"
+\\"epo:Notice\\" --> \\"epo:Procedure\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo:PurchaseContract\\" --> \\"epo:MiniCompetitionAwardOutcome\\"
+\\"epo:MiniCompetitionAwardOutcome\\" --> \\"epo:SelectedCandidateList\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:Order\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:TaxInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:TaxInformation\\" --> \\"epo:MonetaryValue\\"
+\\"epo-ord:AllowanceChargeInformation\\" --> \\"epo-ord:TaxInformation\\"
+\\"epo-cat:Item\\" --> \\"epo:Document\\"
+\\"epo-sub:NationalPreQualificationData\\" --> \\"epo:Quantity\\"
+\\"epo-sub:NationalPreQualificationData\\" --> \\"epo:MonetaryValue\\"
+\\"epo-cat:Price\\" --> \\"epo-ord:AllowanceInformation\\"
+\\"epo-sub:ESPDResponse\\" --> \\"epo-sub:Response\\"
+\\"epo-sub:Response\\" --> \\"epo:Period\\"
+\\"epo-sub:LegalRepresentative\\" --> \\"epo-sub:PowerOfAttorney\\"
+\\"epo-sub:LegalRepresentative\\" --> \\"epo-sub:Mandate\\"
+\\"epo-not:ContractModificationNotice\\" --> \\"epo:Lot\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:AgentInRole\\"
+\\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"epo:AwardDecision\\"
+\\"cccev:EvidenceType\\" --> \\"epo:Period\\"
+\\"epo-cat:Item\\" --> \\"epo-ord:TaxInformation\\"
+@enduml
+"
+`;
