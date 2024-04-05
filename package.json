@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "snapshot": "mocha",
     "fetch-repos": "node src/download/fetchRepos.js",
-    "fetch-vocabularies": "node src/download/fetchVocabularies.js"
+    "fetch-vocabularies": "node src/download/fetchVocabularies.js",
+    "snapshot": "npm run fetch-repos && mocha"
   },
   "repository": {
     "type": "git",

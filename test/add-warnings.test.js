@@ -1,13 +1,13 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import { UNDER_REVIEW } from '../../src/config.js'
+import { UNDER_REVIEW } from '../src/config.js'
 import {
   addEdgeWarnings,
   addNodeWarnings,
-} from '../../src/ontology/ea/add-warnings.js'
-import { toJson } from '../../src/ontology/ea/ea-to-json.js'
-import { narrowToEpo } from '../../src/ontology/views/epo-views.js'
+} from '../src/ontology/ea/add-warnings.js'
+import { toJson } from '../src/ontology/ea/ea-to-json.js'
+import { narrowToEpo } from '../src/ontology/views/epo-views.js'
 
 expect.extend({ toMatchSnapshot })
 
