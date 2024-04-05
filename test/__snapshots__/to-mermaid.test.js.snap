@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`module Test simple 1`] = `
+Array [
+  "simple",
+  "
+<a> <b> <c> .
+",
+  NamedNode {
+    "value": "a",
+  },
+]
+`;
