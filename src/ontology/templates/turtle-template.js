@@ -8,10 +8,10 @@ const nodeTemplate = ({ name, description }) => `${name}
 const literalTemplate = ({
   source, predicate, target, description, quantifiers,
 }) => `
-    ${predicate} a owl:DatatypeProperty ;
-        ${skosDefinitionTemplate(description)}
-        rdfs:domain  ${source} ;
-        rdfs:range  ${target} .
+    # ${predicate} a owl:DatatypeProperty ;
+    #     ${skosDefinitionTemplate(description)}
+    #     rdfs:domain  ${source} ;
+    #     rdfs:range  ${target} .
 
     ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
       sh:targetClass ${source} ;
@@ -25,10 +25,10 @@ const literalTemplate = ({
 const objectTemplate = ({
   source, predicate, target, description, quantifiers,
 }) => `
-    ${predicate} a owl:ObjectProperty ;
-        ${skosDefinitionTemplate(description)}
-        rdfs:domain  ${source} ;
-        rdfs:range  ${target} .
+    # ${predicate} a owl:ObjectProperty ;
+    #     ${skosDefinitionTemplate(description)}
+    #     rdfs:domain  ${source} ;
+    #     rdfs:range  ${target} .
 
     ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
       sh:targetClass ${source} ;
