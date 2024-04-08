@@ -1,8 +1,9 @@
 import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
 
-const nodeTemplate = ({ name, description }) => `${name}
-        ${skosDefinitionTemplate(description)}
-        a owl:Class .
+const nodeTemplate = ({ name, description }) => `
+      # ${name}
+      #  ${skosDefinitionTemplate(description)}
+      #  a owl:Class .
         `
 
 const literalTemplate = ({

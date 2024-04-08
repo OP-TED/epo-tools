@@ -1,7 +1,8 @@
 import { ATTRIBUTE, INHERITANCE } from '../const.js'
+import { hasPrefix } from '../util.js'
 
 function addNodeWarnings (node) {
-  const warnings = hasCurie(node.name) ? [] : [
+  const warnings = hasPrefix(node.name) ? [] : [
     {
       severity: 'error', desc: `no prefix for ${node.name}`,
     }]
@@ -27,7 +28,7 @@ function addEdgeWarnings (edge) {
     warnings.push({
       severity: 'error', desc: `No source defined`,
     })
-  } else if (!hasCurie(source)) {
+  } else if (!hasPrefix(source)) {
     warnings.push({
       severity: 'error', desc: `No prefix for source [${source}]`,
     })
@@ -38,7 +39,7 @@ function addEdgeWarnings (edge) {
       warnings.push({
         severity: 'error', desc: `No predicate defined`,
       })
-    } else if (!hasCurie(predicate)) {
+    } else if (!hasPrefix(predicate)) {
       warnings.push({
         severity: 'error', desc: `No prefix for predicate [${predicate}]`,
       })
@@ -49,19 +50,13 @@ function addEdgeWarnings (edge) {
     warnings.push({
       severity: 'error', desc: `No target defined`,
     })
-  } else if (requiresTargetPrefix && !hasCurie(target)) {
+  } else if (requiresTargetPrefix && !hasPrefix(target)) {
     warnings.push({
       severity: 'error', desc: `No prefix for target [${target}]`,
     })
   }
 
   return { ...edge, warnings }
-}
-
-function hasCurie (name) {
-  if (name.split(':').length === 2) {
-    return true
-  }
 }
 
 export { addEdgeWarnings, addNodeWarnings }
