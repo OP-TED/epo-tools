@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`add-tags addTags for assets/ePO/develop 1`] = `
+exports[`add-tags addTags 1`] = `
 Object {
   "edges": Array [
     Object {
@@ -24589,7 +24589,7 @@ WG approval 12/03/2024",
 }
 `;
 
-exports[`add-tags filterByTags for assets/ePO/develop 1`] = `
+exports[`add-tags filterByTags 1`] = `
 Object {
   "edges": Array [
     Object {
@@ -33081,7 +33081,7 @@ WG approval 16/05/2023",
 }
 `;
 
-exports[`add-tags getAllTags for assets/ePO/develop 1`] = `
+exports[`add-tags getAllTags 1`] = `
 Set {
   "epo",
   "epo-sub",

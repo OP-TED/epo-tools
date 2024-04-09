@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`read-enterprise-architect-database generates Json for assets/ePO/develop 1`] = `
+exports[`read-enterprise-architect-database generates Json 1`] = `
 Object {
   "edges": Array [
     Object {

@@ -1,26 +1,27 @@
-import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
 import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
 
-function toJson ({ databasePath }) {
-
-  const buffer = readFileSync(databasePath)
+function bufferToJson ({ buffer }) {
   const reader = new MDBReader(buffer)
+  const objects = reader.getTable('t_object').getData()
+  const attributes = reader.getTable('t_attribute').getData()
+  const connectors = reader.getTable('t_connector').getData()
+  return toJson({ objects, attributes, connectors })
+}
 
-  const objectTable = reader.getTable('t_object').getData()
+function toJson ({ objects, attributes, connectors }) {
 
   const nodeIndex = {}
-  for (const { Object_ID, Name } of objectTable) {
+  for (const { Object_ID, Name } of objects) {
     nodeIndex[Object_ID] = Name
   }
 
-  const nodes = objectTable.
+  const nodes = objects.
     map(x => ({
       name: nodeIndex[x.Object_ID], description: x.Note,
     }))
 
-  const literals = reader.getTable('t_attribute').
-    getData().
+  const literals = attributes.
     map(x => {
       const { Object_ID, Name, Type, LowerBound, UpperBound, Notes } = x
       return {
@@ -33,8 +34,7 @@ function toJson ({ databasePath }) {
       }
     })
 
-  const relations = reader.getTable('t_connector').
-    getData().
+  const relations = connectors.
     map(x => {
       const {
         DestRole,
@@ -100,4 +100,4 @@ function getQuantifierFromString (str) {
   }
 }
 
-export { toJson }
+export { bufferToJson }

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`add-warnings adds warnings for assets/ePO/develop 1`] = `
+exports[`add-warnings adds warnings 1`] = `
 Object {
   "edges": Array [
     Object {

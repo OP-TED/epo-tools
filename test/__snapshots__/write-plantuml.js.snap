@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`write-plantuml generates plantuml for assets/ePO/develop 1`] = `
+exports[`write-plantuml generates plantuml 1`] = `
 "
 @startuml
 class \\"epo:RequestForClarification\\" {
