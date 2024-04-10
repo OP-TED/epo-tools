@@ -1,10 +1,12 @@
 const startsWith = (value, arr) => arr.some(x => value?.startsWith(x))
 
-function filterBy ({ nodes, edges }, prefixArr) {
+function filterBy ({ nodes, edges }, { filter, includeIncoming = true }) {
+  if (!filter) throw Error('needs filter')
   return {
-    nodes: nodes.filter(x => startsWith(x.name, prefixArr)),
-    edges: edges.filter(x => startsWith(x.source, prefixArr) ||
-      startsWith(x.predicate, prefixArr) || startsWith(x.target, prefixArr)),
+    nodes: nodes.filter(x => startsWith(x.name, filter)),
+    edges: edges.filter(
+      x => startsWith(x.source, filter) || startsWith(x.predicate, filter) ||
+        (includeIncoming && startsWith(x.target, filter))),
   }
 }
 
