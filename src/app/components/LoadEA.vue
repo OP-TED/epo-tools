@@ -4,7 +4,7 @@ import { Buffer } from 'buffer/'
 import { storeToRefs } from 'pinia'
 import { bufferToJson } from '../../ontology/ea/ea-to-json.js'
 import { useStore } from '../state.js'
-import { NButton, NCard } from 'naive-ui'
+import { NButton, NCard, NFlex } from 'naive-ui'
 
 const store = useStore()
 
@@ -38,14 +38,13 @@ function handleBuffer (buffer) {
 
 <template>
   <n-card>
+    <n-flex justify="end">
     <n-button @click="open()">
       Choose eap file
     </n-button>
     <n-button :disabled="!files" @click="clearSelection()">
       {{ files ? `${files[0].name} (x)` : '-' }}
     </n-button>
-
+    </n-flex>
   </n-card>
-
-
 </template>

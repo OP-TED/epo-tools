@@ -39,7 +39,5 @@ const pagination = ref({ pageSize: 20 })
 </script>
 
 <template>
-  <n-dynamic-tags v-model:value="tags"/>
   <n-data-table :columns="table.columns" :data="table.data" :pagination="pagination"/>
-
 </template>

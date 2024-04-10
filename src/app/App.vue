@@ -1,12 +1,14 @@
 <script setup>
 import { storeToRefs } from 'pinia'
-import DisplayTable from './components/DisplayTable.vue'
+import Edges from './components/Edges.vue'
+import Nodes from './components/Nodes.vue'
+
 import LoadEA from './components/LoadEA.vue'
+import Filter from './components/Filter.vue'
+
 import { NConfigProvider, darkTheme, NTabPane, NTabs } from 'naive-ui'
 import { computed, ref } from 'vue'
 import { useStore } from './state.js'
-
-const number = ref('gol;a')
 
 const store = useStore()
 const { eaJson, tags } = storeToRefs(store)
@@ -26,12 +28,13 @@ const edgesTitle = computed(() => {
   <div>
     <n-config-provider :theme="darkTheme">
       <LoadEA/>
+      <Filter/>
       <n-tabs type="line" animated>
         <n-tab-pane name="Nodes" :tab="nodesTitle">
-          Hey Jude
+          <Nodes/>
         </n-tab-pane>
         <n-tab-pane name="Edges" :tab="edgesTitle">
-          <DisplayTable/>
+          <Edges/>
         </n-tab-pane>
       </n-tabs>
     </n-config-provider>
