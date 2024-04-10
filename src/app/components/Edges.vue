@@ -1,16 +1,15 @@
 <script setup lang="js">
+import { NDataTable } from 'naive-ui'
 import { storeToRefs } from 'pinia'
-import { useStore } from '../state.js'
-import { NDynamicTags, NDataTable } from 'naive-ui'
 
-import { defineComponent, computed, reactive, ref } from 'vue'
+import { computed, ref } from 'vue'
+import { useStore } from '../state.js'
 
 const store = useStore()
-const { filteredEaJson, tags } = storeToRefs(store)
+const { jsonView } = storeToRefs(store)
 
 const table = computed(() => {
 
-  const data = filteredEaJson.value.edges ?? []
   return {
     columns: [
       {
@@ -30,7 +29,7 @@ const table = computed(() => {
       //   key: 'description',
       // },
     ],
-    data,
+    data: jsonView.value.edges ?? [],
   }
 })
 

@@ -1,27 +1,26 @@
 <script setup>
+import { darkTheme, NConfigProvider, NTabPane, NTabs } from 'naive-ui'
 import { storeToRefs } from 'pinia'
+import { computed } from 'vue'
 import Edges from './components/Edges.vue'
-import Nodes from './components/Nodes.vue'
+import Filter from './components/Filter.vue'
 
 import LoadEA from './components/LoadEA.vue'
-import Filter from './components/Filter.vue'
+import Nodes from './components/Nodes.vue'
 import Plantuml from './components/Plantuml.vue'
-
-import { NConfigProvider, darkTheme, NTabPane, NTabs } from 'naive-ui'
-import { computed, ref } from 'vue'
 import { useStore } from './state.js'
 
 const store = useStore()
-const { eaJson, filteredEaJson, tags } = storeToRefs(store)
+const { eaJson, jsonView, tags } = storeToRefs(store)
 
 const nodesTitle = computed(() => {
   const count = (x) => x?.value?.nodes?.length ?? 0
-  return `Nodes (${count(filteredEaJson)}/${count(eaJson)})`
+  return `Nodes (${count(jsonView)}/${count(eaJson)})`
 })
 
 const edgesTitle = computed(() => {
   const count = (x) => x?.value?.edges?.length ?? 0
-  return `Edges (${count(filteredEaJson)}/${count(eaJson)})`
+  return `Edges (${count(jsonView)}/${count(eaJson)})`
 })
 </script>
 

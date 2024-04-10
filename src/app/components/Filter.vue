@@ -1,10 +1,10 @@
 <script setup lang="js">
+import { NDynamicTags } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { useStore } from '../state.js'
-import { NDynamicTags, NDataTable } from 'naive-ui'
 
 const store = useStore()
-const { eaJson, tags } = storeToRefs(store)
+const { tags } = storeToRefs(store)
 
 </script>
 

@@ -1,15 +1,15 @@
 <script setup lang="js">
+import { NCard, NFlex } from 'naive-ui'
 import { storeToRefs } from 'pinia'
-import { useStore } from '../state.js'
-import { NDynamicTags, NCard, NFlex } from 'naive-ui'
 
-import { defineComponent, computed, reactive, ref } from 'vue'
+import { computed } from 'vue'
+import { useStore } from '../state.js'
 
 const store = useStore()
-const { filteredEaJson, tags } = storeToRefs(store)
+const { jsonView } = storeToRefs(store)
 
 const nodes = computed(() => {
-  return filteredEaJson.value.nodes ?? []
+  return jsonView.value.nodes ?? []
 })
 
 </script>
