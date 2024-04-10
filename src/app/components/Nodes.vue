@@ -6,12 +6,10 @@ import { NDynamicTags, NCard, NFlex } from 'naive-ui'
 import { defineComponent, computed, reactive, ref } from 'vue'
 
 const store = useStore()
-const { eaJson, tags } = storeToRefs(store)
+const { filteredEaJson, tags } = storeToRefs(store)
 
 const nodes = computed(() => {
-  const data = eaJson.value.nodes ?? []
-  console.log(data)
-  return data
+  return filteredEaJson.value.nodes ?? []
 })
 
 </script>

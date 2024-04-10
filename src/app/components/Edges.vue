@@ -6,11 +6,11 @@ import { NDynamicTags, NDataTable } from 'naive-ui'
 import { defineComponent, computed, reactive, ref } from 'vue'
 
 const store = useStore()
-const { eaJson, tags } = storeToRefs(store)
+const { filteredEaJson, tags } = storeToRefs(store)
 
 const table = computed(() => {
 
-  const data = eaJson.value.edges ?? []
+  const data = filteredEaJson.value.edges ?? []
   return {
     columns: [
       {

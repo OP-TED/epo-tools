@@ -5,22 +5,23 @@ import Nodes from './components/Nodes.vue'
 
 import LoadEA from './components/LoadEA.vue'
 import Filter from './components/Filter.vue'
+import Plantuml from './components/Plantuml.vue'
 
 import { NConfigProvider, darkTheme, NTabPane, NTabs } from 'naive-ui'
 import { computed, ref } from 'vue'
 import { useStore } from './state.js'
 
 const store = useStore()
-const { eaJson, tags } = storeToRefs(store)
+const { eaJson, filteredEaJson, tags } = storeToRefs(store)
 
 const nodesTitle = computed(() => {
-  const nodeCount = eaJson?.value?.nodes?.length ?? 0
-  return `Nodes (${nodeCount})`
+  const count = (x) => x?.value?.nodes?.length ?? 0
+  return `Nodes (${count(filteredEaJson)}/${count(eaJson)})`
 })
 
 const edgesTitle = computed(() => {
-  const edgeCount = eaJson?.value?.edges?.length ?? 0
-  return `Edges (${edgeCount})`
+  const count = (x) => x?.value?.edges?.length ?? 0
+  return `Edges (${count(filteredEaJson)}/${count(eaJson)})`
 })
 </script>
 
@@ -35,6 +36,9 @@ const edgesTitle = computed(() => {
         </n-tab-pane>
         <n-tab-pane name="Edges" :tab="edgesTitle">
           <Edges/>
+        </n-tab-pane>
+        <n-tab-pane name="PlantUML" tab="PlantUML">
+          <Plantuml/>
         </n-tab-pane>
       </n-tabs>
     </n-config-provider>

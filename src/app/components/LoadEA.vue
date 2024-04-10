@@ -5,6 +5,7 @@ import { storeToRefs } from 'pinia'
 import { bufferToJson } from '../../ontology/ea/ea-to-json.js'
 import { useStore } from '../state.js'
 import { NButton, NCard, NFlex } from 'naive-ui'
+import { computed } from 'vue'
 
 const store = useStore()
 
@@ -34,17 +35,24 @@ function handleBuffer (buffer) {
   eaJson.value = bufferToJson({ buffer: Buffer.from(buffer) })
 }
 
+const summary = computed(() => {
+  const nodesCount = eaJson?.value?.nodes?.length ?? 0
+  const edgesCount = eaJson?.value?.edges?.length ?? 0
+  return `${nodesCount}-${edgesCount}`
+})
+
+
 </script>
 
 <template>
   <n-card>
     <n-flex justify="end">
-    <n-button @click="open()">
-      Choose eap file
-    </n-button>
-    <n-button :disabled="!files" @click="clearSelection()">
-      {{ files ? `${files[0].name} (x)` : '-' }}
-    </n-button>
+      <n-button @click="open()">
+        Select eap
+      </n-button>
+      <n-button :disabled="!files" @click="clearSelection()">
+        {{ files ? `${files[0].name} (${summary})` : '-' }}
+      </n-button>
     </n-flex>
   </n-card>
 </template>

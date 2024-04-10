@@ -1,21 +1,23 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
+import { filterBy } from '../ontology/views/filter.js'
 
+const EMPTY = { nodes: [], edges: [] }
 export const useStore = defineStore('counter', () => {
 
-  const eaJson = ref({})
+  const eaJson = ref(EMPTY)
+
   function resetSelection () {
-    eaJson.value = {}
+    eaJson.value = EMPTY
   }
-  const tags = ref(['epo:','epo-cat:'])
 
-  // const count = ref(0)
-  // const name = ref('Eduardo')
-  // const doubleCount = computed(() => count.value * 2)
+  const tags = ref(['epo:', 'epo-cat:'])
 
-  // function increment () {
-  //   count.value++
-  // }
+  const filteredEaJson = computed(() => {
+    return eaJson.value.nodes
+      ? filterBy(eaJson.value, { filter: tags.value })
+      : EMPTY
+  })
 
-  return { eaJson, resetSelection, tags }
+  return { eaJson, filteredEaJson, resetSelection, tags }
 })
