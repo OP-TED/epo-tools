@@ -40,7 +40,7 @@ export const useStore = defineStore('counter', () => {
       nodes: nodes.map(addNodeWarnings).filter(hasNoErrors),
       edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
     }
-    return toPlantuml(withoutErrors)
+    return edges.length?toPlantuml(withoutErrors):undefined
   })
 
   return { eaJson, jsonView, plantUml, resetSelection, tags }

@@ -87,14 +87,15 @@ function getQuantifierFromBounds ({ LowerBound, UpperBound }) {
 }
 
 function getQuantifierFromString (str) {
+  const raw = { quantifiersDeclared: true, raw: str }
   if (str === '0..1') {
-    return { min: 0, max: 1, quantifiersDeclared: true }
+    return { min: 0, max: 1, ...raw }
   } else if (str === '1') {
-    return { min: 1, max: 1, quantifiersDeclared: true }
+    return { min: 1, max: 1, ...raw }
   } else if (str === '1..*') {
-    return { min: 1, quantifiersDeclared: true }
+    return { min: 1, ...raw }
   } else if (str === '0..*') {
-    return { quantifiersDeclared: true }
+    return raw
   } else return {
     quantifiersDeclared: false,
   }

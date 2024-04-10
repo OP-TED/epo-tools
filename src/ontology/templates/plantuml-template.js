@@ -7,9 +7,15 @@ const subclassTemplate = ({
   source, predicate, target,
 }) => `"${target}" <|-- "${source}"`
 
+const displayRawQuantifiers = (quantifiers) => quantifiers.quantifiersDeclared &&
+quantifiers.raw ? `"${quantifiers.raw}"` : ''
+
+const displayPredicateName = (predicate) => predicate ? `: ${predicate}` : ''
+
 const relationTemplate = ({
-  source, predicate, target,
-}) => `"${source}" --> "${target}"`
+  source, predicate, target, quantifiers,
+}) => `"${source}" --> ${displayRawQuantifiers(
+  quantifiers)} "${target}" ${displayPredicateName(predicate)}`
 
 function toPlantuml ({ nodes, edges }) {
 
