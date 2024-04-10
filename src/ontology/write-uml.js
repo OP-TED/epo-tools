@@ -3,7 +3,7 @@ import { UNDER_REVIEW } from '../config.js'
 import { addEdgeWarnings, addNodeWarnings } from './ea/add-warnings.js'
 import { bufferToJson } from './ea/ea-to-json.js'
 import { toPlantuml } from './templates/plantuml-template.js'
-import { narrowToEpoClasses } from './views/epo-views.js'
+import { filterBy } from './views/filter.js'
 
 const assetsPath = UNDER_REVIEW.localDirectory
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
@@ -11,24 +11,8 @@ const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.
 const buffer = readFileSync(databasePath)
 const eaJson = bufferToJson({ buffer })
 
-const classes = [
-  'epo:Notice', 'epo:Document', // 'epo:Procedure',
-  // 'epo:Lot',
-  // 'epo:LotAwardOutcome',
-  // 'epo:AwardOutcome',
-  // 'epo:MonetaryValue',
-  // 'epo:ProcurementObject',
-  // 'epo:ProcurementElement',
-  // 'epo:Purpose'
-]
-
-const options = {
-  onlyClassesOf: new Set(classes), includeIncoming: false,
-}
-
-const { nodes, edges } = narrowToEpoClasses(eaJson, options)
-// const {nodes, edges} = exportEpo(jsonExport) // All, do not try at home
-
+const filter = ['epo:Notice', 'epo:Document']
+const { nodes, edges } = filterBy(eaJson, filter)
 const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
 
 const epoOntology = {

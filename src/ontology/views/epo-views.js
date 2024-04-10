@@ -1,32 +1,12 @@
-const startsWithEpo = name => name && name.startsWith('epo')
-
-function narrowToEpoClasses (
-  { nodes, edges }, { onlyClassesOf, includeIncoming }) {
-
-  const toExport = (x) => startsWithEpo(x) && onlyClassesOf.has(x)
-
-  const edgesToExport = edges.filter(
-    x => toExport(x.source) || (includeIncoming && toExport(x.target)))
-
-  const exportedSources = new Set(edgesToExport.map(x => x.source))
-
-  const nodesToExport = nodes.filter(
-    x => startsWithEpo(x.name) && exportedSources.has(x.name))
-
-  return {
-    nodes: nodesToExport, edges: edgesToExport,
-  }
-}
+import { filterBy } from './filter.js'
+import { getAllPrefixes } from './prefix.js'
 
 function narrowToEpo ({ nodes, edges }) {
-  const toExport = startsWithEpo
-  return {
-    nodes: nodes.filter(x => toExport(x.name)),
-    edges: edges.filter(
-      x => toExport(x.source) || toExport(x.predicate) || toExport(x.target)),
-  }
+  const allPrefixes = getAllPrefixes({ nodes, edges })
+  const filter = allPrefixes.filter(x => x.startsWith('epo')).map(x => `${x}:`)
+  return filterBy({ nodes, edges }, filter)
 }
 
 export {
-  narrowToEpo, narrowToEpoClasses,
+  narrowToEpo,
 }

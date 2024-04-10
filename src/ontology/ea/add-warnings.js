@@ -1,5 +1,5 @@
 import { ATTRIBUTE, INHERITANCE } from '../const.js'
-import { hasPrefix } from '../util.js'
+import { hasPrefix } from '../views/prefix.js'
 
 function addNodeWarnings (node) {
   const warnings = hasPrefix(node.name) ? [] : [
