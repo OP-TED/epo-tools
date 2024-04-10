@@ -1,12 +1,13 @@
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
-export const useCounterStore = defineStore('counter', () => {
+export const useStore = defineStore('counter', () => {
 
   const eaJson = ref({})
   function resetSelection () {
     eaJson.value = {}
   }
+  const tags = ref(['epo:','epo-cat:'])
 
   // const count = ref(0)
   // const name = ref('Eduardo')
@@ -16,5 +17,5 @@ export const useCounterStore = defineStore('counter', () => {
   //   count.value++
   // }
 
-  return { eaJson, resetSelection }
+  return { eaJson, resetSelection, tags }
 })

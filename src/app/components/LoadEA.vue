@@ -3,9 +3,10 @@ import { useFileDialog } from '@vueuse/core'
 import { Buffer } from 'buffer/'
 import { storeToRefs } from 'pinia'
 import { bufferToJson } from '../../ontology/ea/ea-to-json.js'
-import { useCounterStore } from '../state.js'
+import { useStore } from '../state.js'
+import { NButton, NCard } from 'naive-ui'
 
-const store = useCounterStore()
+const store = useStore()
 
 const { resetSelection } = store
 const { eaJson } = storeToRefs(store)
@@ -21,7 +22,7 @@ function clearSelection () {
 }
 
 onChange(async (selectedFiles) => {
-  if (selectedFiles){
+  if (selectedFiles) {
     const [file] = selectedFiles
     const reader = new FileReader()
     reader.onload = (e) => handleBuffer(e.target.result)
@@ -36,15 +37,15 @@ function handleBuffer (buffer) {
 </script>
 
 <template>
-  <button type="button" @click="open()">
-    Choose eap file
-  </button>
-  <button type="button" :disabled="!files" @click="clearSelection()">
-    Reset
-  </button>
-  <template v-if="files">
-    <div v-for="file of files" :key="file.name">
-      {{ file.name }}
-    </div>
-  </template>
+  <n-card>
+    <n-button @click="open()">
+      Choose eap file
+    </n-button>
+    <n-button :disabled="!files" @click="clearSelection()">
+      {{ files ? `${files[0].name} (x)` : '-' }}
+    </n-button>
+
+  </n-card>
+
+
 </template>

@@ -47,6 +47,7 @@
     "mdb-reader": "^3.0.0",
     "mocha": "^10.4.0",
     "n3": "^1.17.3",
+    "naive-ui": "^2.38.1",
     "node-fetch": "^3.3.2",
     "oxigraph": "^0.4.0-alpha.3",
     "rdf-entity-webcomponent": "^0.7.5",
