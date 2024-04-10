@@ -1,9 +1,8 @@
 import { INHERITANCE, RELATIONSHIP } from '../const.js'
 
 const nodeTemplate = ({ name }, edges) => `class "${name}" {
-  ${edges.map(x => `  ${x.predicate} ${x.target}`).join('\n')}
-}
-`
+${noDuplicates(edges.map(x => `  ${x.predicate} ${x.target}`)).join('\n')}
+}`
 const subclassTemplate = ({
   source, predicate, target,
 }) => `"${target}" <|-- "${source}"`
@@ -22,17 +21,16 @@ function toPlantuml ({ nodes, edges }) {
 
   const relations = [
     ...edges.filter(x => x.type === INHERITANCE).map(subclassTemplate),
-    ...edges.filter(
-      x => x.target.startsWith('epo')). // Make this epo independent somehow
-      filter(x => x.type === RELATIONSHIP).
-      map(relationTemplate)]
+    ...edges.filter(x => x.type === RELATIONSHIP).map(relationTemplate)]
 
   return `
 @startuml
 ${classDefinitions.join('\n')}
-${relations.join('\n')}
+${noDuplicates(relations).join('\n')}
 @enduml
 `
 }
+
+const noDuplicates = (arr) => [...new Set(arr)]
 
 export { toPlantuml }

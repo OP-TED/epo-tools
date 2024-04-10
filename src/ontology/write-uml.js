@@ -12,13 +12,15 @@ const buffer = readFileSync(databasePath)
 const eaJson = bufferToJson({ buffer })
 
 const filter = ['epo:Notice', 'epo:Document']
-const { nodes, edges } = filterBy(eaJson, filter)
-const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
+const epoOntology = filterBy(eaJson, { filter })
 
-const epoOntology = {
-  nodes: nodes.map(addNodeWarnings).filter(hasNoErrors),
-  edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
-}
+
+// const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
+//
+// const epoOntology = {
+//   nodes: nodes.map(addNodeWarnings).filter(hasNoErrors),
+//   edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
+// }
 
 const plantUML = toPlantuml(epoOntology)
 const plantumlPath = `assets/epo.plantuml`
