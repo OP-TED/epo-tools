@@ -9,7 +9,7 @@ import { useStore } from '../state.js'
 
 const store = useStore()
 
-const { resetSelection } = store
+const { resetSelection, setEaJson } = store
 const { eaJson } = storeToRefs(store)
 
 const { files, open, reset, onChange } = useFileDialog({
@@ -32,7 +32,7 @@ onChange(async (selectedFiles) => {
 })
 
 function handleBuffer (buffer) {
-  eaJson.value = bufferToJson({ buffer: Buffer.from(buffer) })
+  setEaJson(bufferToJson({ buffer: Buffer.from(buffer) }))
 }
 
 const summary = computed(() => {

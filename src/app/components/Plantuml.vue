@@ -3,7 +3,6 @@ import { NCode, NImage } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import plantumlEncoder from 'plantuml-encoder'
 import { computed } from 'vue'
-
 import { useStore } from '../state.js'
 
 const store = useStore()

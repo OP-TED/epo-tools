@@ -5397,6 +5397,116 @@ m8g:EvidenceTypeShape a shacl:NodeShape ;
 "
 `;
 
+exports[`write-shacl generates shacl with inference 1`] = `
+"@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+
+a4g:AwardDecisionShape a shacl:NodeShape ;
+	shacl:targetClass a4g:AwardDecision ;
+	shacl:property [
+		shacl:path a4g:hasAwardDecisionDate ;
+		shacl:datatype xsd:dateTime ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		shacl:path a4g:hasAdditionalNonAwardJustification ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		shacl:targetClass a4g:AwardOutcome ;
+		shacl:path a4g:comprisesAwardOutcome ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:AwardDecision rdfs:subClassOf a4g:Document .
+
+a4g:BuyerShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Buyer ;
+	shacl:property [
+		shacl:path a4g:isContractingEntity ;
+		shacl:datatype xsd:boolean ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		shacl:path a4g:hasActivityDescription ;
+		shacl:datatype rdf:PlainLiteral ;
+	], [
+		shacl:path a4g:hasBuyerProfile ;
+		shacl:datatype xsd:anyURI ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		shacl:targetClass a4g:AwardDecision ;
+		shacl:path a4g:signsAwardDecision ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		shacl:targetClass a4g:ProcurementServiceProvider ;
+		shacl:path a4g:delegatesAncillaryActivitiesTo ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		shacl:targetClass m8g:Channel ;
+		shacl:path a4g:exposesInvoiceeChannel ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		shacl:targetClass m8g:cpovContactPoint ;
+		shacl:path a4g:indicatesInvoiceeContactPoint ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:Buyer rdfs:subClassOf a4g:AcquiringParty .
+
+a4g:AwardOutcomeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:AwardOutcome ;
+	shacl:property [
+		shacl:targetClass <http://publications.europa.eu/resource/authority/winner-selection-status> ;
+		shacl:path a4g:hasAwardStatus ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		shacl:targetClass a4g:TenderAwardOutcome ;
+		shacl:path a4g:comprisesTenderAwardOutcome ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasAwardedValue ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		shacl:targetClass <http://publications.europa.eu/resource/authority/non-award-justification> ;
+		shacl:path a4g:hasNonAwardJustification ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasBargainPrice ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:AwardOutcome rdfs:subClassOf a4g:ContextualProjection .
+
+"
+`;
+
 exports[`write-shacl generates shacl, empty graph 1`] = `
 "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .

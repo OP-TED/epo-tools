@@ -1,6 +1,6 @@
-import { useStorage } from '@vueuse/core'
+import { computedAsync, useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
-import { computed, ref, watch } from 'vue'
+import { computed } from 'vue'
 import { INHERITANCE } from '../ontology/const.js'
 import { toPlantuml } from '../ontology/templates/plantuml-template.js'
 import { filterBy } from '../ontology/views/filter.js'
@@ -8,7 +8,8 @@ import { toShacl } from '../ontology/views/shacl.js'
 
 const VIEW_LOCAL_STORAGE_KEY = 'filterBy'
 const DEFAULT_VIEW = {
-  filter: ['epo:', 'epo-cat:'], includeIncoming: false,
+  filter: ['epo:Document', 'epo:Buyer', 'epo:AwardDecision'],
+  includeIncoming: false,
 }
 
 const CM_LOCAL_STORAGE_KEY = 'enterprise-architect'
@@ -24,15 +25,19 @@ export const useStore = defineStore('counter', () => {
 
   const filterOptions = useStorage(VIEW_LOCAL_STORAGE_KEY, DEFAULT_VIEW)
 
-  const jsonView = computed(() => {
-    const narrowed = eaJson.value.nodes ? filterBy(eaJson.value,
-      filterOptions.value) : DEFAULT_CM
-    return {
-      nodes: narrowed.nodes,
-      edges: narrowed.edges.map(x => x.type === INHERITANCE
+  function setEaJson (json) {
+    eaJson.value = {
+      nodes: json.nodes,
+      edges: json.edges.map(x => x.type === INHERITANCE
         ? { ...x, predicate: 'rdfs:subClassOf' }
         : x),
     }
+  }
+
+  const jsonView = computed(() => {
+    return eaJson.value.nodes
+      ? filterBy(eaJson.value, filterOptions.value)
+      : DEFAULT_CM
   })
 
   const plantUml = computed(() => {
@@ -40,16 +45,13 @@ export const useStore = defineStore('counter', () => {
     return edges.length ? toPlantuml({ nodes, edges }) : undefined
   })
 
-  // Seriously? no async computed?
-  const shacl = ref('')
-  watch(jsonView, async (newJsonView, oldQuestion) => {
+  const shacl = computedAsync(async () => {
     const { nodes, edges } = jsonView.value
-    if (edges.length) {
-      const { turtle } = await toShacl({ nodes, edges })
-      shacl.value = turtle
-    }
-  })
+    const { turtle } = await toShacl({ nodes, edges })
+    return turtle
+  }, null)
 
-
-  return { eaJson, jsonView, plantUml, shacl, resetSelection, filterOptions }
+  return {
+    eaJson, setEaJson, jsonView, plantUml, shacl, resetSelection, filterOptions,
+  }
 })

@@ -11,7 +11,8 @@ async function parseUgly (uglyTurtle) {
   return { dataset, turtle }
 }
 
-async function toShacl ({ nodes, edges }) {
+async function toShacl (
+  { nodes, edges }, { inference } = { inference: false }) {
   const hasErrors = x => x.warnings.some(x => x.severity === 'error')
 
   const nodesWithWarnings = nodes.map(addNodeWarnings)
