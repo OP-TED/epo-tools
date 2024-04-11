@@ -17,8 +17,10 @@ const objectTemplate = ({
     ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
       sh:targetClass ${source} ;
       sh:property [
+        a sh:PropertyShape ;
         sh:path ${predicate} ;
         sh:nodeKind sh:IRI ;
+        ${shaclName(predicate)}
         ${quantifiersTemplate(quantifiers)}
          sh:targetClass ${target} ;
       ] .
@@ -35,8 +37,10 @@ const literalTemplate = ({
     ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
       sh:targetClass ${source} ;
       sh:property [
+        a sh:PropertyShape ;
         sh:path ${predicate} ;
         sh:datatype ${target} ;
+        ${shaclName(predicate)}
         ${quantifiersTemplate(quantifiers)}
       ] .
     `
@@ -44,6 +48,21 @@ const literalTemplate = ({
 const subclassTemplate = ({ source, predicate, target }) => `
     ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
     `
+
+function shaclName (predicate) {
+
+  // modified from: https://www.30secondsofcode.org/js/s/string-case-conversion/
+  const toSpaced = str => str && str.match(
+    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).
+    // map(x => str.toUpperCase() === str ? x : x.toLowerCase()).
+    map(x => x.toLowerCase()).
+    join(' ')
+
+  const stripPrefix = (str) => str.split(':').slice(1).join(':') || str
+
+  return predicate ? `sh:name "${toSpaced(stripPrefix(predicate))}"@en ;` : ''
+
+}
 
 function toTurtle ({ nodes, edges }) {
   const classDefinitions = nodes.map(nodeTemplate)
