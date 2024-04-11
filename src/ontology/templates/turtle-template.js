@@ -6,23 +6,6 @@ const nodeTemplate = ({ name, description }) => `
       #  a owl:Class .
         `
 
-const literalTemplate = ({
-  source, predicate, target, description, quantifiers,
-}) => `
-    # ${predicate} a owl:DatatypeProperty ;
-    #     ${skosDefinitionTemplate(description)}
-    #     rdfs:domain  ${source} ;
-    #     rdfs:range  ${target} .
-
-    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
-      sh:targetClass ${source} ;
-      sh:property [
-        sh:path ${predicate} ;
-        sh:datatype ${target} ;
-        ${quantifiersTemplate(quantifiers)}
-      ] .
-    `
-
 const objectTemplate = ({
   source, predicate, target, description, quantifiers,
 }) => `
@@ -41,8 +24,25 @@ const objectTemplate = ({
       ] .
     `
 
+const literalTemplate = ({
+  source, predicate, target, description, quantifiers,
+}) => `
+    # ${predicate} a owl:DatatypeProperty ;
+    #     ${skosDefinitionTemplate(description)}
+    #     rdfs:domain  ${source} ;
+    #     rdfs:range  ${target} .
+
+    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
+      sh:targetClass ${source} ;
+      sh:property [
+        sh:path ${predicate} ;
+        sh:datatype ${target} ;
+        ${quantifiersTemplate(quantifiers)}
+      ] .
+    `
+
 const subclassTemplate = ({ source, predicate, target }) => `
-    ${source} rdfs:subClassOf ${target} .
+    ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
     `
 
 function toTurtle ({ nodes, edges }) {
@@ -98,7 +98,7 @@ function toTurtle ({ nodes, edges }) {
 @prefix at-voc-new: <http://unknown/> . # Authority tables
 
 
-  ${[...classDefinitions, ...relations].join('\n')}
+ ${[...classDefinitions, ...relations].join('\n')}
 `
 }
 

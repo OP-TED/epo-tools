@@ -6,22 +6,17 @@ import { getEpoJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
 
-const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
-
 describe('write-plantuml', () => {
 
   const epoJson = getEpoJson()
 
   it(`generates plantuml`, function () {
-
-    // const { nodes, edges } = epoJson
-    // const epoOntology = {
-    //   nodes: nodes.map(addNodeWarnings).filter(hasNoErrors),
-    //   edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
-    // }
-
     const plantuml = toPlantuml(epoJson)
+    expect(plantuml).toMatchSnapshot(this)
+  })
 
+  it(`generates plantuml, empty graph`, async function () {
+    const plantuml = toPlantuml(epoJson)
     expect(plantuml).toMatchSnapshot(this)
   })
 })

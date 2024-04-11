@@ -1,22 +1,5 @@
 import { INHERITANCE, RELATIONSHIP } from '../const.js'
 
-const nodeTemplate = ({ name }, edges) => `class "${name}" {
-${noDuplicates(edges.map(x => `  ${x.predicate} ${x.target}`)).join('\n')}
-}`
-const subclassTemplate = ({
-  source, predicate, target,
-}) => `"${target}" <|-- "${source}"`
-
-const displayRawQuantifiers = (quantifiers) => quantifiers.quantifiersDeclared &&
-quantifiers.raw ? `"${quantifiers.raw}"` : ''
-
-const displayPredicateName = (predicate) => predicate ? `: ${predicate}` : ''
-
-const relationTemplate = ({
-  source, predicate, target, quantifiers,
-}) => `"${source}" --> ${displayRawQuantifiers(
-  quantifiers)} "${target}" ${displayPredicateName(predicate)}`
-
 function toPlantuml ({ nodes, edges }) {
 
   const classDefinitions = nodes.map(node => {
@@ -36,6 +19,24 @@ ${noDuplicates(relations).join('\n')}
 @enduml
 `
 }
+
+const nodeTemplate = ({ name }, edges) => `class "${name}" {
+${noDuplicates(edges.map(x => `  ${x.predicate} ${x.target}`)).join('\n')}
+}`
+
+const subclassTemplate = ({
+  source, predicate, target,
+}) => `"${target}" <|-- "${source}"`
+
+const relationTemplate = ({
+  source, predicate, target, quantifiers,
+}) => `"${source}" --> ${displayQuantifiers(
+  quantifiers)} "${target}" ${displayPredicateName(predicate)}`
+
+const displayQuantifiers = (quantifiers) => quantifiers.quantifiersDeclared &&
+quantifiers.raw ? `"${quantifiers.raw}"` : ''
+
+const displayPredicateName = (predicate) => predicate ? `: ${predicate}` : ''
 
 const noDuplicates = (arr) => [...new Set(arr)]
 

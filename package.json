@@ -33,7 +33,6 @@
     "vue-use": "^0.2.0"
   },
   "devDependencies": {
-    "@lit-labs/ssr": "^3.2.2",
     "@rdfjs-elements/formats-pretty": "^0.6.7",
     "@rdfjs/formats": "^4.0.0",
     "@vitejs/plugin-vue": "^5.0.4",
@@ -52,7 +51,6 @@
     "naive-ui": "^2.38.1",
     "node-fetch": "^3.3.2",
     "oxigraph": "^0.4.0-alpha.3",
-    "rdf-entity-webcomponent": "^0.7.5",
     "rdf-ext": "^2.5.1",
     "sparqljs": "^3.7.1",
     "tar": "^6.2.0",

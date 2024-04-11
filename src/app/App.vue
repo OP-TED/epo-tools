@@ -8,6 +8,8 @@ import Filter from './components/Filter.vue'
 import LoadEA from './components/LoadEA.vue'
 import Nodes from './components/Nodes.vue'
 import Plantuml from './components/Plantuml.vue'
+import Shacl from './components/Shacl.vue'
+
 import { useStore } from './state.js'
 
 const store = useStore()
@@ -30,14 +32,17 @@ const edgesTitle = computed(() => {
       <LoadEA/>
       <Filter/>
       <n-tabs type="line" animated>
+        <n-tab-pane name="Diagram" tab="Diagram">
+          <Plantuml/>
+        </n-tab-pane>
+        <n-tab-pane name="Shacl" tab="Shacl">
+          <Shacl/>
+        </n-tab-pane>
         <n-tab-pane name="Nodes" :tab="nodesTitle">
           <Nodes/>
         </n-tab-pane>
         <n-tab-pane name="Edges" :tab="edgesTitle">
           <Edges/>
-        </n-tab-pane>
-        <n-tab-pane name="Diagram" tab="Diagram">
-          <Plantuml/>
         </n-tab-pane>
       </n-tabs>
     </n-config-provider>

@@ -1,13 +1,10 @@
 import { useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
-import { computed } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { INHERITANCE } from '../ontology/const.js'
-import {
-  addEdgeWarnings,
-  addNodeWarnings,
-} from '../ontology/ea/add-warnings.js'
 import { toPlantuml } from '../ontology/templates/plantuml-template.js'
 import { filterBy } from '../ontology/views/filter.js'
+import { toShacl } from '../ontology/views/shacl.js'
 
 const VIEW_LOCAL_STORAGE_KEY = 'filterBy'
 const DEFAULT_VIEW = {
@@ -40,13 +37,19 @@ export const useStore = defineStore('counter', () => {
 
   const plantUml = computed(() => {
     const { nodes, edges } = jsonView.value
-    const hasNoErrors = x => !x.warnings.some(x => x.severity === 'error')
-    const withoutErrors = {
-      nodes: nodes.map(addNodeWarnings).filter(hasNoErrors),
-      edges: edges.map(addEdgeWarnings).filter(hasNoErrors),
-    }
-    return edges.length ? toPlantuml(withoutErrors) : undefined
+    return edges.length ? toPlantuml({ nodes, edges }) : undefined
   })
 
-  return { eaJson, jsonView, plantUml, resetSelection, filterOptions }
+  // Seriously? no async computed?
+  const shacl = ref('')
+  watch(jsonView, async (newJsonView, oldQuestion) => {
+    const { nodes, edges } = jsonView.value
+    if (edges.length) {
+      const { turtle } = await toShacl({ nodes, edges })
+      shacl.value = turtle
+    }
+  })
+
+
+  return { eaJson, jsonView, plantUml, shacl, resetSelection, filterOptions }
 })
