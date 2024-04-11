@@ -3,9 +3,8 @@ import { INHERITANCE, RELATIONSHIP } from '../const.js'
 function toPlantuml ({ nodes, edges }) {
 
   const classDefinitions = nodes.map(node => {
-    const nodeEdges = edges.filter(edge => edge.source === node.name).
-      filter(edge => edge.type !== INHERITANCE)
-    return nodeTemplate(node, nodeEdges)
+    return nodeTemplate(node, edges.filter(edge => edge.source === node.name).
+      filter(edge => edge.type !== INHERITANCE))
   })
 
   const relations = [
@@ -21,7 +20,9 @@ ${noDuplicates(relations).join('\n')}
 }
 
 const nodeTemplate = ({ name }, edges) => `class "${name}" {
-${noDuplicates(edges.map(x => `  ${x.predicate} ${x.target}`)).join('\n')}
+${noDuplicates(edges.map(
+  x => `  ${x.predicate} : ${x.target} ${displayQuantifiers(x.quantifiers,
+    x => `[${x}]`)}`)).join('\n')}
 }`
 
 const subclassTemplate = ({
@@ -30,11 +31,23 @@ const subclassTemplate = ({
 
 const relationTemplate = ({
   source, predicate, target, quantifiers,
-}) => `"${source}" --> ${displayQuantifiers(
-  quantifiers)} "${target}" ${displayPredicateName(predicate)}`
+}) => `"${source}" --> ${displayQuantifiers(quantifiers,
+  x => `"${x}"`)} "${target}" ${displayPredicateName(predicate)}`
 
-const displayQuantifiers = (quantifiers) => quantifiers.quantifiersDeclared &&
-quantifiers.raw ? `"${quantifiers.raw}"` : ''
+function displayQuantifiers ({ quantifiersDeclared, min, max, raw }, wrap) {
+  if (quantifiersDeclared) {
+    if (raw) { // prefer raw if declared
+      return wrap(`${raw}`)
+    } else if (min && max) {
+      return wrap(`${min}..${max}`)
+    } else if (min) {
+      return wrap(`${min}..*`)
+    } else if (max) {
+      return wrap(`0..${max}`)
+    }
+  }
+  return ''
+}
 
 const displayPredicateName = (predicate) => predicate ? `: ${predicate}` : ''
 

@@ -1,7 +1,6 @@
 <script setup lang="js">
 import { NDataTable } from 'naive-ui'
 import { storeToRefs } from 'pinia'
-
 import { computed, ref } from 'vue'
 import { useStore } from '../state.js'
 
@@ -16,30 +15,38 @@ const table = computed(() => {
         title: 'source',
         key: 'source',
         defaultSortOrder: 'ascend',
-        sorter: 'default'
+        sorter: 'default',
+
       },
       {
         title: 'predicate',
         key: 'predicate',
         defaultSortOrder: 'ascend',
-        sorter: 'default'
+        sorter: 'default',
       },
       {
         title: 'target',
         key: 'target',
         defaultSortOrder: 'ascend',
-        sorter: 'default'
+        sorter: 'default',
       },
+      {
+        title: 'quantifier',
+        key: 'quantifiers.raw',
+        defaultSortOrder: 'ascend',
+        sorter: 'default',
+      },
+
       {
         title: 'description',
         key: 'description',
         width: 300,
         ellipsis: {
-          tooltip: true
-        }
+          tooltip: true,
+        },
       },
     ],
-    data: jsonView.value.edges ?? [],
+    data: (jsonView.value.edges ?? []),
   }
 })
 
