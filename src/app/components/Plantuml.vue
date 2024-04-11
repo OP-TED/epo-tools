@@ -23,7 +23,7 @@ const imageUrl = computed(() => {
 
     <template v-if="imageUrl">
       <n-image
-          width="400"
+          width="100%"
           :src="imageUrl"
       />
     </template>

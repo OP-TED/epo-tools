@@ -1,11 +1,11 @@
 <script setup lang="js">
 import { useFileDialog } from '@vueuse/core'
 import { Buffer } from 'buffer/'
+import { NButton, NCard, NFlex } from 'naive-ui'
 import { storeToRefs } from 'pinia'
+import { computed } from 'vue'
 import { bufferToJson } from '../../ontology/ea/ea-to-json.js'
 import { useStore } from '../state.js'
-import { NButton, NCard, NFlex } from 'naive-ui'
-import { computed } from 'vue'
 
 const store = useStore()
 
@@ -38,7 +38,7 @@ function handleBuffer (buffer) {
 const summary = computed(() => {
   const nodesCount = eaJson?.value?.nodes?.length ?? 0
   const edgesCount = eaJson?.value?.edges?.length ?? 0
-  return `${nodesCount}-${edgesCount}`
+  return (nodesCount || edgesCount) ? `${nodesCount}-${edgesCount}` : ''
 })
 
 
@@ -50,7 +50,7 @@ const summary = computed(() => {
       <n-button @click="open()">
         Select eap
       </n-button>
-      <n-button :disabled="!files" @click="clearSelection()">
+      <n-button :disabled="!(files||summary)" @click="clearSelection()">
         {{ files ? `${files[0].name} (${summary})` : '-' }}
       </n-button>
     </n-flex>

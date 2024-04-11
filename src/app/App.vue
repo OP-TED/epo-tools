@@ -36,7 +36,7 @@ const edgesTitle = computed(() => {
         <n-tab-pane name="Edges" :tab="edgesTitle">
           <Edges/>
         </n-tab-pane>
-        <n-tab-pane name="PlantUML" tab="PlantUML">
+        <n-tab-pane name="Diagram" tab="Diagram">
           <Plantuml/>
         </n-tab-pane>
       </n-tabs>
