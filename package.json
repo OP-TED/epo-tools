@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "fetch-repos": "node src/download/fetchRepos.js",
     "fetch-vocabularies": "node src/download/fetchVocabularies.js",
     "snapshot": "npm run fetch-repos && mocha"
