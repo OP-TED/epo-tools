@@ -6652,6 +6652,90 @@ WG approval 16/05/2023",
 }
 `;
 
+exports[`filter filterBy incoming=false small 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "description": "Acronym or alternative name of the Agent.
+WG Approval 25/03/2021",
+      "predicate": "epo:hasAlias",
+      "quantifiers": Object {
+        "max": undefined,
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "foaf:Agent",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Links a resource to an adms:Identifier class.",
+      "predicate": "adms:identifier",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "foaf:Agent",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:hasAdditionalClassification",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo:Purpose",
+      "target": "at-voc:cpv",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:hasMainClassification",
+      "quantifiers": Object {
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1..*",
+      },
+      "source": "epo:Purpose",
+      "target": "at-voc:cpv",
+      "type": "relation",
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "description": "A  Person, an Organisation, or a System that acts in Procurement or have the power to act in Procurement.
+
+WG Approval 28/04/2020",
+      "name": "foaf:Agent",
+    },
+    Object {
+      "description": "The description of the objectives related to a Procurement. 
+
+Additional information:
+
+The description of the objectives includes the Subject Matter and Quantities.
+
+
+The quantification of the objectives related to a procurement.
+
+To be re-reviewed by the WG the soonest.
+
+(WG to be discussed, this was pointed out on the 09/04/2019 14:38:25 WG Meeting)
+
+The old definition read as follows:
+
+The description of the objectives related to a procurement.
+
+(WG approval 05/12/2018)
+",
+      "name": "epo:Purpose",
+    },
+  ],
+}
+`;
+
 exports[`filter filterBy incoming=true 1`] = `
 Object {
   "edges": Array [
