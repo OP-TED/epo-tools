@@ -1,0 +1,63 @@
+
+epo:AgentInRole
+foaf:Agent
+org:Organization
+Diagram
+Shacl
+Nodes (3/721)
+Edges (27/1548)
+
+
+@startuml
+class "foaf:Agent" {
+  epo:hasAlias : rdf:PlainLiteral [0..*]
+  dct:title : rdf:PlainLiteral [0..*]
+  adms:identifier : adms:Identifier [0..*]
+}
+class "org:Organization" {
+  epo:hasMainActivityDescription : rdf:PlainLiteral [0..1]
+  epo:hasBuyerLegalTypeDescription : rdf:PlainLiteral [0..1]
+  epo:hasInternetAddress : xsd:anyURI [0..*]
+  epo:hasLegalFormType : rdf:PlainLiteral [0..1]
+  epo:hasLegalName : rdf:PlainLiteral [0..*]
+  epo:hasRegistrationCountry : at-voc:country [0..1]
+  epo:hasPrimaryContactPoint : cpov:ContactPoint [0..1]
+  cv:registeredAddress : locn:Address [0..1]
+  locn:address : locn:Address [0..*]
+  org:subOrganizationOf : org:Organization [0..*]
+  epo:hasBuyerLegalType : at-voc:buyer-legal-type [0..1]
+  epo:hasMainActivity : at-voc:main-activity [0..1]
+  epo:hasCertification : epo:Certificate [0..*]
+  epo:canProvideTaxAndSocialSecuritiesEvidence : cccev:Evidence [0..*]
+  epo:canProvideNonDiscriminatoryEvidence : cccev:Evidence [0..*]
+  epo:hasLegalIdentifier : adms:Identifier [0..*]
+  epo:hasTaxIdentifier : adms:Identifier [0..*]
+}
+class "epo:AgentInRole" {
+  dct:description : rdf:PlainLiteral [0..*]
+  dct:title : rdf:PlainLiteral [0..*]
+  epo:hasContactPointInRole : cpov:ContactPoint [0..*]
+  epo:playedBy : foaf:Agent [1]
+  epo:contextualisedBy : epo:ProcurementObject [0..*]
+  epo:exposesChannel : cv:Channel [0..*]
+}
+"foaf:Agent" <|-- "org:Organization"
+"org:Organization" --> "0..1" "at-voc:country" : epo:hasRegistrationCountry
+"org:Organization" --> "0..1" "cpov:ContactPoint" : epo:hasPrimaryContactPoint
+"epo:AgentInRole" --> "0..*" "cpov:ContactPoint" : epo:hasContactPointInRole
+"org:Organization" --> "0..1" "locn:Address" : cv:registeredAddress
+"foaf:Agent" --> "0..*" "adms:Identifier" : adms:identifier
+"epo:AgentInRole" --> "1" "foaf:Agent" : epo:playedBy
+"org:Organization" --> "0..*" "locn:Address" : locn:address
+"org:Organization" --> "0..*" "org:Organization" : org:subOrganizationOf
+"org:Organization" --> "0..1" "at-voc:buyer-legal-type" : epo:hasBuyerLegalType
+"epo:AgentInRole" --> "0..*" "epo:ProcurementObject" : epo:contextualisedBy
+"org:Organization" --> "0..1" "at-voc:main-activity" : epo:hasMainActivity
+"org:Organization" --> "0..*" "epo:Certificate" : epo:hasCertification
+"org:Organization" --> "0..*" "cccev:Evidence" : epo:canProvideTaxAndSocialSecuritiesEvidence
+"org:Organization" --> "0..*" "cccev:Evidence" : epo:canProvideNonDiscriminatoryEvidence
+"epo:AgentInRole" --> "0..*" "cv:Channel" : epo:exposesChannel
+"org:Organization" --> "0..*" "adms:Identifier" : epo:hasLegalIdentifier
+"org:Organization" --> "0..*" "adms:Identifier" : epo:hasTaxIdentifier
+@enduml
+

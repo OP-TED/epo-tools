@@ -1,87 +1,7 @@
 import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
+import { stripPrefix, toSpaced } from '../views/prefix.js'
 
-const nodeTemplate = ({ name, description }) => `
-      # ${name}
-      #  ${skosDefinitionTemplate(description)}
-      #  a owl:Class .
-        `
-
-const objectTemplate = ({
-  source, predicate, target, description, quantifiers,
-}) => `
-    # ${predicate} a owl:ObjectProperty ;
-    #     ${skosDefinitionTemplate(description)}
-    #     rdfs:domain  ${source} ;
-    #     rdfs:range  ${target} .
-
-    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
-      sh:targetClass ${source} ;
-      sh:property [
-        a sh:PropertyShape ;
-        sh:path ${predicate} ;
-        sh:nodeKind sh:IRI ;
-        ${shaclName(predicate)}
-        ${quantifiersTemplate(quantifiers)}
-         sh:targetClass ${target} ;
-      ] .
-    `
-
-const literalTemplate = ({
-  source, predicate, target, description, quantifiers,
-}) => `
-    # ${predicate} a owl:DatatypeProperty ;
-    #     ${skosDefinitionTemplate(description)}
-    #     rdfs:domain  ${source} ;
-    #     rdfs:range  ${target} .
-
-    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
-      sh:targetClass ${source} ;
-      sh:property [
-        a sh:PropertyShape ;
-        sh:path ${predicate} ;
-        sh:datatype ${target} ;
-        ${shaclName(predicate)}
-        ${quantifiersTemplate(quantifiers)}
-      ] .
-    `
-
-const subclassTemplate = ({ source, predicate, target }) => `
-    ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
-    `
-
-function shaclName (predicate) {
-
-  // modified from: https://www.30secondsofcode.org/js/s/string-case-conversion/
-  const toSpaced = str => str && str.match(
-    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).
-    // map(x => str.toUpperCase() === str ? x : x.toLowerCase()).
-    map(x => x.toLowerCase()).
-    join(' ')
-
-  const stripPrefix = (str) => str.split(':').slice(1).join(':') || str
-
-  return predicate ? `sh:name "${toSpaced(stripPrefix(predicate))}"@en ;` : ''
-
-}
-
-function toTurtle ({ nodes, edges }) {
-  const classDefinitions = nodes.map(nodeTemplate)
-
-  const relations = edges.map(edge => {
-
-    if (edge.type === INHERITANCE) {
-      return subclassTemplate(edge)
-    } else if (edge.type === ATTRIBUTE) {
-      return literalTemplate(edge)
-    } else if (edge.type === RELATIONSHIP) {
-      return objectTemplate(edge)
-    } else {
-      throw Error(`type '${edge.type}' not implemented`)
-    }
-
-  })
-
-  return `
+const prefix = `
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix schema: <http://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -114,15 +34,76 @@ function toTurtle ({ nodes, edges }) {
 @prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
 @prefix cpov: <http://data.europa.eu/m8g/cpov> . # Is this true?
 @prefix at-voc: <http://publications.europa.eu/resource/authority/> . # Authority tables
-@prefix at-voc-new: <http://unknown/> . # Authority tables
+@prefix at-voc-new: <http://unknown/> . # Authority tables`
 
-
- ${[...classDefinitions, ...relations].join('\n')}
-`
+const toTurtle = ({ nodes, edges }) => {
+  const output = [
+    ...nodes.map(nodeTemplate),
+    ...edges.map(edge => (templates[edge.type])(edge))]
+  return prefix + output.join('\n')
 }
 
 function shapeIRI ({ source, predicate, target }) {
   return `${source}Shape`
+}
+
+const subclassTemplate = ({ source, predicate, target }) => `
+    ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
+    `
+
+const literalTemplate = ({
+  source, predicate, target, description, quantifiers,
+}) => `
+    # ${predicate} a owl:DatatypeProperty ;
+    #     ${skosDefinitionTemplate(description)}
+    #     rdfs:domain  ${source} ;
+    #     rdfs:range  ${target} .
+
+    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
+      sh:targetClass ${source} ;
+      sh:property [
+        a sh:PropertyShape ;
+        sh:path ${predicate} ;
+        sh:datatype ${target} ;
+        ${shaclName(predicate)}
+        ${quantifiersTemplate(quantifiers)}
+      ] .
+    `
+
+const objectTemplate = ({
+  source, predicate, target, description, quantifiers,
+}) => `
+    # ${predicate} a owl:ObjectProperty ;
+    #     ${skosDefinitionTemplate(description)}
+    #     rdfs:domain  ${source} ;
+    #     rdfs:range  ${target} .
+
+    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
+      sh:targetClass ${source} ;
+      sh:property [
+        a sh:PropertyShape ;
+        sh:path ${predicate} ;
+        sh:nodeKind sh:IRI ;
+        ${shaclName(predicate)}
+        ${quantifiersTemplate(quantifiers)}
+         sh:targetClass ${target} ;
+      ] .
+    `
+
+const templates = {
+  [INHERITANCE]: subclassTemplate,
+  [ATTRIBUTE]: literalTemplate,
+  [RELATIONSHIP]: objectTemplate,
+}
+
+const nodeTemplate = ({ name, description }) => `
+      # ${name}
+      #  ${skosDefinitionTemplate(description)}
+      #  a owl:Class .
+`
+
+function shaclName (predicate) {
+  return predicate ? `sh:name "${toSpaced(stripPrefix(predicate))}"@en ;` : ''
 }
 
 const quantifiersTemplate = ({
