@@ -1,7 +1,7 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import { filterBy } from '../src/ontology/views/filter.js'
+import { filterBy, suggestNodes } from '../src/ontology/views/filter.js'
 import { getJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
@@ -28,7 +28,7 @@ describe('filter', () => {
     expect(filtered).toMatchSnapshot(this)
   })
 
-  it(`filterBy incoming=false small`, function () {
+  it(`filterBy negation`, function () {
 
     const view = {
       filter: ['foaf:Agent', 'epo:Purpose', '!epo:Q*', '-dct*'],
@@ -38,5 +38,21 @@ describe('filter', () => {
     const filtered = filterBy(eaJson, view)
     expect(filtered).toMatchSnapshot(this)
   })
+
+  it(`filterBy suggestNodes`, function () {
+
+    const view = {
+      filter: ['epo:Document'],
+      includeIncoming: false,
+    }
+
+    const filtered = filterBy(eaJson, view)
+
+    const suggested = suggestNodes(filtered, view)
+
+    expect(suggested).toMatchSnapshot(this)
+  })
+
+
 })
 

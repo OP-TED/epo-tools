@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 import { computed } from 'vue'
 import { INHERITANCE } from '../ontology/const.js'
 import { toPlantuml } from '../ontology/templates/plantuml-template.js'
-import { filterBy } from '../ontology/views/filter.js'
+import { filterBy, suggestNodes } from '../ontology/views/filter.js'
 import { toShacl } from '../ontology/views/shacl.js'
 
 const VIEW_LOCAL_STORAGE_KEY = 'filterBy'
@@ -40,6 +40,10 @@ export const useStore = defineStore('counter', () => {
       : DEFAULT_CM
   })
 
+  const suggestedNodes = computed(() => {
+    return suggestNodes(jsonView.value, filterOptions.value)
+  })
+
   const plantUml = computed(() => {
     const { nodes, edges } = jsonView.value
     return edges.length ? toPlantuml({ nodes, edges }) : undefined
@@ -52,6 +56,13 @@ export const useStore = defineStore('counter', () => {
   }, null)
 
   return {
-    eaJson, setEaJson, jsonView, plantUml, shacl, resetSelection, filterOptions,
+    eaJson,
+    setEaJson,
+    suggestedNodes,
+    jsonView,
+    plantUml,
+    shacl,
+    resetSelection,
+    filterOptions,
   }
 })
