@@ -1,7 +1,7 @@
 import { Parser } from 'n3'
 import rdf from 'rdf-ext'
 import { prettyPrintTurtle } from '../../io/serialization.js'
-import { addEdgeWarnings, addNodeWarnings } from '../ea/add-warnings.js'
+import { validateEdge, validateNode } from '../ea/validate.js'
 import { toTurtle } from '../templates/turtle-template.js'
 
 async function parseUgly (uglyTurtle) {
@@ -13,20 +13,19 @@ async function parseUgly (uglyTurtle) {
 
 async function toShacl (
   { nodes, edges }, { inference } = { inference: false }) {
-  const hasErrors = x => x.warnings.some(x => x.severity === 'error')
-
-  const nodesWithWarnings = nodes.map(addNodeWarnings)
-  const edgesWithWarnings = edges.map(addEdgeWarnings)
+  const hasErrors = x => x.some(x => x.severity === 'error')
 
   const uglyTurtle = toTurtle({
-    nodes: nodesWithWarnings.filter(x => !hasErrors(x)),
-    edges: edgesWithWarnings.filter(x => !hasErrors(x)),
+    nodes: nodes.filter(x => !hasErrors(validateNode(x))),
+    edges: edges.filter(x => !hasErrors(validateEdge(x))),
   })
 
   return {
     ...(await parseUgly(uglyTurtle)), errors: {
-      nodes: nodesWithWarnings.filter(x => hasErrors(x)),
-      edges: edgesWithWarnings.filter(x => hasErrors(x)),
+      nodes: nodes.filter(x => hasErrors(validateNode(x))).
+        map(x => ({ ...x, errors: validateNode(x) })),
+      edges: edges.filter(x => hasErrors(validateEdge(x))).
+        map(x => ({ ...x, errors: validateEdge(x) })),
     },
   }
 }

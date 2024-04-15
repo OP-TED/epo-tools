@@ -59,6 +59,8 @@ function toJson ({ objects, attributes, connectors }) {
       }
       if (Direction !== 'Bi-Directional') { // Apparently this is not taken into account
         // console.log('Bidirectional',domain, predicate, range)
+        // If we find some instance of this, apply inverses.
+        // :relatesTo owl:inverseOf :isRelatedTo .
       }
 
       return {
