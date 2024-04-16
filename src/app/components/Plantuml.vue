@@ -7,6 +7,9 @@ import { useStore } from '../state.js'
 
 const store = useStore()
 const { plantUml } = storeToRefs(store)
+import { useClipboard, usePermission } from '@vueuse/core'
+
+const { text, isSupported, copy } = useClipboard()
 
 const imageUrl = computed(() => {
   const encoded = plantumlEncoder.encode(plantUml.value)
@@ -26,7 +29,12 @@ const imageUrl = computed(() => {
           :src="imageUrl"
       />
     </template>
-
+    <div v-if="isSupported">
+      <button @click="copy(plantUml)">
+        <template v-if="text">Copied</template>
+        <template v-else>Copy</template>
+      </button>
+    </div>
     <div style="overflow: auto">
       <n-code :code="plantUml" language="plantuml" show-line-numbers/>
     </div>

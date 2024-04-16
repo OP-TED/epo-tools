@@ -21,6 +21,13 @@ const edgesTitle = computed(() => {
   const count = (x) => x?.value?.edges?.length ?? 0
   return `Edges (${count(jsonView)}/${count(eaJson)})`
 })
+
+const dataTitle = computed(() => {
+  const nodeCount = (x) => x?.value?.nodes?.length ?? 0
+  const edgeCount = (x) => x?.value?.edges?.length ?? 0
+  return `Data (${nodeCount(jsonView)}-${edgeCount(jsonView)})`
+})
+
 </script>
 
 <template>
@@ -32,7 +39,7 @@ const edgesTitle = computed(() => {
       <Shacl/>
     </n-tab-pane>
 
-    <n-tab-pane name="data" tab="Data">
+    <n-tab-pane name="data" :tab="dataTitle">
       <n-tabs type="line" animated>
         <n-tab-pane name="Nodes" :tab="nodesTitle">
           <Nodes/>
