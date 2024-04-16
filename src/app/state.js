@@ -7,6 +7,8 @@ import { filterBy, suggestNodes } from '../ontology/views/filter.js'
 import { toShacl } from '../ontology/views/shacl.js'
 
 const VIEW_LOCAL_STORAGE_KEY = 'filterBy'
+const SAVED_VIEW_LOCAL_STORAGE_KEY = 'savedFilterBy'
+
 const DEFAULT_VIEW = {
   filter: ['epo:Document', 'epo:Buyer', 'epo:AwardDecision'],
   includeIncoming: false,
@@ -24,6 +26,7 @@ export const useStore = defineStore('counter', () => {
   }
 
   const filterOptions = useStorage(VIEW_LOCAL_STORAGE_KEY, DEFAULT_VIEW)
+  const savedFilters = useStorage(SAVED_VIEW_LOCAL_STORAGE_KEY, [])
 
   function setEaJson (json) {
     eaJson.value = {
@@ -64,5 +67,6 @@ export const useStore = defineStore('counter', () => {
     shacl,
     resetSelection,
     filterOptions,
+    savedFilters,
   }
 })

@@ -28,14 +28,20 @@ const edgesTitle = computed(() => {
     <n-tab-pane name="Diagram" tab="Diagram">
       <Plantuml/>
     </n-tab-pane>
-    <n-tab-pane name="Shacl" tab="Shacl">
+    <n-tab-pane name="model" tab="Model">
       <Shacl/>
     </n-tab-pane>
-    <n-tab-pane name="Nodes" :tab="nodesTitle">
-      <Nodes/>
+
+    <n-tab-pane name="data" tab="Data">
+      <n-tabs type="line" animated>
+        <n-tab-pane name="Nodes" :tab="nodesTitle">
+          <Nodes/>
+        </n-tab-pane>
+        <n-tab-pane name="Edges" :tab="edgesTitle">
+          <Edges/>
+        </n-tab-pane>
+      </n-tabs>
     </n-tab-pane>
-    <n-tab-pane name="Edges" :tab="edgesTitle">
-      <Edges/>
-    </n-tab-pane>
+
   </n-tabs>
 </template>

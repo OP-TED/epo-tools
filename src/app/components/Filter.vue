@@ -1,9 +1,10 @@
 <script setup lang="js">
 import { ArrowBackOutline } from '@vicons/ionicons5'
-import { NButton, NDynamicTags, NFlex, NIcon, NSelect, NSwitch } from 'naive-ui'
+import { NButton, NDynamicTags, NFlex, NIcon, NSelect, NSwitch, NDrawer, NDrawerContent} from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { useStore } from '../state.js'
+import SavedFilters from './SavedFilters.vue'
 
 const store = useStore()
 const { filterOptions, suggestedNodes } = storeToRefs(store)
@@ -30,11 +31,23 @@ function add () {
   }
 }
 
+const displaySavedActive = ref(false)
+function toggleSaved(){
+  displaySavedActive.value = true
+}
+
 </script>
 
 <template>
-
+  <n-drawer v-model:show="displaySavedActive" :width="502" placement="top">
+    <n-drawer-content>
+      <SavedFilters/>
+    </n-drawer-content>
+  </n-drawer>
   <n-flex justify="start">
+    <n-button
+        @click="toggleSaved">Saved
+    </n-button>
     <n-switch v-model:value="filterOptions.includeIncoming">
       <template #checked>
         <n-icon :component="ArrowBackOutline"/>
