@@ -24,8 +24,8 @@ function filterBy ({ nodes, edges }, { filter, includeIncoming }) {
     selectedAttributes.has(target) ||
     (includeIncoming && selectedNodes.has(target))
 
-  const noNegatives = ({ source, predicate, target }) => !(nf(source) ||
-    nf(predicate) || nf(target))
+  const noNegatives = ({ source, predicate, target }) => !nf(source) &&
+    !nf(predicate) && !nf(target)
 
   const nodesToDisplay = new Set(edges.filter(allowedEdge).
     filter(noNegatives).

@@ -302,6 +302,12 @@ a4g:GreenProcurement rdfs:subClassOf a4g:StrategicProcurement .
 		shacl:path a4g:hasAlias ;
 		shacl:datatype rdf:PlainLiteral ;
 		shacl:name \\"has alias\\"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name \\"identifier\\"@en ;
+		shacl:nodeKind shacl:IRI ;
 	] .
 
 a4g:ProcedureShape a shacl:NodeShape ;
@@ -408,6 +414,14 @@ m8g:cpovContactPointShape a shacl:NodeShape ;
 		shacl:name \\"has internet address\\"@en ;
 		shacl:minCount 0 ;
 		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path locn:address ;
+		shacl:name \\"address\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
 	] .
 
 a4g:ReviewRequestSummaryShape a shacl:NodeShape ;
@@ -1465,6 +1479,26 @@ a4g:ProcurementObject rdfs:subClassOf a4g:ProcurementElement .
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path m8g:registeredAddress ;
+		shacl:name \\"registered address\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path locn:address ;
+		shacl:name \\"address\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/org#Organization> ;
+		shacl:path <http://www.w3.org/ns/org#subOrganizationOf> ;
+		shacl:name \\"sub organization of\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
 		shacl:targetClass <http://publications.europa.eu/resource/authority/buyer-legal-type> ;
 		shacl:path a4g:hasBuyerLegalType ;
 		shacl:name \\"has buyer legal type\\"@en ;
@@ -1510,6 +1544,8 @@ a4g:ProcurementObject rdfs:subClassOf a4g:ProcurementElement .
 		shacl:name \\"has tax identifier\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	] .
+
+<http://www.w3.org/ns/org#Organization> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
 
 a4g:DespatchLineShape a shacl:NodeShape ;
 	shacl:targetClass a4g:DespatchLine ;
@@ -2406,10 +2442,44 @@ m8g:EvidenceShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:Requirement ;
+		shacl:path m8g:supportsRequirement ;
+		shacl:name \\"supports requirement\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
 		shacl:targetClass a4g:Period ;
 		shacl:path a4g:hasValidityPeriod ;
 		shacl:name \\"has validity period\\"@en ;
 		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/access-rights> ;
+		shacl:path m8g:confidentialityLevelType ;
+		shacl:name \\"confidentiality level type\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:InformationConcept ;
+		shacl:path m8g:supportsConcept ;
+		shacl:name \\"supports concept\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:SupportedValue ;
+		shacl:path m8g:supportsValue ;
+		shacl:name \\"supports value\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name \\"identifier\\"@en ;
+		shacl:minCount 1 ;
 		shacl:maxCount 1 ;
 		shacl:nodeKind shacl:IRI ;
 	] .
@@ -4239,7 +4309,15 @@ m8g:ConstraintShape a shacl:NodeShape ;
 		shacl:path a4g:hasThresholdType ;
 		shacl:name \\"has threshold type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:InformationConcept ;
+		shacl:path m8g:constrains ;
+		shacl:name \\"constrains\\"@en ;
+		shacl:nodeKind shacl:IRI ;
 	] .
+
+m8g:Constraint rdfs:subClassOf m8g:Requirement .
 
 a4g:SelectionCriterionShape a shacl:NodeShape ;
 	shacl:targetClass a4g:SelectionCriterion ;
@@ -5148,6 +5226,8 @@ a4g:LotSpecificTerm rdfs:subClassOf a4g:Term .
 
 a4g:ReviewRequester rdfs:subClassOf a4g:OfferingParty .
 
+m8g:Criterion rdfs:subClassOf m8g:Requirement .
+
 a4g:ESPDRequestShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ESPDRequest ;
 	shacl:property [
@@ -5474,6 +5554,8 @@ a4g:JuryMemberShape a shacl:NodeShape ;
 
 a4g:JuryMember rdfs:subClassOf a4g:AcquiringParty .
 
+<http://www.w3.org/ns/person#Person> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
 a4g:ProcurementServiceProvider rdfs:subClassOf a4g:AcquiringParty .
 
 a4g:CatalogueProvider rdfs:subClassOf a4g:OfferingParty .
@@ -5602,6 +5684,50 @@ a4g:NoticeAwardInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	] .
 
+dcterms:LocationShape a shacl:NodeShape ;
+	shacl:targetClass dcterms:Location ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path locn:address ;
+		shacl:name \\"address\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/nuts> ;
+		shacl:path a4g:hasNutsCode ;
+		shacl:name \\"has nuts code\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
+		shacl:path a4g:hasCountryCode ;
+		shacl:name \\"has country code\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path locn:geographicIdentifier ;
+		shacl:name \\"geographic identifier\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name \\"identifier\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
 a4g:Notice30 rdfs:subClassOf a4g:CANStandardNotice, a4g:eFormsNotice .
 
 a4g:Notice31 rdfs:subClassOf a4g:CANStandardNotice, a4g:eFormsNotice .
@@ -5630,26 +5756,6 @@ a4g:ParticipationRequestReceiver rdfs:subClassOf a4g:AcquiringParty .
 
 a4g:Originator rdfs:subClassOf a4g:AcquiringParty .
 
-dcterms:LocationShape a shacl:NodeShape ;
-	shacl:targetClass dcterms:Location ;
-	shacl:property [
-		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/nuts> ;
-		shacl:path a4g:hasNutsCode ;
-		shacl:name \\"has nuts code\\"@en ;
-		shacl:minCount 0 ;
-		shacl:maxCount 1 ;
-		shacl:nodeKind shacl:IRI ;
-	], [
-		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
-		shacl:path a4g:hasCountryCode ;
-		shacl:name \\"has country code\\"@en ;
-		shacl:minCount 0 ;
-		shacl:maxCount 1 ;
-		shacl:nodeKind shacl:IRI ;
-	] .
-
 a4g:Notice34 rdfs:subClassOf a4g:eFormsNotice, a4g:CANSocialNotice .
 
 a4g:Notice35 rdfs:subClassOf a4g:eFormsNotice, a4g:CANSocialNotice .
@@ -5657,6 +5763,8 @@ a4g:Notice35 rdfs:subClassOf a4g:eFormsNotice, a4g:CANSocialNotice .
 a4g:Notice36 rdfs:subClassOf a4g:eFormsNotice, a4g:DesignContestResultNotice .
 
 a4g:Notice37 rdfs:subClassOf a4g:eFormsNotice, a4g:DesignContestResultNotice .
+
+eli:LegalResourceSubdivision rdfs:subClassOf eli:LegalResource .
 
 eli:LegalResourceShape a shacl:NodeShape ;
 	shacl:targetClass eli:LegalResource ;
@@ -5934,6 +6042,36 @@ a4g:PINOnly-D24 rdfs:subClassOf a4g:PINOnlyNotice, a4g:StandardFormsNotice .
 
 a4g:PIN-RTL-D24 rdfs:subClassOf a4g:PINTimeLimitNotice, a4g:StandardFormsNotice .
 
+m8g:RequirementShape a shacl:NodeShape ;
+	shacl:targetClass m8g:Requirement ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name \\"identifier\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:InformationConcept ;
+		shacl:path m8g:hasConcept ;
+		shacl:name \\"has concept\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass eli:LegalResource ;
+		shacl:path m8g:isDerivedFrom ;
+		shacl:name \\"is derived from\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:Requirement ;
+		shacl:path m8g:hasRequirement ;
+		shacl:name \\"has requirement\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
 a4g:CNStandard-D24 rdfs:subClassOf a4g:CNStandardNotice, a4g:StandardFormsNotice .
 
 a4g:CNStandardNotice rdfs:subClassOf a4g:CompetitionNotice .
@@ -6054,6 +6192,14 @@ a4g:PurchaseContract rdfs:subClassOf a4g:Contract .
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path m8g:registeredAddress ;
+		shacl:name \\"registered address\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
 		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasCountryOfBirth ;
 		shacl:name \\"has country of birth\\"@en ;
@@ -6061,6 +6207,8 @@ a4g:PurchaseContract rdfs:subClassOf a4g:Contract .
 		shacl:maxCount 1 ;
 		shacl:nodeKind shacl:IRI ;
 	] .
+
+<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
 
 a4g:ExclusionGround rdfs:subClassOf a4g:QualificationCriterion .
 
@@ -6111,6 +6259,34 @@ a4g:OrderLineShape a shacl:NodeShape ;
 		shacl:targetClass a4g:Price ;
 		shacl:path a4g:hasPrice ;
 		shacl:name \\"has price\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+locn:AddressShape a shacl:NodeShape ;
+	shacl:targetClass locn:Address ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path locn:addressID ;
+		shacl:name \\"address id\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/nuts> ;
+		shacl:path a4g:hasNutsCode ;
+		shacl:name \\"has nuts code\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
+		shacl:path a4g:hasCountryCode ;
+		shacl:name \\"has country code\\"@en ;
 		shacl:minCount 0 ;
 		shacl:maxCount 1 ;
 		shacl:nodeKind shacl:IRI ;
@@ -6178,26 +6354,6 @@ a4g:TendererShape a shacl:NodeShape ;
 
 a4g:EAuctionTechnique rdfs:subClassOf a4g:Technique .
 
-locn:AddressShape a shacl:NodeShape ;
-	shacl:targetClass locn:Address ;
-	shacl:property [
-		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/nuts> ;
-		shacl:path a4g:hasNutsCode ;
-		shacl:name \\"has nuts code\\"@en ;
-		shacl:minCount 0 ;
-		shacl:maxCount 1 ;
-		shacl:nodeKind shacl:IRI ;
-	], [
-		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
-		shacl:path a4g:hasCountryCode ;
-		shacl:name \\"has country code\\"@en ;
-		shacl:minCount 0 ;
-		shacl:maxCount 1 ;
-		shacl:nodeKind shacl:IRI ;
-	] .
-
 a4g:Certifier rdfs:subClassOf a4g:AuxiliaryParty .
 
 a4g:Notice12 rdfs:subClassOf a4g:eFormsNotice, a4g:PIN-CFCSocialNotice .
@@ -6217,6 +6373,8 @@ a4g:Notice18 rdfs:subClassOf a4g:eFormsNotice, a4g:CNStandardNotice .
 a4g:Notice19 rdfs:subClassOf a4g:eFormsNotice, a4g:CNStandardNotice .
 
 a4g:Notice20 rdfs:subClassOf a4g:eFormsNotice, a4g:CNSocialNotice .
+
+m8g:InformationRequirement rdfs:subClassOf m8g:Requirement .
 
 a4g:ReceiptAdviceShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ReceiptAdvice ;
@@ -6546,6 +6704,18 @@ a4g:ParticipationRequestTermShape a shacl:NodeShape ;
 
 a4g:ParticipationRequestTerm rdfs:subClassOf a4g:LotSpecificTerm .
 
+m8g:InformationConceptShape a shacl:NodeShape ;
+	shacl:targetClass m8g:InformationConcept ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name \\"identifier\\"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
 a4g:LotGroupAwardInformationShape a shacl:NodeShape ;
 	shacl:targetClass a4g:LotGroupAwardInformation ;
 	shacl:property [
@@ -6737,6 +6907,12 @@ eli:LegalResourceSubdivisionShape a shacl:NodeShape ;
 		shacl:name \\"has subdivision\\"@en ;
 		shacl:minCount 0 ;
 		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path eli:uri_schema ;
+		shacl:name \\"uri schema\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	] .
 
@@ -7048,6 +7224,16 @@ a4g:ReviewerShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	] .
 
+m8g:SupportedValueShape a shacl:NodeShape ;
+	shacl:targetClass m8g:SupportedValue ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:InformationConcept ;
+		shacl:path m8g:providesValueFor ;
+		shacl:name \\"provides value for\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
 a4g:PowerOfAttorney rdfs:subClassOf a4g:Document .
 
 a4g:Mandate rdfs:subClassOf a4g:Document .
@@ -7055,16 +7241,6 @@ a4g:Mandate rdfs:subClassOf a4g:Document .
 a4g:EconomicStandingSummary rdfs:subClassOf a4g:SelectionCriteriaSummary .
 
 a4g:TechnicalAbilitySummary rdfs:subClassOf a4g:SelectionCriteriaSummary .
-
-m8g:EvidenceTypeShape a shacl:NodeShape ;
-	shacl:targetClass m8g:EvidenceType ;
-	shacl:property [
-		rdf:type shacl:PropertyShape ;
-		shacl:targetClass a4g:Period ;
-		shacl:path m8g:validityPeriodConstraint ;
-		shacl:name \\"validity period constraint\\"@en ;
-		shacl:nodeKind shacl:IRI ;
-	] .
 
 "
 `;
@@ -7205,6 +7381,42 @@ a4g:AwardOutcomeShape a shacl:NodeShape ;
 	] .
 
 a4g:AwardOutcome rdfs:subClassOf a4g:ContextualProjection .
+
+a4g:TenderAwardOutcome rdfs:subClassOf a4g:ContextualProjection .
+
+a4g:ProcurementServiceProvider rdfs:subClassOf a4g:AcquiringParty .
+
+a4g:ProcurementServiceProviderShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ProcurementServiceProvider ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Buyer ;
+		shacl:path a4g:actsOnBehalfOf ;
+		shacl:name \\"acts on behalf of\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:DocumentShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Document ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Document ;
+		shacl:path a4g:refersToPrevious ;
+		shacl:name \\"refers to previous\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Document ;
+		shacl:path a4g:associatedWith ;
+		shacl:name \\"associated with\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Document ;
+		shacl:path a4g:hasElectronicDigest ;
+		shacl:name \\"has electronic digest\\"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
 
 "
 `;
