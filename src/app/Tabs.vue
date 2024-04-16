@@ -6,6 +6,7 @@ import Edges from './components/Edges.vue'
 import Nodes from './components/Nodes.vue'
 import Plantuml from './components/Plantuml.vue'
 import Shacl from './components/Shacl.vue'
+import Sparql from './components/Sparql.vue'
 
 import { useStore } from './state.js'
 
@@ -35,8 +36,11 @@ const dataTitle = computed(() => {
     <n-tab-pane name="Diagram" tab="Diagram">
       <Plantuml/>
     </n-tab-pane>
-    <n-tab-pane name="model" tab="Model">
+    <n-tab-pane name="SHACL" tab="SHACL">
       <Shacl/>
+    </n-tab-pane>
+    <n-tab-pane name="SPARQL" tab="SPARQL">
+      <Sparql/>
     </n-tab-pane>
 
     <n-tab-pane name="data" :tab="dataTitle">

@@ -6,27 +6,22 @@ import { toPlantuml } from '../ontology/templates/plantuml-template.js'
 import { filterBy, suggestNodes } from '../ontology/views/filter.js'
 import { toShacl } from '../ontology/views/shacl.js'
 
-const VIEW_LOCAL_STORAGE_KEY = 'filterBy'
-const SAVED_VIEW_LOCAL_STORAGE_KEY = 'savedFilterBy'
-
 const DEFAULT_VIEW = {
   filter: ['epo:Document', 'epo:Buyer', 'epo:AwardDecision'],
   includeIncoming: false,
 }
-
-const CM_LOCAL_STORAGE_KEY = 'enterprise-architect'
 const DEFAULT_CM = { nodes: [], edges: [] }
 
 export const useStore = defineStore('counter', () => {
 
-  const eaJson = useStorage(CM_LOCAL_STORAGE_KEY, DEFAULT_CM)
+  const eaJson = useStorage('enterprise-architect', DEFAULT_CM)
+  const filterOptions = useStorage('filterBy', DEFAULT_VIEW)
+  const savedFilters = useStorage('savedFilterBy', [])
 
+  // Enterprise architect handling
   function resetSelection () {
     eaJson.value = DEFAULT_CM
   }
-
-  const filterOptions = useStorage(VIEW_LOCAL_STORAGE_KEY, DEFAULT_VIEW)
-  const savedFilters = useStorage(SAVED_VIEW_LOCAL_STORAGE_KEY, [])
 
   function setEaJson (json) {
     eaJson.value = {
@@ -37,16 +32,23 @@ export const useStore = defineStore('counter', () => {
     }
   }
 
+  // Filters
   const jsonView = computed(() => {
     return eaJson.value.nodes
       ? filterBy(eaJson.value, filterOptions.value)
       : DEFAULT_CM
   })
 
+  function addFilterTerms(terms){
+    let newTerms = terms.filter(element => !filterOptions.value.filter.includes(element));
+    filterOptions.value.filter = filterOptions.value.filter.concat(newTerms)
+  }
+
   const suggestedNodes = computed(() => {
     return suggestNodes(jsonView.value, filterOptions.value)
   })
 
+  // Templates
   const plantUml = computed(() => {
     const { nodes, edges } = jsonView.value
     return edges.length ? toPlantuml({ nodes, edges }) : undefined
@@ -59,13 +61,14 @@ export const useStore = defineStore('counter', () => {
   }, null)
 
   return {
-    eaJson,
     setEaJson,
+    resetSelection,
+    addFilterTerms,
+    eaJson,
     suggestedNodes,
     jsonView,
     plantUml,
     shacl,
-    resetSelection,
     filterOptions,
     savedFilters,
   }
