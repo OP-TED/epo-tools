@@ -17,6 +17,7 @@ export const useStore = defineStore('counter', () => {
   const eaJson = useStorage('enterprise-architect', DEFAULT_CM)
   const filterOptions = useStorage('filterBy', DEFAULT_VIEW)
   const savedFilters = useStorage('savedFilterBy', [])
+  const sparql = useStorage('sparql', '')
 
   // Enterprise architect handling
   function resetSelection () {
@@ -39,8 +40,9 @@ export const useStore = defineStore('counter', () => {
       : DEFAULT_CM
   })
 
-  function addFilterTerms(terms){
-    let newTerms = terms.filter(element => !filterOptions.value.filter.includes(element));
+  function addFilterTerms (terms) {
+    let newTerms = terms.filter(
+      element => !filterOptions.value.filter.includes(element))
     filterOptions.value.filter = filterOptions.value.filter.concat(newTerms)
   }
 
@@ -69,6 +71,7 @@ export const useStore = defineStore('counter', () => {
     jsonView,
     plantUml,
     shacl,
+    sparql,
     filterOptions,
     savedFilters,
   }

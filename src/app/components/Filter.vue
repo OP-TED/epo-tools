@@ -14,10 +14,10 @@ const value = ref([])
 
 const options = computed(() => {
   const suggested = suggestedNodes.value ?? []
-  return suggested.map(({ name }) => {
+  return suggested.map(tag => {
     return {
-      label: name,
-      value: name,
+      label: tag,
+      value: tag,
     }
   })
 })

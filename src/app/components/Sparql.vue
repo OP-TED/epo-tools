@@ -3,11 +3,11 @@ import { NInput, NSpace, NTag, NButton } from 'naive-ui'
 import { ref, computed } from 'vue'
 import { termsFromQuery } from '../../ontology/views/sparql-views.js'
 import { useStore } from '../state.js'
+import { storeToRefs } from 'pinia'
 
 const store = useStore()
 const { addFilterTerms } = store
-
-const sparql = ref('')
+const { sparql } = storeToRefs(store)
 
 const extracted = computed(() => sparql.value ? termsFromQuery({ queryStr: sparql.value }) : {})
 
