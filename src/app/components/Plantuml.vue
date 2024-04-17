@@ -1,5 +1,5 @@
 <script setup lang="js">
-import { NCode, NImage } from 'naive-ui'
+import { NCode, NImage, NCard } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import plantumlEncoder from 'plantuml-encoder'
 import { computed } from 'vue'
@@ -29,15 +29,15 @@ const imageUrl = computed(() => {
           :src="imageUrl"
       />
     </template>
-    <div v-if="isSupported">
-      <button @click="copy(plantUml)">
+
+    <n-card title="PlantUML">
+      <button v-if="isSupported" @click="copy(plantUml)">
         <template v-if="text">Copied</template>
         <template v-else>Copy</template>
       </button>
-    </div>
-    <div style="overflow: auto">
-      <n-code :code="plantUml" language="plantuml" show-line-numbers/>
-    </div>
-
+      <div style="overflow: auto">
+        <n-code :code="plantUml" language="plantuml" show-line-numbers/>
+      </div>
+    </n-card>
   </template>
 </template>

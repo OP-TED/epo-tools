@@ -10,39 +10,6 @@ Array [
 ]
 `;
 
-exports[`extract terms asset:test/support/queries/highest_value_of_contract.rq 1`] = `
-Array [
-  "epo:hasPublicationDate",
-  "epo:refersToLot",
-  "epo:describesLot",
-  "epo:hasAwardedValue",
-  "epo:comprisesTenderAwardOutcome",
-  "epo:TenderAwardOutcome",
-  "org:Organization",
-  "epo:hasLegalName",
-  "epo:MonetaryValue",
-  "epo:hasAmountValue",
-  "epo:hasCurrency",
-]
-`;
-
-exports[`extract terms asset:test/support/queries/mets_packages.rq 1`] = `
-Array [
-  "cdm:procurement_public",
-  "cdm:work_date_document",
-  "owl:sameAs",
-  "cmr:creationDate",
-  "cmr:lastModificationDate",
-  "cdm:expression_belongs_to_work",
-  "cdm:expression_uses_language",
-  "cdm:manifestation_manifests_expression",
-  "cdm:manifestation_type",
-  "cdm:item_belongs_to_manifestation",
-]
-`;
-
-exports[`extract terms asset:test/support/queries/notice.rq 1`] = `Array []`;
-
 exports[`extract terms asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
 Array [
   "epo:hasPublicationDate",
@@ -59,14 +26,6 @@ Array [
   "epo:refersToLot",
   "epo:isSubmittedForLot",
   "epo:foreseesSubcontracting",
-]
-`;
-
-exports[`extract terms asset:test/support/queries/values_of_tenders.rq 1`] = `
-Array [
-  "epo:hasPublicationDate",
-  "epo:refersToLot",
-  "epo:describesLot",
 ]
 `;
 
@@ -121,110 +80,6 @@ Object {
 }
 `;
 
-exports[`validate against conceptual model asset:test/support/queries/highest_value_of_contract.rq 1`] = `
-Object {
-  "terms": Array [
-    Object {
-      "isPresent": true,
-      "term": "epo:hasPublicationDate",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:refersToLot",
-    },
-    Object {
-      "isPresent": false,
-      "term": "epo:describesLot",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:hasAwardedValue",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:comprisesTenderAwardOutcome",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:TenderAwardOutcome",
-    },
-    Object {
-      "isPresent": true,
-      "term": "org:Organization",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:hasLegalName",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:MonetaryValue",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:hasAmountValue",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:hasCurrency",
-    },
-  ],
-}
-`;
-
-exports[`validate against conceptual model asset:test/support/queries/mets_packages.rq 1`] = `
-Object {
-  "terms": Array [
-    Object {
-      "isPresent": false,
-      "term": "cdm:procurement_public",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cdm:work_date_document",
-    },
-    Object {
-      "isPresent": false,
-      "term": "owl:sameAs",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cmr:creationDate",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cmr:lastModificationDate",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cdm:expression_belongs_to_work",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cdm:expression_uses_language",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cdm:manifestation_manifests_expression",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cdm:manifestation_type",
-    },
-    Object {
-      "isPresent": false,
-      "term": "cdm:item_belongs_to_manifestation",
-    },
-  ],
-}
-`;
-
-exports[`validate against conceptual model asset:test/support/queries/notice.rq 1`] = `
-Object {
-  "terms": Array [],
-}
-`;
-
 exports[`validate against conceptual model asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
 Object {
   "terms": Array [
@@ -270,25 +125,6 @@ Object {
     Object {
       "isPresent": true,
       "term": "epo:foreseesSubcontracting",
-    },
-  ],
-}
-`;
-
-exports[`validate against conceptual model asset:test/support/queries/values_of_tenders.rq 1`] = `
-Object {
-  "terms": Array [
-    Object {
-      "isPresent": true,
-      "term": "epo:hasPublicationDate",
-    },
-    Object {
-      "isPresent": true,
-      "term": "epo:refersToLot",
-    },
-    Object {
-      "isPresent": false,
-      "term": "epo:describesLot",
     },
   ],
 }

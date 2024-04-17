@@ -28,7 +28,7 @@ const extracted = computed(() => sparql.value ? validateAgainstGraph(eaJson.valu
     </n-button>
   </n-card>
 
-  <n-card v-if="extracted.terms.filter(x => !x.isPresent)">
+  <n-card v-if="extracted.terms.filter(x => !x.isPresent).length">
 
     <n-text type="error">
       Missing
