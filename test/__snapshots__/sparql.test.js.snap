@@ -10,6 +10,22 @@ Array [
 ]
 `;
 
+exports[`extract terms asset:test/support/queries/distribution-cpv.rq 1`] = `
+Array [
+  "epo:Notice",
+  "epo:hasPublicationDate",
+  "epo:refersToProcedure",
+  "epo:Procedure",
+  "epo:hasPurpose",
+  "epo:Purpose",
+  "epo:hasMainClassification",
+  "skos:Concept",
+  "skos:prefLabel",
+  "euvoc:status",
+  "at:CURRENT",
+]
+`;
+
 exports[`extract terms asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
 Array [
   "epo:hasPublicationDate",
@@ -26,6 +42,14 @@ Array [
   "epo:refersToLot",
   "epo:isSubmittedForLot",
   "epo:foreseesSubcontracting",
+]
+`;
+
+exports[`extract terms asset:test/support/queries/titles-procedure.rq 1`] = `
+Array [
+  "epo:hasPublicationDate",
+  "epo:refersToProcedure",
+  "epo:hasTitle",
 ]
 `;
 
@@ -80,6 +104,57 @@ Object {
 }
 `;
 
+exports[`validate against conceptual model asset:test/support/queries/distribution-cpv.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:Notice",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:refersToProcedure",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:Procedure",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPurpose",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:Purpose",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasMainClassification",
+    },
+    Object {
+      "isPresent": false,
+      "term": "skos:Concept",
+    },
+    Object {
+      "isPresent": false,
+      "term": "skos:prefLabel",
+    },
+    Object {
+      "isPresent": false,
+      "term": "euvoc:status",
+    },
+    Object {
+      "isPresent": false,
+      "term": "at:CURRENT",
+    },
+  ],
+}
+`;
+
 exports[`validate against conceptual model asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
 Object {
   "terms": Array [
@@ -125,6 +200,25 @@ Object {
     Object {
       "isPresent": true,
       "term": "epo:foreseesSubcontracting",
+    },
+  ],
+}
+`;
+
+exports[`validate against conceptual model asset:test/support/queries/titles-procedure.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:refersToProcedure",
+    },
+    Object {
+      "isPresent": false,
+      "term": "epo:hasTitle",
     },
   ],
 }
