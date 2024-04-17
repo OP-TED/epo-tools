@@ -1,5 +1,5 @@
 <script setup lang="js">
-import { NButton, NDynamicInput,NIcon, NDynamicTags, NSwitch } from 'naive-ui'
+import { NButton, NDynamicInput, NIcon, NDynamicTags, NSwitch } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { toRaw } from 'vue'
 import { useStore } from '../state.js'
@@ -10,6 +10,12 @@ const { filterOptions, savedFilters } = storeToRefs(store)
 
 function save () {
   savedFilters.value.push(toRaw(filterOptions.value))
+}
+
+function reset () {
+  filterOptions.value = {
+    filter: [],
+  }
 }
 
 function select (value) {
@@ -46,6 +52,7 @@ function onCreate () {
     </template>
   </n-dynamic-input>
   <div>
+    <n-button @click="reset()">Reset current</n-button>
     <n-button @click="save()">Add current</n-button>
   </div>
 

@@ -4,7 +4,7 @@ import { NButton, NDynamicTags, NFlex, NIcon, NSelect, NSwitch, NDrawer, NDrawer
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { useStore } from '../state.js'
-import SavedFilters from './SavedFilters.vue'
+import FiltersPanel from './FiltersPanel.vue'
 
 const store = useStore()
 const { filterOptions, suggestedNodes } = storeToRefs(store)
@@ -40,12 +40,12 @@ function toggleSaved () {
 <template>
   <n-drawer v-model:show="displaySavedActive" :width="502" placement="top">
     <n-drawer-content>
-      <SavedFilters/>
+      <FiltersPanel/>
     </n-drawer-content>
   </n-drawer>
   <n-flex justify="start">
     <n-button
-        @click="toggleSaved">Lib
+        @click="toggleSaved">Panel
     </n-button>
     <n-switch v-model:value="filterOptions.includeIncoming">
       <template #checked>
