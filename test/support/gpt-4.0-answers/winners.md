@@ -100,4 +100,5 @@ updating your data model to include this necessary relationship for such queries
 
 ## Conclusion
 
-I searched for `epo:refersToLot`, there were no matches in the ontology. GPT was right, The query was made for an older ontology.
+I searched for `epo:refersToLot`, there were no matches in the ontology. GPT was right, The query was made using an
+older ontology.
