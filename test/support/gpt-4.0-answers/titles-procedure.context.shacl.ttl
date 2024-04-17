@@ -1,0 +1,335 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+
+a4g:ProcedureShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Procedure ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:isDesignContest ;
+		shacl:datatype xsd:boolean ;
+		shacl:name "is design contest"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:isJointProcurement ;
+		shacl:datatype xsd:boolean ;
+		shacl:name "is joint procurement"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:isAccelerated ;
+		shacl:datatype xsd:boolean ;
+		shacl:name "is accelerated"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasAcceleratedProcedureJustification ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has accelerated procedure justification"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasMainFeature ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has main feature"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Buyer ;
+		shacl:path a4g:involvesBuyer ;
+		shacl:name "involves buyer"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ProcurementServiceProvider ;
+		shacl:path a4g:isExecutedByProcurementServiceProvider ;
+		shacl:name "is executed by procurement service provider"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ProcedureSpecificTerm ;
+		shacl:path a4g:isSubjectToProcedureSpecificTerm ;
+		shacl:name "is subject to procedure specific term"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/procurement-procedure-type> ;
+		shacl:path a4g:hasProcedureType ;
+		shacl:name "has procedure type"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Buyer ;
+		shacl:path a4g:isResponsibilityOfBuyer ;
+		shacl:name "is responsibility of buyer"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Lot ;
+		shacl:path a4g:hasProcurementScopeDividedIntoLot ;
+		shacl:name "has procurement scope divided into lot"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ProcurementCriteriaSummary ;
+		shacl:path a4g:specifiesProcurementCriteriaSummary ;
+		shacl:name "specifies procurement criteria summary"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:Procedure rdfs:subClassOf a4g:ProcurementObject .
+
+a4g:ProcurementObjectShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ProcurementObject ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:isSMESuitable ;
+		shacl:datatype xsd:boolean ;
+		shacl:name "is sme suitable"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:isUsingEUFunds ;
+		shacl:datatype xsd:boolean ;
+		shacl:name "is using eu funds"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:isRecurrent ;
+		shacl:datatype xsd:boolean ;
+		shacl:name "is recurrent"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasRecurrenceDescription ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has recurrence description"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:isCoveredByGPA ;
+		shacl:datatype xsd:boolean ;
+		shacl:name "is covered by gpa"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasAdditionalInformation ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has additional information"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasLegalBasisDescription ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has legal basis description"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Term ;
+		shacl:path a4g:isSubjectToTerm ;
+		shacl:name "is subject to term"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Purpose ;
+		shacl:path a4g:hasPurpose ;
+		shacl:name "has purpose"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Fund ;
+		shacl:path a4g:isFundedBy ;
+		shacl:name "is funded by"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ContractSpecificTerm ;
+		shacl:path a4g:foreseesContractSpecificTerm ;
+		shacl:name "foresees contract specific term"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/legal-basis> ;
+		shacl:path a4g:hasLegalBasis ;
+		shacl:name "has legal basis"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:StrategicProcurement ;
+		shacl:path a4g:fulfillsStrategicProcurement ;
+		shacl:name "fulfills strategic procurement"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasLaunchFrameworkAgreementMaximumValue ;
+		shacl:name "has launch framework agreement maximum value"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Technique ;
+		shacl:path a4g:usesTechnique ;
+		shacl:name "uses technique"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ConcessionEstimate ;
+		shacl:path a4g:foreseesConcession ;
+		shacl:name "foresees concession"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ProcurementObject rdfs:subClassOf a4g:ProcurementElement .
+
+a4g:ProcurementElementShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ProcurementElement ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path dcterms:description ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "description"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path dcterms:title ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "title"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:Channel ;
+		shacl:path a4g:usesChannel ;
+		shacl:name "uses channel"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasEstimatedValue ;
+		shacl:name "has estimated value"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name "identifier"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path a4g:hasInternalIdentifier ;
+		shacl:name "has internal identifier"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ProcedureSpecificTerm rdfs:subClassOf a4g:Term .
+
+a4g:ContractSpecificTerm rdfs:subClassOf a4g:Term .
+
+a4g:FundShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Fund ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name "identifier"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:Lot rdfs:subClassOf a4g:ProcurementObject .
+
+a4g:ProcurementServiceProviderShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ProcurementServiceProvider ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Buyer ;
+		shacl:path a4g:actsOnBehalfOf ;
+		shacl:name "acts on behalf of"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:BuyerShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Buyer ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ProcurementServiceProvider ;
+		shacl:path a4g:delegatesAncillaryActivitiesTo ;
+		shacl:name "delegates ancillary activities to"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:Channel ;
+		shacl:path a4g:exposesInvoiceeChannel ;
+		shacl:name "exposes invoicee channel"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ConcessionEstimateShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ConcessionEstimate ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasEstimatedBuyerConcessionRevenue ;
+		shacl:name "has estimated buyer concession revenue"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasEstimatedUserConcessionRevenue ;
+		shacl:name "has estimated user concession revenue"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasConcessionEstimatedValue ;
+		shacl:name "has concession estimated value"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+m8g:ChannelShape a shacl:NodeShape ;
+	shacl:targetClass m8g:Channel ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path a4g:hasEndpointIdentifier ;
+		shacl:name "has endpoint identifier"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+

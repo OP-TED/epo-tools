@@ -1,0 +1,30 @@
+# retrieve the distribution of CPVs
+# for the notices published on  on "20230911":
+
+PREFIX epo: <http://data.europa.eu/a4g/ontology#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX euvoc: <http://publications.europa.eu/ontology/euvoc#>
+PREFIX at: <http://publications.europa.eu/resource/authority/concept-status/>
+
+SELECT   (count(?notice) as ?noticeCount) ?classificationLabel
+WHERE {
+    # The following segment returns notices published at a certain date,
+    # that refer to a procedure -> that have a purpose -> that is classified with a CPV
+    ?notice a epo:Notice ;
+            epo:hasPublicationDate "20230911";
+            epo:refersToProcedure [
+                a epo:Procedure ;
+                epo:hasPurpose [
+                    a epo:Purpose ;
+                    epo:hasMainClassification ?Identifier ;
+                ]
+            ] .
+    # For such CPV, return the labels in english
+    ?Identifier a skos:Concept ;
+			    skos:prefLabel ?classificationLabel ;
+			    euvoc:status at:CURRENT .
+    FILTER(LANG(?classificationLabel) = 'en')
+}
+GROUP BY ?classificationLabel
+ORDER BY DESC(?noticeCount)
+LIMIT 10

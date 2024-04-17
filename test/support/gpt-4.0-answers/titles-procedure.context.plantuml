@@ -1,0 +1,130 @@
+
+@startuml
+class "epo:ConcessionEstimate" {
+  epo:hasEstimatedBuyerConcessionRevenue : epo:MonetaryValue [0..1]
+  epo:hasEstimatedUserConcessionRevenue : epo:MonetaryValue [0..1]
+  epo:hasConcessionEstimatedValue : epo:MonetaryValue [0..1]
+}
+class "epo:Buyer" {
+  epo:delegatesAncillaryActivitiesTo : epo:ProcurementServiceProvider [0..*]
+  epo:exposesInvoiceeChannel : cv:Channel [0..*]
+}
+class "epo:Fund" {
+  adms:identifier : adms:Identifier [0..1]
+}
+class "epo:Lot" {
+
+}
+class "epo:Procedure" {
+  epo:isDesignContest : xsd:boolean [0..1]
+  epo:isJointProcurement : xsd:boolean [0..1]
+  epo:isAccelerated : xsd:boolean [0..1]
+  epo:hasAcceleratedProcedureJustification : rdf:PlainLiteral [0..*]
+  epo:hasMainFeature : rdf:PlainLiteral [0..*]
+  epo:involvesBuyer : epo:Buyer [0..*]
+  epo:isExecutedByProcurementServiceProvider : epo:ProcurementServiceProvider [0..1]
+  epo:isSubjectToProcedureSpecificTerm : epo:ProcedureSpecificTerm [1..*]
+  epo:hasProcedureType : at-voc:procurement-procedure-type [1]
+  epo:isResponsibilityOfBuyer : epo:Buyer [0..*]
+  epo:hasProcurementScopeDividedIntoLot : epo:Lot [1..*]
+  epo:specifiesProcurementCriteriaSummary : epo:ProcurementCriteriaSummary [0..*]
+}
+class "epo:ProcurementServiceProvider" {
+  epo:actsOnBehalfOf : epo:Buyer [1..*]
+}
+class "epo:ProcedureSpecificTerm" {
+
+}
+class "epo:Purpose" {
+
+}
+class "epo:StrategicProcurement" {
+
+}
+class "epo:Technique" {
+
+}
+class "epo:MonetaryValue" {
+
+}
+class "at-voc:legal-basis" {
+
+}
+class "at-voc:procurement-procedure-type" {
+
+}
+class "adms:Identifier" {
+
+}
+class "epo:Term" {
+
+}
+class "epo:ProcurementObject" {
+  epo:isSMESuitable : xsd:boolean [0..1]
+  epo:isUsingEUFunds : xsd:boolean [0..1]
+  epo:isRecurrent : xsd:boolean [0..1]
+  epo:hasRecurrenceDescription : rdf:PlainLiteral [0..1]
+  epo:isCoveredByGPA : xsd:boolean [0..1]
+  epo:hasAdditionalInformation : rdf:PlainLiteral [0..*]
+  epo:hasLegalBasisDescription : rdf:PlainLiteral [0..*]
+  epo:isSubjectToTerm : epo:Term [0..*]
+  epo:hasPurpose : epo:Purpose [0..1]
+  epo:isFundedBy : epo:Fund [0..*]
+  epo:foreseesContractSpecificTerm : epo:ContractSpecificTerm [0..*]
+  epo:hasLegalBasis : at-voc:legal-basis [0..*]
+  epo:fulfillsStrategicProcurement : epo:StrategicProcurement [0..*]
+  epo:hasLaunchFrameworkAgreementMaximumValue : epo:MonetaryValue [0..1]
+  epo:usesTechnique : epo:Technique [0..*]
+  epo:foreseesConcession : epo:ConcessionEstimate [0..1]
+}
+class "epo:ContractSpecificTerm" {
+
+}
+class "epo:ProcurementElement" {
+  dct:description : rdf:PlainLiteral [0..*]
+  dct:title : rdf:PlainLiteral [0..*]
+  epo:usesChannel : cv:Channel [0..*]
+  epo:hasEstimatedValue : epo:MonetaryValue [0..1]
+  adms:identifier : adms:Identifier [1]
+  epo:hasInternalIdentifier : adms:Identifier [0..*]
+}
+class "epo:ProcurementCriteriaSummary" {
+
+}
+class "cv:Channel" {
+  epo:hasEndpointIdentifier : adms:Identifier [0..*]
+}
+"epo:Term" <|-- "epo:ProcedureSpecificTerm"
+"epo:ProcurementObject" <|-- "epo:Procedure"
+"epo:ProcurementElement" <|-- "epo:ProcurementObject"
+"epo:Term" <|-- "epo:ContractSpecificTerm"
+"epo:ProcurementObject" <|-- "epo:Lot"
+"epo:ProcurementElement" --> "0..*" "cv:Channel" : epo:usesChannel
+"epo:Procedure" --> "0..*" "epo:Buyer" : epo:involvesBuyer
+"epo:Procedure" --> "0..1" "epo:ProcurementServiceProvider" : epo:isExecutedByProcurementServiceProvider
+"epo:ProcurementObject" --> "0..*" "epo:Term" : epo:isSubjectToTerm
+"epo:ProcurementObject" --> "0..1" "epo:Purpose" : epo:hasPurpose
+"epo:ProcurementObject" --> "0..*" "epo:Fund" : epo:isFundedBy
+"epo:ProcurementObject" --> "0..*" "epo:ContractSpecificTerm" : epo:foreseesContractSpecificTerm
+"epo:Fund" --> "0..1" "adms:Identifier" : adms:identifier
+"epo:ProcurementElement" --> "0..1" "epo:MonetaryValue" : epo:hasEstimatedValue
+"epo:ProcurementObject" --> "0..*" "at-voc:legal-basis" : epo:hasLegalBasis
+"epo:Procedure" --> "1..*" "epo:ProcedureSpecificTerm" : epo:isSubjectToProcedureSpecificTerm
+"epo:Procedure" --> "1" "at-voc:procurement-procedure-type" : epo:hasProcedureType
+"epo:Procedure" --> "0..*" "epo:Buyer" : epo:isResponsibilityOfBuyer
+"epo:Procedure" --> "1..*" "epo:Lot" : epo:hasProcurementScopeDividedIntoLot
+"epo:ProcurementServiceProvider" --> "1..*" "epo:Buyer" : epo:actsOnBehalfOf
+"epo:Buyer" --> "0..*" "epo:ProcurementServiceProvider" : epo:delegatesAncillaryActivitiesTo
+"epo:ProcurementElement" --> "1" "adms:Identifier" : adms:identifier
+"epo:ConcessionEstimate" --> "0..1" "epo:MonetaryValue" : epo:hasEstimatedBuyerConcessionRevenue
+"epo:ConcessionEstimate" --> "0..1" "epo:MonetaryValue" : epo:hasEstimatedUserConcessionRevenue
+"epo:ProcurementObject" --> "0..*" "epo:StrategicProcurement" : epo:fulfillsStrategicProcurement
+"epo:ProcurementObject" --> "0..1" "epo:MonetaryValue" : epo:hasLaunchFrameworkAgreementMaximumValue
+"epo:Buyer" --> "0..*" "cv:Channel" : epo:exposesInvoiceeChannel
+"epo:Procedure" --> "0..*" "epo:ProcurementCriteriaSummary" : epo:specifiesProcurementCriteriaSummary
+"epo:ProcurementObject" --> "0..*" "epo:Technique" : epo:usesTechnique
+"epo:ProcurementObject" --> "0..1" "epo:ConcessionEstimate" : epo:foreseesConcession
+"epo:ConcessionEstimate" --> "0..1" "epo:MonetaryValue" : epo:hasConcessionEstimatedValue
+"cv:Channel" --> "0..*" "adms:Identifier" : epo:hasEndpointIdentifier
+"epo:ProcurementElement" --> "0..*" "adms:Identifier" : epo:hasInternalIdentifier
+@enduml

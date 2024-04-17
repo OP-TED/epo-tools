@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`prefix getAllPrefixes 1`] = `
+Array [
+  "epo",
+  "epo-sub",
+  "at-voc",
+  "epo-ord",
+  "epo-ful",
+  "at-voc-new",
+  "locn",
+  "foaf",
+  "cpov",
+  "epo-not",
+  "org",
+  "dct",
+  "cccev",
+  "epo-con",
+  "person",
+  "epo-cat",
+  "time",
+  "adms",
+  "epo-acc",
+  "eli",
+  "cv",
+]
+`;

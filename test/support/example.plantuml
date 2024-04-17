@@ -1,0 +1,28 @@
+
+
+```plantuml
+@startuml
+
+!function $generated($a)
+!return "<color:#0000ff>" + $a + " <<generated>></color>"
+!endfunction
+
+class "epo:Animal" {
+  $generated("id : uuid")
+}
+
+class "epo:Person" {
+  + {Color_1} epo:name xsd:String
+  epo:has-address ex:Address
+}
+note left: The class of people
+
+class "epo:Address" {
+   epo:street-name : xsd:String
+}
+
+"epo:Person" ---|> "epo:Animal"
+"epo:Person" -- "1..*" "epo:Address"
+@enduml
+
+```

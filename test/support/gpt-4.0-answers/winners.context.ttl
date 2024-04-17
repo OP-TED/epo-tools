@@ -1,0 +1,645 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+
+a4g:TenderAwardOutcomeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:TenderAwardOutcome ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasAwardRank ;
+		shacl:datatype xsd:integer ;
+		shacl:name "has award rank"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Tender ;
+		shacl:path a4g:concernsTender ;
+		shacl:name "concerns tender"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Winner ;
+		shacl:path a4g:indicatesAwardToWinner ;
+		shacl:name "indicates award to winner"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:TenderAwardOutcome rdfs:subClassOf a4g:ContextualProjection .
+
+a4g:DocumentShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Document ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasAccessURL ;
+		shacl:datatype xsd:anyURI ;
+		shacl:name "has access url"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path dcterms:title ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "title"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasReceptionDate ;
+		shacl:datatype xsd:date ;
+		shacl:name "has reception date"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasDispatchDate ;
+		shacl:datatype xsd:dateTime ;
+		shacl:name "has dispatch date"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasPublicationDate ;
+		shacl:datatype xsd:date ;
+		shacl:name "has publication date"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path dcterms:issued ;
+		shacl:datatype xsd:dateTime ;
+		shacl:name "issued"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasVersion ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has version"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path dcterms:description ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "description"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name "identifier"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path a4g:hasUUID ;
+		shacl:name "has uuid"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ElectronicSignature ;
+		shacl:path a4g:hasElectronicSignature ;
+		shacl:name "has electronic signature"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Document ;
+		shacl:path a4g:refersToPrevious ;
+		shacl:name "refers to previous"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/language> ;
+		shacl:path a4g:hasUnofficialLanguage ;
+		shacl:name "has unofficial language"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/language> ;
+		shacl:path a4g:hasOfficialLanguage ;
+		shacl:name "has official language"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Document ;
+		shacl:path a4g:associatedWith ;
+		shacl:name "associated with"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Document ;
+		shacl:path a4g:hasElectronicDigest ;
+		shacl:name "has electronic digest"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+<http://www.w3.org/ns/org#OrganizationShape> a shacl:NodeShape ;
+	shacl:targetClass <http://www.w3.org/ns/org#Organization> ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasMainActivityDescription ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has main activity description"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasBuyerLegalTypeDescription ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has buyer legal type description"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasInternetAddress ;
+		shacl:datatype xsd:anyURI ;
+		shacl:name "has internet address"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasLegalFormType ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has legal form type"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasLegalName ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has legal name"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
+		shacl:path a4g:hasRegistrationCountry ;
+		shacl:name "has registration country"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:cpovContactPoint ;
+		shacl:path a4g:hasPrimaryContactPoint ;
+		shacl:name "has primary contact point"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path m8g:registeredAddress ;
+		shacl:name "registered address"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path locn:address ;
+		shacl:name "address"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/org#Organization> ;
+		shacl:path <http://www.w3.org/ns/org#subOrganizationOf> ;
+		shacl:name "sub organization of"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/buyer-legal-type> ;
+		shacl:path a4g:hasBuyerLegalType ;
+		shacl:name "has buyer legal type"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/main-activity> ;
+		shacl:path a4g:hasMainActivity ;
+		shacl:name "has main activity"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Certificate ;
+		shacl:path a4g:hasCertification ;
+		shacl:name "has certification"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:Evidence ;
+		shacl:path a4g:canProvideTaxAndSocialSecuritiesEvidence ;
+		shacl:name "can provide tax and social securities evidence"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass m8g:Evidence ;
+		shacl:path a4g:canProvideNonDiscriminatoryEvidence ;
+		shacl:name "can provide non discriminatory evidence"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path a4g:hasLegalIdentifier ;
+		shacl:name "has legal identifier"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path a4g:hasTaxIdentifier ;
+		shacl:name "has tax identifier"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+<http://www.w3.org/ns/org#Organization> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+a4g:NoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Notice ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasAdditionalInformation ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has additional information"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasOJSIssueNumber ;
+		shacl:datatype xsd:integer ;
+		shacl:name "has ojs issue number"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasOJSType ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has ojs type"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasNoticePublicationNumber ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has notice publication number"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasFormNumber ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has form number"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasEFormsSubtype ;
+		shacl:datatype xsd:integer ;
+		shacl:name "has e forms subtype"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasESenderDispatchDate ;
+		shacl:datatype xsd:dateTime ;
+		shacl:name "has e sender dispatch date"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Lot ;
+		shacl:path a4g:refersToLot ;
+		shacl:name "refers to lot"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Notice ;
+		shacl:path a4g:refersToNotice ;
+		shacl:name "refers to notice"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/legal-basis> ;
+		shacl:path a4g:isBasedOnImplementingRegulation ;
+		shacl:name "is based on implementing regulation"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/notice-type> ;
+		shacl:path a4g:hasNoticeType ;
+		shacl:name "has notice type"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/legal-basis> ;
+		shacl:path a4g:conformsToLegalBasis ;
+		shacl:name "conforms to legal basis"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/form-type> ;
+		shacl:path a4g:hasFormType ;
+		shacl:name "has form type"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Procedure ;
+		shacl:path a4g:refersToProcedure ;
+		shacl:name "refers to procedure"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:Notice rdfs:subClassOf a4g:Document .
+
+a4g:MonetaryValueShape a shacl:NodeShape ;
+	shacl:targetClass a4g:MonetaryValue ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasCurrencyCodeListAgencyID ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has currency code list agency id"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasCurrencyCodeListAgencyName ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has currency code list agency name"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasCurrencyCodeListID ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "has currency code list id"@en ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:path a4g:hasAmountValue ;
+		shacl:datatype xsd:decimal ;
+		shacl:name "has amount value"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/currency> ;
+		shacl:path a4g:hasCurrency ;
+		shacl:name "has currency"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ElectronicSignatureShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ElectronicSignature ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:path dcterms:description ;
+		shacl:datatype rdf:PlainLiteral ;
+		shacl:name "description"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+	] .
+
+a4g:TenderShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Tender ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasFinancialOfferValue ;
+		shacl:name "has financial offer value"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
+		shacl:path a4g:hasItemCountryOfOrigin ;
+		shacl:name "has item country of origin"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Lot ;
+		shacl:path a4g:isSubmittedForLot ;
+		shacl:name "is submitted for lot"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:Tender rdfs:subClassOf a4g:Document .
+
+a4g:ResultNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ResultNotice ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Procedure ;
+		shacl:path a4g:refersToProcedure ;
+		shacl:name "refers to procedure"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Lot ;
+		shacl:path a4g:refersToLot ;
+		shacl:name "refers to lot"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ResultNotice rdfs:subClassOf a4g:Notice .
+
+a4g:Procedure rdfs:subClassOf a4g:ProcurementObject .
+
+a4g:Lot rdfs:subClassOf a4g:ProcurementObject .
+
+a4g:AwardOutcomeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:AwardOutcome ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:TenderAwardOutcome ;
+		shacl:path a4g:comprisesTenderAwardOutcome ;
+		shacl:name "comprises tender award outcome"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasAwardedValue ;
+		shacl:name "has awarded value"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasBargainPrice ;
+		shacl:name "has bargain price"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:AwardOutcome rdfs:subClassOf a4g:ContextualProjection .
+
+<http://xmlns.com/foaf/0.1/AgentShape> a shacl:NodeShape ;
+	shacl:targetClass <http://xmlns.com/foaf/0.1/Agent> ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name "identifier"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ProcurementObjectShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ProcurementObject ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/legal-basis> ;
+		shacl:path a4g:hasLegalBasis ;
+		shacl:name "has legal basis"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:MonetaryValue ;
+		shacl:path a4g:hasLaunchFrameworkAgreementMaximumValue ;
+		shacl:name "has launch framework agreement maximum value"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ProcedureShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Procedure ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Lot ;
+		shacl:path a4g:hasProcurementScopeDividedIntoLot ;
+		shacl:name "has procurement scope divided into lot"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+locn:AddressShape a shacl:NodeShape ;
+	shacl:targetClass locn:Address ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path locn:addressID ;
+		shacl:name "address id"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
+		shacl:path a4g:hasCountryCode ;
+		shacl:name "has country code"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ContractModificationNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ContractModificationNotice ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Procedure ;
+		shacl:path a4g:refersToProcedure ;
+		shacl:name "refers to procedure"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Lot ;
+		shacl:path a4g:refersToLot ;
+		shacl:name "refers to lot"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:ContractModificationNotice rdfs:subClassOf a4g:Notice .
+
+a4g:CompletionNotice rdfs:subClassOf a4g:Notice .
+
+a4g:LotShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Lot ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:ProcurementCriterion ;
+		shacl:path a4g:specifiesProcurementCriterion ;
+		shacl:name "specifies procurement criterion"@en ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:LotSpecificTerm ;
+		shacl:path a4g:isSubjectToLotSpecificTerm ;
+		shacl:name "is subject to lot specific term"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+a4g:Certificate rdfs:subClassOf m8g:Evidence .
+
+a4g:CompletionNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:CompletionNotice ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Procedure ;
+		shacl:path a4g:refersToProcedure ;
+		shacl:name "refers to procedure"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	], [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass a4g:Lot ;
+		shacl:path a4g:refersToLot ;
+		shacl:name "refers to lot"@en ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+m8g:cpovContactPointShape a shacl:NodeShape ;
+	shacl:targetClass m8g:cpovContactPoint ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass locn:Address ;
+		shacl:path locn:address ;
+		shacl:name "address"@en ;
+		shacl:minCount 0 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
+m8g:EvidenceShape a shacl:NodeShape ;
+	shacl:targetClass m8g:Evidence ;
+	shacl:property [
+		rdf:type shacl:PropertyShape ;
+		shacl:targetClass <http://www.w3.org/ns/adms#Identifier> ;
+		shacl:path <http://www.w3.org/ns/adms#identifier> ;
+		shacl:name "identifier"@en ;
+		shacl:minCount 1 ;
+		shacl:maxCount 1 ;
+		shacl:nodeKind shacl:IRI ;
+	] .
+
