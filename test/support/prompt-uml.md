@@ -1,5 +1,3 @@
-Ok, my friend let's try another thing.
-
 I'm giving you a plantUML description, describing UML we use to represent classes and properties
 
 There are some rules:
@@ -11,7 +9,7 @@ class "ex:Bob" {
 
 }
 class "ex:Dog" {
-    ex:hasNicknae : rdf:PlainLiteral [0..3]
+    ex:hasNickname : rdf:PlainLiteral [0..3]
 }
 
 "ex:Dog" <|-- "ex:Bob"
