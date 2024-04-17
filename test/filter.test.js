@@ -2,13 +2,23 @@ import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
 import { ATTRIBUTE, RELATIONSHIP } from '../src/ontology/const.js'
-import { filterBy, suggestNodes } from '../src/ontology/views/filter.js'
+import {
+  filterBy,
+  suggestNodes,
+  anyMatch,
+} from '../src/ontology/views/filter.js'
 import { getJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
 
 describe('filter', () => {
   const eaJson = getJson()
+
+  it(`anyMatch`, function () {
+    const toCheck = ['epo-cat:*', 'who-are-you']
+    const result = toCheck.map(x => anyMatch(eaJson, { filter: [x] }))
+    expect(result).toMatchSnapshot(this)
+  })
 
   it(`filterBy incoming=true`, function () {
     const view = {
@@ -21,7 +31,8 @@ describe('filter', () => {
 
   it(`filterBy attributes`, function () {
     const view = {
-      filter: ['epo:hasPublicationDate', 'epo:refersToLot'], includeIncoming: false,
+      filter: ['epo:hasPublicationDate', 'epo:refersToLot'],
+      includeIncoming: false,
     }
 
     const filtered = filterBy(eaJson, view)

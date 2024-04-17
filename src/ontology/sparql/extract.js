@@ -32,7 +32,6 @@ function termsFromQuery ({ queryStr }) {
   } catch (error) {
     return { error }
   }
-
 }
 
 export { termsFromQuery }

@@ -1,5 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`filter anyMatch 1`] = `
+Array [
+  true,
+  false,
+]
+`;
+
 exports[`filter filterBy attributes 1`] = `
 Object {
   "edges": Array [

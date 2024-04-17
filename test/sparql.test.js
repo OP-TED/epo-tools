@@ -4,14 +4,19 @@ import { readFileSync } from 'fs'
 import { describe, it } from 'mocha'
 import { applyGlob } from '../src/io/assets.js'
 
-import { termsFromQuery } from '../src/ontology/views/sparql-views.js'
+import { termsFromQuery } from '../src/ontology/sparql/extract.js'
+import {
+  validateAgainstGraph,
+} from '../src/ontology/sparql/validate.js'
+import { getEpoJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
 
 const globPattern = `test/support/queries/**`
 const assets = await applyGlob(globPattern)
+const epoJson = getEpoJson()
 
-describe('sparql-views', async () => {
+describe('extract terms', async () => {
 
   for (const path of assets) {
     const queryStr = readFileSync(path).toString()
@@ -26,4 +31,18 @@ describe('sparql-views', async () => {
     expect(error).toMatchSnapshot(this)
   })
 })
+
+describe('validate against conceptual model', async () => {
+
+  for (const path of assets) {
+    const queryStr = readFileSync(path).toString()
+
+    it(`asset:${path}`, async function () {
+      const result = validateAgainstGraph(epoJson, { queryStr })
+      expect(result).toMatchSnapshot(this)
+    })
+  }
+
+})
+
 

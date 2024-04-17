@@ -25,25 +25,25 @@ const table = computed(() => {
         sorter: 'default',
       },
       {
+        title: 'description',
+        key: 'description',
+        width: 400,
+        ellipsis: {
+          tooltip: true,
+        },
+      },
+      {
         title: 'target',
         key: 'target',
         defaultSortOrder: 'ascend',
         sorter: 'default',
       },
+
       {
         title: 'quantifier',
         key: 'quantifiers.raw',
         defaultSortOrder: 'ascend',
         sorter: 'default',
-      },
-
-      {
-        title: 'description',
-        key: 'description',
-        width: 300,
-        ellipsis: {
-          tooltip: true,
-        },
       },
     ],
     data: (jsonView.value.edges ?? []),

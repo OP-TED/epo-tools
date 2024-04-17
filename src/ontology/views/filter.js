@@ -1,7 +1,18 @@
 import wcmatch from 'wildcard-match'
 import { ATTRIBUTE } from '../const.js'
 
-// This is becoming slow
+// Returns true is there are matches in the ontology
+function anyMatch ({ nodes, edges }, { filter }) {
+  const { f, nf } = getMatcher(filter)
+  for (const { source, predicate, object } of edges) {
+    if (f(source) || f(predicate) || f(object)) {
+      return true
+    }
+  }
+  return false
+}
+
+// This is becoming slow, at some point I could use an in-memory database
 function filterBy ({ nodes, edges }, { filter, includeIncoming }) {
   const { f, nf } = getMatcher(filter)
 
@@ -68,5 +79,5 @@ const matchHasNegatives = arr => value => arr.filter(isNegation).
   some(apply(value))
 
 export {
-  filterBy, suggestNodes,
+  filterBy, anyMatch, suggestNodes,
 }
