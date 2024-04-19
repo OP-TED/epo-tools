@@ -1,5 +1,5 @@
 import MDBReader from 'mdb-reader'
-import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
+import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from './const.js'
 
 function bufferToJson ({ buffer }) {
   const reader = new MDBReader(buffer)

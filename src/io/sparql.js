@@ -1,7 +1,7 @@
 import { Store } from 'oxigraph'
+import rdf from 'rdf-ext'
 
 import pkg from 'sparqljs'
-import rdf from 'rdf-ext'
 
 const { Parser } = pkg
 

@@ -1,5 +1,5 @@
 import wcmatch from 'wildcard-match'
-import { ATTRIBUTE } from '../const.js'
+import { ATTRIBUTE } from './const.js'
 
 // Returns true is there are matches in the ontology
 function anyMatch ({ nodes, edges }, { filter }) {

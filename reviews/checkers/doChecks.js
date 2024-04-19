@@ -1,8 +1,8 @@
-import { EPO_LATEST } from '../config.js'
+import { UNDER_REVIEW } from '../../src/config.js'
 import { checkAuthorityTables } from './checkAuthorityTables.js'
 import { checkCommonVocabularies } from './checkCommonVocabularies.js'
 
-const { localDirectory } = EPO_LATEST
+const { localDirectory } = UNDER_REVIEW
 const targetDirectory = `outputs/checkers`
 
 await checkAuthorityTables({

@@ -1,8 +1,8 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import { filterBy } from '../src/ontology/views/filter.js'
-import { toShacl } from '../src/ontology/views/shacl.js'
+import { filterBy } from '../src/conceptualModel/filter.js'
+import { toShacl } from '../src/shacl/model2Shacl.js'
 import { getEpoJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })

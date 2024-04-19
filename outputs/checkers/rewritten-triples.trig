@@ -15,266 +15,238 @@
 @prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
 @prefix eli: <http://data.europa.eu/eli/ontology#> .
 
-<file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.rdf> {
-	dcterms:title rdfs:range rdf:PlainLiteral .
-
-	dcterms:issued rdfs:range xsd:dateTime .
-
-	m8g:Constraint rdfs:subClassOf _:df_23_1 .
-
-	m8g:Criterion rdfs:subClassOf _:df_23_2, _:df_23_3, _:df_23_4 .
-
-	m8g:Requirement a owl:Class .
-
-	m8g:Channel a owl:Class .
-
-	dcterms:Location rdfs:subClassOf _:df_23_11, _:df_23_186, _:df_23_187, _:df_23_188, _:df_23_189 .
-
-	locn:postName rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:addressArea rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:adminUnitL2 rdfs:domain locn:Address .
-
-	locn:fullAddress rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:adminUnitL1 rdfs:domain locn:Address .
-
-	locn:postCode rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:thoroughfare rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	<http://www.w3.org/ns/org#Organization> rdfs:subClassOf _:df_23_157, _:df_23_158, _:df_23_159, _:df_23_279 ;
-		a owl:Class .
-
-	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:df_23_160, _:df_23_278 .
-
-	skos:notation a owl:FunctionalProperty .
-
-	<http://www.w3.org/2006/time#numericDuration> rdfs:range xsd:decimal ;
-		a owl:FunctionalProperty ;
-		rdfs:domain a4g:SpecificDuration .
-
-	m8g:InformationConcept a owl:Class .
-
-	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
-		a owl:FunctionalProperty ;
-		rdfs:domain _:df_23_508 .
-
-	m8g:hasRequirement a owl:AsymmetricProperty .
-
-	locn:address rdfs:range locn:Address .
-
-	locn:geometry rdfs:range locn:Geometry .
-
-	<http://www.w3.org/ns/org#subOrganizationOf> rdfs:range <http://www.w3.org/ns/org#Organization> ;
-		a owl:AsymmetricProperty ;
-		rdfs:domain <http://www.w3.org/ns/org#Organization> .
-
-	<http://www.w3.org/2006/time#unitType> rdfs:range skos:Concept .
-
-	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
-
-	<http://xmlns.com/foaf/0.1/name> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	<http://xmlns.com/foaf/0.1/familyName> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	<http://www.w3.org/ns/person#patronymicName> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	dcterms:alternative rdfs:range rdf:PlainLiteral .
-
-	<http://www.w3.org/ns/person#birthName> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	<http://www.w3.org/ns/adms#schemaAgency> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/adms#Identifier> .
+<file:///implementation/eSubmission/owl_ontology/eSubmission_restrictions.ttl> {
+	m8g:value rdfs:range rdf:PlainLiteral .
 }
 
-<file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl> {
-	dcterms:title rdfs:range rdf:PlainLiteral .
-
-	dcterms:issued rdfs:range xsd:dateTime .
-
-	m8g:Constraint rdfs:subClassOf _:b1925 .
-
-	m8g:Criterion rdfs:subClassOf _:b1926, _:b1927, _:b1928 .
-
-	m8g:Requirement a owl:Class .
-
-	m8g:Channel a owl:Class .
-
-	dcterms:Location rdfs:subClassOf _:b2071, _:b2072, _:b2073, _:b2074, _:b2075 .
-
-	locn:postName rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:addressArea rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:adminUnitL2 rdfs:domain locn:Address .
-
-	locn:fullAddress rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:adminUnitL1 rdfs:domain locn:Address .
-
-	locn:postCode rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	locn:thoroughfare rdfs:range rdf:PlainLiteral ;
-		rdfs:domain locn:Address .
-
-	<http://www.w3.org/ns/org#Organization> rdfs:subClassOf _:b2140, _:b2141, _:b2142, _:b2143 ;
-		a owl:Class .
-
-	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:b2083, _:b2084 .
-
-	skos:notation a owl:FunctionalProperty .
-
-	<http://www.w3.org/2006/time#numericDuration> rdfs:range xsd:decimal ;
-		a owl:FunctionalProperty ;
-		rdfs:domain a4g:SpecificDuration .
-
-	m8g:InformationConcept a owl:Class .
-
-	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
-		a owl:FunctionalProperty ;
-		rdfs:domain _:b2018 .
-
-	m8g:hasRequirement a owl:AsymmetricProperty .
-
-	locn:address rdfs:range locn:Address .
-
-	locn:geometry rdfs:range locn:Geometry .
-
-	<http://www.w3.org/ns/org#subOrganizationOf> rdfs:range <http://www.w3.org/ns/org#Organization> ;
-		a owl:AsymmetricProperty ;
-		rdfs:domain <http://www.w3.org/ns/org#Organization> .
-
-	<http://www.w3.org/2006/time#unitType> rdfs:range skos:Concept .
-
-	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
-
-	<http://xmlns.com/foaf/0.1/name> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	<http://xmlns.com/foaf/0.1/familyName> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	<http://www.w3.org/ns/person#patronymicName> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	dcterms:alternative rdfs:range rdf:PlainLiteral .
-
-	<http://www.w3.org/ns/person#birthName> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/person#Person> .
-
-	<http://www.w3.org/ns/adms#schemaAgency> rdfs:range rdf:PlainLiteral ;
-		rdfs:domain <http://www.w3.org/ns/adms#Identifier> .
+<file:///implementation/eSubmission/owl_ontology/eSubmission_restrictions.rdf> {
+	m8g:value rdfs:range rdf:PlainLiteral .
 }
 
-<file:///implementation/ePO_core/owl_ontology/ePO_core.ttl> {
-	dcterms:title a owl:DatatypeProperty .
+<file:///implementation/eSubmission/owl_ontology/eSubmission.ttl> {
+	m8g:value a owl:DatatypeProperty .
 
 	rdf:PlainLiteral a rdfs:Datatype .
 
-	dcterms:issued a owl:DatatypeProperty .
+	m8g:SupportedValue a owl:Class .
 
-	m8g:Constraint rdfs:subClassOf m8g:Requirement ;
-		a owl:Class .
+	m8g:confidentialityLevelType a owl:ObjectProperty .
 
-	m8g:Criterion rdfs:subClassOf m8g:Requirement ;
-		a owl:Class .
+	m8g:providesValueFor a owl:ObjectProperty .
 
-	m8g:Requirement a owl:Class .
+	m8g:supportsValue a owl:ObjectProperty .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
+<file:///implementation/eSubmission/owl_ontology/eSubmission.rdf> {
+	m8g:value a owl:DatatypeProperty .
+
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	m8g:SupportedValue a owl:Class .
+
+	m8g:confidentialityLevelType a owl:ObjectProperty .
+
+	m8g:providesValueFor a owl:ObjectProperty .
+
+	m8g:supportsValue a owl:ObjectProperty .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
+<file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl> {
+	<http://www.w3.org/ns/org#Organization> a owl:Class ;
+		rdfs:subClassOf _:b2381, _:b2382, _:b2383, _:b2384, _:b2385 .
+
+	m8g:Evidence a owl:Class .
+
+	dcterms:issued rdfs:range xsd:dateTime .
+
+	dcterms:title rdfs:range rdf:PlainLiteral .
+
+	dcterms:Location rdfs:subClassOf _:b2270, _:b2271, _:b2272, _:b2273, _:b2274 .
 
 	m8g:Channel a owl:Class .
 
+	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
+
+	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:b2282, _:b2283 .
+
+	m8g:Constraint rdfs:subClassOf _:b2116 .
+
+	m8g:InformationConcept a owl:Class .
+
+	m8g:Requirement a owl:Class .
+
+	m8g:hasRequirement a owl:AsymmetricProperty .
+
+	dcterms:alternative rdfs:range rdf:PlainLiteral .
+
+	m8g:Criterion rdfs:subClassOf _:b2117, _:b2118, _:b2119 .
+
+	<http://www.w3.org/2006/time#unitType> rdfs:range skos:Concept .
+
+	<http://www.w3.org/ns/adms#schemaAgency> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/adms#Identifier> .
+
+	<http://www.w3.org/ns/org#subOrganizationOf> rdfs:range <http://www.w3.org/ns/org#Organization> ;
+		a owl:AsymmetricProperty ;
+		rdfs:domain <http://www.w3.org/ns/org#Organization> .
+
+	<http://www.w3.org/ns/person#birthName> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	<http://www.w3.org/ns/person#patronymicName> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	<http://xmlns.com/foaf/0.1/familyName> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	<http://xmlns.com/foaf/0.1/name> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	skos:notation a owl:FunctionalProperty .
+
+	<http://www.w3.org/2006/time#numericDuration> rdfs:range xsd:decimal ;
+		a owl:FunctionalProperty ;
+		rdfs:domain a4g:SpecificDuration .
+
+	locn:addressArea rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:adminUnitL1 rdfs:domain locn:Address .
+
+	locn:adminUnitL2 rdfs:domain locn:Address .
+
+	locn:fullAddress rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:geometry rdfs:range locn:Geometry .
+
+	locn:postCode rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:postName rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:thoroughfare rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		a owl:FunctionalProperty ;
+		rdfs:domain _:b2225 .
+
+	locn:address rdfs:range locn:Address .
+}
+
+<file:///implementation/ePO_core/owl_ontology/ePO_core.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	m8g:confidentialityLevelType a owl:ObjectProperty .
+
+	m8g:providesValueFor a owl:ObjectProperty .
+
+	m8g:supportsValue a owl:ObjectProperty .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/org#Organization> a owl:Class ;
+		rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+	m8g:Evidence a owl:Class .
+
+	dcterms:issued a owl:DatatypeProperty .
+
+	dcterms:title a owl:DatatypeProperty .
+
 	dcterms:Location a owl:Class .
 
-	locn:postName a owl:DatatypeProperty .
+	m8g:Channel a owl:Class .
 
-	locn:Address a owl:Class .
+	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
 
-	locn:addressArea a owl:DatatypeProperty .
+	<http://www.w3.org/ns/person#Person> a owl:Class ;
+		rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
-	locn:adminUnitL2 a owl:DatatypeProperty .
+	m8g:Constraint a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
 
-	locn:fullAddress a owl:DatatypeProperty .
+	m8g:InformationConcept a owl:Class .
 
-	locn:adminUnitL1 a owl:DatatypeProperty .
+	m8g:Requirement a owl:Class .
 
-	locn:postCode a owl:DatatypeProperty .
+	m8g:hasRequirement a owl:ObjectProperty .
 
-	locn:thoroughfare a owl:DatatypeProperty .
+	dcterms:alternative a owl:DatatypeProperty .
 
-	<http://www.w3.org/ns/org#Organization> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
-		a owl:Class .
+	m8g:Criterion a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
 
-	<http://www.w3.org/ns/person#Person> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
-		a owl:Class .
+	<http://www.w3.org/2006/time#unitType> a owl:ObjectProperty .
+
+	<http://www.w3.org/ns/adms#schemaAgency> a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/adms#Identifier> a owl:Class .
+
+	<http://www.w3.org/ns/org#subOrganizationOf> a owl:ObjectProperty .
+
+	<http://www.w3.org/ns/person#birthName> a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/person#patronymicName> a owl:DatatypeProperty .
+
+	<http://xmlns.com/foaf/0.1/familyName> a owl:DatatypeProperty .
+
+	<http://xmlns.com/foaf/0.1/name> a owl:DatatypeProperty .
 
 	skos:notation a owl:DatatypeProperty .
 
 	<http://www.w3.org/2006/time#numericDuration> a owl:DatatypeProperty .
 
-	m8g:InformationConcept a owl:Class .
+	locn:addressArea a owl:DatatypeProperty .
 
-	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
+	locn:Address a owl:Class .
 
-	<http://www.w3.org/ns/adms#Identifier> a owl:Class .
+	locn:adminUnitL1 a owl:DatatypeProperty .
 
-	m8g:hasRequirement a owl:ObjectProperty .
+	locn:adminUnitL2 a owl:DatatypeProperty .
 
-	locn:address a owl:ObjectProperty .
+	locn:fullAddress a owl:DatatypeProperty .
 
 	locn:geometry a owl:ObjectProperty .
 
 	locn:Geometry a owl:Class .
 
-	<http://www.w3.org/ns/org#subOrganizationOf> a owl:ObjectProperty .
+	locn:postCode a owl:DatatypeProperty .
 
-	<http://www.w3.org/2006/time#unitType> a owl:ObjectProperty .
+	locn:postName a owl:DatatypeProperty .
 
-	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
+	locn:thoroughfare a owl:DatatypeProperty .
 
-	<http://xmlns.com/foaf/0.1/name> a owl:DatatypeProperty .
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
 
-	<http://xmlns.com/foaf/0.1/familyName> a owl:DatatypeProperty .
-
-	<http://www.w3.org/ns/person#patronymicName> a owl:DatatypeProperty .
-
-	dcterms:alternative a owl:DatatypeProperty .
-
-	<http://www.w3.org/ns/person#birthName> a owl:DatatypeProperty .
-
-	<http://www.w3.org/ns/adms#schemaAgency> a owl:DatatypeProperty .
+	locn:address a owl:ObjectProperty .
 
 	skos:prefLabel a owl:DatatypeProperty .
 
-	m8g:Evidence a owl:Class .
+	m8g:InformationRequirement a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
 
 	m8g:PublicOrganisation a owl:Class .
 
 	m8g:bias a owl:DatatypeProperty .
 
-	m8g:confidentialityLevelType a owl:ObjectProperty .
-
 	m8g:supportsRequirement a owl:ObjectProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
 
 	m8g:weight a owl:DatatypeProperty .
 
 	m8g:weightingConsiderationDescription a owl:DatatypeProperty .
 
-	dcterms:description a owl:DatatypeProperty .
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
 
 	dcterms:type a owl:ObjectProperty .
 
@@ -284,108 +256,206 @@
 
 	locn:locatorName a owl:DatatypeProperty .
 
-	<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
-		a owl:Class .
+	<http://xmlns.com/foaf/0.1/Person> a owl:Class ;
+		rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
 
 	<http://xmlns.com/foaf/0.1/givenName> a owl:DatatypeProperty .
 
 	<http://www.w3.org/2006/time#Duration> a owl:Class .
 }
 
-<file:///implementation/ePO_core/owl_ontology/ePO_core.rdf> {
-	dcterms:title a owl:DatatypeProperty .
+<file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.rdf> {
+	<http://www.w3.org/ns/org#Organization> a owl:Class ;
+		rdfs:subClassOf _:df_32_161, _:df_32_162, _:df_32_163, _:df_32_190, _:df_32_284 .
 
-	rdf:PlainLiteral a rdfs:Datatype .
+	m8g:Evidence a owl:Class .
 
-	dcterms:issued a owl:DatatypeProperty .
+	dcterms:issued rdfs:range xsd:dateTime .
 
-	m8g:Constraint rdfs:subClassOf m8g:Requirement ;
-		a owl:Class .
+	dcterms:title rdfs:range rdf:PlainLiteral .
 
-	m8g:Criterion rdfs:subClassOf m8g:Requirement ;
-		a owl:Class .
-
-	m8g:Requirement a owl:Class .
+	dcterms:Location rdfs:subClassOf _:df_32_13, _:df_32_191, _:df_32_192, _:df_32_193, _:df_32_194 .
 
 	m8g:Channel a owl:Class .
 
+	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
+
+	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:df_32_164, _:df_32_283 .
+
+	m8g:Constraint rdfs:subClassOf _:df_32_1 .
+
+	m8g:InformationConcept a owl:Class .
+
+	m8g:Requirement a owl:Class .
+
+	m8g:hasRequirement a owl:AsymmetricProperty .
+
+	dcterms:alternative rdfs:range rdf:PlainLiteral .
+
+	m8g:Criterion rdfs:subClassOf _:df_32_2, _:df_32_3, _:df_32_4 .
+
+	<http://www.w3.org/2006/time#unitType> rdfs:range skos:Concept .
+
+	<http://www.w3.org/ns/adms#schemaAgency> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/adms#Identifier> .
+
+	<http://www.w3.org/ns/org#subOrganizationOf> rdfs:range <http://www.w3.org/ns/org#Organization> ;
+		a owl:AsymmetricProperty ;
+		rdfs:domain <http://www.w3.org/ns/org#Organization> .
+
+	<http://www.w3.org/ns/person#birthName> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	<http://www.w3.org/ns/person#patronymicName> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	<http://xmlns.com/foaf/0.1/familyName> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	<http://xmlns.com/foaf/0.1/name> rdfs:range rdf:PlainLiteral ;
+		rdfs:domain <http://www.w3.org/ns/person#Person> .
+
+	skos:notation a owl:FunctionalProperty .
+
+	<http://www.w3.org/2006/time#numericDuration> rdfs:range xsd:decimal ;
+		a owl:FunctionalProperty ;
+		rdfs:domain a4g:SpecificDuration .
+
+	locn:addressArea rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:adminUnitL1 rdfs:domain locn:Address .
+
+	locn:adminUnitL2 rdfs:domain locn:Address .
+
+	locn:fullAddress rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:geometry rdfs:range locn:Geometry .
+
+	locn:postCode rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:postName rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	locn:thoroughfare rdfs:range rdf:PlainLiteral ;
+		rdfs:domain locn:Address .
+
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		a owl:FunctionalProperty ;
+		rdfs:domain _:df_32_520 .
+
+	locn:address rdfs:range locn:Address .
+}
+
+<file:///implementation/ePO_core/owl_ontology/ePO_core.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	m8g:confidentialityLevelType a owl:ObjectProperty .
+
+	m8g:providesValueFor a owl:ObjectProperty .
+
+	m8g:supportsValue a owl:ObjectProperty .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/org#Organization> a owl:Class ;
+		rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+	m8g:Evidence a owl:Class .
+
+	dcterms:issued a owl:DatatypeProperty .
+
+	dcterms:title a owl:DatatypeProperty .
+
 	dcterms:Location a owl:Class .
 
-	locn:postName a owl:DatatypeProperty .
+	m8g:Channel a owl:Class .
 
-	locn:Address a owl:Class .
+	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
 
-	locn:addressArea a owl:DatatypeProperty .
+	<http://www.w3.org/ns/person#Person> a owl:Class ;
+		rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
-	locn:adminUnitL2 a owl:DatatypeProperty .
+	m8g:Constraint a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
 
-	locn:fullAddress a owl:DatatypeProperty .
+	m8g:InformationConcept a owl:Class .
 
-	locn:adminUnitL1 a owl:DatatypeProperty .
+	m8g:Requirement a owl:Class .
 
-	locn:postCode a owl:DatatypeProperty .
+	m8g:hasRequirement a owl:ObjectProperty .
 
-	locn:thoroughfare a owl:DatatypeProperty .
+	dcterms:alternative a owl:DatatypeProperty .
 
-	<http://www.w3.org/ns/org#Organization> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
-		a owl:Class .
+	m8g:Criterion a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
 
-	<http://www.w3.org/ns/person#Person> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> ;
-		a owl:Class .
+	<http://www.w3.org/2006/time#unitType> a owl:ObjectProperty .
+
+	<http://www.w3.org/ns/adms#schemaAgency> a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/adms#Identifier> a owl:Class .
+
+	<http://www.w3.org/ns/org#subOrganizationOf> a owl:ObjectProperty .
+
+	<http://www.w3.org/ns/person#birthName> a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/person#patronymicName> a owl:DatatypeProperty .
+
+	<http://xmlns.com/foaf/0.1/familyName> a owl:DatatypeProperty .
+
+	<http://xmlns.com/foaf/0.1/name> a owl:DatatypeProperty .
 
 	skos:notation a owl:DatatypeProperty .
 
 	<http://www.w3.org/2006/time#numericDuration> a owl:DatatypeProperty .
 
-	m8g:InformationConcept a owl:Class .
+	locn:addressArea a owl:DatatypeProperty .
 
-	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
+	locn:Address a owl:Class .
 
-	<http://www.w3.org/ns/adms#Identifier> a owl:Class .
+	locn:adminUnitL1 a owl:DatatypeProperty .
 
-	m8g:hasRequirement a owl:ObjectProperty .
+	locn:adminUnitL2 a owl:DatatypeProperty .
 
-	locn:address a owl:ObjectProperty .
+	locn:fullAddress a owl:DatatypeProperty .
 
 	locn:geometry a owl:ObjectProperty .
 
 	locn:Geometry a owl:Class .
 
-	<http://www.w3.org/ns/org#subOrganizationOf> a owl:ObjectProperty .
+	locn:postCode a owl:DatatypeProperty .
 
-	<http://www.w3.org/2006/time#unitType> a owl:ObjectProperty .
+	locn:postName a owl:DatatypeProperty .
 
-	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
+	locn:thoroughfare a owl:DatatypeProperty .
 
-	<http://xmlns.com/foaf/0.1/name> a owl:DatatypeProperty .
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
 
-	<http://xmlns.com/foaf/0.1/familyName> a owl:DatatypeProperty .
-
-	<http://www.w3.org/ns/person#patronymicName> a owl:DatatypeProperty .
-
-	dcterms:alternative a owl:DatatypeProperty .
-
-	<http://www.w3.org/ns/person#birthName> a owl:DatatypeProperty .
-
-	<http://www.w3.org/ns/adms#schemaAgency> a owl:DatatypeProperty .
+	locn:address a owl:ObjectProperty .
 
 	skos:prefLabel a owl:DatatypeProperty .
 
-	m8g:Evidence a owl:Class .
+	m8g:InformationRequirement a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
 
 	m8g:PublicOrganisation a owl:Class .
 
 	m8g:bias a owl:DatatypeProperty .
 
-	m8g:confidentialityLevelType a owl:ObjectProperty .
-
 	m8g:supportsRequirement a owl:ObjectProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
 
 	m8g:weight a owl:DatatypeProperty .
 
 	m8g:weightingConsiderationDescription a owl:DatatypeProperty .
 
-	dcterms:description a owl:DatatypeProperty .
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
 
 	dcterms:type a owl:ObjectProperty .
 
@@ -395,8 +465,8 @@
 
 	locn:locatorName a owl:DatatypeProperty .
 
-	<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> ;
-		a owl:Class .
+	<http://xmlns.com/foaf/0.1/Person> a owl:Class ;
+		rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
 
 	<http://xmlns.com/foaf/0.1/givenName> a owl:DatatypeProperty .
 
@@ -423,52 +493,38 @@
 	rdf:PlainLiteral a rdfs:Datatype .
 }
 
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.ttl> {
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		rdfs:domain _:b2954 .
+}
+
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.rdf> {
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		rdfs:domain _:df_41_67 .
+}
+
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
+}
+
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
+}
+
 <file:///implementation/eContract/owl_ontology/eContract.ttl> {
 	rdf:PlainLiteral a rdfs:Datatype .
 }
 
 <file:///implementation/eContract/owl_ontology/eContract.rdf> {
 	rdf:PlainLiteral a rdfs:Datatype .
-}
-
-<file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.rdf> {
-	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
-		rdfs:domain _:df_35_57 .
-}
-
-<file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.ttl> {
-	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
-		rdfs:domain _:b2739 .
-}
-
-<file:///implementation/eFulfilment/owl_ontology/eFulfilment.ttl> {
-	rdf:PlainLiteral a rdfs:Datatype .
-
-	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
-
-	dcterms:description a owl:DatatypeProperty .
-}
-
-<file:///implementation/eFulfilment/owl_ontology/eFulfilment.rdf> {
-	rdf:PlainLiteral a rdfs:Datatype .
-
-	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
-
-	dcterms:description a owl:DatatypeProperty .
-}
-
-<file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.rdf> {
-	dcterms:title rdfs:range rdf:PlainLiteral ;
-		a owl:FunctionalProperty .
-
-	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
-		rdfs:domain a4g:Line .
-
-	dcterms:requires a owl:AsymmetricProperty .
-
-	dcterms:hasPart a owl:AsymmetricProperty .
-
-	dcterms:isReplacedBy a owl:AsymmetricProperty .
 }
 
 <file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.ttl> {
@@ -478,46 +534,150 @@
 	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
 		rdfs:domain a4g:Line .
 
+	dcterms:hasPart a owl:AsymmetricProperty .
+
+	dcterms:isReplacedBy a owl:AsymmetricProperty .
+
 	dcterms:requires a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.rdf> {
+	dcterms:title rdfs:range rdf:PlainLiteral ;
+		a owl:FunctionalProperty .
+
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		rdfs:domain a4g:Line .
 
 	dcterms:hasPart a owl:AsymmetricProperty .
 
 	dcterms:isReplacedBy a owl:AsymmetricProperty .
+
+	dcterms:requires a owl:AsymmetricProperty .
 }
 
 <file:///implementation/eCatalogue/owl_ontology/eCatalogue.ttl> {
-	dcterms:title a owl:DatatypeProperty .
-
 	rdf:PlainLiteral a rdfs:Datatype .
-
-	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
 
 	dcterms:description a owl:DatatypeProperty .
 
-	dcterms:requires a owl:ObjectProperty .
+	dcterms:title a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
 
 	dcterms:hasPart a owl:ObjectProperty .
 
 	dcterms:isReplacedBy a owl:ObjectProperty .
+
+	dcterms:requires a owl:ObjectProperty .
 
 	dcterms:replaces a owl:ObjectProperty .
 }
 
 <file:///implementation/eCatalogue/owl_ontology/eCatalogue.rdf> {
-	dcterms:title a owl:DatatypeProperty .
-
 	rdf:PlainLiteral a rdfs:Datatype .
-
-	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
 
 	dcterms:description a owl:DatatypeProperty .
 
-	dcterms:requires a owl:ObjectProperty .
+	dcterms:title a owl:DatatypeProperty .
+
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
 
 	dcterms:hasPart a owl:ObjectProperty .
 
 	dcterms:isReplacedBy a owl:ObjectProperty .
 
+	dcterms:requires a owl:ObjectProperty .
+
 	dcterms:replaces a owl:ObjectProperty .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess_restrictions.ttl> {
+	rdf:PlainLiteral a owl:Class .
+
+	dcterms:title rdfs:range rdfs:Literal .
+
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		rdfs:domain _:b3123 .
+
+	rdfs:Literal a owl:Class .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	dcterms:identifier rdfs:range xsd:anyURI .
+
+	dcterms:isPartOf a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess_restrictions.rdf> {
+	rdf:PlainLiteral a owl:Class .
+
+	dcterms:title rdfs:range rdfs:Literal .
+
+	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
+		rdfs:domain _:df_50_18 .
+
+	rdfs:Literal a owl:Class .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	dcterms:identifier rdfs:range xsd:anyURI .
+
+	dcterms:isPartOf a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	dcterms:title a owl:ObjectProperty .
+
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
+
+	skos:prefLabel a owl:DatatypeProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
+
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	dcterms:identifier a owl:DatatypeProperty .
+
+	dcterms:isPartOf a owl:ObjectProperty .
+
+	m8g:EvidenceType a owl:Class .
+
+	m8g:specifiesEvidenceType a owl:ObjectProperty .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	dcterms:title a owl:ObjectProperty .
+
+	<http://www.w3.org/ns/adms#identifier> a owl:ObjectProperty .
+
+	skos:prefLabel a owl:DatatypeProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
+
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	dcterms:identifier a owl:DatatypeProperty .
+
+	dcterms:isPartOf a owl:ObjectProperty .
+
+	m8g:EvidenceType a owl:Class .
+
+	m8g:specifiesEvidenceType a owl:ObjectProperty .
 }
 

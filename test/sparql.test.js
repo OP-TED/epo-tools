@@ -4,10 +4,8 @@ import { readFileSync } from 'fs'
 import { describe, it } from 'mocha'
 import { applyGlob } from '../src/io/assets.js'
 
-import { termsFromQuery } from '../src/ontology/sparql/extract.js'
-import {
-  validateAgainstGraph,
-} from '../src/ontology/sparql/validate.js'
+import { termsFromQuery } from '../src/sparql/extractFromQuery.js'
+import { validateAgainstGraph } from '../src/sparql/validate.js'
 import { getEpoJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })

@@ -44,8 +44,9 @@ async function getRdfAssets ({ globPattern }, graphFactory = getGraph) {
         quad.graph = graphFactory(path)
       }
     } catch (e) {
-      // console.error(path, 'failed to parse')
-      throw e
+      throw new Error(JSON.stringify({
+        path, e,
+      }, null, 2))
     }
     assets.push({ path, dataset })
   }

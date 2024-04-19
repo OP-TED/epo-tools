@@ -1,5 +1,9 @@
-import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from '../const.js'
-import { stripPrefix, toSpaced } from '../views/prefix.js'
+import {
+  ATTRIBUTE,
+  INHERITANCE,
+  RELATIONSHIP,
+} from '../conceptualModel/const.js'
+import { stripPrefix, toSpaced } from '../prefix/prefix.js'
 
 const prefix = `
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .

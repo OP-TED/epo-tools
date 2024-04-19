@@ -10,7 +10,7 @@ const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.
 const buffer = readFileSync(databasePath)
 const eaJson = bufferToJson({ buffer })
 
-const filter = ['epo:Notice']
+const filter = ['epo*']
 const epoOntology = filterBy(eaJson, { filter })
 
 const plantUML = toPlantuml(epoOntology)

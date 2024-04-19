@@ -1,10 +1,10 @@
 import { computedAsync, useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
-import { INHERITANCE } from '../ontology/const.js'
-import { toPlantuml } from '../ontology/templates/plantuml-template.js'
-import { filterBy, suggestNodes } from '../ontology/views/filter.js'
-import { toShacl } from '../ontology/views/shacl.js'
+import { INHERITANCE } from '../conceptualModel/const.js'
+import { filterBy, suggestNodes } from '../conceptualModel/filter.js'
+import { toPlantuml } from '../plantuml/plantumlTemplate.js'
+import { toShacl } from '../shacl/model2Shacl.js'
 
 const DEFAULT_VIEW = {
   filter: ['epo:Document', 'epo:Buyer', 'epo:AwardDecision'],

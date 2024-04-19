@@ -1,8 +1,6 @@
 # Giving the complete ontology as context
 
-The LLM did not follow the instructions given.
-
-The context window is not enough to hold a conversation. Instructions were ignored
+The context window is not enough to hold the complete ontology, the instructions were ignored
 
 The context needs to be smaller to fit in the window.
 

@@ -1,7 +1,7 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import { toPlantuml } from '../src/ontology/templates/plantuml-template.js'
+import { toPlantuml } from '../src/plantuml/plantumlTemplate.js'
 import { getEpoJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })

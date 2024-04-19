@@ -1,5 +1,5 @@
-import { termsFromQuery } from './extract.js'
-import { anyMatch } from '../views/filter.js'
+import { anyMatch } from '../conceptualModel/filter.js'
+import { termsFromQuery } from './extractFromQuery.js'
 
 function validateAgainstGraph (graph, { queryStr }) {
   const { terms, error } = termsFromQuery({ queryStr })

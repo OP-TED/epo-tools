@@ -5,6 +5,13 @@ const EPO_LATEST = {
   latest: true,
 }
 
+const EPO_3_1_0 = {
+  owner: 'OP-TED',
+  repo: 'ePO',
+  tag: 'v3.1.0',
+  localDirectory: `assets/ePO/v3.1.0`,
+}
+
 const COMMON_VOCABS = {
   localDirectory: 'assets/common-vocabularies',
 }
@@ -17,4 +24,4 @@ const UNDER_REVIEW = {
   branch: branchName,
 }
 
-export { EPO_LATEST, UNDER_REVIEW, COMMON_VOCABS }
+export { EPO_LATEST, EPO_3_1_0, UNDER_REVIEW, COMMON_VOCABS }

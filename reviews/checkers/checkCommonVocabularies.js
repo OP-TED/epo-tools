@@ -1,10 +1,10 @@
 import { stringify } from 'csv-stringify/sync'
 import fs from 'fs'
 import rdf from 'rdf-ext'
-import { getRdfAssets } from '../io/assets.js'
-import { prettyPrintTrig } from '../io/serialization.js'
-import { createTriplestore, doSelect } from '../io/sparql.js'
-import { COMMON_VOCABS } from '../config.js'
+import { COMMON_VOCABS } from '../../src/config.js'
+import { getRdfAssets } from '../../src/io/assets.js'
+import { prettyPrintTrig } from '../../src/io/serialization.js'
+import { createTriplestore, doSelect } from '../../src/io/sparql.js'
 
 async function checkCommonVocabularies ({ sourceDirectory, targetDirectory }) {
 

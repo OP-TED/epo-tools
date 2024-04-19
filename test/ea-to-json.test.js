@@ -2,8 +2,8 @@ import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { readFileSync } from 'fs'
 import { describe, it } from 'mocha'
+import { bufferToJson } from '../src/conceptualModel/ea-to-json.js'
 import { UNDER_REVIEW } from '../src/config.js'
-import { bufferToJson } from '../src/ontology/ea/ea-to-json.js'
 
 expect.extend({ toMatchSnapshot })
 

@@ -1,7 +1,7 @@
 import fs from 'fs'
-import { getRdfAssets } from '../io/assets.js'
-import { rdfArrayToCSV } from '../io/serialization.js'
-import { createTriplestore, doSelect } from '../io/sparql.js'
+import { getRdfAssets } from '../../src/io/assets.js'
+import { rdfArrayToCSV } from '../../src/io/serialization.js'
+import { createTriplestore, doSelect } from '../../src/io/sparql.js'
 
 async function checkAuthorityTables ({ sourceDirectory, targetDirectory }) {
   const globPattern = `${sourceDirectory}/implementation/**/*.{ttl,rdf}`

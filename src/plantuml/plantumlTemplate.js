@@ -1,4 +1,4 @@
-import { INHERITANCE, RELATIONSHIP } from '../const.js'
+import { INHERITANCE, RELATIONSHIP } from '../conceptualModel/const.js'
 
 function toPlantuml ({ nodes, edges }) {
 

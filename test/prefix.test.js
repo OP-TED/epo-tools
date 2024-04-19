@@ -1,9 +1,7 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import {
-  getAllPrefixes,
-} from '../src/ontology/views/prefix.js'
+import { getAllPrefixes } from '../src/prefix/prefix.js'
 import { getEpoJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })

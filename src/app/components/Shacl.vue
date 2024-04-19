@@ -1,9 +1,9 @@
 <script setup lang="js">
-import { NCode, NCard } from 'naive-ui'
+import { useClipboard } from '@vueuse/core'
+import { NCard, NCode } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 
 import { useStore } from '../state.js'
-import { useClipboard, usePermission } from '@vueuse/core'
 
 const store = useStore()
 const { shacl } = storeToRefs(store)

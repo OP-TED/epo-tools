@@ -1,17 +1,17 @@
 <script setup lang="js">
-import { NInput, NSpace, NText, NCard, NTag, NButton } from 'naive-ui'
-import { ref, computed } from 'vue'
-import { termsFromQuery } from '../../ontology/sparql/extract.js'
-import { validateAgainstGraph } from '../../ontology/sparql/validate.js'
+import { NButton, NCard, NInput, NTag, NText } from 'naive-ui'
+import { storeToRefs } from 'pinia'
+import { computed } from 'vue'
+import { validateAgainstGraph } from '../../sparql/validate.js'
 
 import { useStore } from '../state.js'
-import { storeToRefs } from 'pinia'
 
 const store = useStore()
 const { addFilterTerms } = store
 const { sparql, eaJson } = storeToRefs(store)
 
-const extracted = computed(() => sparql.value ? validateAgainstGraph(eaJson.value, { queryStr: sparql.value }) : {terms:[]})
+const extracted = computed(
+    () => sparql.value ? validateAgainstGraph(eaJson.value, { queryStr: sparql.value }) : { terms: [] })
 
 
 </script>
@@ -34,7 +34,8 @@ const extracted = computed(() => sparql.value ? validateAgainstGraph(eaJson.valu
       Missing
       <template v-for="{term} of extracted?.terms?.filter(x=>!x.isPresent)">
         <n-tag type="warning">{{ term }}</n-tag>
-      </template> in the current model. (the query might not work)
+      </template>
+      in the current model. (the query might not work)
     </n-text>
   </n-card>
 

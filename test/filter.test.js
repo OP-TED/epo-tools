@@ -1,12 +1,12 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import { ATTRIBUTE, RELATIONSHIP } from '../src/ontology/const.js'
+import { ATTRIBUTE, RELATIONSHIP } from '../src/conceptualModel/const.js'
 import {
+  anyMatch,
   filterBy,
   suggestNodes,
-  anyMatch,
-} from '../src/ontology/views/filter.js'
+} from '../src/conceptualModel/filter.js'
 import { getJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
@@ -105,7 +105,6 @@ describe('filter', () => {
 
   it(`simple-datatype`, function () {
     const filtered = filterBy(graph, { filter: ['datatype1'] })
-    console.log(filtered)
     expect(filtered).toMatchSnapshot(this)
   })
 
@@ -121,7 +120,6 @@ describe('filter', () => {
 
   it(`simple-datatype negation`, function () {
     const filtered = filterBy(graph, { filter: ['datatype1', '-has'] })
-    console.log(filtered)
     expect(filtered).toMatchSnapshot(this)
   })
 

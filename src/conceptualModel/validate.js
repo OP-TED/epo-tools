@@ -1,5 +1,5 @@
-import { ATTRIBUTE, INHERITANCE } from '../const.js'
-import { hasPrefix } from '../views/prefix.js'
+import { hasPrefix } from '../prefix/prefix.js'
+import { ATTRIBUTE, INHERITANCE } from './const.js'
 
 function validateNode (node) {
   return hasPrefix(node.name) ? [] : [

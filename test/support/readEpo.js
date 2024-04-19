@@ -1,7 +1,7 @@
 import { readFileSync } from 'fs'
+import { bufferToJson } from '../../src/conceptualModel/ea-to-json.js'
+import { filterBy } from '../../src/conceptualModel/filter.js'
 import { UNDER_REVIEW } from '../../src/config.js'
-import { bufferToJson } from '../../src/ontology/ea/ea-to-json.js'
-import { narrowToEpo } from '../../src/ontology/views/epo-views.js'
 
 function getJson () {
   const assetsPath = UNDER_REVIEW.localDirectory
@@ -11,9 +11,10 @@ function getJson () {
   return bufferToJson({ buffer })
 }
 
+const narrowToEpo = (g) => filterBy(g, { filter: ['epo*'] })
+
 function getEpoJson () {
   return narrowToEpo(getJson())
-
 }
 
 export { getJson, getEpoJson }

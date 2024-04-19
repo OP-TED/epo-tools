@@ -1,6 +1,6 @@
 # ePO-tools
 
-This repository is currently set to private and serves as a space for validation tools and dereferenciation POCs
+This repository is currently set to private and serves as a space for validation tools and some POCs
 
 The intention is to eventually delete this repository once its purpose is fulfilled.
 
@@ -15,3 +15,13 @@ Install dependencies
 ```sh
 npm install
 ```
+
+## App
+
+it contains an application to generate plantUML,
+
+```sh
+npm run dev
+```
+
+- Demo : https://epo-tools.netlify.app/

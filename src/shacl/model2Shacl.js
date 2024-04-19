@@ -1,8 +1,8 @@
 import { Parser } from 'n3'
 import rdf from 'rdf-ext'
-import { prettyPrintTurtle } from '../../io/serialization.js'
-import { validateEdge, validateNode } from '../ea/validate.js'
-import { toTurtle } from '../templates/turtle-template.js'
+import { validateEdge, validateNode } from '../conceptualModel/validate.js'
+import { prettyPrintTurtle } from '../io/serialization.js'
+import { toTurtle } from './shaclTemplate.js'
 
 async function parseUgly (uglyTurtle) {
   const dataset = await rdf.dataset().
@@ -11,8 +11,7 @@ async function parseUgly (uglyTurtle) {
   return { dataset, turtle }
 }
 
-async function toShacl (
-  { nodes, edges }, { inference } = { inference: false }) {
+async function toShacl ({ nodes, edges }) {
   const hasErrors = x => x.some(x => x.severity === 'error')
 
   const uglyTurtle = toTurtle({

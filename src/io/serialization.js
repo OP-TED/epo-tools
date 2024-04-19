@@ -1,5 +1,6 @@
 import {
-  TrigSerializer, TurtleSerializer,
+  TrigSerializer,
+  TurtleSerializer,
 } from '@rdfjs-elements/formats-pretty'
 import { stringify } from 'csv-stringify/sync'
 import getStream from 'get-stream'
