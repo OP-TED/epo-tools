@@ -53,4 +53,15 @@ async function getRdfAssets ({ globPattern }, graphFactory = getGraph) {
   return assets
 }
 
-export { getRdfAssets, applyGlob }
+async function rdfAssetsDiff (oldAssets, newAssets) {
+  const added = rdf.dataset()
+  const removed = rdf.dataset()
+  for (const { path, dataset } of oldAssets) {
+    const newDataset = newAssets.find(x => x.path === path).dataset
+    added.addAll(newDataset.difference(dataset))
+    removed.addAll(dataset.difference(newDataset))
+  }
+  return { added, removed }
+}
+
+export { getRdfAssets, applyGlob, rdfAssetsDiff }

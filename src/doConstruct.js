@@ -1,6 +1,6 @@
 import { EPO_LATEST } from './config.js'
 import { getRdfAssets } from './io/assets.js'
-import { createTriplestore, doConstruct } from './io/sparql.js'
+import { createTriplestore, doConstruct } from './sparql/localStore.js'
 
 const globPattern = `${EPO_LATEST.localDirectory}/implementation/**/!(*_restrictions|*_shapes).ttl`
 const assets = await getRdfAssets({ globPattern })

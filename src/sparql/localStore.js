@@ -57,7 +57,7 @@ function doSelect ({ store, query }) {
 
     result.push(item)
   }
-  console.log(`store: ${store.size} elements, results: ${result.length}`)
+  console.log(`query ${store.size} quads, result size: ${result.length}`)
   return result
 }
 

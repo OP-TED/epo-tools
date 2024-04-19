@@ -39,7 +39,6 @@ function rdfArrayToCSV (array) {
     const arrayOfArrays = array.map(obj => Object.values(obj).map(x => x.value))
     return stringify([header, ...arrayOfArrays])
   }
-
 }
 
 export { prettyPrintTurtle, prettyPrintTrig, rdfArrayToCSV }

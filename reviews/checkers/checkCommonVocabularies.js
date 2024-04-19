@@ -4,7 +4,7 @@ import rdf from 'rdf-ext'
 import { COMMON_VOCABS } from '../../src/config.js'
 import { getRdfAssets } from '../../src/io/assets.js'
 import { prettyPrintTrig } from '../../src/io/serialization.js'
-import { createTriplestore, doSelect } from '../../src/io/sparql.js'
+import { createTriplestore, doSelect } from '../../src/sparql/localStore.js'
 
 async function checkCommonVocabularies ({ sourceDirectory, targetDirectory }) {
 

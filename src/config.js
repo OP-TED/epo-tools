@@ -24,4 +24,6 @@ const UNDER_REVIEW = {
   branch: branchName,
 }
 
-export { EPO_LATEST, EPO_3_1_0, UNDER_REVIEW, COMMON_VOCABS }
+export {
+  EPO_LATEST, EPO_3_1_0, UNDER_REVIEW, COMMON_VOCABS,
+}

@@ -55,9 +55,21 @@
 	dcterms:description a owl:DatatypeProperty .
 }
 
+<file:///implementation/eOrdering/owl_ontology/eOrdering.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
+<file:///implementation/eOrdering/owl_ontology/eOrdering.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
 <file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl> {
 	<http://www.w3.org/ns/org#Organization> a owl:Class ;
-		rdfs:subClassOf _:b2381, _:b2382, _:b2383, _:b2384, _:b2385 .
+		rdfs:subClassOf _:b2469, _:b2470, _:b2471, _:b2472, _:b2473 .
 
 	m8g:Evidence a owl:Class .
 
@@ -65,15 +77,15 @@
 
 	dcterms:title rdfs:range rdf:PlainLiteral .
 
-	dcterms:Location rdfs:subClassOf _:b2270, _:b2271, _:b2272, _:b2273, _:b2274 .
+	dcterms:Location rdfs:subClassOf _:b2358, _:b2359, _:b2360, _:b2361, _:b2362 .
 
 	m8g:Channel a owl:Class .
 
 	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
 
-	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:b2282, _:b2283 .
+	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:b2370, _:b2371 .
 
-	m8g:Constraint rdfs:subClassOf _:b2116 .
+	m8g:Constraint rdfs:subClassOf _:b2204 .
 
 	m8g:InformationConcept a owl:Class .
 
@@ -83,7 +95,7 @@
 
 	dcterms:alternative rdfs:range rdf:PlainLiteral .
 
-	m8g:Criterion rdfs:subClassOf _:b2117, _:b2118, _:b2119 .
+	m8g:Criterion rdfs:subClassOf _:b2205, _:b2206, _:b2207 .
 
 	<http://www.w3.org/2006/time#unitType> rdfs:range skos:Concept .
 
@@ -135,7 +147,7 @@
 
 	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
 		a owl:FunctionalProperty ;
-		rdfs:domain _:b2225 .
+		rdfs:domain _:b2313 .
 
 	locn:address rdfs:range locn:Address .
 }
@@ -266,7 +278,7 @@
 
 <file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.rdf> {
 	<http://www.w3.org/ns/org#Organization> a owl:Class ;
-		rdfs:subClassOf _:df_32_161, _:df_32_162, _:df_32_163, _:df_32_190, _:df_32_284 .
+		rdfs:subClassOf _:df_35_161, _:df_35_162, _:df_35_163, _:df_35_190, _:df_35_284 .
 
 	m8g:Evidence a owl:Class .
 
@@ -274,15 +286,15 @@
 
 	dcterms:title rdfs:range rdf:PlainLiteral .
 
-	dcterms:Location rdfs:subClassOf _:df_32_13, _:df_32_191, _:df_32_192, _:df_32_193, _:df_32_194 .
+	dcterms:Location rdfs:subClassOf _:df_35_13, _:df_35_191, _:df_35_192, _:df_35_193, _:df_35_194 .
 
 	m8g:Channel a owl:Class .
 
 	<http://xmlns.com/foaf/0.1/Agent> a owl:Class .
 
-	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:df_32_164, _:df_32_283 .
+	<http://www.w3.org/ns/person#Person> rdfs:subClassOf _:df_35_164, _:df_35_283 .
 
-	m8g:Constraint rdfs:subClassOf _:df_32_1 .
+	m8g:Constraint rdfs:subClassOf _:df_35_1 .
 
 	m8g:InformationConcept a owl:Class .
 
@@ -292,7 +304,7 @@
 
 	dcterms:alternative rdfs:range rdf:PlainLiteral .
 
-	m8g:Criterion rdfs:subClassOf _:df_32_2, _:df_32_3, _:df_32_4 .
+	m8g:Criterion rdfs:subClassOf _:df_35_2, _:df_35_3, _:df_35_4 .
 
 	<http://www.w3.org/2006/time#unitType> rdfs:range skos:Concept .
 
@@ -344,7 +356,7 @@
 
 	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
 		a owl:FunctionalProperty ;
-		rdfs:domain _:df_32_520 .
+		rdfs:domain _:df_35_520 .
 
 	locn:address rdfs:range locn:Address .
 }
@@ -473,18 +485,6 @@
 	<http://www.w3.org/2006/time#Duration> a owl:Class .
 }
 
-<file:///implementation/eOrdering/owl_ontology/eOrdering.ttl> {
-	rdf:PlainLiteral a rdfs:Datatype .
-
-	dcterms:description a owl:DatatypeProperty .
-}
-
-<file:///implementation/eOrdering/owl_ontology/eOrdering.rdf> {
-	rdf:PlainLiteral a rdfs:Datatype .
-
-	dcterms:description a owl:DatatypeProperty .
-}
-
 <file:///implementation/eNotice/owl_ontology/eNotice.ttl> {
 	rdf:PlainLiteral a rdfs:Datatype .
 }
@@ -495,12 +495,12 @@
 
 <file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.ttl> {
 	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
-		rdfs:domain _:b2954 .
+		rdfs:domain _:b2923 .
 }
 
 <file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.rdf> {
 	<http://www.w3.org/ns/adms#identifier> rdfs:range <http://www.w3.org/ns/adms#Identifier> ;
-		rdfs:domain _:df_41_67 .
+		rdfs:domain _:df_40_67 .
 }
 
 <file:///implementation/eFulfilment/owl_ontology/eFulfilment.ttl> {
