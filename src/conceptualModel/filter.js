@@ -12,6 +12,16 @@ function anyMatch ({ nodes, edges }, { filter }) {
   return false
 }
 
+function filterByPrefix (g, { prefix }) {
+  const byPrefix = (value) => value?.startsWith(`${prefix}:`)
+  const { nodes, edges, ...tail } = g
+  return {
+    nodes: nodes.filter(x => byPrefix(x.name)),
+    edges: edges.filter(
+      x => byPrefix(x.source) || byPrefix(x.predicate)), ...tail,
+  }
+}
+
 // This is becoming slow, at some point I could use an in-memory database
 function filterBy ({ nodes, edges }, { filter, includeIncoming }) {
   const { f, nf } = getMatcher(filter)
@@ -79,5 +89,5 @@ const matchHasNegatives = arr => value => arr.filter(isNegation).
   some(apply(value))
 
 export {
-  filterBy, anyMatch, suggestNodes,
+  filterBy, filterByPrefix, anyMatch, suggestNodes,
 }

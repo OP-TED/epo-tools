@@ -15,6 +15,12 @@ describe('write-plantuml', () => {
     expect(plantuml).toMatchSnapshot(this)
   })
 
+  it(`generates plantuml simple`, function () {
+    const plantuml = toPlantuml(epoJson,
+      { includeRelationships: false, sorted: true })
+    expect(plantuml).toMatchSnapshot(this)
+  })
+
   it(`generates plantuml, empty graph`, async function () {
     const plantuml = toPlantuml(epoJson)
     expect(plantuml).toMatchSnapshot(this)

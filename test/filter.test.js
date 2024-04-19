@@ -5,6 +5,7 @@ import { ATTRIBUTE, RELATIONSHIP } from '../src/conceptualModel/const.js'
 import {
   anyMatch,
   filterBy,
+  filterByPrefix,
   suggestNodes,
 } from '../src/conceptualModel/filter.js'
 import { getJson } from './support/readEpo.js'
@@ -13,6 +14,11 @@ expect.extend({ toMatchSnapshot })
 
 describe('filter', () => {
   const eaJson = getJson()
+
+  it(`byPrefix`, function () {
+    const result = filterByPrefix(eaJson,{prefix:'epo-cat'})
+    expect(result).toMatchSnapshot(this)
+  })
 
   it(`anyMatch`, function () {
     const toCheck = ['epo-cat:*', 'who-are-you']

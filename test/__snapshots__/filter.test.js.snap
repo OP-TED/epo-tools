@@ -7,6 +7,1795 @@ Array [
 ]
 `;
 
+exports[`filter byPrefix 1`] = `
+Object {
+  "edges": Array [
+    Object {
+      "description": "A name given to the resource.
+
+WG approval 30/05/2023
+",
+      "predicate": "dct:title",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "1",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Brand",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "A name given to the resource.
+
+WG approval 30/05/2023",
+      "predicate": "dct:title",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "1",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:ItemModel",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The number or the fraction of a related item. ",
+      "predicate": "epo-cat:hasFactor",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:ItemRelation",
+      "target": "xsd:decimal",
+      "type": "attribute",
+    },
+    Object {
+      "description": "An account of the resource.
+
+Additional Information:
+Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.
+
+WG Approval 30/05/2023",
+      "predicate": "dct:description",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Line",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The property defined in a classification scheme. 
+
+Additional Information:
+For example, the following two properties are defined in the ECLASS classification of goods and services: (0173-1#02-AAA026#007) drilling diameter: drilling diameter, (0173-1#02-AAA030#007) flange diameter: flange diameter .
+
+
+WG approval 28/07/2022",
+      "predicate": "epo-cat:hasAttributeType",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "1",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:ItemProperty",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The classification scheme where a property is defined. 
+
+Additional Information:
+For example, the following two properties are defined in the ECLASS classification of goods and services: (0173-1#02-AAA026#007) drilling diameter: drilling diameter, (0173-1#02-AAA030#007) flange diameter: flange diameter .
+
+WG approval 28/07/2022
+",
+      "predicate": "epo-cat:hasClassificationScheme",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "1",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:ItemProperty",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Simple value of the property, which is defined in a classification scheme.
+
+Additional Information:
+For example, the (0173-1#02-AAV139#001) coating 1 of an optical material has value of \\"silver\\". 
+
+This simple literal value is for the cases when the property value does not have units, in which case the qualifiedValue shall be used. 
+
+WG approval 28/07/2022
+
+
+",
+      "predicate": "epo-cat:hasLiteralValue",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:ItemProperty",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Information about payment conditions applied to all items in the catalogue.
+
+Additional information:
+This property may need to be used together with the payment arrangements provided in the ContractTerms, where such terms exists.
+
+WG approval 30/06/2022
+
+",
+      "predicate": "epo-cat:hasSpecificPaymentArrangement",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The factor relative to the price charged in addition.
+
+WG approval 26/07/2022",
+      "predicate": "epo-cat:hasPercentage",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-ord:AllowanceChargeInformation",
+      "target": "xsd:decimal",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The day of production.
+",
+      "predicate": "epo-cat:hasManufactureDate",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Batch",
+      "target": "xsd:dateTime",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The factor relative to the price charged in addition.
+
+WG approval 26/07/2022
+",
+      "predicate": "epo-cat:hasPercentage",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-ord:TaxInformation",
+      "target": "xsd:decimal",
+      "type": "attribute",
+    },
+    Object {
+      "description": "An account of the resource.
+
+Additional Information:
+Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.
+
+WG Approval 30/05/2023",
+      "predicate": "dct:description",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Item",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "A name given to the resource.
+
+WG approval 30/05/2023",
+      "predicate": "dct:title",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "1",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Item",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Indicator, if the item is orderable or not, e.g. because it is temporarily out of stock.",
+      "predicate": "epo-cat:isOrderable",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "xsd:boolean",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The factor by which the Item net price of an unit of an item can be converted to the orderable unit.",
+      "predicate": "epo-cat:hasOrderableUnitFactorRate",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "xsd:decimal",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Orderable quantity increment: The increment of Orderable units that can be ordered.",
+      "predicate": "epo-cat:hasOrderableQuantityIncrement",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "xsd:integer",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Warranty information that applies to the catalogue line item.",
+      "predicate": "epo-cat:hasWarrantyInformation",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Indicator if the item is offered in accordance to an existing contract.",
+      "predicate": "epo-cat:isContractedItem",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "xsd:boolean",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Textual description of the specific transaction conditions (purchasing, sales, payment) for an item.",
+      "predicate": "epo-cat:hasTransactionConditions",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "List of words (e.g, synonyms) to make the item searchable. 
+
+WG Approval 7/04/2022
+",
+      "predicate": "epo-cat:hasKeyword",
+      "quantifiers": Object {
+        "max": undefined,
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Item",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Indicator whether an item is in the supplier's stock. If not in stock the supplier has to order the item.",
+      "predicate": "epo-cat:isInStock",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Item",
+      "target": "xsd:boolean",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The last day until which the item can be used.
+
+WG approval 10/03/2021
+",
+      "predicate": "epo-cat:hasExpiryDate",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Batch",
+      "target": "xsd:date",
+      "type": "attribute",
+    },
+    Object {
+      "description": "The day until which the quality of the item will remain optimal.
+
+WG approval 10/03/2021",
+      "predicate": "epo-cat:hasBestBeforeDate",
+      "quantifiers": Object {
+        "max": "1",
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Batch",
+      "target": "xsd:date",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Textual description of the item's dimensions.",
+      "predicate": "epo-cat:hasDimensionDescription",
+      "quantifiers": Object {
+        "max": undefined,
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Item",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": "Specification of the hazardous nature of an item according to a classification schema. Provides detail of the classification and nature of a hazardous item.",
+      "predicate": "epo-cat:hasHazardousClass",
+      "quantifiers": Object {
+        "max": undefined,
+        "min": "0",
+        "quantifiersDeclared": true,
+      },
+      "source": "epo-cat:Item",
+      "target": "rdf:PlainLiteral",
+      "type": "attribute",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:isProductionOf",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:Batch",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasBrand",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:Brand",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:isRelatedToItem",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:ItemRelation",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasQualifiedItemRelation",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:ItemRelation",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:specifiesCatalogueReceiver",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo:CatalogueReceiver",
+      "type": "relation",
+    },
+    Object {
+      "description": "Information that is particular to one or multiple Order Lines.
+",
+      "predicate": "epo-ord:isSpecificToOrderLine",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:ChargeInformation",
+      "target": "epo-ord:OrderLine",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasQuantity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-con:Deliverable",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasModel",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:ItemModel",
+      "type": "relation",
+    },
+    Object {
+      "description": "A classification of this item according to a specific system for classifying products or services.
+
+Additional information: 
+Examples of classification schemes are: CPV, UNSPC, eCl@ss, GPC, ...
+
+WG acceptance 10/03/2022",
+      "predicate": "epo-cat:hasItemClassification",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "at-voc-new:item-classification",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:specifiesCatalogueProvider",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo:CatalogueProvider",
+      "type": "relation",
+    },
+    Object {
+      "description": "Location delivery area where the Item can be ordered to the given price.
+",
+      "predicate": "epo-cat:hasDeliveryLocation",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "dct:Location",
+      "type": "relation",
+    },
+    Object {
+      "description": "The relation indicating until when a Catalogue Line instance is applicable.
+
+WG approval 21/09/2023",
+      "predicate": "epo-cat:hasCatalogueLineValidity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo:Period",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasPriceValidity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo:Period",
+      "type": "relation",
+    },
+    Object {
+      "description": "Qualified value of the property, which is defined in a classification scheme.
+
+Additional Information:
+For example, the (0173-1#02-AAA026#007) drilling diameter of an item has value of 12 inches. 
+
+WG approval 28/07/2022",
+      "predicate": "epo-cat:hasQualifiedValue",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:ItemProperty",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:PostAwardDocument",
+      "target": "epo:Document",
+      "type": "inherits",
+    },
+    Object {
+      "description": "A related resource that is included either physically or logically in the described resource.
+
+Additional Information: 
+In the eCatalogue context, when this relation is used between two items, the resource in the definition refers to Items, i.e. one item is part of another item.
+
+WG Approval: 30/06/2022
+",
+      "predicate": "dct:hasPart",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:isSubordinatedToContract",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo:Contract",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:comprisesCatalogueLine",
+      "quantifiers": Object {
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1..*",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo-cat:CatalogueLine",
+      "type": "relation",
+    },
+    Object {
+      "description": "The manufacturer's identifier for the item.
+",
+      "predicate": "epo:hasManufacturerID",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Manufacturer",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": "The identifier assigned to a specific batch of the produced Item.
+WG Approval 16/05/2023
+",
+      "predicate": "epo:hasBatchID",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Batch",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": "The general identifier assigned to the concept as defined by the Manufacturer. ​
+
+WG approval 16/05/2023
+",
+      "predicate": "epo:hasManufacturerItemID",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": "The general identifier assigned to the concept as defined by the Seller.​
+
+WG approval 16/05/2023
+",
+      "predicate": "epo:hasSellerItemID",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": "The general identifier assigned to the concept based on a standard scheme.​
+
+Additional information: 
+For example the GTIN scheme (Global Trade Item Number).
+
+WG approval 16/05/2023",
+      "predicate": "epo:hasItemStandardID",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": "The maximum number of orderable units that can be ordered according to details provided in the catalogue line, such as price.
+",
+      "predicate": "epo-cat:hasMaximumOrderQuantity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": "The minimum quantity of an item that is guaranteed by the seller to be delivered.
+
+",
+      "predicate": "epo-cat:hasMinimumQuantityGuaranteedForDelivery",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": "The net quantity of the item that is contained in each consumable unit, excluding any packaging materials.
+",
+      "predicate": "epo-cat:hasNetQuantity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasCountryOfOrigin",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "at-voc:country",
+      "type": "relation",
+    },
+    Object {
+      "description": "The unit in which the item described in this catalogue line can be ordered.",
+      "predicate": "epo-cat:hasOrderableUnit",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "at-voc-new:orderable-unit",
+      "type": "relation",
+    },
+    Object {
+      "description": "Coded description of the specific transaction conditions (purchasing, sales, payment) for an item.
+",
+      "predicate": "epo-cat:hasTransactionConditionsCode",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "at-voc-new:transaction-conditions",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:specifiesBuyer",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo:Buyer",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasActivityCode",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "at-voc-new:activity-code",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasPrice",
+      "quantifiers": Object {
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1..*",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo-cat:Price",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasNetMonetaryValue",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo:MonetaryValue",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasActivityCode",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "at-voc-new:activity-code",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasOrderabableUnitFactorRate",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasQuantityThreshold",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": "The expected amount of time between the order and delivery of an item. 
+
+WG approval 26/07/2022",
+      "predicate": "epo-cat:hasExpectedDeliveryTime",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo:Duration",
+      "type": "relation",
+    },
+    Object {
+      "description": "The item price based on a standardised unit.
+
+Additional Information:
+The unit must be indicated in the Quantity, with a quantity value of 1.",
+      "predicate": "epo-cat:hasStandardisedUnitPrice",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo-cat:Price",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasQuantity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-ord:OrderLine",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:ChargeInformation",
+      "target": "epo-ord:AllowanceChargeInformation",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:specifiesChargeInformation",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-ord:Order",
+      "target": "epo-cat:ChargeInformation",
+      "type": "relation",
+    },
+    Object {
+      "description": "The quantity at which the net monetary value applies.",
+      "predicate": "epo-cat:hasBaseQuantity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo:Quantity",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasDeliveryClassification",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "at-voc-new:delivery-item-type",
+      "type": "relation",
+    },
+    Object {
+      "description": "Relation to the proof of conformance.
+
+WG approval 30/05/2023",
+      "predicate": "epo:hasCertification",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo:Certificate",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:specifiesSeller",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo-ord:Seller",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:ProductSpecification",
+      "target": "epo-cat:PostAwardDocument",
+      "type": "inherits",
+    },
+    Object {
+      "description": "An item that can be added to another item to enhance it.
+
+WG Approval: 30/06/2022",
+      "predicate": "epo-cat:hasAccessoryItem",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": "A related resource that is supplanted, displaced, or superseded by the described resource.
+
+Additional Information: 
+In the eCatalogue context, when this relation is used between two items, the resource in the definition refers to Items, i.e. one item replaces another item. 
+
+WG Approval: 30/06/2022
+",
+      "predicate": "dct:isReplacedBy",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasSpecification",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:ProductSpecification",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:Manufacturer",
+      "target": "epo:OfferingParty",
+      "type": "inherits",
+    },
+    Object {
+      "description": "An item that if used with another item provides mutual enhancements to both of them.
+
+Additional information:
+For example, gin and tonic; or smart-phone and smart-watch.
+
+WG Approval: 19/05/2022
+
+",
+      "predicate": "epo-cat:hasComplementaryItem",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasManufacturer",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:Manufacturer",
+      "type": "relation",
+    },
+    Object {
+      "description": "Specification of the hazardous nature of an item according to the UNDG classification schema. Provides detail of the classification and nature of a hazardous item.
+",
+      "predicate": "epo-cat:hasHazardousItemUNDGCode",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "at-voc-new:dangerous-goods-list",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:foreseesPackage",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo-ful:Package",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:ItemComposition",
+      "target": "epo-cat:ItemRelation",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:ItemRequirement",
+      "target": "epo-cat:ItemRelation",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:describesItem",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:ItemProperty",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:ItemReplacement",
+      "target": "epo-cat:ItemRelation",
+      "type": "inherits",
+    },
+    Object {
+      "description": "A related resource that is required by the described resource to support its function, delivery, or coherence.
+
+Additional Information:
+In the eCatalogue context, when this relation is used between two items, the resource in the definition refers to Items, i.e. one Item requires another Item. 
+
+WG Approval: 30/06/2022
+",
+      "predicate": "dct:requires",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:ItemComplementaryRelation",
+      "target": "epo-cat:ItemRelation",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:ItemAccessoryRelation",
+      "target": "epo-cat:ItemRelation",
+      "type": "inherits",
+    },
+    Object {
+      "description": "The predetermined monetary value charged in addition to the price.
+
+WG approval 26/07/2022",
+      "predicate": "epo-cat:hasAmount",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-ord:AllowanceChargeInformation",
+      "target": "epo:MonetaryValue",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasChargeInformation",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo-cat:ChargeInformation",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasTaxCategory",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-ord:TaxInformation",
+      "target": "at-voc-new:tax-category",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasTaxScheme",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-ord:TaxInformation",
+      "target": "at-voc-new:tax-scheme",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:comprisesCatalogueResponseLine",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:CatalogueResponse",
+      "target": "epo-cat:CatalogueResponseLine",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:refersToCatalogueLine",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:CatalogueResponseLine",
+      "target": "epo-cat:CatalogueLine",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasPrice",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-ord:OrderLine",
+      "target": "epo-cat:Price",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:refersToCatalogue",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:CatalogueResponse",
+      "target": "epo-cat:Catalogue",
+      "type": "relation",
+    },
+    Object {
+      "description": "A universally unique identifier for an instance of this document.
+
+WG Approval 12/05/2020
+",
+      "predicate": "epo:hasUUID",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:CatalogueResponseLine",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:CatalogueResponse",
+      "target": "epo-cat:PostAwardDocument",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:specifiesCatalogueReceiver",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:CatalogueResponse",
+      "target": "epo:CatalogueReceiver",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:specifiesCatalogueProvider",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:CatalogueResponse",
+      "target": "epo:CatalogueProvider",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:CatalogueResponseInformation",
+      "target": "epo-cat:InformationHub",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:specifiesCatalogueResponseInformation",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:CatalogueResponse",
+      "target": "epo-cat:CatalogueResponseInformation",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:isSpecificToCatalogueResponseLine",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:CatalogueResponseInformation",
+      "target": "epo-cat:CatalogueResponseLine",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-ord:hasAcceptanceStatus",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:CatalogueResponseInformation",
+      "target": "at-voc-new:ResponseStatus",
+      "type": "relation",
+    },
+    Object {
+      "description": "The relation indicating until when a given instance of a concept is applicable.
+
+WG approval 30/05/2023",
+      "predicate": "epo:hasValidityPeriod",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo:Period",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo:hasPriceSurchargeInformation",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo-cat:ChargeInformation",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasPriceType",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "at-voc-new:price-type",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:hasDocumentType",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:PostAwardDocument",
+      "target": "at-voc-new:document-type",
+      "type": "relation",
+    },
+    Object {
+      "description": "The general identifier assigned to the concept as defined by the Buyer.​
+
+WG approval 16/05/2023
+",
+      "predicate": "epo:hasBuyerItemID",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": "https://test-docs.peppol.eu/logistics/transport-execution/codelist/DocumentStatusCode/",
+      "predicate": "epo:hasDocumentStatus",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:PostAwardDocument",
+      "target": "at-voc-new:document-status",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:specifiesItem",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 1,
+        "quantifiersDeclared": true,
+        "raw": "1",
+      },
+      "source": "epo-cat:Line",
+      "target": "epo-cat:Item",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:InformationHub",
+      "target": "epo:ContextDescription",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-cat:isSpecificToLine",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:InformationHub",
+      "target": "epo-cat:Line",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:CatalogueLine",
+      "target": "epo-cat:Line",
+      "type": "inherits",
+    },
+    Object {
+      "description": null,
+      "predicate": null,
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:Catalogue",
+      "target": "epo-cat:PostAwardDocument",
+      "type": "inherits",
+    },
+    Object {
+      "description": "Links a resource to an adms:Identifier class.",
+      "predicate": "adms:identifier",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Line",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": "The predetermined monetary value charged in addition to the price.
+
+WG approval 26/07/2022
+
+",
+      "predicate": "epo-cat:hasAmount",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-ord:TaxInformation",
+      "target": "epo:MonetaryValue",
+      "type": "relation",
+    },
+    Object {
+      "description": "URI reference to external item information or specifications, e.g. web address.
+",
+      "predicate": "epo-cat:hasExternalSpecification",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "epo-cat:Item",
+      "target": "epo:Document",
+      "type": "relation",
+    },
+    Object {
+      "description": "The identifier assigned to the specific instance of the produced concept.
+WG Approval 16/05/2023
+",
+      "predicate": "epo:hasSerialID",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Item",
+      "target": "adms:Identifier",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-ord:hasPriceDiscountInformation",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo-cat:Price",
+      "target": "epo-ord:AllowanceInformation",
+      "type": "relation",
+    },
+    Object {
+      "description": null,
+      "predicate": "epo-ord:hasTaxInformation",
+      "quantifiers": Object {
+        "quantifiersDeclared": true,
+        "raw": "0..*",
+      },
+      "source": "epo-cat:Item",
+      "target": "epo-ord:TaxInformation",
+      "type": "relation",
+    },
+  ],
+  "nodes": Array [
+    Object {
+      "description": null,
+      "name": "epo-cat:PostAwardDocument",
+    },
+    Object {
+      "description": "A Document describing a set of Items offered for purchase that can be processed in an electronic way.
+",
+      "name": "epo-cat:Catalogue",
+    },
+    Object {
+      "description": "Aggregated information about the Terms and specifications for procuring an Item.
+
+
+Details about an Item, like Prices, packaging, discounts, special promotions, etc.
+
+
+TC 440:
+
+Detailed information of an Item, Price and its composition in a Catalogue.
+
+Composition: e.g. information referring to its description, how to order it, what it is made of, properties, delivery conditions, etc.
+
+
+
+
+
+",
+      "name": "epo-cat:CatalogueLine",
+    },
+    Object {
+      "description": "Necessity of an Item by the described item. 
+
+Additional Information:
+The described item is provided without other items that are required for proper functionality.
+
+For example, a printer cannot be used without ink cartridge; or a Server cannot be used without its installation. 
+
+WG Approval: 19/05/2022
+
+",
+      "name": "epo-cat:ItemRequirement",
+    },
+    Object {
+      "description": "A product, work, service or any combination of them.
+
+Additional Information:
+An Item can be an atomic Thing or a composition of things that together are seen as a unit, e.g. a tetrabrik of milk or an indivisible package of six tetrabriks.
+
+No distinction is provided between services, goods and works to leave room for innovation.
+
+WG approval 30/06/2022",
+      "name": "epo-cat:Item",
+    },
+    Object {
+      "description": "Amount of money required or given in exchange for Items.
+
+Additional information:
+The Price excludes any charges (such as taxes, duties and fees) and discounts.
+
+WG approval 26/07/2022",
+      "name": "epo-cat:Price",
+    },
+    Object {
+      "description": "Document providing information about an Item. 
+
+WG approval 07/04/2022
+
+",
+      "name": "epo-cat:ProductSpecification",
+    },
+    Object {
+      "description": "Inclusion of an Item into in the described Item.
+
+Additional Information:
+The Item is provided with its components, however, the component Items may also be provided separately. 
+For example, a bicycle has wheels as components, but they may be provided as spare parts as well. 
+This relation is useful to describe different package levels of an item or hierarchies of Items.
+
+WG Approval: 19/05/2022
+
+
+",
+      "name": "epo-cat:ItemComposition",
+    },
+    Object {
+      "description": "Construct meant to represent the association between an attribute defined in an external classification scheme and the value ascribed to it.
+
+WG approval 26/07/2022",
+      "name": "epo-cat:ItemProperty",
+    },
+    Object {
+      "description": "The Producer of goods or provider of services. 
+
+Additional Information:
+Also, known as Supplier and Manufacturer.
+
+We do not care who provides these service or products we care with whom Business is done.
+
+PEPPOL - Invoice:
+The Supplier is the Legal Person or Organisation who provides a product and/or service.
+
+PEPPOL - Order: The supplier is the legal person or organisation who provides a product or service.
+Examples of supplier roles: seller, despatch party, creditor, economic operator.
+
+",
+      "name": "epo-cat:Manufacturer",
+    },
+    Object {
+      "description": "A production Lot in which the Item instances were produced. 
+
+WG Acceptance 10/03/2022
+",
+      "name": "epo-cat:Batch",
+    },
+    Object {
+      "description": "Name given by an organisation to its product or service, or range of products or services. 
+
+Additional information:
+Brand name allows economic operators to distinctively describe an item in their eCatalogue. This may be different from the \\"item name\\".
+
+WG acceptance 10/03/2022
+",
+      "name": "epo-cat:Brand",
+    },
+    Object {
+      "description": "A specific design or version of a product or service.
+
+Additional information:
+This class is meant as a reusable reference to the model name rather than as a set of specifications of an Item of this particular model. 
+
+WG acceptance 10/03/2022
+
+",
+      "name": "epo-cat:ItemModel",
+    },
+    Object {
+      "description": "Supplantment, displacement or suspension of an Item by the described Item.
+
+WG Approval: 30/06/2022
+",
+      "name": "epo-cat:ItemReplacement",
+    },
+    Object {
+      "description": null,
+      "name": "epo-cat:CatalogueResponse",
+    },
+    Object {
+      "description": null,
+      "name": "epo-cat:CatalogueResponseLine",
+    },
+    Object {
+      "description": null,
+      "name": "epo-cat:CatalogueResponseInformation",
+    },
+    Object {
+      "description": "Connection between two Items.
+
+WG Approval: 30/06/2022
+",
+      "name": "epo-cat:ItemRelation",
+    },
+    Object {
+      "description": "Combination of two Items where the former enhances the latter.
+
+WG Approval: 30/06/2022
+",
+      "name": "epo-cat:ItemAccessoryRelation",
+    },
+    Object {
+      "description": "Combination of two Items which mutually enhance one another.
+
+WG Approval: 30/06/2022
+
+",
+      "name": "epo-cat:ItemComplementaryRelation",
+    },
+    Object {
+      "description": "Information about tax, fee or duty imposed.
+
+Additional Information:
+Charge category indicates the nature of the tax/duty/fee, for example VAT, CAR, etc.
+Charge category modifier may be used in case different levels, exemptions or other modifications apply.
+The charge can be fixed or relative to the price.
+
+WG approval 16/05/2023",
+      "name": "epo-cat:ChargeInformation",
+    },
+    Object {
+      "description": null,
+      "name": "epo-cat:Line",
+    },
+    Object {
+      "description": "Grouping of data that may be associated to various concepts.
+
+Additional Information:
+For example, AllowanceChargeInformation may be associated to the Order or the Catalogue (either at the Line level or at the Document level), amongst others.
+
+WG approval 16/05/2023",
+      "name": "epo-cat:InformationHub",
+    },
+  ],
+}
+`;
+
 exports[`filter filterBy attributes 1`] = `
 Object {
   "edges": Array [
