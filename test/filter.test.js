@@ -8,15 +8,17 @@ import {
   filterByPrefix,
   suggestNodes,
 } from '../src/conceptualModel/filter.js'
-import { getJson } from './support/readEpo.js'
+import { UNDER_REVIEW } from '../src/config.js'
+import { getJson } from '../src/epo/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
 
 describe('filter', () => {
-  const eaJson = getJson()
+
+  const eaJson = getJson(UNDER_REVIEW)
 
   it(`byPrefix`, function () {
-    const result = filterByPrefix(eaJson,{prefix:'epo-cat'})
+    const result = filterByPrefix(eaJson, { prefix: 'epo-cat' })
     expect(result).toMatchSnapshot(this)
   })
 

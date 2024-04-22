@@ -1,0 +1,11 @@
+
+@startuml
+class "epo-ful:Invoicer" {
+
+}
+class "epo-ful:Carrier" {
+
+}
+"epo:AuxiliaryParty" <|-- "epo-ful:Carrier"
+"epo:OfferingParty" <|-- "epo-ful:Invoicer"
+@enduml

@@ -1,8 +1,10 @@
 import { writeFileSync } from 'fs'
-import { latestConceptualModel } from '../config.js'
-import { toShacl } from './model2Shacl.js'
+import { UNDER_REVIEW } from '../config.js'
+import { toShacl } from '../shacl/model2Shacl.js'
+import { getEpoJson } from './readEpo.js'
 
-const onlyEPO = latestConceptualModel()
+const onlyEPO = getEpoJson(UNDER_REVIEW)
+
 const { dataset, turtle, errors } = await toShacl(onlyEPO)
 
 const path = `assets/epo.shacl.ttl`

@@ -3,6 +3,7 @@ import { NTabPane, NTabs } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import Edges from './components/Edges.vue'
+import KnownModels from './components/KnownModels.vue'
 import Nodes from './components/Nodes.vue'
 import Plantuml from './components/Plantuml.vue'
 import Shacl from './components/Shacl.vue'
@@ -53,6 +54,8 @@ const dataTitle = computed(() => {
         </n-tab-pane>
       </n-tabs>
     </n-tab-pane>
-
+    <n-tab-pane name="KnownModels" tab="Known models">
+      <KnownModels/>
+    </n-tab-pane>
   </n-tabs>
 </template>

@@ -7,8 +7,8 @@ import { prettyPrintTrig } from './io/serialization.js'
 const targetDirectory = `assets/diff/${UNDER_REVIEW.branch}`
 fs.mkdirSync(targetDirectory, { recursive: true })
 
-const oldAssets = await loadNormalized(EPO_LATEST.localDirectory)
-const newAssets = await loadNormalized(UNDER_REVIEW.localDirectory)
+const oldAssets = await loadNormalized(EPO_LATEST.localPath)
+const newAssets = await loadNormalized(UNDER_REVIEW.localPath)
 
 newAssets.filter(({ path }) => !oldAssets.map(x => x.path).includes(path)).
   forEach(({ path, dataset }) => {

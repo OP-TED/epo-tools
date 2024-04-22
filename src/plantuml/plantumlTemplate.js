@@ -5,8 +5,9 @@ function toPlantuml ({ nodes, edges }, { includeRelationships, sorted } = {
 }) {
 
   const maybeSorted = (arr) => sorted ? arr.sort() : arr
+
   const maybeSortedByPredicate = (arr) => sorted ? arr.sort(
-    (a, b) => a.predicate.localeCompare(b.predicate)) : arr
+    (a, b) => a.predicate?.localeCompare(b.predicate)) : arr
 
   const classDefinitions = nodes.map(node => {
     return nodeTemplate(node,

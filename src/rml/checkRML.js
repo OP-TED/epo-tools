@@ -34,13 +34,6 @@ WHERE {
   return result.map(x => x.predicate.value).filter(x => !knownProperties.has(x))
 }
 
-function loadConceptualModel (REPO) {
-  const assetsPath = REPO.localDirectory
-  const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
-  const buffer = readFileSync(databasePath)
-  return bufferToJson({ buffer })
-}
-
 const BASE = '/home/cvasquez/github.com/OP-TED/ted-rdf-assessment'
 const globPattern = `${BASE}/pdds/rml/**/*.ttl`
 

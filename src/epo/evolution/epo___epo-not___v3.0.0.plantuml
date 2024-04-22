@@ -1,0 +1,547 @@
+
+@startuml
+class "epo-not:VoluntaryEx-AnteTransparencyNotice" {
+  hasNoticeType : veat 
+}
+class "epo-not:PIN-CFCStandardNotice" {
+  hasNoticeType : pin-cfc-standard 
+}
+class "epo-not:PIN-CFCSocialNotice" {
+  hasNoticeType : pin-cfc-social 
+}
+class "epo-not:QSNotice" {
+  hasNoticeType : qu-sy 
+}
+class "epo-not:CNStandardNotice" {
+  hasNoticeType : cn-standard 
+  null : Form2 
+}
+class "epo-not:CNSocialNotice" {
+  hasNoticeType : cn-social 
+}
+class "epo-not:DesignContestNotice" {
+  hasNoticeType : cn-desg 
+}
+class "epo-not:CANStandardNotice" {
+  hasNoticeType : can-standard 
+  null : Form3 
+}
+class "epo-not:PINProfileNotice" {
+  hasNoticeType : pin-buyer 
+}
+class "epo-not:PINOnlyNotice" {
+  hasFormType : Form1 
+  hasNoticeType : pin-only 
+}
+class "epo-not:PINTimeLimitNotice" {
+  hasNoticeType : pin-rtl 
+  null : Form1 
+}
+class "epo-not:CANSocialNotice" {
+  hasNoticeType : can-social 
+}
+class "epo-not:DesignContestResultNotice" {
+  hasNoticeType : can-desg 
+}
+class "epo-not:Notice10" {
+  hasLegalBasis : Directive 24 
+  null : competition 
+}
+class "epo-not:Notice25" {
+  hasLegalBasis : Directive 24 
+  null : dir-awa-pre 
+}
+class "epo-not:Notice27" {
+  hasLegalBasis : Directive 81 
+  null : dir-awa-pre 
+}
+class "epo-not:Notice28" {
+  hasLegalBasis : Directive 23 
+  null : dir-awa-pre 
+}
+class "epo-not:Notice29" {
+  hasLegalBasis : Directive 24 
+  null : result 
+}
+class "epo-not:Notice30" {
+  hasLegalBasis : Directive 25 
+  null : result 
+}
+class "epo-not:Notice31" {
+  hasLegalBasis : Directive 81 
+  null : result 
+}
+class "epo-not:Notice32" {
+  hasLegalBasis : Directive 23 
+  null : result 
+}
+class "epo-not:Notice33" {
+  hasLegalBasis : Directive 24 
+  null : result 
+}
+class "epo-not:Notice34" {
+  hasLegalBasis : Directive 25 
+  null : result 
+}
+class "epo-not:Notice35" {
+  hasLegalBasis : Directive 23 
+  null : result 
+}
+class "epo-not:Notice36" {
+  hasLegalBasis : Directive 24 
+  null : result 
+}
+class "epo-not:Notice37" {
+  hasLegalBasis : Directive 25 
+  null : result 
+}
+class "epo-not:Notice12" {
+  hasLegalBasis : Directive 24 
+  null : competition 
+}
+class "epo-not:Notice13" {
+  hasLegalBasis : Directive 25 
+  null : competition 
+}
+class "epo-not:Notice14" {
+  hasLegalBasis : Directive 23 
+  null : competition 
+}
+class "epo-not:Notice15" {
+  hasLegalBasis : Directive 25 
+  null : competition 
+}
+class "epo-not:Notice16" {
+  hasLegalBasis : Directive 24 
+  null : competition 
+}
+class "epo-not:Notice17" {
+  hasLegalBasis : Directive 25 
+  null : competition 
+}
+class "epo-not:Notice18" {
+  hasLegalBasis : Directive 81 
+  null : competition 
+}
+class "epo-not:Notice19" {
+  hasLegalBasis : Directive 23 
+  null : competition 
+}
+class "epo-not:Notice20" {
+  hasLegalBasis : Directive 24 
+  null : competition 
+}
+class "epo-not:Notice21" {
+  hasLegalBasis : Directive 25 
+  null : competition 
+}
+class "epo-not:Notice22" {
+  hasLegalBasis : Directive 81 
+  null : competition 
+}
+class "epo-not:Notice23" {
+  hasLegalBasis : Directive 24 
+  null : competition 
+}
+class "epo-not:Notice24" {
+  hasLegalBasis : Directive 25 
+  null : competition 
+}
+class "epo-not:Notice38" {
+  hasLegalBasis : Directive 24 
+  null : cont-modif 
+}
+class "epo-not:Notice39" {
+  hasLegalBasis : Directive 25 
+  null : cont-modif 
+}
+class "epo-not:Notice40" {
+  hasLegalBasis : Directive 23 
+  null : cont-modif 
+}
+class "epo-not:Notice1" {
+  hasLegalBasis : Directive 24 
+  null : planning 
+}
+class "epo-not:Notice2" {
+  hasLegalBasis : Directive 25 
+  null : planning 
+}
+class "epo-not:Notice3" {
+  hasLegalBasis : Directive 81 
+  null : planning 
+}
+class "epo-not:Notice4" {
+  hasLegalBasis : Directive 24 
+  null : planning 
+}
+class "epo-not:Notice5" {
+  hasLegalBasis : Directive 25 
+  null : planning 
+}
+class "epo-not:Notice6" {
+  hasLegalBasis : Directive 81 
+  null : planning 
+}
+class "epo-not:Notice7" {
+  hasLegalBasis : Directive 24 
+  null : planning 
+}
+class "epo-not:Notice8" {
+  hasLegalBasis : Directive 25 
+  null : planning 
+}
+class "epo-not:Notice9" {
+  hasLegalBasis : Directive 81 
+  null : planning 
+}
+class "epo-not:VEAT-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form15 
+  null : veat 
+}
+class "epo-not:Modification-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form20 
+  null : can-modif 
+}
+class "epo-not:SocialAndOtherSpecificServices-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form21 
+}
+class "epo-not:PINOnly-D25" {
+  null : Directive 25 
+  null : Form4 
+  null : pin-only 
+}
+class "epo-not:CNSocial-D25" {
+  null : Directive 25 
+  null : Form5 
+  null : cn-social 
+}
+class "epo-not:CANSocial-D25" {
+  null : Directive 25 
+  null : Form6 
+  null : can-social 
+}
+class "epo-not:QS-D25" {
+  null : Directive 25 
+  null : Form7 
+  null : qu-sy 
+}
+class "epo-not:PINProfile-D25" {
+  hasLegalBasis : Directive 25 
+  null : Form8 
+}
+class "epo-not:DesignContest-D25" {
+  null : Directive 25 
+  null : Form12 
+  null : cn-desg 
+}
+class "epo-not:DesignContestResult-D25" {
+  null : Directive 25 
+  null : Form13 
+  null : can-desg 
+}
+class "epo-not:VEAT-D25" {
+  null : Directive 25 
+  null : Form15 
+  null : veat 
+}
+class "epo-not:eFormsNotice" {
+  hasImplementingRegulation : (EU)-2019-1780 
+}
+class "epo-not:Notice11" {
+  hasLegalBasis : Directive 25 
+  null : competition 
+}
+class "epo-not:Modification-D25" {
+  null : Directive 25 
+  null : Form20 
+  null : can-modif 
+}
+class "epo-not:PIN-CFCSocialNotice-D25" {
+  null : Directive 25 
+  null : Form22 
+}
+class "epo-not:PIN-RTL-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form1 
+  null : pin-rtl 
+}
+class "epo-not:PIN-CFCStandard-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form1 
+  null : pin-cfc-standard 
+}
+class "epo-not:PIN-RTL-D25" {
+  null : Form4 
+  null : Directive 25 
+  null : pin-rtl 
+}
+class "epo-not:PIN-CFCSocial-D25" {
+  null : Directive 25 
+  null : Form4 
+  null : pin-cfc-social 
+}
+class "epo-not:VEAT-D23" {
+  null : Directive 23 
+  null : Form15 
+  null : veat 
+}
+class "epo-not:Modification-D23" {
+  null : Directive 23 
+  null : Form20 
+  null : can-modif 
+}
+class "epo-not:SocialAndOtherSpecificServices-D23" {
+  null : Directive 23 
+  null : Form23 
+}
+class "epo-not:Concession-D23" {
+  null : Directive 23 
+  null : Form24 
+}
+class "epo-not:ConcessionAward-D23" {
+  null : Directive 23 
+  null : Form25 
+}
+class "epo-not:PINOnly-D24" {
+  hasFormType : Form1 
+  hasLegalBasis : Directive 24 
+  hasNoticeType : pin-only 
+}
+class "epo-not:CNStandard-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form2 
+  null : cn-standard 
+}
+class "epo-not:CANStandard-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form3 
+  null : can-standard 
+}
+class "epo-not:PINProfile-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form8 
+  null : pin-buyer 
+}
+class "epo-not:DesignContest-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form12 
+  null : cn-desg 
+}
+class "epo-not:DesignContestResult-D24" {
+  hasLegalBasis : Directive 24 
+  null : Form13 
+  null : can-desg 
+}
+class "epo-not:PINProfile-D81" {
+  null : Directive 81 
+  null : pin-buyer 
+  null : Form8 
+}
+class "epo-not:VEAT-D81" {
+  null : Directive 81 
+  null : veat 
+  null : Form15 
+}
+class "epo-not:PINDefence-D81" {
+  null : Directive 81 
+  null : Form16 
+}
+class "epo-not:CNDefence-D81" {
+  null : Directive 81 
+  null : Form17 
+}
+class "epo-not:CANDefence-D81 " {
+  null : Directive 81 
+  null : Form18 
+}
+class "epo-not:StandardFormsNotice" {
+  hasImplementingRegulation : (EU)-2015-1986 
+}
+class "epo-not:PMCNotice" {
+
+}
+class "epo-not:SubcontractNotice" {
+  hasNoticeType : subco 
+}
+class "epo-not:Notice26" {
+  hasLegalBasis : Directive 25 
+  null : dir-awa-pre 
+}
+class "epo-not:QSNotice-D25" {
+  null : Form22 
+  null : Directive 25 
+}
+class "epo-not:CNSocialNotice-D25" {
+  null : Form22 
+  null : Directive 25 
+}
+class "epo-not:CANSocialNotice-D25" {
+  null : Directive 25 
+  null : Form22 
+}
+"epo-not:CANSocialNotice" <|-- "epo-not:CANSocial-D25"
+"epo-not:CANSocialNotice" <|-- "epo-not:CANSocialNotice-D25"
+"epo-not:CANSocialNotice" <|-- "epo-not:Notice33"
+"epo-not:CANSocialNotice" <|-- "epo-not:Notice34"
+"epo-not:CANSocialNotice" <|-- "epo-not:Notice35"
+"epo-not:CANStandardNotice" <|-- "epo-not:CANStandard-D24"
+"epo-not:CANStandardNotice" <|-- "epo-not:Notice29"
+"epo-not:CANStandardNotice" <|-- "epo-not:Notice30"
+"epo-not:CANStandardNotice" <|-- "epo-not:Notice31"
+"epo-not:CANStandardNotice" <|-- "epo-not:Notice32"
+"epo-not:CNSocialNotice" <|-- "epo-not:CNSocial-D25"
+"epo-not:CNSocialNotice" <|-- "epo-not:CNSocialNotice-D25"
+"epo-not:CNSocialNotice" <|-- "epo-not:Notice20"
+"epo-not:CNSocialNotice" <|-- "epo-not:Notice21"
+"epo-not:CNStandardNotice" <|-- "epo-not:CNStandard-D24"
+"epo-not:CNStandardNotice" <|-- "epo-not:Notice16"
+"epo-not:CNStandardNotice" <|-- "epo-not:Notice17"
+"epo-not:CNStandardNotice" <|-- "epo-not:Notice18"
+"epo-not:CNStandardNotice" <|-- "epo-not:Notice19"
+"epo-not:DesignContestNotice" <|-- "epo-not:DesignContest-D24"
+"epo-not:DesignContestNotice" <|-- "epo-not:DesignContest-D25"
+"epo-not:DesignContestNotice" <|-- "epo-not:Notice23"
+"epo-not:DesignContestNotice" <|-- "epo-not:Notice24"
+"epo-not:DesignContestResultNotice" <|-- "epo-not:DesignContestResult-D24"
+"epo-not:DesignContestResultNotice" <|-- "epo-not:DesignContestResult-D25"
+"epo-not:DesignContestResultNotice" <|-- "epo-not:Notice36"
+"epo-not:DesignContestResultNotice" <|-- "epo-not:Notice37"
+"epo-not:PIN-CFCSocialNotice" <|-- "epo-not:Notice12"
+"epo-not:PIN-CFCSocialNotice" <|-- "epo-not:Notice13"
+"epo-not:PIN-CFCSocialNotice" <|-- "epo-not:Notice14"
+"epo-not:PIN-CFCSocialNotice" <|-- "epo-not:PIN-CFCSocial-D25"
+"epo-not:PIN-CFCSocialNotice" <|-- "epo-not:PIN-CFCSocialNotice-D25"
+"epo-not:PIN-CFCStandardNotice" <|-- "epo-not:Notice10"
+"epo-not:PIN-CFCStandardNotice" <|-- "epo-not:Notice11"
+"epo-not:PIN-CFCStandardNotice" <|-- "epo-not:PIN-CFCStandard-D24"
+"epo-not:PINOnlyNotice" <|-- "epo-not:Notice4"
+"epo-not:PINOnlyNotice" <|-- "epo-not:Notice5"
+"epo-not:PINOnlyNotice" <|-- "epo-not:Notice6"
+"epo-not:PINOnlyNotice" <|-- "epo-not:PINOnly-D24"
+"epo-not:PINOnlyNotice" <|-- "epo-not:PINOnly-D25"
+"epo-not:PINProfileNotice" <|-- "epo-not:Notice1"
+"epo-not:PINProfileNotice" <|-- "epo-not:Notice2"
+"epo-not:PINProfileNotice" <|-- "epo-not:Notice3"
+"epo-not:PINProfileNotice" <|-- "epo-not:PINProfile-D24"
+"epo-not:PINProfileNotice" <|-- "epo-not:PINProfile-D25"
+"epo-not:PINProfileNotice" <|-- "epo-not:PINProfile-D81"
+"epo-not:PINTimeLimitNotice" <|-- "epo-not:Notice7"
+"epo-not:PINTimeLimitNotice" <|-- "epo-not:Notice8"
+"epo-not:PINTimeLimitNotice" <|-- "epo-not:Notice9"
+"epo-not:PINTimeLimitNotice" <|-- "epo-not:PIN-RTL-D24"
+"epo-not:PINTimeLimitNotice" <|-- "epo-not:PIN-RTL-D25"
+"epo-not:QSNotice" <|-- "epo-not:Notice15"
+"epo-not:QSNotice" <|-- "epo-not:QS-D25"
+"epo-not:QSNotice" <|-- "epo-not:QSNotice-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:CANDefence-D81 "
+"epo-not:StandardFormsNotice" <|-- "epo-not:CANSocial-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:CANSocialNotice-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:CANStandard-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:CNDefence-D81"
+"epo-not:StandardFormsNotice" <|-- "epo-not:CNSocial-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:CNSocialNotice-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:CNStandard-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:Concession-D23"
+"epo-not:StandardFormsNotice" <|-- "epo-not:ConcessionAward-D23"
+"epo-not:StandardFormsNotice" <|-- "epo-not:DesignContest-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:DesignContest-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:DesignContestResult-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:DesignContestResult-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:Modification-D23"
+"epo-not:StandardFormsNotice" <|-- "epo-not:Modification-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:Modification-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PIN-CFCSocial-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PIN-CFCSocialNotice-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PIN-CFCStandard-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PIN-RTL-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PIN-RTL-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PINOnly-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PINOnly-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PINProfile-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PINProfile-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:PINProfile-D81"
+"epo-not:StandardFormsNotice" <|-- "epo-not:QS-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:QSNotice-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:SocialAndOtherSpecificServices-D23"
+"epo-not:StandardFormsNotice" <|-- "epo-not:SocialAndOtherSpecificServices-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:VEAT-D23"
+"epo-not:StandardFormsNotice" <|-- "epo-not:VEAT-D24"
+"epo-not:StandardFormsNotice" <|-- "epo-not:VEAT-D25"
+"epo-not:StandardFormsNotice" <|-- "epo-not:VEAT-D81"
+"epo-not:SubcontractNotice" <|-- "epo-not:Notice22"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:Notice25"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:Notice26"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:Notice27"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:Notice28"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:VEAT-D23"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:VEAT-D24"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:VEAT-D25"
+"epo-not:VoluntaryEx-AnteTransparencyNotice" <|-- "epo-not:VEAT-D81"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice1"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice10"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice11"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice12"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice13"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice14"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice15"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice16"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice17"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice18"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice19"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice2"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice20"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice21"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice22"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice23"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice24"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice25"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice26"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice27"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice28"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice29"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice3"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice30"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice31"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice32"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice33"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice34"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice35"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice36"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice37"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice38"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice39"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice4"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice40"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice5"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice6"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice7"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice8"
+"epo-not:eFormsNotice" <|-- "epo-not:Notice9"
+"epo:CompetitionNotice" <|-- "epo-not:CNSocialNotice"
+"epo:CompetitionNotice" <|-- "epo-not:CNStandardNotice"
+"epo:CompetitionNotice" <|-- "epo-not:DesignContestNotice"
+"epo:CompetitionNotice" <|-- "epo-not:PIN-CFCSocialNotice"
+"epo:CompetitionNotice" <|-- "epo-not:PIN-CFCStandardNotice"
+"epo:CompetitionNotice" <|-- "epo-not:QSNotice"
+"epo:CompetitionNotice" <|-- "epo-not:SubcontractNotice"
+"epo:ContractModificationNotice" <|-- "epo-not:Modification-D23"
+"epo:ContractModificationNotice" <|-- "epo-not:Modification-D24"
+"epo:ContractModificationNotice" <|-- "epo-not:Modification-D25"
+"epo:ContractModificationNotice" <|-- "epo-not:Notice38"
+"epo:ContractModificationNotice" <|-- "epo-not:Notice39"
+"epo:ContractModificationNotice" <|-- "epo-not:Notice40"
+"epo:DirectAwardPrenotificationNotice" <|-- "epo-not:VoluntaryEx-AnteTransparencyNotice"
+"epo:PlanningNotice" <|-- "epo-not:PINDefence-D81"
+"epo:PlanningNotice" <|-- "epo-not:PINOnlyNotice"
+"epo:PlanningNotice" <|-- "epo-not:PINProfileNotice"
+"epo:PlanningNotice" <|-- "epo-not:PINTimeLimitNotice"
+"epo:PlanningNotice" <|-- "epo-not:PMCNotice"
+"epo:ResultNotice" <|-- "epo-not:CANDefence-D81 "
+"epo:ResultNotice" <|-- "epo-not:CANSocialNotice"
+"epo:ResultNotice" <|-- "epo-not:CANStandardNotice"
+"epo:ResultNotice" <|-- "epo-not:DesignContestResultNotice"
+@enduml

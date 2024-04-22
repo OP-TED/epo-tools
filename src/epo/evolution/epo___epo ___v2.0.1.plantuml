@@ -1,0 +1,22 @@
+
+@startuml
+class "epo :Procurement Term" {
+  null : null 
+}
+class "epo :Procedure" {
+
+}
+class "epo :Procurement Term" {
+  null : null 
+}
+class "epo :Procedure" {
+
+}
+class "epo :Procurement Term" {
+  null : null 
+}
+class "epo :Procedure" {
+
+}
+
+@enduml

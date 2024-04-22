@@ -1,14 +1,15 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
+import { UNDER_REVIEW } from '../src/config.js'
+import { getEpoJson } from '../src/epo/readEpo.js'
 import { toPlantuml } from '../src/plantuml/plantumlTemplate.js'
-import { getEpoJson } from './support/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
 
 describe('write-plantuml', () => {
 
-  const epoJson = getEpoJson()
+  const epoJson = getEpoJson(UNDER_REVIEW)
 
   it(`generates plantuml`, function () {
     const plantuml = toPlantuml(epoJson)

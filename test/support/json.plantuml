@@ -1,0 +1,11 @@
+@startuml
+allowmixing
+
+Object "epo-cat:Item" as _2
+
+map "epo-cat:Catalogue" as _1 {
+ dct:hasPart *-> _2
+ epo-cat:hasAccessoryItem => epo-cat:Item [0..*]
+}
+
+@enduml
