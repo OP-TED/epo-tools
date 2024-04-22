@@ -3,14 +3,6 @@ import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 
-// export default defineConfig({
-//   plugins: [
-//     vue()
-//   ], define: {
-//     global: 'window', // Ensure global is set to window object
-//     Buffer,
-//   },
-// })
 
 export default defineConfig({
   plugins: [

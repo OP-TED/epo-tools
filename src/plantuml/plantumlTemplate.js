@@ -15,15 +15,15 @@ function toPlantuml ({ nodes, edges }, { includeRelationships, sorted } = {
         filter(edge => edge.type !== INHERITANCE)))
   })
 
-  const relations = maybeSorted([
+  const relations = [
     ...edges.filter(x => x.type === INHERITANCE).map(subclassTemplate),
     ...edges.filter(x => includeRelationships && x.type === RELATIONSHIP).
-      map(relationTemplate)])
+      map(relationTemplate)]
 
   return `
 @startuml
-${classDefinitions.join('\n')}
-${noDuplicates(relations).join('\n')}
+${maybeSorted(classDefinitions).join('\n\n')}
+${maybeSorted(noDuplicates(relations)).join('\n')}
 @enduml
 `
 }

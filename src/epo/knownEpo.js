@@ -25,10 +25,10 @@ const epo = [
   },
   // Parser does not work correctly with version 1 and 2.
   // v.2.0.0 uses 'epo : something' prefixes, sometimes it doesn't
-  // {
-  //   tag: 'v2.0.1',
-  //   conceptualModelPath: 'v2.0.1/02-Analysis and design/EA-Conceptual Model/ePO_CM.eap',
-  // },
+  {
+    tag: 'v2.0.1',
+    conceptualModelPath: 'v2.0.1/02-Analysis and design/EA-Conceptual Model/ePO_CM.eap',
+  },
   // v.2.0.0 uses 'epo : something' prefixes
   // {
   //   tag: 'v2.0.0',

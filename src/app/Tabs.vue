@@ -34,6 +34,9 @@ const dataTitle = computed(() => {
 
 <template>
   <n-tabs type="line" animated>
+    <n-tab-pane name="KnownModels" tab="Known models">
+      <KnownModels/>
+    </n-tab-pane>
     <n-tab-pane name="Diagram" tab="Diagram">
       <Plantuml/>
     </n-tab-pane>
@@ -54,8 +57,6 @@ const dataTitle = computed(() => {
         </n-tab-pane>
       </n-tabs>
     </n-tab-pane>
-    <n-tab-pane name="KnownModels" tab="Known models">
-      <KnownModels/>
-    </n-tab-pane>
+
   </n-tabs>
 </template>

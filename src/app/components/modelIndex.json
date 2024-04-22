@@ -1,0 +1,152 @@
+[
+  {
+    "version": "v4.0.2",
+    "module": "epo",
+    "plantumlFile": "models/epo___epo___v4.0.2.plantuml"
+  },
+  {
+    "version": "v4.0.2",
+    "module": "epo-ord",
+    "plantumlFile": "models/epo___epo-ord___v4.0.2.plantuml"
+  },
+  {
+    "version": "v4.0.2",
+    "module": "epo-ful",
+    "plantumlFile": "models/epo___epo-ful___v4.0.2.plantuml"
+  },
+  {
+    "version": "v4.0.2",
+    "module": "epo-not",
+    "plantumlFile": "models/epo___epo-not___v4.0.2.plantuml"
+  },
+  {
+    "version": "v4.0.2",
+    "module": "epo-con",
+    "plantumlFile": "models/epo___epo-con___v4.0.2.plantuml"
+  },
+  {
+    "version": "v4.0.2",
+    "module": "epo-cat",
+    "plantumlFile": "models/epo___epo-cat___v4.0.2.plantuml"
+  },
+  {
+    "version": "v4.0.1",
+    "module": "epo",
+    "plantumlFile": "models/epo___epo___v4.0.1.plantuml"
+  },
+  {
+    "version": "v4.0.1",
+    "module": "epo-ord",
+    "plantumlFile": "models/epo___epo-ord___v4.0.1.plantuml"
+  },
+  {
+    "version": "v4.0.1",
+    "module": "epo-ful",
+    "plantumlFile": "models/epo___epo-ful___v4.0.1.plantuml"
+  },
+  {
+    "version": "v4.0.1",
+    "module": "epo-not",
+    "plantumlFile": "models/epo___epo-not___v4.0.1.plantuml"
+  },
+  {
+    "version": "v4.0.1",
+    "module": "epo-con",
+    "plantumlFile": "models/epo___epo-con___v4.0.1.plantuml"
+  },
+  {
+    "version": "v4.0.1",
+    "module": "epo-cat",
+    "plantumlFile": "models/epo___epo-cat___v4.0.1.plantuml"
+  },
+  {
+    "version": "v4.0.0",
+    "module": "epo",
+    "plantumlFile": "models/epo___epo___v4.0.0.plantuml"
+  },
+  {
+    "version": "v4.0.0",
+    "module": "epo-ord",
+    "plantumlFile": "models/epo___epo-ord___v4.0.0.plantuml"
+  },
+  {
+    "version": "v4.0.0",
+    "module": "epo-ful",
+    "plantumlFile": "models/epo___epo-ful___v4.0.0.plantuml"
+  },
+  {
+    "version": "v4.0.0",
+    "module": "epo-not",
+    "plantumlFile": "models/epo___epo-not___v4.0.0.plantuml"
+  },
+  {
+    "version": "v4.0.0",
+    "module": "epo-con",
+    "plantumlFile": "models/epo___epo-con___v4.0.0.plantuml"
+  },
+  {
+    "version": "v4.0.0",
+    "module": "epo-cat",
+    "plantumlFile": "models/epo___epo-cat___v4.0.0.plantuml"
+  },
+  {
+    "version": "v3.1.0",
+    "module": "epo",
+    "plantumlFile": "models/epo___epo___v3.1.0.plantuml"
+  },
+  {
+    "version": "v3.1.0",
+    "module": "epo-ful",
+    "plantumlFile": "models/epo___epo-ful___v3.1.0.plantuml"
+  },
+  {
+    "version": "v3.1.0",
+    "module": "epo-ord",
+    "plantumlFile": "models/epo___epo-ord___v3.1.0.plantuml"
+  },
+  {
+    "version": "v3.1.0",
+    "module": "epo-cat",
+    "plantumlFile": "models/epo___epo-cat___v3.1.0.plantuml"
+  },
+  {
+    "version": "v3.1.0",
+    "module": "epo-not",
+    "plantumlFile": "models/epo___epo-not___v3.1.0.plantuml"
+  },
+  {
+    "version": "v3.0.1",
+    "module": "epo",
+    "plantumlFile": "models/epo___epo___v3.0.1.plantuml"
+  },
+  {
+    "version": "v3.0.1",
+    "module": "epo-not",
+    "plantumlFile": "models/epo___epo-not___v3.0.1.plantuml"
+  },
+  {
+    "version": "v3.0.1",
+    "module": "epo-cat",
+    "plantumlFile": "models/epo___epo-cat___v3.0.1.plantuml"
+  },
+  {
+    "version": "v3.0.0",
+    "module": "epo",
+    "plantumlFile": "models/epo___epo___v3.0.0.plantuml"
+  },
+  {
+    "version": "v3.0.0",
+    "module": "epo-cat",
+    "plantumlFile": "models/epo___epo-cat___v3.0.0.plantuml"
+  },
+  {
+    "version": "v3.0.0",
+    "module": "epo-not",
+    "plantumlFile": "models/epo___epo-not___v3.0.0.plantuml"
+  },
+  {
+    "version": "v2.0.1",
+    "module": "epo",
+    "plantumlFile": "models/epo___epo___v2.0.1.plantuml"
+  }
+]
