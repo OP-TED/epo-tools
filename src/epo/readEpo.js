@@ -11,7 +11,8 @@ function getJson ({ localPath, conceptualModelPath }) {
 const narrowToEpo = (g) => filterBy(g, { filter: ['epo*'] })
 
 function getEpoJson ({ localPath, conceptualModelPath }) {
-  return narrowToEpo(getJson({ localPath, conceptualModelPath }))
+  const json = getJson({ localPath, conceptualModelPath })
+  return narrowToEpo(json)
 }
 
 export { getJson, getEpoJson }
