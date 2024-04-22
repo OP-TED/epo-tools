@@ -1,0 +1,11 @@
+
+@startuml
+class "epo-ful:Carrier" {
+
+}
+
+class "epo-ful:Invoicer" {
+
+}
+
+@enduml

@@ -1,0 +1,167 @@
+
+@startuml
+class "epo-ful:AbstractContainer" {
+  adms:identifier : adms:Identifier [0..1]
+  epo-ful:hasGrossVolume : epo:Quantity [0..1]
+  epo-ful:hasGrossWeight : epo:Quantity [0..1]
+  epo-ful:hasHeight : epo:Quantity [0..1]
+  epo-ful:hasLength : epo:Quantity [0..1]
+  epo-ful:hasNetVolume : epo:Quantity [0..1]
+  epo-ful:hasNetWeight : epo:Quantity [0..1]
+  epo-ful:hasTemperatureSpecification : epo-ful:TemperatureSpecification [0..1]
+  epo-ful:hasTotalGoodsItemQuantity : epo:Quantity [0..1]
+  epo-ful:hasWidth : epo:Quantity [0..1]
+  epo-ful:isHazardousRisk : xsd:boolean [0..1]
+  epo-ful:isReturnableMaterial : xsd:boolean [0..1]
+}
+
+class "epo-ful:Carrier" {
+
+}
+
+class "epo-ful:Consignment" {
+  adms:identifier : adms:Identifier [0..1]
+  epo-ful:containsTransportHandlingUnit : epo-ful:TransportHandlingUnit [1..*]
+  epo-ful:hasCarrierConsignmentID : adms:Identifier [0..1]
+  epo-ful:hasCarrierServiceInstruction : rdf:PlainLiteral [0..*]
+  epo-ful:hasChargeableWeight : epo:Quantity [0..1]
+  epo-ful:hasConsigneeConsignmentID : adms:Identifier [0..1]
+  epo-ful:hasConsignmentDeclaredStatisticsValue : epo:MonetaryValue [0..1]
+  epo-ful:hasConsignmentFreeOnBoardValue : epo:MonetaryValue [0..1]
+  epo-ful:hasConsignmentInvoiceValue : epo:MonetaryValue [0..1]
+  epo-ful:hasDeliveryInstruction : rdf:PlainLiteral [0..*]
+  epo-ful:hasFreightAllowanceCharge : epo-cat:ChargeInformation [0..*]
+  epo-ful:hasFreightForwarderConsignmentID : adms:Identifier [0..1]
+  epo-ful:hasGrossVolume : epo:Quantity [0..1]
+  epo-ful:hasGrossWeight : epo:Quantity [0..1]
+  epo-ful:hasHandlingInstruction : rdf:PlainLiteral [0..*]
+  epo-ful:hasHandlingInstructionCode : at-voc-new:handling-instruction [0..1]
+  epo-ful:hasLoadingLength : epo:Quantity [0..1]
+  epo-ful:hasMainCarriageShipmentStage : epo-ful:ShipmentStage [0..1]
+  epo-ful:hasNetWeight : epo:Quantity [0..1]
+  epo-ful:hasOnCarriageShipmentStage : epo-ful:ShipmentStage [0..*]
+  epo-ful:hasPreCarriageShipmentStage : epo-ful:ShipmentStage [0..*]
+  epo-ful:hasRequestedPickUpInformation : epo-ful:ShipmentInformation [1]
+  epo-ful:hasSpecialInstruction : rdf:PlainLiteral [0..*]
+  epo-ful:hasSpecialServiceInstruction : rdf:PlainLiteral [0..*]
+  epo-ful:hasTotalGoodsItemQuantity : epo:Quantity [0..1]
+  epo-ful:hasTransportHandlingUnitQuantity : epo:Quantity [0..1]
+  epo-ful:hasVehicleDescription : rdf:PlainLiteral [0..1]
+  epo-ful:isHazardousRisk : xsd:boolean [0..1]
+  epo:specifiesFreightForwarder : epo-ful:FreightForwarder [0..*]
+  epo:specifiesNotifier : epo-ful:Notifier [0..*]
+}
+
+class "epo-ful:DespatchAdvice" {
+  epo-ful:comprisesDespatchLine : epo-ful:DespatchLine [1..*]
+  epo-ful:hasAssociatedDocument : epo-cat:PostAwardDocument [0..1]
+  epo-ful:hasDespatchAdviceType : at-voc-new:despatch-advice-type [0..1]
+  epo-ful:refersToConsignment : epo-ful:Consignment [1]
+  epo-ful:refersToOrder : epo-ord:Order [0..1]
+  epo-ful:refersToShipmentAgreement : epo-ful:ShipmentAgreement [0..1]
+  epo-ful:specifiesConsignee : epo-ord:Consignee [1..*]
+  epo-ful:specifiesDespatcher : epo-ful:Despatcher [1..*]
+  epo-ful:specifiesOriginator : epo-ord:Originator [0..*]
+  epo-ful:specifiesShipment : epo-ful:ShipmentInformation [0..1]
+  epo-ful:specifiesTransportHandlingUnits : epo-ful:TransportHandlingUnit [0..*]
+}
+
+class "epo-ful:DespatchLine" {
+  epo-ful:hasAssociatedDocument : epo-cat:PostAwardDocument [0..1]
+  epo-ful:hasDespatchedQuantity : epo:Quantity [1]
+  epo-ful:hasOutstandingQuantity : epo:Quantity [0..1]
+  epo-ful:hasOutstandingQuantityReason : rdf:PlainLiteral [0..1]
+  epo-ful:refersToOrderLine : epo-ord:OrderLine [0..1]
+}
+
+class "epo-ful:Despatcher" {
+
+}
+
+class "epo-ful:FreightForwarder" {
+
+}
+
+class "epo-ful:GoodsItem" {
+  epo-ful:hasDeclaredStatisticalValue : epo:MonetaryValue [0..*]
+  epo-ful:hasTraceID : adms:Identifier [0..1]
+  epo-ful:refersToDespatchLine : epo-ful:DespatchLine [1]
+}
+
+class "epo-ful:Notifier" {
+
+}
+
+class "epo-ful:Package" {
+  epo-ful:containsGoodsItem : epo-ful:GoodsItem [1..*]
+  epo-ful:containsPackage : epo-ful:Package [0..*]
+  epo-ful:hasPackagingType : at-voc-new:packaging-type [0..1]
+  epo-ful:hasPackagingTypeDescription : rdf:PlainLiteral [0..1]
+}
+
+class "epo-ful:ShipmentAgreement" {
+  epo-ful:agreedByBuyer : epo:Buyer [1..*]
+  epo-ful:agreedBySeller : epo-ord:Seller [1..*]
+}
+
+class "epo-ful:ShipmentInformation" {
+  adms:identifier : adms:Identifier [0..1]
+  dct:description : rdf:PlainLiteral [0..*]
+  epo-ful:despatchDate : xsd:dateTime [0..1]
+  epo-ful:hasEstimatedDeliveryPeriod : epo:Period [0..1]
+  epo-ful:isSpecificToDespatchLine : epo-ful:DespatchLine [0..1]
+  epo-ful:refersToDeliveryInformation : epo-ord:DeliveryInformation [1]
+  epo-ful:specifiesPlaceOfDespatch : dct:Location [0..1]
+}
+
+class "epo-ful:ShipmentStage" {
+  adms:identifier : adms:Identifier [0..1]
+  epo-ful:hasDepartureShipmentInformation : epo-ful:ShipmentInformation [0..*]
+  epo-ful:isHazardousRisk : xsd:boolean [0..1]
+  epo-ful:usesTransportMeans : epo-ful:TransportMeans [1..*]
+  epo:hasArrivalShipmentInformation : epo-ful:ShipmentInformation [0..*]
+  epo:specifiesCarrier : epo-ful:Carrier [0..1]
+}
+
+class "epo-ful:TemperatureSpecification" {
+  dct:description : rdf:PlainLiteral [0..1]
+  epo-ful:hasMaximumTemperature : epo:Quantity [0..1]
+  epo-ful:hasMinimumTemperature : epo:Quantity [0..1]
+}
+
+class "epo-ful:TransportEquipment" {
+  adms:identifier : adms:Identifier [0..1]
+  dct:description : rdf:PlainLiteral [0..*]
+  epo-ful:hasSizeType : at-voc-new:size-type [0..*]
+  epo-ful:hasTransportEquipmentSeal : epo-ful:TransportEquipmentSeal [0..*]
+  epo-ful:hasTransportEquipmentType : at-voc-new:transport-equipment-type [0..*]
+  epo-ful:isPowerIndicated : xsd:boolean [0..1]
+  epo-ful:isRefrigerated : xsd:boolean [0..1]
+  epo-ful:isReturnable : xsd:boolean [0..1]
+}
+
+class "epo-ful:TransportEquipmentSeal" {
+  adms:identifier : adms:Identifier [0..1]
+}
+
+class "epo-ful:TransportHandlingUnit" {
+  epo-ful:hasHandlingInstruction : rdf:PlainLiteral [0..*]
+  epo-ful:hasHandlingInstructionCode : at-voc-new:handling-instruction [0..1]
+  epo-ful:hasShippingMark : rdf:PlainLiteral [0..*]
+  epo-ful:transportsItemFrom : epo-ful:DespatchLine [1..*]
+  epo-ful:usesTransportEquipment : epo-ful:TransportEquipment [0..*]
+}
+
+class "epo-ful:TransportMeans" {
+  epo-ful:hasTransportMeansType : at-voc-new:transport-means-type [0..1]
+  epo-ful:hasTransportMode : at-voc-new:transport-mode [1]
+  epo-ful:hasVehicleID : adms:Identifier [1]
+  epo-ful:hasVehicleSegmentID : adms:Identifier [0..1]
+  epo:hasDriverPerson : epo-ful:TransportMeansOperator [1..*]
+}
+
+class "epo-ful:TransportMeansOperator" {
+  epo:playedBy : foaf:Person [0..1]
+}
+
+@enduml

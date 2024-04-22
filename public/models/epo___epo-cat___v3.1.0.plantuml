@@ -1,5 +1,16 @@
 
 @startuml
+class "epo-cat:Batch" {
+  epo-cat:hasBestBeforeDate : xsd:date [0..1]
+  epo-cat:hasExpiryDate : xsd:date [0..1]
+  epo-cat:isProductionOf : epo-cat:Item [1]
+  epo:hasID : epo:Identifier [0..1]
+}
+
+class "epo-cat:Brand" {
+  epo:hasName : rdfs:Literal [1..1]
+}
+
 class "epo-cat:Catalogue" {
   epo-cat:comprisesCatalogueLine : epo-cat:CatalogueLine [1..*]
   epo-cat:hasSpecificPaymentArrangement : rdfs:Literal [0..1]
@@ -10,6 +21,17 @@ class "epo-cat:Catalogue" {
   epo:isIntendedForBuyer : epo:Buyer [0..*]
   epo:specifiesSeller : epo-ord:Seller [0..*]
 }
+
+class "epo-cat:CatalogueDocument" {
+  epo-cat:instantiatesCatalogue : epo-cat:Catalogue [0..1]
+  epo:hasName : rdfs:Literal [1..1]
+}
+
+class "epo-cat:CatalogueFragment" {
+  epo-cat:hasActivityCode : at-voc-new:activity-code [0..1]
+  epo-cat:updatesCatalogue : epo-cat:Catalogue [1]
+}
+
 class "epo-cat:CatalogueLine" {
   epo-cat:hasCatalogueLineValidity : epo:Period [0..1]
   epo-cat:hasChargeInformation : epo-cat:ChargeInformation [0..*]
@@ -28,9 +50,28 @@ class "epo-cat:CatalogueLine" {
   epo-cat:specifiesItem : epo-cat:Item [1]
   epo:hasID : epo:Identifier [1]
 }
-class "epo-cat:ItemRequirement" {
+
+class "epo-cat:CatalogueUpdateDocument" {
+  epo-cat:announcesCatalogueFragment : epo-cat:CatalogueFragment [0..*]
+  epo-cat:hasSourceCatalogueVersion : rdfs:Literal [1..1]
+  epo-cat:hasTargetCatalogueVersion : rdfs:Literal [1..1]
+}
+
+class "epo-cat:CertificationLabel" {
+  epo-cat:hasLabelType : at-voc-new:certification-label-type [0..1]
+  epo-cat:hasReferenceURI : xsd:anyURI [0..1]
+}
+
+class "epo-cat:Certifier" {
 
 }
+
+class "epo-cat:ChargeInformation" {
+  epo-cat:hasChargeCategory : at-voc-new:charge-category [1]
+  epo-cat:hasChargeCategoryModifier : at-voc-new:charge-modifier [0..1]
+  epo-ord:isSpecificToOrderLine : epo-ord:OrderLine [0..*]
+}
+
 class "epo-cat:Item" {
   dct:hasPart : epo-cat:Item [0..*]
   dct:isReplaceBy : epo-cat:Item [0..*]
@@ -62,6 +103,56 @@ class "epo-cat:Item" {
   epo:hasManufacturerItemID : epo:Identifier [0..1]
   epo:hasName : rdfs:Literal [1..1]
 }
+
+class "epo-cat:ItemAccessoryRelation" {
+
+}
+
+class "epo-cat:ItemCertificate" {
+  epo-cat:attestedByLabel : epo-cat:CertificationLabel [1]
+  epo-cat:hasCertificationNumber : rdfs:Literal [1..1]
+  epo-cat:issuedByCertifier : epo-cat:Certifier [0..1]
+  epo:hasURL : xsd:anyURI [0..1]
+  epo:hasValidityPeriod : epo:Period [0..1]
+}
+
+class "epo-cat:ItemComplementaryRelation" {
+
+}
+
+class "epo-cat:ItemComposition" {
+
+}
+
+class "epo-cat:ItemDescription" {
+  epo-cat:describesItem : epo-cat:Item [1]
+  epo-cat:hasAttributeType : rdfs:Literal [1..1]
+  epo-cat:hasClassificationScheme : rdfs:Literal [1..1]
+  epo-cat:hasLiteralValue : rdfs:Literal [0..1]
+  epo-cat:hasQualifiedValue : epo:Quantity [0..1]
+}
+
+class "epo-cat:ItemModel" {
+  epo:hasName : rdfs:Literal [1..1]
+}
+
+class "epo-cat:ItemRelation" {
+  epo-cat:hasFactor : xsd:decimal [0..1]
+  epo-cat:isRelatedToItem : epo-cat:Item [1]
+}
+
+class "epo-cat:ItemReplacement" {
+
+}
+
+class "epo-cat:ItemRequirement" {
+
+}
+
+class "epo-cat:Manufacturer" {
+  epo:hasManufacturerID : epo:Identifier [0..1]
+}
+
 class "epo-cat:Price" {
   epo-cat:hasBaseQuantity : epo:Quantity [0..1]
   epo-cat:hasDeliveryLocation : dct:Location [0..1]
@@ -72,91 +163,9 @@ class "epo-cat:Price" {
   epo-cat:hasPriceValidity : epo:Period [1]
   epo-cat:hasQuantityThreshold : epo:Quantity [0..1]
 }
+
 class "epo-cat:ProductSpecification" {
   epo-cat:hasDocumentType : at-voc-new:document-type [0..1]
 }
-class "epo-cat:CatalogueDocument" {
-  epo-cat:instantiatesCatalogue : epo-cat:Catalogue [0..1]
-  epo:hasName : rdfs:Literal [1..1]
-}
-class "epo-cat:ItemComposition" {
 
-}
-class "epo-cat:ItemDescription" {
-  epo-cat:describesItem : epo-cat:Item [1]
-  epo-cat:hasAttributeType : rdfs:Literal [1..1]
-  epo-cat:hasClassificationScheme : rdfs:Literal [1..1]
-  epo-cat:hasLiteralValue : rdfs:Literal [0..1]
-  epo-cat:hasQualifiedValue : epo:Quantity [0..1]
-}
-class "epo-cat:Manufacturer" {
-  epo:hasManufacturerID : epo:Identifier [0..1]
-}
-class "epo-cat:Batch" {
-  epo-cat:hasBestBeforeDate : xsd:date [0..1]
-  epo-cat:hasExpiryDate : xsd:date [0..1]
-  epo-cat:isProductionOf : epo-cat:Item [1]
-  epo:hasID : epo:Identifier [0..1]
-}
-class "epo-cat:Brand" {
-  epo:hasName : rdfs:Literal [1..1]
-}
-class "epo-cat:ItemModel" {
-  epo:hasName : rdfs:Literal [1..1]
-}
-class "epo-cat:CatalogueUpdateDocument" {
-  epo-cat:announcesCatalogueFragment : epo-cat:CatalogueFragment [0..*]
-  epo-cat:hasSourceCatalogueVersion : rdfs:Literal [1..1]
-  epo-cat:hasTargetCatalogueVersion : rdfs:Literal [1..1]
-}
-class "epo-cat:CatalogueFragment" {
-  epo-cat:hasActivityCode : at-voc-new:activity-code [0..1]
-  epo-cat:updatesCatalogue : epo-cat:Catalogue [1]
-}
-class "epo-cat:ItemReplacement" {
-
-}
-class "epo-cat:ItemRelation" {
-  epo-cat:hasFactor : xsd:decimal [0..1]
-  epo-cat:isRelatedToItem : epo-cat:Item [1]
-}
-class "epo-cat:ItemAccessoryRelation" {
-
-}
-class "epo-cat:ItemComplementaryRelation" {
-
-}
-class "epo-cat:CertificationLabel" {
-  epo-cat:hasLabelType : at-voc-new:certification-label-type [0..1]
-  epo-cat:hasReferenceURI : xsd:anyURI [0..1]
-}
-class "epo-cat:Certifier" {
-
-}
-class "epo-cat:ItemCertificate" {
-  epo-cat:attestedByLabel : epo-cat:CertificationLabel [1]
-  epo-cat:hasCertificationNumber : rdfs:Literal [1..1]
-  epo-cat:issuedByCertifier : epo-cat:Certifier [0..1]
-  epo:hasURL : xsd:anyURI [0..1]
-  epo:hasValidityPeriod : epo:Period [0..1]
-}
-class "epo-cat:ChargeInformation" {
-  epo-cat:hasChargeCategory : at-voc-new:charge-category [1]
-  epo-cat:hasChargeCategoryModifier : at-voc-new:charge-modifier [0..1]
-  epo-ord:isSpecificToOrderLine : epo-ord:OrderLine [0..*]
-}
-"cccev:Evidence" <|-- "epo-cat:ItemCertificate"
-"cccev:InformationConcept" <|-- "epo-cat:CertificationLabel"
-"epo-cat:Catalogue" <|-- "epo-cat:CatalogueFragment"
-"epo-cat:ItemRelation" <|-- "epo-cat:ItemAccessoryRelation"
-"epo-cat:ItemRelation" <|-- "epo-cat:ItemComplementaryRelation"
-"epo-cat:ItemRelation" <|-- "epo-cat:ItemComposition"
-"epo-cat:ItemRelation" <|-- "epo-cat:ItemReplacement"
-"epo-cat:ItemRelation" <|-- "epo-cat:ItemRequirement"
-"epo-ord:PriceModifierInformation" <|-- "epo-cat:ChargeInformation"
-"epo:Document" <|-- "epo-cat:CatalogueDocument"
-"epo:Document" <|-- "epo-cat:CatalogueUpdateDocument"
-"epo:Document" <|-- "epo-cat:ProductSpecification"
-"epo:ElementDescription" <|-- "epo-cat:ItemDescription"
-"epo:OfferingParty" <|-- "epo-cat:Manufacturer"
 @enduml

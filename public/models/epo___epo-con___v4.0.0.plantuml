@@ -1,5 +1,10 @@
 
 @startuml
+class "epo-con:ContractAmendment" {
+  epo:amendsContract : epo:Contract [1]
+  epo:updatesContractValue : epo:MonetaryValue [0..1]
+}
+
 class "epo-con:ContractModificationInformation" {
   epo:concernsContractAmendment : epo-con:ContractAmendment [1]
   epo:hasModificationDescription : rdf:PlainLiteral [0..1]
@@ -7,15 +12,10 @@ class "epo-con:ContractModificationInformation" {
   epo:hasModificationReasonDescription : rdf:PlainLiteral [0..1]
   epo:relatesToEFormSectionIdentifier : adms:Identifier [0..1]
 }
-class "epo-con:ContractAmendment" {
-  epo:amendsContract : epo:Contract [1]
-  epo:updatesContractValue : epo:MonetaryValue [0..1]
-}
+
 class "epo-con:Deliverable" {
   epo-cat:hasQuantity : epo:Quantity [0..1]
   epo:hasTotalValue : epo:MonetaryValue [0..1]
 }
-"epo-cat:Item" <|-- "epo-con:Deliverable"
-"epo:ContextDescription" <|-- "epo-con:ContractModificationInformation"
-"epo:Contract" <|-- "epo-con:ContractAmendment"
+
 @enduml

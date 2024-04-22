@@ -6,18 +6,23 @@ class "epo-not:CompetitionNotice" {
   epo-not:announcesProcedure : epo:Procedure [1]
   epo-not:announcesRole : epo:AgentInRole [1..*]
 }
+
 class "epo-not:CompletionNotice" {
 
 }
+
 class "epo-not:ContractModificationNotice" {
   epo-not:refersToContractToBeModified : epo:Contract [1]
 }
+
 class "epo-not:DirectAwardPrenotificationNotice" {
   epo-not:announcesProcedure : epo:Procedure [1]
 }
+
 class "epo-not:PlanningNotice" {
   epo-not:announcesPlannedProcurementPart : epo:PlannedProcurementPart [0..*]
 }
+
 class "epo-not:ResultNotice" {
   epo-not:announcesContract : epo:Contract [0..1]
   epo-not:announcesLotAwardOutcome : epo:LotAwardOutcome [0..*]
@@ -32,10 +37,5 @@ class "epo-not:ResultNotice" {
   epo-not:refersToReviewTerm : epo:ReviewTerm [0..1]
   epo-not:refersToRole : epo:AgentInRole [1..*]
 }
-"epo:Notice" <|-- "epo-not:CompetitionNotice"
-"epo:Notice" <|-- "epo-not:CompletionNotice"
-"epo:Notice" <|-- "epo-not:ContractModificationNotice"
-"epo:Notice" <|-- "epo-not:DirectAwardPrenotificationNotice"
-"epo:Notice" <|-- "epo-not:PlanningNotice"
-"epo:Notice" <|-- "epo-not:ResultNotice"
+
 @enduml

@@ -1,0 +1,378 @@
+
+@startuml
+class "epo-not:CANDefence-D81 " {
+
+}
+
+class "epo-not:CANSocial-D25" {
+
+}
+
+class "epo-not:CANSocialNotice" {
+  hasNoticeType : can-social 
+}
+
+class "epo-not:CANSocialNotice-D25" {
+
+}
+
+class "epo-not:CANStandard-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:CANStandardNotice" {
+  hasNoticeType : can-standard 
+}
+
+class "epo-not:CNDefence-D81" {
+
+}
+
+class "epo-not:CNSocial-D25" {
+
+}
+
+class "epo-not:CNSocialNotice" {
+  hasNoticeType : cn-social 
+}
+
+class "epo-not:CNSocialNotice-D25" {
+
+}
+
+class "epo-not:CNStandard-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:CNStandardNotice" {
+  hasNoticeType : cn-standard 
+}
+
+class "epo-not:Concession-D23" {
+
+}
+
+class "epo-not:ConcessionAward-D23" {
+
+}
+
+class "epo-not:DesignContest-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:DesignContest-D25" {
+
+}
+
+class "epo-not:DesignContestNotice" {
+  hasNoticeType : cn-desg 
+}
+
+class "epo-not:DesignContestResult-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:DesignContestResult-D25" {
+
+}
+
+class "epo-not:DesignContestResultNotice" {
+  hasNoticeType : can-desg 
+}
+
+class "epo-not:Modification-D23" {
+
+}
+
+class "epo-not:Modification-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Modification-D25" {
+
+}
+
+class "epo-not:Notice1" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice10" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice11" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice12" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice13" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice14" {
+  hasLegalBasis : Directive 23 
+}
+
+class "epo-not:Notice15" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice16" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice17" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice18" {
+  hasLegalBasis : Directive 81 
+}
+
+class "epo-not:Notice19" {
+  hasLegalBasis : Directive 23 
+}
+
+class "epo-not:Notice2" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice20" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice21" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice22" {
+  hasLegalBasis : Directive 81 
+}
+
+class "epo-not:Notice23" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice24" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice25" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice26" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice27" {
+  hasLegalBasis : Directive 81 
+}
+
+class "epo-not:Notice28" {
+  hasLegalBasis : Directive 23 
+}
+
+class "epo-not:Notice29" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice3" {
+  hasLegalBasis : Directive 81 
+}
+
+class "epo-not:Notice30" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice31" {
+  hasLegalBasis : Directive 81 
+}
+
+class "epo-not:Notice32" {
+  hasLegalBasis : Directive 23 
+}
+
+class "epo-not:Notice33" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice34" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice35" {
+  hasLegalBasis : Directive 23 
+}
+
+class "epo-not:Notice36" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice37" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice38" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice39" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice4" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice40" {
+  hasLegalBasis : Directive 23 
+}
+
+class "epo-not:Notice5" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice6" {
+  hasLegalBasis : Directive 81 
+}
+
+class "epo-not:Notice7" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:Notice8" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:Notice9" {
+  hasLegalBasis : Directive 81 
+}
+
+class "epo-not:PIN-CFCSocial-D25" {
+
+}
+
+class "epo-not:PIN-CFCSocialNotice" {
+  hasNoticeType : pin-cfc-social 
+}
+
+class "epo-not:PIN-CFCSocialNotice-D25" {
+
+}
+
+class "epo-not:PIN-CFCStandard-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:PIN-CFCStandardNotice" {
+  hasNoticeType : pin-cfc-standard 
+}
+
+class "epo-not:PIN-RTL-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:PIN-RTL-D25" {
+
+}
+
+class "epo-not:PINDefence-D81" {
+
+}
+
+class "epo-not:PINOnly-D24" {
+  hasFormType : Form1 
+  hasLegalBasis : Directive 24 
+  hasNoticeType : pin-only 
+}
+
+class "epo-not:PINOnly-D25" {
+
+}
+
+class "epo-not:PINOnlyNotice" {
+  hasFormType : Form1 
+  hasNoticeType : pin-only 
+}
+
+class "epo-not:PINProfile-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:PINProfile-D25" {
+  hasLegalBasis : Directive 25 
+}
+
+class "epo-not:PINProfile-D81" {
+
+}
+
+class "epo-not:PINProfileNotice" {
+  hasNoticeType : pin-buyer 
+}
+
+class "epo-not:PINTimeLimitNotice" {
+  hasNoticeType : pin-rtl 
+}
+
+class "epo-not:PMCNotice" {
+
+}
+
+class "epo-not:QS-D25" {
+
+}
+
+class "epo-not:QSNotice" {
+  hasNoticeType : qu-sy 
+}
+
+class "epo-not:QSNotice-D25" {
+
+}
+
+class "epo-not:SocialAndOtherSpecificServices-D23" {
+
+}
+
+class "epo-not:SocialAndOtherSpecificServices-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:StandardFormsNotice" {
+  hasImplementingRegulation : (EU)-2015-1986 
+}
+
+class "epo-not:SubcontractNotice" {
+  hasNoticeType : subco 
+}
+
+class "epo-not:VEAT-D23" {
+
+}
+
+class "epo-not:VEAT-D24" {
+  hasLegalBasis : Directive 24 
+}
+
+class "epo-not:VEAT-D25" {
+
+}
+
+class "epo-not:VEAT-D81" {
+
+}
+
+class "epo-not:VoluntaryEx-AnteTransparencyNotice" {
+  hasNoticeType : veat 
+}
+
+class "epo-not:eFormsNotice" {
+  hasImplementingRegulation : (EU)-2019-1780 
+}
+
+@enduml
