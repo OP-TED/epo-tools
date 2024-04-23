@@ -2,6 +2,7 @@
 import { NTabPane, NTabs } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
+import Compare from './components/Compare.vue'
 import Edges from './components/Edges.vue'
 import Models from './components/Models.vue'
 import Nodes from './components/Nodes.vue'
@@ -35,16 +36,26 @@ const dataTitle = computed(() => {
 <template>
   <n-tabs type="line" animated>
     <n-tab-pane name="Models" tab="Models">
-      <Models/>
+
+      <n-tabs type="line" animated>
+        <n-tab-pane name="Current models" tab="Current models">
+          <Models/>
+        </n-tab-pane>
+        <n-tab-pane name="Check SPARQL" tab="Check SPARQL">
+          <Sparql/>
+        </n-tab-pane>
+        <n-tab-pane name="Inspect SHACL" tab="Inspect SHACL">
+          <Shacl/>
+        </n-tab-pane>
+        <n-tab-pane name="Compare two models" tab="Compare two models">
+          <Compare/>
+        </n-tab-pane>
+      </n-tabs>
+
+
     </n-tab-pane>
     <n-tab-pane name="Diagram" tab="Diagram">
       <Plantuml/>
-    </n-tab-pane>
-    <n-tab-pane name="SHACL" tab="SHACL">
-      <Shacl/>
-    </n-tab-pane>
-    <n-tab-pane name="SPARQL" tab="SPARQL">
-      <Sparql/>
     </n-tab-pane>
 
     <n-tab-pane name="data" :tab="dataTitle">

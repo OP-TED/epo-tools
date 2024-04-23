@@ -1,12 +1,12 @@
 <script setup lang="js">
-import { NCard, NCode, NButton, NSelect } from 'naive-ui'
+import { useFileDialog } from '@vueuse/core'
+import { NButton, NCard } from 'naive-ui'
 import { storeToRefs } from 'pinia'
+import { computed } from 'vue'
 import { bufferToJson } from '../../conceptualModel/ea-to-json.js'
+import { repositories } from '../../epo/knownEpo.js'
 
 import { useStore } from '../state.js'
-import { repositories } from '../../epo/knownEpo.js'
-import { useFileDialog, useStorage } from '@vueuse/core'
-import { computed, ref } from 'vue'
 
 const store = useStore()
 

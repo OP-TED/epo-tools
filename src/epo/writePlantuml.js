@@ -5,20 +5,6 @@ import { getAllPrefixes } from '../prefix/prefix.js'
 import { repositories } from './knownEpo.js'
 import { getEpoJson } from './readEpo.js'
 
-function fixKnownBugs (g) {
-  const removeWhiteSpace = (name) => name?.replaceAll('epo :', 'epo:')
-  return {
-    nodes: g.nodes.map(
-      x => ({ ...x, name: removeWhiteSpace(x.name) })),
-    edges: g.edges.filter(x => x.predicate).map(
-      x => ({
-        ...x,
-        source: removeWhiteSpace(x.source),
-        predicate: removeWhiteSpace(x.predicate),
-        target: removeWhiteSpace(x.target),
-      })),
-  }
-}
 
 const index = []
 for (const { databasePath, publicJsonPath } of repositories) {
