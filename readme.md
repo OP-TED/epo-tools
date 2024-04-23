@@ -18,7 +18,7 @@ npm install
 
 ## App
 
-it contains an application to generate plantUML,
+it contains an application to compare two conceptual models and more
 
 ```sh
 npm run dev
