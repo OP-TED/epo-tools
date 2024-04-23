@@ -4,7 +4,7 @@ import { Buffer } from 'buffer/'
 import { NButton, NCard, NFlex } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
-import { bufferToJson } from '../../ontology/ea/ea-to-json.js'
+import { bufferToJson } from '../../conceptualModel/ea-to-json.js'
 import { useStore } from '../state.js'
 
 const store = useStore()

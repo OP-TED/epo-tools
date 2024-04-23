@@ -4,3 +4,6 @@ assets
 /.idea
 outputs/ePO
 widoco
+
+# Local Netlify folder
+.netlify

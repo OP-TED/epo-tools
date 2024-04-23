@@ -44,12 +44,24 @@ async function getRdfAssets ({ globPattern }, graphFactory = getGraph) {
         quad.graph = graphFactory(path)
       }
     } catch (e) {
-      // console.error(path, 'failed to parse')
-      throw e
+      throw new Error(JSON.stringify({
+        path, e,
+      }, null, 2))
     }
     assets.push({ path, dataset })
   }
   return assets
 }
 
-export { getRdfAssets, applyGlob }
+async function rdfAssetsDiff (oldAssets, newAssets) {
+  const added = rdf.dataset()
+  const removed = rdf.dataset()
+  for (const { path, dataset } of oldAssets) {
+    const newDataset = newAssets.find(x => x.path === path).dataset
+    added.addAll(newDataset.difference(dataset))
+    removed.addAll(dataset.difference(newDataset))
+  }
+  return { added, removed }
+}
+
+export { getRdfAssets, applyGlob, rdfAssetsDiff }

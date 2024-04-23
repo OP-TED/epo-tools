@@ -1,13 +1,14 @@
 <script setup lang="js">
-import { NCode, NImage, NCard } from 'naive-ui'
+import { useClipboard } from '@vueuse/core'
+import { NCard, NCode, NImage } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import plantumlEncoder from 'plantuml-encoder'
 import { computed } from 'vue'
 import { useStore } from '../state.js'
+import Filter from './Filter.vue'
 
 const store = useStore()
 const { plantUml } = storeToRefs(store)
-import { useClipboard, usePermission } from '@vueuse/core'
 
 const { text, isSupported, copy } = useClipboard()
 
@@ -20,9 +21,10 @@ const imageUrl = computed(() => {
 </script>
 
 <template>
-
+  <n-card title="Entities shown">
+    <Filter></Filter>
+  </n-card>
   <template v-if="plantUml">
-
     <template v-if="imageUrl">
       <n-image
           width="100%"
@@ -40,21 +42,5 @@ const imageUrl = computed(() => {
       </div>
     </n-card>
   </template>
-  <template v-else>
-    <n-card title="Welcome">
-      <div>
-        This is the Conceptual model explorer.
-      </div>
-      <div>
-        To start please upload Enterprise architect files with the 'Select eap' button, it will be stored in
-        local-storage
-      </div>
-      <div>
-        When loaded, you can add a terms using + button, for example 'epo:Document'.
-      </div>
-      <div>Wildcards like "epo-cat:*" or negation "-dct:terms" are allowed.
-      </div>
 
-    </n-card>
-  </template>
 </template>

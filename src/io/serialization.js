@@ -1,5 +1,6 @@
 import {
-  TrigSerializer, TurtleSerializer,
+  TrigSerializer,
+  TurtleSerializer,
 } from '@rdfjs-elements/formats-pretty'
 import { stringify } from 'csv-stringify/sync'
 import getStream from 'get-stream'
@@ -38,7 +39,6 @@ function rdfArrayToCSV (array) {
     const arrayOfArrays = array.map(obj => Object.values(obj).map(x => x.value))
     return stringify([header, ...arrayOfArrays])
   }
-
 }
 
 export { prettyPrintTurtle, prettyPrintTrig, rdfArrayToCSV }

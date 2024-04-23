@@ -16,24 +16,22 @@ const lookupLatestRelease = async (owner, repo) => {
   }
 }
 
-async function writeLocal ({ repo, tarballUrl, localDirectory }) {
+async function writeLocal ({ tarballUrl, localPath }) {
   try {
-    fs.rmSync(localDirectory, { recursive: true, force: true })
-    fs.mkdirSync(localDirectory, { recursive: true })
+    fs.rmSync(localPath, { recursive: true, force: true })
+    fs.mkdirSync(localPath, { recursive: true })
   } catch (error) {
-    console.error('Error updating directory:', error.message)
+    console.error('Error updating path:', error.message)
     process.exit(1)
   }
   try {
     const response = await got.stream(tarballUrl)
-    console.log('fetching', tarballUrl, 'into', localDirectory)
+    console.log('fetching', tarballUrl, 'into', localPath)
     const extractPromise = new Promise((resolve, reject) => {
       response.pipe(tar.x({
-        strip: 1, C: localDirectory,
-      }))
-      .on('end', () => resolve())
-      .on('error', (error) => reject(error));
-    });
+        strip: 1, C: localPath,
+      })).on('end', () => resolve()).on('error', (error) => reject(error))
+    })
     await extractPromise
   } catch (error) {
     console.error('Error updating latest release:', error.message)
@@ -41,20 +39,20 @@ async function writeLocal ({ repo, tarballUrl, localDirectory }) {
   }
 }
 
-async function fetchLatestRelease ({ owner, repo, localDirectory }) {
+async function fetchLatestRelease ({ owner, repo, localPath }) {
   const { tag, tarballUrl } = await lookupLatestRelease(owner, repo)
   console.log('latest tag for ', owner, repo, 'is', tag)
-  return await writeLocal({ repo, tarballUrl, localDirectory })
+  return writeLocal({ tarballUrl, localPath })
 }
 
-async function fetchFromTag ({ owner, repo, tag, localDirectory }) {
+async function fetchFromTag ({ owner, repo, tag, localPath }) {
   const tarballUrl = `https://github.com/${owner}/${repo}/archive/refs/tags/${tag}.tar.gz`
-  return await writeLocal({ repo, tarballUrl, localDirectory })
+  return writeLocal({ tarballUrl, localPath })
 }
 
-async function fetchFromBranch ({ owner, repo, branch, localDirectory }) {
+async function fetchFromBranch ({ owner, repo, branch, localPath }) {
   const tarballUrl = `https://github.com/${owner}/${repo}/archive/refs/heads/${branch}.tar.gz`
-  await writeLocal({ repo, tarballUrl, localDirectory })
+  await writeLocal({ tarballUrl, localPath })
 }
 
 async function fetchFromGithub (target) {

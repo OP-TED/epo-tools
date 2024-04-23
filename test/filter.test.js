@@ -1,18 +1,26 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import { ATTRIBUTE, RELATIONSHIP } from '../src/ontology/const.js'
+import { ATTRIBUTE, RELATIONSHIP } from '../src/conceptualModel/const.js'
 import {
-  filterBy,
-  suggestNodes,
   anyMatch,
-} from '../src/ontology/views/filter.js'
-import { getJson } from './support/readEpo.js'
+  filterBy,
+  filterByPrefix,
+  suggestNodes,
+} from '../src/conceptualModel/filter.js'
+import { UNDER_REVIEW } from '../src/config.js'
+import { getJson } from '../src/epo/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
 
 describe('filter', () => {
-  const eaJson = getJson()
+
+  const eaJson = getJson(UNDER_REVIEW)
+
+  it(`byPrefix`, function () {
+    const result = filterByPrefix(eaJson, { prefix: 'epo-cat' })
+    expect(result).toMatchSnapshot(this)
+  })
 
   it(`anyMatch`, function () {
     const toCheck = ['epo-cat:*', 'who-are-you']
@@ -105,7 +113,6 @@ describe('filter', () => {
 
   it(`simple-datatype`, function () {
     const filtered = filterBy(graph, { filter: ['datatype1'] })
-    console.log(filtered)
     expect(filtered).toMatchSnapshot(this)
   })
 
@@ -121,7 +128,6 @@ describe('filter', () => {
 
   it(`simple-datatype negation`, function () {
     const filtered = filterBy(graph, { filter: ['datatype1', '-has'] })
-    console.log(filtered)
     expect(filtered).toMatchSnapshot(this)
   })
 

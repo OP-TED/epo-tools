@@ -1,9 +1,9 @@
 <script setup lang="js">
-import { NCode, NCard } from 'naive-ui'
+import { useClipboard } from '@vueuse/core'
+import { NCard, NCode } from 'naive-ui'
 import { storeToRefs } from 'pinia'
-
 import { useStore } from '../state.js'
-import { useClipboard, usePermission } from '@vueuse/core'
+import Filter from './Filter.vue'
 
 const store = useStore()
 const { shacl } = storeToRefs(store)
@@ -12,8 +12,12 @@ const { text, isSupported, copy } = useClipboard()
 </script>
 
 <template>
+
+  <n-card title="Generated using this filter">
+    <Filter></Filter>
+  </n-card>
   <template v-if="shacl">
-    <n-card title="SHACL">
+    <n-card :title="`SHACL (${shacl?.split('\n')?.length} lines)`">
       <button v-if="isSupported" @click="copy(shacl)">
         <template v-if="text">Copied</template>
         <template v-else>Copy</template>

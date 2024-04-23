@@ -25,13 +25,13 @@ const vocabularies = [
 
 ]
 
-const { localDirectory } = COMMON_VOCABS
+const { localPath } = COMMON_VOCABS
 
 async function downloadVocabularies () {
-  mkdirSync(localDirectory, { recursive: true })
+  mkdirSync(localPath, { recursive: true })
 
   const downloadPromises = vocabularies.map(async ({ filename, url }) => {
-    const path = join(localDirectory, filename)
+    const path = join(localPath, filename)
     try {
       const response = await fetch(url, {
         headers: {
