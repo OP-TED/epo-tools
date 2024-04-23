@@ -11,18 +11,27 @@ const DEFAULT_VIEW = {
   includeIncoming: false,
 }
 const DEFAULT_CM = { nodes: [], edges: [] }
+const DEFAULT_LIBRARY = {
+  selected: undefined,
+  models: {},
+}
 
 export const useStore = defineStore('counter', () => {
 
-  const eaJson = useStorage('enterprise-architect', DEFAULT_CM)
+  const library = useStorage('user-library', DEFAULT_LIBRARY)
+  const eaJson = useStorage('current-ea-model', DEFAULT_CM)
+
+  // APP
   const filterOptions = useStorage('filterBy', DEFAULT_VIEW)
   const savedFilters = useStorage('savedFilterBy', [])
   const sparql = useStorage('sparql', '')
 
-  // Enterprise architect handling
-  function resetSelection () {
-    eaJson.value = DEFAULT_CM
-  }
+  // Filters
+  const jsonView = computed(() => {
+    return eaJson.value.nodes
+      ? filterBy(eaJson.value, filterOptions.value)
+      : DEFAULT_CM
+  })
 
   function setEaJson (json) {
     eaJson.value = {
@@ -32,13 +41,6 @@ export const useStore = defineStore('counter', () => {
         : x),
     }
   }
-
-  // Filters
-  const jsonView = computed(() => {
-    return eaJson.value.nodes
-      ? filterBy(eaJson.value, filterOptions.value)
-      : DEFAULT_CM
-  })
 
   function addFilterTerms (terms) {
     let newTerms = terms.filter(
@@ -63,9 +65,9 @@ export const useStore = defineStore('counter', () => {
   }, null)
 
   return {
-    setEaJson,
-    resetSelection,
+    library,
     addFilterTerms,
+    setEaJson,
     eaJson,
     suggestedNodes,
     jsonView,

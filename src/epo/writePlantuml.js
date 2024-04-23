@@ -6,9 +6,7 @@ import { repositories } from './knownEpo.js'
 import { getEpoJson } from './readEpo.js'
 
 function fixKnownBugs (g) {
-
   const removeWhiteSpace = (name) => name?.replaceAll('epo :', 'epo:')
-
   return {
     nodes: g.nodes.map(
       x => ({ ...x, name: removeWhiteSpace(x.name) })),
@@ -23,25 +21,32 @@ function fixKnownBugs (g) {
 }
 
 const index = []
-for (const { localPath, conceptualModelPath, tag } of repositories) {
-  const g = fixKnownBugs(getEpoJson({ localPath, conceptualModelPath }))
+for (const { databasePath, publicJsonPath } of repositories) {
 
-  for (const prefix of getAllPrefixes(g).filter(x => x.startsWith('epo'))) {
-    const module = filterByPrefix(g, { prefix })
-    const plantUML = toPlantuml(module,
-      { includeRelationships: false, sorted: true })
-    const plantumlFile = `models/epo___${prefix}___${tag}.plantuml`
-    const filename = `public/${plantumlFile}`
-    writeFileSync(filename, plantUML)
 
-    index.push({
-      version: tag,
-      module: prefix,
-      plantumlFile,
-    })
+// Write model
+//   const epoJson = getEpoJson({ databasePath })
+//   const g = fixKnownBugs(epoJson)
+//   writeFileSync(publicJsonPath, JSON.stringify(g,null,2))
 
-    console.log('wrote', filename)
-  }
+
+  // Write plantUML
+  // for (const prefix of getAllPrefixes(g).filter(x => x.startsWith('epo'))) {
+  //   const module = filterByPrefix(g, { prefix })
+  //   const plantUML = toPlantuml(module,
+  //     { includeRelationships: false, sorted: true })
+  //   const plantumlFile = `models/epo_${prefix}_${tag}.plantuml`
+  //   const targetFilename = `public/${plantumlFile}`
+  //   writeFileSync(targetFilename, plantUML)
+  //
+  //   index.push({
+  //     version: tag,
+  //     module: prefix,
+  //     plantumlFile,
+  //   })
+  //
+  //   console.log('wrote', targetFilename)
+  // }
 
 }
 

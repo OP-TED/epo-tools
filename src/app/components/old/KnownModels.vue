@@ -4,8 +4,9 @@ import { NCard, NSelect, NTreeSelect } from 'naive-ui'
 import { computed, ref } from 'vue'
 import { Diff } from 'vue-diff'
 
-import modelIndex from './modelIndex.json'
+// import modelIndex from './modelIndex.json'
 
+const modelIndex = []
 const versions = [...new Set(modelIndex.map(x => x.version))].sort()
 
 const tree = versions.map(version => ({
@@ -49,7 +50,7 @@ const chunks = computedAsync(async x => {
       const target = modelIndex.find(x => x.version === selectedTargetVersion.value && x.module === module)
       if (target) {
         chunks.push({
-          title:`Module ${module}, left:${version}, right:${target.version}`,
+          title: `Module ${module}, left:${version}, right:${target.version}`,
           prev: await getPlantuml(plantumlFile),
           current: await getPlantuml(target.plantumlFile),
         })
@@ -85,14 +86,14 @@ async function getPlantuml (file) {
     <template v-for="chunk of chunks">
 
       <n-card :title="chunk.title">
-      <Diff
-          :mode="'split'"
-          :theme="'dark'"
-          :language="'plaintext'"
-          :prev="chunk.prev"
-          :current="chunk.current"
-          :folding="true"
-      />
+        <Diff
+            :mode="'split'"
+            :theme="'dark'"
+            :language="'plaintext'"
+            :prev="chunk.prev"
+            :current="chunk.current"
+            :folding="true"
+        />
       </n-card>
 
     </template>
