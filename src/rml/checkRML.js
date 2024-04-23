@@ -1,6 +1,5 @@
-import { readFileSync } from 'fs'
-import { bufferToJson } from '../conceptualModel/ea-to-json.js'
 import { EPO_LATEST } from '../config.js'
+import { getEpoJson } from '../epo/readEpo.js'
 import { getRdfAssets } from '../io/assets.js'
 import { createTriplestore, doSelect } from '../sparql/localStore.js'
 import { getKnownEntities } from './epoConceptualModel.js'
@@ -37,7 +36,7 @@ WHERE {
 const BASE = '/home/cvasquez/github.com/OP-TED/ted-rdf-assessment'
 const globPattern = `${BASE}/pdds/rml/**/*.ttl`
 
-const g = loadConceptualModel(EPO_LATEST)
+const g = getEpoJson(EPO_LATEST)
 
 const assets = await getRdfAssets({ globPattern })
 const store = createTriplestore({ assets })
