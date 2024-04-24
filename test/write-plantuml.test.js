@@ -17,14 +17,14 @@ describe('write-plantuml', () => {
     expect(plantuml).toMatchSnapshot(this)
   })
 
-  it(`generates plantuml simple`, function () {
-    const plantuml = toPlantuml(current,
-      { includeRelationships: false, sorted: true })
+  it(`generates plantuml, empty graph`, async function () {
+    const plantuml = toPlantuml(current)
     expect(plantuml).toMatchSnapshot(this)
   })
 
-  it(`generates plantuml, empty graph`, async function () {
-    const plantuml = toPlantuml(current)
+  it(`generates plantuml simple`, function () {
+    const plantuml = toPlantuml(current,
+      { shrink: true, sorted: true })
     expect(plantuml).toMatchSnapshot(this)
   })
 

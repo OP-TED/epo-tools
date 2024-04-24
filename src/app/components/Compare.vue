@@ -1,8 +1,9 @@
 <script setup lang="js">
-import { NCard, NSelect, NSwitch } from 'naive-ui'
+import { NCard, NDynamicTags, NSelect, NSwitch } from 'naive-ui'
+import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { Diff } from 'vue-diff'
-import { storeToRefs } from 'pinia'
+import { filterBy } from '../../conceptualModel/filter.js'
 import { getComparisonChunks } from '../../plantuml/comparison.js'
 import { useStore } from '../state.js'
 
@@ -19,47 +20,55 @@ const libraryOptions = computed(() => {
 const selectedSource = ref('')
 const selectedTarget = ref('')
 
-function handleSelectSource (value, option) {
-  updateChunks(value, selectedSource.value)
+function counts (g) {
+  const nodeCount = (x) => x.nodes.length ?? 0
+  const edgeCount = (x) => x.edges.length ?? 0
+  return `${nodeCount(g)}-${edgeCount(g)})`
 }
 
-function handleSelectTarget (value, option) {
-  updateChunks(selectedSource.value, value)
-}
+const comparisonResult = computed(() => {
 
-function updateChunks (selectedSource, selectedTarget) {
-  if (selectedSource && selectedTarget) {
-    const key1 = library.value.models[selectedSource].key
-    const g1 = JSON.parse(localStorage.getItem(key1) ?? {})
+  const source = selectedSource.value
+  const target = selectedTarget.value
+  const filter = selectedFilter.value
 
-    const key2 = library.value.models[selectedTarget].key
-    const g2 = JSON.parse(localStorage.getItem(key2) ?? {})
+  if (source && target) {
 
-    chunks.value = getComparisonChunks(g1, g2)
+    const key1 = library.value.models[source].key
+    const _g1 = JSON.parse(localStorage.getItem(key1) ?? {})
+    const g1 = filterBy(_g1, { filter })
+
+    const key2 = library.value.models[target].key
+    const _g2 = JSON.parse(localStorage.getItem(key2) ?? {})
+    const g2 = filterBy(_g2, { filter })
+
+    return {
+      title: `Comparing ${source} (${counts(g1)}) with ${target} (${counts(g2)})`,
+      chunks: getComparisonChunks(g1, g2),
+    }
+
   }
-}
+})
 
-const chunks = ref([])
 const fold = ref()
 const mode = ref()
+const selectedFilter = ref(['epo*'])
 
 </script>
 
 <template>
-
   <n-card title="Source">
     <n-select
-        @update:value="handleSelectSource"
         v-model:value="selectedSource" :options="libraryOptions"/>
   </n-card>
   <n-card title="Target">
     <n-select
-        @update:value="handleSelectTarget"
         v-model:value="selectedTarget" :options="libraryOptions"/>
   </n-card>
-
-
-  <n-card v-if="chunks.length" :title="`Comparing ${selectedSource} with ${selectedTarget} `">
+  <n-card title="Filters">
+    <n-dynamic-tags v-model:value="selectedFilter"/>
+  </n-card>
+  <n-card v-if="comparisonResult" :title="comparisonResult.title">
 
     <n-switch v-model:value="fold">
       <template #checked>
@@ -76,7 +85,7 @@ const mode = ref()
         split
       </template>
     </n-switch>
-    <template v-for="chunk of chunks">
+    <template v-for="chunk of comparisonResult.chunks">
       <n-card :title="chunk.title">
         <Diff
             :folding="fold"

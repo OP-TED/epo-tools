@@ -13,9 +13,9 @@ class "epo:Animal" {
 
 class "epo:Person" {
   + {Color_1} epo:name xsd:String
-  epo:has-address ex:Address
+  epo:has-address ex:Address "The class of people"
 }
-note left: The class of people
+note left: "The class of people"
 
 class "epo:Address" {
    epo:street-name : xsd:String

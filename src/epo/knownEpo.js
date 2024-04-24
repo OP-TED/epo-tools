@@ -3,10 +3,11 @@ const epo = [
     tag: 'v4.0.2',
     conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
   },
-  {
-    tag: 'v4.0.1',
-    conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
-  },
+  // No significant differences with v4.0.2
+  // {
+  //   tag: 'v4.0.1',
+  //   conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
+  // },
   {
     tag: 'v4.0.0',
     conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',

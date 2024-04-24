@@ -1,6 +1,6 @@
 import { INHERITANCE, RELATIONSHIP } from '../conceptualModel/const.js'
 
-function toPlantuml ({ nodes, edges }, { includeRelationships, sorted } = {
+function toPlantuml ({ nodes, edges }, { shrink, sorted } = {
   includeRelationships: true, sorted: false,
 }) {
 
@@ -10,14 +10,19 @@ function toPlantuml ({ nodes, edges }, { includeRelationships, sorted } = {
     (a, b) => a.predicate?.localeCompare(b.predicate)) : arr
 
   const classDefinitions = nodes.map(node => {
-    return nodeTemplate(node,
-      maybeSortedByPredicate(edges.filter(edge => edge.source === node.name).
-        filter(edge => edge.type !== INHERITANCE)))
-  })
+    const classPredicates =
+      maybeSortedByPredicate(
+        edges.filter(edge => edge.source === node.name).
+          filter(edge => edge.type !== INHERITANCE),
+      )
+    return (shrink && classPredicates.length === 0) ? undefined : nodeTemplate(
+      node,
+      classPredicates)
+  }).filter(x => x)
 
   const relations = [
     ...edges.filter(x => x.type === INHERITANCE).map(subclassTemplate),
-    ...edges.filter(x => includeRelationships && x.type === RELATIONSHIP).
+    ...edges.filter(x => !shrink && x.type === RELATIONSHIP).
       map(relationTemplate)]
 
   return `
