@@ -1,0 +1,136 @@
+
+@startuml
+class "epo:Buyer" {
+  epo:delegatesAncillaryActivitiesTo : epo:ProcurementServiceProvider [0..*]
+}
+
+class "epo:Document" {
+  epo:hasAccessURL : xsd:anyURI [0..*]
+  epo:hasReceptionDate : xsd:date [0..1]
+  epo:hasDispatchDate : xsd:date [0..1]
+  epo:hasPublicationDate : xsd:date [0..1]
+  epo:hasVersion : rdfs:Literal [0..1]
+  epo:hasID : epo:Identifier [0..*]
+  epo:hasUUID : epo:Identifier [0..1]
+  epo:refersToPrevious : epo:Document [0..*]
+  epo:associatedWith : epo:Document [0..*]
+}
+
+class "epo:ExclusionGround" {
+
+}
+
+class "epo:Lot" {
+  epo:hasRestatedEstimatedValue : epo:MonetaryValue [0..1]
+  epo:hasPurpose : epo:Purpose [0..1]
+  epo:foreseesContractSpecificTerm : epo:ContractSpecificTerm [0..*]
+  epo:usesTechnique : epo:TechniqueUsage [0..*]
+  epo:refersToPlannedPart : epo:PlannedProcurementPart [0..1]
+  epo:hasEstimatedValue : epo:MonetaryValue [0..1]
+}
+
+class "epo:Notice" {
+  epo:refersToProcedure : epo:Procedure [1]
+  epo:refersToNotice : epo:Notice [0..1]
+  epo:hasNotificationContentType : epo:notification-phases-content-types [0..1]
+}
+
+class "epo:PlannedProcurementPart" {
+  epo:hasPurpose : epo:Purpose [0..1]
+  epo:foreseesTechnique : epo:TechniqueUsage [0..*]
+}
+
+class "epo:Procedure" {
+  epo:isDesignContest : xsd:boolean [0..1]
+  epo:isCoveredByGPA : xsd:boolean [0..1]
+  epo:isJointProcurement : xsd:boolean [0..1]
+  epo:isRecurrent : xsd:boolean [0..1]
+  epo:hasRecurrenceDescription : rdfs:Literal [0..1]
+  epo:hasAdditionalInformation : rdfs:Literal [0..*]
+  epo:isAccelerated : xsd:boolean [0..1]
+  epo:hasAcceleratedProcedureJustification : rdfs:Literal [0..*]
+  epo:hasMainFeature : rdfs:Literal [0..*]
+  epo:involvesBuyer : epo:Buyer [0..*]
+  epo:isExecutedByProcurementServiceProvider : epo:ProcurementServiceProvider [0..1]
+  epo:hasOverallPurpose : epo:Purpose [0..1]
+  epo:isSubjectToProcedureSpecificTerm : epo:ProcedureSpecificTerm [1..*]
+  epo:hasLegalRegime : epo:legal-regime [0..*]
+  epo:hasEstimatedValue : epo:MonetaryValue [0..1]
+  epo:isResponsabilityOfBuyer : epo:Buyer [0..*]
+  epo:hasProcurementScopeDividedIntoLot : epo:Lot [1..*]
+  epo:specifiesExclusionGround : epo:ExclusionGround [0..*]
+  epo:refersToPlannedPart : epo:PlannedProcurementPart [0..1]
+  epo:usesTechnique : epo:TechniqueUsage [0..*]
+  epo:foreseesContractSpecificTerm : epo:ContractSpecificTerm [0..*]
+}
+
+class "epo:ProcurementServiceProvider" {
+  epo:actsOnBehalfOf : epo:Buyer [1]
+}
+
+class "epo:ProcedureSpecificTerm" {
+
+}
+
+class "epo:Purpose" {
+  epo:hasTotalQuantity : epo:Quantity [0..1]
+}
+
+class "epo:TechniqueUsage" {
+
+}
+
+class "epo:MonetaryValue" {
+
+}
+
+class "epo:legal-regime" {
+
+}
+
+class "epo:notification-phases-content-types" {
+
+}
+
+class "epo:Identifier" {
+
+}
+
+class "epo:Quantity" {
+
+}
+
+class "epo:ContractSpecificTerm" {
+
+}
+"epo:Lot" --> "0..1" "epo:MonetaryValue" : epo:hasRestatedEstimatedValue
+"epo:Notice" --> "1" "epo:Procedure" : epo:refersToProcedure
+"epo:Procedure" --> "0..*" "epo:Buyer" : epo:involvesBuyer
+"epo:Procedure" --> "0..1" "epo:ProcurementServiceProvider" : epo:isExecutedByProcurementServiceProvider
+"epo:Notice" --> "0..1" "epo:Notice" : epo:refersToNotice
+"epo:Lot" --> "0..1" "epo:Purpose" : epo:hasPurpose
+"epo:Lot" --> "0..*" "epo:ContractSpecificTerm" : epo:foreseesContractSpecificTerm
+"epo:Procedure" --> "0..1" "epo:Purpose" : epo:hasOverallPurpose
+"epo:Procedure" --> "1..*" "epo:ProcedureSpecificTerm" : epo:isSubjectToProcedureSpecificTerm
+"epo:Document" --> "0..*" "epo:Identifier" : epo:hasID
+"epo:Document" --> "0..1" "epo:Identifier" : epo:hasUUID
+"epo:Procedure" --> "0..*" "epo:legal-regime" : epo:hasLegalRegime
+"epo:Procedure" --> "0..1" "epo:MonetaryValue" : epo:hasEstimatedValue
+"epo:Procedure" --> "0..*" "epo:Buyer" : epo:isResponsabilityOfBuyer
+"epo:Notice" --> "0..1" "epo:notification-phases-content-types" : epo:hasNotificationContentType
+"epo:Procedure" --> "1..*" "epo:Lot" : epo:hasProcurementScopeDividedIntoLot
+"epo:Lot" --> "0..*" "epo:TechniqueUsage" : epo:usesTechnique
+"epo:ProcurementServiceProvider" --> "1" "epo:Buyer" : epo:actsOnBehalfOf
+"epo:Buyer" --> "0..*" "epo:ProcurementServiceProvider" : epo:delegatesAncillaryActivitiesTo
+"epo:Lot" --> "0..1" "epo:PlannedProcurementPart" : epo:refersToPlannedPart
+"epo:Lot" --> "0..1" "epo:MonetaryValue" : epo:hasEstimatedValue
+"epo:Document" --> "0..*" "epo:Document" : epo:refersToPrevious
+"epo:Purpose" --> "0..1" "epo:Quantity" : epo:hasTotalQuantity
+"epo:PlannedProcurementPart" --> "0..1" "epo:Purpose" : epo:hasPurpose
+"epo:Procedure" --> "0..*" "epo:ExclusionGround" : epo:specifiesExclusionGround
+"epo:Document" --> "0..*" "epo:Document" : epo:associatedWith
+"epo:Procedure" --> "0..1" "epo:PlannedProcurementPart" : epo:refersToPlannedPart
+"epo:Procedure" --> "0..*" "epo:TechniqueUsage" : epo:usesTechnique
+"epo:PlannedProcurementPart" --> "0..*" "epo:TechniqueUsage" : epo:foreseesTechnique
+"epo:Procedure" --> "0..*" "epo:ContractSpecificTerm" : epo:foreseesContractSpecificTerm
+@enduml

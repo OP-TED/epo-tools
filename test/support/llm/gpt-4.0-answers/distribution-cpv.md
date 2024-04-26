@@ -21,7 +21,7 @@ We know a dog might have up to 3 nicknames. Bob is a dog, therefore it can have 
 
 Ok, here is the description of our UML.
 
-{{plantuml}}
+{{test/support/llm/distribution-cpv.context.plantuml}}
 
 I'm interested in getting data about the main classifications of a procedure. In particular I want the main
 classifications connected to all the notice published on "20230911". If you can, give me the distributions using counts
