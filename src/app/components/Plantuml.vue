@@ -6,6 +6,7 @@ import plantumlEncoder from 'plantuml-encoder'
 import { computed } from 'vue'
 import { useStore } from '../state.js'
 import Filter from './Filter.vue'
+import SelectModel from './SelectModel.vue'
 
 const store = useStore()
 const { plantUml } = storeToRefs(store)
@@ -21,7 +22,9 @@ const imageUrl = computed(() => {
 </script>
 
 <template>
-  <n-card title="Entities shown">
+
+  <n-card>
+    <SelectModel/>
     <Filter></Filter>
   </n-card>
   <template v-if="plantUml">
@@ -32,7 +35,7 @@ const imageUrl = computed(() => {
       />
     </template>
 
-    <n-card title="PlantUML">
+    <n-card :title="`PlantUML (${plantUml?.split('\n')?.length} lines)`">
       <button v-if="isSupported" @click="copy(plantUml)">
         <template v-if="text">Copied</template>
         <template v-else>Copy</template>

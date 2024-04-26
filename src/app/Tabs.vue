@@ -3,9 +3,8 @@ import { NTabPane, NTabs } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import Compare from './components/Compare.vue'
-import Edges from './components/Edges.vue'
+import Data from './components/Data.vue'
 import Models from './components/Models.vue'
-import Nodes from './components/Nodes.vue'
 import Plantuml from './components/Plantuml.vue'
 import Shacl from './components/Shacl.vue'
 import Sparql from './components/Sparql.vue'
@@ -51,23 +50,12 @@ const dataTitle = computed(() => {
           <Compare/>
         </n-tab-pane>
       </n-tabs>
-
-
     </n-tab-pane>
     <n-tab-pane name="Diagram" tab="Diagram">
       <Plantuml/>
     </n-tab-pane>
-
-    <n-tab-pane name="data" :tab="dataTitle">
-      <n-tabs type="line" animated>
-        <n-tab-pane name="Nodes" :tab="nodesTitle">
-          <Nodes/>
-        </n-tab-pane>
-        <n-tab-pane name="Edges" :tab="edgesTitle">
-          <Edges/>
-        </n-tab-pane>
-      </n-tabs>
+    <n-tab-pane name="data" tab="Data">
+      <Data/>
     </n-tab-pane>
-
   </n-tabs>
 </template>

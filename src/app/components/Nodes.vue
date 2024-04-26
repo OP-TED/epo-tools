@@ -4,7 +4,6 @@ import { storeToRefs } from 'pinia'
 
 import { computed } from 'vue'
 import { useStore } from '../state.js'
-import Filter from './Filter.vue'
 
 const store = useStore()
 const { jsonView } = storeToRefs(store)
@@ -16,9 +15,6 @@ const nodes = computed(() => {
 </script>
 
 <template>
-  <n-card>
-    <Filter></Filter>
-  </n-card>
   <n-flex>
     <template v-for="{name, description} of nodes">
       <n-card :title="name" size="small">

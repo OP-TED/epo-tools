@@ -4,6 +4,7 @@ import { NCard, NCode } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { useStore } from '../state.js'
 import Filter from './Filter.vue'
+import SelectModel from './SelectModel.vue'
 
 const store = useStore()
 const { shacl } = storeToRefs(store)
@@ -12,8 +13,8 @@ const { text, isSupported, copy } = useClipboard()
 </script>
 
 <template>
-
-  <n-card title="Generated using this filter">
+  <n-card title="Generated from">
+    <SelectModel/>
     <Filter></Filter>
   </n-card>
   <template v-if="shacl">

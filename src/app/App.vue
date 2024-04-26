@@ -7,7 +7,6 @@ import Tabs from './Tabs.vue'
 <template>
   <div>
     <n-config-provider :theme="darkTheme">
-      <SelectModel/>
       <Tabs/>
     </n-config-provider>
   </div>

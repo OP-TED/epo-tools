@@ -5,6 +5,7 @@ import { computed } from 'vue'
 import { validateAgainstGraph } from '../../sparql/validate.js'
 
 import { useStore } from '../state.js'
+import SelectModel from './SelectModel.vue'
 
 const store = useStore()
 const { addFilterTerms } = store
@@ -17,7 +18,7 @@ const extracted = computed(
 </script>
 
 <template>
-
+  <SelectModel/>
   <n-card
       :title="`Mismatch`"
       v-if="extracted?.terms?.filter(x => !x.isPresent).length">
