@@ -65,7 +65,7 @@ const selectedFilter = ref(['epo*'])
     <n-select
         v-model:value="selectedTarget" :options="libraryOptions"/>
   </n-card>
-  <n-card title="Filters">
+  <n-card title="Compare only">
     <n-dynamic-tags v-model:value="selectedFilter"/>
   </n-card>
   <n-card v-if="comparisonResult" :title="comparisonResult.title">

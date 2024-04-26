@@ -20,7 +20,7 @@ const extracted = computed(() => {
 
 const newTerms = computed(() => {
   const current = new Set(filterOptions?.value.filter || [])
-  return (extracted.value?.terms||[]).filter(x => x.isPresent).map(x => x.term).filter(x => !current.has(x))
+  return (extracted.value?.terms || []).filter(x => x.isPresent).map(x => x.term).filter(x => !current.has(x))
 })
 
 const selectedFilter = ref(['epo*'])
@@ -42,7 +42,9 @@ const selectedFilter = ref(['epo*'])
     </n-text>
   </n-card>
 
+
   <n-card title="SPARQL query">
+
     <n-input
         v-model:value="sparql"
         placeholder="Sparql"
@@ -52,11 +54,12 @@ const selectedFilter = ref(['epo*'])
         minRows: 3
       }"
     />
+    <n-card v-if="extracted.error" title="Error">
+      {{ extracted.error }}
+    </n-card>
   </n-card>
-  <n-card v-if="extracted.error" title="Error">
-    {{ extracted.error }}
-  </n-card>
-  <n-card title="Filters">
+
+  <n-card title="Verify only">
     <n-dynamic-tags v-model:value="selectedFilter"/>
   </n-card>
   <n-card title="Extracted tags" v-if="newTerms?.terms && newTerms.terms.length > 0">

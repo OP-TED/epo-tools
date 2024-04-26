@@ -4,14 +4,23 @@ import { NCard, NCode, NImage } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import plantumlEncoder from 'plantuml-encoder'
 import { computed } from 'vue'
+import { toPlantuml } from '../../plantuml/plantumlTemplate.js'
 import { useStore } from '../state.js'
 import Filter from './Filter.vue'
 import SelectModel from './SelectModel.vue'
 
 const store = useStore()
-const { plantUml } = storeToRefs(store)
+const { jsonView } = storeToRefs(store)
 
 const { text, isSupported, copy } = useClipboard()
+
+
+
+// Templates
+const plantUml = computed(() => {
+  const { nodes, edges } = jsonView.value
+  return edges.length ? toPlantuml({ nodes, edges }) : undefined
+})
 
 const imageUrl = computed(() => {
   const encoded = plantumlEncoder.encode(plantUml.value)

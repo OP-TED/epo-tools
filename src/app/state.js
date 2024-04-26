@@ -1,10 +1,8 @@
-import { computedAsync, useStorage } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
 import { INHERITANCE } from '../conceptualModel/const.js'
 import { filterBy, suggestNodes } from '../conceptualModel/filter.js'
-import { toPlantuml } from '../plantuml/plantumlTemplate.js'
-import { toShacl } from '../shacl/model2Shacl.js'
 
 const DEFAULT_VIEW = {
   filter: ['epo:Document', 'epo:Buyer', 'epo:AwardDecision'],
@@ -52,18 +50,6 @@ export const useStore = defineStore('counter', () => {
     return suggestNodes(jsonView.value, filterOptions.value)
   })
 
-  // Templates
-  const plantUml = computed(() => {
-    const { nodes, edges } = jsonView.value
-    return edges.length ? toPlantuml({ nodes, edges }) : undefined
-  })
-
-  const shacl = computedAsync(async () => {
-    const { nodes, edges } = jsonView.value
-    const { turtle } = await toShacl({ nodes, edges })
-    return turtle
-  }, null)
-
   return {
     library,
     addFilterTerms,
@@ -71,8 +57,6 @@ export const useStore = defineStore('counter', () => {
     eaJson,
     suggestedNodes,
     jsonView,
-    plantUml,
-    shacl,
     sparql,
     filterOptions,
     savedFilters,
