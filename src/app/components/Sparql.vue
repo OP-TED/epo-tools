@@ -59,7 +59,7 @@ const selectedFilter = ref(['epo*'])
     </n-card>
   </n-card>
 
-  <n-card title="Verify only">
+  <n-card size="small" title="Verify only the following:">
     <n-dynamic-tags v-model:value="selectedFilter"/>
   </n-card>
   <n-card title="Extracted tags" v-if="newTerms?.terms && newTerms.terms.length > 0">
