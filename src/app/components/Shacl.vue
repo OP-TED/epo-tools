@@ -13,10 +13,8 @@ const { text, isSupported, copy } = useClipboard()
 </script>
 
 <template>
-  <n-card title="Generated from">
-    <SelectModel/>
-    <Filter></Filter>
-  </n-card>
+  <SelectModel/>
+  <Filter></Filter>
   <template v-if="shacl">
     <n-card :title="`SHACL (${shacl?.split('\n')?.length} lines)`">
       <button v-if="isSupported" @click="copy(shacl)">

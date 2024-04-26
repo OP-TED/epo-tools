@@ -10,7 +10,7 @@ import Nodes from './Nodes.vue'
 import SelectModel from './SelectModel.vue'
 
 const store = useStore()
-const { eaJson, jsonView, tags } = storeToRefs(store)
+const { eaJson, jsonView } = storeToRefs(store)
 
 const nodesTitle = computed(() => {
   const count = (x) => x?.value?.nodes?.length ?? 0

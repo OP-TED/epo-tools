@@ -46,6 +46,10 @@ function toggleSaved () {
     </n-drawer>
 
     <n-flex justify="start">
+
+      <n-dynamic-tags v-model:value="filterOptions.filter"/>
+    </n-flex>
+    <n-flex justify="end">
       <n-button
           @click="toggleSaved">Panel
       </n-button>
@@ -56,18 +60,15 @@ function toggleSaved () {
         <template #unchecked>
         </template>
       </n-switch>
-      <n-dynamic-tags v-model:value="filterOptions.filter"/>
-    </n-flex>
-    <n-flex justify="end">
       <div>
-        <n-select
-            class="margin-left"
-            v-model:value="value"
-            filterable
-            multiple
-            :options="options"
-            :reset-menu-on-options-change="true"
-        />
+      <n-select
+          class="margin-left"
+          v-model:value="value"
+          filterable
+          multiple
+          :options="options"
+          :reset-menu-on-options-change="true"
+      />
       </div>
       <n-button
           @click="add"

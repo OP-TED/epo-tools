@@ -23,19 +23,18 @@ const imageUrl = computed(() => {
 
 <template>
 
-  <n-card>
-    <SelectModel/>
-    <Filter></Filter>
-  </n-card>
+  <SelectModel/>
+  <Filter></Filter>
   <template v-if="plantUml">
-    <template v-if="imageUrl">
-      <n-image
-          width="100%"
-          :src="imageUrl"
-      />
-    </template>
+
 
     <n-card :title="`PlantUML (${plantUml?.split('\n')?.length} lines)`">
+      <template v-if="imageUrl">
+        <n-image
+            width="100%"
+            :src="imageUrl"
+        />
+      </template>
       <button v-if="isSupported" @click="copy(plantUml)">
         <template v-if="text">Copied</template>
         <template v-else>Copy</template>
