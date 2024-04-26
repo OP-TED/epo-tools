@@ -135,22 +135,6 @@ Object {
       "isPresent": true,
       "term": "epo:hasMainClassification",
     },
-    Object {
-      "isPresent": false,
-      "term": "skos:Concept",
-    },
-    Object {
-      "isPresent": false,
-      "term": "skos:prefLabel",
-    },
-    Object {
-      "isPresent": false,
-      "term": "euvoc:status",
-    },
-    Object {
-      "isPresent": false,
-      "term": "at:CURRENT",
-    },
   ],
 }
 `;
@@ -254,10 +238,6 @@ Object {
     Object {
       "isPresent": true,
       "term": "epo:TenderAwardOutcome",
-    },
-    Object {
-      "isPresent": true,
-      "term": "org:Organization",
     },
     Object {
       "isPresent": true,

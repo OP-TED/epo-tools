@@ -1,21 +1,28 @@
 <script setup lang="js">
-import { useClipboard } from '@vueuse/core'
+import { useClipboard, computedAsync } from '@vueuse/core'
 import { NCard, NCode } from 'naive-ui'
 import { storeToRefs } from 'pinia'
+import { toShacl } from '../../shacl/model2Shacl.js'
 import { useStore } from '../state.js'
 import Filter from './Filter.vue'
+import SelectModel from './SelectModel.vue'
 
 const store = useStore()
-const { shacl } = storeToRefs(store)
+const { jsonView } = storeToRefs(store)
 const { text, isSupported, copy } = useClipboard()
+
+
+const shacl = computedAsync(async () => {
+  const { nodes, edges } = jsonView.value
+  const { turtle } = await toShacl({ nodes, edges })
+  return turtle
+}, null)
 
 </script>
 
 <template>
-
-  <n-card title="Generated using this filter">
-    <Filter></Filter>
-  </n-card>
+  <SelectModel/>
+  <Filter></Filter>
   <template v-if="shacl">
     <n-card :title="`SHACL (${shacl?.split('\n')?.length} lines)`">
       <button v-if="isSupported" @click="copy(shacl)">

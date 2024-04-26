@@ -1,9 +1,8 @@
 <script setup lang="js">
-import { NButton, NDynamicInput, NIcon, NDynamicTags, NSwitch } from 'naive-ui'
+import { NButton, NCheckbox, NDynamicInput, NDynamicTags, NSpace } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { toRaw } from 'vue'
 import { useStore } from '../state.js'
-import { ArrowBackOutline } from '@vicons/ionicons5'
 
 const store = useStore()
 const { filterOptions, savedFilters } = storeToRefs(store)
@@ -32,28 +31,31 @@ function onCreate () {
 </script>
 
 <template>
-  <n-dynamic-input v-model:value="savedFilters" :on-create="onCreate">
+
+  <n-dynamic-input
+
+      v-model:value="savedFilters" :on-create="onCreate">
     <template #default="{ value }">
-      <div>
+
+      <n-space>
         <n-button @click="select(value)">
           Select
         </n-button>
-      </div>
-      <n-switch v-model:value="value.includeIncoming">
-        <template #checked>
-          <n-icon :component="ArrowBackOutline"/>
-        </template>
-        <template #unchecked>
-        </template>
-      </n-switch>
-      <div>
+        <n-checkbox v-model:checked="value.includeIncoming">
+          Incoming
+        </n-checkbox>
         <n-dynamic-tags v-model:value="value.filter"/>
-      </div>
+      </n-space>
+      <n-space>
+
+      </n-space>
     </template>
   </n-dynamic-input>
-  <div>
+
+
+  <n-space justify="end">
+
     <n-button @click="reset()">Reset current</n-button>
     <n-button @click="save()">Add current</n-button>
-  </div>
-
+  </n-space>
 </template>

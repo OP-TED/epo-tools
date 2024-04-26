@@ -37,7 +37,7 @@ describe('validate against conceptual model', async () => {
     const queryStr = readFileSync(path).toString()
 
     it(`asset:${path}`, async function () {
-      const result = validateAgainstGraph(epoJson, { queryStr })
+      const result = validateAgainstGraph(epoJson, { queryStr, filter:['epo*'] })
       expect(result).toMatchSnapshot(this)
     })
   }

@@ -89,5 +89,5 @@ const matchHasNegatives = arr => value => arr.filter(isNegation).
   some(apply(value))
 
 export {
-  filterBy, filterByPrefix, anyMatch, suggestNodes,
+  filterBy, filterByPrefix, anyMatch, suggestNodes, getMatcher
 }

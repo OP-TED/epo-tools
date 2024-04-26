@@ -1,6 +1,16 @@
 <script setup lang="js">
-import { ArrowBackOutline } from '@vicons/ionicons5'
-import { NButton, NDynamicTags, NFlex, NIcon, NSelect, NSwitch, NDrawer, NDrawerContent } from 'naive-ui'
+import {
+  NButton,
+  NCard,
+  NCheckbox,
+  NCollapse,
+  NCollapseItem,
+  NDrawer,
+  NDrawerContent,
+  NDynamicTags,
+  NSelect,
+  NSpace,
+} from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { useStore } from '../state.js'
@@ -35,43 +45,60 @@ function toggleSaved () {
   displaySavedActive.value = true
 }
 
+const something = ref(false)
+
 </script>
 
 <template>
+
   <n-drawer v-model:show="displaySavedActive" :width="502" placement="top">
     <n-drawer-content>
       <FiltersPanel/>
     </n-drawer-content>
   </n-drawer>
-  <n-flex justify="start">
-    <n-button
-        @click="toggleSaved">Panel
-    </n-button>
-    <n-switch v-model:value="filterOptions.includeIncoming">
-      <template #checked>
-        <n-icon :component="ArrowBackOutline"/>
-      </template>
-      <template #unchecked>
-      </template>
-    </n-switch>
-    <n-dynamic-tags v-model:value="filterOptions.filter"/>
-  </n-flex>
-  <n-flex justify="end">
-    <div>
-      <n-select
-          class="margin-left"
-          v-model:value="value"
-          filterable
-          multiple
-          :options="options"
-          :reset-menu-on-options-change="true"
-      />
-    </div>
-    <n-button
-        @click="add"
-        :disabled="!value.length">Add
-    </n-button>
-  </n-flex>
+  <n-card>
+
+
+    <n-dynamic-tags
+        round
+        v-model:value="filterOptions.filter"/>
+
+    <n-collapse arrow-placement="right">
+      <n-collapse-item title="..." name="1">
+
+        <n-space justify="start">
+          <n-button
+              dashed
+              size="tiny"
+              @click="toggleSaved">open saved views
+          </n-button>
+          <n-checkbox v-model:checked="filterOptions.includeIncoming">
+            Include incoming nodes
+          </n-checkbox>
+        </n-space>
+        <n-space justify="end">
+          <div>
+            <n-select
+                class="margin-left"
+                v-model:value="value"
+                filterable
+                multiple
+                :options="options"
+                :reset-menu-on-options-change="true"
+            />
+          </div>
+          <n-button
+              @click="add"
+              :disabled="!value.length">Quick add
+          </n-button>
+        </n-space>
+
+
+      </n-collapse-item>
+    </n-collapse>
+
+
+  </n-card>
 </template>
 
 <style>
