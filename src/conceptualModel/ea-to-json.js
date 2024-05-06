@@ -17,64 +17,66 @@ function toJson ({ objects, attributes, connectors }) {
   }
 
   const nodes = objects.
-    map(x => ({
-      name: nodeIndex[x.Object_ID], description: x.Note,
+    map(({ Object_ID, Note }) => ({
+      name: nodeIndex[Object_ID], description: Note,
     }))
 
-  const literals = attributes.
-    map(x => {
-      const { Object_ID, Name, Type, LowerBound, UpperBound, Notes } = x
-      return {
-        type: ATTRIBUTE,
-        source: nodeIndex[Object_ID],
-        predicate: Name,
-        target: Type,
-        quantifiers: getQuantifierFromBounds({ LowerBound, UpperBound }),
-        description: Notes,
-      }
-    })
-
-  const relations = connectors.
-    map(x => {
-      const {
-        DestRole,
-        Start_Object_ID,
-        End_Object_ID,
-        Connector_Type,
-        Direction,
-        DestCard,
-        Notes,
-      } = x
-
-      const source = nodeIndex[Start_Object_ID]
-
-      const type = Connector_Type === 'Generalization'
-        ? INHERITANCE
-        : RELATIONSHIP
-      const predicate = DestRole
-      const target = nodeIndex[End_Object_ID]
-
-      if (Direction !== 'Source -> Destination') { // Apparently this is not taken into account
-        // console.log(domain, predicate, range)
-      }
-      if (Direction !== 'Bi-Directional') { // Apparently this is not taken into account
-        // console.log('Bidirectional',domain, predicate, range)
-        // If we find some instance of this, apply inverses.
-        // :relatesTo owl:inverseOf :isRelatedTo .
-      }
-
-      return {
-        type,
-        source,
-        predicate,
-        target,
-        quantifiers: getQuantifierFromString(DestCard),
-        description: Notes,
-      }
-    })
-  const edges = [...literals, ...relations]
-
+  const edges = [
+    ...attributes.
+      map(toLiteralRelation(nodeIndex)),
+    ...connectors.
+      map(toObjectRelation(nodeIndex))]
   return { nodes, edges }
+}
+
+const toLiteralRelation = nodeIndex => x => {
+  const { Object_ID, Name, Type, LowerBound, UpperBound, Notes } = x
+  return {
+    type: ATTRIBUTE,
+    source: nodeIndex[Object_ID],
+    predicate: Name,
+    target: Type,
+    quantifiers: getQuantifierFromBounds({ LowerBound, UpperBound }),
+    description: Notes,
+  }
+}
+
+const toObjectRelation = nodeIndex => x => {
+  const {
+    DestRole,
+    Start_Object_ID,
+    End_Object_ID,
+    Connector_Type,
+    Direction,
+    DestCard,
+    Notes,
+  } = x
+
+  const source = nodeIndex[Start_Object_ID]
+
+  const type = Connector_Type === 'Generalization'
+    ? INHERITANCE
+    : RELATIONSHIP
+  const predicate = DestRole
+  const target = nodeIndex[End_Object_ID]
+
+  if (Direction !== 'Source -> Destination') { // Apparently this is not taken into account
+    // console.log(domain, predicate, range)
+  }
+  if (Direction !== 'Bi-Directional') { // Apparently this is not taken into account
+    // console.log('Bidirectional',domain, predicate, range)
+    // If we find some instance of this, apply inverses.
+    // :relatesTo owl:inverseOf :isRelatedTo .
+  }
+
+  return {
+    type,
+    source,
+    predicate,
+    target,
+    quantifiers: getQuantifierFromString(DestCard),
+    description: Notes,
+  }
 }
 
 function getQuantifierFromBounds ({ LowerBound, UpperBound }) {

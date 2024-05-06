@@ -22,7 +22,8 @@
   },
   "homepage": "https://github.com/OP-TED/ePO-tools#readme",
   "dependencies": {
-    "vue-diff": "^1.2.4"
+    "vue-diff": "^1.2.4",
+    "yaml": "^2.4.2"
   },
   "devDependencies": {
     "@rdfjs-elements/formats-pretty": "^0.6.7",
