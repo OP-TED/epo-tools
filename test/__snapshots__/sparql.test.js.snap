@@ -1,80 +1,121 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`extract terms asset:test/support/queries/SMEs_by_country.rq 1`] = `
-Array [
-  "epo:hasPublicationDate",
-  "epo:announcesRole",
-  "epo:Winner",
-  "epo:playedBy",
-  "epo:hasBusinessSize",
-]
+Object {
+  "prefixes": Object {
+    "cccev": "http://data.europa.eu/m8g/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:announcesRole",
+    "epo:Winner",
+    "epo:playedBy",
+    "epo:hasBusinessSize",
+  ],
+}
 `;
 
 exports[`extract terms asset:test/support/queries/distribution-cpv.rq 1`] = `
-Array [
-  "epo:Notice",
-  "epo:hasPublicationDate",
-  "epo:refersToProcedure",
-  "epo:Procedure",
-  "epo:hasPurpose",
-  "epo:Purpose",
-  "epo:hasMainClassification",
-  "skos:Concept",
-  "skos:prefLabel",
-  "euvoc:status",
-  "at:CURRENT",
-]
+Object {
+  "prefixes": Object {
+    "at": "http://publications.europa.eu/resource/authority/concept-status/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "euvoc": "http://publications.europa.eu/ontology/euvoc#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+  },
+  "terms": Array [
+    "epo:Notice",
+    "epo:hasPublicationDate",
+    "epo:refersToProcedure",
+    "epo:Procedure",
+    "epo:hasPurpose",
+    "epo:Purpose",
+    "epo:hasMainClassification",
+    "skos:Concept",
+    "skos:prefLabel",
+    "euvoc:status",
+    "at:CURRENT",
+  ],
+}
 `;
 
 exports[`extract terms asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
-Array [
-  "epo:hasPublicationDate",
-  "epo:announcesRole",
-  "epo:Buyer",
-  "epo:playedBy",
-  "epo:hasLegalName",
-]
+Object {
+  "prefixes": Object {
+    "cccev": "http://data.europa.eu/m8g/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "org": "http://www.w3.org/ns/org#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:announcesRole",
+    "epo:Buyer",
+    "epo:playedBy",
+    "epo:hasLegalName",
+  ],
+}
 `;
 
 exports[`extract terms asset:test/support/queries/tenders_foresee_subcontracting.rq 1`] = `
-Array [
-  "epo:hasPublicationDate",
-  "epo:refersToLot",
-  "epo:isSubmittedForLot",
-  "epo:foreseesSubcontracting",
-]
+Object {
+  "prefixes": Object {
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:refersToLot",
+    "epo:isSubmittedForLot",
+    "epo:foreseesSubcontracting",
+  ],
+}
 `;
 
 exports[`extract terms asset:test/support/queries/titles-procedure.rq 1`] = `
-Array [
-  "epo:hasPublicationDate",
-  "epo:refersToProcedure",
-  "epo:hasTitle",
-]
+Object {
+  "prefixes": Object {
+    "epo": "http://data.europa.eu/a4g/ontology#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:refersToProcedure",
+    "epo:hasTitle",
+  ],
+}
 `;
 
 exports[`extract terms asset:test/support/queries/winners.rq 1`] = `
-Array [
-  "epo:Notice",
-  "epo:hasPublicationDate",
-  "epo:refersToLot",
-  "epo:describesLot",
-  "epo:hasAwardedValue",
-  "epo:comprisesTenderAwardOutcome",
-  "epo:TenderAwardOutcome",
-  "org:Organization",
-  "epo:hasLegalName",
-  "epo:MonetaryValue",
-  "epo:hasAmountValue",
-  "epo:hasCurrency",
-]
+Object {
+  "prefixes": Object {
+    "cccev": "http://data.europa.eu/m8g/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "org": "http://www.w3.org/ns/org#",
+  },
+  "terms": Array [
+    "epo:Notice",
+    "epo:hasPublicationDate",
+    "epo:refersToLot",
+    "epo:describesLot",
+    "epo:hasAwardedValue",
+    "epo:comprisesTenderAwardOutcome",
+    "epo:TenderAwardOutcome",
+    "org:Organization",
+    "epo:hasLegalName",
+    "epo:MonetaryValue",
+    "epo:hasAmountValue",
+    "epo:hasCurrency",
+  ],
+}
 `;
 
 exports[`extract terms failed query 1`] = `
-[Error: Parse error on line 1:
+Object {
+  "error": [Error: Parse error on line 1:
 not a query
 ^
-Expecting 'EOF', 'BASE', 'IRIREF', 'PREFIX', 'PNAME_NS', 'CONSTRUCT', 'DESCRIBE', 'ASK', 'SELECT', '(', 'LOAD', 'CREATE', 'INSERTDATA', 'DELETEDATA', 'DELETEWHERE', 'DELETE', 'INSERT', 'WITH', 'a', '!', '^', 'PNAME_LN', 'CLEAR', 'DROP', 'ADD', 'MOVE', 'COPY', got 'NOT']
+Expecting 'EOF', 'BASE', 'IRIREF', 'PREFIX', 'PNAME_NS', 'CONSTRUCT', 'DESCRIBE', 'ASK', 'SELECT', '(', 'LOAD', 'CREATE', 'INSERTDATA', 'DELETEDATA', 'DELETEWHERE', 'DELETE', 'INSERT', 'WITH', 'a', '!', '^', 'PNAME_LN', 'CLEAR', 'DROP', 'ADD', 'MOVE', 'COPY', got 'NOT'],
+}
 `;
 
 exports[`validate against conceptual model asset:test/support/queries/SMEs_by_country.rq 1`] = `
