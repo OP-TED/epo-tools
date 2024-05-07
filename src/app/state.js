@@ -22,6 +22,8 @@ export const useStore = defineStore('counter', () => {
   // APP
   const filterOptions = useStorage('filterBy', DEFAULT_VIEW)
   const savedFilters = useStorage('savedFilterBy', [])
+  const developerMode = useStorage('developerMode', false)
+
   const sparql = useStorage('sparql', '')
 
   // Filters
@@ -52,6 +54,7 @@ export const useStore = defineStore('counter', () => {
 
   return {
     library,
+    developerMode,
     addFilterTerms,
     setEaJson,
     eaJson,

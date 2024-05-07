@@ -23,7 +23,7 @@ function handleSelectModel (value, option) {
   store.setEaJson(json)
 }
 
-const placeHolder = computed(()=>{
+const placeHolder = computed(() => {
   const keys = Object.keys(library.value.models)
   if (keys.length) {
     return `Please select a model (${keys.length})`
@@ -35,7 +35,7 @@ const placeHolder = computed(()=>{
 
 <template>
 
-  <n-card >
+  <n-card>
     <n-select
         @update:value="handleSelectModel"
         v-model:value="selectedLibraryItem" :placeholder="placeHolder" :options="libraryOptions"/>

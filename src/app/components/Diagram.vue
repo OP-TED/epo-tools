@@ -14,8 +14,6 @@ const { jsonView } = storeToRefs(store)
 
 const { text, isSupported, copy } = useClipboard()
 
-
-
 // Templates
 const plantUml = computed(() => {
   const { nodes, edges } = jsonView.value
@@ -27,16 +25,12 @@ const imageUrl = computed(() => {
   return `http://www.plantuml.com/plantuml/img/${encoded}`
 })
 
-
 </script>
 
 <template>
-
   <SelectModel/>
   <Filter></Filter>
   <template v-if="plantUml">
-
-
     <n-card :title="`PlantUML (${plantUml?.split('\n')?.length} lines)`">
       <template v-if="imageUrl">
         <n-image
@@ -53,5 +47,4 @@ const imageUrl = computed(() => {
       </div>
     </n-card>
   </template>
-
 </template>
