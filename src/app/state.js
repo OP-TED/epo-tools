@@ -48,6 +48,16 @@ export const useStore = defineStore('counter', () => {
     filterOptions.value.filter = filterOptions.value.filter.concat(newTerms)
   }
 
+  function toggleFilterTerm(term) {
+    const index = filterOptions.value.filter.indexOf(term);
+
+    if (index > -1) {
+      filterOptions.value.filter.splice(index, 1);
+    } else {
+      filterOptions.value.filter.push(term);
+    }
+  }
+
   const suggestedNodes = computed(() => {
     return suggestNodes(jsonView.value, filterOptions.value)
   })
@@ -56,6 +66,7 @@ export const useStore = defineStore('counter', () => {
     library,
     developerMode,
     addFilterTerms,
+    toggleFilterTerm,
     setEaJson,
     eaJson,
     suggestedNodes,

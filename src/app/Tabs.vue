@@ -7,6 +7,7 @@ import Diagram from './components/Diagram.vue'
 import Models from './components/Models.vue'
 import Shacl from './components/Shacl.vue'
 import Sparql from './components/Sparql.vue'
+
 import { useStore } from './state.js'
 
 const store = useStore()
@@ -40,5 +41,6 @@ const { developerMode } = storeToRefs(store)
     <n-tab-pane name="data" tab="Data">
       <Data/>
     </n-tab-pane>
+
   </n-tabs>
 </template>
