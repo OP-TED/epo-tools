@@ -5,7 +5,6 @@ import { computed } from 'vue'
 
 import { useStore } from '../state.js'
 import Edges from './Edges.vue'
-import Filter from './Filter.vue'
 import Graph from './Graph.vue'
 import Nodes from './Nodes.vue'
 
@@ -28,7 +27,6 @@ const edgesTitle = computed(() => {
 <template>
   <n-card>
     <SelectModel/>
-    <Filter></Filter>
   </n-card>
   <n-tabs type="line" animated>
     <n-tab-pane name="Graph" tab="Graph">
