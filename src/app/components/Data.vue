@@ -1,5 +1,5 @@
 <script setup>
-import { NTabPane, NTabs, NCard } from 'naive-ui'
+import { NCard, NTabPane, NTabs } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 
@@ -31,15 +31,16 @@ const edgesTitle = computed(() => {
     <Filter></Filter>
   </n-card>
   <n-tabs type="line" animated>
+    <n-tab-pane name="Graph" tab="Graph">
+      <Graph/>
+    </n-tab-pane>
     <n-tab-pane name="Nodes" :tab="nodesTitle">
       <Nodes/>
     </n-tab-pane>
     <n-tab-pane name="Edges" :tab="edgesTitle">
       <Edges/>
     </n-tab-pane>
-    <n-tab-pane name="Graph" tab="Graph">
-      <Graph/>
-    </n-tab-pane>
+
   </n-tabs>
 
 </template>

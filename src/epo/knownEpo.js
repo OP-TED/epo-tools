@@ -48,6 +48,7 @@ const epoRepo = ({ tag, conceptualModelPath }) => ({
   githubUrl: `https://github.com/OP-TED/ePO/blob/${tag}/${conceptualModelPath}`,
   fileUrl: `https://github.com/OP-TED/ePO/raw/${tag}/${conceptualModelPath}`,
   appUrl: `models/ePO_CM_${tag}.json`,
+  tag,
 })
 
 const knownEpo = [...epo]

@@ -1,6 +1,7 @@
-import { repositories } from './knownEpo.js'
-import { writeFileSync, mkdirSync } from 'fs'
+import { mkdirSync, writeFileSync } from 'fs'
 import fetch from 'node-fetch'
+import { appendIssues } from '../conceptualModel/issues.js'
+import { repositories } from './knownEpo.js'
 import { getEpoJson } from './readEpo.js'
 
 function fixKnownBugs (g) {
@@ -26,7 +27,7 @@ async function downloadAndTransform ({ fileUrl, tag, appUrl }) {
   writeFileSync(databasePath, Buffer.from(arrayBuffer))
   console.log(`Wrote to ${databasePath}`)
   const epoJson = getEpoJson({ databasePath })
-  const g = fixKnownBugs(epoJson)
+  const g = appendIssues(fixKnownBugs(epoJson))
   const jsonPath = `./public/${appUrl}`
   writeFileSync(jsonPath, JSON.stringify(g, null, 2))
   console.log(`Wrote to ${jsonPath}`)

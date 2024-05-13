@@ -38,7 +38,7 @@ const { developerMode } = storeToRefs(store)
     <n-tab-pane name="Diagram" tab="Diagram">
       <Diagram/>
     </n-tab-pane>
-    <n-tab-pane name="data" tab="Data">
+    <n-tab-pane v-if="developerMode" name="data" tab="Data">
       <Data/>
     </n-tab-pane>
 

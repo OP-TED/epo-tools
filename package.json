@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/OP-TED/ePO-tools#readme",
   "dependencies": {
+    "@rdfjs-elements/formats-pretty": "^0.6.7",
     "@sigma/edge-curve": "^3.0.0-beta.7",
     "graphology": "^0.25.4",
     "graphology-layout": "^0.6.1",
@@ -31,8 +32,6 @@
     "yaml": "^2.4.2"
   },
   "devDependencies": {
-    "@rdfjs-elements/formats-pretty": "^0.6.7",
-    "@rdfjs/formats": "^4.0.0",
     "@vicons/ionicons5": "^0.12.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vueuse/core": "^10.9.0",
