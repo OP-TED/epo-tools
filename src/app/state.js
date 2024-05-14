@@ -34,12 +34,7 @@ export const useStore = defineStore('counter', () => {
   })
 
   function setEaJson (json) {
-    eaJson.value = {
-      nodes: json.nodes,
-      edges: json.edges.map(x => x.type === INHERITANCE
-        ? { ...x, predicate: 'rdfs:subClassOf' }
-        : x),
-    }
+    eaJson.value = json
   }
 
   function addFilterTerms (terms) {

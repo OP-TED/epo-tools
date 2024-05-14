@@ -28,6 +28,23 @@ const setupGraph = () => {
   }
   random.assign(graph)
 
+
+  const degrees = graph.nodes().map((node) => graph.degree(node));
+  const minDegree = Math.min(...degrees);
+  const maxDegree = Math.max(...degrees);
+  const minSize = 2,
+      maxSize = 15;
+  graph.forEachNode((node) => {
+    const degree = graph.degree(node);
+    graph.setNodeAttribute(
+        node,
+        "size",
+        minSize + ((degree - minDegree) / (maxDegree - minDegree)) * (maxSize - minSize),
+    );
+  });
+
+
+
   sigmaRenderer = new Sigma(graph, container, {
     allowInvalidContainer: true,
     renderEdgeLabels: true,

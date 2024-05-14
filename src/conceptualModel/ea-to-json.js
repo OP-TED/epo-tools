@@ -1,5 +1,5 @@
 import MDBReader from 'mdb-reader'
-import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from './const.js'
+import { ATTRIBUTE, INHERITANCE, RELATIONSHIP, INSTANCE_OF } from './const.js'
 
 function bufferToJson ({ buffer }) {
   const reader = new MDBReader(buffer)
@@ -15,17 +15,34 @@ function toJson ({ objects, attributes, connectors }) {
   for (const { Object_ID, Name } of objects) {
     nodeIndex[Object_ID] = Name
   }
+  const toExclude =  ['Package', 'ProxyConnector', 'Note', 'Text', 'Datatype']
 
-  const nodes = objects.
-    map(({ Object_ID, Note }) => ({
-      name: nodeIndex[Object_ID], description: Note,
-    }))
+  // const toInclude = ['Class', 'Enumeration', 'Object']
+
+  const nodes = objects
+    .filter(x => !toExclude.includes(x.Object_Type))
+    .map(({ Object_ID, Note, Object_Type, Classifier }) => {
+
+      const result = {
+        name: nodeIndex[Object_ID], description: Note, type: Object_Type,
+      }
+      // Objects might come with a Classifier,
+      // i.e. (EU) 2015/1986 instance of at-voc:legal-basis
+      if (Object_Type === 'Object') {
+        result.instanceOf = nodeIndex[Classifier]
+      }
+
+      return result
+    })
 
   const edges = [
-    ...attributes.
-      map(toLiteralRelation(nodeIndex)),
-    ...connectors.
-      map(toObjectRelation(nodeIndex))]
+
+    ...attributes
+      // .filter(({ ObjectId }) => nodeIndex[ObjectId])
+      .map(toLiteralRelation(nodeIndex)),
+    ...connectors
+      // .filter(({ Start_Object_ID }) => nodeIndex[Start_Object_ID])
+      .map(toObjectRelation(nodeIndex))]
   return { nodes, edges }
 }
 
@@ -54,10 +71,14 @@ const toObjectRelation = nodeIndex => x => {
 
   const source = nodeIndex[Start_Object_ID]
 
-  const type = Connector_Type === 'Generalization'
-    ? INHERITANCE
-    : RELATIONSHIP
-  const predicate = DestRole
+  const type = Connector_Type
+
+  const knownPredicates = {
+    [INSTANCE_OF]: 'skos:inScheme', [INHERITANCE]: 'rdfs:subClassOf',
+  }
+
+  const predicate = DestRole || knownPredicates[type]
+
   const target = nodeIndex[End_Object_ID]
 
   if (Direction !== 'Source -> Destination') { // Apparently this is not taken into account

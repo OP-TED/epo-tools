@@ -12,9 +12,6 @@ const { eaJson } = storeToRefs(useStore())
 
 const { toggleFilterTerm } = store
 
-// Unfortunate hack to control re-rendering of SigmaGraph
-const componentKey = ref(0)
-
 const sigmaData = ref()
 
 onMounted(() => {
@@ -25,6 +22,9 @@ onMounted(() => {
 
 })
 
+// Unfortunate hack to control re-rendering of SigmaGraph
+const componentKey = ref(0)
+
 watch(eaJson, (newValue, oldValue) => {
   sigmaData.value = toSigmaGraph(newValue)
   componentKey.value++ // Increment key to force re-render
@@ -34,8 +34,12 @@ watch(eaJson, (newValue, oldValue) => {
 const current = ref()
 
 function handleNodeSelected (node) {
-  current.value = eaJson.value.nodes.find(x => x.name === node)
-  displayDetail.value = true
+  const maybeNode = eaJson.value.nodes.find(x => x.name === node)
+  if (maybeNode) {
+    current.value = maybeNode
+    displayDetail.value = true
+  }
+
 }
 
 const displayDetail = ref(false)
@@ -46,19 +50,18 @@ const displayDetail = ref(false)
   <n-drawer v-model:show="displayDetail" :width="1200" placement="right">
     <n-drawer-content>
 
-
       <n-card :title="current.name" size="small">
         {{ current.description }}
       </n-card>
 
       <!--      Outgoing-->
+
       <template v-if="eaJson.edges.find(x=>x.source===current.name)">
         <n-card title="Outgoing" size="small">
           <n-table :bordered="false" :single-line="false">
             <template v-for="out of eaJson.edges.filter(x=>x.source===current.name)">
               <tr>
                 <td>{{ out.predicate }}</td>
-
                 <td>{{ out.quantifiers?.raw }}</td>
                 <td>
                   <NButton> {{ out.target }}</NButton>
@@ -71,7 +74,7 @@ const displayDetail = ref(false)
           </n-table>
         </n-card>
       </template>
-      <!--Incoming-->
+      <!--      Incoming-->
       <template v-if="eaJson.edges.find(x=>x.target===current.name)">
         <n-card title="Incoming" size="small">
           <n-table :bordered="false" :single-line="false">
@@ -91,6 +94,7 @@ const displayDetail = ref(false)
         </n-card>
       </template>
 
+      {{ current }}
 
       <!--      <n-button @click="()=>toggleFilterTerm(selectedElement.name)">Add to filters</n-button>-->
     </n-drawer-content>

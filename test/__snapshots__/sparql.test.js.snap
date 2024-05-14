@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`extract terms asset:test/support/queries/SMEs_by_country.rq 1`] = `
+exports[`extract terms asset:test\\support\\queries\\SMEs_by_country.rq 1`] = `
 Object {
   "prefixes": Object {
     "cccev": "http://data.europa.eu/m8g/",
@@ -16,7 +16,7 @@ Object {
 }
 `;
 
-exports[`extract terms asset:test/support/queries/distribution-cpv.rq 1`] = `
+exports[`extract terms asset:test\\support\\queries\\distribution-cpv.rq 1`] = `
 Object {
   "prefixes": Object {
     "at": "http://publications.europa.eu/resource/authority/concept-status/",
@@ -40,7 +40,7 @@ Object {
 }
 `;
 
-exports[`extract terms asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
+exports[`extract terms asset:test\\support\\queries\\notices_by_buyers_country.rq 1`] = `
 Object {
   "prefixes": Object {
     "cccev": "http://data.europa.eu/m8g/",
@@ -57,7 +57,7 @@ Object {
 }
 `;
 
-exports[`extract terms asset:test/support/queries/tenders_foresee_subcontracting.rq 1`] = `
+exports[`extract terms asset:test\\support\\queries\\tenders_foresee_subcontracting.rq 1`] = `
 Object {
   "prefixes": Object {
     "epo": "http://data.europa.eu/a4g/ontology#",
@@ -72,7 +72,7 @@ Object {
 }
 `;
 
-exports[`extract terms asset:test/support/queries/titles-procedure.rq 1`] = `
+exports[`extract terms asset:test\\support\\queries\\titles-procedure.rq 1`] = `
 Object {
   "prefixes": Object {
     "epo": "http://data.europa.eu/a4g/ontology#",
@@ -85,7 +85,7 @@ Object {
 }
 `;
 
-exports[`extract terms asset:test/support/queries/winners.rq 1`] = `
+exports[`extract terms asset:test\\support\\queries\\winners.rq 1`] = `
 Object {
   "prefixes": Object {
     "cccev": "http://data.europa.eu/m8g/",
@@ -118,7 +118,7 @@ Expecting 'EOF', 'BASE', 'IRIREF', 'PREFIX', 'PNAME_NS', 'CONSTRUCT', 'DESCRIBE'
 }
 `;
 
-exports[`validate against conceptual model asset:test/support/queries/SMEs_by_country.rq 1`] = `
+exports[`validate against conceptual model asset:test\\support\\queries\\SMEs_by_country.rq 1`] = `
 Object {
   "terms": Array [
     Object {
@@ -145,7 +145,7 @@ Object {
 }
 `;
 
-exports[`validate against conceptual model asset:test/support/queries/distribution-cpv.rq 1`] = `
+exports[`validate against conceptual model asset:test\\support\\queries\\distribution-cpv.rq 1`] = `
 Object {
   "terms": Array [
     Object {
@@ -180,7 +180,7 @@ Object {
 }
 `;
 
-exports[`validate against conceptual model asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
+exports[`validate against conceptual model asset:test\\support\\queries\\notices_by_buyers_country.rq 1`] = `
 Object {
   "terms": Array [
     Object {
@@ -207,7 +207,7 @@ Object {
 }
 `;
 
-exports[`validate against conceptual model asset:test/support/queries/tenders_foresee_subcontracting.rq 1`] = `
+exports[`validate against conceptual model asset:test\\support\\queries\\tenders_foresee_subcontracting.rq 1`] = `
 Object {
   "terms": Array [
     Object {
@@ -230,7 +230,7 @@ Object {
 }
 `;
 
-exports[`validate against conceptual model asset:test/support/queries/titles-procedure.rq 1`] = `
+exports[`validate against conceptual model asset:test\\support\\queries\\titles-procedure.rq 1`] = `
 Object {
   "terms": Array [
     Object {
@@ -249,7 +249,7 @@ Object {
 }
 `;
 
-exports[`validate against conceptual model asset:test/support/queries/winners.rq 1`] = `
+exports[`validate against conceptual model asset:test\\support\\queries\\winners.rq 1`] = `
 Object {
   "terms": Array [
     Object {

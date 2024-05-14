@@ -2,7 +2,7 @@ import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { readFileSync } from 'fs'
 import { describe, it } from 'mocha'
-import { UNDER_REVIEW } from '../src/config.js'
+import { UNDER_REVIEW, EPO_LATEST } from '../src/config.js'
 import { getEpoJson } from '../src/epo/readEpo.js'
 import { applyGlob } from '../src/io/assets.js'
 
