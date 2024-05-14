@@ -1,33 +1,41 @@
 import { appendIssues } from '../conceptualModel/issues.js'
 
+const knownLiterals = ['rdf:PlainLiteral']
+
 function toSigmaGraph (graph) {
 
   const g = appendIssues(graph)
 
-  const nodes = g.nodes.map(x => {
+  const nodes = g.nodes.filter(x => !knownLiterals.includes(x.name)).map(x => {
+    const name = x.name ?? 'UNNAMED'
     return {
       key: x.name,
       attributes: {
-        label: x.name,
-        size: x.name.startsWith('epo') ? 10 : 5,
-        color: x.issues.length ? 'red' : 'blue',
+        label: name,
+        size: name?.startsWith('epo') ? 10 : 5,
+        color: x.issues?.length ? 'red' : 'blue',
       },
     }
   })
 
   const allNodes = new Set(nodes.map(x => x.key))
 
-  const edges = g.edges.filter(x => allNodes.has(x.target)).map(x => {
+  const edges = g.edges.map(x => {
 
-    return {
-      source: x.source,
-      target: x.target,
-      attributes: {
-        label: `${x.predicate ?? 'NO_NAME'} ${x.quantifiers.raw ?? ''}`,
-        type: 'arrow',
-        color: x.predicate ? 'gray' : 'red',
-      },
+    if (allNodes.has(x.target)) {
+      return {
+        source: x.source,
+        target: x.target,
+        attributes: {
+          label: `${x.predicate ?? 'NO_NAME'} ${x.quantifiers?.raw ?? ''}`,
+          type: 'arrow',
+          color: x.predicate ? 'gray' : 'red',
+        },
+      }
+    } else {
+
     }
+
   })
 
   return {

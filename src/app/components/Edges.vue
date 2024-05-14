@@ -1,5 +1,6 @@
 <script setup lang="js">
-import { NDataTable } from 'naive-ui'
+import { NCard, NDataTable } from 'naive-ui'
+
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { useStore } from '../state.js'

@@ -4,7 +4,7 @@ import { random } from 'graphology-layout'
 import forceAtlas2 from 'graphology-layout-forceatlas2'
 import FA2Layout from 'graphology-layout-forceatlas2/worker'
 import Sigma from 'sigma'
-import { defineEmits, defineProps, onMounted, onUnmounted } from 'vue'
+import {  onMounted, onUnmounted } from 'vue'
 
 // Define props and emits
 const props = defineProps({

@@ -1,5 +1,5 @@
 <script setup lang="js">
-import { NDrawer, NDrawerContent } from 'naive-ui'
+import { NButton, NCard, NDrawer, NDrawerContent, NEllipsis, NTable } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { onMounted, ref, watch } from 'vue'
 import { toSigmaGraph } from '../../epo/toSigmaGraph.js'
@@ -31,10 +31,10 @@ watch(eaJson, (newValue, oldValue) => {
   console.log('Graph data updated:', sigmaData.value)
 })
 
-const selectedElement = ref()
+const current = ref()
 
 function handleNodeSelected (node) {
-  selectedElement.value = eaJson.value.nodes.find(x => x.name === node)
+  current.value = eaJson.value.nodes.find(x => x.name === node)
   displayDetail.value = true
 }
 
@@ -43,9 +43,56 @@ const displayDetail = ref(false)
 </script>
 
 <template>
-  <n-drawer v-model:show="displayDetail" :width="502" placement="right">
+  <n-drawer v-model:show="displayDetail" :width="1200" placement="right">
     <n-drawer-content>
-      {{ JSON.stringify(selectedElement, null, 2) }}
+
+
+      <n-card :title="current.name" size="small">
+        {{ current.description }}
+      </n-card>
+
+      <!--      Outgoing-->
+      <template v-if="eaJson.edges.find(x=>x.source===current.name)">
+        <n-card title="Outgoing" size="small">
+          <n-table :bordered="false" :single-line="false">
+            <template v-for="out of eaJson.edges.filter(x=>x.source===current.name)">
+              <tr>
+                <td>{{ out.predicate }}</td>
+
+                <td>{{ out.quantifiers?.raw }}</td>
+                <td>
+                  <NButton> {{ out.target }}</NButton>
+                </td>
+                <td width="400">
+                  <n-ellipsis :line-clamp="2">{{ out.description }}</n-ellipsis>
+                </td>
+              </tr>
+            </template>
+          </n-table>
+        </n-card>
+      </template>
+      <!--Incoming-->
+      <template v-if="eaJson.edges.find(x=>x.target===current.name)">
+        <n-card title="Incoming" size="small">
+          <n-table :bordered="false" :single-line="false">
+            <template v-for="out of eaJson.edges.filter(x=>x.target===current.name)">
+              <tr>
+                <td>
+                  <NButton> {{ out.source }}</NButton>
+                </td>
+                <td>{{ out.predicate }}</td>
+                <td>{{ out.quantifiers?.raw }}</td>
+                <td width="400">
+                  <n-ellipsis :line-clamp="2">{{ out.description }}</n-ellipsis>
+                </td>
+              </tr>
+            </template>
+          </n-table>
+        </n-card>
+      </template>
+
+
+      <!--      <n-button @click="()=>toggleFilterTerm(selectedElement.name)">Add to filters</n-button>-->
     </n-drawer-content>
   </n-drawer>
 
