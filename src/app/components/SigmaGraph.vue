@@ -5,6 +5,7 @@ import forceAtlas2 from 'graphology-layout-forceatlas2'
 import FA2Layout from 'graphology-layout-forceatlas2/worker'
 import Sigma from 'sigma'
 import {  onMounted, onUnmounted } from 'vue'
+import { NodeBorderProgram } from "@sigma/node-border";
 
 // Define props and emits
 const props = defineProps({
@@ -48,10 +49,10 @@ const setupGraph = () => {
   sigmaRenderer = new Sigma(graph, container, {
     allowInvalidContainer: true,
     renderEdgeLabels: true,
-    // defaultEdgeType: "curve",
-    // edgeProgramClasses: {
-    //   curve: EdgeCurveProgram,
-    // },
+    defaultNodeType: "bordered",
+    nodeProgramClasses: {
+      bordered: NodeBorderProgram,
+    },
   })
 
   const settings = forceAtlas2.inferSettings(graph)

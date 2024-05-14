@@ -29,16 +29,16 @@ const edgesTitle = computed(() => {
     <SelectModel/>
   </n-card>
   <n-tabs type="line" animated>
-    <n-tab-pane name="Graph" tab="Graph">
-      <Graph/>
-    </n-tab-pane>
+
     <n-tab-pane name="Nodes" :tab="nodesTitle">
       <Nodes/>
     </n-tab-pane>
     <n-tab-pane name="Edges" :tab="edgesTitle">
       <Edges/>
     </n-tab-pane>
-
+    <n-tab-pane name="Graph" tab="Graph">
+      <Graph/>
+    </n-tab-pane>
   </n-tabs>
 
 </template>

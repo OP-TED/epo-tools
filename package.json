@@ -24,6 +24,8 @@
   "dependencies": {
     "@rdfjs-elements/formats-pretty": "^0.6.7",
     "@sigma/edge-curve": "^3.0.0-beta.7",
+    "@sigma/node-border": "^3.0.0-beta.3",
+    "chroma-js": "^2.4.2",
     "graphology": "^0.25.4",
     "graphology-layout": "^0.6.1",
     "graphology-layout-forceatlas2": "^0.10.1",
