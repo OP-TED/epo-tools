@@ -77,7 +77,13 @@ const literalTemplate = ({
 // Note: For enums omit enumeration values for the moment until further clarification
 // sh:targetObjectsOf ?
 // sh:in ( ex:Pink ex:Purple ) ?
-const conceptSchemeTarget = ({ source, target }) => ``
+const conceptSchemeTarget = ({ source, predicate, target }) => `
+ # sh:targetObjectsOf [
+ #   a sh:PropertyShape ;
+ #   sh:hasValue ${target} ;
+ #   sh:path skos:inScheme 
+ # ] ;
+`
 
 const objectTemplate = ({
   source, predicate, target, description, quantifiers, type,
