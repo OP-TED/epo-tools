@@ -12619,16 +12619,6 @@ WG acceptance 10/03/2022",
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:ConcessionNotice-D23",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo:hasFormType",
       "quantifiers": Object {
         "max": 1,
@@ -12760,16 +12750,6 @@ The use of a URIs has added advantages:
       "source": "epo-not:SocialAndOtherSpecificServices-D24",
       "target": "Form21",
       "type": "Dependency",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:SocialAndOtherSpecificServices-D24",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -13233,16 +13213,6 @@ WG approval 28/07/2022",
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:ConcessionAwardNotice-D23",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo:hasFormType",
       "quantifiers": Object {
         "max": 1,
@@ -13539,16 +13509,6 @@ WG approval 28/07/2022",
       "source": "epo-not:Notice9",
       "target": "planning",
       "type": "Dependency",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:PlanningNotice",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -13948,16 +13908,6 @@ WG Approval 12/05/2020",
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:SocialAndOtherSpecificServices-D23",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo-ord:hasDeliveryPeriod",
       "quantifiers": Object {
         "max": 1,
@@ -14183,36 +14133,6 @@ WG Approval 12/05/2020",
       "source": "epo-not:PINProfile-D81",
       "target": "Form8",
       "type": "Dependency",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:PINDefence-D81",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:CNDefence-D81",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:CANDefence-D81",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -15706,16 +15626,6 @@ The unit must be indicated in the Quantity, with a quantity value of 1.",
       "source": "epo-ord:OrderResponse",
       "target": "epo-ord:Seller",
       "type": "Association",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-cat:Manufacturer",
-      "type": "NoteLink",
     },
     Object {
       "description": null,

@@ -15,13 +15,17 @@ function toJson ({ objects, attributes, connectors }) {
   for (const { Object_ID, Name } of objects) {
     nodeIndex[Object_ID] = Name
   }
-  const toExclude =  ['Package', 'ProxyConnector', 'Note', 'Text', 'Datatype']
 
+  const nodesToExclude = [
+    'Package',
+    'ProxyConnector',
+    'Note',
+    'Text',
+    'Datatype']
   // const toInclude = ['Class', 'Enumeration', 'Object']
 
-  const nodes = objects
-    .filter(x => !toExclude.includes(x.Object_Type))
-    .map(({ Object_ID, Note, Object_Type, Classifier }) => {
+  const nodes = objects.filter(x => !nodesToExclude.includes(x.Object_Type)).
+    map(({ Object_ID, Note, Object_Type, Classifier }) => {
 
       const result = {
         name: nodeIndex[Object_ID], description: Note, type: Object_Type,
@@ -35,24 +39,33 @@ function toJson ({ objects, attributes, connectors }) {
       return result
     })
 
-  const edges = [
+  // Do not export enum values (need to be analyzed)
+  // at-voc-new:ResponseStatus sh:in ("Accepted" "Rejected" ... )
+  // Should they move to skos:inScheme?
+  const includeAttribute = (x) => !( !x.Type && x.Stereotype === 'enum')
 
-    ...attributes
-      // .filter(({ ObjectId }) => nodeIndex[ObjectId])
-      .map(toLiteralRelation(nodeIndex)),
-    ...connectors
-      // .filter(({ Start_Object_ID }) => nodeIndex[Start_Object_ID])
-      .map(toObjectRelation(nodeIndex))]
+  // Do not export NoteLinks
+  const includeConnector = (x) => !(!x.Start_Object_ID || x.Connector_Type ===
+    'NoteLink')
+
+  const edges = [
+    ...attributes.filter(includeAttribute).map(toLiteralRelation(nodeIndex)),
+    ...connectors.filter(includeConnector).map(toObjectRelation(nodeIndex))]
   return { nodes, edges }
 }
 
 const toLiteralRelation = nodeIndex => x => {
-  const { Object_ID, Name, Type, LowerBound, UpperBound, Notes } = x
+  const { Object_ID, Name, Type, LowerBound, UpperBound, Notes, Stereotype } = x
+
+  const source = nodeIndex[Object_ID]
+  const predicate = Name
+  const target = Type
+
   return {
     type: ATTRIBUTE,
-    source: nodeIndex[Object_ID],
-    predicate: Name,
-    target: Type,
+    source,
+    predicate,
+    target,
     quantifiers: getQuantifierFromBounds({ LowerBound, UpperBound }),
     description: Notes,
   }
@@ -89,7 +102,6 @@ const toObjectRelation = nodeIndex => x => {
     // If we find some instance of this, apply inverses.
     // :relatesTo owl:inverseOf :isRelatedTo .
   }
-
   return {
     type,
     source,

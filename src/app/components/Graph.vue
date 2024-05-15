@@ -10,16 +10,11 @@ const store = useStore()
 
 const { eaJson } = storeToRefs(useStore())
 
-const { toggleFilterTerm } = store
-
 const sigmaData = ref()
 
 onMounted(() => {
-
   const data = toSigmaGraph(eaJson.value)
-  console.log('sigmaData', data)
   sigmaData.value = data
-
 })
 
 // Unfortunate hack to control re-rendering of SigmaGraph
@@ -39,10 +34,11 @@ function handleNodeSelected (node) {
     current.value = maybeNode
     displayDetail.value = true
   }
-
 }
 
 const displayDetail = ref(false)
+
+const { toggleFilterTerm } = store
 
 </script>
 
@@ -50,21 +46,21 @@ const displayDetail = ref(false)
   <n-drawer v-model:show="displayDetail" :width="1200" placement="right">
     <n-drawer-content>
 
-      <n-card :title="current.name" size="small">
-        {{ current.description }}
+      <n-card
+          :contentClass="current.type"
+          :title="current.name" size="small">
+         {{ current.description }} ({{current.type}})
       </n-card>
 
-      <!--      Outgoing-->
-
+      <!--  Outgoing-->
       <template v-if="eaJson.edges.find(x=>x.source===current.name)">
         <n-card title="Outgoing" size="small">
           <n-table :bordered="false" :single-line="false">
             <template v-for="out of eaJson.edges.filter(x=>x.source===current.name)">
               <tr>
-                <td>{{ out.predicate }}</td>
-                <td>{{ out.quantifiers?.raw }}</td>
+                <td>{{ out.predicate }} {{ out.quantifiers?.raw }}</td>
                 <td>
-                  <NButton> {{ out.target }}</NButton>
+                  <NButton @click="()=>handleNodeSelected(out.target)"> {{ out.target }}</NButton>
                 </td>
                 <td width="400">
                   <n-ellipsis :line-clamp="2">{{ out.description }}</n-ellipsis>
@@ -81,10 +77,9 @@ const displayDetail = ref(false)
             <template v-for="out of eaJson.edges.filter(x=>x.target===current.name)">
               <tr>
                 <td>
-                  <NButton> {{ out.source }}</NButton>
+                  <NButton @click="()=>handleNodeSelected(out.source)"> {{ out.source }}</NButton>
                 </td>
-                <td>{{ out.predicate }}</td>
-                <td>{{ out.quantifiers?.raw }}</td>
+                <td>{{ out.predicate }} {{ out.quantifiers?.raw }}</td>
                 <td width="400">
                   <n-ellipsis :line-clamp="2">{{ out.description }}</n-ellipsis>
                 </td>
@@ -94,9 +89,10 @@ const displayDetail = ref(false)
         </n-card>
       </template>
 
+      <n-card title="Dev zone" size="small">
       {{ current }}
-
-      <!--      <n-button @click="()=>toggleFilterTerm(selectedElement.name)">Add to filters</n-button>-->
+      <n-button @click="()=>toggleFilterTerm(current.name)">Toggle filters</n-button>
+      </n-card>
     </n-drawer-content>
   </n-drawer>
 

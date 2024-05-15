@@ -2147,66 +2147,6 @@ WG approval 13/04/2021",
       "type": "Attribute",
     },
     Object {
-      "description": "The OrderLine cannot be delivered for given reasons.",
-      "predicate": "Rejected",
-      "quantifiers": Object {
-        "max": "1",
-        "min": "1",
-        "quantifiersDeclared": true,
-      },
-      "source": "at-voc-new:ResponseStatus",
-      "target": null,
-      "type": "Attribute",
-    },
-    Object {
-      "description": "The OrderLine is accepted as is.",
-      "predicate": "Accepted",
-      "quantifiers": Object {
-        "max": "1",
-        "min": "1",
-        "quantifiersDeclared": true,
-      },
-      "source": "at-voc-new:ResponseStatus",
-      "target": null,
-      "type": "Attribute",
-    },
-    Object {
-      "description": null,
-      "predicate": "ConditionallyAccepted",
-      "quantifiers": Object {
-        "max": "1",
-        "min": "1",
-        "quantifiersDeclared": true,
-      },
-      "source": "at-voc-new:ResponseStatus",
-      "target": null,
-      "type": "Attribute",
-    },
-    Object {
-      "description": null,
-      "predicate": "InProgress",
-      "quantifiers": Object {
-        "max": "1",
-        "min": "1",
-        "quantifiersDeclared": true,
-      },
-      "source": "at-voc-new:ResponseStatus",
-      "target": null,
-      "type": "Attribute",
-    },
-    Object {
-      "description": null,
-      "predicate": "Delivered",
-      "quantifiers": Object {
-        "max": "1",
-        "min": "1",
-        "quantifiersDeclared": true,
-      },
-      "source": "at-voc-new:ResponseStatus",
-      "target": null,
-      "type": "Attribute",
-    },
-    Object {
       "description": null,
       "predicate": "epo:hasReceiptParticipationRequestDeadline",
       "quantifiers": Object {
@@ -6098,16 +6038,6 @@ WG Approval 09/11/2021
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "at-voc-new:transaction-conditions",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "rdfs:subClassOf",
       "quantifiers": Object {
         "quantifiersDeclared": false,
@@ -7742,16 +7672,6 @@ WG Approval 09/11/2021
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:ConcessionNotice-D23",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo:hasFormType",
       "quantifiers": Object {
         "max": 1,
@@ -7905,16 +7825,6 @@ The use of a URIs has added advantages:
       "source": "epo-not:SocialAndOtherSpecificServices-D24",
       "target": "Form21",
       "type": "Dependency",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:SocialAndOtherSpecificServices-D24",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -8801,16 +8711,6 @@ WG Approval 11/06/2020
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:ConcessionAwardNotice-D23",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo:hasFormType",
       "quantifiers": Object {
         "max": 1,
@@ -9155,16 +9055,6 @@ WG Approval 11/06/2020
       "source": "epo-not:Notice9",
       "target": "planning",
       "type": "Dependency",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:PlanningNotice",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -9752,16 +9642,6 @@ WG Approval 5/11/2019
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:SocialAndOtherSpecificServices-D23",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo-ord:hasDeliveryPeriod",
       "quantifiers": Object {
         "max": 1,
@@ -9889,16 +9769,6 @@ WG Approval 5/11/2019
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo:ProcurementServiceProvider",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "skos:inScheme",
       "quantifiers": Object {
         "quantifiersDeclared": false,
@@ -10020,36 +9890,6 @@ WG approval 12/03/2024",
       "source": "epo-not:PINProfile-D81",
       "target": "Form8",
       "type": "Dependency",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:PINDefence-D81",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:CNDefence-D81",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-not:CANDefence-D81",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -10332,26 +10172,6 @@ WG approval 12/03/2024",
       "source": "epo-not:VEAT-D25",
       "target": "epo-not:VoluntaryEx-AnteTransparencyNotice",
       "type": "Generalization",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "at-voc:notice-type",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "at-voc:form-type",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -12185,17 +12005,6 @@ WG Approval 19/09/2019
       "type": "Association",
     },
     Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": true,
-        "raw": "0..*",
-      },
-      "source": undefined,
-      "target": undefined,
-      "type": "Association",
-    },
-    Object {
       "description": "The codelist to be used is at-voc:usage which is available at http://publications.europa.eu/resource/dataset/usage
 ",
       "predicate": "epo:hasUsage",
@@ -13547,16 +13356,6 @@ The unit must be indicated in the Quantity, with a quantity value of 1.",
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-ord:OrderResponse",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo-cat:hasQuantity",
       "quantifiers": Object {
         "max": 1,
@@ -13712,16 +13511,6 @@ The unit must be indicated in the Quantity, with a quantity value of 1.",
       "source": "epo-ord:OrderResponse",
       "target": "epo-ord:Seller",
       "type": "Association",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-cat:Manufacturer",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -14660,16 +14449,6 @@ WG Approval 03/12/2019",
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "pin-buyer",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo:announcesLotGroup",
       "quantifiers": Object {
         "quantifiersDeclared": true,
@@ -14991,16 +14770,6 @@ Information Concepts are tools to make Requirements more machine processable: th
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "at-voc-new:orderable-unit",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo:announcesLot",
       "quantifiers": Object {
         "min": 1,
@@ -15200,16 +14969,6 @@ This relation corresponds in eForms to    BT-791	    Review Irregularity Type",
       "source": "epo-cat:Item",
       "target": "epo-cat:Manufacturer",
       "type": "Association",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "at-voc-new:dangerous-goods-list",
-      "type": "NoteLink",
     },
     Object {
       "description": "Specification of the hazardous nature of an item according to the UNDG classification schema. Provides detail of the classification and nature of a hazardous item.
@@ -16498,26 +16257,6 @@ This corresponds to section II.1.7.3. according to Regulation (EU) 2015/1986.",
       "type": "Association",
     },
     Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-ord:Consignee",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-ord:Originator",
-      "type": "NoteLink",
-    },
-    Object {
       "description": "Information that is particular to one or multiple Order Lines.
 ",
       "predicate": "epo-ord:isSpecificToOrderLine",
@@ -16538,16 +16277,6 @@ This corresponds to section II.1.7.3. according to Regulation (EU) 2015/1986.",
       },
       "source": "epo:Contract",
       "target": "epo:ContractSpecificTerm",
-      "type": "Association",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": undefined,
-      "target": undefined,
       "type": "Association",
     },
     Object {
@@ -16591,26 +16320,6 @@ WG Approval 12/05/2020
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-ord:Seller",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-ful:Despatcher",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "rdfs:subClassOf",
       "quantifiers": Object {
         "quantifiersDeclared": false,
@@ -16629,16 +16338,6 @@ WG Approval 12/05/2020
       "source": "epo:Contract",
       "target": "epo:Buyer",
       "type": "Association",
-    },
-    Object {
-      "description": null,
-      "predicate": "skos:inScheme",
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": undefined,
-      "target": undefined,
-      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -18071,16 +17770,6 @@ This corresponds in eForms to BT-200.
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": undefined,
-      "target": undefined,
-      "type": "Association",
-    },
-    Object {
-      "description": null,
       "predicate": "epo:announcesRole",
       "quantifiers": Object {
         "quantifiersDeclared": true,
@@ -18662,16 +18351,6 @@ WG approval 21/09/2023
     },
     Object {
       "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo-ful:TransportEquipment",
-      "type": "NoteLink",
-    },
-    Object {
-      "description": null,
       "predicate": "epo-ful:hasMaximumTemperature",
       "quantifiers": Object {
         "max": 1,
@@ -18802,16 +18481,6 @@ This is a logistics information needed for logistics, security measures, customs
       "source": "epo-ord:OriginatorInformation",
       "target": "epo:OriginatorRequest",
       "type": "Association",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "at-voc-new:document-type",
-      "type": "NoteLink",
     },
     Object {
       "description": null,
@@ -19168,26 +18837,6 @@ WG approval 26/07/2022
       "type": "Association",
     },
     Object {
-      "description": null,
-      "predicate": "skos:inScheme",
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": undefined,
-      "target": undefined,
-      "type": "Realisation",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": undefined,
-      "target": undefined,
-      "type": "InformationFlow",
-    },
-    Object {
       "description": "Associates any Resource with the corresponding Address.
 
 Additional Information:
@@ -19336,16 +18985,6 @@ WG Approval 16/05/2023
       "source": "epo-ful:DespatchAdvice",
       "target": "epo-cat:PostAwardDocument",
       "type": "Generalization",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo:ChangeInformation",
-      "type": "NoteLink",
     },
     Object {
       "description": "A unique identifier of the instance of the concept.
@@ -19732,16 +19371,6 @@ E.g. A Belgian birth evidence is valid for X months after emission. To express c
       "source": "cccev:Evidence",
       "target": "adms:Identifier",
       "type": "Association",
-    },
-    Object {
-      "description": null,
-      "predicate": undefined,
-      "quantifiers": Object {
-        "quantifiersDeclared": false,
-      },
-      "source": null,
-      "target": "epo:PlannedProcurementPart",
-      "type": "NoteLink",
     },
     Object {
       "description": null,

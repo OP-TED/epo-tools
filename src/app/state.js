@@ -43,13 +43,15 @@ export const useStore = defineStore('counter', () => {
     filterOptions.value.filter = filterOptions.value.filter.concat(newTerms)
   }
 
+
   function toggleFilterTerm(term) {
     const index = filterOptions.value.filter.indexOf(term);
-
     if (index > -1) {
       filterOptions.value.filter.splice(index, 1);
+      return false
     } else {
       filterOptions.value.filter.push(term);
+      return true
     }
   }
 

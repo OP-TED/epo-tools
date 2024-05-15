@@ -5948,28 +5948,6 @@
     },
     {
       "type": "Attribute",
-      "source": "epo:evaluation-group-type",
-      "predicate": "REGULAR_BOARD",
-      "quantifiers": {
-        "min": "1",
-        "max": "1",
-        "quantifiersDeclared": true
-      },
-      "description": null
-    },
-    {
-      "type": "Attribute",
-      "source": "epo:evaluation-group-type",
-      "predicate": "JURY",
-      "quantifiers": {
-        "min": "1",
-        "max": "1",
-        "quantifiersDeclared": true
-      },
-      "description": null
-    },
-    {
-      "type": "Attribute",
       "source": "epo:legal-regime",
       "predicate": "light-regime",
       "target": "skos:Concept",
