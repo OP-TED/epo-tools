@@ -2,7 +2,7 @@ import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { readFileSync } from 'fs'
 import { describe, it } from 'mocha'
-import { UNDER_REVIEW } from '../src/config.js'
+import { UNDER_REVIEW, EPO_LATEST } from '../src/config.js'
 import { getEpoJson } from '../src/epo/readEpo.js'
 import { applyGlob } from '../src/io/assets.js'
 
@@ -20,14 +20,14 @@ describe('extract terms', async () => {
   for (const path of assets) {
     const queryStr = readFileSync(path).toString()
     it(`asset:${path}`, async function () {
-      const { terms } = termsFromQuery({ queryStr })
-      expect(terms).toMatchSnapshot(this)
+      const result = termsFromQuery({ queryStr })
+      expect(result).toMatchSnapshot(this)
     })
   }
 
   it(`failed query`, async function () {
-    const { terms, error } = termsFromQuery({ queryStr: 'not a query' })
-    expect(error).toMatchSnapshot(this)
+    const result = termsFromQuery({ queryStr: 'not a query' })
+    expect(result).toMatchSnapshot(this)
   })
 })
 
@@ -37,7 +37,8 @@ describe('validate against conceptual model', async () => {
     const queryStr = readFileSync(path).toString()
 
     it(`asset:${path}`, async function () {
-      const result = validateAgainstGraph(epoJson, { queryStr, filter:['epo*'] })
+      const result = validateAgainstGraph(epoJson,
+        { queryStr, filter: ['epo*'] })
       expect(result).toMatchSnapshot(this)
     })
   }

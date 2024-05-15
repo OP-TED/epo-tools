@@ -12,13 +12,13 @@ function anyMatch ({ nodes, edges }, { filter }) {
   return false
 }
 
-function filterByPrefix (g, { prefix }) {
-  const byPrefix = (value) => value?.startsWith(`${prefix}:`)
+function startsWith (g, start) {
+  const f = (value) => value?.startsWith(start)
   const { nodes, edges, ...tail } = g
   return {
-    nodes: nodes.filter(x => byPrefix(x.name)),
+    nodes: nodes.filter(x => f(x.name)),
     edges: edges.filter(
-      x => byPrefix(x.source) || byPrefix(x.predicate)), ...tail,
+      x => f(x.source) || f(x.predicate)), ...tail,
   }
 }
 
@@ -89,5 +89,5 @@ const matchHasNegatives = arr => value => arr.filter(isNegation).
   some(apply(value))
 
 export {
-  filterBy, filterByPrefix, anyMatch, suggestNodes, getMatcher
+  filterBy, startsWith, anyMatch, suggestNodes, getMatcher,
 }

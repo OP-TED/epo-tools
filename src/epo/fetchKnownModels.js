@@ -1,7 +1,7 @@
-import { repositories } from './knownEpo.js'
-import { writeFileSync, mkdirSync } from 'fs'
+import { mkdirSync, writeFileSync } from 'fs'
 import fetch from 'node-fetch'
-import { getEpoJson } from './readEpo.js'
+import { repositories } from './knownEpo.js'
+import { getJson } from './readEpo.js'
 
 function fixKnownBugs (g) {
   const removeWhiteSpace = (name) => name?.replaceAll('epo :', 'epo:')
@@ -25,8 +25,9 @@ async function downloadAndTransform ({ fileUrl, tag, appUrl }) {
   const databasePath = `assets/models/ePO_CM_${tag}.eap`
   writeFileSync(databasePath, Buffer.from(arrayBuffer))
   console.log(`Wrote to ${databasePath}`)
-  const epoJson = getEpoJson({ databasePath })
-  const g = fixKnownBugs(epoJson)
+  // const epoJson = getEpoJson({ databasePath })
+  const json = getJson({ databasePath })
+  const g = fixKnownBugs(json)
   const jsonPath = `./public/${appUrl}`
   writeFileSync(jsonPath, JSON.stringify(g, null, 2))
   console.log(`Wrote to ${jsonPath}`)

@@ -1,12 +1,13 @@
 <script setup>
-import { NTabPane, NTabs } from 'naive-ui'
+import { NCard, NTabPane, NTabs } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 
 import { useStore } from '../state.js'
 import Edges from './Edges.vue'
-import Filter from './Filter.vue'
+import Graph from './Graph.vue'
 import Nodes from './Nodes.vue'
+
 import SelectModel from './SelectModel.vue'
 
 const store = useStore()
@@ -26,14 +27,17 @@ const edgesTitle = computed(() => {
 <template>
   <n-card>
     <SelectModel/>
-    <Filter></Filter>
   </n-card>
   <n-tabs type="line" animated>
+
     <n-tab-pane name="Nodes" :tab="nodesTitle">
       <Nodes/>
     </n-tab-pane>
     <n-tab-pane name="Edges" :tab="edgesTitle">
       <Edges/>
+    </n-tab-pane>
+    <n-tab-pane name="Graph" tab="Graph">
+      <Graph/>
     </n-tab-pane>
   </n-tabs>
 

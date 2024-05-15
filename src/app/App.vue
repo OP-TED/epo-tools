@@ -1,14 +1,16 @@
 <script setup>
-import { darkTheme, NConfigProvider } from 'naive-ui'
-import SelectModel from './components/SelectModel.vue'
+import { darkTheme, NCard, NConfigProvider } from 'naive-ui'
+import Graph from './components/Graph.vue'
+import Header from './components/Header.vue'
 import Tabs from './Tabs.vue'
 </script>
 
 <template>
-  <div>
-    <n-config-provider :theme="darkTheme">
-      <Tabs/>
-    </n-config-provider>
-  </div>
-
+  <n-config-provider :theme="darkTheme">
+    <n-card>
+      <Header/>
+<!--      <Graph></Graph>-->
+      <Tabs></Tabs>
+    </n-card>
+  </n-config-provider>
 </template>

@@ -1,7 +1,7 @@
 import {
   ATTRIBUTE,
-  INHERITANCE,
-  RELATIONSHIP,
+  INHERITANCE, INSTANCE_OF,
+  RELATIONSHIP, DEPENDENCY,
 } from '../conceptualModel/const.js'
 import { stripPrefix, toSpaced } from '../prefix/prefix.js'
 
@@ -43,7 +43,10 @@ const prefix = `
 const toTurtle = ({ nodes, edges }) => {
   const output = [
     ...nodes.map(nodeTemplate),
-    ...edges.map(edge => (templates[edge.type])(edge))]
+    ...edges.map(edge => {
+      const template = templates[edge.type]
+      return template(edge)
+    })]
   return prefix + output.join('\n')
 }
 
@@ -98,6 +101,8 @@ const templates = {
   [INHERITANCE]: subclassTemplate,
   [ATTRIBUTE]: literalTemplate,
   [RELATIONSHIP]: objectTemplate,
+  [INSTANCE_OF]: objectTemplate,
+  [DEPENDENCY]: objectTemplate,
 }
 
 const nodeTemplate = ({ name, description }) => `

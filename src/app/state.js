@@ -22,6 +22,8 @@ export const useStore = defineStore('counter', () => {
   // APP
   const filterOptions = useStorage('filterBy', DEFAULT_VIEW)
   const savedFilters = useStorage('savedFilterBy', [])
+  const developerMode = useStorage('developerMode', false)
+
   const sparql = useStorage('sparql', '')
 
   // Filters
@@ -32,12 +34,7 @@ export const useStore = defineStore('counter', () => {
   })
 
   function setEaJson (json) {
-    eaJson.value = {
-      nodes: json.nodes,
-      edges: json.edges.map(x => x.type === INHERITANCE
-        ? { ...x, predicate: 'rdfs:subClassOf' }
-        : x),
-    }
+    eaJson.value = json
   }
 
   function addFilterTerms (terms) {
@@ -46,13 +43,27 @@ export const useStore = defineStore('counter', () => {
     filterOptions.value.filter = filterOptions.value.filter.concat(newTerms)
   }
 
+
+  function toggleFilterTerm(term) {
+    const index = filterOptions.value.filter.indexOf(term);
+    if (index > -1) {
+      filterOptions.value.filter.splice(index, 1);
+      return false
+    } else {
+      filterOptions.value.filter.push(term);
+      return true
+    }
+  }
+
   const suggestedNodes = computed(() => {
     return suggestNodes(jsonView.value, filterOptions.value)
   })
 
   return {
     library,
+    developerMode,
     addFilterTerms,
+    toggleFilterTerm,
     setEaJson,
     eaJson,
     suggestedNodes,

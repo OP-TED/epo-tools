@@ -28,7 +28,7 @@ function termsFromQuery ({ queryStr }) {
   const parser = new Parser()
   try {
     const parsedQuery = parser.parse(queryStr)
-    return { terms: flatQuery(parsedQuery) }
+    return { terms: flatQuery(parsedQuery), prefixes: parsedQuery.prefixes }
   } catch (error) {
     return { error }
   }

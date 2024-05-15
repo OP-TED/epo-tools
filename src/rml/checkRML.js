@@ -1,4 +1,3 @@
-import { EPO_LATEST } from '../config.js'
 import { getEpoJson } from '../epo/readEpo.js'
 import { getRdfAssets } from '../io/assets.js'
 import { createTriplestore, doSelect } from '../sparql/localStore.js'
@@ -33,10 +32,9 @@ WHERE {
   return result.map(x => x.predicate.value).filter(x => !knownProperties.has(x))
 }
 
-const BASE = '/home/cvasquez/github.com/OP-TED/ted-rdf-assessment'
-const globPattern = `${BASE}/pdds/rml/**/*.ttl`
+const globPattern = '/home/cvasquez/github.com/oeg-upm/ocp2kg/output_mappings/updated_mappings_4.0.ttl'
 
-const g = getEpoJson(EPO_LATEST)
+const g = getEpoJson({ databasePath: 'assets/models/ePO_CM_v4.0.0.eap' })
 
 const assets = await getRdfAssets({ globPattern })
 const store = createTriplestore({ assets })

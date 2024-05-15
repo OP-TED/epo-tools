@@ -1,7 +1,15 @@
+import { stringify } from 'csv-stringify/sync'
 import fs from 'fs'
 import { getRdfAssets } from '../../src/io/assets.js'
-import { rdfArrayToCSV } from '../../src/io/serialization.js'
 import { createTriplestore, doSelect } from '../../src/sparql/localStore.js'
+
+function rdfArrayToCSV (array) {
+  if (array.length) {
+    const header = Object.keys(array[0])
+    const arrayOfArrays = array.map(obj => Object.values(obj).map(x => x.value))
+    return stringify([header, ...arrayOfArrays])
+  }
+}
 
 async function checkAuthorityTables ({ sourceDirectory, targetDirectory }) {
   const globPattern = `${sourceDirectory}/implementation/**/*.{ttl,rdf}`

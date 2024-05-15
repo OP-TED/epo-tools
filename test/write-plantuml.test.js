@@ -18,7 +18,7 @@ describe('write-plantuml', () => {
   })
 
   it(`generates plantuml, empty graph`, async function () {
-    const plantuml = toPlantuml(current)
+    const plantuml = toPlantuml({ nodes:[],edges:[] })
     expect(plantuml).toMatchSnapshot(this)
   })
 

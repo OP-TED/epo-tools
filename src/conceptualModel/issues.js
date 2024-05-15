@@ -1,14 +1,57 @@
 import { hasPrefix } from '../prefix/prefix.js'
 import { ATTRIBUTE, INHERITANCE } from './const.js'
 
-function validateNode (node) {
+function _appendIssues (list, keyFn, issueInspect) {
+  const unique = new Map()
+  for (const element of list) {
+    const key = keyFn(element)
+    if (unique.has(key)) {
+      const existingEntry = unique.get(key)
+      const { issues = [], ...rest } = existingEntry
+      const newIssue = {
+        severity: 'warning',
+        desc: 'has a duplicate',
+      }
+      unique.set(key, {
+        ...rest,
+        issues: [...issues, newIssue],
+      })
+
+    } else {
+      unique.set(key, {
+        ...element,
+        issues: issueInspect(element),
+      })
+    }
+  }
+  return Array.from(unique.values())
+}
+
+/**
+ * Remove duplicates and append issues
+ */
+function appendIssues (g) {
+  const { nodes, edges, ...tail } = g
+  return {
+    nodes: _appendIssues(nodes,
+      (x) => x.name
+      , inspectNode),
+    edges: _appendIssues(edges,
+      (x) => `${x.source}--${x.predicate}-->${x.target}`
+      , inspectEdge),
+    ...tail,
+  }
+}
+
+function inspectNode (node) {
   return hasPrefix(node.name) ? [] : [
     {
       severity: 'error', desc: `no prefix for ${node.name}`,
-    }]
+    },
+  ]
 }
 
-function validateEdge (edge) {
+function inspectEdge (edge) {
   const {
     type, source, predicate, target, quantifiers: { quantifiersDeclared },
   } = edge
@@ -58,4 +101,4 @@ function validateEdge (edge) {
   return result
 }
 
-export { validateNode, validateEdge }
+export { appendIssues, inspectEdge, inspectNode }
