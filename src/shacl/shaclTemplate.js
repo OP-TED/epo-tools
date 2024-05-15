@@ -1,7 +1,5 @@
 import {
-  ATTRIBUTE,
-  INHERITANCE, INSTANCE_OF,
-  RELATIONSHIP, DEPENDENCY,
+  ATTRIBUTE, INHERITANCE, INSTANCE_OF, RELATIONSHIP, DEPENDENCY,
 } from '../conceptualModel/const.js'
 import { stripPrefix, toSpaced } from '../prefix/prefix.js'
 
@@ -42,8 +40,7 @@ const prefix = `
 
 const toTurtle = ({ nodes, edges }) => {
   const output = [
-    ...nodes.map(nodeTemplate),
-    ...edges.map(edge => {
+    ...nodes.map(nodeTemplate), ...edges.map(edge => {
       const template = templates[edge.type]
       return template(edge)
     })]
@@ -77,8 +74,13 @@ const literalTemplate = ({
       ] .
     `
 
+// Note: For enums omit enumeration values for the moment until further clarification
+// sh:targetObjectsOf ?
+// sh:in ( ex:Pink ex:Purple ) ?
+const conceptSchemeTarget = ({ source, target }) => ``
+
 const objectTemplate = ({
-  source, predicate, target, description, quantifiers,
+  source, predicate, target, description, quantifiers, type,
 }) => `
     # ${predicate} a owl:ObjectProperty ;
     #     ${skosDefinitionTemplate(description)}
@@ -93,7 +95,9 @@ const objectTemplate = ({
         sh:nodeKind sh:IRI ;
         ${shaclName(predicate)}
         ${quantifiersTemplate(quantifiers)}
-         sh:targetClass ${target} ;
+        ${type !== 'Dependency'
+  ? `sh:targetClass ${target} ;`
+  : conceptSchemeTarget({ source, predicate, target })} 
       ] .
     `
 
