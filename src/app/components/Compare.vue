@@ -1,9 +1,9 @@
 <script setup lang="js">
-import { NCard, NDynamicTags, NSelect, NSwitch } from 'naive-ui'
+import { NCard, NInput, NSelect, NSwitch } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { Diff } from 'vue-diff'
-import { filterBy } from '../../conceptualModel/filter.js'
+import { startsWith } from '../../conceptualModel/filter.js'
 import { getComparisonChunks } from '../../plantuml/comparison.js'
 import { useStore } from '../state.js'
 
@@ -30,17 +30,16 @@ const comparisonResult = computed(() => {
 
   const source = selectedSource.value
   const target = selectedTarget.value
-  const filter = selectedFilter.value
 
   if (source && target) {
 
     const key1 = library.value.models[source].key
     const _g1 = JSON.parse(localStorage.getItem(key1) ?? {})
-    const g1 = filterBy(_g1, { filter })
+    const g1 = start.value ? startsWith(_g1, start.value) : _g1
 
     const key2 = library.value.models[target].key
     const _g2 = JSON.parse(localStorage.getItem(key2) ?? {})
-    const g2 = filterBy(_g2, { filter })
+    const g2 = start.value ? startsWith(_g2, start.value) : _g2
 
     return {
       title: `Comparing ${source} (${counts(g1)}) with ${target} (${counts(g2)})`,
@@ -52,7 +51,7 @@ const comparisonResult = computed(() => {
 
 const fold = ref()
 const mode = ref()
-const selectedFilter = ref(['epo*'])
+const start = ref('epo')
 
 </script>
 
@@ -65,8 +64,8 @@ const selectedFilter = ref(['epo*'])
     <n-select
         v-model:value="selectedTarget" :options="libraryOptions"/>
   </n-card>
-  <n-card size="small" title="Include only">
-    <n-dynamic-tags v-model:value="selectedFilter"/>
+  <n-card size="small" title="Prefix starts with">
+    <n-input v-model:value="start"/>
   </n-card>
   <n-card v-if="comparisonResult" :title="comparisonResult.title">
 

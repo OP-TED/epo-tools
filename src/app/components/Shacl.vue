@@ -11,7 +11,6 @@ const store = useStore()
 const { jsonView } = storeToRefs(store)
 const { text, isSupported, copy } = useClipboard()
 
-
 const shacl = computedAsync(async () => {
   const { nodes, edges } = jsonView.value
   const { turtle } = await toShacl({ nodes, edges })

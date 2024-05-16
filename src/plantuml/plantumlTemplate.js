@@ -1,4 +1,8 @@
-import { INHERITANCE, RELATIONSHIP } from '../conceptualModel/const.js'
+import {
+  ATTRIBUTE,
+  INHERITANCE,
+  RELATIONSHIP,
+} from '../conceptualModel/const.js'
 
 function toPlantuml ({ nodes, edges }, { shrink, sorted } = {
   includeRelationships: true, sorted: false,
@@ -22,7 +26,7 @@ function toPlantuml ({ nodes, edges }, { shrink, sorted } = {
 
   const relations = [
     ...edges.filter(x => x.type === INHERITANCE).map(subclassTemplate),
-    ...edges.filter(x => !shrink && x.type === RELATIONSHIP).
+    ...edges.filter(x => !shrink && (x.type !== INHERITANCE && x.type !== ATTRIBUTE)).
       map(relationTemplate)]
 
   return `

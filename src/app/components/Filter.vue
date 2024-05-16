@@ -45,8 +45,6 @@ function toggleSaved () {
   displaySavedActive.value = true
 }
 
-const something = ref(false)
-
 </script>
 
 <template>
@@ -57,7 +55,6 @@ const something = ref(false)
     </n-drawer-content>
   </n-drawer>
   <n-card>
-
 
     <n-dynamic-tags
         round
@@ -92,12 +89,8 @@ const something = ref(false)
               :disabled="!value.length">Quick add
           </n-button>
         </n-space>
-
-
       </n-collapse-item>
     </n-collapse>
-
-
   </n-card>
 </template>
 

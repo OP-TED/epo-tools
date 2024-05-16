@@ -1,5 +1,5 @@
 import MDBReader from 'mdb-reader'
-import { ATTRIBUTE, INHERITANCE, RELATIONSHIP } from './const.js'
+import { ATTRIBUTE, INHERITANCE, RELATIONSHIP, INSTANCE_OF } from './const.js'
 
 function bufferToJson ({ buffer }) {
   const reader = new MDBReader(buffer)
@@ -16,26 +16,56 @@ function toJson ({ objects, attributes, connectors }) {
     nodeIndex[Object_ID] = Name
   }
 
-  const nodes = objects.
-    map(({ Object_ID, Note }) => ({
-      name: nodeIndex[Object_ID], description: Note,
-    }))
+  const nodesToExclude = [
+    'Package',
+    'ProxyConnector',
+    'Note',
+    'Text',
+    'Datatype']
+  // const toInclude = ['Class', 'Enumeration', 'Object']
+
+  const nodes = objects.filter(x => !nodesToExclude.includes(x.Object_Type)).
+    map(({ Object_ID, Note, Object_Type, Classifier }) => {
+
+      const result = {
+        name: nodeIndex[Object_ID], description: Note, type: Object_Type,
+      }
+      // Objects might come with a Classifier,
+      // i.e. (EU) 2015/1986 instance of at-voc:legal-basis
+      if (Object_Type === 'Object') {
+        result.instanceOf = nodeIndex[Classifier]
+      }
+
+      return result
+    })
+
+  // Do not export enum values (need to be analyzed)
+  // at-voc-new:ResponseStatus sh:in ("Accepted" "Rejected" ... )
+  // Should they move to skos:inScheme?
+  const includeAttribute = (x) => !( !x.Type && x.Stereotype === 'enum')
+
+  // Do not export NoteLinks
+  const includeConnector = (x) => !(!x.Start_Object_ID || x.Connector_Type ===
+    'NoteLink')
 
   const edges = [
-    ...attributes.
-      map(toLiteralRelation(nodeIndex)),
-    ...connectors.
-      map(toObjectRelation(nodeIndex))]
+    ...attributes.filter(includeAttribute).map(toLiteralRelation(nodeIndex)),
+    ...connectors.filter(includeConnector).map(toObjectRelation(nodeIndex))]
   return { nodes, edges }
 }
 
 const toLiteralRelation = nodeIndex => x => {
-  const { Object_ID, Name, Type, LowerBound, UpperBound, Notes } = x
+  const { Object_ID, Name, Type, LowerBound, UpperBound, Notes, Stereotype } = x
+
+  const source = nodeIndex[Object_ID]
+  const predicate = Name
+  const target = Type
+
   return {
     type: ATTRIBUTE,
-    source: nodeIndex[Object_ID],
-    predicate: Name,
-    target: Type,
+    source,
+    predicate,
+    target,
     quantifiers: getQuantifierFromBounds({ LowerBound, UpperBound }),
     description: Notes,
   }
@@ -54,10 +84,14 @@ const toObjectRelation = nodeIndex => x => {
 
   const source = nodeIndex[Start_Object_ID]
 
-  const type = Connector_Type === 'Generalization'
-    ? INHERITANCE
-    : RELATIONSHIP
-  const predicate = DestRole
+  const type = Connector_Type
+
+  const knownPredicates = {
+    [INSTANCE_OF]: 'skos:inScheme', [INHERITANCE]: 'rdfs:subClassOf',
+  }
+
+  const predicate = DestRole || knownPredicates[type]
+
   const target = nodeIndex[End_Object_ID]
 
   if (Direction !== 'Source -> Destination') { // Apparently this is not taken into account
@@ -68,7 +102,6 @@ const toObjectRelation = nodeIndex => x => {
     // If we find some instance of this, apply inverses.
     // :relatesTo owl:inverseOf :isRelatedTo .
   }
-
   return {
     type,
     source,

@@ -1,8 +1,10 @@
 <script setup lang="js">
-import { NDataTable } from 'naive-ui'
+import { NCard, NDataTable } from 'naive-ui'
+
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { useStore } from '../state.js'
+import Filter from './Filter.vue'
 
 const store = useStore()
 const { jsonView } = storeToRefs(store)
@@ -55,5 +57,8 @@ const pagination = ref({ pageSize: 20 })
 </script>
 
 <template>
+  <n-card>
+    <Filter></Filter>
+  </n-card>
   <n-data-table :columns="table.columns" :data="table.data" :pagination="pagination"/>
 </template>

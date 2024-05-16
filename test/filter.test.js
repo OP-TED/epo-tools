@@ -5,7 +5,7 @@ import { ATTRIBUTE, RELATIONSHIP } from '../src/conceptualModel/const.js'
 import {
   anyMatch,
   filterBy,
-  filterByPrefix,
+  startsWith,
   suggestNodes,
 } from '../src/conceptualModel/filter.js'
 import { UNDER_REVIEW } from '../src/config.js'
@@ -18,7 +18,7 @@ describe('filter', () => {
   const eaJson = getJson(UNDER_REVIEW)
 
   it(`byPrefix`, function () {
-    const result = filterByPrefix(eaJson, { prefix: 'epo-cat' })
+    const result = startsWith(eaJson, 'epo-cat:')
     expect(result).toMatchSnapshot(this)
   })
 
