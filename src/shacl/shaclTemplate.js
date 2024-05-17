@@ -78,11 +78,14 @@ const literalTemplate = ({
 // sh:targetObjectsOf ?
 // sh:in ( ex:Pink ex:Purple ) ?
 const conceptSchemeTarget = ({ source, predicate, target }) => `
- # sh:targetObjectsOf [
- #   a sh:PropertyShape ;
- #   sh:hasValue ${target} ;
- #   sh:path skos:inScheme 
- # ] ;
+ sh:node [
+    a sh:NodeShape ;
+    sh:property [
+      a sh:PropertyShape ;
+      sh:path skos:inScheme ;
+      sh:hasValue ${target} ;    
+    ]
+ ]
 `
 
 const objectTemplate = ({
