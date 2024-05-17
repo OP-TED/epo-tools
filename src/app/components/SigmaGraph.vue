@@ -70,7 +70,7 @@ const doForceLayout = () => {
       if (fa2Layout.isRunning) {
         fa2Layout.stop()
       }
-    }, 3000) // Stops the layout after 1 second
+    }, 4000) // Stops the layout after x mseconds
   }
 }
 
