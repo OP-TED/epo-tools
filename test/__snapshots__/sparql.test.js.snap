@@ -1,5 +1,114 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`extract terms asset:test/support/queries/SMEs_by_country.rq 1`] = `
+Object {
+  "prefixes": Object {
+    "cccev": "http://data.europa.eu/m8g/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:announcesRole",
+    "epo:Winner",
+    "epo:playedBy",
+    "epo:hasBusinessSize",
+  ],
+}
+`;
+
+exports[`extract terms asset:test/support/queries/distribution-cpv.rq 1`] = `
+Object {
+  "prefixes": Object {
+    "at": "http://publications.europa.eu/resource/authority/concept-status/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "euvoc": "http://publications.europa.eu/ontology/euvoc#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+  },
+  "terms": Array [
+    "epo:Notice",
+    "epo:hasPublicationDate",
+    "epo:refersToProcedure",
+    "epo:Procedure",
+    "epo:hasPurpose",
+    "epo:Purpose",
+    "epo:hasMainClassification",
+    "skos:Concept",
+    "skos:prefLabel",
+    "euvoc:status",
+    "at:CURRENT",
+  ],
+}
+`;
+
+exports[`extract terms asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
+Object {
+  "prefixes": Object {
+    "cccev": "http://data.europa.eu/m8g/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "org": "http://www.w3.org/ns/org#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:announcesRole",
+    "epo:Buyer",
+    "epo:playedBy",
+    "epo:hasLegalName",
+  ],
+}
+`;
+
+exports[`extract terms asset:test/support/queries/tenders_foresee_subcontracting.rq 1`] = `
+Object {
+  "prefixes": Object {
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:refersToLot",
+    "epo:isSubmittedForLot",
+    "epo:foreseesSubcontracting",
+  ],
+}
+`;
+
+exports[`extract terms asset:test/support/queries/titles-procedure.rq 1`] = `
+Object {
+  "prefixes": Object {
+    "epo": "http://data.europa.eu/a4g/ontology#",
+  },
+  "terms": Array [
+    "epo:hasPublicationDate",
+    "epo:refersToProcedure",
+    "epo:hasTitle",
+  ],
+}
+`;
+
+exports[`extract terms asset:test/support/queries/winners.rq 1`] = `
+Object {
+  "prefixes": Object {
+    "cccev": "http://data.europa.eu/m8g/",
+    "epo": "http://data.europa.eu/a4g/ontology#",
+    "org": "http://www.w3.org/ns/org#",
+  },
+  "terms": Array [
+    "epo:Notice",
+    "epo:hasPublicationDate",
+    "epo:refersToLot",
+    "epo:describesLot",
+    "epo:hasAwardedValue",
+    "epo:comprisesTenderAwardOutcome",
+    "epo:TenderAwardOutcome",
+    "org:Organization",
+    "epo:hasLegalName",
+    "epo:MonetaryValue",
+    "epo:hasAmountValue",
+    "epo:hasCurrency",
+  ],
+}
+`;
+
 exports[`extract terms asset:test\\support\\queries\\SMEs_by_country.rq 1`] = `
 Object {
   "prefixes": Object {
@@ -115,6 +224,188 @@ Object {
 not a query
 ^
 Expecting 'EOF', 'BASE', 'IRIREF', 'PREFIX', 'PNAME_NS', 'CONSTRUCT', 'DESCRIBE', 'ASK', 'SELECT', '(', 'LOAD', 'CREATE', 'INSERTDATA', 'DELETEDATA', 'DELETEWHERE', 'DELETE', 'INSERT', 'WITH', 'a', '!', '^', 'PNAME_LN', 'CLEAR', 'DROP', 'ADD', 'MOVE', 'COPY', got 'NOT'],
+}
+`;
+
+exports[`validate against conceptual model asset:test/support/queries/SMEs_by_country.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:announcesRole",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:Winner",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:playedBy",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasBusinessSize",
+    },
+  ],
+}
+`;
+
+exports[`validate against conceptual model asset:test/support/queries/distribution-cpv.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:Notice",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:refersToProcedure",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:Procedure",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPurpose",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:Purpose",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasMainClassification",
+    },
+  ],
+}
+`;
+
+exports[`validate against conceptual model asset:test/support/queries/notices_by_buyers_country.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:announcesRole",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:Buyer",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:playedBy",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasLegalName",
+    },
+  ],
+}
+`;
+
+exports[`validate against conceptual model asset:test/support/queries/tenders_foresee_subcontracting.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:refersToLot",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:isSubmittedForLot",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:foreseesSubcontracting",
+    },
+  ],
+}
+`;
+
+exports[`validate against conceptual model asset:test/support/queries/titles-procedure.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:refersToProcedure",
+    },
+    Object {
+      "isPresent": false,
+      "term": "epo:hasTitle",
+    },
+  ],
+}
+`;
+
+exports[`validate against conceptual model asset:test/support/queries/winners.rq 1`] = `
+Object {
+  "terms": Array [
+    Object {
+      "isPresent": true,
+      "term": "epo:Notice",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasPublicationDate",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:refersToLot",
+    },
+    Object {
+      "isPresent": false,
+      "term": "epo:describesLot",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasAwardedValue",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:comprisesTenderAwardOutcome",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:TenderAwardOutcome",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasLegalName",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:MonetaryValue",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasAmountValue",
+    },
+    Object {
+      "isPresent": true,
+      "term": "epo:hasCurrency",
+    },
+  ],
 }
 `;
 
