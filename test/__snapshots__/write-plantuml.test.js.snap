@@ -4467,7 +4467,7 @@ class \\"epo-sub:ESPDResponse\\" {
   epo-sub:specifiesResponse : epo-sub:Response [1..*]
 }
 
-class \\"at-voc:received-submission-type\\" {
+enum \\"at-voc:received-submission-type\\" {
 
 }
 
@@ -4518,7 +4518,7 @@ class \\"epo:SubcontractingEstimate\\" {
   epo:hasSubcontractingEstimatedValue : epo:MonetaryValue [0..1]
 }
 
-class \\"at-voc:currency\\" {
+enum \\"at-voc:currency\\" {
 
 }
 
@@ -4547,11 +4547,11 @@ class \\"epo-ord:OrderResponse\\" {
   epo-ord:isSubmittedForOrder : epo-ord:Order [1]
 }
 
-class \\"at-voc-new:document-status\\" {
+enum \\"at-voc-new:document-status\\" {
 
 }
 
-class \\"at-voc-new:despatch-advice-type\\" {
+enum \\"at-voc-new:despatch-advice-type\\" {
 
 }
 
@@ -4563,7 +4563,7 @@ class \\"epo:AwardOutcome\\" {
   epo:hasBargainPrice : epo:MonetaryValue [0..1]
 }
 
-class \\"at-voc:green-public-procurement-criteria\\" {
+enum \\"at-voc:green-public-procurement-criteria\\" {
 
 }
 
@@ -4683,7 +4683,7 @@ class \\"epo:ContractTerm\\" {
   epo:hasReservedExecution : at-voc:applicability [0..1]
 }
 
-class \\"at-voc:measurement-unit\\" {
+enum \\"at-voc:measurement-unit\\" {
 
 }
 
@@ -4760,7 +4760,7 @@ class \\"epo-not:PreMarketConsultationNotice\\" {
   epo:hasNoticeType : pmc [1]
 }
 
-class \\"at-voc:cvd-contract-type\\" {
+enum \\"at-voc:cvd-contract-type\\" {
 
 }
 
@@ -4918,11 +4918,11 @@ class \\"cccev:Criterion\\" {
 
 }
 
-class \\"at-voc-new:orderable-unit\\" {
+enum \\"at-voc-new:orderable-unit\\" {
 
 }
 
-class \\"at-voc:vehicle-category\\" {
+enum \\"at-voc:vehicle-category\\" {
 
 }
 
@@ -5168,7 +5168,7 @@ class \\"epo:Duration\\" {
 
 }
 
-class \\"at-voc-new:transaction-conditions\\" {
+enum \\"at-voc-new:transaction-conditions\\" {
 
 }
 
@@ -5235,7 +5235,7 @@ class \\"epo:Reviewer\\" {
   epo:hasReviewBodyType : at-voc:review-body-type [0..*]
 }
 
-class \\"at-voc:irregularity-type\\" {
+enum \\"at-voc:irregularity-type\\" {
 
 }
 
@@ -5356,15 +5356,15 @@ class \\"epo:Winner\\" {
   epo:needsToBeATenderer : epo:Tenderer [0..1]
 }
 
-class \\"at-voc:accessibility\\" {
+enum \\"at-voc:accessibility\\" {
 
 }
 
-class \\"at-voc:applicability\\" {
+enum \\"at-voc:applicability\\" {
 
 }
 
-class \\"at-voc:award-criterion-type\\" {
+enum \\"at-voc:award-criterion-type\\" {
 
 }
 
@@ -5404,139 +5404,139 @@ class \\"epo:JuryMember\\" {
   epo:playedBy : person:Person [0..1]
 }
 
-class \\"at-voc:buyer-legal-type\\" {
+enum \\"at-voc:buyer-legal-type\\" {
 
 }
 
-class \\"at-voc:communication-justification\\" {
+enum \\"at-voc:communication-justification\\" {
 
 }
 
-class \\"at-voc:contract-nature\\" {
+enum \\"at-voc:contract-nature\\" {
 
 }
 
-class \\"at-voc:country\\" {
+enum \\"at-voc:country\\" {
 
 }
 
-class \\"at-voc:cpv\\" {
+enum \\"at-voc:cpv\\" {
 
 }
 
-class \\"at-voc:direct-award-justification\\" {
+enum \\"at-voc:direct-award-justification\\" {
 
 }
 
-class \\"at-voc:dps-usage\\" {
+enum \\"at-voc:dps-usage\\" {
 
 }
 
-class \\"at-voc:economic-operator-size\\" {
+enum \\"at-voc:economic-operator-size\\" {
 
 }
 
-class \\"at-voc:environmental-impact\\" {
+enum \\"at-voc:environmental-impact\\" {
 
 }
 
-class \\"at-voc:innovative-acquisition\\" {
+enum \\"at-voc:innovative-acquisition\\" {
 
 }
 
-class \\"at-voc:language\\" {
+enum \\"at-voc:language\\" {
 
 }
 
-class \\"at-voc:legal-basis\\" {
+enum \\"at-voc:legal-basis\\" {
 
 }
 
-class \\"at-voc:main-activity\\" {
+enum \\"at-voc:main-activity\\" {
 
 }
 
-class \\"at-voc:missing-info-submission\\" {
+enum \\"at-voc:missing-info-submission\\" {
 
 }
 
-class \\"at-voc:modification-justification\\" {
+enum \\"at-voc:modification-justification\\" {
 
 }
 
-class \\"at-voc:non-award-justification\\" {
+enum \\"at-voc:non-award-justification\\" {
 
 }
 
-class \\"at-voc:non-publication-justification\\" {
+enum \\"at-voc:non-publication-justification\\" {
 
 }
 
-class \\"at-voc:number-fixed\\" {
+enum \\"at-voc:number-fixed\\" {
 
 }
 
-class \\"at-voc:number-threshold\\" {
+enum \\"at-voc:number-threshold\\" {
 
 }
 
-class \\"at-voc:number-weight\\" {
+enum \\"at-voc:number-weight\\" {
 
 }
 
-class \\"at-voc:nuts\\" {
+enum \\"at-voc:nuts\\" {
 
 }
 
-class \\"at-voc:other-place-service\\" {
+enum \\"at-voc:other-place-service\\" {
 
 }
 
-class \\"at-voc:permission\\" {
+enum \\"at-voc:permission\\" {
 
 }
 
-class \\"at-voc:procurement-procedure-type\\" {
+enum \\"at-voc:procurement-procedure-type\\" {
 
 }
 
-class \\"at-voc:requirement-stage\\" {
+enum \\"at-voc:requirement-stage\\" {
 
 }
 
-class \\"at-voc:reserved-procurement\\" {
+enum \\"at-voc:reserved-procurement\\" {
 
 }
 
-class \\"at-voc:selection-criterion\\" {
+enum \\"at-voc:selection-criterion\\" {
 
 }
 
-class \\"at-voc:social-objective\\" {
+enum \\"at-voc:social-objective\\" {
 
 }
 
-class \\"at-voc:subcontracting-indication\\" {
+enum \\"at-voc:subcontracting-indication\\" {
 
 }
 
-class \\"at-voc:subcontracting-obligation\\" {
+enum \\"at-voc:subcontracting-obligation\\" {
 
 }
 
-class \\"at-voc:timeperiod\\" {
+enum \\"at-voc:timeperiod\\" {
 
 }
 
-class \\"at-voc:usage\\" {
+enum \\"at-voc:usage\\" {
 
 }
 
-class \\"at-voc:winner-selection-status\\" {
+enum \\"at-voc:winner-selection-status\\" {
 
 }
 
-class \\"at-voc:notice-type\\" {
+enum \\"at-voc:notice-type\\" {
 
 }
 
@@ -5544,15 +5544,15 @@ class \\"epo:ProcurementProcedureInformationProvider\\" {
 
 }
 
-class \\"at-voc:form-type\\" {
+enum \\"at-voc:form-type\\" {
 
 }
 
-class \\"at-voc:framework-agreement\\" {
+enum \\"at-voc:framework-agreement\\" {
 
 }
 
-class \\"at-voc:change-corrig-justification\\" {
+enum \\"at-voc:change-corrig-justification\\" {
 
 }
 
@@ -5568,7 +5568,7 @@ class \\"epo-not:CompetitionNotice\\" {
   epo:announcesLotGroup : epo:LotGroup [0..*]
 }
 
-class \\"time:TemporalUnit\\" {
+enum \\"time:TemporalUnit\\" {
 
 }
 
@@ -6041,7 +6041,7 @@ class \\"epo-ful:DespatchLine\\" {
   epo-ful:hasAssociatedDocument : epo:Document [0..1]
 }
 
-class \\"at-voc-new:packaging-type\\" {
+enum \\"at-voc-new:packaging-type\\" {
 
 }
 
@@ -6357,7 +6357,7 @@ class \\"epo-not:SubcontractNotice\\" {
   epo:hasNoticeType : subco [1]
 }
 
-class \\"at-voc:access-rights\\" {
+enum \\"at-voc:access-rights\\" {
 
 }
 
@@ -6396,7 +6396,7 @@ class \\"epo:ProcurementObject\\" {
   epo:foreseesConcession : epo:ConcessionEstimate [0..1]
 }
 
-class \\"at-voc-new:delivery-item-type\\" {
+enum \\"at-voc-new:delivery-item-type\\" {
 
 }
 
@@ -6423,7 +6423,7 @@ class \\"epo-cat:Manufacturer\\" {
   epo:hasManufacturerID : adms:Identifier [0..1]
 }
 
-class \\"at-voc-new:dangerous-goods-list\\" {
+enum \\"at-voc-new:dangerous-goods-list\\" {
 
 }
 
@@ -6435,7 +6435,7 @@ class \\"epo:ContextualProjection\\" {
 
 }
 
-class \\"at-voc-new:activity-code\\" {
+enum \\"at-voc-new:activity-code\\" {
 
 }
 
@@ -6455,7 +6455,7 @@ class \\"epo-cat:ItemModel\\" {
   dct:title : rdf:PlainLiteral [1..1]
 }
 
-class \\"at-voc-new:item-classification\\" {
+enum \\"at-voc-new:item-classification\\" {
 
 }
 
@@ -6498,11 +6498,11 @@ class \\"epo:ReviewObject\\" {
   epo:refersToPreviousReview : epo:ReviewObject [0..1]
 }
 
-class \\"at-voc:review-decision-type\\" {
+enum \\"at-voc:review-decision-type\\" {
 
 }
 
-class \\"at-voc:remedy-type\\" {
+enum \\"at-voc:remedy-type\\" {
 
 }
 
@@ -6553,11 +6553,11 @@ class \\"epo-sub:Response\\" {
   epo-sub:refersToApplicablePeriod : epo:Period [0..1]
 }
 
-class \\"at-voc-new:action-code\\" {
+enum \\"at-voc-new:action-code\\" {
 
 }
 
-class \\"at-voc-new:reject-reason\\" {
+enum \\"at-voc-new:reject-reason\\" {
 
 }
 
@@ -6636,7 +6636,7 @@ class \\"epo:CertificationLabel\\" {
   epo:hasLabelType : at-voc-new:certification-label-type [0..1]
 }
 
-class \\"at-voc-new:certification-label-type\\" {
+enum \\"at-voc-new:certification-label-type\\" {
 
 }
 
@@ -6654,11 +6654,11 @@ class \\"epo-cat:ChargeInformation\\" {
   epo-ord:isSpecificToOrderLine : epo-ord:OrderLine [0..*]
 }
 
-class \\"at-voc-new:tax-category\\" {
+enum \\"at-voc-new:tax-category\\" {
 
 }
 
-class \\"at-voc-new:tax-scheme\\" {
+enum \\"at-voc-new:tax-scheme\\" {
 
 }
 
@@ -6675,7 +6675,7 @@ class \\"eli:LegalResource\\" {
   epo:hasResourceType : at-voc:resource-type [1..*]
 }
 
-class \\"at-voc:resource-type\\" {
+enum \\"at-voc:resource-type\\" {
 
 }
 
@@ -6691,7 +6691,7 @@ class \\"epo-ord:DeliveryInformation\\" {
   epo-ful:hasTrackingID : adms:Identifier [0..1]
 }
 
-class \\"at-voc:subdivision\\" {
+enum \\"at-voc:subdivision\\" {
 
 }
 
@@ -6703,11 +6703,11 @@ class \\"epo:AuxiliaryParty\\" {
 
 }
 
-class \\"at-voc-new:price-type\\" {
+enum \\"at-voc-new:price-type\\" {
 
 }
 
-class \\"at-voc-new:document-type\\" {
+enum \\"at-voc-new:document-type\\" {
 
 }
 
@@ -6728,7 +6728,7 @@ class \\"epo-ord:OrderResponseLine\\" {
   epo-ord:isSubmittedForOrderLine : epo-ord:OrderLine [1..*]
 }
 
-class \\"at-voc-new:ResponseStatus\\" {
+enum \\"at-voc-new:ResponseStatus\\" {
 
 }
 
@@ -6849,11 +6849,11 @@ class \\"epo-ful:TransportEquipmentSeal\\" {
   adms:identifier : adms:Identifier [0..1]
 }
 
-class \\"at-voc-new:transport-equipment-type\\" {
+enum \\"at-voc-new:transport-equipment-type\\" {
 
 }
 
-class \\"at-voc-new:size-type\\" {
+enum \\"at-voc-new:size-type\\" {
 
 }
 
@@ -6862,7 +6862,7 @@ class \\"epo-ful:ShipmentAgreement\\" {
   epo-ful:agreedBySeller : epo-ord:Seller [1..*]
 }
 
-class \\"at-voc:review-body-type\\" {
+enum \\"at-voc:review-body-type\\" {
 
 }
 
@@ -6926,7 +6926,7 @@ class \\"epo-ful:TransportMeansOperator\\" {
   epo:playedBy : foaf:Person [0..1]
 }
 
-class \\"at-voc-new:transport-mode\\" {
+enum \\"at-voc-new:transport-mode\\" {
 
 }
 
@@ -6960,15 +6960,15 @@ class \\"cv:Channel\\" {
   epo:hasEndpointIdentifier : adms:Identifier [0..*]
 }
 
-class \\"at-voc-new:allowance-charge-reason\\" {
+enum \\"at-voc-new:allowance-charge-reason\\" {
 
 }
 
-class \\"at-voc-new:handling-instruction\\" {
+enum \\"at-voc-new:handling-instruction\\" {
 
 }
 
-class \\"at-voc-new:transport-means-type\\" {
+enum \\"at-voc-new:transport-means-type\\" {
 
 }
 
@@ -6993,7 +6993,7 @@ class \\"epo:AdHocChannel\\" {
 
 }
 
-class \\"at-voc:EU-programme\\" {
+enum \\"at-voc:EU-programme\\" {
 
 }
 

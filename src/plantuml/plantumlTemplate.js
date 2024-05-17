@@ -19,14 +19,18 @@ function toPlantuml ({ nodes, edges }, { shrink, sorted } = {
         edges.filter(edge => edge.source === node.name).
           filter(edge => edge.type !== INHERITANCE),
       )
-    return (shrink && classPredicates.length === 0) ? undefined : nodeTemplate(
+
+    const template = node.type === 'Enumeration' ? enumTemplate : nodeTemplate
+
+    return (shrink && classPredicates.length === 0) ? undefined : template(
       node,
       classPredicates)
   }).filter(x => x)
 
   const relations = [
     ...edges.filter(x => x.type === INHERITANCE).map(subclassTemplate),
-    ...edges.filter(x => !shrink && (x.type !== INHERITANCE && x.type !== ATTRIBUTE)).
+    ...edges.filter(
+      x => !shrink && (x.type !== INHERITANCE && x.type !== ATTRIBUTE)).
       map(relationTemplate)]
 
   return `
@@ -41,6 +45,11 @@ const nodeTemplate = ({ name }, edges) => `class "${name}" {
 ${noDuplicates(edges.map(
   x => `  ${x.predicate} : ${x.target} ${displayQuantifiers(x.quantifiers,
     x => `[${x}]`)}`)).join('\n')}
+}`
+
+const enumTemplate = ({ name }, edges) => `enum "${name}" {
+${noDuplicates(edges.map(
+  x => `  ${x.predicate}`)).join('\n')}
 }`
 
 const subclassTemplate = ({

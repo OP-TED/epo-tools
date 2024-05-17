@@ -20,9 +20,9 @@ const nodes = computed(() => {
     <Filter></Filter>
   </n-card>
   <n-flex>
-    <template v-for="{name, description} of nodes">
+    <template v-for="{name, description, type} of nodes">
       <n-card :title="name" size="small">
-        {{ description }}
+        {{ description }} ({{ type}})
       </n-card>
     </template>
   </n-flex>

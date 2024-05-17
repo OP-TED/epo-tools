@@ -70,7 +70,6 @@ a4g:AccessTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/communication-justification> ;
 		shacl:path a4g:hasDocumentRestrictionJustification ;
 		shacl:name \\"has document restriction justification\\"@en ;
 		shacl:minCount 0 ;
@@ -202,13 +201,11 @@ a4g:ReviewRequestShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/irregularity-type> ;
 		shacl:path a4g:hasAllegedIrregularityType ;
 		shacl:name \\"has alleged irregularity type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/remedy-type> ;
 		shacl:path a4g:requestsRemedyType ;
 		shacl:name \\"requests remedy type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -242,7 +239,6 @@ a4g:TaxInformationShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/tax-category> ;
 		shacl:path a4g:hasTaxCategory ;
 		shacl:name \\"has tax category\\"@en ;
 		shacl:minCount 0 ;
@@ -250,7 +246,6 @@ a4g:TaxInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/tax-scheme> ;
 		shacl:path a4g:hasTaxScheme ;
 		shacl:name \\"has tax scheme\\"@en ;
 		shacl:minCount 0 ;
@@ -287,13 +282,11 @@ a4g:GreenProcurementShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/green-public-procurement-criteria> ;
 		shacl:path a4g:fulfillsRequirement ;
 		shacl:name \\"fulfills requirement\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/environmental-impact> ;
 		shacl:path a4g:fulfillsRequirement ;
 		shacl:name \\"fulfills requirement\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -371,7 +364,6 @@ a4g:ProcedureShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/procurement-procedure-type> ;
 		shacl:path a4g:hasProcedureType ;
 		shacl:name \\"has procedure type\\"@en ;
 		shacl:minCount 1 ;
@@ -489,7 +481,6 @@ a4g:NonPublishedInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/non-publication-justification> ;
 		shacl:path a4g:hasNonPublicationJustification ;
 		shacl:name \\"has non publication justification\\"@en ;
 		shacl:minCount 1 ;
@@ -607,7 +598,6 @@ a4g:ContractTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/permission> ;
 		shacl:path a4g:hasEInvoicingPermission ;
 		shacl:name \\"has e invoicing permission\\"@en ;
 		shacl:minCount 0 ;
@@ -615,13 +605,11 @@ a4g:ContractTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/contract-nature> ;
 		shacl:path a4g:hasAdditionalContractNature ;
 		shacl:name \\"has additional contract nature\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/contract-nature> ;
 		shacl:path a4g:hasContractNatureType ;
 		shacl:name \\"has contract nature type\\"@en ;
 		shacl:minCount 0 ;
@@ -637,7 +625,6 @@ a4g:ContractTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/other-place-service> ;
 		shacl:path a4g:hasBroadPlaceOfPerformance ;
 		shacl:name \\"has broad place of performance\\"@en ;
 		shacl:minCount 0 ;
@@ -645,7 +632,6 @@ a4g:ContractTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/applicability> ;
 		shacl:path a4g:hasReservedExecution ;
 		shacl:name \\"has reserved execution\\"@en ;
 		shacl:minCount 0 ;
@@ -717,7 +703,6 @@ a4g:FrameworkAgreementTermShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/framework-agreement> ;
 		shacl:path a4g:hasFrameworkAgreementType ;
 		shacl:name \\"has framework agreement type\\"@en ;
 		shacl:minCount 1 ;
@@ -738,13 +723,11 @@ a4g:ReviewDecisionShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/irregularity-type> ;
 		shacl:path a4g:hasConfirmedIrregularityType ;
 		shacl:name \\"has confirmed irregularity type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/review-decision-type> ;
 		shacl:path a4g:hasReviewDecisionType ;
 		shacl:name \\"has review decision type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -766,7 +749,6 @@ a4g:ReviewDecisionShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/remedy-type> ;
 		shacl:path a4g:providesRulingOnRemedy ;
 		shacl:name \\"provides ruling on remedy\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -829,7 +811,6 @@ a4g:AwardCriterionShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/number-fixed> ;
 		shacl:path a4g:hasFixedValueType ;
 		shacl:name \\"has fixed value type\\"@en ;
 		shacl:minCount 0 ;
@@ -837,7 +818,6 @@ a4g:AwardCriterionShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/award-criterion-type> ;
 		shacl:path a4g:hasAwardCriterionType ;
 		shacl:name \\"has award criterion type\\"@en ;
 		shacl:minCount 0 ;
@@ -864,7 +844,6 @@ a4g:BusinessShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/economic-operator-size> ;
 		shacl:path a4g:hasBusinessSize ;
 		shacl:name \\"has business size\\"@en ;
 		shacl:minCount 0 ;
@@ -965,7 +944,6 @@ a4g:SpecificDurationShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass time:TemporalUnit ;
 		shacl:path time:unitType ;
 		shacl:name \\"unit type\\"@en ;
 		shacl:minCount 1 ;
@@ -1184,7 +1162,6 @@ a4g:ChangeInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/change-corrig-justification> ;
 		shacl:path a4g:hasChangeJustification ;
 		shacl:name \\"has change justification\\"@en ;
 		shacl:minCount 1 ;
@@ -1205,7 +1182,6 @@ a4g:ReviewIrregularitySummaryShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/irregularity-type> ;
 		shacl:path a4g:hasIrregularityType ;
 		shacl:name \\"has irregularity type\\"@en ;
 		shacl:minCount 1 ;
@@ -1299,13 +1275,11 @@ a4g:DocumentShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/language> ;
 		shacl:path a4g:hasUnofficialLanguage ;
 		shacl:name \\"has unofficial language\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/language> ;
 		shacl:path a4g:hasOfficialLanguage ;
 		shacl:name \\"has official language\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -1398,7 +1372,6 @@ a4g:ProcurementObjectShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/legal-basis> ;
 		shacl:path a4g:hasLegalBasis ;
 		shacl:name \\"has legal basis\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -1469,7 +1442,6 @@ org:OrganizationShape a shacl:NodeShape ;
 		shacl:name \\"has legal name\\"@en ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasRegistrationCountry ;
 		shacl:name \\"has registration country\\"@en ;
 		shacl:minCount 0 ;
@@ -1505,7 +1477,6 @@ org:OrganizationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/buyer-legal-type> ;
 		shacl:path a4g:hasBuyerLegalType ;
 		shacl:name \\"has buyer legal type\\"@en ;
 		shacl:minCount 0 ;
@@ -1513,7 +1484,6 @@ org:OrganizationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/main-activity> ;
 		shacl:path a4g:hasMainActivity ;
 		shacl:name \\"has main activity\\"@en ;
 		shacl:minCount 0 ;
@@ -1665,7 +1635,6 @@ a4g:NoticeShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/legal-basis> ;
 		shacl:path a4g:isBasedOnImplementingRegulation ;
 		shacl:name \\"is based on implementing regulation\\"@en ;
 		shacl:minCount 0 ;
@@ -1673,7 +1642,6 @@ a4g:NoticeShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/notice-type> ;
 		shacl:path a4g:hasNoticeType ;
 		shacl:name \\"has notice type\\"@en ;
 		shacl:minCount 1 ;
@@ -1681,13 +1649,11 @@ a4g:NoticeShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/legal-basis> ;
 		shacl:path a4g:conformsToLegalBasis ;
 		shacl:name \\"conforms to legal basis\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/form-type> ;
 		shacl:path a4g:hasFormType ;
 		shacl:name \\"has form type\\"@en ;
 		shacl:minCount 0 ;
@@ -1792,13 +1758,11 @@ a4g:SubmissionTermShape a shacl:NodeShape ;
 		shacl:name \\"has late submission information description\\"@en ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/language> ;
 		shacl:path a4g:hasLanguage ;
 		shacl:name \\"has language\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/permission> ;
 		shacl:path a4g:hasECataloguePermission ;
 		shacl:name \\"has e catalogue permission\\"@en ;
 		shacl:minCount 0 ;
@@ -1806,13 +1770,11 @@ a4g:SubmissionTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/subcontracting-indication> ;
 		shacl:path a4g:hasTenderSubcontractingInformation ;
 		shacl:name \\"has tender subcontracting information\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/permission> ;
 		shacl:path a4g:hasESubmissionPermission ;
 		shacl:name \\"has e submission permission\\"@en ;
 		shacl:minCount 0 ;
@@ -1820,7 +1782,6 @@ a4g:SubmissionTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/communication-justification> ;
 		shacl:path a4g:hasNonElectronicSubmissionJustification ;
 		shacl:name \\"has non electronic submission justification\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -1842,7 +1803,6 @@ a4g:SubmissionTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/missing-info-submission> ;
 		shacl:path a4g:hasLateSubmissionPermission ;
 		shacl:name \\"has late submission permission\\"@en ;
 		shacl:minCount 0 ;
@@ -1866,7 +1826,6 @@ a4g:SubmissionTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/permission> ;
 		shacl:path a4g:hasVariantPermission ;
 		shacl:name \\"has variant permission\\"@en ;
 		shacl:minCount 0 ;
@@ -1897,7 +1856,6 @@ a4g:FundShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/EU-programme> ;
 		shacl:path a4g:hasFundProgramme ;
 		shacl:name \\"has fund programme\\"@en ;
 		shacl:minCount 0 ;
@@ -2279,7 +2237,6 @@ a4g:CatalogueShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/activity-code> ;
 		shacl:path a4g:hasActivityCode ;
 		shacl:name \\"has activity code\\"@en ;
 		shacl:minCount 0 ;
@@ -2462,7 +2419,6 @@ m8g:EvidenceShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/access-rights> ;
 		shacl:path m8g:confidentialityLevelType ;
 		shacl:name \\"confidentiality level type\\"@en ;
 		shacl:minCount 0 ;
@@ -2543,7 +2499,6 @@ a4g:AllowanceChargeInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/allowance-charge-reason> ;
 		shacl:path a4g:hasAllowanceChargeReason ;
 		shacl:name \\"has allowance charge reason\\"@en ;
 		shacl:minCount 0 ;
@@ -2707,7 +2662,6 @@ a4g:SubmissionStatisticalInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/received-submission-type> ;
 		shacl:path a4g:hasReceivedSubmissionType ;
 		shacl:name \\"has received submission type\\"@en ;
 		shacl:minCount 0 ;
@@ -2759,7 +2713,6 @@ a4g:TransportHandlingUnitShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/handling-instruction> ;
 		shacl:path a4g:hasHandlingInstructionCode ;
 		shacl:name \\"has handling instruction code\\"@en ;
 		shacl:minCount 0 ;
@@ -2864,7 +2817,6 @@ a4g:DirectAwardTermShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/direct-award-justification> ;
 		shacl:path a4g:hasDirectAwardJustification ;
 		shacl:name \\"has direct award justification\\"@en ;
 		shacl:minCount 0 ;
@@ -2885,7 +2837,6 @@ a4g:CertificationLabelShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/certification-label-type> ;
 		shacl:path a4g:hasLabelType ;
 		shacl:name \\"has label type\\"@en ;
 		shacl:minCount 0 ;
@@ -3260,7 +3211,6 @@ a4g:MonetaryValueShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/currency> ;
 		shacl:path a4g:hasCurrency ;
 		shacl:name \\"has currency\\"@en ;
 		shacl:minCount 0 ;
@@ -3331,13 +3281,11 @@ a4g:ProcurementCriterionShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/requirement-stage> ;
 		shacl:path a4g:hasPerformingStaffQualificationInformation ;
 		shacl:name \\"has performing staff qualification information\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/number-weight> ;
 		shacl:path a4g:hasWeightValueType ;
 		shacl:name \\"has weight value type\\"@en ;
 		shacl:minCount 0 ;
@@ -3522,7 +3470,6 @@ a4g:ConsignmentShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/handling-instruction> ;
 		shacl:path a4g:hasHandlingInstructionCode ;
 		shacl:name \\"has handling instruction code\\"@en ;
 		shacl:minCount 0 ;
@@ -3736,7 +3683,6 @@ a4g:PeriodShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/timeperiod> ;
 		shacl:path a4g:hasTimePeriod ;
 		shacl:name \\"has time period\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -3786,13 +3732,11 @@ a4g:TransportEquipmentShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/transport-equipment-type> ;
 		shacl:path a4g:hasTransportEquipmentType ;
 		shacl:name \\"has transport equipment type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/size-type> ;
 		shacl:path a4g:hasSizeType ;
 		shacl:name \\"has size type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -3907,7 +3851,6 @@ a4g:PackageShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/packaging-type> ;
 		shacl:path a4g:hasPackagingType ;
 		shacl:name \\"has packaging type\\"@en ;
 		shacl:minCount 0 ;
@@ -4099,7 +4042,6 @@ a4g:ItemShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/item-classification> ;
 		shacl:path a4g:hasItemClassification ;
 		shacl:name \\"has item classification\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -4141,7 +4083,6 @@ a4g:ItemShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasCountryOfOrigin ;
 		shacl:name \\"has country of origin\\"@en ;
 		shacl:minCount 0 ;
@@ -4149,7 +4090,6 @@ a4g:ItemShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/delivery-item-type> ;
 		shacl:path a4g:hasDeliveryClassification ;
 		shacl:name \\"has delivery classification\\"@en ;
 		shacl:minCount 0 ;
@@ -4195,7 +4135,6 @@ a4g:ItemShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/dangerous-goods-list> ;
 		shacl:path a4g:hasHazardousItemUNDGCode ;
 		shacl:name \\"has hazardous item undg code\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -4311,7 +4250,6 @@ m8g:ConstraintShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/number-threshold> ;
 		shacl:path a4g:hasThresholdType ;
 		shacl:name \\"has threshold type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -4336,7 +4274,6 @@ a4g:SelectionCriterionShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/usage> ;
 		shacl:path a4g:hasSelectionCriteriaUsage ;
 		shacl:name \\"has selection criteria usage\\"@en ;
 		shacl:minCount 0 ;
@@ -4344,7 +4281,6 @@ a4g:SelectionCriterionShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/selection-criterion> ;
 		shacl:path a4g:hasSelectionCriterionType ;
 		shacl:name \\"has selection criterion type\\"@en ;
 		shacl:minCount 0 ;
@@ -4379,7 +4315,6 @@ a4g:VehicleInformationShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/cvd-contract-type> ;
 		shacl:path a4g:specifiesCleanVehicleDirectiveContractType ;
 		shacl:name \\"specifies clean vehicle directive contract type\\"@en ;
 		shacl:minCount 0 ;
@@ -4387,7 +4322,6 @@ a4g:VehicleInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/vehicle-category> ;
 		shacl:path a4g:specifiesCleanVehicleDirectiveVehicleCategory ;
 		shacl:name \\"specifies clean vehicle directive vehicle category\\"@en ;
 		shacl:minCount 0 ;
@@ -4417,7 +4351,6 @@ a4g:StrategicProcurementShape a shacl:NodeShape ;
 		shacl:name \\"has non accessibility criterion justification\\"@en ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/accessibility> ;
 		shacl:path a4g:includesAccessibilityCriterion ;
 		shacl:name \\"includes accessibility criterion\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -4498,7 +4431,6 @@ a4g:SubcontractTermShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/subcontracting-obligation> ;
 		shacl:path a4g:hasSubcontractingObligation ;
 		shacl:name \\"has subcontracting obligation\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -4583,7 +4515,6 @@ a4g:TechniqueShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/usage> ;
 		shacl:path a4g:hasUsage ;
 		shacl:name \\"has usage\\"@en ;
 		shacl:minCount 0 ;
@@ -4633,7 +4564,6 @@ a4g:TenderShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/applicability> ;
 		shacl:path a4g:hasSubcontracting ;
 		shacl:name \\"has subcontracting\\"@en ;
 		shacl:minCount 0 ;
@@ -4647,7 +4577,6 @@ a4g:TenderShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasItemCountryOfOrigin ;
 		shacl:name \\"has item country of origin\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -4755,7 +4684,6 @@ a4g:CatalogueLineShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/orderable-unit> ;
 		shacl:path a4g:hasOrderableUnit ;
 		shacl:name \\"has orderable unit\\"@en ;
 		shacl:minCount 0 ;
@@ -4763,7 +4691,6 @@ a4g:CatalogueLineShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/transaction-conditions> ;
 		shacl:path a4g:hasTransactionConditionsCode ;
 		shacl:name \\"has transaction conditions code\\"@en ;
 		shacl:minCount 0 ;
@@ -4777,7 +4704,6 @@ a4g:CatalogueLineShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/activity-code> ;
 		shacl:path a4g:hasActivityCode ;
 		shacl:name \\"has activity code\\"@en ;
 		shacl:minCount 0 ;
@@ -4895,7 +4821,6 @@ a4g:ContractModificationInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/modification-justification> ;
 		shacl:path a4g:hasModificationJustification ;
 		shacl:name \\"has modification justification\\"@en ;
 		shacl:minCount 1 ;
@@ -4994,7 +4919,6 @@ a4g:QuantityShape a shacl:NodeShape ;
 		shacl:name \\"has unit description\\"@en ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/measurement-unit> ;
 		shacl:path a4g:hasUnitCode ;
 		shacl:name \\"has unit code\\"@en ;
 		shacl:minCount 1 ;
@@ -5020,7 +4944,6 @@ a4g:ParticipationConditionsSummaryShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/reserved-procurement> ;
 		shacl:path a4g:hasReservedProcurement ;
 		shacl:name \\"has reserved procurement\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -5188,7 +5111,6 @@ a4g:AwardOutcomeShape a shacl:NodeShape ;
 	shacl:targetClass a4g:AwardOutcome ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/winner-selection-status> ;
 		shacl:path a4g:hasAwardStatus ;
 		shacl:name \\"has award status\\"@en ;
 		shacl:minCount 0 ;
@@ -5210,7 +5132,6 @@ a4g:AwardOutcomeShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/non-award-justification> ;
 		shacl:path a4g:hasNonAwardJustification ;
 		shacl:name \\"has non award justification\\"@en ;
 		shacl:minCount 0 ;
@@ -5426,7 +5347,6 @@ a4g:DespatchAdviceShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/despatch-advice-type> ;
 		shacl:path a4g:hasDespatchAdviceType ;
 		shacl:name \\"has despatch advice type\\"@en ;
 		shacl:minCount 0 ;
@@ -5702,7 +5622,6 @@ dcterms:LocationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/nuts> ;
 		shacl:path a4g:hasNutsCode ;
 		shacl:name \\"has nuts code\\"@en ;
 		shacl:minCount 0 ;
@@ -5710,7 +5629,6 @@ dcterms:LocationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasCountryCode ;
 		shacl:name \\"has country code\\"@en ;
 		shacl:minCount 0 ;
@@ -5776,7 +5694,6 @@ eli:LegalResourceShape a shacl:NodeShape ;
 	shacl:targetClass eli:LegalResource ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/resource-type> ;
 		shacl:path a4g:hasResourceType ;
 		shacl:name \\"has resource type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -5850,7 +5767,6 @@ a4g:PriceShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/price-type> ;
 		shacl:path a4g:hasPriceType ;
 		shacl:name \\"has price type\\"@en ;
 		shacl:minCount 0 ;
@@ -6036,7 +5952,6 @@ a4g:OrderResponseInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/ResponseStatus> ;
 		shacl:path a4g:hasAcceptanceStatus ;
 		shacl:name \\"has acceptance status\\"@en ;
 		shacl:minCount 1 ;
@@ -6138,7 +6053,6 @@ a4g:SocialProcurementShape a shacl:NodeShape ;
 	shacl:targetClass a4g:SocialProcurement ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/social-objective> ;
 		shacl:path a4g:fulfillsRequirement ;
 		shacl:name \\"fulfills requirement\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -6166,13 +6080,11 @@ a4g:PurposeShape a shacl:NodeShape ;
 	shacl:targetClass a4g:Purpose ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/cpv> ;
 		shacl:path a4g:hasAdditionalClassification ;
 		shacl:name \\"has additional classification\\"@en ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/cpv> ;
 		shacl:path a4g:hasMainClassification ;
 		shacl:name \\"has main classification\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -6192,7 +6104,6 @@ a4g:PurchaseContract rdfs:subClassOf a4g:Contract .
 	shacl:targetClass <http://www.w3.org/ns/person#Person> ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasNationality ;
 		shacl:name \\"has nationality\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -6206,7 +6117,6 @@ a4g:PurchaseContract rdfs:subClassOf a4g:Contract .
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasCountryOfBirth ;
 		shacl:name \\"has country of birth\\"@en ;
 		shacl:minCount 0 ;
@@ -6222,7 +6132,6 @@ a4g:DynamicPurchaseSystemTechniqueShape a shacl:NodeShape ;
 	shacl:targetClass a4g:DynamicPurchaseSystemTechnique ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/dps-usage> ;
 		shacl:path a4g:hasDPSScope ;
 		shacl:name \\"has dps scope\\"@en ;
 		shacl:minCount 0 ;
@@ -6282,7 +6191,6 @@ locn:AddressShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/nuts> ;
 		shacl:path a4g:hasNutsCode ;
 		shacl:name \\"has nuts code\\"@en ;
 		shacl:minCount 0 ;
@@ -6290,7 +6198,6 @@ locn:AddressShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/country> ;
 		shacl:path a4g:hasCountryCode ;
 		shacl:name \\"has country code\\"@en ;
 		shacl:minCount 0 ;
@@ -6302,7 +6209,6 @@ a4g:ParticipationConditionShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ParticipationCondition ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/reserved-procurement> ;
 		shacl:path a4g:hasReservedProcurement ;
 		shacl:name \\"has reserved procurement\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -6314,7 +6220,6 @@ a4g:InnovativeProcurementShape a shacl:NodeShape ;
 	shacl:targetClass a4g:InnovativeProcurement ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/innovative-acquisition> ;
 		shacl:path a4g:fulfillsRequirement ;
 		shacl:name \\"fulfills requirement\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -6586,7 +6491,6 @@ a4g:ReceiptAdviceLineShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ReceiptAdviceLine ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/action-code> ;
 		shacl:path a4g:hasShortageAction ;
 		shacl:name \\"has shortage action\\"@en ;
 		shacl:minCount 0 ;
@@ -6594,7 +6498,6 @@ a4g:ReceiptAdviceLineShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/action-code> ;
 		shacl:path a4g:RejectionAction ;
 		shacl:name \\"rejection action\\"@en ;
 		shacl:minCount 0 ;
@@ -6602,7 +6505,6 @@ a4g:ReceiptAdviceLineShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/reject-reason> ;
 		shacl:path a4g:hasRejectReason ;
 		shacl:name \\"has reject reason\\"@en ;
 		shacl:minCount 0 ;
@@ -6882,7 +6784,6 @@ a4g:CatalogueResponseInformationShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/ResponseStatus> ;
 		shacl:path a4g:hasAcceptanceStatus ;
 		shacl:name \\"has acceptance status\\"@en ;
 		shacl:minCount 1 ;
@@ -6908,7 +6809,6 @@ eli:LegalResourceSubdivisionShape a shacl:NodeShape ;
 	shacl:targetClass eli:LegalResourceSubdivision ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/subdivision> ;
 		shacl:path a4g:hasSubdivision ;
 		shacl:name \\"has subdivision\\"@en ;
 		shacl:minCount 0 ;
@@ -6926,7 +6826,6 @@ a4g:PostAwardDocumentShape a shacl:NodeShape ;
 	shacl:targetClass a4g:PostAwardDocument ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/document-type> ;
 		shacl:path a4g:hasDocumentType ;
 		shacl:name \\"has document type\\"@en ;
 		shacl:minCount 0 ;
@@ -6934,7 +6833,6 @@ a4g:PostAwardDocumentShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/document-status> ;
 		shacl:path a4g:hasDocumentStatus ;
 		shacl:name \\"has document status\\"@en ;
 		shacl:minCount 0 ;
@@ -7016,7 +6914,6 @@ a4g:ResponseShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/access-rights> ;
 		shacl:path m8g:confidentialityLevelType ;
 		shacl:name \\"confidentiality level type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -7086,7 +6983,6 @@ a4g:TransportMeansShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/transport-mode> ;
 		shacl:path a4g:hasTransportMode ;
 		shacl:name \\"has transport mode\\"@en ;
 		shacl:minCount 1 ;
@@ -7102,7 +6998,6 @@ a4g:TransportMeansShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://unknown/transport-means-type> ;
 		shacl:path a4g:hasTransportMeansType ;
 		shacl:name \\"has transport means type\\"@en ;
 		shacl:minCount 0 ;
@@ -7224,7 +7119,6 @@ a4g:ReviewerShape a shacl:NodeShape ;
 	shacl:targetClass a4g:Reviewer ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://publications.europa.eu/resource/authority/review-body-type> ;
 		shacl:path a4g:hasReviewBodyType ;
 		shacl:name \\"has review body type\\"@en ;
 		shacl:nodeKind shacl:IRI ;
