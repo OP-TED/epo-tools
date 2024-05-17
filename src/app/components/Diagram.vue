@@ -39,8 +39,12 @@ const imageUrl = computed(() => {
         />
       </template>
       <button v-if="isSupported" @click="copy(plantUml)">
-        <template v-if="text">Copied</template>
-        <template v-else>Copy</template>
+        <template v-if="text && !text.startsWith('http')">Copied</template>
+        <template v-else>Copy plantuml</template>
+      </button>
+      <button v-if="isSupported" @click="copy(imageUrl)">
+        <template v-if="text && text.startsWith('http')">Copied</template>
+        <template v-else>Copy image link</template>
       </button>
       <div style="overflow: auto">
         <n-code :code="plantUml" language="plantuml" show-line-numbers/>
