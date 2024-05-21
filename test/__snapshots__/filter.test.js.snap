@@ -10,7 +10,15 @@ Array [
 exports[`filter at-voc-new:certification-label-type 1`] = `
 Object {
   "edges": Array [],
-  "nodes": Array [],
+  "nodes": Array [
+    Object {
+      "description": "* environmental/ecological/green, 
+* quality, 
+* social, etc.",
+      "name": "at-voc-new:certification-label-type",
+      "type": "Enumeration",
+    },
+  ],
 }
 `;
 
@@ -4062,6 +4070,46 @@ WG acceptance 10/03/2022",
     },
     Object {
       "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form1",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form2",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form3",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form4",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
       "predicate": "epo:hasFormType",
       "quantifiers": Object {
         "max": 1,
@@ -4259,6 +4307,46 @@ The use of a URIs has added advantages:
       "source": "epo-cat:Price",
       "target": "dct:Location",
       "type": "Association",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form22",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form23",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form25",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form24",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -4485,6 +4573,26 @@ WG approval 28/07/2022",
       "source": "epo-cat:ItemProperty",
       "target": "epo:Quantity",
       "type": "Association",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form6",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form7",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -4854,6 +4962,26 @@ WG approval 28/07/2022",
       "source": "epo-not:Notice9",
       "target": "planning",
       "type": "Dependency",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form5",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form17",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -5310,6 +5438,16 @@ WG Approval 12/05/2020",
       "source": "epo-not:VEAT-D81",
       "target": "Form15",
       "type": "Dependency",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form16",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -6089,6 +6227,46 @@ Some countries however may allow multiple contracts per order (i.e Italy). ",
       "type": "Association",
     },
     Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form18",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form19",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form20",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form21",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
       "description": "Coded description of the specific transaction conditions (purchasing, sales, payment) for an item.
 ",
       "predicate": "epo-cat:hasTransactionConditionsCode",
@@ -6421,6 +6599,46 @@ This property corresponds to BT-27 in eForms (for Lot and Procedure) and can be 
       "source": "epo-not:Notice21",
       "target": "epo-not:CNSocialNotice",
       "type": "Generalization",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form8",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form12",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form13",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form15",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -9867,6 +10085,11 @@ WG acceptance 08/09/2022",
       "description": null,
       "name": "epo-not:VEAT-D25",
       "type": "Class",
+    },
+    Object {
+      "description": null,
+      "name": "epo-not:StandardForm",
+      "type": "Enumeration",
     },
     Object {
       "description": null,
@@ -20223,6 +20446,26 @@ WG Approval 25/03/2021",
       "target": "at-voc:cpv",
       "type": "Dependency",
     },
+    Object {
+      "description": "The number of units required.
+
+Additional Information:
+The quantity needs to go along with the unit. 
+
+
+
+",
+      "predicate": "epo:hasTotalQuantity",
+      "quantifiers": Object {
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
+      },
+      "source": "epo:Purpose",
+      "target": "epo:Quantity",
+      "type": "Association",
+    },
   ],
   "nodes": Array [
     Object {
@@ -20263,6 +20506,12 @@ The description of the objectives related to a procurement.
     Object {
       "description": "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.",
       "name": "adms:Identifier",
+      "type": "Class",
+    },
+    Object {
+      "description": "A counted number of non-monetary units possibly including fractions.
+",
+      "name": "epo:Quantity",
       "type": "Class",
     },
   ],
@@ -20343,6 +20592,12 @@ Object {
   "edges": Array [
     Object {
       "predicate": "selected",
+      "source": "a",
+      "target": "b",
+      "type": "Association",
+    },
+    Object {
+      "predicate": "selected",
       "source": "b",
       "target": "c",
       "type": "Association",
@@ -20355,6 +20610,9 @@ Object {
     },
   ],
   "nodes": Array [
+    Object {
+      "name": "a",
+    },
     Object {
       "name": "b",
     },
@@ -20431,6 +20689,24 @@ Object {
       "target": "datatype3",
       "type": "Attribute",
     },
+    Object {
+      "predicate": "selected",
+      "source": "b",
+      "target": "c",
+      "type": "Association",
+    },
+    Object {
+      "predicate": "foaf",
+      "source": "c",
+      "target": "e",
+      "type": "Association",
+    },
+    Object {
+      "predicate": "incoming",
+      "source": "e",
+      "target": "b",
+      "type": "Association",
+    },
   ],
   "nodes": Array [
     Object {
@@ -20438,6 +20714,12 @@ Object {
     },
     Object {
       "name": "b",
+    },
+    Object {
+      "name": "c",
+    },
+    Object {
+      "name": "e",
     },
   ],
 }

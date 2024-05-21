@@ -7837,6 +7837,86 @@ WG Approval 09/11/2021
       "description": null,
       "issues": Array [
         Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form1]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form1",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form2]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form2",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form3]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form3",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form4]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form4",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
           "desc": "No prefix for target [Form3]",
           "severity": "error",
         },
@@ -8134,6 +8214,86 @@ The use of a URIs has added advantages:
       "source": "epo-ful:ShipmentInformation",
       "target": "dct:Location",
       "type": "Association",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form22]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form22",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form23]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form23",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form25]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form25",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form24]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form24",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -8897,6 +9057,46 @@ WG Approval 11/06/2020
     },
     Object {
       "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form6]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form6",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form7]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form7",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
       "issues": Array [],
       "predicate": "rdfs:subClassOf",
       "quantifiers": Object {
@@ -9460,6 +9660,46 @@ WG Approval 11/06/2020
       "source": "epo-not:Notice9",
       "target": "planning",
       "type": "Dependency",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form5]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form5",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form17]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form17",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -10352,6 +10592,26 @@ WG Approval 5/11/2019
       "source": "epo-ord:OrderResponseInformation",
       "target": "epo-cat:InformationHub",
       "type": "Generalization",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form16]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form16",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -12685,6 +12945,86 @@ WG Approval 19/09/2019
       "type": "Association",
     },
     Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form18]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form18",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form19]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form19",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form20]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form20",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form21]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form21",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
       "description": "Coded description of the specific transaction conditions (purchasing, sales, payment) for an item.
 ",
       "issues": Array [],
@@ -13642,6 +13982,86 @@ WG approval 30/05/2023",
       "source": "epo-not:Notice21",
       "target": "epo-not:CNSocialNotice",
       "type": "Generalization",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form8]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form8",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form12]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form12",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form13]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form13",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
+    },
+    Object {
+      "description": null,
+      "issues": Array [
+        Object {
+          "desc": "No quantifiers defined",
+          "severity": "warning",
+        },
+        Object {
+          "desc": "No prefix for source [Form15]",
+          "severity": "error",
+        },
+      ],
+      "predicate": "skos:inScheme",
+      "quantifiers": Object {
+        "quantifiersDeclared": false,
+      },
+      "source": "Form15",
+      "target": "epo-not:StandardForm",
+      "type": "Realisation",
     },
     Object {
       "description": null,
@@ -22995,6 +23415,12 @@ WG approval 09/02/2023",
     },
     Object {
       "description": null,
+      "issues": Array [],
+      "name": "epo-not:StandardForm",
+      "type": "Enumeration",
+    },
+    Object {
+      "description": null,
       "instanceOf": "epo-not:StandardForm",
       "issues": Array [
         Object {
@@ -25146,6 +25572,46 @@ Array [
   ],
   Array [
     Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form1]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form2]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form3]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form4]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
       "desc": "No prefix for target [Form3]",
       "severity": "error",
     },
@@ -25206,6 +25672,46 @@ Array [
   ],
   Array [
     Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form22]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form23]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form25]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form24]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
       "desc": "No prefix for target [competition]",
       "severity": "error",
     },
@@ -25241,6 +25747,26 @@ Array [
     },
     Object {
       "desc": "No prefix for source [planning]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form6]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form7]",
       "severity": "error",
     },
   ],
@@ -25379,6 +25905,26 @@ Array [
   Array [
     Object {
       "desc": "No prefix for target [planning]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form5]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form17]",
       "severity": "error",
     },
   ],
@@ -25556,6 +26102,16 @@ Array [
   ],
   Array [
     Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form16]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
       "desc": "No prefix for target [planning]",
       "severity": "error",
     },
@@ -25663,6 +26219,46 @@ Array [
   Array [
     Object {
       "desc": "No prefix for target [planning]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form18]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form19]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form20]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form21]",
       "severity": "error",
     },
   ],
@@ -25791,6 +26387,46 @@ Array [
   Array [
     Object {
       "desc": "No prefix for target [veat]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form8]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form12]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form13]",
+      "severity": "error",
+    },
+  ],
+  Array [
+    Object {
+      "desc": "No quantifiers defined",
+      "severity": "warning",
+    },
+    Object {
+      "desc": "No prefix for source [Form15]",
       "severity": "error",
     },
   ],

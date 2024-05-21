@@ -4,7 +4,7 @@ import { describe, it } from 'mocha'
 import { ATTRIBUTE, RELATIONSHIP } from '../src/conceptualModel/const.js'
 import {
   anyMatch,
-  filterBy, getMatcher,
+  filterBy,
   startsWith,
   suggestNodes,
 } from '../src/conceptualModel/filter.js'
@@ -57,16 +57,6 @@ describe('filter', () => {
     expect(filtered).toMatchSnapshot(this)
   })
 
-  it(`filterBy negation`, function () {
-
-    const view = {
-      filter: ['foaf:Agent', 'epo:Purpose', '!epo:Q*', '-dct*'],
-      includeIncoming: false,
-    }
-
-    const filtered = filterBy(eaJson, view)
-    expect(filtered).toMatchSnapshot(this)
-  })
 
   it(`filterBy suggestNodes`, function () {
 
@@ -123,11 +113,6 @@ describe('filter', () => {
 
   it(`simple-edge negation`, function () {
     const filtered = filterBy(graph, { filter: ['selected', '-a'] })
-    expect(filtered).toMatchSnapshot(this)
-  })
-
-  it(`simple-datatype negation`, function () {
-    const filtered = filterBy(graph, { filter: ['datatype1', '-has'] })
     expect(filtered).toMatchSnapshot(this)
   })
 

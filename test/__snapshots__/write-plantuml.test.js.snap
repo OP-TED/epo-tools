@@ -5967,24 +5967,28 @@ class \\"epo-not:VEAT-D25\\" {
   epo:hasFormType : Form15 [0..1]
 }
 
-class \\"Form1\\" {
+enum \\"epo-not:StandardForm\\" {
 
+}
+
+class \\"Form1\\" {
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form2\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form3\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form4\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form16\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"epo-not:eFormsNotice\\" {
@@ -6101,31 +6105,31 @@ class \\"epo-not:ConcessionAwardNotice-D23\\" {
 }
 
 class \\"Form5\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form6\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form7\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form8\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form12\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form13\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form15\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"pin-cfc-social\\" {
@@ -6133,39 +6137,39 @@ class \\"pin-cfc-social\\" {
 }
 
 class \\"Form17\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form18\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form19\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form20\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form21\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form22\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form23\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form24\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"Form25\\" {
-
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"epo-not:PINOnly-D24\\" {
@@ -7574,6 +7578,10 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:Notice35\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
 \\"epo-not:Notice32\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
 \\"epo-not:Notice36\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
+\\"Form1\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form2\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form3\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form4\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-not:CANStandard-D24\\" --> \\"0..1\\" \\"Form3\\" : epo:hasFormType
 \\"epo-not:PINProfile-D24\\" --> \\"0..1\\" \\"Form8\\" : epo:hasFormType
 \\"epo-not:DesignContest-D24\\" --> \\"0..1\\" \\"Form12\\" : epo:hasFormType
@@ -7590,6 +7598,10 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:PINProfile-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
 \\"epo-cat:Price\\" --> \\"0..1\\" \\"dct:Location\\" : epo-cat:hasDeliveryLocation
 \\"epo-ful:ShipmentInformation\\" --> \\"0..1\\" \\"dct:Location\\" : epo-ful:specifiesPlaceOfDespatch
+\\"Form22\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form23\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form25\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form24\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-not:Notice12\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
 \\"epo-not:Notice13\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
 \\"epo-not:Notice14\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
@@ -7632,6 +7644,8 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:ContractTerm\\" --> \\"0..1\\" \\"at-voc:permission\\" : epo:hasEInvoicingPermission
 \\"epo:ParticipationConditionsSummary\\" --> \\"0..*\\" \\"at-voc:reserved-procurement\\" : epo:hasReservedProcurement
 \\"epo:NonPublishedInformation\\" --> \\"1\\" \\"at-voc:non-publication-justification\\" : epo:hasNonPublicationJustification
+\\"Form6\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form7\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-not:Notice17\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
 \\"epo-not:Notice16\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
 \\"epo-not:Notice18\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
@@ -7658,6 +7672,8 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:ChangeInformation\\" --> \\"1..*\\" \\"adms:Identifier\\" : epo:relatesToEFormSectionIdentifier
 \\"epo:ChangeInformation\\" --> \\"1\\" \\"epo:Notice\\" : epo:concernsNotice
 \\"epo-not:Notice9\\" --> \\"0..1\\" \\"planning\\" : epo:hasFormType
+\\"Form5\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form17\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-not:ResultNotice\\" --> \\"0..*\\" \\"epo:AwardDecision\\" : epo:announcesAwardDecision
 \\"epo-not:ContractModificationNotice\\" --> \\"1\\" \\"epo-con:ContractAmendment\\" : epo:announcesContractAmendment
 \\"epo-con:ContractModificationInformation\\" --> \\"1\\" \\"epo-con:ContractAmendment\\" : epo:concernsContractAmendment
@@ -7702,6 +7718,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:Subcontract-D81\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
 \\"epo-not:PINDefence-D81\\" --> \\"0..1\\" \\"Form16\\" : epo:hasFormType
 \\"epo-not:VEAT-D81\\" --> \\"0..1\\" \\"Form15\\" : epo:hasFormType
+\\"Form16\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-not:Notice1\\" --> \\"0..1\\" \\"planning\\" : epo:hasFormType
 \\"epo-not:Notice2\\" --> \\"0..1\\" \\"planning\\" : epo:hasFormType
 \\"epo-not:Notice3\\" --> \\"0..1\\" \\"planning\\" : epo:hasFormType
@@ -7803,6 +7820,10 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:LotGroup\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo:hasLaunchFrameworkAgreementMaximumValue
 \\"epo:PurchaseContract\\" --> \\"0..1\\" \\"epo:FrameworkAgreement\\" : epo:followsRulesSetBy
 \\"epo:Tenderer\\" --> \\"0..1\\" \\"epo:ExclusionGround\\" : epo:substantiatesExclusionGround
+\\"Form18\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form19\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form20\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form21\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-cat:CatalogueLine\\" --> \\"0..1\\" \\"at-voc-new:transaction-conditions\\" : epo-cat:hasTransactionConditionsCode
 \\"epo:Tender\\" --> \\"0..*\\" \\"epo:Subcontractor\\" : epo:specifiesSubcontractors
 \\"epo-not:Notice27\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
@@ -7843,6 +7864,10 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"Directive 81\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
 \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" --> \\"1\\" \\"veat\\" : epo:hasNoticeType
 \\"epo-cat:Price\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo-cat:hasOrderabableUnitFactorRate
+\\"Form8\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form12\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form13\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form15\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-not:Notice28\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
 \\"epo-not:Notice26\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
 \\"epo-not:Notice29\\" --> \\"0..1\\" \\"result\\" : epo:hasFormType
@@ -8232,6 +8257,90 @@ class \\"Directive 25\\" {
 
 class \\"Directive 81\\" {
   skos:inScheme : at-voc:legal-basis 
+}
+
+class \\"Form1\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form12\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form13\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form15\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form16\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form17\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form18\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form19\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form2\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form20\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form21\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form22\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form23\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form24\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form25\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form3\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form4\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form5\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form6\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form7\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form8\\" {
+  skos:inScheme : epo-not:StandardForm 
 }
 
 class \\"adms:Identifier\\" {
