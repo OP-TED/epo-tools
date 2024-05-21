@@ -34,7 +34,7 @@ function createTriplestore ({ assets }) {
         //     value: 'file:///home/cvasquez/github.com/OP-TED/ted-rdf-assessment/assets/common-vocabularies/w3c-locn.ttl'
         //   }
         // }
-        // console.log(quad)
+        console.log(quad)
       }
 
     }

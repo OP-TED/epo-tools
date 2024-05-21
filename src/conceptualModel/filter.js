@@ -31,28 +31,30 @@ function filterBy ({ nodes, edges }, { filter, includeIncoming }) {
   // If the user searches by predicates, is interested in how the entities connect.
 
   // Behavior
-  // Marches per node return all attributes.
+  // Matches per node return all attributes.
   // Matches per predicate might or not return all attributes
   // if there are two nodes connected somehow in the view, then show the connection
 
-  const selectedNodes = new Set(nodes.map(x => x.name).filter(f))
+  const matchByNodeName = new Set(nodes.map(x => x.name).filter(f))
   const selectedPredicates = new Set(edges.map(x => x.predicate).filter(f))
   const selectedAttributes = new Set(
     edges.filter(x => x.type === ATTRIBUTE).map(x => x.target).filter(f))
 
-  const allowedEdge = ({ source, predicate, target }) => selectedNodes.has(
+  const allowedEdge = ({ source, predicate, target }) => matchByNodeName.has(
       source) || selectedPredicates.has(predicate) ||
     selectedAttributes.has(target) ||
-    (includeIncoming && selectedNodes.has(target))
+    (includeIncoming && matchByNodeName.has(target))
 
   const noNegatives = ({ source, predicate, target }) => !nf(source) &&
     !nf(predicate) && !nf(target)
 
-  const nodesToDisplay = new Set(edges.filter(allowedEdge).
+  const matchByEdge = edges.filter(allowedEdge).
     filter(noNegatives).
     flatMap(({ source, target, type }) => type === ATTRIBUTE ? [source] : [
       source, target]).
-    filter(x => x))
+    filter(x => x)
+
+  const nodesToDisplay = new Set([...matchByEdge, ...matchByNodeName].filter(x=>!nf(x.name)))
 
   const filteredEdges = edges.filter(edge => allowedEdge(edge) ||
     (nodesToDisplay.has(edge.source) && nodesToDisplay.has(edge.target))).

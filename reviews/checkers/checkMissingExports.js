@@ -78,7 +78,7 @@ function printSummary () {
 function showDifference (name) {
   const { actual, expected } = queryBoth(name)
 
-  console.log('Actual')
+  console.log('Actually present')
   for (const current of actual) {
     // console.log(Object.values(current).map(x=>x.value))
     console.log({
@@ -88,15 +88,16 @@ function showDifference (name) {
     })
 
   }
+  console.log('Expected')
   for (const { source, predicate, target } of expected) {
     console.log({ source, predicate, target })
   }
 
 }
 
-printSummary()
-// showDifference('epo-sub:ESPDResponse')
+// printSummary()
+showDifference('epo-sub:ESPDResponse')
 
 // 150 Classes contain less properties than expected
-// total 369 properties missing
+// There is a mismatch of 369 properties
 // 316 classes inspected

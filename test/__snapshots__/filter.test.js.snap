@@ -7,6 +7,13 @@ Array [
 ]
 `;
 
+exports[`filter at-voc-new:certification-label-type 1`] = `
+Object {
+  "edges": Array [],
+  "nodes": Array [],
+}
+`;
+
 exports[`filter byPrefix 1`] = `
 Object {
   "edges": Array [

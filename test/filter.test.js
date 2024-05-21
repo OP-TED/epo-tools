@@ -4,7 +4,7 @@ import { describe, it } from 'mocha'
 import { ATTRIBUTE, RELATIONSHIP } from '../src/conceptualModel/const.js'
 import {
   anyMatch,
-  filterBy,
+  filterBy, getMatcher,
   startsWith,
   suggestNodes,
 } from '../src/conceptualModel/filter.js'
@@ -133,6 +133,13 @@ describe('filter', () => {
 
   it(`simple-node negation`, function () {
     const filtered = filterBy(graph, { filter: ['a', 'c', '-e'] })
+    expect(filtered).toMatchSnapshot(this)
+  })
+
+  it(`at-voc-new:certification-label-type`, function () {
+    const filtered = filterBy(eaJson,
+      { filter: ['at-voc-new:certification-label-type'] })
+
     expect(filtered).toMatchSnapshot(this)
   })
 
