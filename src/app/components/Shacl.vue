@@ -22,6 +22,7 @@ const shacl = computedAsync(async () => {
 <template>
   <SelectModel/>
   <Filter></Filter>
+  <n-card> Note: This SHACL is dynamically generated based on the selected filters and is intended for debugging purposes.  </n-card>
   <template v-if="shacl">
     <n-card :title="`SHACL (${shacl?.split('\n')?.length} lines)`">
       <button v-if="isSupported" @click="copy(shacl)">

@@ -74,4 +74,5 @@ const newTerms = computed(() => {
       </n-button>
     </n-card>
   </template>
+  <n-card> Note: This validator is using a naive approach, just checking for the existence or not of the predicates.  </n-card>
 </template>

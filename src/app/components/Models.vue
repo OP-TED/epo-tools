@@ -65,20 +65,27 @@ const libraryOptions = computed(() => {
 
 <template>
 
-  <n-card title="In library">
-    <template v-for="repo of libraryOptions">
-      <n-button @click="clearFromLibrary(repo.value)"> {{ repo.label }}</n-button>
-    </template>
-  </n-card>
-
-  <n-card title="Available models">
-    <template v-for="repo of repositories.filter(x=>!library.models[x.key])">
-      <n-button @click="handleUpload(repo)">{{ repo.title }}</n-button>
-    </template>
-  </n-card>
+  <div class="card-container">
+    <n-card title="Available models">
+      <template v-for="repo of repositories.filter(x=>!library.models[x.key])">
+        <n-button @click="handleUpload(repo)">{{ repo.title }}</n-button>
+      </template>
+    </n-card>
+    <n-card title="Selected">
+      <template v-for="repo of libraryOptions">
+        <n-button @click="clearFromLibrary(repo.value)"> {{ repo.label }}</n-button>
+      </template>
+    </n-card>
+  </div>
   <n-card title="Upload yours">
     <n-button @click="open()">
       Select eap
     </n-button>
   </n-card>
 </template>
+
+<style>
+.card-container {
+  display: flex;
+}
+</style>

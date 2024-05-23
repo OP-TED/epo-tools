@@ -1,7 +1,6 @@
 import { useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
-import { INHERITANCE } from '../conceptualModel/const.js'
 import { filterBy, suggestNodes } from '../conceptualModel/filter.js'
 
 const DEFAULT_VIEW = {
@@ -22,7 +21,7 @@ export const useStore = defineStore('counter', () => {
   // APP
   const filterOptions = useStorage('filterBy', DEFAULT_VIEW)
   const savedFilters = useStorage('savedFilterBy', [])
-  const developerMode = useStorage('developerMode', false)
+  const developerMode = useStorage('developerMode', true)
 
   const sparql = useStorage('sparql', '')
 
