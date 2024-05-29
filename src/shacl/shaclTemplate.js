@@ -34,7 +34,7 @@ const prefix = `
 
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
-@prefix cpov: <http://data.europa.eu/m8g/cpov> . # Is this true?
+@prefix cpov: <http://data.europa.eu/m8g/> .
 @prefix at-voc: <http://publications.europa.eu/resource/authority/> . # Authority tables
 @prefix at-voc-new: <http://unknown/> . # Authority tables`
 

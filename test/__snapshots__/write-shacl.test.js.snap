@@ -455,8 +455,8 @@ a4g:ProcedureShape a shacl:NodeShape ;
 
 a4g:Procedure rdfs:subClassOf a4g:ProcurementObject .
 
-m8g:cpovContactPointShape a shacl:NodeShape ;
-	shacl:targetClass m8g:cpovContactPoint ;
+m8g:ContactPointShape a shacl:NodeShape ;
+	shacl:targetClass m8g:ContactPoint ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
 		shacl:path a4g:hasContactName ;
@@ -1273,7 +1273,7 @@ a4g:BuyerShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass m8g:cpovContactPoint ;
+		shacl:targetClass m8g:ContactPoint ;
 		shacl:path a4g:indicatesInvoiceeContactPoint ;
 		shacl:name \\"indicates invoicee contact point\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -1673,7 +1673,7 @@ org:OrganizationShape a shacl:NodeShape ;
 		] ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass m8g:cpovContactPoint ;
+		shacl:targetClass m8g:ContactPoint ;
 		shacl:path a4g:hasPrimaryContactPoint ;
 		shacl:name \\"has primary contact point\\"@en ;
 		shacl:minCount 0 ;
@@ -4676,7 +4676,7 @@ a4g:AgentInRoleShape a shacl:NodeShape ;
 		shacl:name \\"title\\"@en ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass m8g:cpovContactPoint ;
+		shacl:targetClass m8g:ContactPoint ;
 		shacl:path a4g:hasContactPointInRole ;
 		shacl:name \\"has contact point in role\\"@en ;
 		shacl:nodeKind shacl:IRI ;
