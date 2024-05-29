@@ -9,7 +9,7 @@ exports[`write-shacl generates shacl 1`] = `
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix cpov: <http://data.europa.eu/m8g/cpov> .
+@prefix cpov: <http://data.europa.eu/m8g/> .
 @prefix a4g: <http://data.europa.eu/a4g/ontology#> .
 @prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
 @prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
@@ -455,8 +455,8 @@ a4g:ProcedureShape a shacl:NodeShape ;
 
 a4g:Procedure rdfs:subClassOf a4g:ProcurementObject .
 
-cpov:ContactPointShape a shacl:NodeShape ;
-	shacl:targetClass cpov:ContactPoint ;
+m8g:cpovContactPointShape a shacl:NodeShape ;
+	shacl:targetClass m8g:cpovContactPoint ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
 		shacl:path a4g:hasContactName ;
@@ -1273,7 +1273,7 @@ a4g:BuyerShape a shacl:NodeShape ;
 		shacl:nodeKind shacl:IRI ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass cpov:ContactPoint ;
+		shacl:targetClass m8g:cpovContactPoint ;
 		shacl:path a4g:indicatesInvoiceeContactPoint ;
 		shacl:name \\"indicates invoicee contact point\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -1673,7 +1673,7 @@ org:OrganizationShape a shacl:NodeShape ;
 		] ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass cpov:ContactPoint ;
+		shacl:targetClass m8g:cpovContactPoint ;
 		shacl:path a4g:hasPrimaryContactPoint ;
 		shacl:name \\"has primary contact point\\"@en ;
 		shacl:minCount 0 ;
@@ -4676,7 +4676,7 @@ a4g:AgentInRoleShape a shacl:NodeShape ;
 		shacl:name \\"title\\"@en ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass cpov:ContactPoint ;
+		shacl:targetClass m8g:cpovContactPoint ;
 		shacl:path a4g:hasContactPointInRole ;
 		shacl:name \\"has contact point in role\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -8002,7 +8002,7 @@ exports[`write-shacl generates shacl, empty graph 1`] = `
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix cpov: <http://data.europa.eu/m8g/cpov> .
+@prefix cpov: <http://data.europa.eu/m8g/> .
 @prefix a4g: <http://data.europa.eu/a4g/ontology#> .
 @prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
 @prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .

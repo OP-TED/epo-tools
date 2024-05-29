@@ -12,7 +12,7 @@ const ns = {
   dcterms: rdf.namespace('http://purl.org/dc/terms/'),
 
   foaf: rdf.namespace('http://xmlns.com/foaf/0.1/'),
-  cpov: rdf.namespace('http://data.europa.eu/m8g/cpov'),
+  cpov: rdf.namespace('http://data.europa.eu/m8g/'),
   a4g: rdf.namespace('http://data.europa.eu/a4g/ontology#'),
   sfrml: rdf.namespace('http://data.europa.eu/a4g/mapping/sf-rml/'),
   a4g_shape: rdf.namespace('http://data.europa.eu/a4g/data-shape#'),
