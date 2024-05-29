@@ -16,7 +16,7 @@ exports[`write-shacl generates shacl 1`] = `
 @prefix eli: <http://data.europa.eu/eli/ontology#> .
 @prefix m8g: <http://data.europa.eu/m8g/> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix person: <http://data.europa.eu/person#> .
+@prefix person: <http://www.w3.org/ns/person#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix org: <http://www.w3.org/ns/org#> .
@@ -998,7 +998,7 @@ a4g:BusinessShape a shacl:NodeShape ;
 		shacl:maxCount 1 ;
 	], [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://www.w3.org/ns/person#Person> ;
+		shacl:targetClass person:Person ;
 		shacl:path a4g:hasBeneficialOwner ;
 		shacl:name \\"has beneficial owner\\"@en ;
 		shacl:nodeKind shacl:IRI ;
@@ -6110,7 +6110,7 @@ a4g:JuryMemberShape a shacl:NodeShape ;
 	shacl:targetClass a4g:JuryMember ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
-		shacl:targetClass <http://www.w3.org/ns/person#Person> ;
+		shacl:targetClass person:Person ;
 		shacl:path a4g:playedBy ;
 		shacl:name \\"played by\\"@en ;
 		shacl:minCount 0 ;
@@ -6120,7 +6120,7 @@ a4g:JuryMemberShape a shacl:NodeShape ;
 
 a4g:JuryMember rdfs:subClassOf a4g:AcquiringParty .
 
-<http://www.w3.org/ns/person#Person> rdfs:subClassOf foaf:Person .
+person:Person rdfs:subClassOf foaf:Person .
 
 a4g:ProcurementServiceProvider rdfs:subClassOf a4g:AcquiringParty .
 
@@ -6804,8 +6804,8 @@ a4g:PurposeShape a shacl:NodeShape ;
 
 a4g:PurchaseContract rdfs:subClassOf a4g:Contract .
 
-<http://www.w3.org/ns/person#PersonShape> a shacl:NodeShape ;
-	shacl:targetClass <http://www.w3.org/ns/person#Person> ;
+person:PersonShape a shacl:NodeShape ;
+	shacl:targetClass person:Person ;
 	shacl:property [
 		rdf:type shacl:PropertyShape ;
 		shacl:path a4g:hasNationality ;
@@ -8009,7 +8009,7 @@ exports[`write-shacl generates shacl, empty graph 1`] = `
 @prefix eli: <http://data.europa.eu/eli/ontology#> .
 @prefix m8g: <http://data.europa.eu/m8g/> .
 @prefix time: <http://www.w3.org/2006/time#> .
-@prefix person: <http://data.europa.eu/person#> .
+@prefix person: <http://www.w3.org/ns/person#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
 @prefix shacl: <http://www.w3.org/ns/shacl#> .
 @prefix org: <http://www.w3.org/ns/org#> .

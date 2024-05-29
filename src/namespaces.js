@@ -19,7 +19,7 @@ const ns = {
   eli: rdf.namespace('http://data.europa.eu/eli/ontology#'),
   m8g: rdf.namespace('http://data.europa.eu/m8g/'),
   time: rdf.namespace('http://www.w3.org/2006/time#'),
-  person: rdf.namespace('http://data.europa.eu/person#'),
+  person: rdf.namespace('http://www.w3.org/ns/person#'),
   locn: rdf.namespace('http://www.w3.org/ns/locn#'),
   shacl: rdf.namespace('http://www.w3.org/ns/shacl#'),
   org: rdf.namespace('http://www.w3.org/ns/org#'),

@@ -16,7 +16,6 @@ const { developerMode } = storeToRefs(store)
 
 </script>
 
-
 <template>
   <n-tabs type="line" animated>
     <n-tab-pane name="Models" tab="Models">
