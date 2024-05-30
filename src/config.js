@@ -10,6 +10,14 @@ const COMMON_VOCABS = {
   localPath: 'assets/common-vocabularies',
 }
 
+const PRODUCTION = {
+  owner: 'OP-TED',
+  repo: 'ePO',
+  tag: 'v4.0.0',
+  localPath: 'assets/ePO/v4.0.0',
+  databasePath: `assets/ePO/master/analysis_and_design/conceptual_model/ePO_CM.eap`,
+}
+
 const UNDER_REVIEW = {
   owner: 'OP-TED',
   repo: 'ePO',
@@ -19,5 +27,5 @@ const UNDER_REVIEW = {
 }
 
 export {
-  EPO_LATEST, UNDER_REVIEW, COMMON_VOCABS,
+  EPO_LATEST, UNDER_REVIEW, COMMON_VOCABS, PRODUCTION,
 }
