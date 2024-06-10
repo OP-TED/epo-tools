@@ -14,7 +14,7 @@ async function checkCommonVocabularies ({ sourceDirectory, targetDirectory }) {
     `file://${path.replaceAll(sourceDirectory, '')}`)
 
   const commonVocabulariesAssets = await getRdfAssets(
-    { globPattern: `${COMMON_VOCABS.localDirectory}/*` }, cleanNamedGraph)
+    { globPattern: `${COMMON_VOCABS.localPath}/*` }, cleanNamedGraph)
 
   const assets = await getRdfAssets({ globPattern }, cleanNamedGraph)
 

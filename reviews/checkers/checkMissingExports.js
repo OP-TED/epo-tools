@@ -78,7 +78,7 @@ function printSummary () {
 function showDifference (name) {
   const { actual, expected } = queryBoth(name)
 
-  console.log('Actually present')
+  console.log('Currently present in export')
   for (const current of actual) {
     // console.log(Object.values(current).map(x=>x.value))
     console.log({
@@ -88,7 +88,7 @@ function showDifference (name) {
     })
 
   }
-  console.log('Expected')
+  console.log('Present in EA file')
   for (const { source, predicate, target } of expected) {
     console.log({ source, predicate, target })
   }
