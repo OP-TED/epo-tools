@@ -28,6 +28,7 @@ function toJson ({ objects, attributes, connectors }) {
     map(({ Object_ID, Note, Object_Type, Classifier }) => {
 
       const result = {
+        eaId: Object_ID,
         name: nodeIndex[Object_ID], description: Note, type: Object_Type,
       }
       // Objects might come with a Classifier,
@@ -42,7 +43,7 @@ function toJson ({ objects, attributes, connectors }) {
   // Do not export enum values (need to be analyzed)
   // at-voc-new:ResponseStatus sh:in ("Accepted" "Rejected" ... )
   // Should they move to skos:inScheme?
-  const includeAttribute = (x) => !( !x.Type && x.Stereotype === 'enum')
+  const includeAttribute = (x) => !(!x.Type && x.Stereotype === 'enum')
 
   // Do not export NoteLinks
   const includeConnector = (x) => !(!x.Start_Object_ID || x.Connector_Type ===
@@ -62,6 +63,7 @@ const toLiteralRelation = nodeIndex => x => {
   const target = Type
 
   return {
+    eaId: Object_ID,
     type: ATTRIBUTE,
     source,
     predicate,
@@ -73,6 +75,7 @@ const toLiteralRelation = nodeIndex => x => {
 
 const toObjectRelation = nodeIndex => x => {
   const {
+    Connector_ID,
     DestRole,
     Start_Object_ID,
     End_Object_ID,
@@ -103,6 +106,7 @@ const toObjectRelation = nodeIndex => x => {
     // :relatesTo owl:inverseOf :isRelatedTo .
   }
   return {
+    eaId: Connector_ID,
     type,
     source,
     predicate,
