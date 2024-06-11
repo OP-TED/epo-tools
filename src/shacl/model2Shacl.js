@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs'
 import { Parser } from 'n3'
 import rdf from 'rdf-ext'
 import { inspectEdge, inspectNode } from '../conceptualModel/issues.js'
@@ -18,6 +19,10 @@ async function toShacl ({ nodes, edges }) {
     nodes: nodes.filter(x => !hasErrors(inspectNode(x))),
     edges: edges.filter(x => !hasErrors(inspectEdge(x))),
   })
+
+  const path = `assets/ugly.shacl.ttl`
+  writeFileSync(path, uglyTurtle)
+
 
   return {
     ...(await parseUgly(uglyTurtle)), errors: {

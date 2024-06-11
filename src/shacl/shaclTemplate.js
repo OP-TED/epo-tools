@@ -1,114 +1,114 @@
 import {
   ATTRIBUTE, INHERITANCE, INSTANCE_OF, RELATIONSHIP, DEPENDENCY,
 } from '../conceptualModel/const.js'
-import { stripPrefix, toSpaced } from '../prefix/prefix.js'
+import { ns, aliases } from '../namespaces.js'
+import { stripPrefix, toSpaced, turtlePrefixes } from '../prefix/prefix.js'
 
-const prefix = `
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix schema: <http://schema.org/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix dct: <http://purl.org/dc/terms/> . # Armonize this!
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-
-@prefix epo: <http://data.europa.eu/a4g/ontology#> .
-@prefix epo-ord: <http://data.europa.eu/a4g/ontology#> .
-@prefix epo-ful: <http://data.europa.eu/a4g/ontology#> .
-@prefix epo-con: <http://data.europa.eu/a4g/ontology#> .
-@prefix epo-cat: <http://data.europa.eu/a4g/ontology#> .
-@prefix epo-not: <http://data.europa.eu/a4g/ontology#> .
-@prefix epo-acc: <http://data.europa.eu/a4g/ontology#> .
-@prefix epo-sub: <http://data.europa.eu/a4g/ontology#> .
-@prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix cccev: <http://data.europa.eu/m8g/> .
-@prefix cv: <http://data.europa.eu/m8g/> . # Armonize this!
-@prefix time: <http://www.w3.org/2006/time#> .
-@prefix org: <http://www.w3.org/ns/org#> .
-@prefix eli: <http://data.europa.eu/eli/ontology#> .
-@prefix person: <http://www.w3.org/ns/person#> .
-@prefix adms: <http://www.w3.org/ns/adms#> .
-@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
-
-@prefix sh: <http://www.w3.org/ns/shacl#> .
-@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
-@prefix cpov: <http://data.europa.eu/m8g/> .
-@prefix at-voc: <http://publications.europa.eu/resource/authority/> . # Authority tables
-@prefix at-voc-new: <http://unknown/> . # Authority tables`
-
-const toTurtle = ({ nodes, edges }) => {
+const toTurtle = (
+  { nodes, edges }, { namespaces = { ...ns, ...aliases } } = {}) => {
   const output = [
     ...nodes.map(nodeTemplate), ...edges.map(edge => {
       const template = templates[edge.type]
       return template(edge)
     })]
+  const prefix = turtlePrefixes(namespaces)
   return prefix + output.join('\n')
 }
 
-function shapeIRI ({ source, predicate, target }) {
-  return `${source}Shape`
+function shapeIRI (edge) {
+  const { source } = edge
+  return `a4g_shape:${stripPrefix(source)}Shape`
 }
 
-const subclassTemplate = ({ source, predicate, target }) => `
+const subclassTemplate = (edge) => {
+  const { source, predicate, target } = edge
+  return `
     ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
     `
+}
 
-const literalTemplate = ({
-  source, predicate, target, description, quantifiers,
-}) => `
+function propertyIRI (edge) {
+  const { source, predicate, target } = edge
+  // The following URI structure will be used to identify SHACL shapes:
+  //   http://data.europa.eu/a4g/shape/[target]-[path]
+  //     where the target may be a node identified as an implicit or explicit target defined by sh:targetClass (e.g., ProcurementObject).
+  //     For example, a shape that checks the property epo:isUsingEUFunds when applied to epo:ProcurementObject will be identified as follows:
+  //   http://data.europa.eu/a4g/shape/ProcurementObject-isUsingEUFunds
+  return `a4g_shape:${stripPrefix(target)}-${stripPrefix(predicate)}`
+
+}
+
+const literalTemplate = (edge) => {
+  const {
+    source, predicate, target, description, quantifiers,
+  } = edge
+
+  // Using propertyIRI in this one could be dangerous. But the pattern needs to be tested.
+  // Probably the SHACL needs to be validated against the SHACL's SHACL
+  return `
     # ${predicate} a owl:DatatypeProperty ;
     #     ${skosDefinitionTemplate(description)}
     #     rdfs:domain  ${source} ;
     #     rdfs:range  ${target} .
 
-    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
+    ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
-      sh:property [
-        a sh:PropertyShape ;
-        sh:path ${predicate} ;
-        sh:datatype ${target} ;
-        ${shaclName(predicate)}
-        ${quantifiersTemplate(quantifiers)}
-      ] .
+      sh:property ${propertyIRI(edge)} .
+       
+      ${propertyIRI(edge)} a sh:PropertyShape ;
+         sh:path ${predicate} ;
+         sh:datatype ${target} ;
+         ${shaclName(predicate)} ;
+         ${quantifiersTemplate(quantifiers)} .
     `
+}
 
-// Note: For enums omit enumeration values for the moment until further clarification
-// sh:targetObjectsOf ?
-// sh:in ( ex:Pink ex:Purple ) ?
-const conceptSchemeTarget = ({ source, predicate, target }) => `
- sh:node [
-    a sh:NodeShape ;
-    sh:property [
-      a sh:PropertyShape ;
-      sh:path skos:inScheme ;
-      sh:hasValue ${target} ;    
-    ]
- ]
+function getObjectTarget (edge) {
+  const { source, target, type } = edge
+
+  if (type === 'Dependency') {
+    // Note: For enums omit enumeration values for the moment until further clarification
+    // sh:targetObjectsOf ?
+    // sh:in ( ex:Pink ex:Purple ) ?
+
+    const skosEdge = { source, predicate: 'skos:inScheme', target }
+
+    return `${propertyIRI(edge)} sh:node ${shapeIRI(skosEdge)} . 
+     ${shapeIRI(skosEdge)} a sh:NodeShape ;
+        sh:property ${propertyIRI(skosEdge)} .
+         
+     ${propertyIRI(skosEdge)} a sh:PropertyShape ;
+        a sh:PropertyShape ;
+        sh:path skos:inScheme ;
+        sh:hasValue ${target} .
 `
+  } else {
+    return `${propertyIRI(edge)} sh:targetClass ${target} .`
+  }
+}
 
-const objectTemplate = ({
-  source, predicate, target, description, quantifiers, type,
-}) => `
+const objectTemplate = (edge) => {
+  const { source, predicate, target, description, quantifiers, type } = edge
+
+  return `
     # ${predicate} a owl:ObjectProperty ;
     #     ${skosDefinitionTemplate(description)}
     #     rdfs:domain  ${source} ;
     #     rdfs:range  ${target} .
 
-    ${shapeIRI({ source, predicate, target })} a sh:NodeShape ;
+    ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
-      sh:property [
-        a sh:PropertyShape ;
+      sh:property ${propertyIRI(edge)} .
+       
+    ${propertyIRI(edge)} a sh:PropertyShape ;
         sh:path ${predicate} ;
         sh:nodeKind sh:IRI ;
         ${shaclName(predicate)}
-        ${quantifiersTemplate(quantifiers)}
-        ${type !== 'Dependency'
-  ? `sh:targetClass ${target} ;`
-  : conceptSchemeTarget({ source, predicate, target })} 
-      ] .
+        ${quantifiersTemplate(quantifiers)} .
+       
+     ${getObjectTarget(edge)}
     `
+}
 
 const templates = {
   [INHERITANCE]: subclassTemplate,
@@ -118,22 +118,26 @@ const templates = {
   [DEPENDENCY]: objectTemplate,
 }
 
-const nodeTemplate = ({ name, description }) => `
+const nodeTemplate = (node) => {
+  const { name, description } = node
+  return `
       # ${name}
       #  ${skosDefinitionTemplate(description)}
       #  a owl:Class .
 `
+}
 
 function shaclName (predicate) {
   return predicate ? `sh:name "${toSpaced(stripPrefix(predicate))}"@en ;` : ''
 }
 
-const quantifiersTemplate = ({
-  min, max, quantifiersDeclared,
-}) => `
+const quantifiersTemplate = (quantifiers) => {
+  const { min, max, quantifiersDeclared } = quantifiers
+  return `
 ${quantifiersDeclared && max ? `sh:minCount ${min} ;` : ''}
 ${quantifiersDeclared && max ? `sh:maxCount ${max} ;` : ''}
 `
+}
 
 function skosDefinitionTemplate (def) {
   // return def ? `skos:definition """${def}"""" ;` : ''

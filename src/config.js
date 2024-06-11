@@ -13,8 +13,8 @@ const COMMON_VOCABS = {
 const PRODUCTION = {
   owner: 'OP-TED',
   repo: 'ePO',
-  tag: 'v4.0.0',
-  localPath: 'assets/ePO/v4.0.0',
+  tag: 'v4.0.2',
+  localPath: 'assets/ePO/v4.0.2',
   databasePath: `assets/ePO/master/analysis_and_design/conceptual_model/ePO_CM.eap`,
 }
 
