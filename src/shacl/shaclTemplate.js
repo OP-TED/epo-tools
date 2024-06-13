@@ -43,8 +43,23 @@ const literalTemplate = (edge) => {
     source, predicate, target, description, quantifiers,
   } = edge
 
+  function getDatatype (target) {
+    if (target === 'rdf:PlainLiteral') {
+      return `${propertyIRI(edge)}  sh:node a4g_shape:PlainLiteral .
+      a4g_shape:PlainLiteral a sh:NodeShape ;
+          sh:or (
+              [ sh:datatype xsd:string ]
+              [ sh:datatype rdf:langString ]
+          ) .
+    `
+    } else {
+      return `${propertyIRI(edge)} sh:datatype ${target} .`
+    }
+  }
+
   // Using propertyIRI in this one could be dangerous. But the pattern needs to be tested.
   // Probably the SHACL needs to be validated against the SHACL's SHACL
+
   return `
     # ${predicate} a owl:DatatypeProperty ;
     #     ${skosDefinitionTemplate(description)}
@@ -57,9 +72,10 @@ const literalTemplate = (edge) => {
        
       ${propertyIRI(edge)} a sh:PropertyShape ;
          sh:path ${predicate} ;
-         sh:datatype ${target} ;
          ${shaclName(predicate)} ;
          ${quantifiersTemplate(quantifiers)} .
+         
+       ${getDatatype(target)}
     `
 }
 
