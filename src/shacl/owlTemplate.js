@@ -32,7 +32,9 @@ const datatypePropertyTemplate = (edge) => {
          ${rdfsLabel(predicate)}
          ${rdfsCommentTemplate(description)}
          rdfs:domain  ${source} ;
-         rdfs:range  ${target} .         
+         rdfs:range  ${target} .
+    ${quantifiersTemplate(edge)}     
+                  
     `
 }
 
@@ -45,6 +47,7 @@ const objectTemplate = (edge) => {
          ${rdfsCommentTemplate(description)}
          rdfs:domain  ${source} ;
          rdfs:range  ${target} .
+    ${quantifiersTemplate(edge)}
     `
 }
 
@@ -79,38 +82,23 @@ function rdfsCommentTemplate (def) {
     join(' ')).replaceAll('"', '')}" ;` : ''
 }
 
-/**
- *
- * Omit cardinalities for now
- *
- * Exact cardinality
- *
- * :TwoDogOwner a owl:Class ;
- *     rdfs:subClassOf [
- *         a owl:Restriction ;
- *         owl:onProperty :hasPet ;
- *         owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
- *         owl:onClass :Dog
- *     ] .
- *
- *
- * Minimum cardinality
- *
- * :DogOwner a owl:Class ;
- *     rdfs:subClassOf [
- *         a owl:Restriction ;
- *         owl:onProperty :hasPet ;
- *         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
- *         owl:onClass :Dog
- *     ] .
- */
+const quantifiersTemplate = (edge) => {
+  const { source, predicate, target, quantifiers } = edge
+  const { min, max, quantifiersDeclared } = quantifiers
 
-// const quantifiersTemplate = (quantifiers) => {
-//   const { min, max, quantifiersDeclared } = quantifiers
-//   return `
-// ${quantifiersDeclared && max ? `sh:minCount ${min} ;` : ''}
-// ${quantifiersDeclared && max ? `sh:maxCount ${max} ;` : ''}
-// `
-// }
+  if (quantifiersDeclared) {
+    return `
+    ${source} rdfs:subClassOf [
+        a owl:Restriction ;
+        owl:onProperty ${predicate} ;
+        ${max ? `owl:minQualifiedCardinality ${min} ;` : ''}
+        ${max ? `owl:maxQualifiedCardinality ${max} ;` : ''}    
+        owl:onClass ${target}    
+    ] .
+    `
+  }
+  return ''
+
+}
 
 export { toTurtle }
