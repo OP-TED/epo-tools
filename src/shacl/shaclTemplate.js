@@ -6,13 +6,20 @@ import { stripPrefix, toSpaced, turtlePrefixes } from '../prefix/prefix.js'
 
 const toTurtle = (
   { nodes, edges }, { namespaces = { ...ns, ...aliases } } = {}) => {
-  const output = [
-    ...nodes.map(nodeTemplate), ...edges.map(edge => {
-      const template = templates[edge.type]
-      return template(edge)
-    })]
+  const output = edges.map(edge => {
+    const template = templates[edge.type]
+    return template(edge)
+  })
   const prefix = turtlePrefixes(namespaces)
-  return prefix + output.join('\n')
+
+  const common = `
+      a4g_shape:PlainLiteral a sh:NodeShape ;
+          sh:or (
+              [ sh:datatype xsd:string ]
+              [ sh:datatype rdf:langString ]
+          ) .
+          `
+  return [prefix, common, ...output].join('\n')
 }
 
 function shapeIRI (edge) {
@@ -46,11 +53,6 @@ const literalTemplate = (edge) => {
   function getDatatype (target) {
     if (target === 'rdf:PlainLiteral') {
       return `${propertyIRI(edge)}  sh:node a4g_shape:PlainLiteral .
-      a4g_shape:PlainLiteral a sh:NodeShape ;
-          sh:or (
-              [ sh:datatype xsd:string ]
-              [ sh:datatype rdf:langString ]
-          ) .
     `
     } else {
       return `${propertyIRI(edge)} sh:datatype ${target} .`
@@ -61,11 +63,6 @@ const literalTemplate = (edge) => {
   // Probably the SHACL needs to be validated against the SHACL's SHACL
 
   return `
-    # ${predicate} a owl:DatatypeProperty ;
-    #     ${skosDefinitionTemplate(description)}
-    #     rdfs:domain  ${source} ;
-    #     rdfs:range  ${target} .
-
     ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
       sh:property ${propertyIRI(edge)} .
@@ -107,11 +104,6 @@ const objectTemplate = (edge) => {
   const { source, predicate, target, description, quantifiers, type } = edge
 
   return `
-    # ${predicate} a owl:ObjectProperty ;
-    #     ${skosDefinitionTemplate(description)}
-    #     rdfs:domain  ${source} ;
-    #     rdfs:range  ${target} .
-
     ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
       sh:property ${propertyIRI(edge)} .
@@ -134,15 +126,6 @@ const templates = {
   [DEPENDENCY]: objectTemplate,
 }
 
-const nodeTemplate = (node) => {
-  const { name, description } = node
-  return `
-      # ${name}
-      #  ${skosDefinitionTemplate(description)}
-      #  a owl:Class .
-`
-}
-
 function shaclName (predicate) {
   return predicate ? `sh:name "${toSpaced(stripPrefix(predicate))}"@en ;` : ''
 }
@@ -153,13 +136,6 @@ const quantifiersTemplate = (quantifiers) => {
 ${quantifiersDeclared && max ? `sh:minCount ${min} ;` : ''}
 ${quantifiersDeclared && max ? `sh:maxCount ${max} ;` : ''}
 `
-}
-
-function skosDefinitionTemplate (def) {
-  // return def ? `skos:definition """${def}"""" ;` : ''
-  return def ? `skos:definition "${(def.split(/\s+/).
-    map(x => x.trim()).
-    join(' ')).replaceAll('"', '')}" ;` : ''
 }
 
 export { toTurtle }
