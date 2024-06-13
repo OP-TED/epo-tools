@@ -1,6 +1,6 @@
 # ePO-tools
 
-This repository is currently set to private and serves as a space for validation tools and some POCs
+This repository is temporary and serves as a space for validation tools for EPO and some POCs
 
 The intention is to eventually delete this repository once its purpose is fulfilled.
 
