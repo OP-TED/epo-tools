@@ -1,0 +1,525 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cpov: <http://data.europa.eu/m8g/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix at: <http://publications.europa.eu/ontology/authority/> .
+@prefix atold: <http://publications.europa.eu/resource/authority/> .
+
+a4g:LeadBuyer owl:disjointWith a4g:CentralPurchasingBody .
+
+a4g:CentralPurchasingBody owl:disjointWith a4g:LeadBuyer .
+
+a4g:Notice9 owl:disjointWith a4g:Notice7, a4g:Notice8, a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice7 owl:disjointWith a4g:Notice9, a4g:Notice8, a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice8 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:PIN-RTL-D25 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:PIN-RTL-D24 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:PIN-RTL-D25, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice34 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice35, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice35 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:CANSocialNotice-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:Notice34, a4g:Notice35, a4g:CANSocial-D25, a4g:Notice33, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:CANSocial-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:Notice34, a4g:Notice35, a4g:CANSocialNotice-D25, a4g:Notice33, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice33 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Catalogue owl:disjointWith a4g:Order, a4g:DespatchAdvice, a4g:ProductSpecification, a4g:OrderResponse .
+
+a4g:Order owl:disjointWith a4g:Catalogue, a4g:DespatchAdvice, a4g:ProductSpecification, a4g:OrderResponse .
+
+a4g:DespatchAdvice owl:disjointWith a4g:Catalogue, a4g:Order, a4g:ProductSpecification, a4g:OrderResponse .
+
+a4g:ProductSpecification owl:disjointWith a4g:Catalogue, a4g:Order, a4g:DespatchAdvice, a4g:OrderResponse .
+
+a4g:OrderResponse owl:disjointWith a4g:Catalogue, a4g:Order, a4g:DespatchAdvice, a4g:ProductSpecification .
+
+a4g:DesignContestResult-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D25, a4g:Notice36, a4g:Notice37, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:DesignContestResult-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:Notice36, a4g:Notice37, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice36 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice37 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Notice36, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice40 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Modification-D25, a4g:Modification-D23, a4g:Notice39, a4g:Modification-D24, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Modification-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Notice40, a4g:Modification-D23, a4g:Notice39, a4g:Modification-D24, a4g:Notice38, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Modification-D23 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Notice40, a4g:Modification-D25, a4g:Notice39, a4g:Modification-D24, a4g:Notice38, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice39 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Modification-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Notice40, a4g:Modification-D25, a4g:Modification-D23, a4g:Notice39, a4g:Notice38, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice38 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Modification-D25, a4g:Modification-D23, a4g:Notice39, a4g:Modification-D24, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:ChargeInformation owl:disjointWith a4g:AllowanceInformation .
+
+a4g:AllowanceInformation owl:disjointWith a4g:ChargeInformation .
+
+a4g:SelectionEvaluationTerm owl:disjointWith a4g:AwardEvaluationTerm .
+
+a4g:AwardEvaluationTerm owl:disjointWith a4g:SelectionEvaluationTerm .
+
+a4g:Lot owl:disjointWith a4g:Procedure .
+
+a4g:Procedure owl:disjointWith a4g:Lot .
+
+a4g:AwardOutcome owl:disjointWith a4g:TenderAwardOutcome .
+
+a4g:TenderAwardOutcome owl:disjointWith a4g:AwardOutcome .
+
+a4g:CNSocial-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocialNotice-D25, a4g:Notice21, a4g:Notice20, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:CNSocialNotice-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:Notice21, a4g:Notice20, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice21 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice20 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:Notice21, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:OrderLine owl:disjointWith a4g:DespatchLine, a4g:CatalogueLine .
+
+a4g:DespatchLine owl:disjointWith a4g:OrderLine, a4g:CatalogueLine .
+
+a4g:CatalogueLine owl:disjointWith a4g:OrderLine, a4g:DespatchLine .
+
+a4g:Notice12 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:PIN-CFCSocialNotice-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:Notice12, a4g:PIN-CFCSocial-D25, a4g:Notice13, a4g:Notice14, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:PIN-CFCSocial-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:Notice12, a4g:PIN-CFCSocialNotice-D25, a4g:Notice13, a4g:Notice14, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice13 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice14 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:Notice13, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:ExclusionGroundsSummary owl:disjointWith a4g:SelectionCriteriaSummary .
+
+a4g:SelectionCriteriaSummary owl:disjointWith a4g:ExclusionGroundsSummary .
+
+a4g:LotAwardOutcome owl:disjointWith a4g:MiniCompetitionAwardOutcome .
+
+a4g:MiniCompetitionAwardOutcome owl:disjointWith a4g:LotAwardOutcome .
+
+a4g:AwardCriterion owl:disjointWith a4g:ParticipationCondition, a4g:QualificationCriterion .
+
+a4g:ParticipationCondition owl:disjointWith a4g:AwardCriterion, a4g:QualificationCriterion .
+
+a4g:QualificationCriterion owl:disjointWith a4g:AwardCriterion, a4g:ParticipationCondition .
+
+a4g:ContractInformation owl:disjointWith a4g:AllowanceChargeInformation, a4g:OrderResponseInformation, a4g:OriginatorInformation, a4g:DeliveryInformation, a4g:TaxInformation, a4g:ShipmentInformation .
+
+a4g:AllowanceChargeInformation owl:disjointWith a4g:ContractInformation, a4g:OrderResponseInformation, a4g:OriginatorInformation, a4g:DeliveryInformation, a4g:TaxInformation, a4g:ShipmentInformation .
+
+a4g:OrderResponseInformation owl:disjointWith a4g:ContractInformation, a4g:AllowanceChargeInformation, a4g:OriginatorInformation, a4g:DeliveryInformation, a4g:TaxInformation, a4g:ShipmentInformation .
+
+a4g:OriginatorInformation owl:disjointWith a4g:ContractInformation, a4g:AllowanceChargeInformation, a4g:OrderResponseInformation, a4g:DeliveryInformation, a4g:TaxInformation, a4g:ShipmentInformation .
+
+a4g:DeliveryInformation owl:disjointWith a4g:ContractInformation, a4g:AllowanceChargeInformation, a4g:OrderResponseInformation, a4g:OriginatorInformation, a4g:TaxInformation, a4g:ShipmentInformation .
+
+a4g:TaxInformation owl:disjointWith a4g:ContractInformation, a4g:AllowanceChargeInformation, a4g:OrderResponseInformation, a4g:OriginatorInformation, a4g:DeliveryInformation, a4g:ShipmentInformation .
+
+a4g:ShipmentInformation owl:disjointWith a4g:ContractInformation, a4g:AllowanceChargeInformation, a4g:OrderResponseInformation, a4g:OriginatorInformation, a4g:DeliveryInformation, a4g:TaxInformation .
+
+a4g:OrganisationGroup owl:disjointWith a4g:Business .
+
+a4g:Business owl:disjointWith a4g:OrganisationGroup .
+
+a4g:QSNotice-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:Notice15, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice15 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:QSNotice-D25, a4g:QS-D25, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:QS-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:Notice15, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:ItemComplementaryRelation owl:disjointWith a4g:ItemAccessoryRelation, a4g:ItemRequirement, a4g:ItemReplacement, a4g:ItemComposition .
+
+a4g:ItemAccessoryRelation owl:disjointWith a4g:ItemComplementaryRelation, a4g:ItemRequirement, a4g:ItemReplacement, a4g:ItemComposition .
+
+a4g:ItemRequirement owl:disjointWith a4g:ItemComplementaryRelation, a4g:ItemAccessoryRelation, a4g:ItemReplacement, a4g:ItemComposition .
+
+a4g:ItemReplacement owl:disjointWith a4g:ItemComplementaryRelation, a4g:ItemAccessoryRelation, a4g:ItemRequirement, a4g:ItemComposition .
+
+a4g:ItemComposition owl:disjointWith a4g:ItemComplementaryRelation, a4g:ItemAccessoryRelation, a4g:ItemRequirement, a4g:ItemReplacement .
+
+a4g:Certifier owl:disjointWith a4g:FreightForwarder, a4g:Carrier, a4g:Notifier, a4g:EmploymentInformationProvider, a4g:TaxInformationProvider, a4g:EnvironmentalProtectionInformationProvider, a4g:TransportMeansOperator .
+
+a4g:FreightForwarder owl:disjointWith a4g:Certifier, a4g:Carrier, a4g:Notifier, a4g:EmploymentInformationProvider, a4g:TaxInformationProvider, a4g:EnvironmentalProtectionInformationProvider, a4g:TransportMeansOperator .
+
+a4g:Carrier owl:disjointWith a4g:Certifier, a4g:FreightForwarder, a4g:Notifier, a4g:EmploymentInformationProvider, a4g:TaxInformationProvider, a4g:EnvironmentalProtectionInformationProvider, a4g:TransportMeansOperator .
+
+a4g:Notifier owl:disjointWith a4g:Certifier, a4g:FreightForwarder, a4g:Carrier, a4g:EmploymentInformationProvider, a4g:TaxInformationProvider, a4g:EnvironmentalProtectionInformationProvider, a4g:TransportMeansOperator .
+
+a4g:EmploymentInformationProvider owl:disjointWith a4g:Certifier, a4g:FreightForwarder, a4g:Carrier, a4g:Notifier, a4g:TaxInformationProvider, a4g:EnvironmentalProtectionInformationProvider, a4g:TransportMeansOperator .
+
+a4g:TaxInformationProvider owl:disjointWith a4g:Certifier, a4g:FreightForwarder, a4g:Carrier, a4g:Notifier, a4g:EmploymentInformationProvider, a4g:EnvironmentalProtectionInformationProvider, a4g:TransportMeansOperator .
+
+a4g:EnvironmentalProtectionInformationProvider owl:disjointWith a4g:Certifier, a4g:FreightForwarder, a4g:Carrier, a4g:Notifier, a4g:EmploymentInformationProvider, a4g:TaxInformationProvider, a4g:TransportMeansOperator .
+
+a4g:TransportMeansOperator owl:disjointWith a4g:Certifier, a4g:FreightForwarder, a4g:Carrier, a4g:Notifier, a4g:EmploymentInformationProvider, a4g:TaxInformationProvider, a4g:EnvironmentalProtectionInformationProvider .
+
+a4g:SpecificDuration owl:disjointWith a4g:IndefiniteDuration .
+
+a4g:IndefiniteDuration owl:disjointWith a4g:SpecificDuration .
+
+a4g:Notice10 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:PIN-CFCStandard-D24, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:PIN-CFCStandard-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:Notice10, a4g:Notice11, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice11 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:PIN-CFCStandard-D24, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:QualificationCriteriaSummary owl:disjointWith a4g:ParticipationConditionsSummary, a4g:AwardCriteriaSummary .
+
+a4g:ParticipationConditionsSummary owl:disjointWith a4g:QualificationCriteriaSummary, a4g:AwardCriteriaSummary .
+
+a4g:AwardCriteriaSummary owl:disjointWith a4g:QualificationCriteriaSummary, a4g:ParticipationConditionsSummary .
+
+a4g:Notice6 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:PINOnly-D24, a4g:Notice5, a4g:Notice4, a4g:PINOnly-D25, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:PINOnly-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice5 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:PINOnly-D24, a4g:Notice4, a4g:PINOnly-D25, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice4 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:PINOnly-D24, a4g:Notice5, a4g:PINOnly-D25, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:PINOnly-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:Notice6, a4g:PINOnly-D24, a4g:Notice5, a4g:Notice4, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice24 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice23, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice23 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:DesignContest-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:Notice24, a4g:Notice23, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:DesignContest-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:Notice24, a4g:Notice23, a4g:DesignContest-D24, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:SubmissionStatisticalInformation owl:disjointWith a4g:ReviewRequestSummary, a4g:ReviewIrregularitySummary .
+
+a4g:ReviewRequestSummary owl:disjointWith a4g:SubmissionStatisticalInformation, a4g:ReviewIrregularitySummary .
+
+a4g:ReviewIrregularitySummary owl:disjointWith a4g:SubmissionStatisticalInformation, a4g:ReviewRequestSummary .
+
+a4g:DynamicPurchaseSystemTechnique owl:disjointWith a4g:EAuctionTechnique, a4g:FrameworkAgreementTechnique .
+
+a4g:EAuctionTechnique owl:disjointWith a4g:DynamicPurchaseSystemTechnique, a4g:FrameworkAgreementTechnique .
+
+a4g:FrameworkAgreementTechnique owl:disjointWith a4g:DynamicPurchaseSystemTechnique, a4g:EAuctionTechnique .
+
+a4g:SubcontractingEstimate owl:disjointWith a4g:ConcessionEstimate .
+
+a4g:ConcessionEstimate owl:disjointWith a4g:SubcontractingEstimate .
+
+a4g:ProcessPlanningTerm owl:disjointWith a4g:ProcedureSpecificTerm, a4g:LotSpecificTerm, a4g:ContractSpecificTerm .
+
+a4g:ProcedureSpecificTerm owl:disjointWith a4g:ProcessPlanningTerm, a4g:LotSpecificTerm, a4g:ContractSpecificTerm .
+
+a4g:LotSpecificTerm owl:disjointWith a4g:ProcessPlanningTerm, a4g:ProcedureSpecificTerm, a4g:ContractSpecificTerm .
+
+a4g:ContractSpecificTerm owl:disjointWith a4g:ProcessPlanningTerm, a4g:ProcedureSpecificTerm, a4g:LotSpecificTerm .
+
+a4g:CANSocialNotice owl:disjointWith a4g:DesignContestResultNotice, a4g:CANStandardNotice, a4g:CANDefence-D81 .
+
+a4g:DesignContestResultNotice owl:disjointWith a4g:CANSocialNotice, a4g:CANStandardNotice, a4g:CANDefence-D81 .
+
+a4g:CANStandardNotice owl:disjointWith a4g:CANSocialNotice, a4g:DesignContestResultNotice, a4g:CANDefence-D81 .
+
+a4g:CANDefence-D81 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANSocialNotice, a4g:DesignContestResultNotice, a4g:CANStandardNotice, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:InnovativeProcurement owl:disjointWith a4g:SocialProcurement, a4g:GreenProcurement .
+
+a4g:SocialProcurement owl:disjointWith a4g:InnovativeProcurement, a4g:GreenProcurement .
+
+a4g:GreenProcurement owl:disjointWith a4g:InnovativeProcurement, a4g:SocialProcurement .
+
+a4g:ContractLotCompletionInformation owl:disjointWith a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:InformationHub owl:disjointWith a4g:ContractLotCompletionInformation, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:ContractModificationInformation owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:StatisticalInformation owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:NoticeAwardInformation owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:ChangeInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:ChangeInformation owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:Estimate owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:NonPublishedInformation owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:Estimate, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
+
+a4g:ProcurementProcessInformation owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:LotGroupAwardInformation .
+
+a4g:LotGroupAwardInformation owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:Estimate, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation .
+
+a4g:Notice29 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:CANStandard-D24, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice32 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice30, a4g:Notice31, a4g:CANStandard-D24, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice30 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice31, a4g:CANStandard-D24, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice31 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:CANStandard-D24, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:CANStandard-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:PostAwardDocument owl:disjointWith a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:Tender owl:disjointWith a4g:PostAwardDocument, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:RequestForClarification owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:AwardDecision owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:Offer owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:ProcurementDocument owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:ExpressionOfInterest owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:Notice owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:ReviewObject owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:RequestForParticipation owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:OriginatorRequest, a4g:Contract .
+
+a4g:OriginatorRequest owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:Contract .
+
+a4g:Contract owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:ExpressionOfInterest, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest .
+
+a4g:ContractModificationNotice owl:disjointWith a4g:DirectAwardPrenotificationNotice, a4g:CompletionNotice, a4g:ResultNotice, a4g:CompetitionNotice, a4g:PlanningNotice, a4g:PreMarketConsultationNotice .
+
+a4g:DirectAwardPrenotificationNotice owl:disjointWith a4g:ContractModificationNotice, a4g:CompletionNotice, a4g:ResultNotice, a4g:CompetitionNotice, a4g:PlanningNotice, a4g:PreMarketConsultationNotice .
+
+a4g:CompletionNotice owl:disjointWith a4g:ContractModificationNotice, a4g:DirectAwardPrenotificationNotice, a4g:ResultNotice, a4g:CompetitionNotice, a4g:PlanningNotice, a4g:PreMarketConsultationNotice .
+
+a4g:ResultNotice owl:disjointWith a4g:ContractModificationNotice, a4g:DirectAwardPrenotificationNotice, a4g:CompletionNotice, a4g:CompetitionNotice, a4g:PlanningNotice, a4g:PreMarketConsultationNotice .
+
+a4g:CompetitionNotice owl:disjointWith a4g:ContractModificationNotice, a4g:DirectAwardPrenotificationNotice, a4g:CompletionNotice, a4g:ResultNotice, a4g:PlanningNotice, a4g:PreMarketConsultationNotice .
+
+a4g:PlanningNotice owl:disjointWith a4g:ContractModificationNotice, a4g:DirectAwardPrenotificationNotice, a4g:CompletionNotice, a4g:ResultNotice, a4g:CompetitionNotice, a4g:PreMarketConsultationNotice .
+
+a4g:PreMarketConsultationNotice owl:disjointWith a4g:ContractModificationNotice, a4g:DirectAwardPrenotificationNotice, a4g:CompletionNotice, a4g:ResultNotice, a4g:CompetitionNotice, a4g:PlanningNotice .
+
+a4g:Buyer owl:disjointWith a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:ReviewProcedureInformationProvider owl:disjointWith a4g:Buyer, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:BudgetProvider owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:ParticipationRequestReceiver owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:CatalogueReceiver owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:PaymentExecutor owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:ProcurementProcedureInformationProvider owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:Originator owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:Mediator owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:Awarder owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:Reviewer owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:TenderProcessor owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:ProcurementServiceProvider owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:JuryMember owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:TenderReceiver owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:ParticipationRequestProcessor owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:Consignee, a4g:OfflineAccessProvider .
+
+a4g:Consignee owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:OfflineAccessProvider .
+
+a4g:OfflineAccessProvider owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee .
+
+a4g:AwardingCentralPurchasingBody owl:disjointWith a4g:AcquiringCentralPurchasingBody .
+
+a4g:AcquiringCentralPurchasingBody owl:disjointWith a4g:AwardingCentralPurchasingBody .
+
+a4g:ReviewRequest owl:disjointWith a4g:ReviewDecision .
+
+a4g:ReviewDecision owl:disjointWith a4g:ReviewRequest .
+
+a4g:Notice19 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:CNStandard-D24, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice18 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice17, a4g:Notice16, a4g:CNStandard-D24, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice17 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice16, a4g:CNStandard-D24, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice16 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:CNStandard-D24, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:CNStandard-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:CatalogueProvider owl:disjointWith a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:OtherEntity owl:disjointWith a4g:CatalogueProvider, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:ReviewRequester owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:Subcontractor owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:Manufacturer owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:Tenderer owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:Despatcher owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:Winner owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Seller, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:Seller owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:OfferIssuer, a4g:Candidate, a4g:Contractor .
+
+a4g:OfferIssuer owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:Candidate, a4g:Contractor .
+
+a4g:Candidate owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Contractor .
+
+a4g:Contractor owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate .
+
+a4g:AuxiliaryParty owl:disjointWith a4g:AcquiringParty, a4g:OfferingParty .
+
+a4g:AcquiringParty owl:disjointWith a4g:AuxiliaryParty, a4g:OfferingParty .
+
+a4g:OfferingParty owl:disjointWith a4g:AuxiliaryParty, a4g:AcquiringParty .
+
+a4g:CNSocialNotice owl:disjointWith a4g:PIN-CFCSocialNotice, a4g:QSNotice, a4g:PIN-CFCStandardNotice, a4g:DesignContestNotice, a4g:CNStandardNotice, a4g:SubcontractNotice .
+
+a4g:PIN-CFCSocialNotice owl:disjointWith a4g:CNSocialNotice, a4g:QSNotice, a4g:PIN-CFCStandardNotice, a4g:DesignContestNotice, a4g:CNStandardNotice, a4g:SubcontractNotice .
+
+a4g:QSNotice owl:disjointWith a4g:CNSocialNotice, a4g:PIN-CFCSocialNotice, a4g:PIN-CFCStandardNotice, a4g:DesignContestNotice, a4g:CNStandardNotice, a4g:SubcontractNotice .
+
+a4g:PIN-CFCStandardNotice owl:disjointWith a4g:CNSocialNotice, a4g:PIN-CFCSocialNotice, a4g:QSNotice, a4g:DesignContestNotice, a4g:CNStandardNotice, a4g:SubcontractNotice .
+
+a4g:DesignContestNotice owl:disjointWith a4g:CNSocialNotice, a4g:PIN-CFCSocialNotice, a4g:QSNotice, a4g:PIN-CFCStandardNotice, a4g:CNStandardNotice, a4g:SubcontractNotice .
+
+a4g:CNStandardNotice owl:disjointWith a4g:CNSocialNotice, a4g:PIN-CFCSocialNotice, a4g:QSNotice, a4g:PIN-CFCStandardNotice, a4g:DesignContestNotice, a4g:SubcontractNotice .
+
+a4g:SubcontractNotice owl:disjointWith a4g:CNSocialNotice, a4g:PIN-CFCSocialNotice, a4g:QSNotice, a4g:PIN-CFCStandardNotice, a4g:DesignContestNotice, a4g:CNStandardNotice .
+
+a4g:ProcurementObject owl:disjointWith a4g:PlannedProcurementPart .
+
+a4g:PlannedProcurementPart owl:disjointWith a4g:ProcurementObject .
+
+a4g:PINTimeLimitNotice owl:disjointWith a4g:PINDefence-D81, a4g:PINOnlyNotice, a4g:PINProfileNotice .
+
+a4g:PINDefence-D81 owl:disjointWith a4g:PINTimeLimitNotice, a4g:PINOnlyNotice, a4g:PINProfileNotice .
+
+a4g:PINOnlyNotice owl:disjointWith a4g:PINTimeLimitNotice, a4g:PINDefence-D81, a4g:PINProfileNotice .
+
+a4g:PINProfileNotice owl:disjointWith a4g:PINTimeLimitNotice, a4g:PINDefence-D81, a4g:PINOnlyNotice .
+
+a4g:ProfessionalSuitabilitySummary owl:disjointWith a4g:EconomicStandingSummary, a4g:TechnicalAbilitySummary .
+
+a4g:EconomicStandingSummary owl:disjointWith a4g:ProfessionalSuitabilitySummary, a4g:TechnicalAbilitySummary .
+
+a4g:TechnicalAbilitySummary owl:disjointWith a4g:ProfessionalSuitabilitySummary, a4g:EconomicStandingSummary .
+
+a4g:ProcedureTerm owl:disjointWith a4g:DirectAwardTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm .
+
+a4g:DirectAwardTerm owl:disjointWith a4g:ProcedureTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm .
+
+a4g:DesignContestRegimeTerm owl:disjointWith a4g:ProcedureTerm, a4g:DirectAwardTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:ReviewTerm owl:disjointWith a4g:ProcedureTerm, a4g:DirectAwardTerm, a4g:DesignContestRegimeTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:OpeningTerm owl:disjointWith a4g:ProcedureTerm, a4g:DirectAwardTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:AccessTerm owl:disjointWith a4g:ProcedureTerm, a4g:DirectAwardTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:FrameworkAgreementTerm owl:disjointWith a4g:ProcedureTerm, a4g:DirectAwardTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm, a4g:ContractTerm, a4g:SubcontractTerm .
+
+a4g:SubmissionTerm owl:disjointWith a4g:ProcedureTerm, a4g:DirectAwardTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:MultipleStageProcedureTerm owl:disjointWith a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:EvaluationTerm owl:disjointWith a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:NonDisclosureAgreementTerm owl:disjointWith a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:ParticipationRequestTerm, a4g:SecurityClearanceTerm .
+
+a4g:ParticipationRequestTerm owl:disjointWith a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:SecurityClearanceTerm .
+
+a4g:SecurityClearanceTerm owl:disjointWith a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm, a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm .
+
+a4g:Notice28 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:VEAT-D23 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:Notice28, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:VEAT-D81 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:Notice28, a4g:VEAT-D23, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:VEAT-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:Notice28, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D25, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:VEAT-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:Notice28, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:Notice26 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Notice25, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice25 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Notice26, a4g:Notice27, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice27 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Notice26, a4g:Notice25, a4g:Notice22, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:Subcontract-D81 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25, a4g:Notice22 .
+
+a4g:PINProfile-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:ConcessionNotice-D23 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:CNDefence-D81 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:SocialAndOtherSpecificServices-D23 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:ConcessionAwardNotice-D23 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:SocialAndOtherSpecificServices-D24 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:PINProfile-D81, a4g:PINProfile-D25 .
+
+a4g:PINProfile-D81 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D25, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:PINProfile-D25 owl:disjointWith a4g:PIN-RTL-D25, a4g:PIN-RTL-D24, a4g:CANSocialNotice-D25, a4g:CANSocial-D25, a4g:DesignContestResult-D24, a4g:DesignContestResult-D25, a4g:Modification-D25, a4g:Modification-D23, a4g:Modification-D24, a4g:CNSocial-D25, a4g:CNSocialNotice-D25, a4g:PIN-CFCSocialNotice-D25, a4g:PIN-CFCSocial-D25, a4g:QSNotice-D25, a4g:QS-D25, a4g:PIN-CFCStandard-D24, a4g:PINOnly-D24, a4g:PINOnly-D25, a4g:DesignContest-D24, a4g:DesignContest-D25, a4g:CANDefence-D81, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:VEAT-D25, a4g:Subcontract-D81, a4g:PINProfile-D24, a4g:ConcessionNotice-D23, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:ConcessionAwardNotice-D23, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:ExclusionGround owl:disjointWith a4g:SelectionCriterion .
+
+a4g:SelectionCriterion owl:disjointWith a4g:ExclusionGround .
+
+a4g:Notice22 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:Subcontract-D81, a4g:Notice3, a4g:Notice1, a4g:Notice2 .
+
+a4g:ConcessionContract owl:disjointWith a4g:DirectContract, a4g:ContractAmendment, a4g:FrameworkAgreement, a4g:PurchaseContract .
+
+a4g:DirectContract owl:disjointWith a4g:ConcessionContract, a4g:ContractAmendment, a4g:FrameworkAgreement, a4g:PurchaseContract .
+
+a4g:ContractAmendment owl:disjointWith a4g:ConcessionContract, a4g:DirectContract, a4g:FrameworkAgreement, a4g:PurchaseContract .
+
+a4g:FrameworkAgreement owl:disjointWith a4g:ConcessionContract, a4g:DirectContract, a4g:ContractAmendment, a4g:PurchaseContract .
+
+a4g:PurchaseContract owl:disjointWith a4g:ConcessionContract, a4g:DirectContract, a4g:ContractAmendment, a4g:FrameworkAgreement .
+
+a4g:ContractTerm owl:disjointWith a4g:FrameworkAgreementTerm, a4g:SubcontractTerm .
+
+a4g:SubcontractTerm owl:disjointWith a4g:FrameworkAgreementTerm, a4g:ContractTerm .
+
+a4g:Notice3 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:PINProfile-D24, a4g:PINProfile-D81, a4g:PINProfile-D25, a4g:Notice22, a4g:Notice1, a4g:Notice2 .
+
+a4g:Notice1 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:PINProfile-D24, a4g:PINProfile-D81, a4g:PINProfile-D25, a4g:Notice22, a4g:Notice3, a4g:Notice2 .
+
+a4g:Notice2 owl:disjointWith a4g:Notice9, a4g:Notice7, a4g:Notice8, a4g:Notice34, a4g:Notice35, a4g:Notice33, a4g:Notice36, a4g:Notice37, a4g:Notice40, a4g:Notice39, a4g:Notice38, a4g:Notice21, a4g:Notice20, a4g:Notice12, a4g:Notice13, a4g:Notice14, a4g:Notice15, a4g:Notice10, a4g:Notice11, a4g:Notice6, a4g:Notice5, a4g:Notice4, a4g:Notice24, a4g:Notice23, a4g:Notice29, a4g:Notice32, a4g:Notice30, a4g:Notice31, a4g:Notice19, a4g:Notice18, a4g:Notice17, a4g:Notice16, a4g:Notice28, a4g:Notice26, a4g:Notice25, a4g:Notice27, a4g:PINProfile-D24, a4g:PINProfile-D81, a4g:PINProfile-D25, a4g:Notice22, a4g:Notice3, a4g:Notice1 .
+
