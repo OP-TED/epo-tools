@@ -26,6 +26,8 @@ const ns = {
   adms: rdf.namespace('http://www.w3.org/ns/adms#'),
   rml: rdf.namespace('http://semweb.mmlab.be/ns/rml#'),
   r2rml: rdf.namespace('http://www.w3.org/ns/r2rml#'),
+  at: rdf.namespace('http://publications.europa.eu/ontology/authority/'),
+  atold: rdf.namespace('http://publications.europa.eu/resource/authority/'),
 }
 
 const aliases = {

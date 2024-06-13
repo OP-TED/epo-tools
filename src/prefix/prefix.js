@@ -32,4 +32,20 @@ function toTerm (value) {
   return allPrefixes[prefix](stripPrefix(value))
 }
 
-export { hasPrefix, getPrefix, stripPrefix, getAllPrefixes, toSpaced, toTerm }
+function turtlePrefixes (namespaces) {
+  const prefixes = []
+  for (const a in namespaces) {
+    prefixes.push(`@prefix ${a}: <${namespaces[a]()}> .`)
+  }
+  return prefixes.join('\n')
+}
+
+export {
+  hasPrefix,
+  getPrefix,
+  stripPrefix,
+  getAllPrefixes,
+  toSpaced,
+  toTerm,
+  turtlePrefixes,
+}
