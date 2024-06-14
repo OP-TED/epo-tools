@@ -798,9 +798,8 @@ a4g:DespatchAdvice a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasDespatchAdviceType ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/despatch-advice-type> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:refersToShipmentAgreement ;
@@ -1472,9 +1471,8 @@ a4g:OrderResponseInformation a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasAcceptanceStatus ;
-		owl:minQualifiedCardinality 1 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/ResponseStatus> ;
+		owl:minCardinality 1 ;
+		owl:maxCardinality 1 ;
 	] .
 
 a4g:PostAwardDocument a owl:Class ;
@@ -1482,15 +1480,13 @@ a4g:PostAwardDocument a owl:Class ;
 	rdfs:subClassOf a4g:Document, [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasDocumentType ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/document-type> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasDocumentStatus ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/document-status> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	] .
 
 a4g:Prize a owl:Class ;
@@ -1611,9 +1607,8 @@ a4g:Catalogue a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasActivityCode ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/activity-code> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:specifiesSeller ;
@@ -1887,15 +1882,13 @@ a4g:CatalogueLine a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasOrderableUnit ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/orderable-unit> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasTransactionConditionsCode ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/transaction-conditions> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasPrice ;
@@ -1903,9 +1896,8 @@ a4g:CatalogueLine a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasActivityCode ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/activity-code> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasStandardisedUnitPrice ;
@@ -2455,7 +2447,6 @@ a4g:Item a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasItemClassification ;
-		owl:onClass <http://unknown.org/item-classification> ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty dcterms:hasPart ;
@@ -2491,9 +2482,8 @@ a4g:Item a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasDeliveryClassification ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/delivery-item-type> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasCertification ;
@@ -2523,7 +2513,6 @@ a4g:Item a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasHazardousItemUNDGCode ;
-		owl:onClass <http://unknown.org/dangerous-goods-list> ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty dcterms:requires ;
@@ -2858,9 +2847,8 @@ a4g:Price a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasPriceType ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/price-type> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasPriceDiscountInformation ;
@@ -2980,9 +2968,8 @@ a4g:TransportHandlingUnit a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasHandlingInstructionCode ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/handling-instruction> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	] .
 
 a4g:Notice25 a owl:Class ;
@@ -3959,9 +3946,8 @@ a4g:AllowanceChargeInformation a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasAllowanceChargeReason ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/allowance-charge-reason> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:isCalculatedOn ;
@@ -4270,9 +4256,8 @@ a4g:CertificationLabel a owl:Class ;
 	], m8g:InformationConcept, [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasLabelType ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/certification-label-type> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	] .
 
 a4g:Certifier a owl:Class ;
@@ -4568,9 +4553,8 @@ a4g:Consignment a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasHandlingInstructionCode ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/handling-instruction> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasCarrierConsignmentID ;
@@ -4727,11 +4711,9 @@ a4g:TransportEquipment a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasTransportEquipmentType ;
-		owl:onClass <http://unknown.org/transport-equipment-type> ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasSizeType ;
-		owl:onClass <http://unknown.org/size-type> ;
 	] .
 
 a4g:Package a owl:Class ;
@@ -4745,9 +4727,8 @@ a4g:Package a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasPackagingType ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/packaging-type> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:containsPackage ;
@@ -4801,9 +4782,8 @@ a4g:TransportMeans a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasTransportMode ;
-		owl:minQualifiedCardinality 1 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/transport-mode> ;
+		owl:minCardinality 1 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasVehicleID ;
@@ -4813,9 +4793,8 @@ a4g:TransportMeans a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasTransportMeansType ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/transport-means-type> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasVehicleSegmentID ;
@@ -4986,15 +4965,13 @@ a4g:TaxInformation a owl:Class ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasTaxCategory ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/tax-category> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasTaxScheme ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onClass <http://unknown.org/tax-scheme> ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasAmount ;
@@ -7183,8 +7160,7 @@ a4g:hasModel a owl:ObjectProperty ;
 a4g:hasItemClassification a owl:ObjectProperty ;
 	rdfs:label "has item classification"@en ;
 	rdfs:comment "A classification of this item according to a specific system for classifying products or services. Additional information: Examples of classification schemes are: CPV, UNSPC, eCl@ss, GPC, ... WG acceptance 10/03/2022" ;
-	rdfs:domain a4g:Item ;
-	rdfs:range <http://unknown.org/item-classification> .
+	rdfs:domain a4g:Item .
 
 a4g:definesCatalogueProvider a owl:ObjectProperty ;
 	rdfs:label "defines catalogue provider"@en ;
@@ -7548,8 +7524,7 @@ a4g:hasDeliveryPeriod a owl:ObjectProperty ;
 
 a4g:hasAcceptanceStatus a owl:ObjectProperty ;
 	rdfs:label "has acceptance status"@en ;
-	rdfs:domain a4g:OrderResponseInformation ;
-	rdfs:range <http://unknown.org/ResponseStatus> .
+	rdfs:domain a4g:OrderResponseInformation .
 
 a4g:isOwnedByAgent a owl:ObjectProperty ;
 	rdfs:label "is owned by agent"@en ;
@@ -7917,8 +7892,7 @@ a4g:isSubmittedForLotGroup a owl:ObjectProperty ;
 a4g:hasOrderableUnit a owl:ObjectProperty ;
 	rdfs:label "has orderable unit"@en ;
 	rdfs:comment "The unit in which the item described in this catalogue line can be ordered." ;
-	rdfs:domain a4g:CatalogueLine ;
-	rdfs:range <http://unknown.org/orderable-unit> .
+	rdfs:domain a4g:CatalogueLine .
 
 a4g:hasLaunchFrameworkAgreementMaximumValue a owl:ObjectProperty ;
 	rdfs:label "has launch framework agreement maximum value"@en ;
@@ -7938,8 +7912,7 @@ a4g:substantiatesExclusionGround a owl:ObjectProperty ;
 a4g:hasTransactionConditionsCode a owl:ObjectProperty ;
 	rdfs:label "has transaction conditions code"@en ;
 	rdfs:comment "Coded description of the specific transaction conditions (purchasing, sales, payment) for an item. " ;
-	rdfs:domain a4g:CatalogueLine ;
-	rdfs:range <http://unknown.org/transaction-conditions> .
+	rdfs:domain a4g:CatalogueLine .
 
 a4g:specifiesSubcontractors a owl:ObjectProperty ;
 	rdfs:label "specifies subcontractors"@en ;
@@ -7959,8 +7932,7 @@ a4g:refersToPrevious a owl:ObjectProperty ;
 
 a4g:hasActivityCode a owl:ObjectProperty ;
 	rdfs:label "has activity code"@en ;
-	rdfs:domain a4g:Catalogue, a4g:CatalogueLine ;
-	rdfs:range <http://unknown.org/activity-code> .
+	rdfs:domain a4g:Catalogue, a4g:CatalogueLine .
 
 a4g:hasUnofficialLanguage a owl:ObjectProperty ;
 	rdfs:label "has unofficial language"@en ;
@@ -8205,8 +8177,7 @@ a4g:hasBaseQuantity a owl:ObjectProperty ;
 
 a4g:hasDeliveryClassification a owl:ObjectProperty ;
 	rdfs:label "has delivery classification"@en ;
-	rdfs:domain a4g:Item ;
-	rdfs:range <http://unknown.org/delivery-item-type> .
+	rdfs:domain a4g:Item .
 
 a4g:hasTotalAwardedValue a owl:ObjectProperty ;
 	rdfs:label "has total awarded value"@en ;
@@ -8355,8 +8326,7 @@ a4g:hasManufacturer a owl:ObjectProperty ;
 a4g:hasHazardousItemUNDGCode a owl:ObjectProperty ;
 	rdfs:label "has hazardous item undg code"@en ;
 	rdfs:comment "Specification of the hazardous nature of an item according to the UNDG classification schema. Provides detail of the classification and nature of a hazardous item. " ;
-	rdfs:domain a4g:Item ;
-	rdfs:range <http://unknown.org/dangerous-goods-list> .
+	rdfs:domain a4g:Item .
 
 a4g:associatedWith a owl:ObjectProperty ;
 	rdfs:label "associated with"@en ;
@@ -8531,13 +8501,11 @@ a4g:hasChargeInformation a owl:ObjectProperty ;
 
 a4g:hasTaxCategory a owl:ObjectProperty ;
 	rdfs:label "has tax category"@en ;
-	rdfs:domain a4g:TaxInformation ;
-	rdfs:range <http://unknown.org/tax-category> .
+	rdfs:domain a4g:TaxInformation .
 
 a4g:hasTaxScheme a owl:ObjectProperty ;
 	rdfs:label "has tax scheme"@en ;
-	rdfs:domain a4g:TaxInformation ;
-	rdfs:range <http://unknown.org/tax-scheme> .
+	rdfs:domain a4g:TaxInformation .
 
 a4g:hasGrossVolume a owl:ObjectProperty ;
 	rdfs:label "has gross volume"@en ;
@@ -8563,8 +8531,7 @@ a4g:issuedByCertifier a owl:ObjectProperty ;
 a4g:hasLabelType a owl:ObjectProperty ;
 	rdfs:label "has label type"@en ;
 	rdfs:comment "The label type such environmental, quality, social etc." ;
-	rdfs:domain a4g:CertificationLabel ;
-	rdfs:range <http://unknown.org/certification-label-type> .
+	rdfs:domain a4g:CertificationLabel .
 
 a4g:hasProcurementHighestReceivedTenderValue a owl:ObjectProperty ;
 	rdfs:label "has procurement highest received tender value"@en ;
@@ -8662,13 +8629,11 @@ a4g:hasConcessionEstimatedValue a owl:ObjectProperty ;
 
 a4g:hasPackagingType a owl:ObjectProperty ;
 	rdfs:label "has packaging type"@en ;
-	rdfs:domain a4g:Package ;
-	rdfs:range <http://unknown.org/packaging-type> .
+	rdfs:domain a4g:Package .
 
 a4g:hasHandlingInstructionCode a owl:ObjectProperty ;
 	rdfs:label "has handling instruction code"@en ;
-	rdfs:domain a4g:TransportHandlingUnit, a4g:Consignment ;
-	rdfs:range <http://unknown.org/handling-instruction> .
+	rdfs:domain a4g:TransportHandlingUnit, a4g:Consignment .
 
 a4g:hasTaxInformation a owl:ObjectProperty ;
 	rdfs:label "has tax information"@en ;
@@ -8692,13 +8657,11 @@ a4g:refersToLotGroupAwardInformation a owl:ObjectProperty ;
 
 a4g:hasPriceType a owl:ObjectProperty ;
 	rdfs:label "has price type"@en ;
-	rdfs:domain a4g:Price ;
-	rdfs:range <http://unknown.org/price-type> .
+	rdfs:domain a4g:Price .
 
 a4g:hasDocumentType a owl:ObjectProperty ;
 	rdfs:label "has document type"@en ;
-	rdfs:domain a4g:PostAwardDocument ;
-	rdfs:range <http://unknown.org/document-type> .
+	rdfs:domain a4g:PostAwardDocument .
 
 a4g:hasBuyerItemID a owl:ObjectProperty ;
 	rdfs:label "has buyer item id"@en ;
@@ -8735,8 +8698,7 @@ a4g:specifiesOriginatorInformation a owl:ObjectProperty ;
 a4g:hasAllowanceChargeReason a owl:ObjectProperty ;
 	rdfs:label "has allowance charge reason"@en ;
 	rdfs:comment "https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL5189/ https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL7161/" ;
-	rdfs:domain a4g:AllowanceChargeInformation ;
-	rdfs:range <http://unknown.org/allowance-charge-reason> .
+	rdfs:domain a4g:AllowanceChargeInformation .
 
 a4g:isCalculatedOn a owl:ObjectProperty ;
 	rdfs:label "is calculated on"@en ;
@@ -8797,8 +8759,7 @@ a4g:specifiesSpecificDeliveryAgreement a owl:ObjectProperty ;
 a4g:hasDocumentStatus a owl:ObjectProperty ;
 	rdfs:label "has document status"@en ;
 	rdfs:comment "https://test-docs.peppol.eu/logistics/transport-execution/codelist/DocumentStatusCode/" ;
-	rdfs:domain a4g:PostAwardDocument ;
-	rdfs:range <http://unknown.org/document-status> .
+	rdfs:domain a4g:PostAwardDocument .
 
 foaf:Person rdfs:subClassOf [
 		rdf:type owl:Restriction ;
@@ -8914,8 +8875,7 @@ a4g:hasOnCarriageShipmentStage a owl:ObjectProperty ;
 
 a4g:hasTransportMode a owl:ObjectProperty ;
 	rdfs:label "has transport mode"@en ;
-	rdfs:domain a4g:TransportMeans ;
-	rdfs:range <http://unknown.org/transport-mode> .
+	rdfs:domain a4g:TransportMeans .
 
 a4g:refersToDespatchLine a owl:ObjectProperty ;
 	rdfs:label "refers to despatch line"@en ;
@@ -8954,13 +8914,11 @@ a4g:hasTransportEquipmentSeal a owl:ObjectProperty ;
 
 a4g:hasTransportEquipmentType a owl:ObjectProperty ;
 	rdfs:label "has transport equipment type"@en ;
-	rdfs:domain a4g:TransportEquipment ;
-	rdfs:range <http://unknown.org/transport-equipment-type> .
+	rdfs:domain a4g:TransportEquipment .
 
 a4g:hasSizeType a owl:ObjectProperty ;
 	rdfs:label "has size type"@en ;
-	rdfs:domain a4g:TransportEquipment ;
-	rdfs:range <http://unknown.org/size-type> .
+	rdfs:domain a4g:TransportEquipment .
 
 a4g:hasTotalGoodsItemQuantity a owl:ObjectProperty ;
 	rdfs:label "has total goods item quantity"@en ;
@@ -9005,8 +8963,7 @@ a4g:hasLoadingLength a owl:ObjectProperty ;
 a4g:hasDespatchAdviceType a owl:ObjectProperty ;
 	rdfs:label "has despatch advice type"@en ;
 	rdfs:comment "https://test-docs.peppol.eu/logistics/transport-execution/codelist/DespatchAdviceTypeCode/ " ;
-	rdfs:domain a4g:DespatchAdvice ;
-	rdfs:range <http://unknown.org/despatch-advice-type> .
+	rdfs:domain a4g:DespatchAdvice .
 
 a4g:hasMaximumTemperature a owl:ObjectProperty ;
 	rdfs:label "has maximum temperature"@en ;
@@ -9141,8 +9098,7 @@ a4g:hasReviewBodyType a owl:ObjectProperty ;
 
 a4g:hasTransportMeansType a owl:ObjectProperty ;
 	rdfs:label "has transport means type"@en ;
-	rdfs:domain a4g:TransportMeans ;
-	rdfs:range <http://unknown.org/transport-means-type> .
+	rdfs:domain a4g:TransportMeans .
 
 a4g:hasVehicleSegmentID a owl:ObjectProperty ;
 	rdfs:label "has vehicle segment id"@en ;
