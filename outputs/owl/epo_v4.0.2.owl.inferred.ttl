@@ -887,8 +887,6 @@ a4g:isSubmittedForLot rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasReceivedSubmissionType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasBuyerLegalType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:refersToDeliveryInformation rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:refersToPreviousReview rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -938,8 +936,6 @@ a4g:hasTraceID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 a4g:hasManufacturer rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasValidityPeriod rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
-a4g:hasLegalIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:relatesToEFormSectionIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -1143,8 +1139,6 @@ a4g:hasRoundingAmount rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasConfirmedIrregularityType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasCountryCode rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:specifiesGeneralDeliveryAgreement rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:conformsToLegalBasis rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1205,8 +1199,6 @@ a4g:definesCatalogueReceiver rdfs:isDefinedBy <http://data.europa.eu/a4g/ontolog
 
 a4g:describesItem rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasMainActivity rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:isSubjectToTerm rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasConsigneeConsignmentID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1257,8 +1249,6 @@ a4g:specifiesSeller rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasDocumentStatus rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasThresholdType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:providesContractTotalPenaltyValue rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasAmount rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1276,8 +1266,6 @@ a4g:foreseesTechnique rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 a4g:hasLength rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:definesOpeningPlace rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
-a4g:hasPrimaryContactPoint rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasHazardousItemUNDGCode rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -1367,8 +1355,6 @@ a4g:hasAwardCriterionType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> 
 
 a4g:specifiesCarrier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasNutsCode rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:comprisesTender rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasDPSScope rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1453,8 +1439,6 @@ a4g:hasDeclaredStatisticalValue rdfs:isDefinedBy <http://data.europa.eu/a4g/onto
 
 a4g:hasAwardedValue rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasCountryOfBirth rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:resolvesReviewRequest rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasReviewIrregularitySummary rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1498,8 +1482,6 @@ a4g:hasSerialID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 a4g:hasLateSubmissionPermission rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasOnCarriageShipmentStage rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
-a4g:hasNationality rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:announcesAwardDecision rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -1615,8 +1597,6 @@ a4g:definesSpecificPlaceOfPerformance rdfs:isDefinedBy <http://data.europa.eu/a4
 
 a4g:specifiesDespatcher rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasTaxIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:specifiesBuyer rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:isProductionOf rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1689,13 +1669,9 @@ a4g:comprisesOrderLine rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasFreightForwarderConsignmentID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-a4g:hasEndpointIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:contextualisedBy rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasBatchID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
-a4g:hasRegistrationCountry rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasVariantPermission rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
