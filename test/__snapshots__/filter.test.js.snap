@@ -21083,21 +21083,6 @@ WG approval 30/06/2022
       "type": "Attribute",
     },
     Object {
-      "description": "The factor relative to the price charged in addition.
-
-WG approval 26/07/2022",
-      "eaId": 2041,
-      "predicate": "epo-cat:hasPercentage",
-      "quantifiers": Object {
-        "max": "1",
-        "min": "0",
-        "quantifiersDeclared": true,
-      },
-      "source": "epo-ord:AllowanceChargeInformation",
-      "target": "xsd:decimal",
-      "type": "Attribute",
-    },
-    Object {
       "description": "The day of production.
 ",
       "eaId": 1632,
@@ -21109,22 +21094,6 @@ WG approval 26/07/2022",
       },
       "source": "epo-cat:Batch",
       "target": "xsd:dateTime",
-      "type": "Attribute",
-    },
-    Object {
-      "description": "The factor relative to the price charged in addition.
-
-WG approval 26/07/2022
-",
-      "eaId": 2818,
-      "predicate": "epo-cat:hasPercentage",
-      "quantifiers": Object {
-        "max": "1",
-        "min": "0",
-        "quantifiersDeclared": true,
-      },
-      "source": "epo-ord:TaxInformation",
-      "target": "xsd:decimal",
       "type": "Attribute",
     },
     Object {
@@ -21403,20 +21372,6 @@ WG approval 10/03/2021",
       },
       "source": "epo-cat:ChargeInformation",
       "target": "epo-ord:OrderLine",
-      "type": "Association",
-    },
-    Object {
-      "description": null,
-      "eaId": 4454,
-      "predicate": "epo-cat:hasQuantity",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 0,
-        "quantifiersDeclared": true,
-        "raw": "0..1",
-      },
-      "source": "epo-con:Deliverable",
-      "target": "epo:Quantity",
       "type": "Association",
     },
     Object {
@@ -21883,20 +21838,6 @@ The unit must be indicated in the Quantity, with a quantity value of 1.",
     },
     Object {
       "description": null,
-      "eaId": 3279,
-      "predicate": "epo-cat:hasQuantity",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 1,
-        "quantifiersDeclared": true,
-        "raw": "1",
-      },
-      "source": "epo-ord:OrderLine",
-      "target": "epo:Quantity",
-      "type": "Association",
-    },
-    Object {
-      "description": null,
       "eaId": 3286,
       "predicate": "rdfs:subClassOf",
       "quantifiers": Object {
@@ -21905,18 +21846,6 @@ The unit must be indicated in the Quantity, with a quantity value of 1.",
       "source": "epo-cat:ChargeInformation",
       "target": "epo-ord:AllowanceChargeInformation",
       "type": "Generalization",
-    },
-    Object {
-      "description": null,
-      "eaId": 3289,
-      "predicate": "epo-cat:specifiesChargeInformation",
-      "quantifiers": Object {
-        "quantifiersDeclared": true,
-        "raw": "0..*",
-      },
-      "source": "epo-ord:Order",
-      "target": "epo-cat:ChargeInformation",
-      "type": "Association",
     },
     Object {
       "description": "The quantity at which the net monetary value applies.",
@@ -22186,22 +22115,6 @@ WG Approval: 30/06/2022
       "type": "Generalization",
     },
     Object {
-      "description": "The predetermined monetary value charged in addition to the price.
-
-WG approval 26/07/2022",
-      "eaId": 3213,
-      "predicate": "epo-cat:hasAmount",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 1,
-        "quantifiersDeclared": true,
-        "raw": "1",
-      },
-      "source": "epo-ord:AllowanceChargeInformation",
-      "target": "epo:MonetaryValue",
-      "type": "Association",
-    },
-    Object {
       "description": null,
       "eaId": 3214,
       "predicate": "epo-cat:hasChargeInformation",
@@ -22212,34 +22125,6 @@ WG approval 26/07/2022",
       "source": "epo-cat:CatalogueLine",
       "target": "epo-cat:ChargeInformation",
       "type": "Association",
-    },
-    Object {
-      "description": null,
-      "eaId": 3215,
-      "predicate": "epo-cat:hasTaxCategory",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 0,
-        "quantifiersDeclared": true,
-        "raw": "0..1",
-      },
-      "source": "epo-ord:TaxInformation",
-      "target": "at-voc-new:tax-category",
-      "type": "Dependency",
-    },
-    Object {
-      "description": null,
-      "eaId": 3216,
-      "predicate": "epo-cat:hasTaxScheme",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 0,
-        "quantifiersDeclared": true,
-        "raw": "0..1",
-      },
-      "source": "epo-ord:TaxInformation",
-      "target": "at-voc-new:tax-scheme",
-      "type": "Dependency",
     },
     Object {
       "description": null,
@@ -22265,20 +22150,6 @@ WG approval 26/07/2022",
       },
       "source": "epo-cat:CatalogueResponseLine",
       "target": "epo-cat:CatalogueLine",
-      "type": "Association",
-    },
-    Object {
-      "description": null,
-      "eaId": 3291,
-      "predicate": "epo-cat:hasPrice",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 0,
-        "quantifiersDeclared": true,
-        "raw": "0..1",
-      },
-      "source": "epo-ord:OrderLine",
-      "target": "epo-cat:Price",
       "type": "Association",
     },
     Object {
@@ -22564,24 +22435,6 @@ WG approval 16/05/2023
       },
       "source": "epo-cat:Line",
       "target": "adms:Identifier",
-      "type": "Association",
-    },
-    Object {
-      "description": "The predetermined monetary value charged in addition to the price.
-
-WG approval 26/07/2022
-
-",
-      "eaId": 4321,
-      "predicate": "epo-cat:hasAmount",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 0,
-        "quantifiersDeclared": true,
-        "raw": "0..1",
-      },
-      "source": "epo-ord:TaxInformation",
-      "target": "epo:MonetaryValue",
       "type": "Association",
     },
     Object {
