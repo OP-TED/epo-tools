@@ -17,6 +17,11 @@ describe('filter', () => {
 
   const eaJson = getJson(UNDER_REVIEW)
 
+  it(`allEpo`, function () {
+    const result = startsWith(eaJson, 'epo')
+    expect(result).toMatchSnapshot(this)
+  })
+
   it(`byPrefix`, function () {
     const result = startsWith(eaJson, 'epo-cat:')
     expect(result).toMatchSnapshot(this)

@@ -38,9 +38,9 @@ const datatypePropertyTemplate = (edge) => {
          ${rdfsLabel(predicate)}
          ${rdfsCommentTemplate(description)}
          ${domainRangeTemplate(edge)}
-    ${quantifiersTemplate(edge)}     
                   
     `
+  //    ${quantifiersTemplate(edge)}
 }
 
 function isValidTarget (target) {
@@ -69,8 +69,9 @@ const objectTemplate = (edge) => {
          ${rdfsLabel(predicate)}
          ${rdfsCommentTemplate(description)}
          ${domainRangeTemplate(edge)}
-    ${quantifiersTemplate(edge)}
+   
     `
+  // ${quantifiersTemplate(edge)}
 }
 
 const relationTemplates = {
@@ -104,35 +105,36 @@ function rdfsCommentTemplate (def) {
     join(' ')).replaceAll('"', '')}" ;` : ''
 }
 
-const quantifiersTemplate = (edge) => {
-  const { source, predicate, target, quantifiers } = edge
-  const { min, max, quantifiersDeclared } = quantifiers
-
-  if (quantifiersDeclared) {
-
-    if (isValidTarget(target)) {
-      return `
-    ${source} rdfs:subClassOf [
-        a owl:Restriction ;
-        owl:onProperty ${predicate} ;
-        ${max ? `owl:minQualifiedCardinality ${min} ;` : ''}
-        ${max ? `owl:maxQualifiedCardinality ${max} ;` : ''}    
-        owl:onClass ${target}    
-    ] .
-    `
-    } else {
-      return `
-    ${source} rdfs:subClassOf [
-        a owl:Restriction ;
-        ${max ? `owl:minCardinality ${min} ;` : ''}
-        ${max ? `owl:maxCardinality ${max} ;` : ''}    
-        owl:onProperty ${predicate} 
-    ] .
-    `
-    }
-  }
-  return ''
-
-}
+// No cardinalities for Owl
+// const quantifiersTemplate = (edge) => {
+//   const { source, predicate, target, quantifiers } = edge
+//   const { min, max, quantifiersDeclared } = quantifiers
+//
+//   if (quantifiersDeclared) {
+//
+//     if (isValidTarget(target)) {
+//       return `
+//     ${source} rdfs:subClassOf [
+//         a owl:Restriction ;
+//         owl:onProperty ${predicate} ;
+//         ${max ? `owl:minQualifiedCardinality ${min} ;` : ''}
+//         ${max ? `owl:maxQualifiedCardinality ${max} ;` : ''}
+//         owl:onClass ${target}
+//     ] .
+//     `
+//     } else {
+//       return `
+//     ${source} rdfs:subClassOf [
+//         a owl:Restriction ;
+//         ${max ? `owl:minCardinality ${min} ;` : ''}
+//         ${max ? `owl:maxCardinality ${max} ;` : ''}
+//         owl:onProperty ${predicate}
+//     ] .
+//     `
+//     }
+//   }
+//   return ''
+//
+// }
 
 export { toTurtle }

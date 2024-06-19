@@ -7,13 +7,13 @@ import {
   inspectNode,
 } from '../src/conceptualModel/issues.js'
 import { UNDER_REVIEW } from '../src/config.js'
-import { getEpoJson } from '../src/epo/readEpo.js'
+import { getJson } from '../src/epo/readEpo.js'
 
 expect.extend({ toMatchSnapshot })
 
 describe('issues', () => {
 
-  const { edges, nodes } = getEpoJson(UNDER_REVIEW)
+  const { edges, nodes } = getJson(UNDER_REVIEW)
 
   it(`appendIssues`, function () {
     const result = appendIssues({ edges, nodes, hello: 'world' })

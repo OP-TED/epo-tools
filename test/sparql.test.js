@@ -3,7 +3,7 @@ import toMatchSnapshot from 'expect-mocha-snapshot'
 import { readFileSync } from 'fs'
 import { describe, it } from 'mocha'
 import { UNDER_REVIEW } from '../src/config.js'
-import { getEpoJson } from '../src/epo/readEpo.js'
+import { getJson } from '../src/epo/readEpo.js'
 import { applyGlob } from '../src/io/assets.js'
 
 import { termsFromQuery } from '../src/sparql/extractFromQuery.js'
@@ -13,7 +13,7 @@ expect.extend({ toMatchSnapshot })
 
 const globPattern = `test/support/queries/**`
 const assets = await applyGlob(globPattern)
-const epoJson = getEpoJson(UNDER_REVIEW)
+const epoJson = getJson(UNDER_REVIEW)
 
 describe('extract terms', async () => {
 

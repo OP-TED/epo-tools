@@ -56,6 +56,17 @@ a4g_shape:dateTime-hasAdditionalInformationDeadline a shacl:PropertyShape ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 .
 
+a4g_shape:AddressShape a shacl:NodeShape ;
+	shacl:targetClass locn:Address ;
+	shacl:property a4g_shape:PlainLiteral-postName, a4g_shape:PlainLiteral-locatorName, a4g_shape:PlainLiteral-fullAddress, a4g_shape:PlainLiteral-locatorDesignator, a4g_shape:PlainLiteral-addressArea, a4g_shape:PlainLiteral-postCode, a4g_shape:PlainLiteral-thoroughfare, a4g_shape:PlainLiteral-adminUnitL2, a4g_shape:PlainLiteral-adminUnitL1, a4g_shape:country-inScheme, a4g_shape:nuts-hasNutsCode, a4g_shape:nuts-inScheme, a4g_shape:country-hasCountryCode, a4g_shape:Identifier-addressID .
+
+a4g_shape:PlainLiteral-postName a shacl:PropertyShape ;
+	shacl:path locn:postName ;
+	shacl:name \\"post name\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
 a4g_shape:TenderAwardOutcomeShape a shacl:NodeShape ;
 	shacl:targetClass a4g:TenderAwardOutcome ;
 	shacl:property a4g_shape:integer-hasAwardRank, a4g_shape:Tender-concernsTender, a4g_shape:Winner-indicatesAwardToWinner .
@@ -81,6 +92,43 @@ a4g_shape:dateTime-hasAwardDecisionDate a shacl:PropertyShape ;
 	shacl:name \\"has award decision date\\"@en ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 .
+
+a4g_shape:GeometryShape a shacl:NodeShape ;
+	shacl:targetClass locn:Geometry ;
+	shacl:property a4g_shape:PlainLiteral-coordinates, a4g_shape:PlainLiteral-longitude, a4g_shape:PlainLiteral-latitude .
+
+a4g_shape:PlainLiteral-coordinates a shacl:PropertyShape ;
+	shacl:path m8g:coordinates ;
+	shacl:name \\"coordinates\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-locatorName a shacl:PropertyShape ;
+	shacl:path locn:locatorName ;
+	shacl:name \\"locator name\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-fullAddress a shacl:PropertyShape ;
+	shacl:path locn:fullAddress ;
+	shacl:name \\"full address\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-locatorDesignator a shacl:PropertyShape ;
+	shacl:path locn:locatorDesignator ;
+	shacl:name \\"locator designator\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-addressArea a shacl:PropertyShape ;
+	shacl:path locn:addressArea ;
+	shacl:name \\"address area\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:anyURI-hasRestrictedAccessURL a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
@@ -115,6 +163,17 @@ a4g_shape:PlainLiteral-description a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PlainLiteral .
 
+a4g_shape:LocationShape a shacl:NodeShape ;
+	shacl:targetClass dcterms:Location ;
+	shacl:property a4g_shape:PlainLiteral-geographicName, a4g_shape:country-inScheme, a4g_shape:Geometry-geometry, a4g_shape:Address-address, a4g_shape:nuts-hasNutsCode, a4g_shape:nuts-inScheme, a4g_shape:country-hasCountryCode, a4g_shape:Identifier-geographicIdentifier, a4g_shape:Identifier-identifier .
+
+a4g_shape:PlainLiteral-geographicName a shacl:PropertyShape ;
+	shacl:path locn:geographicName ;
+	shacl:name \\"geographic name\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
 a4g_shape:GreenProcurementShape a shacl:NodeShape ;
 	shacl:targetClass a4g:GreenProcurement ;
 	shacl:property a4g_shape:boolean-usesCleanVehicleDirective, a4g_shape:green-public-procurement-criteria-fulfillsRequirement, a4g_shape:green-public-procurement-criteria-inScheme, a4g_shape:environmental-impact-fulfillsRequirement, a4g_shape:environmental-impact-inScheme .
@@ -128,9 +187,23 @@ a4g_shape:boolean-usesCleanVehicleDirective a shacl:PropertyShape ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 .
 
+a4g_shape:PlainLiteral-postCode a shacl:PropertyShape ;
+	shacl:path locn:postCode ;
+	shacl:name \\"post code\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-thoroughfare a shacl:PropertyShape ;
+	shacl:path locn:thoroughfare ;
+	shacl:name \\"thoroughfare\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
 a4g_shape:AgentShape a shacl:NodeShape ;
 	shacl:targetClass foaf:Agent ;
-	shacl:property a4g_shape:PlainLiteral-hasAlias, a4g_shape:Identifier-identifier .
+	shacl:property a4g_shape:PlainLiteral-hasAlias, a4g_shape:PlainLiteral-title, a4g_shape:Identifier-identifier .
 
 a4g_shape:PlainLiteral-hasAlias a shacl:PropertyShape ;
 	shacl:path a4g:hasAlias ;
@@ -152,7 +225,7 @@ a4g_shape:boolean-isDesignContest a shacl:PropertyShape ;
 
 a4g_shape:ContactPointShape a shacl:NodeShape ;
 	shacl:targetClass m8g:ContactPoint ;
-	shacl:property a4g_shape:PlainLiteral-hasContactName, a4g_shape:PlainLiteral-hasFax, a4g_shape:anyURI-hasInternetAddress, a4g_shape:Address-address .
+	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:PlainLiteral-hasContactName, a4g_shape:PlainLiteral-hasFax, a4g_shape:PlainLiteral-telephone, a4g_shape:PlainLiteral-email, a4g_shape:anyURI-hasInternetAddress, a4g_shape:Address-address .
 
 a4g_shape:PlainLiteral-hasContactName a shacl:PropertyShape ;
 	shacl:path a4g:hasContactName ;
@@ -356,6 +429,10 @@ a4g_shape:decimal-numericDuration a shacl:PropertyShape ;
 	shacl:minCount 1 ;
 	shacl:maxCount 1 .
 
+a4g_shape:RequirementShape a shacl:NodeShape ;
+	shacl:targetClass m8g:Requirement ;
+	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:PlainLiteral-prefLabel, a4g_shape:Identifier-identifier, a4g_shape:InformationConcept-hasConcept, a4g_shape:LegalResource-isDerivedFrom, a4g_shape:Requirement-hasRequirement, a4g_shape:EvidenceTypeList-hasEvidenceTypeList .
+
 a4g_shape:ReviewObjectShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ReviewObject ;
 	shacl:property a4g_shape:anyURI-hasElementReference, a4g_shape:anyURI-hasReviewURL, a4g_shape:ReviewObject-refersToPreviousReview .
@@ -480,6 +557,13 @@ a4g_shape:PlainLiteral-hasBuyerCategoryDescription a shacl:PropertyShape ;
 	shacl:name \\"has buyer category description\\"@en ;
 	shacl:node a4g_shape:PlainLiteral .
 
+a4g_shape:PlainLiteral-prefLabel a shacl:PropertyShape ;
+	shacl:path skos:prefLabel ;
+	shacl:name \\"pref label\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
 a4g_shape:anyURI-hasPublicAccessURL a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path a4g:hasPublicAccessURL ;
@@ -565,6 +649,33 @@ a4g_shape:anyURI-hasBuyerProfile a shacl:PropertyShape ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 .
 
+a4g_shape:CriterionShape a shacl:NodeShape ;
+	shacl:targetClass m8g:Criterion ;
+	shacl:property a4g_shape:decimal-bias, a4g_shape:decimal-weight, a4g_shape:PlainLiteral-weightingConsiderationDescription, a4g_shape:criterion-type, a4g_shape:criterion-inScheme .
+
+m8g:Criterion rdfs:subClassOf m8g:Requirement .
+
+a4g_shape:decimal-bias a shacl:PropertyShape ;
+	shacl:datatype xsd:decimal ;
+	shacl:path m8g:bias ;
+	shacl:name \\"bias\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 .
+
+a4g_shape:decimal-weight a shacl:PropertyShape ;
+	shacl:datatype xsd:decimal ;
+	shacl:path m8g:weight ;
+	shacl:name \\"weight\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 .
+
+a4g_shape:PlainLiteral-weightingConsiderationDescription a shacl:PropertyShape ;
+	shacl:path m8g:weightingConsiderationDescription ;
+	shacl:name \\"weighting consideration description\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
 a4g_shape:SubmissionTermShape a shacl:NodeShape ;
 	shacl:targetClass a4g:SubmissionTerm ;
 	shacl:property a4g_shape:anyURI-hasSubmissionURL, a4g_shape:anyURI-hasEAuctionURL, a4g_shape:dateTime-hasReceiptPreliminaryMarketConsultationDeadline, a4g_shape:dateTime-hasReceiptParticipationRequestDeadline, a4g_shape:dateTime-hasReceiptTenderDeadline, a4g_shape:dateTime-hasReceiptExpressionDeadline, a4g_shape:dateTime-hasReceiptDeadline, a4g_shape:boolean-isGuaranteeRequired, a4g_shape:PlainLiteral-hasGuaranteeDescription, a4g_shape:PlainLiteral-hasNonElectronicSubmissionDescription, a4g_shape:boolean-isAdvancedElectronicSignatureRequired, a4g_shape:boolean-isMultipleTenderSubmissionAllowed, a4g_shape:PlainLiteral-hasLateSubmissionInformationDescription, a4g_shape:language-hasLanguage, a4g_shape:language-inScheme, a4g_shape:permission-hasECataloguePermission, a4g_shape:permission-inScheme, a4g_shape:subcontracting-indication-hasTenderSubcontractingInformation, a4g_shape:subcontracting-indication-inScheme, a4g_shape:permission-hasESubmissionPermission, a4g_shape:communication-justification-hasNonElectronicSubmissionJustification, a4g_shape:communication-justification-inScheme, a4g_shape:TenderProcessor-definesTenderProcessor, a4g_shape:TenderReceiver-definesTenderReceiver, a4g_shape:missing-info-submission-hasLateSubmissionPermission, a4g_shape:missing-info-submission-inScheme, a4g_shape:Period-hasTenderValidityPeriod, a4g_shape:Duration-hasTenderValidityDuration, a4g_shape:permission-hasVariantPermission .
@@ -594,6 +705,10 @@ a4g_shape:FundShape a shacl:NodeShape ;
 	shacl:targetClass a4g:Fund ;
 	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:PlainLiteral-title, a4g_shape:anyURI-hasURL, a4g_shape:EU-programme-hasFundProgramme, a4g_shape:EU-programme-inScheme, a4g_shape:Identifier-identifier .
 
+a4g_shape:InformationConceptShape a shacl:NodeShape ;
+	shacl:targetClass m8g:InformationConcept ;
+	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:PlainLiteral-prefLabel, a4g_shape:Identifier-identifier .
+
 a4g_shape:LineShape a shacl:NodeShape ;
 	shacl:targetClass a4g:Line ;
 	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:Identifier-identifier, a4g_shape:Item-specifiesItem .
@@ -614,6 +729,11 @@ a4g_shape:PlainLiteral-hasDescriptionOfPrizes a shacl:PropertyShape ;
 a4g_shape:PlainLiteral-hasFax a shacl:PropertyShape ;
 	shacl:path a4g:hasFax ;
 	shacl:name \\"has fax\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-telephone a shacl:PropertyShape ;
+	shacl:path m8g:telephone ;
+	shacl:name \\"telephone\\"@en ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContractShape a shacl:NodeShape ;
@@ -659,6 +779,11 @@ a4g_shape:PlainLiteral-hasLiteralValue a shacl:PropertyShape ;
 	shacl:name \\"has literal value\\"@en ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-email a shacl:PropertyShape ;
+	shacl:path m8g:email ;
+	shacl:name \\"email\\"@en ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:LotGroupShape a shacl:NodeShape ;
@@ -819,7 +944,7 @@ a4g_shape:boolean-isAwardedByCPB a shacl:PropertyShape ;
 
 a4g_shape:EvidenceShape a shacl:NodeShape ;
 	shacl:targetClass m8g:Evidence ;
-	shacl:property a4g_shape:anyURI-hasURL, a4g_shape:Identifier-identifier, a4g_shape:Period-hasValidityPeriod, a4g_shape:Requirement-supportsRequirement, a4g_shape:access-rights-confidentialityLevelType, a4g_shape:access-rights-inScheme, a4g_shape:InformationConcept-supportsConcept, a4g_shape:SupportedValue-supportsValue .
+	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:anyURI-hasURL, a4g_shape:Identifier-identifier, a4g_shape:Period-hasValidityPeriod, a4g_shape:Requirement-supportsRequirement, a4g_shape:access-rights-confidentialityLevelType, a4g_shape:access-rights-inScheme, a4g_shape:InformationConcept-supportsConcept, a4g_shape:SupportedValue-supportsValue, a4g_shape:EvidenceType-conformsTo .
 
 a4g_shape:anyURI-hasURL a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
@@ -844,6 +969,20 @@ a4g:Certificate rdfs:subClassOf m8g:Evidence .
 a4g_shape:PlainLiteral-hasCertificationNumber a shacl:PropertyShape ;
 	shacl:path a4g:hasCertificationNumber ;
 	shacl:name \\"has certification number\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-adminUnitL2 a shacl:PropertyShape ;
+	shacl:path locn:adminUnitL2 ;
+	shacl:name \\"admin unit l 2\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-adminUnitL1 a shacl:PropertyShape ;
+	shacl:path locn:adminUnitL1 ;
+	shacl:name \\"admin unit l 1\\"@en ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PlainLiteral .
@@ -1139,6 +1278,57 @@ a4g_shape:PlainLiteral-hasDurationExtensionJustification a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PlainLiteral .
 
+a4g_shape:LegalExpressionShape a shacl:NodeShape ;
+	shacl:targetClass eli:LegalExpression ;
+	shacl:property a4g_shape:string-number, a4g_shape:Literal-description, a4g_shape:anyURI-identifier, a4g_shape:Literal-title, a4g_shape:language-inScheme, a4g_shape:Work-is_realized_by, a4g_shape:language-language, a4g_shape:Identifier-uri_schema, a4g_shape:atu-jurisdiction, a4g_shape:atu-inScheme .
+
+a4g_shape:string-number a shacl:PropertyShape ;
+	shacl:datatype xsd:string ;
+	shacl:path eli:number ;
+	shacl:name \\"number\\"@en .
+
+a4g_shape:LegalResourceShape a shacl:NodeShape ;
+	shacl:targetClass eli:LegalResource ;
+	shacl:property a4g_shape:string-number, a4g_shape:Literal-description, a4g_shape:anyURI-identifier, a4g_shape:resource-type-hasResourceType, a4g_shape:resource-type-inScheme, a4g_shape:atu-jurisdiction, a4g_shape:atu-inScheme .
+
+eli:LegalResource rdfs:subClassOf eli:Work .
+
+a4g_shape:Literal-description a shacl:PropertyShape ;
+	shacl:datatype rdfs:Literal ;
+	shacl:path dcterms:description ;
+	shacl:name \\"description\\"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 .
+
+a4g_shape:anyURI-identifier a shacl:PropertyShape ;
+	shacl:datatype xsd:anyURI ;
+	shacl:path dcterms:identifier ;
+	shacl:name \\"identifier\\"@en .
+
+a4g_shape:Literal-title a shacl:PropertyShape ;
+	shacl:datatype rdfs:Literal ;
+	shacl:path dcterms:title ;
+	shacl:name \\"title\\"@en .
+
+a4g_shape:SupportedValueShape a shacl:NodeShape ;
+	shacl:targetClass m8g:SupportedValue ;
+	shacl:property a4g_shape:PlainLiteral-value, a4g_shape:InformationConcept-providesValueFor .
+
+a4g_shape:PlainLiteral-value a shacl:PropertyShape ;
+	shacl:path m8g:value ;
+	shacl:name \\"value\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-longitude a shacl:PropertyShape ;
+	shacl:path m8g:longitude ;
+	shacl:name \\"longitude\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-latitude a shacl:PropertyShape ;
+	shacl:path m8g:latitude ;
+	shacl:name \\"latitude\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
 a4g_shape:ProcessPlanningTermShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ProcessPlanningTerm ;
 	shacl:property a4g_shape:date-hasAwardDateScheduled, a4g_shape:date-hasEstimatedTenderInvitationDate, a4g_shape:date-hasEstimatedContractNoticePublicationDate .
@@ -1339,6 +1529,22 @@ a4g_shape:dateTime-hasEnd a shacl:PropertyShape ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 .
 
+a4g_shape:PersonShape a shacl:NodeShape ;
+	shacl:targetClass person:Person, foaf:Person ;
+	shacl:property a4g_shape:PlainLiteral-name, a4g_shape:PlainLiteral-familyName, a4g_shape:PlainLiteral-givenName, a4g_shape:PlainLiteral-patronymicName, a4g_shape:PlainLiteral-alternative, a4g_shape:PlainLiteral-birthName, a4g_shape:date-birthDate, a4g_shape:country-inScheme, a4g_shape:Address-registeredAddress, a4g_shape:country-hasNationality, a4g_shape:country-hasCountryOfBirth, a4g_shape:Certificate-hasCertification .
+
+person:Person rdfs:subClassOf foaf:Person .
+
+a4g_shape:PlainLiteral-name a shacl:PropertyShape ;
+	shacl:path foaf:name ;
+	shacl:name \\"name\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-familyName a shacl:PropertyShape ;
+	shacl:path foaf:familyName ;
+	shacl:name \\"family name\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
 a4g_shape:PlainLiteral-hasLegalName a shacl:PropertyShape ;
 	shacl:path a4g:hasLegalName ;
 	shacl:name \\"has legal name\\"@en ;
@@ -1401,6 +1607,33 @@ a4g_shape:boolean-isHazardousRisk a shacl:PropertyShape ;
 	shacl:datatype xsd:boolean ;
 	shacl:path a4g:isHazardousRisk ;
 	shacl:name \\"is hazardous risk\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 .
+
+a4g_shape:PlainLiteral-givenName a shacl:PropertyShape ;
+	shacl:path foaf:givenName ;
+	shacl:name \\"given name\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-patronymicName a shacl:PropertyShape ;
+	shacl:path person:patronymicName ;
+	shacl:name \\"patronymic name\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-alternative a shacl:PropertyShape ;
+	shacl:path dcterms:alternative ;
+	shacl:name \\"alternative\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:PlainLiteral-birthName a shacl:PropertyShape ;
+	shacl:path person:birthName ;
+	shacl:name \\"birth name\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
+
+a4g_shape:date-birthDate a shacl:PropertyShape ;
+	shacl:datatype xsd:date ;
+	shacl:path m8g:birthDate ;
+	shacl:name \\"birth date\\"@en ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 .
 
@@ -1493,7 +1726,7 @@ a4g_shape:PlainLiteral-hasVersion a shacl:PropertyShape ;
 
 a4g_shape:ChannelShape a shacl:NodeShape ;
 	shacl:targetClass m8g:Channel ;
-	shacl:property a4g_shape:anyURI-hasAddressURL, a4g_shape:Identifier-hasEndpointIdentifier .
+	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:anyURI-hasAddressURL, a4g_shape:Identifier-hasEndpointIdentifier .
 
 a4g_shape:anyURI-hasAddressURL a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
@@ -1972,6 +2205,10 @@ a4g_shape:PlainLiteral-hasModificationDescription a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PlainLiteral .
 
+a4g_shape:EvidenceTypeListShape a shacl:NodeShape ;
+	shacl:targetClass m8g:EvidenceTypeList ;
+	shacl:property a4g_shape:PlainLiteral-description, a4g_shape:PlainLiteral-prefLabel, a4g_shape:Identifier-identifier, a4g_shape:EvidenceType-specifiesEvidenceType .
+
 a4g_shape:PlainLiteral-hasHazardousClass a shacl:PropertyShape ;
 	shacl:path a4g:hasHazardousClass ;
 	shacl:name \\"has hazardous class\\"@en ;
@@ -2012,6 +2249,17 @@ a4g_shape:decimal-hasAmountValue a shacl:PropertyShape ;
 	shacl:name \\"has amount value\\"@en ;
 	shacl:minCount 1 ;
 	shacl:maxCount 1 .
+
+a4g_shape:IdentifierShape a shacl:NodeShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:property a4g_shape:PlainLiteral-notation, a4g_shape:PlainLiteral-schemaAgency, a4g_shape:PlainLiteral-hasScheme, a4g_shape:PlainLiteral-hasSchemeVersion .
+
+a4g_shape:PlainLiteral-notation a shacl:PropertyShape ;
+	shacl:path skos:notation ;
+	shacl:name \\"notation\\"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:integer-hasOJSIssueNumber a shacl:PropertyShape ;
 	shacl:datatype xsd:integer ;
@@ -2068,9 +2316,10 @@ a4g_shape:PlainLiteral-describesMinimumLevelOfStandards a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PlainLiteral .
 
-a4g_shape:IdentifierShape a shacl:NodeShape ;
-	shacl:targetClass adms:Identifier ;
-	shacl:property a4g_shape:PlainLiteral-hasScheme, a4g_shape:PlainLiteral-hasSchemeVersion .
+a4g_shape:PlainLiteral-schemaAgency a shacl:PropertyShape ;
+	shacl:path adms:schemaAgency ;
+	shacl:name \\"schema agency\\"@en ;
+	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:PlainLiteral-hasScheme a shacl:PropertyShape ;
 	shacl:path a4g:hasScheme ;
@@ -2287,8 +2536,6 @@ a4g_shape:Brand-hasBrand a shacl:PropertyShape ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
-
-m8g:Criterion rdfs:subClassOf m8g:Requirement .
 
 a4g_shape:Contract-announcesContract a shacl:PropertyShape ;
 	shacl:targetClass a4g:Contract ;
@@ -2692,8 +2939,6 @@ a4g_shape:Person-playedBy a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
-person:Person rdfs:subClassOf foaf:Person .
-
 a4g_shape:permission-hasESubmissionPermission a shacl:PropertyShape ;
 	shacl:path a4g:hasESubmissionPermission ;
 	shacl:name \\"has e submission permission\\"@en ;
@@ -2912,9 +3157,13 @@ a4g_shape:Purpose-hasPurpose a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
-a4g_shape:LocationShape a shacl:NodeShape ;
-	shacl:targetClass dcterms:Location ;
-	shacl:property a4g_shape:country-inScheme, a4g_shape:Address-address, a4g_shape:nuts-hasNutsCode, a4g_shape:nuts-inScheme, a4g_shape:country-hasCountryCode, a4g_shape:Identifier-geographicIdentifier, a4g_shape:Identifier-identifier .
+a4g_shape:Geometry-geometry a shacl:PropertyShape ;
+	shacl:targetClass locn:Geometry ;
+	shacl:path locn:geometry ;
+	shacl:name \\"geometry\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Address-address a shacl:PropertyShape ;
 	shacl:targetClass locn:Address ;
@@ -2985,7 +3234,7 @@ a4g_shape:nuts-hasNutsCode a shacl:PropertyShape ;
 	shacl:name \\"has nuts code\\"@en ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
-	shacl:node a4g_shape:LocationShape, a4g_shape:AddressShape ;
+	shacl:node a4g_shape:AddressShape, a4g_shape:LocationShape ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:nuts-inScheme a shacl:PropertyShape ;
@@ -3005,7 +3254,7 @@ a4g_shape:country-hasCountryCode a shacl:PropertyShape ;
 	shacl:name \\"has country code\\"@en ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
-	shacl:node a4g_shape:LocationShape, a4g_shape:AddressShape ;
+	shacl:node a4g_shape:AddressShape, a4g_shape:LocationShape ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Identifier-geographicIdentifier a shacl:PropertyShape ;
@@ -3025,10 +3274,6 @@ a4g_shape:Identifier-identifier a shacl:PropertyShape ;
 	shacl:nodeKind shacl:IRI .
 
 eli:LegalResourceSubdivision rdfs:subClassOf eli:LegalResource .
-
-a4g_shape:LegalResourceShape a shacl:NodeShape ;
-	shacl:targetClass eli:LegalResource ;
-	shacl:property a4g_shape:resource-type-hasResourceType, a4g_shape:resource-type-inScheme .
 
 a4g_shape:resource-type-hasResourceType a shacl:PropertyShape ;
 	shacl:path a4g:hasResourceType ;
@@ -3472,10 +3717,6 @@ a4g:PINOnly-D24 rdfs:subClassOf a4g:PINOnlyNotice, a4g:StandardFormsNotice .
 
 a4g:PIN-RTL-D24 rdfs:subClassOf a4g:PINTimeLimitNotice, a4g:StandardFormsNotice .
 
-a4g_shape:RequirementShape a shacl:NodeShape ;
-	shacl:targetClass m8g:Requirement ;
-	shacl:property a4g_shape:Identifier-identifier, a4g_shape:InformationConcept-hasConcept, a4g_shape:LegalResource-isDerivedFrom, a4g_shape:Requirement-hasRequirement .
-
 a4g:CNStandard-D24 rdfs:subClassOf a4g:CNStandardNotice, a4g:StandardFormsNotice .
 
 a4g:CNStandardNotice rdfs:subClassOf a4g:CompetitionNotice .
@@ -3710,6 +3951,8 @@ a4g_shape:cpv-hasMainClassification a shacl:PropertyShape ;
 
 a4g:PurchaseContract rdfs:subClassOf a4g:Contract .
 
+m8g:PublicOrganisation rdfs:subClassOf org:Organization .
+
 a4g_shape:ESPDRequest-relatesToESPDRequest a shacl:PropertyShape ;
 	shacl:targetClass a4g:ESPDRequest ;
 	shacl:path a4g:relatesToESPDRequest ;
@@ -3795,10 +4038,6 @@ a4g_shape:ElectronicSignature-hasElectronicSignature a shacl:PropertyShape ;
 	shacl:path a4g:hasElectronicSignature ;
 	shacl:name \\"has electronic signature\\"@en ;
 	shacl:nodeKind shacl:IRI .
-
-a4g_shape:PersonShape a shacl:NodeShape ;
-	shacl:targetClass person:Person, foaf:Person ;
-	shacl:property a4g_shape:country-inScheme, a4g_shape:Address-registeredAddress, a4g_shape:country-hasNationality, a4g_shape:country-hasCountryOfBirth, a4g_shape:Certificate-hasCertification .
 
 a4g_shape:country-hasNationality a shacl:PropertyShape ;
 	shacl:path a4g:hasNationality ;
@@ -4015,10 +4254,6 @@ a4g_shape:MonetaryValue-hasEstimatedBuyerConcessionRevenue a shacl:PropertyShape
 	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
-
-a4g_shape:AddressShape a shacl:NodeShape ;
-	shacl:targetClass locn:Address ;
-	shacl:property a4g_shape:country-inScheme, a4g_shape:nuts-hasNutsCode, a4g_shape:nuts-inScheme, a4g_shape:country-hasCountryCode, a4g_shape:Identifier-addressID .
 
 a4g_shape:Identifier-addressID a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
@@ -4864,10 +5099,6 @@ a4g_shape:InformationConcept-constrains a shacl:PropertyShape ;
 	shacl:name \\"constrains\\"@en ;
 	shacl:nodeKind shacl:IRI .
 
-a4g_shape:InformationConceptShape a shacl:NodeShape ;
-	shacl:targetClass m8g:InformationConcept ;
-	shacl:property a4g_shape:Identifier-identifier .
-
 a4g_shape:LotGroupAwardInformationShape a shacl:NodeShape ;
 	shacl:targetClass a4g:LotGroupAwardInformation ;
 	shacl:property a4g_shape:MonetaryValue-hasGroupFrameworkAgreementMaximumValue, a4g_shape:LotGroup-describesLotGroup .
@@ -5620,6 +5851,20 @@ a4g_shape:LotGroup-describesLotGroup a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
+a4g_shape:Work-is_realized_by a shacl:PropertyShape ;
+	shacl:targetClass eli:Work ;
+	shacl:path eli:is_realized_by ;
+	shacl:name \\"is realized by\\"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:language-language a shacl:PropertyShape ;
+	shacl:path dcterms:language ;
+	shacl:name \\"language\\"@en ;
+	shacl:node a4g_shape:LegalExpressionShape ;
+	shacl:nodeKind shacl:IRI .
+
 a4g_shape:AwardDecision-refersToAwardDecision a shacl:PropertyShape ;
 	shacl:targetClass a4g:AwardDecision ;
 	shacl:path a4g:refersToAwardDecision ;
@@ -5630,6 +5875,16 @@ a4g_shape:LotGroupAwardInformation-refersToLotGroupAwardInformation a shacl:Prop
 	shacl:targetClass a4g:LotGroupAwardInformation ;
 	shacl:path a4g:refersToLotGroupAwardInformation ;
 	shacl:name \\"refers to lot group award information\\"@en ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:WorkShape a shacl:NodeShape ;
+	shacl:targetClass eli:Work ;
+	shacl:property a4g_shape:Work-isPartOf .
+
+a4g_shape:Work-isPartOf a shacl:PropertyShape ;
+	shacl:targetClass eli:Work ;
+	shacl:path dcterms:isPartOf ;
+	shacl:name \\"is part of\\"@en ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:LegalResourceSubdivisionShape a shacl:NodeShape ;
@@ -5653,6 +5908,16 @@ a4g_shape:Identifier-uri_schema a shacl:PropertyShape ;
 	shacl:path eli:uri_schema ;
 	shacl:name \\"uri schema\\"@en ;
 	shacl:nodeKind shacl:IRI .
+
+a4g_shape:atu-jurisdiction a shacl:PropertyShape ;
+	shacl:path eli:jurisdiction ;
+	shacl:name \\"jurisdiction\\"@en ;
+	shacl:node a4g_shape:LegalExpressionShape, a4g_shape:LegalResourceShape ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:atu-inScheme a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue atold:atu .
 
 a4g_shape:price-type-hasPriceType a shacl:PropertyShape ;
 	shacl:path a4g:hasPriceType ;
@@ -6544,10 +6809,6 @@ a4g_shape:SupportedValue-supportsValue a shacl:PropertyShape ;
 	shacl:name \\"supports value\\"@en ;
 	shacl:nodeKind shacl:IRI .
 
-a4g_shape:SupportedValueShape a shacl:NodeShape ;
-	shacl:targetClass m8g:SupportedValue ;
-	shacl:property a4g_shape:InformationConcept-providesValueFor .
-
 a4g_shape:InformationConcept-providesValueFor a shacl:PropertyShape ;
 	shacl:targetClass m8g:InformationConcept ;
 	shacl:path m8g:providesValueFor ;
@@ -6589,6 +6850,46 @@ a4g_shape:Mandate-hasMandate a shacl:PropertyShape ;
 a4g:EconomicStandingSummary rdfs:subClassOf a4g:SelectionCriteriaSummary .
 
 a4g:TechnicalAbilitySummary rdfs:subClassOf a4g:SelectionCriteriaSummary .
+
+a4g_shape:EvidenceTypeList-hasEvidenceTypeList a shacl:PropertyShape ;
+	shacl:targetClass m8g:EvidenceTypeList ;
+	shacl:path m8g:hasEvidenceTypeList ;
+	shacl:name \\"has evidence type list\\"@en ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:EvidenceType-specifiesEvidenceType a shacl:PropertyShape ;
+	shacl:targetClass m8g:EvidenceType ;
+	shacl:path m8g:specifiesEvidenceType ;
+	shacl:name \\"specifies evidence type\\"@en ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:EvidenceType-conformsTo a shacl:PropertyShape ;
+	shacl:targetClass m8g:EvidenceType ;
+	shacl:path dcterms:conformsTo ;
+	shacl:name \\"conforms to\\"@en ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:EvidenceTypeShape a shacl:NodeShape ;
+	shacl:targetClass m8g:EvidenceType ;
+	shacl:property a4g_shape:Identifier-identifier, a4g_shape:Period-validityPeriodConstraint .
+
+a4g_shape:Period-validityPeriodConstraint a shacl:PropertyShape ;
+	shacl:targetClass a4g:Period ;
+	shacl:path m8g:validityPeriodConstraint ;
+	shacl:name \\"validity period constraint\\"@en ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:criterion-type a shacl:PropertyShape ;
+	shacl:path dcterms:type ;
+	shacl:name \\"type\\"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:CriterionShape ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:criterion-inScheme a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue atold:criterion .
 
 "
 `;

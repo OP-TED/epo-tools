@@ -2,7 +2,7 @@ import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
 import { EPO_LATEST, UNDER_REVIEW } from '../src/config.js'
-import { getEpoJson } from '../src/epo/readEpo.js'
+import { getEpoJson, getJson } from '../src/epo/readEpo.js'
 import { getComparisonChunks } from '../src/plantuml/comparison.js'
 import { toPlantuml } from '../src/plantuml/plantumlTemplate.js'
 
@@ -10,7 +10,7 @@ expect.extend({ toMatchSnapshot })
 
 describe('write-plantuml', () => {
 
-  const current = getEpoJson(UNDER_REVIEW)
+  const current = getJson(UNDER_REVIEW)
 
   it(`generates plantuml`, function () {
     const plantuml = toPlantuml(current)

@@ -1699,21 +1699,6 @@ class \\"epo:Winner\\" {
   Object {
     "current": "
 @startuml
-
-
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "at-voc",
-  },
-  Object {
-    "current": "
-@startuml
 class \\"epo-ord:AllowanceChargeInformation\\" {
   epo-cat:hasAmount : epo:MonetaryValue [1]
   epo-cat:hasPercentage : xsd:decimal [0..1]
@@ -2299,98 +2284,6 @@ class \\"epo-ful:TransportMeansOperator\\" {
 @enduml
 ",
     "title": "epo-ful",
-  },
-  Object {
-    "current": "
-@startuml
-
-
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "at-voc-new",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"locn:Address\\" {
-  epo:hasCountryCode : at-voc:country [0..1]
-  epo:hasNutsCode : at-voc:nuts [0..1]
-  locn:addressID : adms:Identifier [0..1]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-class \\"locn:Address\\" {
-  epo:hasCountryCode : at-voc:country [0..1]
-  epo:hasNutsCode : at-voc:nuts [0..1]
-  locn:addressID : adms:Identifier [0..1]
-}
-
-@enduml
-",
-    "title": "locn",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"foaf:Agent\\" {
-  adms:identifier : adms:Identifier [0..*]
-  epo:hasAlias : rdf:PlainLiteral [0..*]
-}
-
-class \\"foaf:Person\\" {
-  epo:hasCertification : epo:Certificate [0..*]
-}
-\\"foaf:Agent\\" <|-- \\"foaf:Person\\"
-@enduml
-",
-    "prev": "
-@startuml
-class \\"foaf:Agent\\" {
-  adms:identifier : adms:Identifier [0..*]
-  epo:hasAlias : rdf:PlainLiteral [0..*]
-}
-
-class \\"foaf:Person\\" {
-  epo:hasCertification : epo:Certificate [0..*]
-}
-\\"foaf:Agent\\" <|-- \\"foaf:Person\\"
-@enduml
-",
-    "title": "foaf",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"cpov:ContactPoint\\" {
-  epo:hasContactName : rdf:PlainLiteral [0..1]
-  epo:hasFax : rdf:PlainLiteral [0..*]
-  epo:hasInternetAddress : xsd:anyURI [0..1]
-  locn:address : locn:Address [0..1]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-class \\"cpov:ContactPoint\\" {
-  epo:hasContactName : rdf:PlainLiteral [0..1]
-  epo:hasFax : rdf:PlainLiteral [0..*]
-  epo:hasInternetAddress : xsd:anyURI [0..1]
-  locn:address : locn:Address [0..1]
-}
-
-@enduml
-",
-    "title": "cpov",
   },
   Object {
     "current": "
@@ -3772,152 +3665,6 @@ class \\"epo-not:eFormsNotice\\" {
   Object {
     "current": "
 @startuml
-class \\"org:Organization\\" {
-  cv:registeredAddress : locn:Address [0..1]
-  epo:canProvideNonDiscriminatoryEvidence : cccev:Evidence [0..*]
-  epo:canProvideTaxAndSocialSecuritiesEvidence : cccev:Evidence [0..*]
-  epo:hasBuyerLegalType : at-voc:buyer-legal-type [0..1]
-  epo:hasBuyerLegalTypeDescription : rdf:PlainLiteral [0..1]
-  epo:hasCertification : epo:Certificate [0..*]
-  epo:hasInternetAddress : xsd:anyURI [0..*]
-  epo:hasLegalFormType : rdf:PlainLiteral [0..1]
-  epo:hasLegalIdentifier : adms:Identifier [0..*]
-  epo:hasLegalName : rdf:PlainLiteral [0..*]
-  epo:hasMainActivity : at-voc:main-activity [0..1]
-  epo:hasMainActivityDescription : rdf:PlainLiteral [0..1]
-  epo:hasPrimaryContactPoint : cpov:ContactPoint [0..1]
-  epo:hasRegistrationCountry : at-voc:country [0..1]
-  epo:hasTaxIdentifier : adms:Identifier [0..*]
-  locn:address : locn:Address [0..*]
-  org:subOrganizationOf : org:Organization [0..*]
-}
-\\"foaf:Agent\\" <|-- \\"org:Organization\\"
-@enduml
-",
-    "prev": "
-@startuml
-class \\"org:Organization\\" {
-  cv:registeredAddress : locn:Address [0..1]
-  epo:hasBuyerLegalType : at-voc:buyer-legal-type [0..1]
-  epo:hasBuyerLegalTypeDescription : rdf:PlainLiteral [0..1]
-  epo:hasCertification : epo:Certificate [0..*]
-  epo:hasInternetAddress : xsd:anyURI [0..*]
-  epo:hasLegalFormType : rdf:PlainLiteral [0..1]
-  epo:hasLegalIdentifier : adms:Identifier [0..*]
-  epo:hasLegalName : rdf:PlainLiteral [0..*]
-  epo:hasMainActivity : at-voc:main-activity [0..1]
-  epo:hasMainActivityDescription : rdf:PlainLiteral [0..1]
-  epo:hasPrimaryContactPoint : cpov:ContactPoint [0..*]
-  epo:hasRegistrationCountry : at-voc:country [0..1]
-  epo:hasTaxIdentifier : adms:Identifier [0..*]
-  locn:address : locn:Address [0..*]
-  org:subOrganizationOf : org:Organization [0..*]
-}
-\\"foaf:Agent\\" <|-- \\"org:Organization\\"
-@enduml
-",
-    "title": "org",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"dct:Location\\" {
-  adms:identifier : adms:Identifier [0..1]
-  epo:hasCountryCode : at-voc:country [0..1]
-  epo:hasNutsCode : at-voc:nuts [0..1]
-  locn:address : locn:Address [0..1]
-  locn:geographicIdentifier : adms:Identifier [0..1]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-class \\"dct:Location\\" {
-  adms:identifier : adms:Identifier [0..1]
-  epo:hasCountryCode : at-voc:country [0..1]
-  epo:hasNutsCode : at-voc:nuts [0..1]
-  locn:address : locn:Address [0..1]
-  locn:geographicIdentifier : adms:Identifier [0..1]
-}
-
-@enduml
-",
-    "title": "dct",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"cccev:Constraint\\" {
-  cccev:constrains : cccev:InformationConcept [0..*]
-  epo:hasThresholdType : at-voc:number-threshold [0..*]
-  epo:hasThresholdValue : xsd:decimal [1..1]
-}
-
-class \\"cccev:Evidence\\" {
-  adms:identifier : adms:Identifier [1]
-  cccev:confidentialityLevelType : at-voc:access-rights [0..1]
-  cccev:supportsConcept : cccev:InformationConcept [0..*]
-  cccev:supportsRequirement : cccev:Requirement [0..*]
-  cccev:supportsValue : cccev:SupportedValue [0..*]
-  epo:hasURL : xsd:anyURI [0..1]
-  epo:hasValidityPeriod : epo:Period [0..1]
-}
-
-class \\"cccev:InformationConcept\\" {
-  adms:identifier : adms:Identifier [0..1]
-}
-
-class \\"cccev:InformationRequirement\\" {
-  epo:hasConstraint : cccev:Constraint [0..*]
-}
-
-class \\"cccev:Requirement\\" {
-  adms:identifier : adms:Identifier [0..1]
-  cccev:hasConcept : cccev:InformationConcept [0..*]
-  cccev:hasRequirement : cccev:Requirement [0..*]
-  cccev:isDerivedFrom : eli:LegalResource 
-}
-
-class \\"cccev:SupportedValue\\" {
-  cccev:providesValueFor : cccev:InformationConcept [0..*]
-}
-\\"cccev:Requirement\\" <|-- \\"cccev:Constraint\\"
-\\"cccev:Requirement\\" <|-- \\"cccev:Criterion\\"
-\\"cccev:Requirement\\" <|-- \\"cccev:InformationRequirement\\"
-@enduml
-",
-    "prev": "
-@startuml
-class \\"cccev:Constraint\\" {
-  cccev:constrains : cccev:InformationConcept [0..*]
-  epo:hasThresholdType : at-voc:number-threshold [0..*]
-  epo:hasThresholdValue : xsd:decimal [1..1]
-}
-
-class \\"cccev:Evidence\\" {
-  cccev:supportsConcept : cccev:InformationConcept [0..*]
-  cccev:supportsRequirement : cccev:Requirement [0..*]
-  epo:hasValidityPeriod : epo:Period [0..1]
-}
-
-class \\"cccev:InformationConcept\\" {
-  adms:identifier : adms:Identifier [0..1]
-}
-
-class \\"cccev:Requirement\\" {
-  adms:identifier : adms:Identifier [0..1]
-  cccev:hasRequirement : cccev:Requirement [0..*]
-}
-\\"cccev:Requirement\\" <|-- \\"cccev:Constraint\\"
-\\"cccev:Requirement\\" <|-- \\"cccev:Criterion\\"
-@enduml
-",
-    "title": "cccev",
-  },
-  Object {
-    "current": "
-@startuml
 class \\"epo-con:ContractAmendment\\" {
   epo:amendsContract : epo:Contract [1]
   epo:updatesContractValue : epo:MonetaryValue [0..1]
@@ -4276,86 +4023,6 @@ class \\"epo-cat:Price\\" {
   Object {
     "current": "
 @startuml
-class \\"person:Person\\" {
-  cv:registeredAddress : locn:Address [0..1]
-  epo:hasCountryOfBirth : at-voc:country [0..1]
-  epo:hasNationality : at-voc:country [0..*]
-}
-\\"foaf:Person\\" <|-- \\"person:Person\\"
-@enduml
-",
-    "prev": "
-@startuml
-class \\"person:Person\\" {
-  cv:registeredAddress : locn:Address [0..1]
-  epo:hasCountryOfBirth : at-voc:country [0..1]
-  epo:hasNationality : at-voc:country [0..*]
-}
-\\"foaf:Person\\" <|-- \\"person:Person\\"
-@enduml
-",
-    "title": "person",
-  },
-  Object {
-    "current": "
-@startuml
-
-
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "time",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"adms:Identifier\\" {
-  epo:hasScheme : rdf:PlainLiteral [0..*]
-  epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-class \\"adms:Identifier\\" {
-  epo:hasScheme : rdf:PlainLiteral [0..*]
-  epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
-}
-
-@enduml
-",
-    "title": "adms",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"cv:Channel\\" {
-  epo:hasAddressURL : xsd:anyURI [0..1]
-  epo:hasEndpointIdentifier : adms:Identifier [0..*]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-class \\"cv:Channel\\" {
-  epo:hasAddressURL : xsd:anyURI [0..1]
-  epo:hasEndpointIdentifier : adms:Identifier [0..*]
-}
-
-@enduml
-",
-    "title": "cv",
-  },
-  Object {
-    "current": "
-@startuml
 class \\"epo-sub:CertificateInformation\\" {
   dct:description : rdf:PlainLiteral [0..1]
   epo-sub:coversAllSelectionCriteria : xsd:boolean [0..1]
@@ -4410,6 +4077,340 @@ class \\"epo-sub:Response\\" {
   Object {
     "current": "
 @startuml
+
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "at-voc",
+  },
+  Object {
+    "current": "
+@startuml
+
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "at-voc-new",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"locn:Address\\" {
+  epo:hasCountryCode : at-voc:country [0..1]
+  epo:hasNutsCode : at-voc:nuts [0..1]
+  locn:addressArea : rdf:PlainLiteral [0..1]
+  locn:addressID : adms:Identifier [0..1]
+  locn:adminUnitL1 : rdf:PlainLiteral [0..1]
+  locn:adminUnitL2 : rdf:PlainLiteral [0..1]
+  locn:fullAddress : rdf:PlainLiteral [0..1]
+  locn:locatorDesignator : rdf:PlainLiteral [0..1]
+  locn:locatorName : rdf:PlainLiteral [0..1]
+  locn:postCode : rdf:PlainLiteral [0..1]
+  locn:postName : rdf:PlainLiteral [0..1]
+  locn:thoroughfare : rdf:PlainLiteral [0..1]
+}
+
+class \\"locn:Geometry\\" {
+  cv:coordinates : rdf:PlainLiteral [0..*]
+  cv:latitude : rdf:PlainLiteral [0..*]
+  cv:longitude : rdf:PlainLiteral [0..*]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "locn",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"foaf:Agent\\" {
+  adms:identifier : adms:Identifier [0..*]
+  dct:title : rdf:PlainLiteral [0..*]
+  epo:hasAlias : rdf:PlainLiteral [0..*]
+}
+
+class \\"foaf:Person\\" {
+  epo:hasCertification : epo:Certificate [0..*]
+}
+\\"foaf:Agent\\" <|-- \\"foaf:Person\\"
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "foaf",
+  },
+  Object {
+    "current": "
+@startuml
+
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "xsd",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"cpov:ContactPoint\\" {
+  cpov:email : rdf:PlainLiteral [0..*]
+  cpov:telephone : rdf:PlainLiteral [0..*]
+  dct:description : rdf:PlainLiteral [0..*]
+  epo:hasContactName : rdf:PlainLiteral [0..1]
+  epo:hasFax : rdf:PlainLiteral [0..*]
+  epo:hasInternetAddress : xsd:anyURI [0..1]
+  locn:address : locn:Address [0..1]
+}
+\\"org:Organization\\" <|-- \\"cpov:PublicOrganisation\\"
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "cpov",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"org:Organization\\" {
+  cv:registeredAddress : locn:Address [0..1]
+  epo:canProvideNonDiscriminatoryEvidence : cccev:Evidence [0..*]
+  epo:canProvideTaxAndSocialSecuritiesEvidence : cccev:Evidence [0..*]
+  epo:hasBuyerLegalType : at-voc:buyer-legal-type [0..1]
+  epo:hasBuyerLegalTypeDescription : rdf:PlainLiteral [0..1]
+  epo:hasCertification : epo:Certificate [0..*]
+  epo:hasInternetAddress : xsd:anyURI [0..*]
+  epo:hasLegalFormType : rdf:PlainLiteral [0..1]
+  epo:hasLegalIdentifier : adms:Identifier [0..*]
+  epo:hasLegalName : rdf:PlainLiteral [0..*]
+  epo:hasMainActivity : at-voc:main-activity [0..1]
+  epo:hasMainActivityDescription : rdf:PlainLiteral [0..1]
+  epo:hasPrimaryContactPoint : cpov:ContactPoint [0..1]
+  epo:hasRegistrationCountry : at-voc:country [0..1]
+  epo:hasTaxIdentifier : adms:Identifier [0..*]
+  locn:address : locn:Address [0..*]
+  org:subOrganizationOf : org:Organization [0..*]
+}
+\\"foaf:Agent\\" <|-- \\"org:Organization\\"
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "org",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"dct:Location\\" {
+  adms:identifier : adms:Identifier [0..1]
+  epo:hasCountryCode : at-voc:country [0..1]
+  epo:hasNutsCode : at-voc:nuts [0..1]
+  locn:address : locn:Address [0..1]
+  locn:geographicIdentifier : adms:Identifier [0..1]
+  locn:geographicName : rdf:PlainLiteral [0..1]
+  locn:geometry : locn:Geometry [0..1]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "dct",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"cccev:Constraint\\" {
+  cccev:constrains : cccev:InformationConcept [0..*]
+  epo:hasThresholdType : at-voc:number-threshold [0..*]
+  epo:hasThresholdValue : xsd:decimal [1..1]
+}
+
+class \\"cccev:Criterion\\" {
+  cccev:bias : xsd:decimal [0..1]
+  cccev:weight : xsd:decimal [0..1]
+  cccev:weightingConsiderationDescription : rdf:PlainLiteral [0..1]
+  dct:type : at-voc:criterion [0..1]
+}
+
+class \\"cccev:Evidence\\" {
+  adms:identifier : adms:Identifier [1]
+  cccev:confidentialityLevelType : at-voc:access-rights [0..1]
+  cccev:supportsConcept : cccev:InformationConcept [0..*]
+  cccev:supportsRequirement : cccev:Requirement [0..*]
+  cccev:supportsValue : cccev:SupportedValue [0..*]
+  dct:conformsTo : cccev:EvidenceType [0..*]
+  dct:description : rdf:PlainLiteral [0..1]
+  epo:hasURL : xsd:anyURI [0..1]
+  epo:hasValidityPeriod : epo:Period [0..1]
+}
+
+class \\"cccev:EvidenceType\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:validityPeriodConstraint : epo:Period [0..*]
+}
+
+class \\"cccev:EvidenceTypeList\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:specifiesEvidenceType : cccev:EvidenceType [0..*]
+  dct:description : rdf:PlainLiteral [1..1]
+  skos:prefLabel : rdf:PlainLiteral [0..*]
+}
+
+class \\"cccev:InformationConcept\\" {
+  adms:identifier : adms:Identifier [0..1]
+  dct:description : rdf:PlainLiteral [0..*]
+  skos:prefLabel : rdf:PlainLiteral [0..*]
+}
+
+class \\"cccev:InformationRequirement\\" {
+  epo:hasConstraint : cccev:Constraint [0..*]
+}
+
+class \\"cccev:Requirement\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:hasConcept : cccev:InformationConcept [0..*]
+  cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
+  cccev:hasRequirement : cccev:Requirement [0..*]
+  cccev:isDerivedFrom : eli:LegalResource 
+  dct:description : rdf:PlainLiteral [0..1]
+  skos:prefLabel : rdf:PlainLiteral [0..1]
+}
+
+class \\"cccev:SupportedValue\\" {
+  cccev:providesValueFor : cccev:InformationConcept [0..*]
+  cccev:value : rdf:PlainLiteral [0..*]
+}
+\\"cccev:Requirement\\" <|-- \\"cccev:Constraint\\"
+\\"cccev:Requirement\\" <|-- \\"cccev:Criterion\\"
+\\"cccev:Requirement\\" <|-- \\"cccev:InformationRequirement\\"
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "cccev",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"person:Person\\" {
+  cv:birthDate : xsd:date [0..1]
+  cv:registeredAddress : locn:Address [0..1]
+  dct:alternative : rdf:PlainLiteral [0..*]
+  epo:hasCountryOfBirth : at-voc:country [0..1]
+  epo:hasNationality : at-voc:country [0..*]
+  foaf:familyName : rdf:PlainLiteral [0..*]
+  foaf:givenName : rdf:PlainLiteral [0..*]
+  foaf:name : rdf:PlainLiteral [0..*]
+  person:birthName : rdf:PlainLiteral [0..*]
+  person:patronymicName : rdf:PlainLiteral [0..*]
+}
+\\"foaf:Person\\" <|-- \\"person:Person\\"
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "person",
+  },
+  Object {
+    "current": "
+@startuml
+
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "time",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"adms:Identifier\\" {
+  adms:schemaAgency : rdf:PlainLiteral [0..*]
+  epo:hasScheme : rdf:PlainLiteral [0..*]
+  epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
+  skos:notation : rdf:PlainLiteral [1..1]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "adms",
+  },
+  Object {
+    "current": "
+@startuml
+
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "rdf",
+  },
+  Object {
+    "current": "
+@startuml
 class \\"epo-acc:ESPDRequest\\" {
   epo-acc:refersToNotice : epo:Notice [0..*]
   epo:concernsProcedure : epo:Procedure [1]
@@ -4429,7 +4430,22 @@ class \\"epo-acc:ESPDRequest\\" {
   Object {
     "current": "
 @startuml
+class \\"eli:LegalExpression\\" {
+  dct:description : rdfs:Literal [0..*]
+  dct:identifier : xsd:anyURI [0..*]
+  dct:language : at-voc:language [1..*]
+  dct:title : rdfs:Literal [1..*]
+  eli:is_realized_by : eli:Work [1]
+  eli:jurisdiction : at-voc:atu [0..*]
+  eli:number : xsd:string [0..*]
+  eli:uri_schema : adms:Identifier [0..*]
+}
+
 class \\"eli:LegalResource\\" {
+  dct:description : rdfs:Literal [1..1]
+  dct:identifier : xsd:anyURI [0..*]
+  eli:jurisdiction : at-voc:atu [0..*]
+  eli:number : xsd:string [0..*]
   epo:hasResourceType : at-voc:resource-type [1..*]
 }
 
@@ -4437,7 +4453,12 @@ class \\"eli:LegalResourceSubdivision\\" {
   eli:uri_schema : adms:Identifier [0..*]
   epo:hasSubdivision : at-voc:subdivision [0..1]
 }
+
+class \\"eli:Work\\" {
+  dct:isPartOf : eli:Work [0..*]
+}
 \\"eli:LegalResource\\" <|-- \\"eli:LegalResourceSubdivision\\"
+\\"eli:Work\\" <|-- \\"eli:LegalResource\\"
 @enduml
 ",
     "prev": "
@@ -4447,6 +4468,25 @@ class \\"eli:LegalResourceSubdivision\\" {
 @enduml
 ",
     "title": "eli",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"cv:Channel\\" {
+  dct:description : rdf:PlainLiteral [0..1]
+  epo:hasAddressURL : xsd:anyURI [0..1]
+  epo:hasEndpointIdentifier : adms:Identifier [0..*]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+
+
+@enduml
+",
+    "title": "cv",
   },
 ]
 `;
@@ -4518,6 +4558,10 @@ class \\"epo:SubcontractingEstimate\\" {
   epo:hasSubcontractingEstimatedValue : epo:MonetaryValue [0..1]
 }
 
+class \\"change\\" {
+  skos:inScheme : at-voc:form-type 
+}
+
 enum \\"at-voc:currency\\" {
 
 }
@@ -4582,6 +4626,15 @@ class \\"epo:AccessTerm\\" {
 }
 
 class \\"locn:Address\\" {
+  locn:postName : rdf:PlainLiteral [0..1]
+  locn:locatorName : rdf:PlainLiteral [0..1]
+  locn:fullAddress : rdf:PlainLiteral [0..1]
+  locn:locatorDesignator : rdf:PlainLiteral [0..1]
+  locn:addressArea : rdf:PlainLiteral [0..1]
+  locn:postCode : rdf:PlainLiteral [0..1]
+  locn:thoroughfare : rdf:PlainLiteral [0..1]
+  locn:adminUnitL2 : rdf:PlainLiteral [0..1]
+  locn:adminUnitL1 : rdf:PlainLiteral [0..1]
   locn:addressID : adms:Identifier [0..1]
   epo:hasNutsCode : at-voc:nuts [0..1]
   epo:hasCountryCode : at-voc:country [0..1]
@@ -4589,6 +4642,7 @@ class \\"locn:Address\\" {
 
 class \\"foaf:Agent\\" {
   epo:hasAlias : rdf:PlainLiteral [0..*]
+  dct:title : rdf:PlainLiteral [0..*]
   adms:identifier : adms:Identifier [0..*]
 }
 
@@ -4625,6 +4679,10 @@ class \\"epo:LotSpecificTerm\\" {
 
 }
 
+class \\"xsd:boolean\\" {
+
+}
+
 class \\"epo:CentralPurchasingBody\\" {
 
 }
@@ -4632,6 +4690,9 @@ class \\"epo:CentralPurchasingBody\\" {
 class \\"cpov:ContactPoint\\" {
   epo:hasContactName : rdf:PlainLiteral [0..1]
   epo:hasFax : rdf:PlainLiteral [0..*]
+  cpov:telephone : rdf:PlainLiteral [0..*]
+  dct:description : rdf:PlainLiteral [0..*]
+  cpov:email : rdf:PlainLiteral [0..*]
   epo:hasInternetAddress : xsd:anyURI [0..1]
   locn:address : locn:Address [0..1]
 }
@@ -4756,6 +4817,10 @@ class \\"epo-ful:DespatchAdvice\\" {
   epo-ful:refersToShipmentAgreement : epo-ful:ShipmentAgreement [0..1]
 }
 
+enum \\"at-voc:criterion\\" {
+
+}
+
 class \\"epo-not:PreMarketConsultationNotice\\" {
   epo:hasNoticeType : pmc [1]
 }
@@ -4819,6 +4884,10 @@ class \\"epo:ContractLotCompletionInformation\\" {
   epo:describesLotCompletion : epo:Lot [1]
   epo:providesContractTotalPaymentValue : epo:MonetaryValue [0..1]
   epo:providesContractTotalPenaltyValue : epo:MonetaryValue [0..1]
+}
+
+class \\"xsd:anyURI\\" {
+
 }
 
 class \\"epo:InnovativeProcurement\\" {
@@ -4901,6 +4970,8 @@ class \\"org:Organization\\" {
 }
 
 class \\"dct:Location\\" {
+  locn:geographicName : rdf:PlainLiteral [0..1]
+  locn:geometry : locn:Geometry [0..1]
   locn:address : locn:Address [0..1]
   epo:hasNutsCode : at-voc:nuts [0..1]
   epo:hasCountryCode : at-voc:country [0..1]
@@ -4915,7 +4986,10 @@ class \\"epo:OrganisationGroup\\" {
 }
 
 class \\"cccev:Criterion\\" {
-
+  cccev:bias : xsd:decimal [0..1]
+  cccev:weight : xsd:decimal [0..1]
+  cccev:weightingConsiderationDescription : rdf:PlainLiteral [0..1]
+  dct:type : at-voc:criterion [0..1]
 }
 
 enum \\"at-voc-new:orderable-unit\\" {
@@ -4963,6 +5037,13 @@ class \\"epo:Period\\" {
 }
 
 class \\"person:Person\\" {
+  foaf:name : rdf:PlainLiteral [0..*]
+  foaf:familyName : rdf:PlainLiteral [0..*]
+  foaf:givenName : rdf:PlainLiteral [0..*]
+  person:patronymicName : rdf:PlainLiteral [0..*]
+  dct:alternative : rdf:PlainLiteral [0..*]
+  person:birthName : rdf:PlainLiteral [0..*]
+  cv:birthDate : xsd:date [0..1]
   epo:hasNationality : at-voc:country [0..*]
   cv:registeredAddress : locn:Address [0..1]
   epo:hasCountryOfBirth : at-voc:country [0..1]
@@ -5041,6 +5122,12 @@ class \\"epo-cat:Catalogue\\" {
 class \\"epo:ParticipationRequestTerm\\" {
   epo:definesParticipationRequestReceiver : epo:ParticipationRequestReceiver [0..1]
   epo:definesParticipationRequestProcessor : epo:ParticipationRequestProcessor [0..1]
+}
+
+class \\"locn:Geometry\\" {
+  cv:coordinates : rdf:PlainLiteral [0..*]
+  cv:longitude : rdf:PlainLiteral [0..*]
+  cv:latitude : rdf:PlainLiteral [0..*]
 }
 
 class \\"can-standard\\" {
@@ -5220,6 +5307,10 @@ class \\"epo:NonDisclosureAgreementTerm\\" {
   epo:isNonDisclosureAgreementRequired : xsd:boolean [0..1]
 }
 
+class \\"cpov:PublicOrganisation\\" {
+
+}
+
 class \\"epo:PurchaseContract\\" {
   epo:followsRulesSetBy : epo:FrameworkAgreement [0..1]
   epo:resultsFromMiniCompetitionAwardOutcome : epo:MiniCompetitionAwardOutcome [0..1]
@@ -5241,6 +5332,10 @@ enum \\"at-voc:irregularity-type\\" {
 
 class \\"epo:Offer\\" {
 
+}
+
+class \\"bri\\" {
+  skos:inScheme : at-voc:form-type 
 }
 
 class \\"epo:SecurityClearanceTerm\\" {
@@ -5316,6 +5411,10 @@ class \\"epo:System\\" {
 }
 
 class \\"epo:TechnicalSpecification\\" {
+
+}
+
+class \\"xsd:date\\" {
 
 }
 
@@ -5544,6 +5643,14 @@ class \\"epo:ProcurementProcedureInformationProvider\\" {
 
 }
 
+class \\"xsd:boolean\\" {
+
+}
+
+class \\"xsd:anyURI\\" {
+
+}
+
 enum \\"at-voc:form-type\\" {
 
 }
@@ -5573,6 +5680,8 @@ enum \\"time:TemporalUnit\\" {
 }
 
 class \\"adms:Identifier\\" {
+  skos:notation : rdf:PlainLiteral [1..1]
+  adms:schemaAgency : rdf:PlainLiteral [0..*]
   epo:hasScheme : rdf:PlainLiteral [0..*]
   epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
 }
@@ -5666,6 +5775,10 @@ class \\"epo-not:PINTimeLimitNotice\\" {
   epo:hasNoticeType : pin-rtl [1]
 }
 
+class \\"brin-ecs\\" {
+  skos:inScheme : at-voc:notice-type 
+}
+
 class \\"subco\\" {
   skos:inScheme : at-voc:notice-type 
 }
@@ -5712,6 +5825,14 @@ class \\"epo-not:Notice10\\" {
 class \\"epo-not:Notice11\\" {
   epo:hasLegalBasis : Directive 25 [0..1]
   epo:hasFormType : competition [0..1]
+}
+
+class \\"xsd:date\\" {
+
+}
+
+class \\"xsd:dateTime\\" {
+
 }
 
 class \\"epo-ful:TransportHandlingUnit\\" {
@@ -5997,11 +6118,13 @@ class \\"epo-not:eFormsNotice\\" {
 
 class \\"cccev:Evidence\\" {
   epo:hasURL : xsd:anyURI [0..1]
+  dct:description : rdf:PlainLiteral [0..1]
   cccev:supportsRequirement : cccev:Requirement [0..*]
   epo:hasValidityPeriod : epo:Period [0..1]
   cccev:confidentialityLevelType : at-voc:access-rights [0..1]
   cccev:supportsConcept : cccev:InformationConcept [0..*]
   cccev:supportsValue : cccev:SupportedValue [0..*]
+  dct:conformsTo : cccev:EvidenceType [0..*]
   adms:identifier : adms:Identifier [1]
 }
 
@@ -6125,6 +6248,10 @@ class \\"Form12\\" {
 }
 
 class \\"Form13\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form14\\" {
   skos:inScheme : epo-not:StandardForm 
 }
 
@@ -6315,6 +6442,26 @@ class \\"epo:SubmissionStatisticalInformation\\" {
   epo:summarisesInformationForAwardOutcome : epo:AwardOutcome [1]
 }
 
+class \\"xsd:boolean\\" {
+
+}
+
+class \\"xsd:anyURI\\" {
+
+}
+
+class \\"xsd:date\\" {
+
+}
+
+class \\"xsd:dateTime\\" {
+
+}
+
+class \\"xsd:integer\\" {
+
+}
+
 class \\"epo-not:PINProfile-D81\\" {
   epo:hasLegalBasis : Directive 81 [0..1]
   epo:hasFormType : Form8 [0..1]
@@ -6354,7 +6501,41 @@ class \\"epo-not:StandardFormsNotice\\" {
 }
 
 class \\"cccev:InformationConcept\\" {
+  skos:prefLabel : rdf:PlainLiteral [0..*]
+  dct:description : rdf:PlainLiteral [0..*]
   adms:identifier : adms:Identifier [0..1]
+}
+
+class \\"xsd:decimal\\" {
+
+}
+
+class \\"rdf:PlainLiteral\\" {
+
+}
+
+class \\"xsd:boolean\\" {
+
+}
+
+class \\"xsd:anyURI\\" {
+
+}
+
+class \\"xsd:date\\" {
+
+}
+
+class \\"xsd:dateTime\\" {
+
+}
+
+class \\"xsd:integer\\" {
+
+}
+
+class \\"xsd:decimal\\" {
+
 }
 
 class \\"epo-not:SubcontractNotice\\" {
@@ -6362,6 +6543,10 @@ class \\"epo-not:SubcontractNotice\\" {
 }
 
 enum \\"at-voc:access-rights\\" {
+
+}
+
+class \\"rdf:PlainLiteral\\" {
 
 }
 
@@ -6401,6 +6586,14 @@ class \\"epo:ProcurementObject\\" {
 }
 
 enum \\"at-voc-new:delivery-item-type\\" {
+
+}
+
+class \\"xsd:boolean\\" {
+
+}
+
+class \\"xsd:anyURI\\" {
 
 }
 
@@ -6541,6 +6734,18 @@ class \\"epo-cat:ItemReplacement\\" {
 
 }
 
+class \\"xsd:boolean\\" {
+
+}
+
+class \\"xsd:anyURI\\" {
+
+}
+
+class \\"xsd:date\\" {
+
+}
+
 class \\"epo-sub:NationalPreQualificationData\\" {
   epo-sub:providesOrganisationCompletedTaskDescription : rdf:PlainLiteral [0..1]
   epo-sub:concernsOrganisation : org:Organization [1]
@@ -6555,6 +6760,18 @@ class \\"epo-sub:Response\\" {
   cccev:supportsValue : cccev:SupportedValue [0..*]
   cccev:confidentialityLevelType : at-voc:access-rights 
   epo-sub:refersToApplicablePeriod : epo:Period [0..1]
+}
+
+class \\"xsd:integer\\" {
+
+}
+
+class \\"xsd:decimal\\" {
+
+}
+
+class \\"rdf:PlainLiteral\\" {
+
 }
 
 enum \\"at-voc-new:action-code\\" {
@@ -6592,10 +6809,13 @@ class \\"epo:ConcessionContract\\" {
 }
 
 class \\"cccev:Requirement\\" {
+  dct:description : rdf:PlainLiteral [0..1]
+  skos:prefLabel : rdf:PlainLiteral [0..1]
   adms:identifier : adms:Identifier [0..1]
   cccev:hasConcept : cccev:InformationConcept [0..*]
   cccev:isDerivedFrom : eli:LegalResource 
   cccev:hasRequirement : cccev:Requirement [0..*]
+  cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
 }
 
 class \\"cccev:Constraint\\" {
@@ -6654,6 +6874,14 @@ class \\"epo:Certificate\\" {
   epo:issuedByCertifier : epo:Certifier [0..1]
 }
 
+class \\"xsd:dateTime\\" {
+
+}
+
+class \\"xsd:integer\\" {
+
+}
+
 class \\"epo-cat:ChargeInformation\\" {
   epo-ord:isSpecificToOrderLine : epo-ord:OrderLine [0..*]
 }
@@ -6663,6 +6891,26 @@ enum \\"at-voc-new:tax-category\\" {
 }
 
 enum \\"at-voc-new:tax-scheme\\" {
+
+}
+
+class \\"xsd:date\\" {
+
+}
+
+class \\"xsd:dateTime\\" {
+
+}
+
+class \\"xsd:integer\\" {
+
+}
+
+class \\"xsd:decimal\\" {
+
+}
+
+class \\"rdf:PlainLiteral\\" {
 
 }
 
@@ -6676,7 +6924,11 @@ class \\"eli:LegalResourceSubdivision\\" {
 }
 
 class \\"eli:LegalResource\\" {
+  eli:number : xsd:string [0..*]
+  dct:description : rdfs:Literal [1..1]
+  dct:identifier : xsd:anyURI [0..*]
   epo:hasResourceType : at-voc:resource-type [1..*]
+  eli:jurisdiction : at-voc:atu [0..*]
 }
 
 enum \\"at-voc:resource-type\\" {
@@ -6695,7 +6947,38 @@ class \\"epo-ord:DeliveryInformation\\" {
   epo-ful:hasTrackingID : adms:Identifier [0..1]
 }
 
+class \\"xsd:decimal\\" {
+
+}
+
+class \\"xsd:dateTime\\" {
+
+}
+
+class \\"xsd:integer\\" {
+
+}
+
 enum \\"at-voc:subdivision\\" {
+
+}
+
+class \\"eli:Work\\" {
+  dct:isPartOf : eli:Work [0..*]
+}
+
+class \\"eli:LegalExpression\\" {
+  eli:number : xsd:string [0..*]
+  dct:description : rdfs:Literal [0..*]
+  dct:identifier : xsd:anyURI [0..*]
+  dct:title : rdfs:Literal [1..*]
+  eli:is_realized_by : eli:Work [1]
+  dct:language : at-voc:language [1..*]
+  eli:jurisdiction : at-voc:atu [0..*]
+  eli:uri_schema : adms:Identifier [0..*]
+}
+
+enum \\"at-voc:atu\\" {
 
 }
 
@@ -6716,6 +6999,22 @@ enum \\"at-voc-new:document-type\\" {
 }
 
 class \\"epo:OtherEntity\\" {
+
+}
+
+class \\"xsd:boolean\\" {
+
+}
+
+class \\"xsd:anyURI\\" {
+
+}
+
+class \\"xsd:date\\" {
+
+}
+
+class \\"xsd:dateTime\\" {
 
 }
 
@@ -6745,7 +7044,27 @@ class \\"epo:ProcurementElement\\" {
   epo:hasInternalIdentifier : adms:Identifier [0..*]
 }
 
+class \\"rdf:PlainLiteral\\" {
+
+}
+
+class \\"xsd:decimal\\" {
+
+}
+
+class \\"xsd:integer\\" {
+
+}
+
+class \\"xsd:decimal\\" {
+
+}
+
 class \\"epo:LeadBuyer\\" {
+
+}
+
+class \\"rdf:PlainLiteral\\" {
 
 }
 
@@ -6758,6 +7077,38 @@ class \\"epo-ord:OriginatorInformation\\" {
   epo-ord:isSpecificToOrderLine : epo-ord:OrderLine [0..*]
   epo-ord:concernsOriginator : epo-ord:Originator [1]
   epo-ord:concernsOriginatorRequest : epo:OriginatorRequest [0..1]
+}
+
+class \\"rdf:PlainLiteral\\" {
+
+}
+
+class \\"xsd:boolean\\" {
+
+}
+
+class \\"xsd:anyURI\\" {
+
+}
+
+class \\"xsd:date\\" {
+
+}
+
+class \\"xsd:dateTime\\" {
+
+}
+
+class \\"xsd:integer\\" {
+
+}
+
+class \\"xsd:decimal\\" {
+
+}
+
+class \\"rdf:PlainLiteral\\" {
+
 }
 
 class \\"epo-ord:DeliveryAgreement\\" {
@@ -6961,6 +7312,7 @@ class \\"epo:Project\\" {
 
 class \\"cv:Channel\\" {
   epo:hasAddressURL : xsd:anyURI [0..1]
+  dct:description : rdf:PlainLiteral [0..1]
   epo:hasEndpointIdentifier : adms:Identifier [0..*]
 }
 
@@ -6986,6 +7338,7 @@ class \\"epo:MiniCompetitionAwardOutcome\\" {
 }
 
 class \\"cccev:SupportedValue\\" {
+  cccev:value : rdf:PlainLiteral [0..*]
   cccev:providesValueFor : cccev:InformationConcept [0..*]
 }
 
@@ -7067,6 +7420,18 @@ class \\"epo:QualificationCriteriaSummary\\" {
 
 class \\"epo:QualificationCriterion\\" {
   epo:includesNationalCriterion : epo:QualificationCriterion [0..*]
+}
+
+class \\"cccev:EvidenceType\\" {
+  cccev:validityPeriodConstraint : epo:Period [0..*]
+  adms:identifier : adms:Identifier [0..1]
+}
+
+class \\"cccev:EvidenceTypeList\\" {
+  skos:prefLabel : rdf:PlainLiteral [0..*]
+  dct:description : rdf:PlainLiteral [1..1]
+  cccev:specifiesEvidenceType : cccev:EvidenceType [0..*]
+  adms:identifier : adms:Identifier [0..1]
 }
 
 class \\"epo-sub:CertificateInformation\\" {
@@ -7214,8 +7579,10 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:StrategicProcurement\\" <|-- \\"epo:SocialProcurement\\"
 \\"epo:QualificationCriterion\\" <|-- \\"epo:SelectionCriterion\\"
 \\"epo:AcquiringParty\\" <|-- \\"epo:Reviewer\\"
+\\"ProxyConnector\\" <|-- \\"ProxyConnector\\"
 \\"epo-cat:PostAwardDocument\\" <|-- \\"epo-ord:OrderResponse\\"
 \\"epo:Contract\\" <|-- \\"epo:PurchaseContract\\"
+\\"org:Organization\\" <|-- \\"cpov:PublicOrganisation\\"
 \\"epo:AcquiringParty\\" <|-- \\"epo:ProcurementServiceProvider\\"
 \\"epo:Document\\" <|-- \\"epo:ProcurementDocument\\"
 \\"epo:Term\\" <|-- \\"epo:ProcessPlanningTerm\\"
@@ -7392,6 +7759,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:AgentInRole\\" <|-- \\"epo:AcquiringParty\\"
 \\"time:Duration\\" <|-- \\"epo:Duration\\"
 \\"epo:AgentInRole\\" <|-- \\"epo:AuxiliaryParty\\"
+\\"eli:Work\\" <|-- \\"eli:LegalResource\\"
 \\"epo:ProcurementCriteriaSummary\\" <|-- \\"epo:AwardCriteriaSummary\\"
 \\"epo:OfferingParty\\" <|-- \\"epo:OtherEntity\\"
 \\"epo:ContextDescription\\" <|-- \\"epo-sub:CertificateInformation\\"
@@ -7546,6 +7914,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:ContractLotCompletionInformation\\" --> \\"1\\" \\"epo:Contract\\" : epo:refersToContract
 \\"epo:NoticeAwardInformation\\" --> \\"0..1\\" \\"epo-not:DirectAwardPrenotificationNotice\\" : epo:describesDirectAwardPrenotificationNotice
 \\"epo:Contract\\" --> \\"0..1\\" \\"epo:Purpose\\" : epo:hasPurpose
+\\"dct:Location\\" --> \\"0..1\\" \\"locn:Geometry\\" : locn:geometry
 \\"dct:Location\\" --> \\"0..1\\" \\"locn:Address\\" : locn:address
 \\"epo-not:Notice25\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
 \\"epo-not:Notice26\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
@@ -7761,6 +8130,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:Procedure\\" --> \\"1\\" \\"at-voc:procurement-procedure-type\\" : epo:hasProcedureType
 \\"epo:SubmissionStatisticalInformation\\" --> \\"0..1\\" \\"at-voc:received-submission-type\\" : epo:hasReceivedSubmissionType
 \\"epo-cat:Item\\" --> \\"0..1\\" \\"adms:Identifier\\" : epo:hasManufacturerItemID
+\\"bri\\" -->  \\"at-voc:form-type\\" : skos:inScheme
 \\"epo-not:PlanningNotice\\" --> \\"0..*\\" \\"epo:PlannedProcurementPart\\" : epo:announcesPlannedProcurementPart
 \\"epo:Notice\\" --> \\"0..*\\" \\"at-voc:legal-basis\\" : epo:conformsToLegalBasis
 \\"epo:DirectAwardTerm\\" --> \\"0..1\\" \\"epo:Procedure\\" : epo:refersToPreviousProcedure
@@ -7826,6 +8196,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"Form21\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-cat:CatalogueLine\\" --> \\"0..1\\" \\"at-voc-new:transaction-conditions\\" : epo-cat:hasTransactionConditionsCode
 \\"epo:Tender\\" --> \\"0..*\\" \\"epo:Subcontractor\\" : epo:specifiesSubcontractors
+\\"brin-ecs\\" -->  \\"at-voc:notice-type\\" : skos:inScheme
 \\"epo-not:Notice27\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
 \\"epo-not:Modification-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
 \\"epo-cat:Catalogue\\" --> \\"0..*\\" \\"epo:Buyer\\" : epo:specifiesBuyer
@@ -7867,6 +8238,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"Form8\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"Form12\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"Form13\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
+\\"Form14\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"Form15\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"epo-not:Notice28\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
 \\"epo-not:Notice26\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
@@ -7916,6 +8288,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-ord:AllowanceInformation\\" --> \\"0..*\\" \\"epo-ord:OrderLine\\" : epo-ord:isSpecificToOrderLine
 \\"epo:Buyer\\" --> \\"0..*\\" \\"cv:Channel\\" : epo:exposesInvoiceeChannel
 \\"epo:SpecificDuration\\" --> \\"1\\" \\"time:TemporalUnit\\" : time:unitType
+\\"change\\" -->  \\"at-voc:form-type\\" : skos:inScheme
 \\"epo-not:Notice5\\" --> \\"0..1\\" \\"planning\\" : epo:hasFormType
 \\"epo-not:CompletionNotice\\" --> \\"1\\" \\"epo:Contract\\" : epo:announcesCompletionOfContract
 \\"epo-ful:ReceiptAdviceLine\\" --> \\"0..1\\" \\"at-voc-new:action-code\\" : epo-ful:hasShortageAction
@@ -8075,15 +8448,20 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:LotGroupAwardInformation\\" --> \\"1\\" \\"epo:LotGroup\\" : epo:describesLotGroup
 \\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"0..*\\" \\"epo:LotGroupAwardInformation\\" : epo:announcesLotGroupAwardInformation
 \\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"0..*\\" \\"epo:Contract\\" : epo:announcesContract
+\\"eli:LegalExpression\\" --> \\"1\\" \\"eli:Work\\" : eli:is_realized_by
+\\"eli:LegalExpression\\" --> \\"1..*\\" \\"at-voc:language\\" : dct:language
 \\"epo-not:CompletionNotice\\" --> \\"0..*\\" \\"epo:AwardDecision\\" : epo:refersToAwardDecision
 \\"epo-not:CompletionNotice\\" --> \\"1..*\\" \\"epo:Lot\\" : epo:refersToLot
 \\"epo-not:CompletionNotice\\" --> \\"0..*\\" \\"epo:LotGroup\\" : epo:refersToLotGroup
 \\"epo-not:CompletionNotice\\" --> \\"0..*\\" \\"epo:LotGroupAwardInformation\\" : epo:refersToLotGroupAwardInformation
+\\"eli:Work\\" --> \\"0..*\\" \\"eli:Work\\" : dct:isPartOf
 \\"eli:LegalResourceSubdivision\\" --> \\"0..1\\" \\"at-voc:subdivision\\" : epo:hasSubdivision
 \\"eli:LegalResourceSubdivision\\" --> \\"0..*\\" \\"adms:Identifier\\" : eli:uri_schema
+\\"eli:LegalResource\\" --> \\"0..*\\" \\"at-voc:atu\\" : eli:jurisdiction
 \\"epo-cat:Price\\" --> \\"0..1\\" \\"at-voc-new:price-type\\" : epo-cat:hasPriceType
 \\"epo-cat:PostAwardDocument\\" --> \\"0..1\\" \\"at-voc-new:document-type\\" : epo-cat:hasDocumentType
 \\"epo-cat:Item\\" --> \\"0..1\\" \\"adms:Identifier\\" : epo:hasBuyerItemID
+\\"eli:LegalExpression\\" --> \\"0..*\\" \\"at-voc:atu\\" : eli:jurisdiction
 \\"cccev:InformationRequirement\\" --> \\"0..*\\" \\"cccev:Constraint\\" : epo:hasConstraint
 \\"epo:QualificationCriterion\\" --> \\"0..*\\" \\"epo:QualificationCriterion\\" : epo:includesNationalCriterion
 \\"epo-sub:CertificateInformation\\" --> \\"1\\" \\"epo:Certificate\\" : epo-sub:summarisesInformationAboutCertificate
@@ -8107,6 +8485,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:CompletionNotice\\" --> \\"0..1\\" \\"epo:NoticeAwardInformation\\" : epo:refersToNoticeAwardInformation
 \\"epo-ful:Consignment\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo-ful:hasConsignmentDeclaredStatisticsValue
 \\"epo-ful:Consignment\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo-ful:hasConsignmentFreeOnBoardValue
+\\"eli:LegalExpression\\" --> \\"0..*\\" \\"adms:Identifier\\" : eli:uri_schema
 \\"epo-ful:ShipmentAgreement\\" --> \\"1..*\\" \\"epo:Buyer\\" : epo-ful:agreedByBuyer
 \\"epo-ful:ShipmentAgreement\\" --> \\"1..*\\" \\"epo-ord:Seller\\" : epo-ful:agreedBySeller
 \\"epo-ord:DeliveryInformation\\" --> \\"0..1\\" \\"epo-ord:DeliveryAgreement\\" : epo-ord:specifiesGeneralDeliveryAgreement
@@ -8226,8 +8605,15 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:ContractModificationNotice\\" --> \\"1..*\\" \\"epo:Lot\\" : epo:refersToLot
 \\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"1..*\\" \\"epo:AgentInRole\\" : epo:announcesRole
 \\"epo-not:DirectAwardPrenotificationNotice\\" --> \\"0..*\\" \\"epo:AwardDecision\\" : epo:announcesAwardDecision
+\\"cccev:Requirement\\" --> \\"0..*\\" \\"cccev:EvidenceTypeList\\" : cccev:hasEvidenceTypeList
+\\"cccev:EvidenceTypeList\\" --> \\"0..*\\" \\"cccev:EvidenceType\\" : cccev:specifiesEvidenceType
+\\"cccev:Evidence\\" --> \\"0..*\\" \\"cccev:EvidenceType\\" : dct:conformsTo
+\\"cccev:EvidenceType\\" --> \\"0..*\\" \\"epo:Period\\" : cccev:validityPeriodConstraint
+\\"cccev:EvidenceTypeList\\" --> \\"0..1\\" \\"adms:Identifier\\" : adms:identifier
+\\"cccev:EvidenceType\\" --> \\"0..1\\" \\"adms:Identifier\\" : adms:identifier
 \\"cccev:Evidence\\" --> \\"1\\" \\"adms:Identifier\\" : adms:identifier
 \\"epo-cat:Item\\" --> \\"0..*\\" \\"epo-ord:TaxInformation\\" : epo-ord:hasTaxInformation
+\\"cccev:Criterion\\" --> \\"0..1\\" \\"at-voc:criterion\\" : dct:type
 @enduml
 "
 `;
@@ -8268,6 +8654,10 @@ class \\"Form12\\" {
 }
 
 class \\"Form13\\" {
+  skos:inScheme : epo-not:StandardForm 
+}
+
+class \\"Form14\\" {
   skos:inScheme : epo-not:StandardForm 
 }
 
@@ -8344,8 +8734,18 @@ class \\"Form8\\" {
 }
 
 class \\"adms:Identifier\\" {
+  adms:schemaAgency : rdf:PlainLiteral [0..*]
   epo:hasScheme : rdf:PlainLiteral [0..*]
   epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
+  skos:notation : rdf:PlainLiteral [1..1]
+}
+
+class \\"bri\\" {
+  skos:inScheme : at-voc:form-type 
+}
+
+class \\"brin-ecs\\" {
+  skos:inScheme : at-voc:notice-type 
 }
 
 class \\"can-desg\\" {
@@ -8370,18 +8770,41 @@ class \\"cccev:Constraint\\" {
   epo:hasThresholdValue : xsd:decimal [1..1]
 }
 
+class \\"cccev:Criterion\\" {
+  cccev:bias : xsd:decimal [0..1]
+  cccev:weight : xsd:decimal [0..1]
+  cccev:weightingConsiderationDescription : rdf:PlainLiteral [0..1]
+  dct:type : at-voc:criterion [0..1]
+}
+
 class \\"cccev:Evidence\\" {
   adms:identifier : adms:Identifier [1]
   cccev:confidentialityLevelType : at-voc:access-rights [0..1]
   cccev:supportsConcept : cccev:InformationConcept [0..*]
   cccev:supportsRequirement : cccev:Requirement [0..*]
   cccev:supportsValue : cccev:SupportedValue [0..*]
+  dct:conformsTo : cccev:EvidenceType [0..*]
+  dct:description : rdf:PlainLiteral [0..1]
   epo:hasURL : xsd:anyURI [0..1]
   epo:hasValidityPeriod : epo:Period [0..1]
 }
 
+class \\"cccev:EvidenceType\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:validityPeriodConstraint : epo:Period [0..*]
+}
+
+class \\"cccev:EvidenceTypeList\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:specifiesEvidenceType : cccev:EvidenceType [0..*]
+  dct:description : rdf:PlainLiteral [1..1]
+  skos:prefLabel : rdf:PlainLiteral [0..*]
+}
+
 class \\"cccev:InformationConcept\\" {
   adms:identifier : adms:Identifier [0..1]
+  dct:description : rdf:PlainLiteral [0..*]
+  skos:prefLabel : rdf:PlainLiteral [0..*]
 }
 
 class \\"cccev:InformationRequirement\\" {
@@ -8391,12 +8814,20 @@ class \\"cccev:InformationRequirement\\" {
 class \\"cccev:Requirement\\" {
   adms:identifier : adms:Identifier [0..1]
   cccev:hasConcept : cccev:InformationConcept [0..*]
+  cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
   cccev:hasRequirement : cccev:Requirement [0..*]
   cccev:isDerivedFrom : eli:LegalResource 
+  dct:description : rdf:PlainLiteral [0..1]
+  skos:prefLabel : rdf:PlainLiteral [0..1]
 }
 
 class \\"cccev:SupportedValue\\" {
   cccev:providesValueFor : cccev:InformationConcept [0..*]
+  cccev:value : rdf:PlainLiteral [0..*]
+}
+
+class \\"change\\" {
+  skos:inScheme : at-voc:form-type 
 }
 
 class \\"cn-desg\\" {
@@ -8424,6 +8855,9 @@ class \\"cont-modif\\" {
 }
 
 class \\"cpov:ContactPoint\\" {
+  cpov:email : rdf:PlainLiteral [0..*]
+  cpov:telephone : rdf:PlainLiteral [0..*]
+  dct:description : rdf:PlainLiteral [0..*]
   epo:hasContactName : rdf:PlainLiteral [0..1]
   epo:hasFax : rdf:PlainLiteral [0..*]
   epo:hasInternetAddress : xsd:anyURI [0..1]
@@ -8431,6 +8865,7 @@ class \\"cpov:ContactPoint\\" {
 }
 
 class \\"cv:Channel\\" {
+  dct:description : rdf:PlainLiteral [0..1]
   epo:hasAddressURL : xsd:anyURI [0..1]
   epo:hasEndpointIdentifier : adms:Identifier [0..*]
 }
@@ -8441,19 +8876,40 @@ class \\"dct:Location\\" {
   epo:hasNutsCode : at-voc:nuts [0..1]
   locn:address : locn:Address [0..1]
   locn:geographicIdentifier : adms:Identifier [0..1]
+  locn:geographicName : rdf:PlainLiteral [0..1]
+  locn:geometry : locn:Geometry [0..1]
 }
 
 class \\"dir-awa-pre\\" {
   skos:inScheme : at-voc:form-type 
 }
 
+class \\"eli:LegalExpression\\" {
+  dct:description : rdfs:Literal [0..*]
+  dct:identifier : xsd:anyURI [0..*]
+  dct:language : at-voc:language [1..*]
+  dct:title : rdfs:Literal [1..*]
+  eli:is_realized_by : eli:Work [1]
+  eli:jurisdiction : at-voc:atu [0..*]
+  eli:number : xsd:string [0..*]
+  eli:uri_schema : adms:Identifier [0..*]
+}
+
 class \\"eli:LegalResource\\" {
+  dct:description : rdfs:Literal [1..1]
+  dct:identifier : xsd:anyURI [0..*]
+  eli:jurisdiction : at-voc:atu [0..*]
+  eli:number : xsd:string [0..*]
   epo:hasResourceType : at-voc:resource-type [1..*]
 }
 
 class \\"eli:LegalResourceSubdivision\\" {
   eli:uri_schema : adms:Identifier [0..*]
   epo:hasSubdivision : at-voc:subdivision [0..1]
+}
+
+class \\"eli:Work\\" {
+  dct:isPartOf : eli:Work [0..*]
 }
 
 class \\"epo-acc:ESPDRequest\\" {
@@ -10165,6 +10621,7 @@ class \\"epo:Winner\\" {
 
 class \\"foaf:Agent\\" {
   adms:identifier : adms:Identifier [0..*]
+  dct:title : rdf:PlainLiteral [0..*]
   epo:hasAlias : rdf:PlainLiteral [0..*]
 }
 
@@ -10175,7 +10632,22 @@ class \\"foaf:Person\\" {
 class \\"locn:Address\\" {
   epo:hasCountryCode : at-voc:country [0..1]
   epo:hasNutsCode : at-voc:nuts [0..1]
+  locn:addressArea : rdf:PlainLiteral [0..1]
   locn:addressID : adms:Identifier [0..1]
+  locn:adminUnitL1 : rdf:PlainLiteral [0..1]
+  locn:adminUnitL2 : rdf:PlainLiteral [0..1]
+  locn:fullAddress : rdf:PlainLiteral [0..1]
+  locn:locatorDesignator : rdf:PlainLiteral [0..1]
+  locn:locatorName : rdf:PlainLiteral [0..1]
+  locn:postCode : rdf:PlainLiteral [0..1]
+  locn:postName : rdf:PlainLiteral [0..1]
+  locn:thoroughfare : rdf:PlainLiteral [0..1]
+}
+
+class \\"locn:Geometry\\" {
+  cv:coordinates : rdf:PlainLiteral [0..*]
+  cv:latitude : rdf:PlainLiteral [0..*]
+  cv:longitude : rdf:PlainLiteral [0..*]
 }
 
 class \\"org:Organization\\" {
@@ -10199,9 +10671,16 @@ class \\"org:Organization\\" {
 }
 
 class \\"person:Person\\" {
+  cv:birthDate : xsd:date [0..1]
   cv:registeredAddress : locn:Address [0..1]
+  dct:alternative : rdf:PlainLiteral [0..*]
   epo:hasCountryOfBirth : at-voc:country [0..1]
   epo:hasNationality : at-voc:country [0..*]
+  foaf:familyName : rdf:PlainLiteral [0..*]
+  foaf:givenName : rdf:PlainLiteral [0..*]
+  foaf:name : rdf:PlainLiteral [0..*]
+  person:birthName : rdf:PlainLiteral [0..*]
+  person:patronymicName : rdf:PlainLiteral [0..*]
 }
 
 class \\"pin-buyer\\" {
@@ -10247,6 +10726,7 @@ class \\"subco\\" {
 class \\"veat\\" {
   skos:inScheme : at-voc:notice-type 
 }
+\\"ProxyConnector\\" <|-- \\"ProxyConnector\\"
 \\"cccev:Criterion\\" <|-- \\"epo:ProcurementCriterion\\"
 \\"cccev:Evidence\\" <|-- \\"epo:Certificate\\"
 \\"cccev:InformationConcept\\" <|-- \\"epo:CertificationLabel\\"
@@ -10256,6 +10736,7 @@ class \\"veat\\" {
 \\"cccev:Requirement\\" <|-- \\"epo:ProcurementCriteriaSummary\\"
 \\"cv:Channel\\" <|-- \\"epo:AdHocChannel\\"
 \\"eli:LegalResource\\" <|-- \\"eli:LegalResourceSubdivision\\"
+\\"eli:Work\\" <|-- \\"eli:LegalResource\\"
 \\"epo-cat:InformationHub\\" <|-- \\"epo-cat:CatalogueResponseInformation\\"
 \\"epo-cat:InformationHub\\" <|-- \\"epo-ful:ShipmentInformation\\"
 \\"epo-cat:InformationHub\\" <|-- \\"epo-ord:AllowanceChargeInformation\\"
@@ -10602,6 +11083,7 @@ class \\"veat\\" {
 \\"foaf:Agent\\" <|-- \\"foaf:Person\\"
 \\"foaf:Agent\\" <|-- \\"org:Organization\\"
 \\"foaf:Person\\" <|-- \\"person:Person\\"
+\\"org:Organization\\" <|-- \\"cpov:PublicOrganisation\\"
 \\"org:Organization\\" <|-- \\"epo:Business\\"
 \\"org:Organization\\" <|-- \\"epo:OrganisationGroup\\"
 \\"time:Duration\\" <|-- \\"epo:Duration\\"

@@ -18,10 +18,14 @@ function anyMatch ({ nodes, edges }, { filter }) {
 function startsWith (g, start) {
   const f = (value) => value?.startsWith(start)
   const { nodes, edges, ...tail } = g
+
+  const matchedNodes = nodes.filter(x => f(x.name))
+  const allNodes = new Set(matchedNodes.map(x => x.name))
+  const matchedEdges = edges.filter(x => allNodes.has(x.source))
+
   return {
-    nodes: nodes.filter(x => f(x.name)),
-    edges: edges.filter(
-      x => f(x.source) || f(x.predicate)), ...tail,
+    nodes: matchedNodes,
+    edges: matchedEdges, ...tail,
   }
 }
 
