@@ -1,28 +1,45 @@
 <script setup lang="js">
 import { useClipboard, computedAsync } from '@vueuse/core'
-import { NCard, NCode } from 'naive-ui'
+import { NCard, NCode, NInput } from 'naive-ui'
 import { storeToRefs } from 'pinia'
+import { onMounted, ref, watch } from 'vue'
+import { startsWith } from '../../conceptualModel/filter.js'
 import { toShacl } from '../../shacl/model2Shacl.js'
 import { useStore } from '../state.js'
-import Filter from './Filter.vue'
 import SelectModel from './SelectModel.vue'
 
 const store = useStore()
-const { jsonView } = storeToRefs(store)
+const { eaJson } = storeToRefs(store)
 const { text, isSupported, copy } = useClipboard()
 
-const shacl = computedAsync(async () => {
-  const { nodes, edges } = jsonView.value
+async function writeSHACL () {
+  const g = eaJson.value
+  const { nodes, edges } = startsWith(g, start.value)
   const { turtle } = await toShacl({ nodes, edges })
-  return turtle
-}, null)
+  shacl.value = turtle
+}
+
+const shacl = ref('')
+const start = ref('epo')
+
+watch([eaJson, start], () => {
+  writeSHACL()
+})
+
+onMounted(() => {
+  writeSHACL()
+})
 
 </script>
 
 <template>
   <SelectModel/>
-  <Filter></Filter>
-  <n-card> Note: This SHACL is dynamically generated based on the selected filters and is intended for debugging purposes.  </n-card>
+  <n-card size="small" title="EA class name starts with">
+    <n-input v-model:value="start"/>
+  </n-card>
+  <n-card> Note: This SHACL is dynamically generated based on the selected filters and is intended for debugging
+    purposes.
+  </n-card>
   <template v-if="shacl">
     <n-card :title="`SHACL (${shacl?.split('\n')?.length} lines)`">
       <button v-if="isSupported" @click="copy(shacl)">
