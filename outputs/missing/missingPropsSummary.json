@@ -3,7 +3,7 @@
     "class": "epo:RequestForClarification",
     "actual": [],
     "expected": [],
-    "message": "class epo:RequestForClarification: 0/0 properties found"
+    "message": "class epo:RequestForClarification: actual:0 expected:0 properties"
   },
   {
     "class": "epo-sub:ESPDResponse",
@@ -137,25 +137,25 @@
         "description": "Relation indicating that an ESPD Response contains a Response.\r\n\r\nWG approval 12/03/2024"
       }
     ],
-    "message": "class epo-sub:ESPDResponse: 2/6 properties found"
+    "message": "class epo-sub:ESPDResponse: actual:2 expected:6 properties"
   },
   {
     "class": "epo:ExpressionOfInterest",
     "actual": [],
     "expected": [],
-    "message": "class epo:ExpressionOfInterest: 0/0 properties found"
+    "message": "class epo:ExpressionOfInterest: actual:0 expected:0 properties"
   },
   {
     "class": "epo:RequestForParticipation",
     "actual": [],
     "expected": [],
-    "message": "class epo:RequestForParticipation: 0/0 properties found"
+    "message": "class epo:RequestForParticipation: actual:0 expected:0 properties"
   },
   {
     "class": "epo:Estimate",
     "actual": [],
     "expected": [],
-    "message": "class epo:Estimate: 0/0 properties found"
+    "message": "class epo:Estimate: actual:0 expected:0 properties"
   },
   {
     "class": "epo:SubcontractingEstimate",
@@ -308,7 +308,7 @@
         "description": "The estimated value of a single subcontract.\r\n\r\nThis relates to BT-553 in eForms.\r\n\r\nWG Approval 01/09/2020\r\n\r\n"
       }
     ],
-    "message": "class epo:SubcontractingEstimate: 4/4 properties found"
+    "message": "class epo:SubcontractingEstimate: actual:4 expected:4 properties"
   },
   {
     "class": "epo:ConcessionEstimate",
@@ -479,19 +479,19 @@
         "description": null
       }
     ],
-    "message": "class epo:ConcessionEstimate: 4/4 properties found"
+    "message": "class epo:ConcessionEstimate: actual:4 expected:4 properties"
   },
   {
     "class": "epo-ord:Originator",
     "actual": [],
     "expected": [],
-    "message": "class epo-ord:Originator: 0/0 properties found"
+    "message": "class epo-ord:Originator: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ful:Carrier",
     "actual": [],
     "expected": [],
-    "message": "class epo-ful:Carrier: 0/0 properties found"
+    "message": "class epo-ful:Carrier: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ord:OrderResponse",
@@ -720,7 +720,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:OrderResponse: 5/7 properties found"
+    "message": "class epo-ord:OrderResponse: actual:5 expected:7 properties"
   },
   {
     "class": "epo:AwardOutcome",
@@ -924,7 +924,7 @@
         "description": "The value of procured supplies that have used a particularly advantageous opportunity available for a very short time at a value considerably lower than normal market prices.\r\n\r\nWG approval 23/05/2023"
       }
     ],
-    "message": "class epo:AwardOutcome: 5/5 properties found"
+    "message": "class epo:AwardOutcome: actual:5 expected:5 properties"
   },
   {
     "class": "epo:AccessTerm",
@@ -1352,7 +1352,7 @@
         "description": "Relation indicating an AccessTerm has a CatalogueReceiver."
       }
     ],
-    "message": "class epo:AccessTerm: 11/11 properties found"
+    "message": "class epo:AccessTerm: actual:11 expected:11 properties"
   },
   {
     "class": "epo:AwardCriterion",
@@ -1529,7 +1529,7 @@
         "description": "Category of award criterion.\r\n\r\n"
       }
     ],
-    "message": "class epo:AwardCriterion: 4/4 properties found"
+    "message": "class epo:AwardCriterion: actual:4 expected:4 properties"
   },
   {
     "class": "epo:AwardDecision",
@@ -1649,7 +1649,7 @@
         "description": "Incorporates AwardOutcome."
       }
     ],
-    "message": "class epo:AwardDecision: 3/3 properties found"
+    "message": "class epo:AwardDecision: actual:3 expected:3 properties"
   },
   {
     "class": "epo:Business",
@@ -1770,7 +1770,7 @@
         "description": "The category of the business depending on number of employees and turnover.\r\n\r\nAdditional information:\r\n\r\nSee Commission Recommendation of 6 May 2003 concerning the definition of micro, small and medium-sized enterprises.\r\n\r\nWG Approval 28/05/2020\r\n\r\n"
       }
     ],
-    "message": "class epo:Business: 3/3 properties found"
+    "message": "class epo:Business: actual:3 expected:3 properties"
   },
   {
     "class": "epo:Buyer",
@@ -2017,19 +2017,19 @@
         "description": null
       }
     ],
-    "message": "class epo:Buyer: 7/7 properties found"
+    "message": "class epo:Buyer: actual:7 expected:7 properties"
   },
   {
     "class": "epo:LotSpecificTerm",
     "actual": [],
     "expected": [],
-    "message": "class epo:LotSpecificTerm: 0/0 properties found"
+    "message": "class epo:LotSpecificTerm: actual:0 expected:0 properties"
   },
   {
     "class": "epo:CentralPurchasingBody",
     "actual": [],
     "expected": [],
-    "message": "class epo:CentralPurchasingBody: 0/0 properties found"
+    "message": "class epo:CentralPurchasingBody: actual:0 expected:0 properties"
   },
   {
     "class": "epo:Contract",
@@ -2530,7 +2530,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Contract: 13/15 properties found"
+    "message": "class epo:Contract: actual:13 expected:15 properties"
   },
   {
     "class": "epo:Contractor",
@@ -2579,7 +2579,7 @@
         "description": "The Contractor must be a Winner.\r\n"
       }
     ],
-    "message": "class epo:Contractor: 1/1 properties found"
+    "message": "class epo:Contractor: actual:1 expected:1 properties"
   },
   {
     "class": "epo:ContractTerm",
@@ -3419,7 +3419,7 @@
         "description": null
       }
     ],
-    "message": "class epo:ContractTerm: 22/22 properties found"
+    "message": "class epo:ContractTerm: actual:22 expected:22 properties"
   },
   {
     "class": "epo:DesignContestRegimeTerm",
@@ -3651,7 +3651,7 @@
         "description": "Relation indicating a DesignContestRegimeTerm has a Prize."
       }
     ],
-    "message": "class epo:DesignContestRegimeTerm: 6/6 properties found"
+    "message": "class epo:DesignContestRegimeTerm: actual:6 expected:6 properties"
   },
   {
     "class": "epo:DirectAwardTerm",
@@ -3805,7 +3805,7 @@
         "description": "List of reasons for using a procedure which allows awarding contracts directly without publishing a notice. \r\n\r\nWG Approval 28/05/2020\r\n"
       }
     ],
-    "message": "class epo:DirectAwardTerm: 4/4 properties found"
+    "message": "class epo:DirectAwardTerm: actual:4 expected:4 properties"
   },
   {
     "class": "epo:Document",
@@ -4398,7 +4398,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Document: 16/16 properties found"
+    "message": "class epo:Document: actual:16 expected:16 properties"
   },
   {
     "class": "epo:DynamicPurchaseSystemTechnique",
@@ -4447,31 +4447,31 @@
         "description": "Explanation as to whether a dps is used and by whom.\r\n\r\nAdditional Information:\r\nThis corresponds in eForms to BT-766 Dynamic Purchasing System.\r\nWG Approval 09/11/2021\r\n"
       }
     ],
-    "message": "class epo:DynamicPurchaseSystemTechnique: 1/1 properties found"
+    "message": "class epo:DynamicPurchaseSystemTechnique: actual:1 expected:1 properties"
   },
   {
     "class": "epo:EAuctionTechnique",
     "actual": [],
     "expected": [],
-    "message": "class epo:EAuctionTechnique: 0/0 properties found"
+    "message": "class epo:EAuctionTechnique: actual:0 expected:0 properties"
   },
   {
     "class": "epo:OfferingParty",
     "actual": [],
     "expected": [],
-    "message": "class epo:OfferingParty: 0/0 properties found"
+    "message": "class epo:OfferingParty: actual:0 expected:0 properties"
   },
   {
     "class": "epo:AcquiringCentralPurchasingBody",
     "actual": [],
     "expected": [],
-    "message": "class epo:AcquiringCentralPurchasingBody: 0/0 properties found"
+    "message": "class epo:AcquiringCentralPurchasingBody: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ReviewRequester",
     "actual": [],
     "expected": [],
-    "message": "class epo:ReviewRequester: 0/0 properties found"
+    "message": "class epo:ReviewRequester: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ful:DespatchAdvice",
@@ -4809,7 +4809,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:DespatchAdvice: 7/11 properties found"
+    "message": "class epo-ful:DespatchAdvice: actual:7 expected:11 properties"
   },
   {
     "class": "epo-not:PreMarketConsultationNotice",
@@ -4830,19 +4830,19 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PreMarketConsultationNotice: 0/1 properties found"
+    "message": "class epo-not:PreMarketConsultationNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo:EvaluationTerm",
     "actual": [],
     "expected": [],
-    "message": "class epo:EvaluationTerm: 0/0 properties found"
+    "message": "class epo:EvaluationTerm: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ExclusionGround",
     "actual": [],
     "expected": [],
-    "message": "class epo:ExclusionGround: 0/0 properties found"
+    "message": "class epo:ExclusionGround: actual:0 expected:0 properties"
   },
   {
     "class": "epo:FrameworkAgreement",
@@ -4882,13 +4882,13 @@
         "description": null
       }
     ],
-    "message": "class epo:FrameworkAgreement: 1/1 properties found"
+    "message": "class epo:FrameworkAgreement: actual:1 expected:1 properties"
   },
   {
     "class": "epo:FrameworkAgreementTechnique",
     "actual": [],
     "expected": [],
-    "message": "class epo:FrameworkAgreementTechnique: 0/0 properties found"
+    "message": "class epo:FrameworkAgreementTechnique: actual:0 expected:0 properties"
   },
   {
     "class": "epo:FrameworkAgreementTerm",
@@ -5056,7 +5056,7 @@
         "description": "The form of framework agreement used in a procurement procedure.\r\n\r\nAddition information:\r\n\r\nA concept to distinguish the different types of framework agreement, which are: \r\n1. Framework agreement without reopening of competition,\r\n2. Framework agreement with reopening of competition, or \r\n3. Framework agreement partly without reopening of competition.\r\n\r\nWG Approval 19/09/2019 \r\n\r\n"
       }
     ],
-    "message": "class epo:FrameworkAgreementTerm: 4/4 properties found"
+    "message": "class epo:FrameworkAgreementTerm: actual:4 expected:4 properties"
   },
   {
     "class": "epo:Fund",
@@ -5250,7 +5250,7 @@
         "description": "Links a resource to an adms:Identifier class."
       }
     ],
-    "message": "class epo:Fund: 5/5 properties found"
+    "message": "class epo:Fund: actual:5 expected:5 properties"
   },
   {
     "class": "epo:GreenProcurement",
@@ -5362,25 +5362,25 @@
         "description": "The requirement to which the concept meets.\r\nWG Approval 09/11/2021\r\n\r\n"
       }
     ],
-    "message": "class epo:GreenProcurement: 3/3 properties found"
+    "message": "class epo:GreenProcurement: actual:3 expected:3 properties"
   },
   {
     "class": "epo:CatalogueReceiver",
     "actual": [],
     "expected": [],
-    "message": "class epo:CatalogueReceiver: 0/0 properties found"
+    "message": "class epo:CatalogueReceiver: actual:0 expected:0 properties"
   },
   {
     "class": "epo:CatalogueProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:CatalogueProvider: 0/0 properties found"
+    "message": "class epo:CatalogueProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo:AwardingCentralPurchasingBody",
     "actual": [],
     "expected": [],
-    "message": "class epo:AwardingCentralPurchasingBody: 0/0 properties found"
+    "message": "class epo:AwardingCentralPurchasingBody: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ContractLotCompletionInformation",
@@ -5606,7 +5606,7 @@
         "description": "\r\nAdditional Information:\r\nThis corresponds to BT-782 in eForms. \r\n"
       }
     ],
-    "message": "class epo:ContractLotCompletionInformation: 5/5 properties found"
+    "message": "class epo:ContractLotCompletionInformation: actual:5 expected:5 properties"
   },
   {
     "class": "epo:InnovativeProcurement",
@@ -5646,7 +5646,7 @@
         "description": "The requirement to which the concept meets.\r\nWG Approval 09/11/2021\r\n\r\n"
       }
     ],
-    "message": "class epo:InnovativeProcurement: 1/1 properties found"
+    "message": "class epo:InnovativeProcurement: actual:1 expected:1 properties"
   },
   {
     "class": "epo:Lot",
@@ -5718,7 +5718,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Lot: 2/2 properties found"
+    "message": "class epo:Lot: actual:2 expected:2 properties"
   },
   {
     "class": "epo:LotGroup",
@@ -6017,13 +6017,13 @@
         "description": "A unique identifier of the instance of the concept.\r\n\r\nAdditional Information\r\n\r\nFor example, in the case of the Procurement Identifier, this could be the European Public Procurement Identifier, and/or any other identifier provided by the buyer, the service provider or any other stakeholder.\r\n\r\nWG Approval 12/11/2019"
       }
     ],
-    "message": "class epo:LotGroup: 8/8 properties found"
+    "message": "class epo:LotGroup: actual:8 expected:8 properties"
   },
   {
     "class": "epo:Mediator",
     "actual": [],
     "expected": [],
-    "message": "class epo:Mediator: 0/0 properties found"
+    "message": "class epo:Mediator: actual:0 expected:0 properties"
   },
   {
     "class": "epo:MultipleStageProcedureTerm",
@@ -6352,7 +6352,7 @@
         "description": null
       }
     ],
-    "message": "class epo:MultipleStageProcedureTerm: 8/8 properties found"
+    "message": "class epo:MultipleStageProcedureTerm: actual:8 expected:8 properties"
   },
   {
     "class": "epo:Notice",
@@ -6931,7 +6931,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Notice: 14/14 properties found"
+    "message": "class epo:Notice: actual:14 expected:14 properties"
   },
   {
     "class": "epo:OpeningTerm",
@@ -7099,7 +7099,7 @@
         "description": "The place where the tenders will be publicly opened.\r\n\r\nWG Approval 10-10-2019"
       }
     ],
-    "message": "class epo:OpeningTerm: 4/4 properties found"
+    "message": "class epo:OpeningTerm: actual:4 expected:4 properties"
   },
   {
     "class": "epo:OrganisationGroup",
@@ -7220,7 +7220,7 @@
         "description": null
       }
     ],
-    "message": "class epo:OrganisationGroup: 3/3 properties found"
+    "message": "class epo:OrganisationGroup: actual:3 expected:3 properties"
   },
   {
     "class": "epo:VehicleInformation",
@@ -7478,7 +7478,7 @@
         "description": null
       }
     ],
-    "message": "class epo:VehicleInformation: 6/6 properties found"
+    "message": "class epo:VehicleInformation: actual:6 expected:6 properties"
   },
   {
     "class": "epo:NonPublishedInformation",
@@ -7702,7 +7702,7 @@
         "description": "The reason why data is not published. \r\nWG Approval 11/06/2020 \r\n"
       }
     ],
-    "message": "class epo:NonPublishedInformation: 5/5 properties found"
+    "message": "class epo:NonPublishedInformation: actual:5 expected:5 properties"
   },
   {
     "class": "epo-con:ContractModificationInformation",
@@ -7866,7 +7866,7 @@
         "description": "Explanation of why a contract was modified.\r\n\r\nWG Approval 09/11/2021\r\n\r\nThe codelist to be used is at-voc:modification-justification which is available at http://publications.europa.eu/resource/dataset/modification-justification\r\n\r\nAdditional Information\r\n\r\nThis corresponds in Standard forms to Field VII.2.2.1 and VII.2.2.3 in F20 .\r\n\r\nThis corresponds in eForms to BT-200.\r\n\r\n\r\n"
       }
     ],
-    "message": "class epo-con:ContractModificationInformation: 3/5 properties found"
+    "message": "class epo-con:ContractModificationInformation: actual:3 expected:5 properties"
   },
   {
     "class": "epo-con:ContractAmendment",
@@ -7901,7 +7901,7 @@
         "description": null
       }
     ],
-    "message": "class epo-con:ContractAmendment: 0/2 properties found"
+    "message": "class epo-con:ContractAmendment: actual:0 expected:2 properties"
   },
   {
     "class": "epo:Period",
@@ -8029,7 +8029,7 @@
         "description": "\r\n\r\n"
       }
     ],
-    "message": "class epo:Period: 3/3 properties found"
+    "message": "class epo:Period: actual:3 expected:3 properties"
   },
   {
     "class": "epo:PlannedProcurementPart",
@@ -8192,13 +8192,13 @@
         "description": null
       }
     ],
-    "message": "class epo:PlannedProcurementPart: 4/4 properties found"
+    "message": "class epo:PlannedProcurementPart: actual:4 expected:4 properties"
   },
   {
     "class": "epo:SelectionEvaluationTerm",
     "actual": [],
     "expected": [],
-    "message": "class epo:SelectionEvaluationTerm: 0/0 properties found"
+    "message": "class epo:SelectionEvaluationTerm: actual:0 expected:0 properties"
   },
   {
     "class": "epo:AwardEvaluationTerm",
@@ -8398,7 +8398,7 @@
         "description": "The weighting given to cost.\r\n\r\nAdditional Information:\r\nThis weighting covers usually all cost criteria against price or quality criteria."
       }
     ],
-    "message": "class epo:AwardEvaluationTerm: 5/5 properties found"
+    "message": "class epo:AwardEvaluationTerm: actual:5 expected:5 properties"
   },
   {
     "class": "epo:ReviewTerm",
@@ -8583,7 +8583,7 @@
         "description": "Relation indicating a ReviewTerm has a Reviewer."
       }
     ],
-    "message": "class epo:ReviewTerm: 5/5 properties found"
+    "message": "class epo:ReviewTerm: actual:5 expected:5 properties"
   },
   {
     "class": "epo-ord:OrderResponseInformation",
@@ -8679,7 +8679,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:OrderResponseInformation: 2/3 properties found"
+    "message": "class epo-ord:OrderResponseInformation: actual:2 expected:3 properties"
   },
   {
     "class": "epo-cat:PostAwardDocument",
@@ -8736,7 +8736,7 @@
         "description": "https://test-docs.peppol.eu/logistics/transport-execution/codelist/DocumentStatusCode/"
       }
     ],
-    "message": "class epo-cat:PostAwardDocument: 1/2 properties found"
+    "message": "class epo-cat:PostAwardDocument: actual:1 expected:2 properties"
   },
   {
     "class": "epo:Prize",
@@ -8825,7 +8825,7 @@
         "description": "The monetary value of a prize, if any, for the winner (or runners-up) of the design contest.\r\n\r\nAdditional Information:\r\nThis corresponds to BT-644 in eForms.\r\n\r\nWG Approval 29/08/2019\r\n\r\n"
       }
     ],
-    "message": "class epo:Prize: 2/2 properties found"
+    "message": "class epo:Prize: actual:2 expected:2 properties"
   },
   {
     "class": "epo:Procedure",
@@ -9282,7 +9282,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Procedure: 12/12 properties found"
+    "message": "class epo:Procedure: actual:12 expected:12 properties"
   },
   {
     "class": "epo-cat:Catalogue",
@@ -9485,7 +9485,7 @@
         "description": "The relation indicating until when a given instance of a concept is applicable.\r\n\r\nWG approval 30/05/2023"
       }
     ],
-    "message": "class epo-cat:Catalogue: 3/9 properties found"
+    "message": "class epo-cat:Catalogue: actual:3 expected:9 properties"
   },
   {
     "class": "epo:ParticipationRequestTerm",
@@ -9575,7 +9575,7 @@
         "description": "Relation indicating a ParticipationRequestTerm has a ParticipationRequestProcessor."
       }
     ],
-    "message": "class epo:ParticipationRequestTerm: 2/2 properties found"
+    "message": "class epo:ParticipationRequestTerm: actual:2 expected:2 properties"
   },
   {
     "class": "epo-not:VoluntaryEx-AnteTransparencyNotice",
@@ -9596,7 +9596,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:VoluntaryEx-AnteTransparencyNotice: 0/1 properties found"
+    "message": "class epo-not:VoluntaryEx-AnteTransparencyNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:PIN-CFCStandardNotice",
@@ -9617,7 +9617,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PIN-CFCStandardNotice: 0/1 properties found"
+    "message": "class epo-not:PIN-CFCStandardNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:PIN-CFCSocialNotice",
@@ -9638,7 +9638,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PIN-CFCSocialNotice: 0/1 properties found"
+    "message": "class epo-not:PIN-CFCSocialNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:QSNotice",
@@ -9659,7 +9659,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:QSNotice: 0/1 properties found"
+    "message": "class epo-not:QSNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:CNStandardNotice",
@@ -9680,7 +9680,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CNStandardNotice: 0/1 properties found"
+    "message": "class epo-not:CNStandardNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:CNSocialNotice",
@@ -9701,7 +9701,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CNSocialNotice: 0/1 properties found"
+    "message": "class epo-not:CNSocialNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:DesignContestNotice",
@@ -9722,7 +9722,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:DesignContestNotice: 0/1 properties found"
+    "message": "class epo-not:DesignContestNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:CANStandardNotice",
@@ -9743,7 +9743,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CANStandardNotice: 0/1 properties found"
+    "message": "class epo-not:CANStandardNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo:ProcedureTerm",
@@ -10233,7 +10233,7 @@
         "description": "Relation indicating a ProcedureTerm has a BudgetProvider."
       }
     ],
-    "message": "class epo:ProcedureTerm: 13/13 properties found"
+    "message": "class epo:ProcedureTerm: actual:13 expected:13 properties"
   },
   {
     "class": "epo:ProcurementCriterion",
@@ -10426,7 +10426,7 @@
         "description": null
       }
     ],
-    "message": "class epo:ProcurementCriterion: 5/5 properties found"
+    "message": "class epo:ProcurementCriterion: actual:5 expected:5 properties"
   },
   {
     "class": "epo:TenderGroup",
@@ -10668,25 +10668,25 @@
         "description": null
       }
     ],
-    "message": "class epo:TenderGroup: 6/6 properties found"
+    "message": "class epo:TenderGroup: actual:6 expected:6 properties"
   },
   {
     "class": "epo:Duration",
     "actual": [],
     "expected": [],
-    "message": "class epo:Duration: 0/0 properties found"
+    "message": "class epo:Duration: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ord:Consignee",
     "actual": [],
     "expected": [],
-    "message": "class epo-ord:Consignee: 0/0 properties found"
+    "message": "class epo-ord:Consignee: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ProcurementDocument",
     "actual": [],
     "expected": [],
-    "message": "class epo:ProcurementDocument: 0/0 properties found"
+    "message": "class epo:ProcurementDocument: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ProcurementServiceProvider",
@@ -10734,7 +10734,7 @@
         "description": "Represents."
       }
     ],
-    "message": "class epo:ProcurementServiceProvider: 1/1 properties found"
+    "message": "class epo:ProcurementServiceProvider: actual:1 expected:1 properties"
   },
   {
     "class": "epo-cat:CatalogueLine",
@@ -11247,19 +11247,19 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:CatalogueLine: 12/16 properties found"
+    "message": "class epo-cat:CatalogueLine: actual:12 expected:16 properties"
   },
   {
     "class": "epo:ProcedureSpecificTerm",
     "actual": [],
     "expected": [],
-    "message": "class epo:ProcedureSpecificTerm: 0/0 properties found"
+    "message": "class epo:ProcedureSpecificTerm: actual:0 expected:0 properties"
   },
   {
     "class": "epo-cat:ItemRequirement",
     "actual": [],
     "expected": [],
-    "message": "class epo-cat:ItemRequirement: 0/0 properties found"
+    "message": "class epo-cat:ItemRequirement: actual:0 expected:0 properties"
   },
   {
     "class": "epo:NonDisclosureAgreementTerm",
@@ -11347,7 +11347,7 @@
         "description": null
       }
     ],
-    "message": "class epo:NonDisclosureAgreementTerm: 2/2 properties found"
+    "message": "class epo:NonDisclosureAgreementTerm: actual:2 expected:2 properties"
   },
   {
     "class": "epo:PurchaseContract",
@@ -11437,7 +11437,7 @@
         "description": null
       }
     ],
-    "message": "class epo:PurchaseContract: 2/2 properties found"
+    "message": "class epo:PurchaseContract: actual:2 expected:2 properties"
   },
   {
     "class": "epo:Purpose",
@@ -11558,7 +11558,7 @@
         "description": "The number of units required.\r\n\r\nAdditional Information:\r\nThe quantity needs to go along with the unit. \r\n\r\n\r\n\r\n"
       }
     ],
-    "message": "class epo:Purpose: 3/3 properties found"
+    "message": "class epo:Purpose: actual:3 expected:3 properties"
   },
   {
     "class": "epo:Reviewer",
@@ -11598,13 +11598,13 @@
         "description": null
       }
     ],
-    "message": "class epo:Reviewer: 1/1 properties found"
+    "message": "class epo:Reviewer: actual:1 expected:1 properties"
   },
   {
     "class": "epo:Offer",
     "actual": [],
     "expected": [],
-    "message": "class epo:Offer: 0/0 properties found"
+    "message": "class epo:Offer: actual:0 expected:0 properties"
   },
   {
     "class": "epo:SecurityClearanceTerm",
@@ -11724,7 +11724,7 @@
         "description": null
       }
     ],
-    "message": "class epo:SecurityClearanceTerm: 3/3 properties found"
+    "message": "class epo:SecurityClearanceTerm: actual:3 expected:3 properties"
   },
   {
     "class": "epo:SelectionCriterion",
@@ -11854,7 +11854,7 @@
         "description": "The classification of the selection criteria.\r\n\r\n\r\nAdditional Information:\r\n\r\nThis corresponds in eForms to BT-747\t Selection Criteria Type.\r\n\r\nWG Approval 09/11/2021\r\n"
       }
     ],
-    "message": "class epo:SelectionCriterion: 3/3 properties found"
+    "message": "class epo:SelectionCriterion: actual:3 expected:3 properties"
   },
   {
     "class": "epo:SocialProcurement",
@@ -11894,13 +11894,13 @@
         "description": "The requirement to which the concept meets.\r\nWG Approval 09/11/2021\r\n\r\n"
       }
     ],
-    "message": "class epo:SocialProcurement: 1/1 properties found"
+    "message": "class epo:SocialProcurement: actual:1 expected:1 properties"
   },
   {
     "class": "epo:StatisticalInformation",
     "actual": [],
     "expected": [],
-    "message": "class epo:StatisticalInformation: 0/0 properties found"
+    "message": "class epo:StatisticalInformation: actual:0 expected:0 properties"
   },
   {
     "class": "epo:StrategicProcurement",
@@ -12004,13 +12004,13 @@
         "description": "Explanation as to whether accessibility Criterion are used or not.\r\nWG Approval 09/11/2021\r\n\r\n"
       }
     ],
-    "message": "class epo:StrategicProcurement: 3/3 properties found"
+    "message": "class epo:StrategicProcurement: actual:3 expected:3 properties"
   },
   {
     "class": "epo:Subcontractor",
     "actual": [],
     "expected": [],
-    "message": "class epo:Subcontractor: 0/0 properties found"
+    "message": "class epo:Subcontractor: actual:0 expected:0 properties"
   },
   {
     "class": "epo:SubcontractTerm",
@@ -12282,7 +12282,7 @@
         "description": "The requirement the tender must meet with regard to subcontracting parts of the contract.\r\nWG Approval 09/11/2021\r\n\r\n"
       }
     ],
-    "message": "class epo:SubcontractTerm: 7/7 properties found"
+    "message": "class epo:SubcontractTerm: actual:7 expected:7 properties"
   },
   {
     "class": "epo:SubmissionTerm",
@@ -13202,7 +13202,7 @@
         "description": "The obligation or possibility for tenderers to submit variants or not.\r\n\r\nAdditional Information:\r\n\r\nVariants are alternative ways to fulfil the buyer's needs as opposed to solutions indicated in the procurement documents.\r\n\r\neForms: Whether tenderers are required, allowed or forbidden to submit tenders which fulfil the buyer's needs differently than as proposed in the procurement documents. \r\n\r\nAdditional Information:\r\n\r\nFurther conditions for submitting variant tenders are in the procurement documents.\r\n"
       }
     ],
-    "message": "class epo:SubmissionTerm: 24/24 properties found"
+    "message": "class epo:SubmissionTerm: actual:24 expected:24 properties"
   },
   {
     "class": "epo:System",
@@ -13283,13 +13283,13 @@
         "description": null
       }
     ],
-    "message": "class epo:System: 2/2 properties found"
+    "message": "class epo:System: actual:2 expected:2 properties"
   },
   {
     "class": "epo:TechnicalSpecification",
     "actual": [],
     "expected": [],
-    "message": "class epo:TechnicalSpecification: 0/0 properties found"
+    "message": "class epo:TechnicalSpecification: actual:0 expected:0 properties"
   },
   {
     "class": "epo:Technique",
@@ -13411,7 +13411,7 @@
         "description": "The codelist to be used is at-voc:usage which is available at http://publications.europa.eu/resource/dataset/usage\r\n"
       }
     ],
-    "message": "class epo:Technique: 3/3 properties found"
+    "message": "class epo:Technique: actual:3 expected:3 properties"
   },
   {
     "class": "epo:Tenderer",
@@ -13460,7 +13460,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Tenderer: 1/1 properties found"
+    "message": "class epo:Tenderer: actual:1 expected:1 properties"
   },
   {
     "class": "epo:Tender",
@@ -13911,7 +13911,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Tender: 11/12 properties found"
+    "message": "class epo:Tender: actual:11 expected:12 properties"
   },
   {
     "class": "epo:MonetaryValue",
@@ -14103,7 +14103,7 @@
         "description": "The identifier of the currency as in the standard code list used. \r\n\r\n"
       }
     ],
-    "message": "class epo:MonetaryValue: 5/5 properties found"
+    "message": "class epo:MonetaryValue: actual:5 expected:5 properties"
   },
   {
     "class": "epo:Winner",
@@ -14152,7 +14152,7 @@
         "description": "The Winner must be a Tenderer."
       }
     ],
-    "message": "class epo:Winner: 1/1 properties found"
+    "message": "class epo:Winner: actual:1 expected:1 properties"
   },
   {
     "class": "epo-cat:Item",
@@ -14968,7 +14968,7 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:Item: 20/29 properties found"
+    "message": "class epo-cat:Item: actual:20 expected:29 properties"
   },
   {
     "class": "epo:JuryMember",
@@ -15017,13 +15017,13 @@
         "description": null
       }
     ],
-    "message": "class epo:JuryMember: 1/1 properties found"
+    "message": "class epo:JuryMember: actual:1 expected:1 properties"
   },
   {
     "class": "epo:ProcurementProcedureInformationProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:ProcurementProcedureInformationProvider: 0/0 properties found"
+    "message": "class epo:ProcurementProcedureInformationProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo-not:PlanningNotice",
@@ -15055,7 +15055,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PlanningNotice: 0/2 properties found"
+    "message": "class epo-not:PlanningNotice: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CompetitionNotice",
@@ -15114,7 +15114,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CompetitionNotice: 0/4 properties found"
+    "message": "class epo-not:CompetitionNotice: actual:0 expected:4 properties"
   },
   {
     "class": "epo:Quantity",
@@ -15249,7 +15249,7 @@
         "description": null
       }
     ],
-    "message": "class epo:Quantity: 3/3 properties found"
+    "message": "class epo:Quantity: actual:3 expected:3 properties"
   },
   {
     "class": "epo-not:DirectAwardPrenotificationNotice",
@@ -15358,7 +15358,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:DirectAwardPrenotificationNotice: 0/8 properties found"
+    "message": "class epo-not:DirectAwardPrenotificationNotice: actual:0 expected:8 properties"
   },
   {
     "class": "epo-not:ResultNotice",
@@ -15479,7 +15479,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:ResultNotice: 0/9 properties found"
+    "message": "class epo-not:ResultNotice: actual:0 expected:9 properties"
   },
   {
     "class": "epo-not:ContractModificationNotice",
@@ -15617,7 +15617,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:ContractModificationNotice: 0/10 properties found"
+    "message": "class epo-not:ContractModificationNotice: actual:0 expected:10 properties"
   },
   {
     "class": "epo-not:CompletionNotice",
@@ -15766,7 +15766,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CompletionNotice: 0/11 properties found"
+    "message": "class epo-not:CompletionNotice: actual:0 expected:11 properties"
   },
   {
     "class": "epo-cat:Price",
@@ -15962,19 +15962,19 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:Price: 2/10 properties found"
+    "message": "class epo-cat:Price: actual:2 expected:10 properties"
   },
   {
     "class": "epo-ful:Despatcher",
     "actual": [],
     "expected": [],
-    "message": "class epo-ful:Despatcher: 0/0 properties found"
+    "message": "class epo-ful:Despatcher: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ord:Seller",
     "actual": [],
     "expected": [],
-    "message": "class epo-ord:Seller: 0/0 properties found"
+    "message": "class epo-ord:Seller: actual:0 expected:0 properties"
   },
   {
     "class": "epo-not:PINProfileNotice",
@@ -15995,7 +15995,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINProfileNotice: 0/1 properties found"
+    "message": "class epo-not:PINProfileNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:PINOnlyNotice",
@@ -16016,7 +16016,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINOnlyNotice: 0/1 properties found"
+    "message": "class epo-not:PINOnlyNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:PINTimeLimitNotice",
@@ -16037,7 +16037,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINTimeLimitNotice: 0/1 properties found"
+    "message": "class epo-not:PINTimeLimitNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-ful:ShipmentInformation",
@@ -16214,13 +16214,13 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:ShipmentInformation: 3/7 properties found"
+    "message": "class epo-ful:ShipmentInformation: actual:3 expected:7 properties"
   },
   {
     "class": "epo:OriginatorRequest",
     "actual": [],
     "expected": [],
-    "message": "class epo:OriginatorRequest: 0/0 properties found"
+    "message": "class epo:OriginatorRequest: actual:0 expected:0 properties"
   },
   {
     "class": "epo-not:CANSocialNotice",
@@ -16241,7 +16241,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CANSocialNotice: 0/1 properties found"
+    "message": "class epo-not:CANSocialNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:DesignContestResultNotice",
@@ -16262,7 +16262,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:DesignContestResultNotice: 0/1 properties found"
+    "message": "class epo-not:DesignContestResultNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:Notice10",
@@ -16297,7 +16297,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice10: 0/2 properties found"
+    "message": "class epo-not:Notice10: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice11",
@@ -16332,7 +16332,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice11: 0/2 properties found"
+    "message": "class epo-not:Notice11: actual:0 expected:2 properties"
   },
   {
     "class": "epo-ful:TransportHandlingUnit",
@@ -16511,7 +16511,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:TransportHandlingUnit: 5/5 properties found"
+    "message": "class epo-ful:TransportHandlingUnit: actual:5 expected:5 properties"
   },
   {
     "class": "epo-not:Notice25",
@@ -16546,7 +16546,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice25: 0/2 properties found"
+    "message": "class epo-not:Notice25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice26",
@@ -16581,7 +16581,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice26: 0/2 properties found"
+    "message": "class epo-not:Notice26: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice27",
@@ -16616,7 +16616,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice27: 0/2 properties found"
+    "message": "class epo-not:Notice27: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice28",
@@ -16651,7 +16651,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice28: 0/2 properties found"
+    "message": "class epo-not:Notice28: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice29",
@@ -16686,7 +16686,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice29: 0/2 properties found"
+    "message": "class epo-not:Notice29: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice30",
@@ -16721,7 +16721,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice30: 0/2 properties found"
+    "message": "class epo-not:Notice30: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice31",
@@ -16756,7 +16756,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice31: 0/2 properties found"
+    "message": "class epo-not:Notice31: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice32",
@@ -16791,7 +16791,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice32: 0/2 properties found"
+    "message": "class epo-not:Notice32: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice33",
@@ -16826,7 +16826,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice33: 0/2 properties found"
+    "message": "class epo-not:Notice33: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice34",
@@ -16861,7 +16861,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice34: 0/2 properties found"
+    "message": "class epo-not:Notice34: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice35",
@@ -16896,7 +16896,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice35: 0/2 properties found"
+    "message": "class epo-not:Notice35: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice36",
@@ -16931,7 +16931,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice36: 0/2 properties found"
+    "message": "class epo-not:Notice36: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice37",
@@ -16966,7 +16966,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice37: 0/2 properties found"
+    "message": "class epo-not:Notice37: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice12",
@@ -17001,7 +17001,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice12: 0/2 properties found"
+    "message": "class epo-not:Notice12: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice13",
@@ -17036,7 +17036,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice13: 0/2 properties found"
+    "message": "class epo-not:Notice13: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice14",
@@ -17071,7 +17071,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice14: 0/2 properties found"
+    "message": "class epo-not:Notice14: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice15",
@@ -17106,7 +17106,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice15: 0/2 properties found"
+    "message": "class epo-not:Notice15: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice16",
@@ -17141,7 +17141,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice16: 0/2 properties found"
+    "message": "class epo-not:Notice16: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice17",
@@ -17176,7 +17176,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice17: 0/2 properties found"
+    "message": "class epo-not:Notice17: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice18",
@@ -17211,7 +17211,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice18: 0/2 properties found"
+    "message": "class epo-not:Notice18: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice19",
@@ -17246,7 +17246,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice19: 0/2 properties found"
+    "message": "class epo-not:Notice19: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice20",
@@ -17281,7 +17281,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice20: 0/2 properties found"
+    "message": "class epo-not:Notice20: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice21",
@@ -17316,7 +17316,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice21: 0/2 properties found"
+    "message": "class epo-not:Notice21: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice22",
@@ -17351,7 +17351,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice22: 0/2 properties found"
+    "message": "class epo-not:Notice22: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice23",
@@ -17386,7 +17386,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice23: 0/2 properties found"
+    "message": "class epo-not:Notice23: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice24",
@@ -17421,7 +17421,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice24: 0/2 properties found"
+    "message": "class epo-not:Notice24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice38",
@@ -17456,7 +17456,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice38: 0/2 properties found"
+    "message": "class epo-not:Notice38: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice39",
@@ -17491,7 +17491,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice39: 0/2 properties found"
+    "message": "class epo-not:Notice39: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice40",
@@ -17526,7 +17526,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice40: 0/2 properties found"
+    "message": "class epo-not:Notice40: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice1",
@@ -17561,7 +17561,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice1: 0/2 properties found"
+    "message": "class epo-not:Notice1: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice2",
@@ -17596,7 +17596,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice2: 0/2 properties found"
+    "message": "class epo-not:Notice2: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice3",
@@ -17631,7 +17631,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice3: 0/2 properties found"
+    "message": "class epo-not:Notice3: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice4",
@@ -17666,7 +17666,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice4: 0/2 properties found"
+    "message": "class epo-not:Notice4: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice5",
@@ -17701,7 +17701,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice5: 0/2 properties found"
+    "message": "class epo-not:Notice5: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice6",
@@ -17736,7 +17736,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice6: 0/2 properties found"
+    "message": "class epo-not:Notice6: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice7",
@@ -17771,7 +17771,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice7: 0/2 properties found"
+    "message": "class epo-not:Notice7: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice8",
@@ -17806,7 +17806,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice8: 0/2 properties found"
+    "message": "class epo-not:Notice8: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Notice9",
@@ -17841,7 +17841,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Notice9: 0/2 properties found"
+    "message": "class epo-not:Notice9: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:VEAT-D24",
@@ -17876,7 +17876,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:VEAT-D24: 0/2 properties found"
+    "message": "class epo-not:VEAT-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Modification-D24",
@@ -17911,7 +17911,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Modification-D24: 0/2 properties found"
+    "message": "class epo-not:Modification-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:SocialAndOtherSpecificServices-D24",
@@ -17946,7 +17946,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:SocialAndOtherSpecificServices-D24: 0/2 properties found"
+    "message": "class epo-not:SocialAndOtherSpecificServices-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PINOnly-D25",
@@ -17981,7 +17981,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINOnly-D25: 0/2 properties found"
+    "message": "class epo-not:PINOnly-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CNSocial-D25",
@@ -18016,7 +18016,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CNSocial-D25: 0/2 properties found"
+    "message": "class epo-not:CNSocial-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CANSocial-D25",
@@ -18051,7 +18051,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CANSocial-D25: 0/2 properties found"
+    "message": "class epo-not:CANSocial-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:QS-D25",
@@ -18086,7 +18086,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:QS-D25: 0/2 properties found"
+    "message": "class epo-not:QS-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PINProfile-D25",
@@ -18121,7 +18121,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINProfile-D25: 0/2 properties found"
+    "message": "class epo-not:PINProfile-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:DesignContest-D25",
@@ -18156,7 +18156,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:DesignContest-D25: 0/2 properties found"
+    "message": "class epo-not:DesignContest-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:DesignContestResult-D25",
@@ -18191,7 +18191,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:DesignContestResult-D25: 0/2 properties found"
+    "message": "class epo-not:DesignContestResult-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:VEAT-D25",
@@ -18226,13 +18226,13 @@
         "description": null
       }
     ],
-    "message": "class epo-not:VEAT-D25: 0/2 properties found"
+    "message": "class epo-not:VEAT-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:StandardForm",
     "actual": [],
     "expected": [],
-    "message": "class epo-not:StandardForm: 0/0 properties found"
+    "message": "class epo-not:StandardForm: actual:0 expected:0 properties"
   },
   {
     "class": "epo-not:eFormsNotice",
@@ -18253,55 +18253,55 @@
         "description": null
       }
     ],
-    "message": "class epo-not:eFormsNotice: 0/1 properties found"
+    "message": "class epo-not:eFormsNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo:PaymentExecutor",
     "actual": [],
     "expected": [],
-    "message": "class epo:PaymentExecutor: 0/0 properties found"
+    "message": "class epo:PaymentExecutor: actual:0 expected:0 properties"
   },
   {
     "class": "epo:BudgetProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:BudgetProvider: 0/0 properties found"
+    "message": "class epo:BudgetProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ParticipationRequestProcessor",
     "actual": [],
     "expected": [],
-    "message": "class epo:ParticipationRequestProcessor: 0/0 properties found"
+    "message": "class epo:ParticipationRequestProcessor: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ParticipationRequestReceiver",
     "actual": [],
     "expected": [],
-    "message": "class epo:ParticipationRequestReceiver: 0/0 properties found"
+    "message": "class epo:ParticipationRequestReceiver: actual:0 expected:0 properties"
   },
   {
     "class": "epo:TenderReceiver",
     "actual": [],
     "expected": [],
-    "message": "class epo:TenderReceiver: 0/0 properties found"
+    "message": "class epo:TenderReceiver: actual:0 expected:0 properties"
   },
   {
     "class": "epo:TenderProcessor",
     "actual": [],
     "expected": [],
-    "message": "class epo:TenderProcessor: 0/0 properties found"
+    "message": "class epo:TenderProcessor: actual:0 expected:0 properties"
   },
   {
     "class": "epo:OfflineAccessProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:OfflineAccessProvider: 0/0 properties found"
+    "message": "class epo:OfflineAccessProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ReviewProcedureInformationProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:ReviewProcedureInformationProvider: 0/0 properties found"
+    "message": "class epo:ReviewProcedureInformationProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ful:DespatchLine",
@@ -18405,7 +18405,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:DespatchLine: 1/5 properties found"
+    "message": "class epo-ful:DespatchLine: actual:1 expected:5 properties"
   },
   {
     "class": "epo-not:Modification-D25",
@@ -18440,7 +18440,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Modification-D25: 0/2 properties found"
+    "message": "class epo-not:Modification-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PIN-CFCSocialNotice-D25",
@@ -18475,7 +18475,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PIN-CFCSocialNotice-D25: 0/2 properties found"
+    "message": "class epo-not:PIN-CFCSocialNotice-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PIN-RTL-D24",
@@ -18510,7 +18510,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PIN-RTL-D24: 0/2 properties found"
+    "message": "class epo-not:PIN-RTL-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PIN-CFCStandard-D24",
@@ -18545,7 +18545,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PIN-CFCStandard-D24: 0/2 properties found"
+    "message": "class epo-not:PIN-CFCStandard-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PIN-RTL-D25",
@@ -18580,7 +18580,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PIN-RTL-D25: 0/2 properties found"
+    "message": "class epo-not:PIN-RTL-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PIN-CFCSocial-D25",
@@ -18615,7 +18615,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PIN-CFCSocial-D25: 0/2 properties found"
+    "message": "class epo-not:PIN-CFCSocial-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:VEAT-D23",
@@ -18650,7 +18650,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:VEAT-D23: 0/2 properties found"
+    "message": "class epo-not:VEAT-D23: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Modification-D23",
@@ -18685,7 +18685,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Modification-D23: 0/2 properties found"
+    "message": "class epo-not:Modification-D23: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:SocialAndOtherSpecificServices-D23",
@@ -18720,7 +18720,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:SocialAndOtherSpecificServices-D23: 0/2 properties found"
+    "message": "class epo-not:SocialAndOtherSpecificServices-D23: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:ConcessionNotice-D23",
@@ -18755,7 +18755,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:ConcessionNotice-D23: 0/2 properties found"
+    "message": "class epo-not:ConcessionNotice-D23: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:ConcessionAwardNotice-D23",
@@ -18790,7 +18790,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:ConcessionAwardNotice-D23: 0/2 properties found"
+    "message": "class epo-not:ConcessionAwardNotice-D23: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PINOnly-D24",
@@ -18825,7 +18825,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINOnly-D24: 0/2 properties found"
+    "message": "class epo-not:PINOnly-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CNStandard-D24",
@@ -18860,7 +18860,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CNStandard-D24: 0/2 properties found"
+    "message": "class epo-not:CNStandard-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CANStandard-D24",
@@ -18895,7 +18895,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CANStandard-D24: 0/2 properties found"
+    "message": "class epo-not:CANStandard-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PINProfile-D24",
@@ -18930,7 +18930,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINProfile-D24: 0/2 properties found"
+    "message": "class epo-not:PINProfile-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:DesignContest-D24",
@@ -18965,7 +18965,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:DesignContest-D24: 0/2 properties found"
+    "message": "class epo-not:DesignContest-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:DesignContestResult-D24",
@@ -19000,13 +19000,13 @@
         "description": null
       }
     ],
-    "message": "class epo-not:DesignContestResult-D24: 0/2 properties found"
+    "message": "class epo-not:DesignContestResult-D24: actual:0 expected:2 properties"
   },
   {
     "class": "epo:Term",
     "actual": [],
     "expected": [],
-    "message": "class epo:Term: 0/0 properties found"
+    "message": "class epo:Term: actual:0 expected:0 properties"
   },
   {
     "class": "epo:TenderAwardOutcome",
@@ -19143,7 +19143,7 @@
         "description": "Reveals the winner to whom the tender award outcome is attributed."
       }
     ],
-    "message": "class epo:TenderAwardOutcome: 3/3 properties found"
+    "message": "class epo:TenderAwardOutcome: actual:3 expected:3 properties"
   },
   {
     "class": "epo:LotAwardOutcome",
@@ -19361,7 +19361,7 @@
         "description": "The estimated value to be spent within the Framework Agreement(s).\r\n\r\nAdditional information:\r\nIn the case of an Award Decision for a Lot, this relation represents the estimated value for the awarded Framework Agreement. \r\nIn the case of a Notice, this relation represents the estimated value for all Framework Agreements covered by the Notice.\r\n"
       }
     ],
-    "message": "class epo:LotAwardOutcome: 5/5 properties found"
+    "message": "class epo:LotAwardOutcome: actual:5 expected:5 properties"
   },
   {
     "class": "epo:ReviewRequestSummary",
@@ -19489,7 +19489,7 @@
         "description": "Additional information:\r\nThis relation corresponds in eForms to   BG-613\t    Buyer Review Requests"
       }
     ],
-    "message": "class epo:ReviewRequestSummary: 3/3 properties found"
+    "message": "class epo:ReviewRequestSummary: actual:3 expected:3 properties"
   },
   {
     "class": "epo:LotGroupAwardInformation",
@@ -19586,7 +19586,7 @@
         "description": null
       }
     ],
-    "message": "class epo:LotGroupAwardInformation: 2/2 properties found"
+    "message": "class epo:LotGroupAwardInformation: actual:2 expected:2 properties"
   },
   {
     "class": "epo:NoticeAwardInformation",
@@ -19827,7 +19827,7 @@
         "description": "The highest received tender value for the procurement.\r\n\r\nAdditional Information:\r\nThis corresponds to section II.1.7.3. according to Regulation (EU) 2015/1986."
       }
     ],
-    "message": "class epo:NoticeAwardInformation: 5/7 properties found"
+    "message": "class epo:NoticeAwardInformation: actual:5 expected:7 properties"
   },
   {
     "class": "epo:ReviewDecision",
@@ -20060,13 +20060,13 @@
         "description": "States  the measures to be taken after a review procedure."
       }
     ],
-    "message": "class epo:ReviewDecision: 6/6 properties found"
+    "message": "class epo:ReviewDecision: actual:6 expected:6 properties"
   },
   {
     "class": "epo-cat:ProductSpecification",
     "actual": [],
     "expected": [],
-    "message": "class epo-cat:ProductSpecification: 0/0 properties found"
+    "message": "class epo-cat:ProductSpecification: actual:0 expected:0 properties"
   },
   {
     "class": "epo:AgentInRole",
@@ -20282,31 +20282,31 @@
         "description": null
       }
     ],
-    "message": "class epo:AgentInRole: 6/6 properties found"
+    "message": "class epo:AgentInRole: actual:6 expected:6 properties"
   },
   {
     "class": "epo:TaxInformationProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:TaxInformationProvider: 0/0 properties found"
+    "message": "class epo:TaxInformationProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo:EmploymentInformationProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:EmploymentInformationProvider: 0/0 properties found"
+    "message": "class epo:EmploymentInformationProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo:EnvironmentalProtectionInformationProvider",
     "actual": [],
     "expected": [],
-    "message": "class epo:EnvironmentalProtectionInformationProvider: 0/0 properties found"
+    "message": "class epo:EnvironmentalProtectionInformationProvider: actual:0 expected:0 properties"
   },
   {
     "class": "epo:Awarder",
     "actual": [],
     "expected": [],
-    "message": "class epo:Awarder: 0/0 properties found"
+    "message": "class epo:Awarder: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ReviewRequest",
@@ -20634,7 +20634,7 @@
         "description": "Additional information:\r\nThis relation corresponds in eForms to BT-795\t    Review Request Fee."
       }
     ],
-    "message": "class epo:ReviewRequest: 8/8 properties found"
+    "message": "class epo:ReviewRequest: actual:8 expected:8 properties"
   },
   {
     "class": "epo:SubmissionStatisticalInformation",
@@ -21533,7 +21533,7 @@
         "description": "Relates to submission for the given competition, either at Lot level or Mini-Competition level.\r\n\r\nWG approval 30/05/2023"
       }
     ],
-    "message": "class epo:SubmissionStatisticalInformation: 22/22 properties found"
+    "message": "class epo:SubmissionStatisticalInformation: actual:22 expected:22 properties"
   },
   {
     "class": "epo-not:PINProfile-D81",
@@ -21568,7 +21568,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINProfile-D81: 0/2 properties found"
+    "message": "class epo-not:PINProfile-D81: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:VEAT-D81",
@@ -21603,7 +21603,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:VEAT-D81: 0/2 properties found"
+    "message": "class epo-not:VEAT-D81: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:PINDefence-D81",
@@ -21638,7 +21638,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:PINDefence-D81: 0/2 properties found"
+    "message": "class epo-not:PINDefence-D81: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CNDefence-D81",
@@ -21673,7 +21673,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CNDefence-D81: 0/2 properties found"
+    "message": "class epo-not:CNDefence-D81: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CANDefence-D81",
@@ -21708,7 +21708,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CANDefence-D81: 0/2 properties found"
+    "message": "class epo-not:CANDefence-D81: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:Subcontract-D81",
@@ -21743,7 +21743,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:Subcontract-D81: 0/2 properties found"
+    "message": "class epo-not:Subcontract-D81: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:StandardFormsNotice",
@@ -21764,7 +21764,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:StandardFormsNotice: 0/1 properties found"
+    "message": "class epo-not:StandardFormsNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-not:SubcontractNotice",
@@ -21785,13 +21785,13 @@
         "description": null
       }
     ],
-    "message": "class epo-not:SubcontractNotice: 0/1 properties found"
+    "message": "class epo-not:SubcontractNotice: actual:0 expected:1 properties"
   },
   {
     "class": "epo-cat:ItemComposition",
     "actual": [],
     "expected": [],
-    "message": "class epo-cat:ItemComposition: 0/0 properties found"
+    "message": "class epo-cat:ItemComposition: actual:0 expected:0 properties"
   },
   {
     "class": "epo-cat:ItemProperty",
@@ -21995,7 +21995,7 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:ItemProperty: 4/5 properties found"
+    "message": "class epo-cat:ItemProperty: actual:4 expected:5 properties"
   },
   {
     "class": "epo:ProcurementObject",
@@ -22582,7 +22582,7 @@
         "description": null
       }
     ],
-    "message": "class epo:ProcurementObject: 16/16 properties found"
+    "message": "class epo:ProcurementObject: actual:16 expected:16 properties"
   },
   {
     "class": "epo-ord:OrderLine",
@@ -22631,7 +22631,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:OrderLine: 0/3 properties found"
+    "message": "class epo-ord:OrderLine: actual:0 expected:3 properties"
   },
   {
     "class": "epo-ord:AllowanceInformation",
@@ -22671,7 +22671,7 @@
         "description": "Information that is particular to one or multiple Order Lines.\r\n"
       }
     ],
-    "message": "class epo-ord:AllowanceInformation: 1/1 properties found"
+    "message": "class epo-ord:AllowanceInformation: actual:1 expected:1 properties"
   },
   {
     "class": "epo-ord:AllowanceChargeInformation",
@@ -22834,7 +22834,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:AllowanceChargeInformation: 3/6 properties found"
+    "message": "class epo-ord:AllowanceChargeInformation: actual:3 expected:6 properties"
   },
   {
     "class": "epo-cat:Manufacturer",
@@ -22855,19 +22855,19 @@
         "description": "The manufacturer's identifier for the item.\r\n"
       }
     ],
-    "message": "class epo-cat:Manufacturer: 0/1 properties found"
+    "message": "class epo-cat:Manufacturer: actual:0 expected:1 properties"
   },
   {
     "class": "epo:ContextDescription",
     "actual": [],
     "expected": [],
-    "message": "class epo:ContextDescription: 0/0 properties found"
+    "message": "class epo:ContextDescription: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ContextualProjection",
     "actual": [],
     "expected": [],
-    "message": "class epo:ContextualProjection: 0/0 properties found"
+    "message": "class epo:ContextualProjection: actual:0 expected:0 properties"
   },
   {
     "class": "epo-cat:Batch",
@@ -23057,7 +23057,7 @@
         "description": "The identifier assigned to a specific batch of the produced Item.\r\nWG Approval 16/05/2023\r\n"
       }
     ],
-    "message": "class epo-cat:Batch: 4/5 properties found"
+    "message": "class epo-cat:Batch: actual:4 expected:5 properties"
   },
   {
     "class": "epo-cat:Brand",
@@ -23112,7 +23112,7 @@
         "description": "A name given to the resource.\r\n\r\nWG approval 30/05/2023\r\n"
       }
     ],
-    "message": "class epo-cat:Brand: 1/1 properties found"
+    "message": "class epo-cat:Brand: actual:1 expected:1 properties"
   },
   {
     "class": "epo-cat:ItemModel",
@@ -23167,7 +23167,7 @@
         "description": "A name given to the resource.\r\n\r\nWG approval 30/05/2023"
       }
     ],
-    "message": "class epo-cat:ItemModel: 1/1 properties found"
+    "message": "class epo-cat:ItemModel: actual:1 expected:1 properties"
   },
   {
     "class": "epo-not:QSNotice-D25",
@@ -23202,7 +23202,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:QSNotice-D25: 0/2 properties found"
+    "message": "class epo-not:QSNotice-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CNSocialNotice-D25",
@@ -23237,7 +23237,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CNSocialNotice-D25: 0/2 properties found"
+    "message": "class epo-not:CNSocialNotice-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-not:CANSocialNotice-D25",
@@ -23272,7 +23272,7 @@
         "description": null
       }
     ],
-    "message": "class epo-not:CANSocialNotice-D25: 0/2 properties found"
+    "message": "class epo-not:CANSocialNotice-D25: actual:0 expected:2 properties"
   },
   {
     "class": "epo-acc:ESPDRequest",
@@ -23318,7 +23318,7 @@
         "description": "Relates to Procedure.\r\n\r\nWG approval 05/03/2024\r\n"
       }
     ],
-    "message": "class epo-acc:ESPDRequest: 0/3 properties found"
+    "message": "class epo-acc:ESPDRequest: actual:0 expected:3 properties"
   },
   {
     "class": "epo:ChangeInformation",
@@ -23694,7 +23694,7 @@
         "description": "Code explaining the change.\r\n\r\nWG Approval 5/11/2019\r\n"
       }
     ],
-    "message": "class epo:ChangeInformation: 9/9 properties found"
+    "message": "class epo:ChangeInformation: actual:9 expected:9 properties"
   },
   {
     "class": "epo:ReviewObject",
@@ -23815,7 +23815,7 @@
         "description": "Additional information:\r\nThis relation corresponds in eForms to BT-785 \"Review Previous Identifier\"."
       }
     ],
-    "message": "class epo:ReviewObject: 3/3 properties found"
+    "message": "class epo:ReviewObject: actual:3 expected:3 properties"
   },
   {
     "class": "epo:ReviewIrregularitySummary",
@@ -23918,7 +23918,7 @@
         "description": "Additional information:\r\nThis relation corresponds in eForms to    BT-636\t        Buyer Review Requests Irregularity Type"
       }
     ],
-    "message": "class epo:ReviewIrregularitySummary: 2/2 properties found"
+    "message": "class epo:ReviewIrregularitySummary: actual:2 expected:2 properties"
   },
   {
     "class": "epo-ful:ReceiptAdvice",
@@ -24143,7 +24143,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:ReceiptAdvice: 4/8 properties found"
+    "message": "class epo-ful:ReceiptAdvice: actual:4 expected:8 properties"
   },
   {
     "class": "epo-ful:ReceiptAdviceLine",
@@ -24360,13 +24360,13 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:ReceiptAdviceLine: 4/8 properties found"
+    "message": "class epo-ful:ReceiptAdviceLine: actual:4 expected:8 properties"
   },
   {
     "class": "epo-cat:ItemReplacement",
     "actual": [],
     "expected": [],
-    "message": "class epo-cat:ItemReplacement: 0/0 properties found"
+    "message": "class epo-cat:ItemReplacement: actual:0 expected:0 properties"
   },
   {
     "class": "epo-sub:NationalPreQualificationData",
@@ -24468,7 +24468,7 @@
         "description": "The identifier assigned to an economic operator in a national pre-qualification system or official list.\r\n\r\nWG approval 05/03/2024"
       }
     ],
-    "message": "class epo-sub:NationalPreQualificationData: 1/5 properties found"
+    "message": "class epo-sub:NationalPreQualificationData: actual:1 expected:5 properties"
   },
   {
     "class": "epo-sub:Response",
@@ -24557,7 +24557,7 @@
         "description": "Relation indicating the period to which the Response shall apply.\r\n\r\nWG approval 12/03/2024"
       }
     ],
-    "message": "class epo-sub:Response: 1/5 properties found"
+    "message": "class epo-sub:Response: actual:1 expected:5 properties"
   },
   {
     "class": "epo-cat:CatalogueResponse",
@@ -24721,7 +24721,7 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:CatalogueResponse: 3/5 properties found"
+    "message": "class epo-cat:CatalogueResponse: actual:3 expected:5 properties"
   },
   {
     "class": "epo-cat:CatalogueResponseLine",
@@ -24791,7 +24791,7 @@
         "description": "A universally unique identifier for an instance of this document.\r\n\r\nWG Approval 12/05/2020\r\n"
       }
     ],
-    "message": "class epo-cat:CatalogueResponseLine: 1/2 properties found"
+    "message": "class epo-cat:CatalogueResponseLine: actual:1 expected:2 properties"
   },
   {
     "class": "epo-cat:CatalogueResponseInformation",
@@ -24854,19 +24854,19 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:CatalogueResponseInformation: 1/2 properties found"
+    "message": "class epo-cat:CatalogueResponseInformation: actual:1 expected:2 properties"
   },
   {
     "class": "epo:ContractSpecificTerm",
     "actual": [],
     "expected": [],
-    "message": "class epo:ContractSpecificTerm: 0/0 properties found"
+    "message": "class epo:ContractSpecificTerm: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ConcessionContract",
     "actual": [],
     "expected": [],
-    "message": "class epo:ConcessionContract: 0/0 properties found"
+    "message": "class epo:ConcessionContract: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ProcessPlanningTerm",
@@ -24994,7 +24994,7 @@
         "description": "Foreseen date for publication of Contract Notice.\r\n\r\nAdditional information:\r\nThis corresponds in eForms BT-127\t    Future Notice.\r\n\r\n"
       }
     ],
-    "message": "class epo:ProcessPlanningTerm: 3/3 properties found"
+    "message": "class epo:ProcessPlanningTerm: actual:3 expected:3 properties"
   },
   {
     "class": "epo-cat:ItemRelation",
@@ -25090,19 +25090,19 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:ItemRelation: 2/2 properties found"
+    "message": "class epo-cat:ItemRelation: actual:2 expected:2 properties"
   },
   {
     "class": "epo-cat:ItemAccessoryRelation",
     "actual": [],
     "expected": [],
-    "message": "class epo-cat:ItemAccessoryRelation: 0/0 properties found"
+    "message": "class epo-cat:ItemAccessoryRelation: actual:0 expected:0 properties"
   },
   {
     "class": "epo-cat:ItemComplementaryRelation",
     "actual": [],
     "expected": [],
-    "message": "class epo-cat:ItemComplementaryRelation: 0/0 properties found"
+    "message": "class epo-cat:ItemComplementaryRelation: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ProcurementProcessInformation",
@@ -25312,7 +25312,7 @@
         "description": "Relates to Procedure."
       }
     ],
-    "message": "class epo:ProcurementProcessInformation: 5/5 properties found"
+    "message": "class epo:ProcurementProcessInformation: actual:5 expected:5 properties"
   },
   {
     "class": "epo:CertificationLabel",
@@ -25395,13 +25395,13 @@
         "description": "The label type such environmental, quality, social etc."
       }
     ],
-    "message": "class epo:CertificationLabel: 2/2 properties found"
+    "message": "class epo:CertificationLabel: actual:2 expected:2 properties"
   },
   {
     "class": "epo:Certifier",
     "actual": [],
     "expected": [],
-    "message": "class epo:Certifier: 0/0 properties found"
+    "message": "class epo:Certifier: actual:0 expected:0 properties"
   },
   {
     "class": "epo:Certificate",
@@ -25531,7 +25531,7 @@
         "description": "Relation indicating the Certifier responsible for providing the ItemCertificate.\r\n\r\nAdditional Information:\r\nCertifier is a role played by an organisation.\r\n\r\nWG approval 26/07/2022"
       }
     ],
-    "message": "class epo:Certificate: 3/3 properties found"
+    "message": "class epo:Certificate: actual:3 expected:3 properties"
   },
   {
     "class": "epo-cat:ChargeInformation",
@@ -25550,7 +25550,7 @@
         "description": "Information that is particular to one or multiple Order Lines.\r\n"
       }
     ],
-    "message": "class epo-cat:ChargeInformation: 0/1 properties found"
+    "message": "class epo-cat:ChargeInformation: actual:0 expected:1 properties"
   },
   {
     "class": "epo-ord:DeliveryInformation",
@@ -25827,25 +25827,25 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:DeliveryInformation: 6/9 properties found"
+    "message": "class epo-ord:DeliveryInformation: actual:6 expected:9 properties"
   },
   {
     "class": "epo:AcquiringParty",
     "actual": [],
     "expected": [],
-    "message": "class epo:AcquiringParty: 0/0 properties found"
+    "message": "class epo:AcquiringParty: actual:0 expected:0 properties"
   },
   {
     "class": "epo:AuxiliaryParty",
     "actual": [],
     "expected": [],
-    "message": "class epo:AuxiliaryParty: 0/0 properties found"
+    "message": "class epo:AuxiliaryParty: actual:0 expected:0 properties"
   },
   {
     "class": "epo:OtherEntity",
     "actual": [],
     "expected": [],
-    "message": "class epo:OtherEntity: 0/0 properties found"
+    "message": "class epo:OtherEntity: actual:0 expected:0 properties"
   },
   {
     "class": "epo:SpecificDuration",
@@ -25948,13 +25948,13 @@
         "description": null
       }
     ],
-    "message": "class epo:SpecificDuration: 2/2 properties found"
+    "message": "class epo:SpecificDuration: actual:2 expected:2 properties"
   },
   {
     "class": "epo:IndefiniteDuration",
     "actual": [],
     "expected": [],
-    "message": "class epo:IndefiniteDuration: 0/0 properties found"
+    "message": "class epo:IndefiniteDuration: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ord:OrderResponseLine",
@@ -26002,7 +26002,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:OrderResponseLine: 1/1 properties found"
+    "message": "class epo-ord:OrderResponseLine: actual:1 expected:1 properties"
   },
   {
     "class": "epo:ProcurementElement",
@@ -26227,13 +26227,13 @@
         "description": null
       }
     ],
-    "message": "class epo:ProcurementElement: 6/6 properties found"
+    "message": "class epo:ProcurementElement: actual:6 expected:6 properties"
   },
   {
     "class": "epo:LeadBuyer",
     "actual": [],
     "expected": [],
-    "message": "class epo:LeadBuyer: 0/0 properties found"
+    "message": "class epo:LeadBuyer: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ord:ContractInformation",
@@ -26287,7 +26287,7 @@
         "description": "Information that is particular to one or multiple Order Lines."
       }
     ],
-    "message": "class epo-ord:ContractInformation: 1/2 properties found"
+    "message": "class epo-ord:ContractInformation: actual:1 expected:2 properties"
   },
   {
     "class": "epo-ord:OriginatorInformation",
@@ -26389,7 +26389,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:OriginatorInformation: 2/3 properties found"
+    "message": "class epo-ord:OriginatorInformation: actual:2 expected:3 properties"
   },
   {
     "class": "epo-ord:DeliveryAgreement",
@@ -26443,7 +26443,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:DeliveryAgreement: 1/2 properties found"
+    "message": "class epo-ord:DeliveryAgreement: actual:1 expected:2 properties"
   },
   {
     "class": "epo:DirectContract",
@@ -26483,13 +26483,13 @@
         "description": null
       }
     ],
-    "message": "class epo:DirectContract: 1/1 properties found"
+    "message": "class epo:DirectContract: actual:1 expected:1 properties"
   },
   {
     "class": "epo:AwardCriteriaSummary",
     "actual": [],
     "expected": [],
-    "message": "class epo:AwardCriteriaSummary: 0/0 properties found"
+    "message": "class epo:AwardCriteriaSummary: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ful:Consignment",
@@ -27237,19 +27237,19 @@
         "description": "Declared amount of the Consignment.\r\n\r\nAdditional Information:\r\n\r\nThis is a logistics information needed for logistics, security measures, customs check, etc."
       }
     ],
-    "message": "class epo-ful:Consignment: 15/30 properties found"
+    "message": "class epo-ful:Consignment: actual:15 expected:30 properties"
   },
   {
     "class": "epo-ful:FreightForwarder",
     "actual": [],
     "expected": [],
-    "message": "class epo-ful:FreightForwarder: 0/0 properties found"
+    "message": "class epo-ful:FreightForwarder: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ful:Notifier",
     "actual": [],
     "expected": [],
-    "message": "class epo-ful:Notifier: 0/0 properties found"
+    "message": "class epo-ful:Notifier: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ful:TransportEquipment",
@@ -27507,7 +27507,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:TransportEquipment: 7/8 properties found"
+    "message": "class epo-ful:TransportEquipment: actual:7 expected:8 properties"
   },
   {
     "class": "epo-ful:Package",
@@ -27662,7 +27662,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:Package: 4/4 properties found"
+    "message": "class epo-ful:Package: actual:4 expected:4 properties"
   },
   {
     "class": "epo-ful:ShipmentStage",
@@ -27869,7 +27869,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:ShipmentStage: 5/6 properties found"
+    "message": "class epo-ful:ShipmentStage: actual:5 expected:6 properties"
   },
   {
     "class": "epo-ful:TransportMeans",
@@ -28022,7 +28022,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:TransportMeans: 3/5 properties found"
+    "message": "class epo-ful:TransportMeans: actual:3 expected:5 properties"
   },
   {
     "class": "epo-ful:TransportEquipmentSeal",
@@ -28043,7 +28043,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:TransportEquipmentSeal: 0/1 properties found"
+    "message": "class epo-ful:TransportEquipmentSeal: actual:0 expected:1 properties"
   },
   {
     "class": "epo-ful:ShipmentAgreement",
@@ -28076,7 +28076,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:ShipmentAgreement: 0/2 properties found"
+    "message": "class epo-ful:ShipmentAgreement: actual:0 expected:2 properties"
   },
   {
     "class": "epo:OfferIssuer",
@@ -28116,7 +28116,7 @@
         "description": null
       }
     ],
-    "message": "class epo:OfferIssuer: 1/1 properties found"
+    "message": "class epo:OfferIssuer: actual:1 expected:1 properties"
   },
   {
     "class": "epo-cat:Line",
@@ -28226,7 +28226,7 @@
         "description": "Links a resource to an adms:Identifier class."
       }
     ],
-    "message": "class epo-cat:Line: 2/3 properties found"
+    "message": "class epo-cat:Line: actual:2 expected:3 properties"
   },
   {
     "class": "epo-cat:InformationHub",
@@ -28266,7 +28266,7 @@
         "description": null
       }
     ],
-    "message": "class epo-cat:InformationHub: 1/1 properties found"
+    "message": "class epo-cat:InformationHub: actual:1 expected:1 properties"
   },
   {
     "class": "epo:ParticipationCondition",
@@ -28306,7 +28306,7 @@
         "description": "Explanation as to whether a procurement may be reserved for the participation of certain types of organisation.\r\n\r\nAdditional information:\r\nThis property corresponds in eForms to the BT-71\r\nWG Approval 09/11/2021\r\n"
       }
     ],
-    "message": "class epo:ParticipationCondition: 1/1 properties found"
+    "message": "class epo:ParticipationCondition: actual:1 expected:1 properties"
   },
   {
     "class": "epo:ProcurementCriteriaSummary",
@@ -28354,7 +28354,7 @@
         "description": null
       }
     ],
-    "message": "class epo:ProcurementCriteriaSummary: 1/1 properties found"
+    "message": "class epo:ProcurementCriteriaSummary: actual:1 expected:1 properties"
   },
   {
     "class": "epo:ParticipationConditionsSummary",
@@ -28474,13 +28474,13 @@
         "description": "Explanation as to whether a procurement may be reserved for the participation of certain types of organisation.\r\n\r\nAdditional information:\r\nThis property corresponds in eForms to the BT-71\r\nWG Approval 09/11/2021\r\n"
       }
     ],
-    "message": "class epo:ParticipationConditionsSummary: 3/3 properties found"
+    "message": "class epo:ParticipationConditionsSummary: actual:3 expected:3 properties"
   },
   {
     "class": "epo:ExclusionGroundsSummary",
     "actual": [],
     "expected": [],
-    "message": "class epo:ExclusionGroundsSummary: 0/0 properties found"
+    "message": "class epo:ExclusionGroundsSummary: actual:0 expected:0 properties"
   },
   {
     "class": "epo:SelectionCriteriaSummary",
@@ -28568,7 +28568,7 @@
         "description": null
       }
     ],
-    "message": "class epo:SelectionCriteriaSummary: 2/2 properties found"
+    "message": "class epo:SelectionCriteriaSummary: actual:2 expected:2 properties"
   },
   {
     "class": "epo-ful:GoodsItem",
@@ -28650,7 +28650,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:GoodsItem: 1/3 properties found"
+    "message": "class epo-ful:GoodsItem: actual:1 expected:3 properties"
   },
   {
     "class": "epo-ord:TaxInformation",
@@ -28794,13 +28794,13 @@
         "description": "The monetary amount to which the multiplier factor is applied in calculating the amount of this allowance or charge."
       }
     ],
-    "message": "class epo-ord:TaxInformation: 2/6 properties found"
+    "message": "class epo-ord:TaxInformation: actual:2 expected:6 properties"
   },
   {
     "class": "epo:Candidate",
     "actual": [],
     "expected": [],
-    "message": "class epo:Candidate: 0/0 properties found"
+    "message": "class epo:Candidate: actual:0 expected:0 properties"
   },
   {
     "class": "epo-ful:TransportMeansOperator",
@@ -28821,7 +28821,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:TransportMeansOperator: 0/1 properties found"
+    "message": "class epo-ful:TransportMeansOperator: actual:0 expected:1 properties"
   },
   {
     "class": "epo-ful:AbstractContainer",
@@ -29076,7 +29076,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:AbstractContainer: 3/12 properties found"
+    "message": "class epo-ful:AbstractContainer: actual:3 expected:12 properties"
   },
   {
     "class": "epo-ful:TemperatureSpecification",
@@ -29152,7 +29152,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ful:TemperatureSpecification: 1/3 properties found"
+    "message": "class epo-ful:TemperatureSpecification: actual:1 expected:3 properties"
   },
   {
     "class": "epo:Project",
@@ -29201,7 +29201,7 @@
         "description": "A unique identifier of the instance of the concept.\r\n\r\nAdditional Information\r\n\r\nFor example, in the case of the Procurement Identifier, this could be the European Public Procurement Identifier, and/or any other identifier provided by the buyer, the service provider or any other stakeholder.\r\n\r\nWG Approval 12/11/2019\r\n\r\n"
       }
     ],
-    "message": "class epo:Project: 1/1 properties found"
+    "message": "class epo:Project: actual:1 expected:1 properties"
   },
   {
     "class": "epo:SelectedCandidateList",
@@ -29282,7 +29282,7 @@
         "description": null
       }
     ],
-    "message": "class epo:SelectedCandidateList: 2/2 properties found"
+    "message": "class epo:SelectedCandidateList: actual:2 expected:2 properties"
   },
   {
     "class": "epo:MiniCompetitionAwardOutcome",
@@ -29331,7 +29331,7 @@
         "description": null
       }
     ],
-    "message": "class epo:MiniCompetitionAwardOutcome: 1/1 properties found"
+    "message": "class epo:MiniCompetitionAwardOutcome: actual:1 expected:1 properties"
   },
   {
     "class": "epo:ElectronicSignature",
@@ -29386,13 +29386,13 @@
         "description": "An account of the resource.\r\n\r\nAdditional Information:\r\nDescription may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.\r\n\r\nWG Approval 30/05/2023"
       }
     ],
-    "message": "class epo:ElectronicSignature: 1/1 properties found"
+    "message": "class epo:ElectronicSignature: actual:1 expected:1 properties"
   },
   {
     "class": "epo:AdHocChannel",
     "actual": [],
     "expected": [],
-    "message": "class epo:AdHocChannel: 0/0 properties found"
+    "message": "class epo:AdHocChannel: actual:0 expected:0 properties"
   },
   {
     "class": "epo-con:Deliverable",
@@ -29427,7 +29427,7 @@
         "description": null
       }
     ],
-    "message": "class epo-con:Deliverable: 0/2 properties found"
+    "message": "class epo-con:Deliverable: actual:0 expected:2 properties"
   },
   {
     "class": "epo-ord:Order",
@@ -29980,7 +29980,7 @@
         "description": null
       }
     ],
-    "message": "class epo-ord:Order: 9/23 properties found"
+    "message": "class epo-ord:Order: actual:9 expected:23 properties"
   },
   {
     "class": "epo-sub:LegalRepresentative",
@@ -30075,19 +30075,19 @@
         "description": "Relation indicating that a Legal Representative has a Mandate.\r\n\r\nWG approval 12/03/2024"
       }
     ],
-    "message": "class epo-sub:LegalRepresentative: 2/3 properties found"
+    "message": "class epo-sub:LegalRepresentative: actual:2 expected:3 properties"
   },
   {
     "class": "epo-sub:Mandate",
     "actual": [],
     "expected": [],
-    "message": "class epo-sub:Mandate: 0/0 properties found"
+    "message": "class epo-sub:Mandate: actual:0 expected:0 properties"
   },
   {
     "class": "epo-sub:PowerOfAttorney",
     "actual": [],
     "expected": [],
-    "message": "class epo-sub:PowerOfAttorney: 0/0 properties found"
+    "message": "class epo-sub:PowerOfAttorney: actual:0 expected:0 properties"
   },
   {
     "class": "epo:ProfessionalSuitabilitySummary",
@@ -30215,19 +30215,19 @@
         "description": null
       }
     ],
-    "message": "class epo:ProfessionalSuitabilitySummary: 3/3 properties found"
+    "message": "class epo:ProfessionalSuitabilitySummary: actual:3 expected:3 properties"
   },
   {
     "class": "epo:EconomicStandingSummary",
     "actual": [],
     "expected": [],
-    "message": "class epo:EconomicStandingSummary: 0/0 properties found"
+    "message": "class epo:EconomicStandingSummary: actual:0 expected:0 properties"
   },
   {
     "class": "epo:TechnicalAbilitySummary",
     "actual": [],
     "expected": [],
-    "message": "class epo:TechnicalAbilitySummary: 0/0 properties found"
+    "message": "class epo:TechnicalAbilitySummary: actual:0 expected:0 properties"
   },
   {
     "class": "epo:QualificationCriteriaSummary",
@@ -30299,7 +30299,7 @@
         "description": null
       }
     ],
-    "message": "class epo:QualificationCriteriaSummary: 2/2 properties found"
+    "message": "class epo:QualificationCriteriaSummary: actual:2 expected:2 properties"
   },
   {
     "class": "epo:QualificationCriterion",
@@ -30339,7 +30339,7 @@
         "description": "Relation indicating that a Criterion contains a Criterion that is specific to a given Member State.\r\n\r\nAdditional Information:\r\nIn the ESPD, a Subcriterion is used to define national sub-criteria; maps to a UBL-2.3 cac:SubTenderingCriterion class. It is currently used only for purely national criteria, to be able to establish the mapping from eCertis.\r\n\r\nWG approval 07/11/2023\r\n\r\n"
       }
     ],
-    "message": "class epo:QualificationCriterion: 1/1 properties found"
+    "message": "class epo:QualificationCriterion: actual:1 expected:1 properties"
   },
   {
     "class": "epo-sub:CertificateInformation",
@@ -30441,6 +30441,6 @@
         "description": "Relation indicating the Certificate that the information refers to.\r\n\r\nWG approval 12/03/2024 "
       }
     ],
-    "message": "class epo-sub:CertificateInformation: 2/3 properties found"
+    "message": "class epo-sub:CertificateInformation: actual:2 expected:3 properties"
   }
 ]

@@ -81,7 +81,7 @@ function printSummary () {
         {
           class: name,
           actual, expected,
-          message: `class ${name}: ${actual.length}/${expected.length} properties found`,
+          message: `class ${name}: actual:${actual.length} expected:${expected.length} properties`,
         },
       )
     }
@@ -99,9 +99,9 @@ function printSummary () {
 }
 
 const result = printSummary()
-writeFileSync('outputs/missingPropsSummary.json',
+writeFileSync('outputs/missing/missingPropsSummary.json',
   JSON.stringify(result, null, 2))
-writeFileSync('outputs/missingPropsSummaryCounts.md',result.map(x => x.message).join('\n'))
+writeFileSync('outputs/missing/missingPropsSummaryCounts.md',result.map(x => x.message).join('\n* '))
 // showDifference('epo-sub:ESPDResponse')
 
 // 150 Classes contain less properties than expected
