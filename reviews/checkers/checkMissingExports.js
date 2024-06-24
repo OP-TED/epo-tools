@@ -1,3 +1,4 @@
+import { writeFileSync } from 'fs'
 import { UNDER_REVIEW } from '../../src/config.js'
 import { getEpoJson } from '../../src/epo/readEpo.js'
 import { getRdfAssets } from '../../src/io/assets.js'
@@ -50,31 +51,6 @@ function queryBoth (name) {
   return { actual, expected }
 }
 
-function printSummary () {
-  const result = []
-  for (const { name } of nodes) {
-    if (name.startsWith('epo')) {
-
-      const { actual, expected } = queryBoth(name)
-      result.push(
-        {
-          class: name,
-          actual, expected,
-          message: `class ${name}: ${actual.length}/${expected.length} properties found`,
-        },
-      )
-    }
-  }
-  const withProblems = result.filter(x => x.actual.length < x.expected.length)
-  console.log(withProblems.length,
-    'Classes contain less properties than expected')
-
-  const delta = result.reduce(
-    (accumulator, x) => accumulator + x.expected.length - x.actual.length, 0)
-  console.log('total', delta, 'properties missing')
-  console.log(result.length, 'classes inspected')
-}
-
 function showDifference (name) {
   const { actual, expected } = queryBoth(name)
 
@@ -95,8 +71,38 @@ function showDifference (name) {
 
 }
 
-// printSummary()
-showDifference('epo-sub:ESPDResponse')
+function printSummary () {
+  const result = []
+  for (const { name } of nodes) {
+    if (name.startsWith('epo')) {
+
+      const { actual, expected } = queryBoth(name)
+      result.push(
+        {
+          class: name,
+          actual, expected,
+          message: `class ${name}: ${actual.length}/${expected.length} properties found`,
+        },
+      )
+    }
+  }
+  const withProblems = result.filter(x => x.actual.length < x.expected.length)
+  console.log(result.length, 'classes inspected')
+
+  console.log(withProblems.length,
+    'Classes contain less properties than expected')
+
+  const delta = result.reduce(
+    (accumulator, x) => accumulator + x.expected.length - x.actual.length, 0)
+  console.log('total', delta, 'properties missing')
+  return result
+}
+
+const result = printSummary()
+writeFileSync('outputs/missingPropsSummary.json',
+  JSON.stringify(result, null, 2))
+writeFileSync('outputs/missingPropsSummaryCounts.md',result.map(x => x.message).join('\n'))
+// showDifference('epo-sub:ESPDResponse')
 
 // 150 Classes contain less properties than expected
 // There is a mismatch of 369 properties
