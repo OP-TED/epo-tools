@@ -1,6 +1,9 @@
 
 # Model2owl
 
+
+## Model
+
 ```json
 {
   "owner": "OP-TED",
@@ -10,6 +13,15 @@
   "databasePath": "assets/ePO/master/analysis_and_design/conceptual_model/ePO_CM.eap"
 }
 ```
+
+## Files
+
+- assets/ePO/v4.0.2/implementation/ePO_core/shacl_shapes/ePO_core_shapes.ttl
+- assets/ePO/v4.0.2/implementation/eOrdering/shacl_shapes/eOrdering_shapes.ttl
+- assets/ePO/v4.0.2/implementation/eNotice/shacl_shapes/eNotice_shapes.ttl
+- assets/ePO/v4.0.2/implementation/eFulfilment/shacl_shapes/eFulfilment_shapes.ttl
+- assets/ePO/v4.0.2/implementation/eContract/shacl_shapes/eContract_shapes.ttl
+- assets/ePO/v4.0.2/implementation/eCatalogue/shacl_shapes/eCatalogue_shapes.ttl
 
 ## SHACL - Property shapes per class
 
@@ -323,4 +335,4 @@
 |epo:QualificationCriteriaSummary|2|2|
 |epo:QualificationCriterion|0|0|
 
-
+[source](../../reviews/checkers/checkMissingExports.js) 2024-06-25T17:31:06.706Z

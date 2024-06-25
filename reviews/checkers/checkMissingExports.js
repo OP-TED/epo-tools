@@ -72,7 +72,7 @@ function showDifference (name) {
 
 }
 
-function printSummary () {
+function getSummary () {
   const result = []
   for (const { name } of nodes) {
     if (name.startsWith('epo')) {
@@ -95,7 +95,7 @@ function printSummary () {
   return result
 }
 
-const result = printSummary()
+const result = getSummary()
 writeFileSync('outputs/missing/details.json',
   JSON.stringify(result, null, 2))
 
@@ -103,14 +103,22 @@ const row = ({
   className,
   actual,
   expected,
-}) => `|${className}|${actual.length}|${expected.length}|${actual.length!==expected.length?'X':''}`
+}) => `|${className}|${actual.length}|${expected.length}|${actual.length !==
+expected.length ? 'X' : ''}`
 
 const summary = `
 # Model2owl
 
+
+## Model
+
 \`\`\`json
 ${JSON.stringify(MODEL, null, 2)}
 \`\`\`
+
+## Files
+
+- ${assets.map(x => x.path).join('\n- ')}
 
 ## SHACL - Property shapes per class
 
@@ -122,7 +130,7 @@ ${JSON.stringify(MODEL, null, 2)}
 |-------|--------|----------|--------|
 ${result.map(row).join('\n')}
 
-
+[source](../../reviews/checkers/checkMissingExports.js) ${new Date().toISOString()}
 `
 
 writeFileSync('outputs/missing/missingPropsSummaryCounts.md', summary)
