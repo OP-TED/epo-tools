@@ -1,317 +1,326 @@
-class epo:RequestForClarification: actual:0 expected:0 properties
-* class epo-sub:ESPDResponse: actual:2 expected:6 properties
-* class epo:ExpressionOfInterest: actual:0 expected:0 properties
-* class epo:RequestForParticipation: actual:0 expected:0 properties
-* class epo:Estimate: actual:0 expected:0 properties
-* class epo:SubcontractingEstimate: actual:4 expected:4 properties
-* class epo:ConcessionEstimate: actual:4 expected:4 properties
-* class epo-ord:Originator: actual:0 expected:0 properties
-* class epo-ful:Carrier: actual:0 expected:0 properties
-* class epo-ord:OrderResponse: actual:5 expected:7 properties
-* class epo:AwardOutcome: actual:5 expected:5 properties
-* class epo:AccessTerm: actual:11 expected:11 properties
-* class epo:AwardCriterion: actual:4 expected:4 properties
-* class epo:AwardDecision: actual:3 expected:3 properties
-* class epo:Business: actual:3 expected:3 properties
-* class epo:Buyer: actual:7 expected:7 properties
-* class epo:LotSpecificTerm: actual:0 expected:0 properties
-* class epo:CentralPurchasingBody: actual:0 expected:0 properties
-* class epo:Contract: actual:13 expected:15 properties
-* class epo:Contractor: actual:1 expected:1 properties
-* class epo:ContractTerm: actual:22 expected:22 properties
-* class epo:DesignContestRegimeTerm: actual:6 expected:6 properties
-* class epo:DirectAwardTerm: actual:4 expected:4 properties
-* class epo:Document: actual:16 expected:16 properties
-* class epo:DynamicPurchaseSystemTechnique: actual:1 expected:1 properties
-* class epo:EAuctionTechnique: actual:0 expected:0 properties
-* class epo:OfferingParty: actual:0 expected:0 properties
-* class epo:AcquiringCentralPurchasingBody: actual:0 expected:0 properties
-* class epo:ReviewRequester: actual:0 expected:0 properties
-* class epo-ful:DespatchAdvice: actual:7 expected:11 properties
-* class epo-not:PreMarketConsultationNotice: actual:0 expected:1 properties
-* class epo:EvaluationTerm: actual:0 expected:0 properties
-* class epo:ExclusionGround: actual:0 expected:0 properties
-* class epo:FrameworkAgreement: actual:1 expected:1 properties
-* class epo:FrameworkAgreementTechnique: actual:0 expected:0 properties
-* class epo:FrameworkAgreementTerm: actual:4 expected:4 properties
-* class epo:Fund: actual:5 expected:5 properties
-* class epo:GreenProcurement: actual:3 expected:3 properties
-* class epo:CatalogueReceiver: actual:0 expected:0 properties
-* class epo:CatalogueProvider: actual:0 expected:0 properties
-* class epo:AwardingCentralPurchasingBody: actual:0 expected:0 properties
-* class epo:ContractLotCompletionInformation: actual:5 expected:5 properties
-* class epo:InnovativeProcurement: actual:1 expected:1 properties
-* class epo:Lot: actual:2 expected:2 properties
-* class epo:LotGroup: actual:8 expected:8 properties
-* class epo:Mediator: actual:0 expected:0 properties
-* class epo:MultipleStageProcedureTerm: actual:8 expected:8 properties
-* class epo:Notice: actual:14 expected:14 properties
-* class epo:OpeningTerm: actual:4 expected:4 properties
-* class epo:OrganisationGroup: actual:3 expected:3 properties
-* class epo:VehicleInformation: actual:6 expected:6 properties
-* class epo:NonPublishedInformation: actual:5 expected:5 properties
-* class epo-con:ContractModificationInformation: actual:3 expected:5 properties
-* class epo-con:ContractAmendment: actual:0 expected:2 properties
-* class epo:Period: actual:3 expected:3 properties
-* class epo:PlannedProcurementPart: actual:4 expected:4 properties
-* class epo:SelectionEvaluationTerm: actual:0 expected:0 properties
-* class epo:AwardEvaluationTerm: actual:5 expected:5 properties
-* class epo:ReviewTerm: actual:5 expected:5 properties
-* class epo-ord:OrderResponseInformation: actual:2 expected:3 properties
-* class epo-cat:PostAwardDocument: actual:1 expected:2 properties
-* class epo:Prize: actual:2 expected:2 properties
-* class epo:Procedure: actual:12 expected:12 properties
-* class epo-cat:Catalogue: actual:3 expected:9 properties
-* class epo:ParticipationRequestTerm: actual:2 expected:2 properties
-* class epo-not:VoluntaryEx-AnteTransparencyNotice: actual:0 expected:1 properties
-* class epo-not:PIN-CFCStandardNotice: actual:0 expected:1 properties
-* class epo-not:PIN-CFCSocialNotice: actual:0 expected:1 properties
-* class epo-not:QSNotice: actual:0 expected:1 properties
-* class epo-not:CNStandardNotice: actual:0 expected:1 properties
-* class epo-not:CNSocialNotice: actual:0 expected:1 properties
-* class epo-not:DesignContestNotice: actual:0 expected:1 properties
-* class epo-not:CANStandardNotice: actual:0 expected:1 properties
-* class epo:ProcedureTerm: actual:13 expected:13 properties
-* class epo:ProcurementCriterion: actual:5 expected:5 properties
-* class epo:TenderGroup: actual:6 expected:6 properties
-* class epo:Duration: actual:0 expected:0 properties
-* class epo-ord:Consignee: actual:0 expected:0 properties
-* class epo:ProcurementDocument: actual:0 expected:0 properties
-* class epo:ProcurementServiceProvider: actual:1 expected:1 properties
-* class epo-cat:CatalogueLine: actual:12 expected:16 properties
-* class epo:ProcedureSpecificTerm: actual:0 expected:0 properties
-* class epo-cat:ItemRequirement: actual:0 expected:0 properties
-* class epo:NonDisclosureAgreementTerm: actual:2 expected:2 properties
-* class epo:PurchaseContract: actual:2 expected:2 properties
-* class epo:Purpose: actual:3 expected:3 properties
-* class epo:Reviewer: actual:1 expected:1 properties
-* class epo:Offer: actual:0 expected:0 properties
-* class epo:SecurityClearanceTerm: actual:3 expected:3 properties
-* class epo:SelectionCriterion: actual:3 expected:3 properties
-* class epo:SocialProcurement: actual:1 expected:1 properties
-* class epo:StatisticalInformation: actual:0 expected:0 properties
-* class epo:StrategicProcurement: actual:3 expected:3 properties
-* class epo:Subcontractor: actual:0 expected:0 properties
-* class epo:SubcontractTerm: actual:7 expected:7 properties
-* class epo:SubmissionTerm: actual:24 expected:24 properties
-* class epo:System: actual:2 expected:2 properties
-* class epo:TechnicalSpecification: actual:0 expected:0 properties
-* class epo:Technique: actual:3 expected:3 properties
-* class epo:Tenderer: actual:1 expected:1 properties
-* class epo:Tender: actual:11 expected:12 properties
-* class epo:MonetaryValue: actual:5 expected:5 properties
-* class epo:Winner: actual:1 expected:1 properties
-* class epo-cat:Item: actual:20 expected:29 properties
-* class epo:JuryMember: actual:1 expected:1 properties
-* class epo:ProcurementProcedureInformationProvider: actual:0 expected:0 properties
-* class epo-not:PlanningNotice: actual:0 expected:2 properties
-* class epo-not:CompetitionNotice: actual:0 expected:4 properties
-* class epo:Quantity: actual:3 expected:3 properties
-* class epo-not:DirectAwardPrenotificationNotice: actual:0 expected:8 properties
-* class epo-not:ResultNotice: actual:0 expected:9 properties
-* class epo-not:ContractModificationNotice: actual:0 expected:10 properties
-* class epo-not:CompletionNotice: actual:0 expected:11 properties
-* class epo-cat:Price: actual:2 expected:10 properties
-* class epo-ful:Despatcher: actual:0 expected:0 properties
-* class epo-ord:Seller: actual:0 expected:0 properties
-* class epo-not:PINProfileNotice: actual:0 expected:1 properties
-* class epo-not:PINOnlyNotice: actual:0 expected:1 properties
-* class epo-not:PINTimeLimitNotice: actual:0 expected:1 properties
-* class epo-ful:ShipmentInformation: actual:3 expected:7 properties
-* class epo:OriginatorRequest: actual:0 expected:0 properties
-* class epo-not:CANSocialNotice: actual:0 expected:1 properties
-* class epo-not:DesignContestResultNotice: actual:0 expected:1 properties
-* class epo-not:Notice10: actual:0 expected:2 properties
-* class epo-not:Notice11: actual:0 expected:2 properties
-* class epo-ful:TransportHandlingUnit: actual:5 expected:5 properties
-* class epo-not:Notice25: actual:0 expected:2 properties
-* class epo-not:Notice26: actual:0 expected:2 properties
-* class epo-not:Notice27: actual:0 expected:2 properties
-* class epo-not:Notice28: actual:0 expected:2 properties
-* class epo-not:Notice29: actual:0 expected:2 properties
-* class epo-not:Notice30: actual:0 expected:2 properties
-* class epo-not:Notice31: actual:0 expected:2 properties
-* class epo-not:Notice32: actual:0 expected:2 properties
-* class epo-not:Notice33: actual:0 expected:2 properties
-* class epo-not:Notice34: actual:0 expected:2 properties
-* class epo-not:Notice35: actual:0 expected:2 properties
-* class epo-not:Notice36: actual:0 expected:2 properties
-* class epo-not:Notice37: actual:0 expected:2 properties
-* class epo-not:Notice12: actual:0 expected:2 properties
-* class epo-not:Notice13: actual:0 expected:2 properties
-* class epo-not:Notice14: actual:0 expected:2 properties
-* class epo-not:Notice15: actual:0 expected:2 properties
-* class epo-not:Notice16: actual:0 expected:2 properties
-* class epo-not:Notice17: actual:0 expected:2 properties
-* class epo-not:Notice18: actual:0 expected:2 properties
-* class epo-not:Notice19: actual:0 expected:2 properties
-* class epo-not:Notice20: actual:0 expected:2 properties
-* class epo-not:Notice21: actual:0 expected:2 properties
-* class epo-not:Notice22: actual:0 expected:2 properties
-* class epo-not:Notice23: actual:0 expected:2 properties
-* class epo-not:Notice24: actual:0 expected:2 properties
-* class epo-not:Notice38: actual:0 expected:2 properties
-* class epo-not:Notice39: actual:0 expected:2 properties
-* class epo-not:Notice40: actual:0 expected:2 properties
-* class epo-not:Notice1: actual:0 expected:2 properties
-* class epo-not:Notice2: actual:0 expected:2 properties
-* class epo-not:Notice3: actual:0 expected:2 properties
-* class epo-not:Notice4: actual:0 expected:2 properties
-* class epo-not:Notice5: actual:0 expected:2 properties
-* class epo-not:Notice6: actual:0 expected:2 properties
-* class epo-not:Notice7: actual:0 expected:2 properties
-* class epo-not:Notice8: actual:0 expected:2 properties
-* class epo-not:Notice9: actual:0 expected:2 properties
-* class epo-not:VEAT-D24: actual:0 expected:2 properties
-* class epo-not:Modification-D24: actual:0 expected:2 properties
-* class epo-not:SocialAndOtherSpecificServices-D24: actual:0 expected:2 properties
-* class epo-not:PINOnly-D25: actual:0 expected:2 properties
-* class epo-not:CNSocial-D25: actual:0 expected:2 properties
-* class epo-not:CANSocial-D25: actual:0 expected:2 properties
-* class epo-not:QS-D25: actual:0 expected:2 properties
-* class epo-not:PINProfile-D25: actual:0 expected:2 properties
-* class epo-not:DesignContest-D25: actual:0 expected:2 properties
-* class epo-not:DesignContestResult-D25: actual:0 expected:2 properties
-* class epo-not:VEAT-D25: actual:0 expected:2 properties
-* class epo-not:StandardForm: actual:0 expected:0 properties
-* class epo-not:eFormsNotice: actual:0 expected:1 properties
-* class epo:PaymentExecutor: actual:0 expected:0 properties
-* class epo:BudgetProvider: actual:0 expected:0 properties
-* class epo:ParticipationRequestProcessor: actual:0 expected:0 properties
-* class epo:ParticipationRequestReceiver: actual:0 expected:0 properties
-* class epo:TenderReceiver: actual:0 expected:0 properties
-* class epo:TenderProcessor: actual:0 expected:0 properties
-* class epo:OfflineAccessProvider: actual:0 expected:0 properties
-* class epo:ReviewProcedureInformationProvider: actual:0 expected:0 properties
-* class epo-ful:DespatchLine: actual:1 expected:5 properties
-* class epo-not:Modification-D25: actual:0 expected:2 properties
-* class epo-not:PIN-CFCSocialNotice-D25: actual:0 expected:2 properties
-* class epo-not:PIN-RTL-D24: actual:0 expected:2 properties
-* class epo-not:PIN-CFCStandard-D24: actual:0 expected:2 properties
-* class epo-not:PIN-RTL-D25: actual:0 expected:2 properties
-* class epo-not:PIN-CFCSocial-D25: actual:0 expected:2 properties
-* class epo-not:VEAT-D23: actual:0 expected:2 properties
-* class epo-not:Modification-D23: actual:0 expected:2 properties
-* class epo-not:SocialAndOtherSpecificServices-D23: actual:0 expected:2 properties
-* class epo-not:ConcessionNotice-D23: actual:0 expected:2 properties
-* class epo-not:ConcessionAwardNotice-D23: actual:0 expected:2 properties
-* class epo-not:PINOnly-D24: actual:0 expected:2 properties
-* class epo-not:CNStandard-D24: actual:0 expected:2 properties
-* class epo-not:CANStandard-D24: actual:0 expected:2 properties
-* class epo-not:PINProfile-D24: actual:0 expected:2 properties
-* class epo-not:DesignContest-D24: actual:0 expected:2 properties
-* class epo-not:DesignContestResult-D24: actual:0 expected:2 properties
-* class epo:Term: actual:0 expected:0 properties
-* class epo:TenderAwardOutcome: actual:3 expected:3 properties
-* class epo:LotAwardOutcome: actual:5 expected:5 properties
-* class epo:ReviewRequestSummary: actual:3 expected:3 properties
-* class epo:LotGroupAwardInformation: actual:2 expected:2 properties
-* class epo:NoticeAwardInformation: actual:5 expected:7 properties
-* class epo:ReviewDecision: actual:6 expected:6 properties
-* class epo-cat:ProductSpecification: actual:0 expected:0 properties
-* class epo:AgentInRole: actual:6 expected:6 properties
-* class epo:TaxInformationProvider: actual:0 expected:0 properties
-* class epo:EmploymentInformationProvider: actual:0 expected:0 properties
-* class epo:EnvironmentalProtectionInformationProvider: actual:0 expected:0 properties
-* class epo:Awarder: actual:0 expected:0 properties
-* class epo:ReviewRequest: actual:8 expected:8 properties
-* class epo:SubmissionStatisticalInformation: actual:22 expected:22 properties
-* class epo-not:PINProfile-D81: actual:0 expected:2 properties
-* class epo-not:VEAT-D81: actual:0 expected:2 properties
-* class epo-not:PINDefence-D81: actual:0 expected:2 properties
-* class epo-not:CNDefence-D81: actual:0 expected:2 properties
-* class epo-not:CANDefence-D81: actual:0 expected:2 properties
-* class epo-not:Subcontract-D81: actual:0 expected:2 properties
-* class epo-not:StandardFormsNotice: actual:0 expected:1 properties
-* class epo-not:SubcontractNotice: actual:0 expected:1 properties
-* class epo-cat:ItemComposition: actual:0 expected:0 properties
-* class epo-cat:ItemProperty: actual:4 expected:5 properties
-* class epo:ProcurementObject: actual:16 expected:16 properties
-* class epo-ord:OrderLine: actual:0 expected:3 properties
-* class epo-ord:AllowanceInformation: actual:1 expected:1 properties
-* class epo-ord:AllowanceChargeInformation: actual:3 expected:6 properties
-* class epo-cat:Manufacturer: actual:0 expected:1 properties
-* class epo:ContextDescription: actual:0 expected:0 properties
-* class epo:ContextualProjection: actual:0 expected:0 properties
-* class epo-cat:Batch: actual:4 expected:5 properties
-* class epo-cat:Brand: actual:1 expected:1 properties
-* class epo-cat:ItemModel: actual:1 expected:1 properties
-* class epo-not:QSNotice-D25: actual:0 expected:2 properties
-* class epo-not:CNSocialNotice-D25: actual:0 expected:2 properties
-* class epo-not:CANSocialNotice-D25: actual:0 expected:2 properties
-* class epo-acc:ESPDRequest: actual:0 expected:3 properties
-* class epo:ChangeInformation: actual:9 expected:9 properties
-* class epo:ReviewObject: actual:3 expected:3 properties
-* class epo:ReviewIrregularitySummary: actual:2 expected:2 properties
-* class epo-ful:ReceiptAdvice: actual:4 expected:8 properties
-* class epo-ful:ReceiptAdviceLine: actual:4 expected:8 properties
-* class epo-cat:ItemReplacement: actual:0 expected:0 properties
-* class epo-sub:NationalPreQualificationData: actual:1 expected:5 properties
-* class epo-sub:Response: actual:1 expected:5 properties
-* class epo-cat:CatalogueResponse: actual:3 expected:5 properties
-* class epo-cat:CatalogueResponseLine: actual:1 expected:2 properties
-* class epo-cat:CatalogueResponseInformation: actual:1 expected:2 properties
-* class epo:ContractSpecificTerm: actual:0 expected:0 properties
-* class epo:ConcessionContract: actual:0 expected:0 properties
-* class epo:ProcessPlanningTerm: actual:3 expected:3 properties
-* class epo-cat:ItemRelation: actual:2 expected:2 properties
-* class epo-cat:ItemAccessoryRelation: actual:0 expected:0 properties
-* class epo-cat:ItemComplementaryRelation: actual:0 expected:0 properties
-* class epo:ProcurementProcessInformation: actual:5 expected:5 properties
-* class epo:CertificationLabel: actual:2 expected:2 properties
-* class epo:Certifier: actual:0 expected:0 properties
-* class epo:Certificate: actual:3 expected:3 properties
-* class epo-cat:ChargeInformation: actual:0 expected:1 properties
-* class epo-ord:DeliveryInformation: actual:6 expected:9 properties
-* class epo:AcquiringParty: actual:0 expected:0 properties
-* class epo:AuxiliaryParty: actual:0 expected:0 properties
-* class epo:OtherEntity: actual:0 expected:0 properties
-* class epo:SpecificDuration: actual:2 expected:2 properties
-* class epo:IndefiniteDuration: actual:0 expected:0 properties
-* class epo-ord:OrderResponseLine: actual:1 expected:1 properties
-* class epo:ProcurementElement: actual:6 expected:6 properties
-* class epo:LeadBuyer: actual:0 expected:0 properties
-* class epo-ord:ContractInformation: actual:1 expected:2 properties
-* class epo-ord:OriginatorInformation: actual:2 expected:3 properties
-* class epo-ord:DeliveryAgreement: actual:1 expected:2 properties
-* class epo:DirectContract: actual:1 expected:1 properties
-* class epo:AwardCriteriaSummary: actual:0 expected:0 properties
-* class epo-ful:Consignment: actual:15 expected:30 properties
-* class epo-ful:FreightForwarder: actual:0 expected:0 properties
-* class epo-ful:Notifier: actual:0 expected:0 properties
-* class epo-ful:TransportEquipment: actual:7 expected:8 properties
-* class epo-ful:Package: actual:4 expected:4 properties
-* class epo-ful:ShipmentStage: actual:5 expected:6 properties
-* class epo-ful:TransportMeans: actual:3 expected:5 properties
-* class epo-ful:TransportEquipmentSeal: actual:0 expected:1 properties
-* class epo-ful:ShipmentAgreement: actual:0 expected:2 properties
-* class epo:OfferIssuer: actual:1 expected:1 properties
-* class epo-cat:Line: actual:2 expected:3 properties
-* class epo-cat:InformationHub: actual:1 expected:1 properties
-* class epo:ParticipationCondition: actual:1 expected:1 properties
-* class epo:ProcurementCriteriaSummary: actual:1 expected:1 properties
-* class epo:ParticipationConditionsSummary: actual:3 expected:3 properties
-* class epo:ExclusionGroundsSummary: actual:0 expected:0 properties
-* class epo:SelectionCriteriaSummary: actual:2 expected:2 properties
-* class epo-ful:GoodsItem: actual:1 expected:3 properties
-* class epo-ord:TaxInformation: actual:2 expected:6 properties
-* class epo:Candidate: actual:0 expected:0 properties
-* class epo-ful:TransportMeansOperator: actual:0 expected:1 properties
-* class epo-ful:AbstractContainer: actual:3 expected:12 properties
-* class epo-ful:TemperatureSpecification: actual:1 expected:3 properties
-* class epo:Project: actual:1 expected:1 properties
-* class epo:SelectedCandidateList: actual:2 expected:2 properties
-* class epo:MiniCompetitionAwardOutcome: actual:1 expected:1 properties
-* class epo:ElectronicSignature: actual:1 expected:1 properties
-* class epo:AdHocChannel: actual:0 expected:0 properties
-* class epo-con:Deliverable: actual:0 expected:2 properties
-* class epo-ord:Order: actual:9 expected:23 properties
-* class epo-sub:LegalRepresentative: actual:2 expected:3 properties
-* class epo-sub:Mandate: actual:0 expected:0 properties
-* class epo-sub:PowerOfAttorney: actual:0 expected:0 properties
-* class epo:ProfessionalSuitabilitySummary: actual:3 expected:3 properties
-* class epo:EconomicStandingSummary: actual:0 expected:0 properties
-* class epo:TechnicalAbilitySummary: actual:0 expected:0 properties
-* class epo:QualificationCriteriaSummary: actual:2 expected:2 properties
-* class epo:QualificationCriterion: actual:1 expected:1 properties
-* class epo-sub:CertificateInformation: actual:2 expected:3 properties
+
+# Model2owl
+
+```json
+{
+  "owner": "OP-TED",
+  "repo": "ePO",
+  "tag": "v4.0.2",
+  "localPath": "assets/ePO/v4.0.2",
+  "databasePath": "assets/ePO/master/analysis_and_design/conceptual_model/ePO_CM.eap"
+}
+```
+
+## SHACL - Property shapes per class
+
+- Model2Owl: Number of property shapes produced from XMI with Model2Owl 
+- EAP: Number of property shapes produced directly from the EAP file
+- [details.json](./details.json)
+
+| Class | Model2Owl | EAP | Mismatch |
+|-------|--------|----------|--------|
+|epo:RequestForClarification|0|0|
+|epo:ExpressionOfInterest|0|0|
+|epo:RequestForParticipation|0|0|
+|epo:Estimate|0|0|
+|epo:SubcontractingEstimate|4|4|
+|epo:ConcessionEstimate|4|4|
+|epo-ord:Originator|0|0|
+|epo-ful:Carrier|0|0|
+|epo-ord:OrderResponse|5|7|X
+|epo:AwardOutcome|5|5|
+|epo:AccessTerm|11|11|
+|epo:AwardCriterion|4|4|
+|epo:AwardDecision|3|3|
+|epo:Business|3|3|
+|epo:Buyer|7|7|
+|epo:LotSpecificTerm|0|0|
+|epo:CentralPurchasingBody|0|0|
+|epo:Contract|13|15|X
+|epo:Contractor|1|1|
+|epo:ContractTerm|22|22|
+|epo:DesignContestRegimeTerm|6|6|
+|epo:DirectAwardTerm|4|4|
+|epo:Document|16|16|
+|epo:DynamicPurchaseSystemTechnique|1|1|
+|epo:EAuctionTechnique|0|0|
+|epo:OfferingParty|0|0|
+|epo:AcquiringCentralPurchasingBody|0|0|
+|epo:ReviewRequester|0|0|
+|epo-ful:DespatchAdvice|7|11|X
+|epo-not:PreMarketConsultationNotice|0|1|X
+|epo:EvaluationTerm|0|0|
+|epo:ExclusionGround|0|0|
+|epo:FrameworkAgreement|1|1|
+|epo:FrameworkAgreementTechnique|0|0|
+|epo:FrameworkAgreementTerm|4|4|
+|epo:Fund|5|5|
+|epo:CatalogueReceiver|0|0|
+|epo:CatalogueProvider|0|0|
+|epo:AwardingCentralPurchasingBody|0|0|
+|epo:ContractLotCompletionInformation|5|5|
+|epo:GreenProcurement|3|3|
+|epo:InnovativeProcurement|1|1|
+|epo:Lot|2|2|
+|epo:LotGroup|8|8|
+|epo:Mediator|0|0|
+|epo:MultipleStageProcedureTerm|8|8|
+|epo:Notice|14|14|
+|epo:OpeningTerm|4|4|
+|epo:OrganisationGroup|3|3|
+|epo:VehicleInformation|6|6|
+|epo:NonPublishedInformation|5|5|
+|epo-con:ContractModificationInformation|3|5|X
+|epo-con:ContractAmendment|0|2|X
+|epo:Period|3|3|
+|epo:PlannedProcurementPart|4|4|
+|epo:SelectionEvaluationTerm|0|0|
+|epo:AwardEvaluationTerm|5|5|
+|epo:ReviewTerm|5|5|
+|epo-ord:OrderResponseInformation|2|3|X
+|epo-cat:PostAwardDocument|1|2|X
+|epo:Prize|2|2|
+|epo:Procedure|12|12|
+|epo-cat:Catalogue|3|8|X
+|epo:ParticipationRequestTerm|2|2|
+|epo-not:VoluntaryEx-AnteTransparencyNotice|0|1|X
+|epo-not:PIN-CFCStandardNotice|0|1|X
+|epo-not:PIN-CFCSocialNotice|0|1|X
+|epo-not:QSNotice|0|1|X
+|epo-not:CNStandardNotice|0|1|X
+|epo-not:CNSocialNotice|0|1|X
+|epo-not:DesignContestNotice|0|1|X
+|epo-not:CANStandardNotice|0|1|X
+|epo:ProcedureTerm|13|13|
+|epo:ProcurementCriterion|4|4|
+|epo:TenderGroup|6|6|
+|epo:Duration|0|0|
+|epo-ord:Consignee|0|0|
+|epo:ProcurementDocument|0|0|
+|epo:ProcurementServiceProvider|1|1|
+|epo-cat:CatalogueLine|12|15|X
+|epo:ProcedureSpecificTerm|0|0|
+|epo-cat:ItemRequirement|0|0|
+|epo:NonDisclosureAgreementTerm|2|2|
+|epo:PurchaseContract|2|2|
+|epo:Purpose|3|3|
+|epo:Reviewer|1|1|
+|epo:Offer|0|0|
+|epo:SecurityClearanceTerm|3|3|
+|epo:SelectionCriterion|3|3|
+|epo:SocialProcurement|1|1|
+|epo:StatisticalInformation|0|0|
+|epo:StrategicProcurement|3|3|
+|epo:Subcontractor|0|0|
+|epo:SubcontractTerm|7|7|
+|epo:SubmissionTerm|24|24|
+|epo:System|2|2|
+|epo:Technique|3|3|
+|epo:Tenderer|1|1|
+|epo:Tender|11|11|
+|epo:MonetaryValue|5|5|
+|epo:Winner|1|1|
+|epo-cat:Item|20|29|X
+|epo:JuryMember|1|1|
+|epo:ProcurementProcedureInformationProvider|0|0|
+|epo-not:PlanningNotice|0|2|X
+|epo-not:CompetitionNotice|0|4|X
+|epo:Quantity|3|3|
+|epo-not:DirectAwardPrenotificationNotice|0|8|X
+|epo-not:ResultNotice|0|9|X
+|epo-not:ContractModificationNotice|0|10|X
+|epo-not:CompletionNotice|0|11|X
+|epo-cat:Price|2|10|X
+|epo-ful:Despatcher|0|0|
+|epo-ord:Seller|0|0|
+|epo-not:PINProfileNotice|0|1|X
+|epo-not:PINOnlyNotice|0|1|X
+|epo-not:PINTimeLimitNotice|0|1|X
+|epo-ful:ShipmentInformation|3|7|X
+|epo:OriginatorRequest|0|0|
+|epo-not:CANSocialNotice|0|1|X
+|epo-not:DesignContestResultNotice|0|1|X
+|epo-not:Notice10|0|2|X
+|epo-not:Notice11|0|2|X
+|epo-ful:TransportHandlingUnit|5|5|
+|epo-not:Notice25|0|2|X
+|epo-not:Notice26|0|2|X
+|epo-not:Notice27|0|2|X
+|epo-not:Notice28|0|2|X
+|epo-not:Notice29|0|2|X
+|epo-not:Notice30|0|2|X
+|epo-not:Notice31|0|2|X
+|epo-not:Notice32|0|2|X
+|epo-not:Notice33|0|2|X
+|epo-not:Notice34|0|2|X
+|epo-not:Notice35|0|2|X
+|epo-not:Notice36|0|2|X
+|epo-not:Notice37|0|2|X
+|epo-not:Notice12|0|2|X
+|epo-not:Notice13|0|2|X
+|epo-not:Notice14|0|2|X
+|epo-not:Notice15|0|2|X
+|epo-not:Notice16|0|2|X
+|epo-not:Notice17|0|2|X
+|epo-not:Notice18|0|2|X
+|epo-not:Notice19|0|2|X
+|epo-not:Notice20|0|2|X
+|epo-not:Notice21|0|2|X
+|epo-not:Notice22|0|2|X
+|epo-not:Notice23|0|2|X
+|epo-not:Notice24|0|2|X
+|epo-not:Notice38|0|2|X
+|epo-not:Notice39|0|2|X
+|epo-not:Notice40|0|2|X
+|epo-not:Notice1|0|2|X
+|epo-not:Notice2|0|2|X
+|epo-not:Notice3|0|2|X
+|epo-not:Notice4|0|2|X
+|epo-not:Notice5|0|2|X
+|epo-not:Notice6|0|2|X
+|epo-not:Notice7|0|2|X
+|epo-not:Notice8|0|2|X
+|epo-not:Notice9|0|2|X
+|epo-not:VEAT-D24|0|2|X
+|epo-not:Modification-D24|0|2|X
+|epo-not:SocialAndOtherSpecificServices-D24|0|2|X
+|epo-not:PINOnly-D25|0|2|X
+|epo-not:CNSocial-D25|0|2|X
+|epo-not:CANSocial-D25|0|2|X
+|epo-not:QS-D25|0|2|X
+|epo-not:PINProfile-D25|0|2|X
+|epo-not:DesignContest-D25|0|2|X
+|epo-not:DesignContestResult-D25|0|2|X
+|epo-not:VEAT-D25|0|2|X
+|epo-not:StandardForm|0|0|
+|epo-not:eFormsNotice|0|1|X
+|epo:PaymentExecutor|0|0|
+|epo:BudgetProvider|0|0|
+|epo:ParticipationRequestProcessor|0|0|
+|epo:ParticipationRequestReceiver|0|0|
+|epo:TenderReceiver|0|0|
+|epo:TenderProcessor|0|0|
+|epo:OfflineAccessProvider|0|0|
+|epo:ReviewProcedureInformationProvider|0|0|
+|epo-ful:DespatchLine|1|5|X
+|epo-not:Modification-D25|0|2|X
+|epo-not:PIN-CFCSocialNotice-D25|0|2|X
+|epo-not:PIN-RTL-D24|0|2|X
+|epo-not:PIN-CFCStandard-D24|0|2|X
+|epo-not:PIN-RTL-D25|0|2|X
+|epo-not:PIN-CFCSocial-D25|0|2|X
+|epo-not:VEAT-D23|0|2|X
+|epo-not:Modification-D23|0|2|X
+|epo-not:SocialAndOtherSpecificServices-D23|0|2|X
+|epo-not:ConcessionNotice-D23|0|2|X
+|epo-not:ConcessionAwardNotice-D23|0|2|X
+|epo-not:PINOnly-D24|0|2|X
+|epo-not:CNStandard-D24|0|2|X
+|epo-not:CANStandard-D24|0|2|X
+|epo-not:PINProfile-D24|0|2|X
+|epo-not:DesignContest-D24|0|2|X
+|epo-not:DesignContestResult-D24|0|2|X
+|epo:Term|0|0|
+|epo:TenderAwardOutcome|3|3|
+|epo:LotAwardOutcome|5|5|
+|epo:ReviewRequestSummary|3|3|
+|epo:LotGroupAwardInformation|2|2|
+|epo:NoticeAwardInformation|5|7|X
+|epo:ReviewDecision|6|6|
+|epo-cat:ProductSpecification|0|0|
+|epo:AgentInRole|6|6|
+|epo:TaxInformationProvider|0|0|
+|epo:EmploymentInformationProvider|0|0|
+|epo:EnvironmentalProtectionInformationProvider|0|0|
+|epo:Awarder|0|0|
+|epo:ReviewRequest|8|8|
+|epo:SubmissionStatisticalInformation|21|21|
+|epo-not:PINProfile-D81|0|2|X
+|epo-not:VEAT-D81|0|2|X
+|epo-not:PINDefence-D81|0|2|X
+|epo-not:CNDefence-D81|0|2|X
+|epo-not:CANDefence-D81|0|2|X
+|epo-not:Subcontract-D81|0|2|X
+|epo-not:StandardFormsNotice|0|1|X
+|epo-not:SubcontractNotice|0|1|X
+|epo-cat:ItemComposition|0|0|
+|epo-cat:ItemProperty|4|5|X
+|epo:ProcurementObject|16|16|
+|epo-ord:OrderLine|0|3|X
+|epo-ord:AllowanceInformation|1|1|
+|epo-ord:AllowanceChargeInformation|3|6|X
+|epo-cat:Manufacturer|0|1|X
+|epo:ContextDescription|0|0|
+|epo:ContextualProjection|0|0|
+|epo-cat:Batch|4|5|X
+|epo-cat:Brand|1|1|
+|epo-cat:ItemModel|1|1|
+|epo-not:QSNotice-D25|0|2|X
+|epo-not:CNSocialNotice-D25|0|2|X
+|epo-not:CANSocialNotice-D25|0|2|X
+|epo:ChangeInformation|9|9|
+|epo:ReviewObject|3|3|
+|epo:ReviewIrregularitySummary|2|2|
+|epo-cat:ItemReplacement|0|0|
+|epo:ContractSpecificTerm|0|0|
+|epo:ConcessionContract|0|0|
+|epo:ProcessPlanningTerm|3|3|
+|epo-cat:ItemRelation|2|2|
+|epo-cat:ItemAccessoryRelation|0|0|
+|epo-cat:ItemComplementaryRelation|0|0|
+|epo:ProcurementProcessInformation|5|5|
+|epo:CertificationLabel|2|2|
+|epo:Certifier|0|0|
+|epo:Certificate|4|4|
+|epo-cat:ChargeInformation|0|1|X
+|epo-ord:DeliveryInformation|6|9|X
+|epo:AcquiringParty|0|0|
+|epo:AuxiliaryParty|0|0|
+|epo:OtherEntity|0|0|
+|epo:SpecificDuration|2|2|
+|epo:IndefiniteDuration|0|0|
+|epo-ord:OrderResponseLine|1|1|
+|epo:ProcurementElement|6|6|
+|epo:LeadBuyer|0|0|
+|epo-ord:ContractInformation|1|2|X
+|epo-ord:OriginatorInformation|2|3|X
+|epo-ord:DeliveryAgreement|1|2|X
+|epo:DirectContract|1|1|
+|epo:AwardCriteriaSummary|0|0|
+|epo-ful:Consignment|15|30|X
+|epo-ful:FreightForwarder|0|0|
+|epo-ful:Notifier|0|0|
+|epo-ful:TransportEquipment|7|8|X
+|epo-ful:Package|4|4|
+|epo-ful:ShipmentStage|5|6|X
+|epo-ful:TransportMeans|3|5|X
+|epo-ful:TransportEquipmentSeal|0|1|X
+|epo-ful:ShipmentAgreement|0|2|X
+|epo:OfferIssuer|1|1|
+|epo-cat:Line|2|3|X
+|epo-cat:InformationHub|1|1|
+|epo:ParticipationCondition|1|1|
+|epo:ProcurementCriteriaSummary|1|1|
+|epo:ParticipationConditionsSummary|3|3|
+|epo:ExclusionGroundsSummary|0|0|
+|epo:SelectionCriteriaSummary|2|2|
+|epo-ful:GoodsItem|1|3|X
+|epo-ord:TaxInformation|2|6|X
+|epo:Candidate|0|0|
+|epo-ful:TransportMeansOperator|0|1|X
+|epo-ful:AbstractContainer|3|12|X
+|epo-ful:TemperatureSpecification|1|3|X
+|epo:Project|1|1|
+|epo:SelectedCandidateList|2|2|
+|epo:MiniCompetitionAwardOutcome|1|1|
+|epo:ElectronicSignature|1|1|
+|epo:AdHocChannel|0|0|
+|epo-con:Deliverable|0|2|X
+|epo-ord:Order|9|22|X
+|epo:ProfessionalSuitabilitySummary|3|3|
+|epo:EconomicStandingSummary|0|0|
+|epo:TechnicalAbilitySummary|0|0|
+|epo:QualificationCriteriaSummary|2|2|
+|epo:QualificationCriterion|0|0|
+
+

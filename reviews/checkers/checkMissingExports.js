@@ -1,13 +1,14 @@
 import { writeFileSync } from 'fs'
-import { UNDER_REVIEW } from '../../src/config.js'
+import { PRODUCTION } from '../../src/config.js'
 import { getEpoJson } from '../../src/epo/readEpo.js'
 import { getRdfAssets } from '../../src/io/assets.js'
 import { createTriplestore, doSelect } from '../../src/sparql/localStore.js'
 
-const globPattern = `${UNDER_REVIEW.localPath}/implementation/*/shacl_shapes/**/*.ttl`
+const MODEL = PRODUCTION
+const globPattern = `${MODEL.localPath}/implementation/*/shacl_shapes/**/*.ttl`
 const assets = await getRdfAssets({ globPattern })
 const store = createTriplestore({ assets })
-const { nodes, edges } = getEpoJson(UNDER_REVIEW)
+const { nodes, edges } = getEpoJson(MODEL)
 
 function queryShapeForClass (clazz) {
 
@@ -75,23 +76,19 @@ function printSummary () {
   const result = []
   for (const { name } of nodes) {
     if (name.startsWith('epo')) {
-
       const { actual, expected } = queryBoth(name)
       result.push(
         {
-          class: name,
+          className: name,
           actual, expected,
-          message: `class ${name}: actual:${actual.length} expected:${expected.length} properties`,
         },
       )
     }
   }
   const withProblems = result.filter(x => x.actual.length < x.expected.length)
   console.log(result.length, 'classes inspected')
-
   console.log(withProblems.length,
     'Classes contain less properties than expected')
-
   const delta = result.reduce(
     (accumulator, x) => accumulator + x.expected.length - x.actual.length, 0)
   console.log('total', delta, 'properties missing')
@@ -99,9 +96,36 @@ function printSummary () {
 }
 
 const result = printSummary()
-writeFileSync('outputs/missing/missingPropsSummary.json',
+writeFileSync('outputs/missing/details.json',
   JSON.stringify(result, null, 2))
-writeFileSync('outputs/missing/missingPropsSummaryCounts.md',result.map(x => x.message).join('\n* '))
+
+const row = ({
+  className,
+  actual,
+  expected,
+}) => `|${className}|${actual.length}|${expected.length}|${actual.length!==expected.length?'X':''}`
+
+const summary = `
+# Model2owl
+
+\`\`\`json
+${JSON.stringify(MODEL, null, 2)}
+\`\`\`
+
+## SHACL - Property shapes per class
+
+- Model2Owl: Number of property shapes produced from XMI with Model2Owl 
+- EAP: Number of property shapes produced directly from the EAP file
+- [details.json](./details.json)
+
+| Class | Model2Owl | EAP | Mismatch |
+|-------|--------|----------|--------|
+${result.map(row).join('\n')}
+
+
+`
+
+writeFileSync('outputs/missing/missingPropsSummaryCounts.md', summary)
 // showDifference('epo-sub:ESPDResponse')
 
 // 150 Classes contain less properties than expected
