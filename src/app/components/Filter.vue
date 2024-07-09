@@ -20,8 +20,6 @@ const store = useStore()
 const { filterOptions, suggestedNodes } = storeToRefs(store)
 const { addFilterTerms } = store
 
-const value = ref([])
-
 const options = computed(() => {
   const suggested = suggestedNodes.value ?? []
   return suggested.map(tag => {
@@ -32,11 +30,11 @@ const options = computed(() => {
   })
 })
 
-function add () {
-  if (value?.value?.length) {
-    addFilterTerms(value.value)
-    value.value = []
-  }
+const termsToAdd = ref([])
+
+function add (terms) {
+  addFilterTerms(terms)
+  termsToAdd.value = []
 }
 
 const displaySavedActive = ref(false)
@@ -48,13 +46,29 @@ function toggleSaved () {
 </script>
 
 <template>
-
   <n-drawer v-model:show="displaySavedActive" :width="502" placement="top">
     <n-drawer-content>
       <FiltersPanel/>
     </n-drawer-content>
   </n-drawer>
   <n-card>
+
+    <div style="display: flex;">
+      <n-select
+          v-model:value="termsToAdd"
+          filterable
+          :options="options"
+          multiple
+          :reset-menu-on-options-change="true"
+          style="flex: 8;"
+      />
+      <n-button
+          @click="add(termsToAdd)"
+          :disabled="!termsToAdd.length"
+          style="margin-left: 10px; flex-shrink: 0;">
+        Add
+      </n-button>
+    </div>
 
     <n-dynamic-tags
         round
@@ -73,29 +87,7 @@ function toggleSaved () {
             Include incoming nodes
           </n-checkbox>
         </n-space>
-        <n-space justify="end">
-          <div>
-            <n-select
-                class="margin-left"
-                v-model:value="value"
-                filterable
-                multiple
-                :options="options"
-                :reset-menu-on-options-change="true"
-            />
-          </div>
-          <n-button
-              @click="add"
-              :disabled="!value.length">Quick add
-          </n-button>
-        </n-space>
       </n-collapse-item>
     </n-collapse>
   </n-card>
 </template>
-
-<style>
-.margin-left {
-  min-width: 200px;
-}
-</style>

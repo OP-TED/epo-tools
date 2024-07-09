@@ -43047,14 +43047,6 @@ WG approval 23/04/2023
 }
 `;
 
-exports[`filter filterBy suggestNodes 1`] = `
-Array [
-  "adms:Identifier",
-  "epo:ElectronicSignature",
-  "at-voc:language",
-]
-`;
-
 exports[`filter simple-datatype 1`] = `
 Object {
   "edges": Array [
