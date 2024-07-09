@@ -1,7 +1,8 @@
 import { useStorage } from '@vueuse/core'
 import { defineStore } from 'pinia'
 import { computed } from 'vue'
-import { filterBy, suggestNodes } from '../conceptualModel/filter.js'
+import { ATTRIBUTE } from '../conceptualModel/const.js'
+import { filterBy } from '../conceptualModel/filter.js'
 
 const DEFAULT_VIEW = {
   filter: ['epo:Document', 'epo:Buyer', 'epo:AwardDecision'],
@@ -42,20 +43,22 @@ export const useStore = defineStore('counter', () => {
     filterOptions.value.filter = filterOptions.value.filter.concat(newTerms)
   }
 
-
-  function toggleFilterTerm(term) {
-    const index = filterOptions.value.filter.indexOf(term);
+  function toggleFilterTerm (term) {
+    const index = filterOptions.value.filter.indexOf(term)
     if (index > -1) {
-      filterOptions.value.filter.splice(index, 1);
+      filterOptions.value.filter.splice(index, 1)
       return false
     } else {
-      filterOptions.value.filter.push(term);
+      filterOptions.value.filter.push(term)
       return true
     }
   }
 
   const suggestedNodes = computed(() => {
-    return suggestNodes(jsonView.value, filterOptions.value)
+    const candidates = new Set(
+      eaJson.value.edges.filter(x => x.type !== ATTRIBUTE).
+        flatMap(({ source, target }) => [source, target]))
+    return [...candidates]
   })
 
   return {

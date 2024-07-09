@@ -6,7 +6,6 @@ import {
   anyMatch,
   filterBy,
   startsWith,
-  suggestNodes,
 } from '../src/conceptualModel/filter.js'
 import { UNDER_REVIEW } from '../src/config.js'
 import { getJson } from '../src/epo/readEpo.js'
@@ -62,19 +61,6 @@ describe('filter', () => {
     expect(filtered).toMatchSnapshot(this)
   })
 
-
-  it(`filterBy suggestNodes`, function () {
-
-    const view = {
-      filter: ['epo:Document'], includeIncoming: false,
-    }
-
-    const filtered = filterBy(eaJson, view)
-
-    const suggested = suggestNodes(filtered, view)
-
-    expect(suggested).toMatchSnapshot(this)
-  })
 
   const graph = {
     nodes: [

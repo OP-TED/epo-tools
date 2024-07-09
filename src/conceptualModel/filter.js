@@ -68,13 +68,6 @@ function filterBy ({ nodes, edges }, { filter, includeIncoming }) {
   }
 }
 
-function suggestNodes ({ nodes, edges }, { filter }) {
-  const f = matchHasPositives(filter)
-  const candidates = edges.filter(x => x.type !== ATTRIBUTE).
-    flatMap(({ source, target }) => [source, target])
-  return [...new Set(candidates)].filter(x => !f(x))
-}
-
 const apply = value => f => value ? f(value) : false
 
 const matchHasPositives = filterArr => value => filterArr.
@@ -82,5 +75,5 @@ const matchHasPositives = filterArr => value => filterArr.
   some(apply(value))
 
 export {
-  filterBy, startsWith, anyMatch, suggestNodes, matchHasPositives,
+  filterBy, startsWith, anyMatch, matchHasPositives,
 }
