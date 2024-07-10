@@ -1,30 +1,30 @@
 
 # Models: ePO_CM_v4.0.0 to ePO_CM_current
 
-[source](../writeEapElementsGrid.js) 2024-07-10T10:38:14.035Z
+[source](../writeEapElementsGrid.js) 2024-07-10T10:43:21.201Z
 
 ## Classes requiring deprecation
 
 (might be repeated)
 
-| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
-|-------|--------|--------|---------|
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current  |
+| --- | ---|---|--- |
 
 
 ## Properties requiring deprecation 
 
 (might be repeated)
 
-| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
-|-------|--------|--------|---------|
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current  |
+| --- | ---|---|--- |
 
 
 ## All Classes
 
 (might be repeated)
 
-| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
-|-------|--------|--------|---------|
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current  |
+| --- | ---|---|--- |
 | 1022 | epo:Quantity|epo:Quantity|epo:Quantity |
 | 1027 | epo:RequestForClarification|epo:RequestForClarification|epo:RequestForClarification |
 | 1028 | epo:ExpressionOfInterest|epo:ExpressionOfInterest|epo:ExpressionOfInterest |
@@ -347,8 +347,8 @@
 
 (might be repeated)
 
-| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
-|-------|--------|--------|---------|
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current  |
+| --- | ---|---|--- |
 | 1022 | epo:hasQuantityValue|epo:hasQuantityValue|epo:hasQuantityValue |
 | 1056 | epo-cat:hasSpecificPaymentArrangement|epo-cat:hasSpecificPaymentArrangement|epo-cat:hasSpecificPaymentArrangement |
 | 1057 | epo-cat:isOrderable|epo-cat:isOrderable|epo-cat:isOrderable |
