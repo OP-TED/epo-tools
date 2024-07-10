@@ -1,6 +1,8 @@
 
 # Models: ePO_CM_v4.0.0 to ePO_CM_current
 
+[source](../writeEapElementsGrid.js) 2024-07-10T10:10:37.704Z
+
 ## Classes requiring deprecation
 
 (might be repeated)
@@ -1134,5 +1136,3 @@
 | 958 | epo:hasElectronicSubmission|epo:hasElectronicSubmission|epo:hasElectronicSubmission |
 | 960 | epo:hasCurrencyCodeListAgencyID|epo:hasCurrencyCodeListAgencyID|epo:hasCurrencyCodeListAgencyID |
 
-
-[source](../writeDeprecated.js) 2024-07-10T10:07:55.684Z

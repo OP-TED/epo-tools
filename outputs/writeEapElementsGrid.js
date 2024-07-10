@@ -50,6 +50,8 @@ function toMarkdown (trace) {
   return `
 # Models: ${Object.keys(trace).at(0)} to ${Object.keys(trace).at(-1)}
 
+[source](../writeEapElementsGrid.js) ${new Date().toISOString()}
+
 ## Classes requiring deprecation
 
 (might be repeated)
@@ -82,8 +84,6 @@ ${nodeTrace.filter(isEpoNode).map(toNodeRow).join('\n')}
 |-------|--------|--------|---------|
 ${edgeTrace.filter(isEpoEdge).map(toEdgeRow).join('\n')}
 
-
-[source](../writeDeprecated.js) ${new Date().toISOString()}
 `
 }
 
