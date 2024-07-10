@@ -52,6 +52,8 @@ const isEpoEdge = x => x.elements.find(x => x?.predicate.startsWith('epo'))
 const toEdgeRow = x => `| ${x.id} | ${x.elements.map(x => x?.predicate).
   join('|')} |`
 
+// Needs deprecation
+
 // Markdown
 
 console.log('processed', nodeTrace.length, 'class rows')
@@ -60,41 +62,42 @@ console.log('processed', edgeTrace.length, 'edge rows')
 const allEapElements = `
 # All EPO elements from v4.0.0 to Develop
 
-## Classes
+## Classes requiring deprecation
 
-| Class | v4.0.0 | v4.0.2 | Current |
+(might be repeated)
+
+| eapID | v4.0.0 | v4.0.2 | Current |
+|-------|--------|--------|---------|
+${nodeTrace.filter(isEpoNode).filter(needsDeprecate).map(toNodeRow).join('\n')}
+
+## Properties requiring deprecation 
+
+(might be repeated)
+
+| eapID | v4.0.0 | v4.0.2 | Current |
+|-------|--------|--------|---------|
+${edgeTrace.filter(isEpoEdge).filter(needsDeprecate).map(toEdgeRow).join('\n')}
+
+## All Classes
+
+(might be repeated)
+
+| eapID | v4.0.0 | v4.0.2 | Current |
 |-------|--------|--------|---------|
 ${nodeTrace.filter(isEpoNode).map(toNodeRow).join('\n')}
 
-## Rows
+## All Properties
 
-| Class | v4.0.0 | v4.0.2 | Current |
+(might be repeated)
+
+| eapID | v4.0.0 | v4.0.2 | Current |
 |-------|--------|--------|---------|
 ${edgeTrace.filter(isEpoEdge).map(toEdgeRow).join('\n')}
+
 
 [source](../writeDeprecated.js) ${new Date().toISOString()}
 `
 
 writeFileSync('outputs/deprecated/allEapElements.md', allEapElements)
 
-const eapElementsDeprecated = `
-# All EPO elements from v4.0.0 to Develop that need deprecation
-
-## Classes
-
-| Class | v4.0.0 | v4.0.2 | Current |
-|-------|--------|--------|---------|
-${nodeTrace.filter(isEpoNode).filter(needsDeprecate).map(toNodeRow).join('\n')}
-
-## Rows
-
-| Class | v4.0.0 | v4.0.2 | Current |
-|-------|--------|--------|---------|
-${edgeTrace.filter(isEpoEdge).filter(needsDeprecate).map(toEdgeRow).join('\n')}
-
-[source](../writeDeprecated.js) ${new Date().toISOString()}
-`
-
-writeFileSync('outputs/deprecated/eapElementsDeprecated.md',
-  eapElementsDeprecated)
 
