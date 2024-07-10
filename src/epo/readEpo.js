@@ -14,4 +14,4 @@ function getEpoJson ({ databasePath }) {
   return narrowToEpo(json)
 }
 
-export { getJson, getEpoJson }
+export { getJson, narrowToEpo, getEpoJson }
