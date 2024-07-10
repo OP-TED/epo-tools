@@ -1,7 +1,6 @@
 
 # Model2owl
 
-
 ## Model
 
 ```json
@@ -335,4 +334,4 @@
 |epo:QualificationCriteriaSummary|2|2|
 |epo:QualificationCriterion|0|0|
 
-[source](../../reviews/checkers/checkMissingExports.js) 2024-06-25T17:31:06.706Z
+[source](./checkMissingExports.js) 2024-07-10T13:20:58.438Z

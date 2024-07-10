@@ -16,11 +16,10 @@ It can be fetched locally through [src/download/fetchRepos.js](../src/download/f
 
 Done through [outputs/writeShacl.js](../outputs/writeShacl.js)
 
-
 ## To check for mistmatches
 
 To check for mistmatches between SHACL and the eAP 
 
-[reviews/checkers/checkMissingExports.js](../reviews/checkers/checkMissingExports.js)
+[outputs/missing/checkMissingExports.js](./missing/checkMissingExports.js)
 
 It will write a report at [outputs/missing/missingPropsSummaryCounts.md](./missing/missingPropsSummaryCounts.md)
