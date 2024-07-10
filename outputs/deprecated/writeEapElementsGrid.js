@@ -1,5 +1,5 @@
-import { UNDER_REVIEW } from '../src/config.js'
-import { getEpoJson, getJson } from '../src/epo/readEpo.js'
+import { UNDER_REVIEW } from '../../src/config.js'
+import { getJson } from '../../src/epo/readEpo.js'
 import { readFileSync, writeFileSync } from 'fs'
 
 function getTraces (trace) {
@@ -48,12 +48,12 @@ function toMarkdown (trace) {
   console.log('processed', edgeTrace.length, 'edge rows')
 
   const tableHeader = `eapId | ${Object.keys(trace).join('|')}`
-  const tableHeader2 = `--- | ${Object.keys(trace).map(x=>'---').join('|')}`
+  const tableHeader2 = `--- | ${Object.keys(trace).map(x => '---').join('|')}`
 
   return `
 # Models: ${Object.keys(trace).at(0)} to ${Object.keys(trace).at(-1)}
 
-[source](../writeEapElementsGrid.js) ${new Date().toISOString()}
+[source](./writeEapElementsGrid.js) ${new Date().toISOString()}
 
 ## Classes requiring deprecation
 
