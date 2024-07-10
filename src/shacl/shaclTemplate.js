@@ -41,7 +41,35 @@ function propertyIRI (edge) {
   //     where the target may be a node identified as an implicit or explicit target defined by sh:targetClass (e.g., ProcurementObject).
   //     For example, a shape that checks the property epo:isUsingEUFunds when applied to epo:ProcurementObject will be identified as follows:
   //   http://data.europa.eu/a4g/shape/ProcurementObject-isUsingEUFunds
-  return `a4g_shape:${stripPrefix(target)}-${stripPrefix(predicate)}`
+
+// Update. this won't work.
+  // Properties will have distinct quantifiers depending on the Domain/Range combinations
+  // The property URI needs to be a function of both.
+  /**
+   * @startuml
+   * class "epo-ord:OrderResponse" {
+   *   epo-ord:specifiesSeller : epo-ord:Seller [0..1]
+   *   epo-ord:isSubmittedForOrder : epo-ord:Order [1]
+   * }
+   * class "epo-cat:Catalogue" {
+   *   epo:specifiesSeller : epo-ord:Seller [0..*]
+   * }
+   * class "epo-ord:Seller" {
+   *
+   * }
+   * class "epo-ord:Order" {
+   *   epo:specifiesSeller : epo-ord:Seller [1]
+   *   epo-ord:refersToCatalogue : epo-cat:Catalogue [0..*]
+   * }
+   * "epo-ord:Order" --> "1" "epo-ord:Seller" : epo:specifiesSeller
+   * "epo-ord:Order" --> "0..*" "epo-cat:Catalogue" : epo-ord:refersToCatalogue
+   * "epo-ord:OrderResponse" --> "0..1" "epo-ord:Seller" : epo-ord:specifiesSeller
+   * "epo-cat:Catalogue" --> "0..*" "epo-ord:Seller" : epo:specifiesSeller
+   * "epo-ord:OrderResponse" --> "1" "epo-ord:Order" : epo-ord:isSubmittedForOrder
+   * @enduml
+   */
+
+  return `a4g_shape:${stripPrefix(source)}-${stripPrefix(predicate)}-${stripPrefix(target)}`
 
 }
 

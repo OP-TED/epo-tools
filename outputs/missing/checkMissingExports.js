@@ -109,7 +109,6 @@ expected.length ? 'X' : ''}`
 const summary = `
 # Model2owl
 
-
 ## Model
 
 \`\`\`json
@@ -130,7 +129,7 @@ ${JSON.stringify(MODEL, null, 2)}
 |-------|--------|----------|--------|
 ${result.map(row).join('\n')}
 
-[source](../../reviews/checkers/checkMissingExports.js) ${new Date().toISOString()}
+[source](./checkMissingExports.js) ${new Date().toISOString()}
 `
 
 writeFileSync('outputs/missing/missingPropsSummaryCounts.md', summary)
