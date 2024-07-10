@@ -1,7 +1,7 @@
 
 # Models: ePO_CM_v4.0.0 to ePO_CM_current
 
-[source](../writeEapElementsGrid.js) 2024-07-10T10:10:37.704Z
+[source](../writeEapElementsGrid.js) 2024-07-10T10:38:14.035Z
 
 ## Classes requiring deprecation
 
@@ -17,27 +17,7 @@
 
 | eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
 |-------|--------|--------|---------|
-| 1437 | epo:hasNationality|epo:hasNationality| |
-| 1619 | epo:hasPrimaryContactPoint|epo:hasPrimaryContactPoint| |
-| 1656 | epo:hasBuyerLegalType|epo:hasBuyerLegalType| |
-| 1668 | epo:hasMainActivity|epo:hasMainActivity| |
-| 1692 | epo:hasThresholdType|epo:hasThresholdType| |
-| 1707 | epo:hasCountryCode|epo:hasCountryCode| |
-| 2567 | epo:hasCountryOfBirth|epo:hasCountryOfBirth| |
-| 2568 | epo:hasNutsCode|epo:hasNutsCode| |
-| 2668 | epo:hasAddressURL|epo:hasAddressURL| |
-| 3202 | epo:hasValidityPeriod|epo:hasValidityPeriod| |
-| 4115 | epo:hasEndpointIdentifier|epo:hasEndpointIdentifier| |
-| 4117 | epo:hasLegalIdentifier|epo:hasLegalIdentifier| |
-| 4118 | epo:hasTaxIdentifier|epo:hasTaxIdentifier| |
-| 4451 | epo:hasRegistrationCountry|epo:hasRegistrationCountry| |
-| 4576 | epo:hasCertification|epo:hasCertification| |
-| 4578 | epo:hasCertification|epo:hasCertification| |
-| 4708 | epo:hasNutsCode|epo:hasNutsCode| |
-| 4709 | epo:hasCountryCode|epo:hasCountryCode| |
-| 852 | epo:hasAlias|epo:hasAlias| |
-| 866 | epo:hasContactName|epo:hasContactName| |
-| 913 | epo:hasMainActivityDescription|epo:hasMainActivityDescription| |
+
 
 ## All Classes
 
@@ -397,7 +377,7 @@
 | 1426 | epo:isSubjectToProcedureSpecificTerm|epo:isSubjectToProcedureSpecificTerm|epo:isSubjectToProcedureSpecificTerm |
 | 1427 | epo:hasProcedureType|epo:hasProcedureType|epo:hasProcedureType |
 | 1433 | epo:announcesPlannedProcurementPart|epo:announcesPlannedProcurementPart|epo:announcesPlannedProcurementPart |
-| 1437 | epo:hasNationality|epo:hasNationality| |
+| 1437 | epo:hasNationality|epo:hasNationality|epo:hasNationality |
 | 1440 | epo:hasValidityPeriod|epo:hasValidityPeriod|epo:hasValidityPeriod |
 | 1441 | epo:hasPlannedPeriod|epo:hasPlannedPeriod|epo:hasPlannedPeriod |
 | 1442 | epo:hasTenderValidityPeriod|epo:hasTenderValidityPeriod|epo:hasTenderValidityPeriod |
@@ -438,12 +418,12 @@
 | 1605 | epo:refersToContractToBeModified|epo:refersToContractToBeModified|epo:refersToContractToBeModified |
 | 1610 | epo:hasEstimatedDuration|epo:hasEstimatedDuration|epo:hasEstimatedDuration |
 | 1617 | epo:isFundedBy|epo:isFundedBy|epo:isFundedBy |
-| 1619 | epo:hasPrimaryContactPoint|epo:hasPrimaryContactPoint| |
+| 1619 | epo:hasPrimaryContactPoint|epo:hasPrimaryContactPoint|epo:hasPrimaryContactPoint |
 | 1620 | epo:hasContactPointInRole|epo:hasContactPointInRole|epo:hasContactPointInRole |
 | 1632 | epo-cat:hasManufactureDate|epo-cat:hasManufactureDate|epo-cat:hasManufactureDate |
 | 1637 | epo:hasChangeJustification|epo:hasChangeJustification|epo:hasChangeJustification |
-| 1656 | epo:hasBuyerLegalType|epo:hasBuyerLegalType| |
-| 1668 | epo:hasMainActivity|epo:hasMainActivity| |
+| 1656 | epo:hasBuyerLegalType|epo:hasBuyerLegalType|epo:hasBuyerLegalType |
+| 1668 | epo:hasMainActivity|epo:hasMainActivity|epo:hasMainActivity |
 | 1671 | epo:hasBeneficialOwner|epo:hasBeneficialOwner|epo:hasBeneficialOwner |
 | 1672 | epo:hasPaymentValueDiscrepancyJustification|epo:hasPaymentValueDiscrepancyJustification|epo:hasPaymentValueDiscrepancyJustification |
 | 1675 | epo:hasDecisionDate|epo:hasDecisionDate|epo:hasDecisionDate |
@@ -451,11 +431,11 @@
 | 1681 | epo:hasReviewIrregularityCount|epo:hasReviewIrregularityCount|epo:hasReviewIrregularityCount |
 | 1688 | epo:hasFixedValueType|epo:hasFixedValueType|epo:hasFixedValueType |
 | 1689 | epo:hasAwardCriterionType|epo:hasAwardCriterionType|epo:hasAwardCriterionType |
-| 1692 | epo:hasThresholdType|epo:hasThresholdType| |
+| 1692 | epo:hasThresholdType|epo:hasThresholdType|epo:hasThresholdType |
 | 1693 | epo:hasWeightValueType|epo:hasWeightValueType|epo:hasWeightValueType |
 | 1695 | epo:isOwnedByAgent|epo:isOwnedByAgent|epo:isOwnedByAgent |
 | 1704 | epo:definesOpeningPlace|epo:definesOpeningPlace|epo:definesOpeningPlace |
-| 1707 | epo:hasCountryCode|epo:hasCountryCode| |
+| 1707 | epo:hasCountryCode|epo:hasCountryCode|epo:hasCountryCode |
 | 1717 | epo:isSMESuitable|epo:isSMESuitable|epo:isSMESuitable |
 | 1720 | epo:definesPrize|epo:definesPrize|epo:definesPrize |
 | 1730 | epo:hasCurrency|epo:hasCurrency|epo:hasCurrency |
@@ -498,7 +478,7 @@
 | 1882 | epo:hasNoticeType|epo:hasNoticeType|epo:hasNoticeType |
 | 1883 | epo:hasNoticeType|epo:hasNoticeType|epo:hasNoticeType |
 | 1898 | epo:hasLegalBasis|epo:hasLegalBasis|epo:hasLegalBasis |
-| 1899 | epo:hasThresholdValue|epo:hasThresholdValue|epo:hasLegalBasis |
+| 1899 | epo:hasThresholdValue|epo:hasThresholdValue|epo:hasThresholdValue |
 | 1900 | epo:hasLegalBasis|epo:hasLegalBasis|epo:hasLegalBasis |
 | 1901 | epo:hasLegalBasis|epo:hasLegalBasis|epo:hasLegalBasis |
 | 1902 | epo:hasLegalBasis|epo:hasLegalBasis|epo:hasLegalBasis |
@@ -523,6 +503,7 @@
 | 1946 | epo:isCompetitionTerminated|epo:isCompetitionTerminated|epo:isCompetitionTerminated |
 | 1948 | epo:hasReferenceURI|epo:hasReferenceURI|epo:hasReferenceURI |
 | 1952 | epo:hasURL|epo:hasURL|epo:hasCertificationNumber |
+| 1966 | ||epo:hasURL |
 | 1972 | epo:hasLegalBasis|epo:hasLegalBasis|epo:hasLegalBasis |
 | 1973 | epo:hasLegalBasis|epo:hasLegalBasis|epo:hasLegalBasis |
 | 1974 | epo:hasLegalBasis|epo:hasLegalBasis|epo:hasLegalBasis |
@@ -660,8 +641,8 @@
 | 2550 | epo:actsOnBehalfOf|epo:actsOnBehalfOf|epo:actsOnBehalfOf |
 | 2551 | epo:delegatesAncillaryActivitiesTo|epo:delegatesAncillaryActivitiesTo|epo:delegatesAncillaryActivitiesTo |
 | 2566 | epo-ful:hasVehicleDescription|epo-ful:hasVehicleDescription|epo-ful:hasVehicleDescription |
-| 2567 | epo:hasCountryOfBirth|epo:hasCountryOfBirth| |
-| 2568 | epo:hasNutsCode|epo:hasNutsCode| |
+| 2567 | epo:hasCountryOfBirth|epo:hasCountryOfBirth|epo:hasCountryOfBirth |
+| 2568 | epo:hasNutsCode|epo:hasNutsCode|epo:hasNutsCode |
 | 2570 | epo-ful:isReturnable|epo-ful:isReturnable|epo-ful:isReturnable |
 | 2571 | epo-ful:hasPackagingTypeDescription|epo-ful:hasPackagingTypeDescription|epo-ful:hasPackagingTypeDescription |
 | 2573 | epo-ful:isHazardousRisk|epo-ful:isHazardousRisk|epo-ful:isHazardousRisk |
@@ -677,7 +658,7 @@
 | 2621 | epo-ful:isReturnableMaterial|epo-ful:isReturnableMaterial|epo-ful:isReturnableMaterial |
 | 2642 | epo-cat:hasCountryOfOrigin|epo-cat:hasCountryOfOrigin|epo-cat:hasCountryOfOrigin |
 | 2667 | epo:hasConfirmedIrregularityType|epo:hasConfirmedIrregularityType|epo:hasConfirmedIrregularityType |
-| 2668 | epo:hasAddressURL|epo:hasAddressURL| |
+| 2668 | epo:hasAddressURL|epo:hasAddressURL|epo:hasAddressURL |
 | 2705 | epo:announcesAwardDecision|epo:announcesAwardDecision|epo:announcesAwardDecision |
 | 2726 | epo-cat:hasManufacturer|epo-cat:hasManufacturer|epo-cat:hasManufacturer |
 | 2737 | epo-cat:hasHazardousItemUNDGCode|epo-cat:hasHazardousItemUNDGCode|epo-cat:hasHazardousItemUNDGCode |
@@ -765,7 +746,6 @@
 | 3061 | epo-cat:hasDeliveryClassification|epo-cat:hasDeliveryClassification|epo-cat:hasDeliveryClassification |
 | 3063 | epo:specifiesProcurementCriterion|epo:specifiesProcurementCriterion|epo:specifiesProcurementCriterion |
 | 3070 | epo:contextualisedBy|epo:contextualisedBy|epo:contextualisedBy |
-| 3072 | locn:geographicName|locn:geographicName|epo:foreseesContractSpecificTerm |
 | 3076 | epo-cat:hasAccessoryItem|epo-cat:hasAccessoryItem|epo-cat:hasAccessoryItem |
 | 3080 | epo-cat:hasComplementaryItem|epo-cat:hasComplementaryItem|epo-cat:hasComplementaryItem |
 | 3084 | epo:hasTotalVehicles|epo:hasTotalVehicles|epo:hasTotalVehicles |
@@ -803,7 +783,7 @@
 | 3196 | epo-not:refersToRole|epo-not:refersToRole|epo-not:refersToRole |
 | 3199 | epo-cat:hasStandardisedUnitPrice|epo-cat:hasStandardisedUnitPrice|epo-cat:hasStandardisedUnitPrice |
 | 3201 | epo:hasCertification|epo:hasCertification|epo:hasCertification |
-| 3202 | epo:hasValidityPeriod|epo:hasValidityPeriod| |
+| 3202 | epo:hasValidityPeriod|epo:hasValidityPeriod|epo:hasValidityPeriod |
 | 3213 | epo-cat:hasAmount|epo-cat:hasAmount|epo-cat:hasAmount |
 | 3214 | epo-cat:hasChargeInformation|epo-cat:hasChargeInformation|epo-cat:hasChargeInformation |
 | 3215 | epo-cat:hasTaxCategory|epo-cat:hasTaxCategory|epo-cat:hasTaxCategory |
@@ -920,9 +900,9 @@
 | 4072 | epo-ord:concernsOriginatorRequest|epo-ord:concernsOriginatorRequest|epo-ord:concernsOriginatorRequest |
 | 4074 | epo:refersToProject|epo:refersToProject|epo:refersToProject |
 | 4113 | epo:exposesChannel|epo:exposesChannel|epo:exposesChannel |
-| 4115 | epo:hasEndpointIdentifier|epo:hasEndpointIdentifier| |
-| 4117 | epo:hasLegalIdentifier|epo:hasLegalIdentifier| |
-| 4118 | epo:hasTaxIdentifier|epo:hasTaxIdentifier| |
+| 4115 | epo:hasEndpointIdentifier|epo:hasEndpointIdentifier|epo:hasEndpointIdentifier |
+| 4117 | epo:hasLegalIdentifier|epo:hasLegalIdentifier|epo:hasLegalIdentifier |
+| 4118 | epo:hasTaxIdentifier|epo:hasTaxIdentifier|epo:hasTaxIdentifier |
 | 4244 | epo-ful:hasAllowanceChargeReason|epo-ful:hasAllowanceChargeReason|epo-ful:hasAllowanceChargeReason |
 | 4245 | epo:isCalculatedOn|epo:isCalculatedOn|epo:isCalculatedOn |
 | 4246 | epo-ful:hasAssociatedDocument|epo-ful:hasAssociatedDocument|epo-ful:hasAssociatedDocument |
@@ -966,7 +946,7 @@
 | 4445 | epo:hasElectronicDigest|epo:hasElectronicDigest|epo:hasElectronicDigest |
 | 4446 | epo:usesChannel|epo:usesChannel|epo:usesChannel |
 | 4449 | epo:hasFundProgramme|epo:hasFundProgramme|epo:hasFundProgramme |
-| 4451 | epo:hasRegistrationCountry|epo:hasRegistrationCountry| |
+| 4451 | epo:hasRegistrationCountry|epo:hasRegistrationCountry|epo:hasRegistrationCountry |
 | 4452 | epo:specifiesDeliverable|epo:specifiesDeliverable|epo:specifiesDeliverable |
 | 4454 | epo-cat:hasQuantity|epo-cat:hasQuantity|epo-cat:hasQuantity |
 | 4456 | epo:hasContractValue|epo:hasContractValue|epo:hasContractValue |
@@ -983,8 +963,8 @@
 | 4561 | epo-ord:hasTaxInformation|epo-ord:hasTaxInformation|epo-ord:hasTaxInformation |
 | 4566 | epo:hasReservedProcurement|epo:hasReservedProcurement|epo:hasReservedProcurement |
 | 4575 | epo:hasPriceSurchargeInformation|epo:hasPriceSurchargeInformation|epo:hasPriceSurchargeInformation |
-| 4576 | epo:hasCertification|epo:hasCertification| |
-| 4578 | epo:hasCertification|epo:hasCertification| |
+| 4576 | epo:hasCertification|epo:hasCertification|epo:hasCertification |
+| 4578 | epo:hasCertification|epo:hasCertification|epo:hasCertification |
 | 4598 | epo:containsCandidate|epo:containsCandidate|epo:containsCandidate |
 | 4599 | epo:hasStartDate|epo:hasStartDate|epo:hasStartDate |
 | 4603 | epo:resultsFromMiniCompetitionAwardOutcome|epo:resultsFromMiniCompetitionAwardOutcome|epo:resultsFromMiniCompetitionAwardOutcome |
@@ -1026,8 +1006,8 @@
 | 4694 | epo:isFundedBy|epo:isFundedBy|epo:isFundedBy |
 | 4703 | epo:hasPurpose|epo:hasPurpose|epo:hasPurpose |
 | 4706 | epo:definesSpecificPlaceOfPerformance|epo:definesSpecificPlaceOfPerformance|epo:definesSpecificPlaceOfPerformance |
-| 4708 | epo:hasNutsCode|epo:hasNutsCode| |
-| 4709 | epo:hasCountryCode|epo:hasCountryCode| |
+| 4708 | epo:hasNutsCode|epo:hasNutsCode|epo:hasNutsCode |
+| 4709 | epo:hasCountryCode|epo:hasCountryCode|epo:hasCountryCode |
 | 4714 | epo-cat:hasDeliveryLocation|epo-cat:hasDeliveryLocation|epo-cat:hasDeliveryLocation |
 | 4715 | epo-ful:specifiesPlaceOfDespatch|epo-ful:specifiesPlaceOfDespatch|epo-ful:specifiesPlaceOfDespatch |
 | 4716 | epo-ord:specifiesDeliveryAgreementLocation|epo-ord:specifiesDeliveryAgreementLocation|epo-ord:specifiesDeliveryAgreementLocation |
@@ -1090,6 +1070,9 @@
 | 4915 | ||epo-cat:foreseesPackage |
 | 4916 | ||epo:hasValidityPeriod |
 | 4929 | ||epo-ord:hasSellerOrderID |
+| 4932 | ||epo:hasResourceType |
+| 4933 | ||epo:hasSubdivision |
+| 4946 | ||epo:hasConstraint |
 | 4948 | ||epo:includesNationalCriterion |
 | 5177 | ||epo-sub:concernsOrganisation |
 | 5179 | ||epo-sub:providesOrganisationEmployeeQuantity |
@@ -1104,14 +1087,16 @@
 | 5205 | ||epo-sub:refersToOtherESPDResponse |
 | 5257 | ||epo-sub:providesInformationOn |
 | 5259 | ||epo-sub:summarisesInformationAboutCertificate |
+| 5261 | ||epo:canProvideTaxAndSocialSecuritiesEvidence |
 | 5262 | ||epo:actsOnBehalfOf |
+| 5263 | ||epo:canProvideNonDiscriminatoryEvidence |
 | 849 | epo:isProcurementDocumentRestricted|epo:isProcurementDocumentRestricted|epo:isProcurementDocumentRestricted |
-| 852 | epo:hasAlias|epo:hasAlias| |
+| 852 | epo:hasAlias|epo:hasAlias|epo:hasAlias |
 | 853 | epo:hasFixedValue|epo:hasFixedValue|epo:hasFixedValue |
 | 854 | epo:hasAwardDecisionDate|epo:hasAwardDecisionDate|epo:hasAwardDecisionDate |
 | 856 | epo:isListedCompany|epo:isListedCompany|epo:isListedCompany |
 | 857 | epo:isContractingEntity|epo:isContractingEntity|epo:isContractingEntity |
-| 866 | epo:hasContactName|epo:hasContactName| |
+| 866 | epo:hasContactName|epo:hasContactName|epo:hasContactName |
 | 867 | epo:hasContractConclusionDate|epo:hasContractConclusionDate|epo:hasContractConclusionDate |
 | 873 | epo:hasOptions|epo:hasOptions|epo:hasOptions |
 | 876 | epo:hasDescriptionOfPrizes|epo:hasDescriptionOfPrizes|epo:hasDescriptionOfPrizes |
@@ -1122,7 +1107,7 @@
 | 909 | epo:hasQualificationSystemRenewalDescription|epo:hasQualificationSystemRenewalDescription|epo:hasQualificationSystemRenewalDescription |
 | 910 | epo:hasAdditionalInformation|epo:hasAdditionalInformation|epo:hasAdditionalInformation |
 | 912 | epo:hasOpeningURL|epo:hasOpeningURL|epo:hasOpeningURL |
-| 913 | epo:hasMainActivityDescription|epo:hasMainActivityDescription| |
+| 913 | epo:hasMainActivityDescription|epo:hasMainActivityDescription|epo:hasMainActivityDescription |
 | 914 | epo:hasGroupType|epo:hasGroupType|epo:hasGroupType |
 | 915 | epo:hasBeginning|epo:hasBeginning|epo:hasBeginning |
 | 921 | epo:hasPrizeRank|epo:hasPrizeRank|epo:hasPrizeRank |

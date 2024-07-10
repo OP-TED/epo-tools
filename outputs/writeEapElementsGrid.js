@@ -1,5 +1,5 @@
 import { UNDER_REVIEW } from '../src/config.js'
-import { getEpoJson } from '../src/epo/readEpo.js'
+import { getEpoJson, getJson } from '../src/epo/readEpo.js'
 import { readFileSync, writeFileSync } from 'fs'
 
 function getTraces (trace) {
@@ -13,6 +13,8 @@ function getTraces (trace) {
     elements: Object.keys(trace).
       map(key => trace[key].nodes.find(x => x.eaId === id)),
   }))
+
+  // Traces for edges cannot be computed from Ids, since the eAP contains elements that are not referenced by any class.
   const allEdgeIds = [
     ...new Set(
       Object.values(trace).
@@ -90,7 +92,7 @@ ${edgeTrace.filter(isEpoEdge).map(toEdgeRow).join('\n')}
 const load = x => JSON.parse(readFileSync(x, 'utf8'))
 
 const { databasePath, tag } = UNDER_REVIEW
-const current = getEpoJson({ databasePath })
+const current = getJson({ databasePath })
 
 const traceV4 = {
   'ePO_CM_v4.0.0': load('public/models/ePO_CM_v4.0.0.json'),
