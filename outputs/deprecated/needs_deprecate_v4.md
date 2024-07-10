@@ -1,11 +1,11 @@
 
-# All EPO elements from v4.0.0 to Develop
+# Models: ePO_CM_v4.0.0 to ePO_CM_current
 
 ## Classes requiring deprecation
 
 (might be repeated)
 
-| eapID | v4.0.0 | v4.0.2 | Current |
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
 |-------|--------|--------|---------|
 
 
@@ -13,7 +13,7 @@
 
 (might be repeated)
 
-| eapID | v4.0.0 | v4.0.2 | Current |
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
 |-------|--------|--------|---------|
 | 1437 | epo:hasNationality|epo:hasNationality| |
 | 1619 | epo:hasPrimaryContactPoint|epo:hasPrimaryContactPoint| |
@@ -41,7 +41,7 @@
 
 (might be repeated)
 
-| eapID | v4.0.0 | v4.0.2 | Current |
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
 |-------|--------|--------|---------|
 | 1022 | epo:Quantity|epo:Quantity|epo:Quantity |
 | 1027 | epo:RequestForClarification|epo:RequestForClarification|epo:RequestForClarification |
@@ -365,7 +365,7 @@
 
 (might be repeated)
 
-| eapID | v4.0.0 | v4.0.2 | Current |
+| eapId | ePO_CM_v4.0.0|ePO_CM_v4.0.2|ePO_CM_current |
 |-------|--------|--------|---------|
 | 1022 | epo:hasQuantityValue|epo:hasQuantityValue|epo:hasQuantityValue |
 | 1056 | epo-cat:hasSpecificPaymentArrangement|epo-cat:hasSpecificPaymentArrangement|epo-cat:hasSpecificPaymentArrangement |
@@ -1135,4 +1135,4 @@
 | 960 | epo:hasCurrencyCodeListAgencyID|epo:hasCurrencyCodeListAgencyID|epo:hasCurrencyCodeListAgencyID |
 
 
-[source](../writeDeprecated.js) 2024-07-10T09:56:11.779Z
+[source](../writeDeprecated.js) 2024-07-10T10:07:55.684Z
