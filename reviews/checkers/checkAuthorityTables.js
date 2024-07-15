@@ -1,6 +1,5 @@
 import { stringify } from 'csv-stringify/sync'
 import fs from 'fs'
-import { UNDER_REVIEW } from '../../src/config.js'
 import { getRdfAssets } from '../../src/io/assets.js'
 import { createTriplestore, doSelect } from '../../src/sparql/localStore.js'
 

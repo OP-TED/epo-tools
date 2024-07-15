@@ -94,11 +94,11 @@
 
 	dcterms:type a rdf:Property .
 
-	dcterms:requires a rdf:Property .
-
 	dcterms:hasPart a rdf:Property .
 
 	dcterms:isReplacedBy a rdf:Property .
+
+	dcterms:requires a rdf:Property .
 
 	dcterms:replaces a rdf:Property .
 

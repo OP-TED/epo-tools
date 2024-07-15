@@ -65,7 +65,7 @@
 
 <file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl> {
 	org:Organization a owl:Class ;
-		rdfs:subClassOf _:b2381, _:b2382, _:b2383, _:b2384, _:b2385 .
+		rdfs:subClassOf _:b2379, _:b2380, _:b2381, _:b2382, _:b2383 .
 
 	m8g:Evidence a owl:Class .
 
@@ -73,15 +73,15 @@
 
 	dcterms:title rdfs:range rdf:PlainLiteral .
 
-	dcterms:Location rdfs:subClassOf _:b2270, _:b2271, _:b2272, _:b2273, _:b2274 .
+	dcterms:Location rdfs:subClassOf _:b2268, _:b2269, _:b2270, _:b2271, _:b2272 .
 
 	m8g:Channel a owl:Class .
 
 	foaf:Agent a owl:Class .
 
-	person:Person rdfs:subClassOf _:b2282, _:b2283 .
+	person:Person rdfs:subClassOf _:b2280, _:b2281 .
 
-	m8g:Constraint rdfs:subClassOf _:b2116 .
+	m8g:Constraint rdfs:subClassOf _:b2114 .
 
 	m8g:InformationConcept a owl:Class .
 
@@ -91,7 +91,7 @@
 
 	dcterms:alternative rdfs:range rdf:PlainLiteral .
 
-	m8g:Criterion rdfs:subClassOf _:b2117, _:b2118, _:b2119 .
+	m8g:Criterion rdfs:subClassOf _:b2115, _:b2116, _:b2117 .
 
 	time:unitType rdfs:range skos:Concept .
 
@@ -143,7 +143,7 @@
 
 	adms:identifier rdfs:range adms:Identifier ;
 		a owl:FunctionalProperty ;
-		rdfs:domain _:b2225 .
+		rdfs:domain _:b2223 .
 
 	locn:address rdfs:range locn:Address .
 }
@@ -481,14 +481,6 @@
 	time:Duration a owl:Class .
 }
 
-<file:///implementation/eNotice/owl_ontology/eNotice.ttl> {
-	rdf:PlainLiteral a rdfs:Datatype .
-}
-
-<file:///implementation/eNotice/owl_ontology/eNotice.rdf> {
-	rdf:PlainLiteral a rdfs:Datatype .
-}
-
 <file:///implementation/eOrdering/owl_ontology/eOrdering.ttl> {
 	rdf:PlainLiteral a rdfs:Datatype .
 
@@ -501,22 +493,22 @@
 	dcterms:description a owl:DatatypeProperty .
 }
 
-<file:///implementation/eContract/owl_ontology/eContract.ttl> {
+<file:///implementation/eNotice/owl_ontology/eNotice.ttl> {
 	rdf:PlainLiteral a rdfs:Datatype .
 }
 
-<file:///implementation/eContract/owl_ontology/eContract.rdf> {
+<file:///implementation/eNotice/owl_ontology/eNotice.rdf> {
 	rdf:PlainLiteral a rdfs:Datatype .
 }
 
 <file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.ttl> {
 	adms:identifier rdfs:range adms:Identifier ;
-		rdfs:domain _:b2958 .
+		rdfs:domain _:b2952 .
 }
 
 <file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.rdf> {
 	adms:identifier rdfs:range adms:Identifier ;
-		rdfs:domain _:df_44_67 .
+		rdfs:domain _:df_41_67 .
 }
 
 <file:///implementation/eFulfilment/owl_ontology/eFulfilment.ttl> {
@@ -535,18 +527,12 @@
 	adms:identifier a owl:ObjectProperty .
 }
 
-<file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.rdf> {
-	dcterms:title rdfs:range rdf:PlainLiteral ;
-		a owl:FunctionalProperty .
+<file:///implementation/eContract/owl_ontology/eContract.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
 
-	adms:identifier rdfs:range adms:Identifier ;
-		rdfs:domain a4g:Line .
-
-	dcterms:requires a owl:AsymmetricProperty .
-
-	dcterms:hasPart a owl:AsymmetricProperty .
-
-	dcterms:isReplacedBy a owl:AsymmetricProperty .
+<file:///implementation/eContract/owl_ontology/eContract.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
 }
 
 <file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.ttl> {
@@ -556,11 +542,25 @@
 	adms:identifier rdfs:range adms:Identifier ;
 		rdfs:domain a4g:Line .
 
+	dcterms:hasPart a owl:AsymmetricProperty .
+
+	dcterms:isReplacedBy a owl:AsymmetricProperty .
+
 	dcterms:requires a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.rdf> {
+	dcterms:title rdfs:range rdf:PlainLiteral ;
+		a owl:FunctionalProperty .
+
+	adms:identifier rdfs:range adms:Identifier ;
+		rdfs:domain a4g:Line .
 
 	dcterms:hasPart a owl:AsymmetricProperty .
 
 	dcterms:isReplacedBy a owl:AsymmetricProperty .
+
+	dcterms:requires a owl:AsymmetricProperty .
 }
 
 <file:///implementation/eCatalogue/owl_ontology/eCatalogue.ttl> {
@@ -572,11 +572,11 @@
 
 	adms:identifier a owl:ObjectProperty .
 
-	dcterms:requires a owl:ObjectProperty .
-
 	dcterms:hasPart a owl:ObjectProperty .
 
 	dcterms:isReplacedBy a owl:ObjectProperty .
+
+	dcterms:requires a owl:ObjectProperty .
 
 	dcterms:replaces a owl:ObjectProperty .
 }
@@ -590,11 +590,11 @@
 
 	adms:identifier a owl:ObjectProperty .
 
-	dcterms:requires a owl:ObjectProperty .
-
 	dcterms:hasPart a owl:ObjectProperty .
 
 	dcterms:isReplacedBy a owl:ObjectProperty .
+
+	dcterms:requires a owl:ObjectProperty .
 
 	dcterms:replaces a owl:ObjectProperty .
 }
@@ -605,7 +605,7 @@
 	dcterms:title rdfs:range rdfs:Literal .
 
 	adms:identifier rdfs:range adms:Identifier ;
-		rdfs:domain _:b3123 .
+		rdfs:domain _:b3121 .
 
 	rdfs:Literal a owl:Class .
 
