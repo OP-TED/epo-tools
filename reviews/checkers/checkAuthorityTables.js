@@ -41,9 +41,5 @@ SELECT ?g ?s ?p ?o {
     console.log('no authority tables redefined in', assets.length, 'files')
   }
 }
-const { localPath } = UNDER_REVIEW
-const targetDirectory = `outputs/checkers`
 
-await checkAuthorityTables({
-  sourceDirectory: localPath, targetDirectory,
-})
+export default checkAuthorityTables

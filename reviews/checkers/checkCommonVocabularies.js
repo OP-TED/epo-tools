@@ -76,9 +76,5 @@ WHERE {
 
 }
 
-const { localPath } = UNDER_REVIEW
-const targetDirectory = `outputs/checkers`
+export default checkCommonVocabularies
 
-await checkCommonVocabularies({
-  sourceDirectory: localPath, targetDirectory,
-})
