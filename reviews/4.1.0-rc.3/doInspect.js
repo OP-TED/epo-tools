@@ -23,7 +23,7 @@ await checkAuthorityTables({
 
 await checkCommonVocabularies({
   sourceDirectory: localPath,
-  targetDirectory: `reviews/4.1.0-rc.3/redefine`,
+  targetDirectory: `reviews/4.1.0-rc.3/redefined`,
 })
 await checkMissingShacl({
   model,

@@ -1,0 +1,897 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cpov: <http://data.europa.eu/m8g/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix at: <http://publications.europa.eu/ontology/authority/> .
+@prefix atold: <http://publications.europa.eu/resource/authority/> .
+
+<file:///implementation/eSubmission/owl_ontology/eSubmission_restrictions.ttl> {
+	m8g:confidentialityLevelType rdfs:domain a4g:Response ;
+		rdfs:range skos:Concept .
+
+	m8g:providesValueFor rdfs:domain m8g:SupportedValue ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:supportsValue rdfs:domain _:b1642 ;
+		rdfs:range m8g:SupportedValue .
+
+	m8g:value rdfs:domain m8g:SupportedValue ;
+		rdfs:range rdf:PlainLiteral .
+}
+
+<file:///implementation/eSubmission/owl_ontology/eSubmission_restrictions.rdf> {
+	m8g:confidentialityLevelType rdfs:domain a4g:Response ;
+		rdfs:range skos:Concept .
+
+	m8g:providesValueFor rdfs:domain m8g:SupportedValue ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:supportsValue rdfs:domain _:df_29_10 ;
+		rdfs:range m8g:SupportedValue .
+
+	m8g:value rdfs:domain m8g:SupportedValue ;
+		rdfs:range rdf:PlainLiteral .
+}
+
+<file:///implementation/eSubmission/owl_ontology/eSubmission.ttl> {
+	m8g:confidentialityLevelType a owl:ObjectProperty .
+
+	m8g:providesValueFor a owl:ObjectProperty .
+
+	m8g:SupportedValue a owl:Class .
+
+	m8g:supportsValue a owl:ObjectProperty .
+
+	m8g:value a owl:DatatypeProperty .
+
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
+<file:///implementation/eSubmission/owl_ontology/eSubmission.rdf> {
+	m8g:confidentialityLevelType a owl:ObjectProperty .
+
+	m8g:providesValueFor a owl:ObjectProperty .
+
+	m8g:SupportedValue a owl:Class .
+
+	m8g:supportsValue a owl:ObjectProperty .
+
+	m8g:value a owl:DatatypeProperty .
+
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
+<file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl> {
+	m8g:confidentialityLevelType rdfs:domain _:b1962 ;
+		rdfs:range skos:Concept .
+
+	m8g:providesValueFor rdfs:domain m8g:SupportedValue ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:InformationConcept a owl:Class .
+
+	m8g:supportsValue rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:SupportedValue .
+
+	org:Organization a owl:Class ;
+		rdfs:subClassOf _:b2375, _:b2376, _:b2377, _:b2378, _:b2379 .
+
+	m8g:Evidence a owl:Class .
+
+	dcterms:issued rdfs:range xsd:dateTime .
+
+	dcterms:title rdfs:range rdf:PlainLiteral .
+
+	dcterms:Location rdfs:subClassOf _:b2264, _:b2265, _:b2266, _:b2267, _:b2268 .
+
+	m8g:Channel a owl:Class .
+
+	foaf:Agent a owl:Class .
+
+	person:Person rdfs:subClassOf _:b2276, _:b2277 .
+
+	m8g:Constraint rdfs:subClassOf _:b2110 .
+
+	m8g:ContactPoint a owl:Class .
+
+	m8g:constrains rdfs:domain m8g:Constraint ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:coordinates rdfs:domain locn:Geometry ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:email rdfs:domain m8g:ContactPoint ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:hasConcept rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:Requirement a owl:Class .
+
+	m8g:hasEvidenceTypeList rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:EvidenceTypeList .
+
+	m8g:hasRequirement rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:Requirement ;
+		a owl:AsymmetricProperty .
+
+	m8g:isDerivedFrom rdfs:domain m8g:Requirement ;
+		rdfs:range eli:LegalResource .
+
+	m8g:latitude rdfs:domain locn:Geometry ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:longitude rdfs:domain locn:Geometry ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:supportsConcept rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:supportsRequirement rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:Requirement .
+
+	m8g:telephone rdfs:domain m8g:ContactPoint ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:validityPeriodConstraint rdfs:domain m8g:EvidenceType ;
+		rdfs:range a4g:Period .
+
+	dcterms:alternative rdfs:range rdf:PlainLiteral .
+
+	m8g:Criterion rdfs:subClassOf _:b2111, _:b2112, _:b2113 .
+
+	time:unitType rdfs:range skos:Concept .
+
+	org:subOrganizationOf rdfs:domain org:Organization ;
+		rdfs:range org:Organization ;
+		a owl:AsymmetricProperty .
+
+	person:birthName rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	person:patronymicName rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	foaf:familyName rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	foaf:name rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:bias rdfs:domain m8g:Criterion ;
+		rdfs:range xsd:decimal .
+
+	m8g:birthDate rdfs:domain person:Person ;
+		rdfs:range xsd:date .
+
+	m8g:weight rdfs:domain m8g:Criterion ;
+		rdfs:range xsd:decimal .
+
+	m8g:weightingConsiderationDescription rdfs:domain m8g:Criterion ;
+		rdfs:range rdf:PlainLiteral .
+
+	skos:notation a owl:FunctionalProperty .
+
+	time:numericDuration rdfs:domain a4g:SpecificDuration ;
+		rdfs:range xsd:decimal ;
+		a owl:FunctionalProperty .
+
+	locn:addressArea rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:adminUnitL1 rdfs:domain locn:Address .
+
+	locn:adminUnitL2 rdfs:domain locn:Address .
+
+	locn:fullAddress rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:geometry rdfs:range locn:Geometry .
+
+	locn:postCode rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:postName rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:thoroughfare rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	adms:identifier rdfs:range adms:Identifier ;
+		a owl:FunctionalProperty .
+
+	locn:address rdfs:range locn:Address .
+}
+
+<file:///implementation/ePO_core/owl_ontology/ePO_core_restrictions.rdf> {
+	m8g:confidentialityLevelType rdfs:domain _:df_32_541 ;
+		rdfs:range skos:Concept .
+
+	m8g:providesValueFor rdfs:domain m8g:SupportedValue ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:InformationConcept a owl:Class .
+
+	m8g:supportsValue rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:SupportedValue .
+
+	org:Organization a owl:Class ;
+		rdfs:subClassOf _:df_32_161, _:df_32_162, _:df_32_163, _:df_32_190, _:df_32_284 .
+
+	m8g:Evidence a owl:Class .
+
+	dcterms:issued rdfs:range xsd:dateTime .
+
+	dcterms:title rdfs:range rdf:PlainLiteral .
+
+	dcterms:Location rdfs:subClassOf _:df_32_13, _:df_32_191, _:df_32_192, _:df_32_193, _:df_32_194 .
+
+	m8g:Channel a owl:Class .
+
+	foaf:Agent a owl:Class .
+
+	person:Person rdfs:subClassOf _:df_32_164, _:df_32_283 .
+
+	m8g:Constraint rdfs:subClassOf _:df_32_1 .
+
+	m8g:ContactPoint a owl:Class .
+
+	m8g:constrains rdfs:domain m8g:Constraint ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:coordinates rdfs:domain locn:Geometry ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:email rdfs:domain m8g:ContactPoint ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:hasConcept rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:Requirement a owl:Class .
+
+	m8g:hasEvidenceTypeList rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:EvidenceTypeList .
+
+	m8g:hasRequirement rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:Requirement ;
+		a owl:AsymmetricProperty .
+
+	m8g:isDerivedFrom rdfs:domain m8g:Requirement ;
+		rdfs:range eli:LegalResource .
+
+	m8g:latitude rdfs:domain locn:Geometry ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:longitude rdfs:domain locn:Geometry ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:supportsConcept rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:InformationConcept .
+
+	m8g:supportsRequirement rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:Requirement .
+
+	m8g:telephone rdfs:domain m8g:ContactPoint ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:validityPeriodConstraint rdfs:domain m8g:EvidenceType ;
+		rdfs:range a4g:Period .
+
+	dcterms:alternative rdfs:range rdf:PlainLiteral .
+
+	m8g:Criterion rdfs:subClassOf _:df_32_2, _:df_32_3, _:df_32_4 .
+
+	time:unitType rdfs:range skos:Concept .
+
+	org:subOrganizationOf rdfs:domain org:Organization ;
+		rdfs:range org:Organization ;
+		a owl:AsymmetricProperty .
+
+	person:birthName rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	person:patronymicName rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	foaf:familyName rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	foaf:name rdfs:domain person:Person ;
+		rdfs:range rdf:PlainLiteral .
+
+	m8g:bias rdfs:domain m8g:Criterion ;
+		rdfs:range xsd:decimal .
+
+	m8g:birthDate rdfs:domain person:Person ;
+		rdfs:range xsd:date .
+
+	m8g:weight rdfs:domain m8g:Criterion ;
+		rdfs:range xsd:decimal .
+
+	m8g:weightingConsiderationDescription rdfs:domain m8g:Criterion ;
+		rdfs:range rdf:PlainLiteral .
+
+	skos:notation a owl:FunctionalProperty .
+
+	time:numericDuration rdfs:domain a4g:SpecificDuration ;
+		rdfs:range xsd:decimal ;
+		a owl:FunctionalProperty .
+
+	locn:addressArea rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:adminUnitL1 rdfs:domain locn:Address .
+
+	locn:adminUnitL2 rdfs:domain locn:Address .
+
+	locn:fullAddress rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:geometry rdfs:range locn:Geometry .
+
+	locn:postCode rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:postName rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	locn:thoroughfare rdfs:domain locn:Address ;
+		rdfs:range rdf:PlainLiteral .
+
+	adms:identifier rdfs:range adms:Identifier ;
+		a owl:FunctionalProperty .
+
+	locn:address rdfs:range locn:Address .
+}
+
+<file:///implementation/ePO_core/owl_ontology/ePO_core.ttl> {
+	m8g:confidentialityLevelType a owl:ObjectProperty .
+
+	m8g:providesValueFor a owl:ObjectProperty .
+
+	m8g:InformationConcept a owl:Class .
+
+	m8g:supportsValue a owl:ObjectProperty .
+
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	org:Organization a owl:Class ;
+		rdfs:subClassOf foaf:Agent .
+
+	m8g:Evidence a owl:Class .
+
+	dcterms:issued a owl:DatatypeProperty .
+
+	dcterms:title a owl:DatatypeProperty .
+
+	dcterms:Location a owl:Class .
+
+	m8g:Channel a owl:Class .
+
+	foaf:Agent a owl:Class .
+
+	person:Person a owl:Class ;
+		rdfs:subClassOf foaf:Person .
+
+	m8g:Constraint a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	m8g:ContactPoint a owl:Class .
+
+	m8g:constrains a owl:ObjectProperty .
+
+	m8g:coordinates a owl:DatatypeProperty .
+
+	locn:Geometry a owl:Class .
+
+	m8g:email a owl:DatatypeProperty .
+
+	m8g:hasConcept a owl:ObjectProperty .
+
+	m8g:Requirement a owl:Class .
+
+	m8g:hasEvidenceTypeList a owl:ObjectProperty .
+
+	m8g:hasRequirement a owl:ObjectProperty .
+
+	m8g:isDerivedFrom a owl:ObjectProperty .
+
+	m8g:latitude a owl:DatatypeProperty .
+
+	m8g:longitude a owl:DatatypeProperty .
+
+	m8g:supportsConcept a owl:ObjectProperty .
+
+	m8g:supportsRequirement a owl:ObjectProperty .
+
+	m8g:telephone a owl:DatatypeProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
+
+	dcterms:alternative a owl:DatatypeProperty .
+
+	m8g:Criterion a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	time:unitType a owl:ObjectProperty .
+
+	org:subOrganizationOf a owl:ObjectProperty .
+
+	person:birthName a owl:DatatypeProperty .
+
+	person:patronymicName a owl:DatatypeProperty .
+
+	foaf:familyName a owl:DatatypeProperty .
+
+	foaf:name a owl:DatatypeProperty .
+
+	m8g:bias a owl:DatatypeProperty .
+
+	m8g:birthDate a owl:DatatypeProperty .
+
+	m8g:weight a owl:DatatypeProperty .
+
+	m8g:weightingConsiderationDescription a owl:DatatypeProperty .
+
+	skos:notation a owl:DatatypeProperty .
+
+	time:numericDuration a owl:DatatypeProperty .
+
+	locn:addressArea a owl:DatatypeProperty .
+
+	locn:Address a owl:Class .
+
+	locn:adminUnitL1 a owl:DatatypeProperty .
+
+	locn:adminUnitL2 a owl:DatatypeProperty .
+
+	locn:fullAddress a owl:DatatypeProperty .
+
+	locn:geometry a owl:ObjectProperty .
+
+	locn:postCode a owl:DatatypeProperty .
+
+	locn:postName a owl:DatatypeProperty .
+
+	locn:thoroughfare a owl:DatatypeProperty .
+
+	adms:identifier a owl:ObjectProperty .
+
+	adms:Identifier a owl:Class .
+
+	locn:address a owl:ObjectProperty .
+
+	skos:prefLabel a owl:DatatypeProperty .
+
+	m8g:InformationRequirement a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	m8g:PublicOrganisation a owl:Class ;
+		rdfs:subClassOf org:Organization .
+
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
+
+	dcterms:type a owl:ObjectProperty .
+
+	locn:geographicName a owl:DatatypeProperty .
+
+	locn:locatorDesignator a owl:DatatypeProperty .
+
+	locn:locatorName a owl:DatatypeProperty .
+
+	foaf:Person a owl:Class ;
+		rdfs:subClassOf foaf:Agent .
+
+	foaf:givenName a owl:DatatypeProperty .
+
+	time:Duration a owl:Class .
+}
+
+<file:///implementation/ePO_core/owl_ontology/ePO_core.rdf> {
+	m8g:confidentialityLevelType a owl:ObjectProperty .
+
+	m8g:providesValueFor a owl:ObjectProperty .
+
+	m8g:InformationConcept a owl:Class .
+
+	m8g:supportsValue a owl:ObjectProperty .
+
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	org:Organization a owl:Class ;
+		rdfs:subClassOf foaf:Agent .
+
+	m8g:Evidence a owl:Class .
+
+	dcterms:issued a owl:DatatypeProperty .
+
+	dcterms:title a owl:DatatypeProperty .
+
+	dcterms:Location a owl:Class .
+
+	m8g:Channel a owl:Class .
+
+	foaf:Agent a owl:Class .
+
+	person:Person a owl:Class ;
+		rdfs:subClassOf foaf:Person .
+
+	m8g:Constraint a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	m8g:ContactPoint a owl:Class .
+
+	m8g:constrains a owl:ObjectProperty .
+
+	m8g:coordinates a owl:DatatypeProperty .
+
+	locn:Geometry a owl:Class .
+
+	m8g:email a owl:DatatypeProperty .
+
+	m8g:hasConcept a owl:ObjectProperty .
+
+	m8g:Requirement a owl:Class .
+
+	m8g:hasEvidenceTypeList a owl:ObjectProperty .
+
+	m8g:hasRequirement a owl:ObjectProperty .
+
+	m8g:isDerivedFrom a owl:ObjectProperty .
+
+	m8g:latitude a owl:DatatypeProperty .
+
+	m8g:longitude a owl:DatatypeProperty .
+
+	m8g:supportsConcept a owl:ObjectProperty .
+
+	m8g:supportsRequirement a owl:ObjectProperty .
+
+	m8g:telephone a owl:DatatypeProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
+
+	dcterms:alternative a owl:DatatypeProperty .
+
+	m8g:Criterion a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	time:unitType a owl:ObjectProperty .
+
+	org:subOrganizationOf a owl:ObjectProperty .
+
+	person:birthName a owl:DatatypeProperty .
+
+	person:patronymicName a owl:DatatypeProperty .
+
+	foaf:familyName a owl:DatatypeProperty .
+
+	foaf:name a owl:DatatypeProperty .
+
+	m8g:bias a owl:DatatypeProperty .
+
+	m8g:birthDate a owl:DatatypeProperty .
+
+	m8g:weight a owl:DatatypeProperty .
+
+	m8g:weightingConsiderationDescription a owl:DatatypeProperty .
+
+	skos:notation a owl:DatatypeProperty .
+
+	time:numericDuration a owl:DatatypeProperty .
+
+	locn:addressArea a owl:DatatypeProperty .
+
+	locn:Address a owl:Class .
+
+	locn:adminUnitL1 a owl:DatatypeProperty .
+
+	locn:adminUnitL2 a owl:DatatypeProperty .
+
+	locn:fullAddress a owl:DatatypeProperty .
+
+	locn:geometry a owl:ObjectProperty .
+
+	locn:postCode a owl:DatatypeProperty .
+
+	locn:postName a owl:DatatypeProperty .
+
+	locn:thoroughfare a owl:DatatypeProperty .
+
+	adms:identifier a owl:ObjectProperty .
+
+	adms:Identifier a owl:Class .
+
+	locn:address a owl:ObjectProperty .
+
+	skos:prefLabel a owl:DatatypeProperty .
+
+	m8g:InformationRequirement a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	m8g:PublicOrganisation a owl:Class ;
+		rdfs:subClassOf org:Organization .
+
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
+
+	dcterms:type a owl:ObjectProperty .
+
+	locn:geographicName a owl:DatatypeProperty .
+
+	locn:locatorDesignator a owl:DatatypeProperty .
+
+	locn:locatorName a owl:DatatypeProperty .
+
+	foaf:Person a owl:Class ;
+		rdfs:subClassOf foaf:Agent .
+
+	foaf:givenName a owl:DatatypeProperty .
+
+	time:Duration a owl:Class .
+}
+
+<file:///implementation/eOrdering/owl_ontology/eOrdering.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
+<file:///implementation/eOrdering/owl_ontology/eOrdering.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+}
+
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.ttl> {
+	adms:identifier rdfs:range adms:Identifier .
+}
+
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment_restrictions.rdf> {
+	adms:identifier rdfs:range adms:Identifier .
+}
+
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	adms:identifier a owl:ObjectProperty .
+}
+
+<file:///implementation/eFulfilment/owl_ontology/eFulfilment.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	adms:identifier a owl:ObjectProperty .
+}
+
+<file:///implementation/eNotice/owl_ontology/eNotice.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
+<file:///implementation/eNotice/owl_ontology/eNotice.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
+<file:///implementation/eContract/owl_ontology/eContract.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
+<file:///implementation/eContract/owl_ontology/eContract.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess_restrictions.ttl> {
+	rdf:PlainLiteral a owl:Class .
+
+	dcterms:title rdfs:range rdfs:Literal .
+
+	m8g:hasEvidenceTypeList rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:EvidenceTypeList .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	m8g:isDerivedFrom rdfs:domain m8g:Requirement ;
+		rdfs:range eli:LegalResource .
+
+	m8g:validityPeriodConstraint rdfs:domain m8g:EvidenceType ;
+		rdfs:range a4g:Period .
+
+	adms:identifier rdfs:range adms:Identifier .
+
+	rdfs:Literal a owl:Class .
+
+	m8g:specifiesEvidenceType rdfs:domain m8g:EvidenceTypeList ;
+		rdfs:range m8g:EvidenceType .
+
+	dcterms:identifier rdfs:range xsd:anyURI .
+
+	dcterms:isPartOf a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess_restrictions.rdf> {
+	rdf:PlainLiteral a owl:Class .
+
+	dcterms:title rdfs:range rdfs:Literal .
+
+	m8g:hasEvidenceTypeList rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:EvidenceTypeList .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	m8g:isDerivedFrom rdfs:domain m8g:Requirement ;
+		rdfs:range eli:LegalResource .
+
+	m8g:validityPeriodConstraint rdfs:domain m8g:EvidenceType ;
+		rdfs:range a4g:Period .
+
+	adms:identifier rdfs:range adms:Identifier .
+
+	rdfs:Literal a owl:Class .
+
+	m8g:specifiesEvidenceType rdfs:domain m8g:EvidenceTypeList ;
+		rdfs:range m8g:EvidenceType .
+
+	dcterms:identifier rdfs:range xsd:anyURI .
+
+	dcterms:isPartOf a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	dcterms:title a owl:ObjectProperty .
+
+	m8g:hasEvidenceTypeList a owl:ObjectProperty .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	m8g:isDerivedFrom a owl:ObjectProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
+
+	m8g:EvidenceType a owl:Class .
+
+	adms:identifier a owl:ObjectProperty .
+
+	skos:prefLabel a owl:DatatypeProperty .
+
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
+
+	m8g:specifiesEvidenceType a owl:ObjectProperty .
+
+	dcterms:identifier a owl:DatatypeProperty .
+
+	dcterms:isPartOf a owl:ObjectProperty .
+}
+
+<file:///implementation/eAccess/owl_ontology/eAccess.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	dcterms:title a owl:ObjectProperty .
+
+	m8g:hasEvidenceTypeList a owl:ObjectProperty .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	m8g:isDerivedFrom a owl:ObjectProperty .
+
+	m8g:validityPeriodConstraint a owl:ObjectProperty .
+
+	m8g:EvidenceType a owl:Class .
+
+	adms:identifier a owl:ObjectProperty .
+
+	skos:prefLabel a owl:DatatypeProperty .
+
+	dcterms:conformsTo a owl:ObjectProperty .
+
+	dcterms:language a owl:ObjectProperty .
+
+	m8g:specifiesEvidenceType a owl:ObjectProperty .
+
+	dcterms:identifier a owl:DatatypeProperty .
+
+	dcterms:isPartOf a owl:ObjectProperty .
+}
+
+<file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.ttl> {
+	dcterms:title rdfs:range rdf:PlainLiteral ;
+		a owl:FunctionalProperty .
+
+	adms:identifier rdfs:range adms:Identifier .
+
+	dcterms:hasPart a owl:AsymmetricProperty .
+
+	dcterms:isReplacedBy a owl:AsymmetricProperty .
+
+	dcterms:requires a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.rdf> {
+	dcterms:title rdfs:range rdf:PlainLiteral ;
+		a owl:FunctionalProperty .
+
+	adms:identifier rdfs:range adms:Identifier .
+
+	dcterms:hasPart a owl:AsymmetricProperty .
+
+	dcterms:isReplacedBy a owl:AsymmetricProperty .
+
+	dcterms:requires a owl:AsymmetricProperty .
+}
+
+<file:///implementation/eCatalogue/owl_ontology/eCatalogue.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	dcterms:title a owl:DatatypeProperty .
+
+	adms:identifier a owl:ObjectProperty .
+
+	dcterms:hasPart a owl:ObjectProperty .
+
+	dcterms:isReplacedBy a owl:ObjectProperty .
+
+	dcterms:requires a owl:ObjectProperty .
+
+	dcterms:replaces a owl:ObjectProperty .
+}
+
+<file:///implementation/eCatalogue/owl_ontology/eCatalogue.rdf> {
+	rdf:PlainLiteral a rdfs:Datatype .
+
+	dcterms:description a owl:DatatypeProperty .
+
+	dcterms:title a owl:DatatypeProperty .
+
+	adms:identifier a owl:ObjectProperty .
+
+	dcterms:hasPart a owl:ObjectProperty .
+
+	dcterms:isReplacedBy a owl:ObjectProperty .
+
+	dcterms:requires a owl:ObjectProperty .
+
+	dcterms:replaces a owl:ObjectProperty .
+}
+
