@@ -1,11 +1,10 @@
-import { UNDER_REVIEW } from '../../src/config.js'
-import { getRdfAssets } from '../../src/io/assets.js'
+import { UNDER_REVIEW } from '../src/config.js'
+import { getRdfAssets } from '../src/io/assets.js'
 import { writeFileSync } from 'fs'
 import {
   prettyPrintTrig,
-  prettyPrintTurtle,
-} from '../../src/io/serialization.js'
-import { createTriplestore, doSelect } from '../../src/sparql/localStore.js'
+} from '../src/io/serialization.js'
+import { createTriplestore, doSelect } from '../src/sparql/localStore.js'
 import rdf from 'rdf-ext'
 
 const globPattern = `${UNDER_REVIEW.localPath}/implementation/**/*.ttl`
@@ -72,6 +71,6 @@ WHERE {
 }
 `
 const filteredDataset = doQuery(filterUnwantedQuery)
-const filteredStr = await prettyPrintTrig({ dataset:filteredDataset })
+const filteredStr = await prettyPrintTrig({ dataset: filteredDataset })
 writeFileSync('./assets/filteredStr.ttl', filteredStr)
 console.log('filteredDataset', filteredDataset.size)

@@ -1,0 +1,297 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cpov: <http://data.europa.eu/m8g/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix at: <http://publications.europa.eu/ontology/authority/> .
+@prefix atold: <http://publications.europa.eu/resource/authority/> .
+
+<file://assets/common-vocabularies/m8g.ttl> {
+	m8g:confidentialityLevelType rdfs:domain m8g:Evidence ;
+		rdfs:range skos:Concept ;
+		a owl:ObjectProperty .
+
+	m8g:Evidence a owl:Class .
+
+	m8g:providesValueFor rdfs:domain m8g:SupportedValue ;
+		rdfs:range m8g:InformationConcept ;
+		a owl:ObjectProperty .
+
+	m8g:SupportedValue a owl:Class .
+
+	m8g:InformationConcept a owl:Class .
+
+	m8g:supportsValue rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:SupportedValue ;
+		a owl:ObjectProperty .
+
+	m8g:value rdfs:domain m8g:SupportedValue ;
+		rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty .
+
+	m8g:Channel a owl:Class .
+
+	m8g:Constraint a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	m8g:Requirement a owl:Class .
+
+	m8g:ContactPoint a owl:Class .
+
+	m8g:constrains rdfs:domain m8g:Constraint ;
+		rdfs:range m8g:InformationConcept ;
+		a owl:ObjectProperty .
+
+	m8g:coordinates rdfs:domain locn:Geometry ;
+		rdfs:range xsd:string ;
+		a owl:DatatypeProperty .
+
+	m8g:email rdfs:domain m8g:ContactPoint ;
+		rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty .
+
+	m8g:hasConcept rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:InformationConcept ;
+		a owl:ObjectProperty .
+
+	m8g:hasEvidenceTypeList rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:EvidenceTypeList ;
+		a owl:ObjectProperty .
+
+	m8g:EvidenceTypeList a owl:Class .
+
+	m8g:hasRequirement rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:Requirement ;
+		a owl:ObjectProperty .
+
+	m8g:isDerivedFrom rdfs:domain m8g:Requirement ;
+		rdfs:range m8g:ReferenceFramework ;
+		a owl:ObjectProperty .
+
+	m8g:latitude rdfs:domain locn:Geometry ;
+		rdfs:range xsd:string ;
+		a owl:DatatypeProperty .
+
+	m8g:longitude rdfs:domain locn:Geometry ;
+		rdfs:range xsd:string ;
+		a owl:DatatypeProperty .
+
+	m8g:supportsConcept rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:InformationConcept ;
+		a owl:ObjectProperty .
+
+	m8g:supportsRequirement rdfs:domain m8g:Evidence ;
+		rdfs:range m8g:Requirement ;
+		a owl:ObjectProperty .
+
+	m8g:telephone rdfs:domain m8g:ContactPoint ;
+		rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty .
+
+	m8g:validityPeriodConstraint rdfs:domain m8g:EvidenceType ;
+		rdfs:range time:ProperInterval ;
+		a owl:ObjectProperty .
+
+	m8g:EvidenceType a owl:Class .
+
+	m8g:Criterion a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	m8g:bias rdfs:domain m8g:Criterion ;
+		rdfs:range xsd:decimal ;
+		a owl:DatatypeProperty .
+
+	m8g:birthDate rdfs:domain person:Person ;
+		rdfs:range m8g:GenericDate ;
+		a owl:DatatypeProperty .
+
+	m8g:weight rdfs:domain m8g:Criterion ;
+		rdfs:range xsd:decimal ;
+		a owl:DatatypeProperty .
+
+	m8g:weightingConsiderationDescription rdfs:domain m8g:Criterion ;
+		rdfs:range xsd:string ;
+		a owl:DatatypeProperty .
+
+	m8g:InformationRequirement a owl:Class ;
+		rdfs:subClassOf m8g:Requirement .
+
+	m8g:PublicOrganisation a owl:Class ;
+		rdfs:subClassOf org:Organization .
+
+	m8g:specifiesEvidenceType rdfs:domain m8g:EvidenceTypeList ;
+		rdfs:range m8g:EvidenceType ;
+		a owl:ObjectProperty .
+}
+
+<file://assets/common-vocabularies/dc-terms.ttl> {
+	dcterms:description a rdf:Property .
+
+	dcterms:issued rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	dcterms:title rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	dcterms:Location a rdfs:Class ;
+		rdfs:subClassOf dcterms:LocationPeriodOrJurisdiction .
+
+	dcterms:alternative rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	dcterms:conformsTo a rdf:Property .
+
+	dcterms:language a rdf:Property .
+
+	dcterms:type a rdf:Property .
+
+	dcterms:identifier rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	dcterms:isPartOf a rdf:Property .
+
+	dcterms:hasPart a rdf:Property .
+
+	dcterms:isReplacedBy a rdf:Property .
+
+	dcterms:requires a rdf:Property .
+
+	dcterms:replaces a rdf:Property .
+}
+
+<file://assets/common-vocabularies/w3c-22-rdf-syntax-ns.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
+<file://assets/common-vocabularies/rdf.ttl> {
+	rdf:PlainLiteral a rdfs:Datatype .
+}
+
+<file://assets/common-vocabularies/w3c-org.ttl> {
+	org:Organization a owl:Class, rdfs:Class ;
+		rdfs:subClassOf foaf:Agent .
+
+	org:subOrganizationOf rdfs:domain org:Organization ;
+		rdfs:range org:Organization ;
+		a owl:ObjectProperty, rdf:Property .
+}
+
+<file://assets/common-vocabularies/foaf.rdf> {
+	foaf:Agent a owl:Class, rdfs:Class .
+
+	foaf:Person a owl:Class, rdfs:Class ;
+		rdfs:subClassOf foaf:Agent, <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+
+	foaf:familyName rdfs:domain foaf:Person ;
+		rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty, rdf:Property .
+
+	foaf:name rdfs:domain owl:Thing ;
+		rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty, rdf:Property .
+
+	foaf:givenName a owl:DatatypeProperty, rdf:Property .
+}
+
+<file://assets/common-vocabularies/w3c-person.ttl> {
+	person:Person a rdfs:Class ;
+		rdfs:subClassOf schema:Person, foaf:Person .
+
+	person:birthName rdfs:domain person:Person ;
+		rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty, rdf:Property .
+
+	person:patronymicName rdfs:domain person:Person ;
+		rdfs:range rdfs:Literal ;
+		a owl:DatatypeProperty, rdf:Property .
+}
+
+<file://assets/common-vocabularies/w3c-time.ttl> {
+	time:unitType rdfs:range time:TemporalUnit ;
+		a owl:ObjectProperty .
+
+	time:numericDuration rdfs:domain time:Duration ;
+		rdfs:range xsd:decimal ;
+		a owl:DatatypeProperty .
+
+	time:Duration a owl:Class .
+}
+
+<file://assets/common-vocabularies/w3c-skos.rdf> {
+	skos:notation a owl:DatatypeProperty, rdf:Property .
+
+	skos:prefLabel a rdf:Property, owl:AnnotationProperty .
+}
+
+<file://assets/common-vocabularies/w3c-locn.ttl> {
+	locn:Geometry a rdfs:Class .
+
+	locn:addressArea rdfs:domain locn:Address ;
+		rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	locn:Address a rdfs:Class .
+
+	locn:adminUnitL1 rdfs:domain locn:Address ;
+		a rdf:Property .
+
+	locn:adminUnitL2 rdfs:domain locn:Address ;
+		a rdf:Property .
+
+	locn:fullAddress rdfs:domain locn:Address ;
+		rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	locn:geometry rdfs:range locn:Geometry ;
+		a rdf:Property .
+
+	locn:postCode rdfs:domain locn:Address ;
+		rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	locn:postName rdfs:domain locn:Address ;
+		rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	locn:thoroughfare rdfs:domain locn:Address ;
+		rdfs:range rdfs:Literal ;
+		a rdf:Property .
+
+	locn:address rdfs:range locn:Address ;
+		a rdf:Property .
+
+	locn:geographicName a rdf:Property .
+
+	locn:locatorDesignator a rdf:Property .
+
+	locn:locatorName a rdf:Property .
+}
+
+<file://assets/common-vocabularies/w3c-adms.ttl> {
+	adms:identifier rdfs:range adms:Identifier ;
+		a owl:ObjectProperty, rdf:Property .
+
+	adms:Identifier a rdfs:Class .
+}
+
+<file://assets/common-vocabularies/rdfs.ttl> {
+	rdfs:Literal a rdfs:Class .
+}
+

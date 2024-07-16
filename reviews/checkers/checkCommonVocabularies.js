@@ -1,7 +1,7 @@
 import { stringify } from 'csv-stringify/sync'
 import fs from 'fs'
 import rdf from 'rdf-ext'
-import { COMMON_VOCABS, UNDER_REVIEW } from '../../src/config.js'
+import { COMMON_VOCABS } from '../../src/config.js'
 import { getRdfAssets } from '../../src/io/assets.js'
 import { prettyPrintTrig } from '../../src/io/serialization.js'
 import { createTriplestore, doSelect } from '../../src/sparql/localStore.js'
@@ -76,9 +76,5 @@ WHERE {
 
 }
 
-const { localPath } = UNDER_REVIEW
-const targetDirectory = `outputs/checkers`
+export default checkCommonVocabularies
 
-await checkCommonVocabularies({
-  sourceDirectory: localPath, targetDirectory,
-})
