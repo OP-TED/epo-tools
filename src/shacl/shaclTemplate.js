@@ -13,6 +13,14 @@ const toTurtle = (
 
   } = {}) => {
 
+  const common = `
+      <http://data.europa.eu/a4g/data-shape#PlainLiteral> a sh:NodeShape ;
+          sh:or (
+              [ sh:datatype xsd:string ]
+              [ sh:datatype rdf:langString ]
+          ) .
+          `
+
   const subclassTemplate = (edge) => {
     const { source, predicate, target } = edge
     return `
@@ -27,7 +35,7 @@ const toTurtle = (
 
     function getDatatype (target) {
       if (target === 'rdf:PlainLiteral') {
-        return `${propertyIRI(edge)}  sh:node a4g_shape:PlainLiteral .
+        return `${propertyIRI(edge)}  sh:node <http://data.europa.eu/a4g/data-shape#PlainLiteral> .
     `
       } else {
         return `${propertyIRI(edge)} sh:datatype ${target} .`
@@ -107,13 +115,7 @@ const toTurtle = (
     }
   }
 
-  const common = `
-      a4g_shape:PlainLiteral a sh:NodeShape ;
-          sh:or (
-              [ sh:datatype xsd:string ]
-              [ sh:datatype rdf:langString ]
-          ) .
-          `
+
   return [prefix, common, ...output].join('\n')
 }
 
