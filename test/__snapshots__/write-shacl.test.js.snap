@@ -101,6 +101,7 @@ a4g_shape:GeometryShape a shacl:NodeShape ;
 a4g_shape:Geometry-coordinates-PlainLiteral a shacl:PropertyShape ;
 	shacl:path m8g:coordinates ;
 	shacl:name \\"coordinates\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Address-locatorName-PlainLiteral a shacl:PropertyShape ;
@@ -209,6 +210,7 @@ a4g_shape:AgentShape a shacl:NodeShape ;
 a4g_shape:Agent-hasAlias-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasAlias ;
 	shacl:name \\"has alias\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcedureShape a shacl:NodeShape ;
@@ -336,6 +338,7 @@ a4g:ReviewTerm rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm .
 a4g_shape:ReviewTerm-hasReviewProcedure-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasReviewProcedure ;
 	shacl:name \\"has review procedure\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ReviewTerm-hasReviewDeadline-dateTime a shacl:PropertyShape ;
@@ -393,6 +396,7 @@ a4g:OrganisationGroup rdfs:subClassOf org:Organization .
 a4g_shape:OrganisationGroup-hasGroupType-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasGroupType ;
 	shacl:name \\"has group type\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:AwardDecision-hasAdditionalNonAwardJustification-PlainLiteral a shacl:PropertyShape ;
@@ -457,7 +461,8 @@ a4g:ReviewObject rdfs:subClassOf a4g:Document .
 a4g_shape:ReviewObject-hasElementReference-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path a4g:hasElementReference ;
-	shacl:name \\"has element reference\\"@en .
+	shacl:name \\"has element reference\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:ItemRelationShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ItemRelation ;
@@ -486,6 +491,7 @@ a4g_shape:ShipmentInformation-despatchDate-dateTime a shacl:PropertyShape ;
 a4g_shape:ReviewTerm-hasReviewDeadlineInformation-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasReviewDeadlineInformation ;
 	shacl:name \\"has review deadline information\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:BuyerShape a shacl:NodeShape ;
@@ -504,6 +510,7 @@ a4g_shape:Buyer-isContractingEntity-boolean a shacl:PropertyShape ;
 a4g_shape:Buyer-hasActivityDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasActivityDescription ;
 	shacl:name \\"has activity description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ChangeInformationShape a shacl:NodeShape ;
@@ -515,6 +522,7 @@ a4g:ChangeInformation rdfs:subClassOf a4g:ContextDescription .
 a4g_shape:ChangeInformation-hasChangeDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasChangeDescription ;
 	shacl:name \\"has change description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ReviewObject-hasReviewURL-anyURI a shacl:PropertyShape ;
@@ -565,11 +573,13 @@ a4g_shape:DocumentShape a shacl:NodeShape ;
 a4g_shape:Document-hasAccessURL-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path a4g:hasAccessURL ;
-	shacl:name \\"has access url\\"@en .
+	shacl:name \\"has access url\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:FrameworkAgreementTerm-hasBuyerCategoryDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasBuyerCategoryDescription ;
 	shacl:name \\"has buyer category description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Requirement-prefLabel-PlainLiteral a shacl:PropertyShape ;
@@ -648,6 +658,7 @@ a4g_shape:ChangeInformation-isProcurementDocumentChanged-boolean a shacl:Propert
 a4g_shape:ChangeInformation-hasChangeReasonDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasChangeReasonDescription ;
 	shacl:name \\"has change reason description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ChangeInformation-hasProcurementDocumentChangeDate-dateTime a shacl:PropertyShape ;
@@ -700,7 +711,8 @@ a4g:SubmissionTerm rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTer
 a4g_shape:SubmissionTerm-hasSubmissionURL-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path a4g:hasSubmissionURL ;
-	shacl:name \\"has submission url\\"@en .
+	shacl:name \\"has submission url\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:SubmissionTerm-hasEAuctionURL-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
@@ -723,6 +735,7 @@ a4g_shape:FundShape a shacl:NodeShape ;
 a4g_shape:Fund-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:InformationConceptShape a shacl:NodeShape ;
@@ -732,6 +745,7 @@ a4g_shape:InformationConceptShape a shacl:NodeShape ;
 a4g_shape:InformationConcept-prefLabel-PlainLiteral a shacl:PropertyShape ;
 	shacl:path skos:prefLabel ;
 	shacl:name \\"pref label\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:LineShape a shacl:NodeShape ;
@@ -761,16 +775,19 @@ a4g_shape:DesignContestRegimeTerm-hasDescriptionOfPrizes-PlainLiteral a shacl:Pr
 a4g_shape:ContactPoint-hasFax-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasFax ;
 	shacl:name \\"has fax\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContactPoint-telephone-PlainLiteral a shacl:PropertyShape ;
 	shacl:path m8g:telephone ;
 	shacl:name \\"telephone\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContactPoint-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContractShape a shacl:NodeShape ;
@@ -828,6 +845,7 @@ a4g_shape:Document-title-PlainLiteral a shacl:PropertyShape ;
 a4g_shape:ContactPoint-email-PlainLiteral a shacl:PropertyShape ;
 	shacl:path m8g:email ;
 	shacl:name \\"email\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:LotGroupShape a shacl:NodeShape ;
@@ -837,11 +855,13 @@ a4g_shape:LotGroupShape a shacl:NodeShape ;
 a4g_shape:LotGroup-title-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:title ;
 	shacl:name \\"title\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:LotGroup-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:TenderGroupShape a shacl:NodeShape ;
@@ -851,11 +871,13 @@ a4g_shape:TenderGroupShape a shacl:NodeShape ;
 a4g_shape:TenderGroup-title-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:title ;
 	shacl:name \\"title\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:TenderGroup-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContractTerm-hasEOrdering-boolean a shacl:PropertyShape ;
@@ -896,11 +918,13 @@ a4g_shape:ContractTerm-hasMaximumNumberOfRenewals-integer a shacl:PropertyShape 
 a4g_shape:ContractTerm-hasRenewalDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasRenewalDescription ;
 	shacl:name \\"has renewal description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContractTerm-hasPaymentArrangement-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasPaymentArrangement ;
 	shacl:name \\"has payment arrangement\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:CatalogueShape a shacl:NodeShape ;
@@ -925,6 +949,7 @@ a4g:ProcedureTerm rdfs:subClassOf a4g:ProcedureSpecificTerm .
 a4g_shape:ProcedureTerm-hasCrossBorderLaw-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasCrossBorderLaw ;
 	shacl:name \\"has cross border law\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Procedure-isJointProcurement-boolean a shacl:PropertyShape ;
@@ -978,11 +1003,13 @@ a4g_shape:SubmissionTerm-hasReceiptPreliminaryMarketConsultationDeadline-dateTim
 a4g_shape:ContractTerm-hasPlaceOfPerformanceAdditionalInformation-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasPlaceOfPerformanceAdditionalInformation ;
 	shacl:name \\"has place of performance additional information\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContractTerm-hasPerformanceConditions-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasPerformanceConditions ;
 	shacl:name \\"has performance conditions\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:DesignContestRegimeTerm-isJuryDecisionBinding-boolean a shacl:PropertyShape ;
@@ -1067,6 +1094,7 @@ a4g_shape:AllowanceChargeInformation-hasPercentage-decimal a shacl:PropertyShape
 a4g_shape:InformationConcept-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SubmissionStatisticalInformationShape a shacl:NodeShape ;
@@ -1091,6 +1119,7 @@ a4g:TransportHandlingUnit rdfs:subClassOf a4g:Package .
 a4g_shape:TransportHandlingUnit-hasShippingMark-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasShippingMark ;
 	shacl:name \\"has shipping mark\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:DeliveryInformationShape a shacl:NodeShape ;
@@ -1102,6 +1131,7 @@ a4g:DeliveryInformation rdfs:subClassOf a4g:InformationHub .
 a4g_shape:DeliveryInformation-hasShippingMark-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasShippingMark ;
 	shacl:name \\"has shipping mark\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:DesignContestRegimeTerm-hasParticipationPayment-PlainLiteral a shacl:PropertyShape ;
@@ -1120,6 +1150,7 @@ a4g:DirectAwardTerm rdfs:subClassOf a4g:ProcedureSpecificTerm .
 a4g_shape:DirectAwardTerm-hasJustification-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasJustification ;
 	shacl:name \\"has justification\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Document-hasReceptionDate-date a shacl:PropertyShape ;
@@ -1193,7 +1224,8 @@ a4g_shape:ProcedureTerm-hasLotAwardCombination-PlainLiteral a shacl:PropertyShap
 a4g_shape:ProcedureTerm-hasNationalProcedureRules-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path a4g:hasNationalProcedureRules ;
-	shacl:name \\"has national procedure rules\\"@en .
+	shacl:name \\"has national procedure rules\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:MultipleStageProcedureTermShape a shacl:NodeShape ;
 	shacl:targetClass a4g:MultipleStageProcedureTerm ;
@@ -1255,16 +1287,19 @@ a4g_shape:MonetaryValueShape a shacl:NodeShape ;
 a4g_shape:MonetaryValue-hasCurrencyCodeListAgencyID-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasCurrencyCodeListAgencyID ;
 	shacl:name \\"has currency code list agency id\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:MonetaryValue-hasCurrencyCodeListAgencyName-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasCurrencyCodeListAgencyName ;
 	shacl:name \\"has currency code list agency name\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:MonetaryValue-hasCurrencyCodeListID-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasCurrencyCodeListID ;
 	shacl:name \\"has currency code list id\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SubmissionTerm-hasReceiptParticipationRequestDeadline-dateTime a shacl:PropertyShape ;
@@ -1297,6 +1332,7 @@ a4g_shape:ContractLotCompletionInformation-hasPaymentValueDiscrepancyJustificati
 a4g_shape:AwardEvaluationTerm-hasAwardCriteriaEvaluationFormula-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasAwardCriteriaEvaluationFormula ;
 	shacl:name \\"has award criteria evaluation formula\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:AwardEvaluationTerm-hasOverallQualityAwardCriteriaPonderation-decimal a shacl:PropertyShape ;
@@ -1323,7 +1359,8 @@ a4g_shape:AwardEvaluationTerm-hasOverallCostAwardCriteriaPonderation-decimal a s
 a4g_shape:Organization-hasInternetAddress-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path a4g:hasInternetAddress ;
-	shacl:name \\"has internet address\\"@en .
+	shacl:name \\"has internet address\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:DesignContestRegimeTerm-hasFollowupContract-boolean a shacl:PropertyShape ;
 	shacl:datatype xsd:boolean ;
@@ -1335,6 +1372,7 @@ a4g_shape:DesignContestRegimeTerm-hasFollowupContract-boolean a shacl:PropertySh
 a4g_shape:DesignContestRegimeTerm-hasFollowupContractInformation-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasFollowupContractInformation ;
 	shacl:name \\"has followup contract information\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcurementCriterionShape a shacl:NodeShape ;
@@ -1364,7 +1402,8 @@ a4g_shape:LegalExpressionShape a shacl:NodeShape ;
 a4g_shape:LegalExpression-number-string a shacl:PropertyShape ;
 	shacl:datatype xsd:string ;
 	shacl:path eli:number ;
-	shacl:name \\"number\\"@en .
+	shacl:name \\"number\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:LegalResourceShape a shacl:NodeShape ;
 	shacl:targetClass eli:LegalResource ;
@@ -1375,12 +1414,14 @@ eli:LegalResource rdfs:subClassOf eli:Work .
 a4g_shape:LegalResource-number-string a shacl:PropertyShape ;
 	shacl:datatype xsd:string ;
 	shacl:path eli:number ;
-	shacl:name \\"number\\"@en .
+	shacl:name \\"number\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:LegalExpression-description-Literal a shacl:PropertyShape ;
 	shacl:datatype rdfs:Literal ;
 	shacl:path dcterms:description ;
-	shacl:name \\"description\\"@en .
+	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:LegalResource-description-Literal a shacl:PropertyShape ;
 	shacl:datatype rdfs:Literal ;
@@ -1392,17 +1433,20 @@ a4g_shape:LegalResource-description-Literal a shacl:PropertyShape ;
 a4g_shape:LegalResource-identifier-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path dcterms:identifier ;
-	shacl:name \\"identifier\\"@en .
+	shacl:name \\"identifier\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:LegalExpression-identifier-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
 	shacl:path dcterms:identifier ;
-	shacl:name \\"identifier\\"@en .
+	shacl:name \\"identifier\\"@en ;
+	shacl:minCount 0 .
 
 a4g_shape:LegalExpression-title-Literal a shacl:PropertyShape ;
 	shacl:datatype rdfs:Literal ;
 	shacl:path dcterms:title ;
-	shacl:name \\"title\\"@en .
+	shacl:name \\"title\\"@en ;
+	shacl:minCount 1 .
 
 a4g_shape:SupportedValueShape a shacl:NodeShape ;
 	shacl:targetClass m8g:SupportedValue ;
@@ -1411,11 +1455,13 @@ a4g_shape:SupportedValueShape a shacl:NodeShape ;
 a4g_shape:SupportedValue-value-PlainLiteral a shacl:PropertyShape ;
 	shacl:path m8g:value ;
 	shacl:name \\"value\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Fund-title-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:title ;
 	shacl:name \\"title\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Fund-hasURL-anyURI a shacl:PropertyShape ;
@@ -1428,11 +1474,13 @@ a4g_shape:Fund-hasURL-anyURI a shacl:PropertyShape ;
 a4g_shape:Geometry-longitude-PlainLiteral a shacl:PropertyShape ;
 	shacl:path m8g:longitude ;
 	shacl:name \\"longitude\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Geometry-latitude-PlainLiteral a shacl:PropertyShape ;
 	shacl:path m8g:latitude ;
 	shacl:name \\"latitude\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcessPlanningTermShape a shacl:NodeShape ;
@@ -1455,6 +1503,7 @@ a4g_shape:ProcurementElementShape a shacl:NodeShape ;
 a4g_shape:ProcurementElement-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcurementObject-isCoveredByGPA-boolean a shacl:PropertyShape ;
@@ -1467,11 +1516,13 @@ a4g_shape:ProcurementObject-isCoveredByGPA-boolean a shacl:PropertyShape ;
 a4g_shape:ProcurementElement-title-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:title ;
 	shacl:name \\"title\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcurementObject-hasAdditionalInformation-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasAdditionalInformation ;
 	shacl:name \\"has additional information\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcessPlanningTerm-hasEstimatedTenderInvitationDate-date a shacl:PropertyShape ;
@@ -1551,6 +1602,7 @@ a4g_shape:Document-hasPublicationDate-date a shacl:PropertyShape ;
 a4g_shape:ShipmentInformation-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ConsignmentShape a shacl:NodeShape ;
@@ -1628,6 +1680,7 @@ a4g_shape:OpeningTerm-hasOpeningDateTime-dateTime a shacl:PropertyShape ;
 a4g_shape:OpeningTerm-hasOpeningDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasOpeningDescription ;
 	shacl:name \\"has opening description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Organization-hasLegalFormType-PlainLiteral a shacl:PropertyShape ;
@@ -1664,16 +1717,19 @@ person:Person rdfs:subClassOf foaf:Person .
 a4g_shape:Person-name-PlainLiteral a shacl:PropertyShape ;
 	shacl:path foaf:name ;
 	shacl:name \\"name\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Person-familyName-PlainLiteral a shacl:PropertyShape ;
 	shacl:path foaf:familyName ;
 	shacl:name \\"family name\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Organization-hasLegalName-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasLegalName ;
 	shacl:name \\"has legal name\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:TransportEquipmentShape a shacl:NodeShape ;
@@ -1697,6 +1753,7 @@ a4g_shape:TransportEquipment-isRefrigerated-boolean a shacl:PropertyShape ;
 a4g_shape:TransportEquipment-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:TransportEquipment-isPowerIndicated-boolean a shacl:PropertyShape ;
@@ -1744,21 +1801,25 @@ a4g_shape:ShipmentStage-isHazardousRisk-boolean a shacl:PropertyShape ;
 a4g_shape:Person-givenName-PlainLiteral a shacl:PropertyShape ;
 	shacl:path foaf:givenName ;
 	shacl:name \\"given name\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Person-patronymicName-PlainLiteral a shacl:PropertyShape ;
 	shacl:path person:patronymicName ;
 	shacl:name \\"patronymic name\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Person-alternative-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:alternative ;
 	shacl:name \\"alternative\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Person-birthName-PlainLiteral a shacl:PropertyShape ;
 	shacl:path person:birthName ;
 	shacl:name \\"birth name\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Person-birthDate-date a shacl:PropertyShape ;
@@ -1821,31 +1882,37 @@ a4g_shape:TemperatureSpecification-description-PlainLiteral a shacl:PropertyShap
 a4g_shape:Consignment-hasHandlingInstruction-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasHandlingInstruction ;
 	shacl:name \\"has handling instruction\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Consignment-hasCarrierServiceInstruction-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasCarrierServiceInstruction ;
 	shacl:name \\"has carrier service instruction\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Consignment-hasSpecialInstruction-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasSpecialInstruction ;
 	shacl:name \\"has special instruction\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Consignment-hasDeliveryInstruction-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasDeliveryInstruction ;
 	shacl:name \\"has delivery instruction\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Procedure-hasAcceleratedProcedureJustification-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasAcceleratedProcedureJustification ;
 	shacl:name \\"has accelerated procedure justification\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Procedure-hasMainFeature-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasMainFeature ;
 	shacl:name \\"has main feature\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcedureTerm-hasMaximumLotSubmissionAllowed-integer a shacl:PropertyShape ;
@@ -1897,6 +1964,7 @@ a4g_shape:TaxInformation-hasPercentage-decimal a shacl:PropertyShape ;
 a4g_shape:ProcedureTerm-hasGroupLotEvaluationMethod-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasGroupLotEvaluationMethod ;
 	shacl:name \\"has group lot evaluation method\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ItemShape a shacl:NodeShape ;
@@ -1920,16 +1988,19 @@ a4g_shape:Item-title-PlainLiteral a shacl:PropertyShape ;
 a4g_shape:AllowanceChargeInformation-hasAllowanceChargeReasonDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasAllowanceChargeReasonDescription ;
 	shacl:name \\"has allowance charge reason description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Consignment-hasSpecialServiceInstruction-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasSpecialServiceInstruction ;
 	shacl:name \\"has special service instruction\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContractTerm-hasOptionsDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasOptionsDescription ;
 	shacl:name \\"has options description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:AgentInRoleShape a shacl:NodeShape ;
@@ -1939,11 +2010,13 @@ a4g_shape:AgentInRoleShape a shacl:NodeShape ;
 a4g_shape:AgentInRole-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:AgentInRole-title-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:title ;
 	shacl:name \\"title\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SecurityClearanceTermShape a shacl:NodeShape ;
@@ -1962,6 +2035,7 @@ a4g_shape:SecurityClearanceTerm-hasDeadline-dateTime a shacl:PropertyShape ;
 a4g_shape:SecurityClearanceTerm-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ConstraintShape a shacl:NodeShape ;
@@ -2127,6 +2201,7 @@ a4g_shape:StrategicProcurementShape a shacl:NodeShape ;
 a4g_shape:StrategicProcurement-hasStrategicProcurementDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasStrategicProcurementDescription ;
 	shacl:name \\"has strategic procurement description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SubcontractingEstimateShape a shacl:NodeShape ;
@@ -2138,6 +2213,7 @@ a4g:SubcontractingEstimate rdfs:subClassOf a4g:Estimate .
 a4g_shape:SubcontractingEstimate-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SubcontractingEstimate-hasEstimatedPercentage-decimal a shacl:PropertyShape ;
@@ -2156,6 +2232,7 @@ a4g:SubcontractTerm rdfs:subClassOf a4g:ContractSpecificTerm .
 a4g_shape:SubcontractTerm-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SubcontractTerm-hasMaximumShare-decimal a shacl:PropertyShape ;
@@ -2182,6 +2259,7 @@ a4g_shape:SubcontractTerm-hasSubcontractingInvolved-boolean a shacl:PropertyShap
 a4g_shape:SubcontractingEstimate-hasSubjectMatter-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasSubjectMatter ;
 	shacl:name \\"has subject matter\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SubcontractTerm-hasMinimumSubcontractorsProposedObligation-decimal a shacl:PropertyShape ;
@@ -2215,11 +2293,13 @@ a4g_shape:SubmissionTerm-isGuaranteeRequired-boolean a shacl:PropertyShape ;
 a4g_shape:SubmissionTerm-hasGuaranteeDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasGuaranteeDescription ;
 	shacl:name \\"has guarantee description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SubmissionTerm-hasNonElectronicSubmissionDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasNonElectronicSubmissionDescription ;
 	shacl:name \\"has non electronic submission description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:NationalPreQualificationDataShape a shacl:NodeShape ;
@@ -2250,6 +2330,7 @@ a4g_shape:SubmissionTerm-isMultipleTenderSubmissionAllowed-boolean a shacl:Prope
 a4g_shape:SubmissionTerm-hasLateSubmissionInformationDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasLateSubmissionInformationDescription ;
 	shacl:name \\"has late submission information description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:SystemShape a shacl:NodeShape ;
@@ -2261,11 +2342,13 @@ a4g:System rdfs:subClassOf foaf:Agent .
 a4g_shape:System-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:StrategicProcurement-hasNonAccessibilityCriterionJustification-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasNonAccessibilityCriterionJustification ;
 	shacl:name \\"has non accessibility criterion justification\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:TechniqueShape a shacl:NodeShape ;
@@ -2275,6 +2358,7 @@ a4g_shape:TechniqueShape a shacl:NodeShape ;
 a4g_shape:Technique-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:TenderShape a shacl:NodeShape ;
@@ -2372,11 +2456,13 @@ a4g_shape:DeliveryAgreementShape a shacl:NodeShape ;
 a4g_shape:DeliveryAgreement-description-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:description ;
 	shacl:name \\"description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Agent-title-PlainLiteral a shacl:PropertyShape ;
 	shacl:path dcterms:title ;
 	shacl:name \\"title\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Document-description-PlainLiteral a shacl:PropertyShape ;
@@ -2389,6 +2475,7 @@ a4g_shape:Document-description-PlainLiteral a shacl:PropertyShape ;
 a4g_shape:Item-hasKeyword-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasKeyword ;
 	shacl:name \\"has keyword\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Item-isInStock-boolean a shacl:PropertyShape ;
@@ -2415,6 +2502,7 @@ a4g_shape:Batch-hasBestBeforeDate-date a shacl:PropertyShape ;
 a4g_shape:Item-hasDimensionDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasDimensionDescription ;
 	shacl:name \\"has dimension description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ContactPoint-hasInternetAddress-anyURI a shacl:PropertyShape ;
@@ -2444,6 +2532,7 @@ a4g_shape:EvidenceTypeListShape a shacl:NodeShape ;
 a4g_shape:EvidenceTypeList-prefLabel-PlainLiteral a shacl:PropertyShape ;
 	shacl:path skos:prefLabel ;
 	shacl:name \\"pref label\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:EvidenceTypeList-description-PlainLiteral a shacl:PropertyShape ;
@@ -2456,16 +2545,19 @@ a4g_shape:EvidenceTypeList-description-PlainLiteral a shacl:PropertyShape ;
 a4g_shape:Item-hasHazardousClass-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasHazardousClass ;
 	shacl:name \\"has hazardous class\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:TransportHandlingUnit-hasHandlingInstruction-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasHandlingInstruction ;
 	shacl:name \\"has handling instruction\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProcurementObject-hasLegalBasisDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasLegalBasisDescription ;
 	shacl:name \\"has legal basis description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ElectronicSignatureShape a shacl:NodeShape ;
@@ -2596,16 +2688,19 @@ a4g_shape:SelectionCriteriaSummary-describesMinimumLevelOfStandards-PlainLiteral
 a4g_shape:Identifier-schemaAgency-PlainLiteral a shacl:PropertyShape ;
 	shacl:path adms:schemaAgency ;
 	shacl:name \\"schema agency\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Identifier-hasScheme-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasScheme ;
 	shacl:name \\"has scheme\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:Identifier-hasSchemeVersion-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasSchemeVersion ;
 	shacl:name \\"has scheme version\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:QuantityShape a shacl:NodeShape ;
@@ -2622,6 +2717,7 @@ a4g_shape:Quantity-hasQuantityValue-decimal a shacl:PropertyShape ;
 a4g_shape:Quantity-hasUnitDescription-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasUnitDescription ;
 	shacl:name \\"has unit description\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ParticipationConditionsSummaryShape a shacl:NodeShape ;
@@ -2660,11 +2756,13 @@ a4g:QualificationCriteriaSummary rdfs:subClassOf a4g:ProcurementCriteriaSummary 
 a4g_shape:QualificationCriteriaSummary-hasQualificationCondition-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasQualificationCondition ;
 	shacl:name \\"has qualification condition\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:QualificationCriteriaSummary-hasConditionVerificationMethod-PlainLiteral a shacl:PropertyShape ;
 	shacl:path a4g:hasConditionVerificationMethod ;
 	shacl:name \\"has condition verification method\\"@en ;
+	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
 a4g_shape:ProfessionalSuitabilitySummary-describesProfession-PlainLiteral a shacl:PropertyShape ;
@@ -2748,7 +2846,6 @@ a4g_shape:ContractTerm-definesContractPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:definesContractPeriod ;
 	shacl:name \\"defines contract period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2776,7 +2873,6 @@ a4g_shape:Tender-hasFinancialOfferValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasFinancialOfferValue ;
 	shacl:name \\"has financial offer value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2791,7 +2887,6 @@ a4g:AwardOutcome rdfs:subClassOf a4g:ContextualProjection .
 a4g_shape:AwardOutcome-hasAwardStatus-winner-selection-status a shacl:PropertyShape ;
 	shacl:path a4g:hasAwardStatus ;
 	shacl:name \\"has award status\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AwardOutcomeShape ;
 	shacl:nodeKind shacl:IRI .
@@ -2806,7 +2901,6 @@ a4g_shape:Tender-isSubmitedBy-Tenderer a shacl:PropertyShape ;
 	shacl:targetClass a4g:Tenderer ;
 	shacl:path a4g:isSubmitedBy ;
 	shacl:name \\"is submited by\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2824,7 +2918,6 @@ a4g_shape:Item-hasBrand-Brand a shacl:PropertyShape ;
 	shacl:targetClass a4g:Brand ;
 	shacl:path a4g:hasBrand ;
 	shacl:name \\"has brand\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2844,6 +2937,7 @@ a4g_shape:ESPDRequest-specifiesProcurementCriterion-ProcurementCriterion a shacl
 	shacl:targetClass a4g:ProcurementCriterion ;
 	shacl:path a4g:specifiesProcurementCriterion ;
 	shacl:name \\"specifies procurement criterion\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g:Notice38 rdfs:subClassOf a4g:ContractModificationNotice, a4g:eFormsNotice .
@@ -2876,6 +2970,7 @@ a4g_shape:ResultNotice-refersToLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:refersToLot ;
 	shacl:name \\"refers to lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g:Lot rdfs:subClassOf a4g:ProcurementObject .
@@ -2910,7 +3005,6 @@ a4g_shape:DirectAwardPrenotificationNotice-announcesNoticeAwardInformation-Notic
 	shacl:targetClass a4g:NoticeAwardInformation ;
 	shacl:path a4g:announcesNoticeAwardInformation ;
 	shacl:name \\"announces notice award information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2920,13 +3014,13 @@ a4g_shape:Notice-refersToLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:refersToLot ;
 	shacl:name \\"refers to lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Tender-foreseesConcession-ConcessionEstimate a shacl:PropertyShape ;
 	shacl:targetClass a4g:ConcessionEstimate ;
 	shacl:path a4g:foreseesConcession ;
 	shacl:name \\"foresees concession\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2936,7 +3030,6 @@ a4g_shape:ContractTerm-definesContractDuration-Duration a shacl:PropertyShape ;
 	shacl:targetClass a4g:Duration ;
 	shacl:path a4g:definesContractDuration ;
 	shacl:name \\"defines contract duration\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2954,7 +3047,6 @@ a4g_shape:DeliveryInformation-concernsConsignee-Consignee a shacl:PropertyShape 
 	shacl:targetClass a4g:Consignee ;
 	shacl:path a4g:concernsConsignee ;
 	shacl:name \\"concerns consignee\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -2962,7 +3054,6 @@ a4g_shape:Catalogue-specifiesCatalogueReceiver-CatalogueReceiver a shacl:Propert
 	shacl:targetClass a4g:CatalogueReceiver ;
 	shacl:path a4g:specifiesCatalogueReceiver ;
 	shacl:name \\"specifies catalogue receiver\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3002,18 +3093,19 @@ a4g_shape:DespatchAdvice-specifiesDespatcher-Despatcher a shacl:PropertyShape ;
 	shacl:targetClass a4g:Despatcher ;
 	shacl:path a4g:specifiesDespatcher ;
 	shacl:name \\"specifies despatcher\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DespatchAdvice-specifiesConsignee-Consignee a shacl:PropertyShape ;
 	shacl:targetClass a4g:Consignee ;
 	shacl:path a4g:specifiesConsignee ;
 	shacl:name \\"specifies consignee\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Tender-hasSubcontracting-applicability a shacl:PropertyShape ;
 	shacl:path a4g:hasSubcontracting ;
 	shacl:name \\"has subcontracting\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:TenderShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3034,7 +3126,6 @@ a4g_shape:ContractAmendment-updatesContractValue-MonetaryValue a shacl:PropertyS
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:updatesContractValue ;
 	shacl:name \\"updates contract value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3061,7 +3152,6 @@ a4g:AdHocChannel rdfs:subClassOf m8g:Channel .
 a4g_shape:Fund-hasFundProgramme-EU-programme a shacl:PropertyShape ;
 	shacl:path a4g:hasFundProgramme ;
 	shacl:name \\"has fund programme\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:FundShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3073,7 +3163,6 @@ a4g_shape:Fund-inScheme-EU-programme a shacl:PropertyShape ;
 a4g_shape:Organization-hasRegistrationCountry-country a shacl:PropertyShape ;
 	shacl:path a4g:hasRegistrationCountry ;
 	shacl:name \\"has registration country\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:OrganizationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3098,7 +3187,6 @@ a4g_shape:Deliverable-hasQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasQuantity ;
 	shacl:name \\"has quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3112,6 +3200,7 @@ a4g_shape:PlanningNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
 	shacl:targetClass a4g:AgentInRole ;
 	shacl:path a4g:announcesRole ;
 	shacl:name \\"announces role\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Contract-signedByContractor-Contractor a shacl:PropertyShape ;
@@ -3134,7 +3223,6 @@ a4g_shape:ProcedureTerm-definesMediator-Mediator a shacl:PropertyShape ;
 	shacl:targetClass a4g:Mediator ;
 	shacl:path a4g:definesMediator ;
 	shacl:name \\"defines mediator\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3144,7 +3232,6 @@ a4g_shape:Contract-hasContractValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasContractValue ;
 	shacl:name \\"has contract value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3156,7 +3243,6 @@ a4g_shape:Winner-needsToBeATenderer-Tenderer a shacl:PropertyShape ;
 	shacl:targetClass a4g:Tenderer ;
 	shacl:path a4g:needsToBeATenderer ;
 	shacl:name \\"needs to be a tenderer\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3175,7 +3261,6 @@ a4g_shape:SubmissionTerm-inScheme-language a shacl:PropertyShape ;
 a4g_shape:SubmissionTerm-hasECataloguePermission-permission a shacl:PropertyShape ;
 	shacl:path a4g:hasECataloguePermission ;
 	shacl:name \\"has e catalogue permission\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:SubmissionTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3236,14 +3321,12 @@ a4g_shape:JuryMember-playedBy-Person a shacl:PropertyShape ;
 	shacl:targetClass person:Person ;
 	shacl:path a4g:playedBy ;
 	shacl:name \\"played by\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:SubmissionTerm-hasESubmissionPermission-permission a shacl:PropertyShape ;
 	shacl:path a4g:hasESubmissionPermission ;
 	shacl:name \\"has e submission permission\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:SubmissionTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3268,7 +3351,6 @@ a4g_shape:Procedure-isExecutedByProcurementServiceProvider-ProcurementServicePro
 	shacl:targetClass a4g:ProcurementServiceProvider ;
 	shacl:path a4g:isExecutedByProcurementServiceProvider ;
 	shacl:name \\"is executed by procurement service provider\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3278,7 +3360,6 @@ a4g_shape:Item-hasModel-ItemModel a shacl:PropertyShape ;
 	shacl:targetClass a4g:ItemModel ;
 	shacl:path a4g:hasModel ;
 	shacl:name \\"has model\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3304,7 +3385,6 @@ a4g_shape:Catalogue-specifiesCatalogueProvider-CatalogueProvider a shacl:Propert
 	shacl:targetClass a4g:CatalogueProvider ;
 	shacl:path a4g:specifiesCatalogueProvider ;
 	shacl:name \\"specifies catalogue provider\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3343,7 +3423,6 @@ a4g_shape:GreenProcurement-inScheme-green-public-procurement-criteria a shacl:Pr
 a4g_shape:VehicleInformation-specifiesCleanVehicleDirectiveContractType-cvd-contract-type a shacl:PropertyShape ;
 	shacl:path a4g:specifiesCleanVehicleDirectiveContractType ;
 	shacl:name \\"specifies clean vehicle directive contract type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:VehicleInformationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3389,7 +3468,6 @@ a4g:Notice28 rdfs:subClassOf a4g:eFormsNotice, a4g:VoluntaryEx-AnteTransparencyN
 a4g_shape:MonetaryValue-hasCurrency-currency a shacl:PropertyShape ;
 	shacl:path a4g:hasCurrency ;
 	shacl:name \\"has currency\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:MonetaryValueShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3402,7 +3480,6 @@ a4g_shape:AccessTerm-involvesProcurementDocument-ProcurementDocument a shacl:Pro
 	shacl:targetClass a4g:ProcurementDocument ;
 	shacl:path a4g:involvesProcurementDocument ;
 	shacl:name \\"involves procurement document\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3416,7 +3493,6 @@ a4g_shape:SubmissionTerm-definesTenderProcessor-TenderProcessor a shacl:Property
 	shacl:targetClass a4g:TenderProcessor ;
 	shacl:path a4g:definesTenderProcessor ;
 	shacl:name \\"defines tender processor\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3426,7 +3502,6 @@ a4g_shape:SubmissionTerm-definesTenderReceiver-TenderReceiver a shacl:PropertySh
 	shacl:targetClass a4g:TenderReceiver ;
 	shacl:path a4g:definesTenderReceiver ;
 	shacl:name \\"defines tender receiver\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3452,7 +3527,6 @@ a4g_shape:NoticeAwardInformation-describesDirectAwardPrenotificationNotice-Direc
 	shacl:targetClass a4g:DirectAwardPrenotificationNotice ;
 	shacl:path a4g:describesDirectAwardPrenotificationNotice ;
 	shacl:name \\"describes direct award prenotification notice\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3460,7 +3534,6 @@ a4g_shape:Contract-hasPurpose-Purpose a shacl:PropertyShape ;
 	shacl:targetClass a4g:Purpose ;
 	shacl:path a4g:hasPurpose ;
 	shacl:name \\"has purpose\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3468,7 +3541,6 @@ a4g_shape:Location-geometry-Geometry a shacl:PropertyShape ;
 	shacl:targetClass locn:Geometry ;
 	shacl:path locn:geometry ;
 	shacl:name \\"geometry\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3476,7 +3548,6 @@ a4g_shape:Location-address-Address a shacl:PropertyShape ;
 	shacl:targetClass locn:Address ;
 	shacl:path locn:address ;
 	shacl:name \\"address\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3518,7 +3589,6 @@ a4g_shape:DespatchAdvice-refersToOrder-Order a shacl:PropertyShape ;
 	shacl:targetClass a4g:Order ;
 	shacl:path a4g:refersToOrder ;
 	shacl:name \\"refers to order\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3526,7 +3596,6 @@ a4g_shape:OrderResponse-specifiesBuyer-Buyer a shacl:PropertyShape ;
 	shacl:targetClass a4g:Buyer ;
 	shacl:path a4g:specifiesBuyer ;
 	shacl:name \\"specifies buyer\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3539,7 +3608,6 @@ a4g_shape:ContractTerm-definesSpecificPlaceOfPerformance-Location a shacl:Proper
 a4g_shape:Location-hasNutsCode-nuts a shacl:PropertyShape ;
 	shacl:path a4g:hasNutsCode ;
 	shacl:name \\"has nuts code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:LocationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3559,7 +3627,6 @@ a4g:Notice37 rdfs:subClassOf a4g:eFormsNotice, a4g:DesignContestResultNotice .
 a4g_shape:Location-hasCountryCode-country a shacl:PropertyShape ;
 	shacl:path a4g:hasCountryCode ;
 	shacl:name \\"has country code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:LocationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3572,7 +3639,6 @@ a4g_shape:Location-geographicIdentifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path locn:geographicIdentifier ;
 	shacl:name \\"geographic identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3580,7 +3646,6 @@ a4g_shape:Location-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3589,6 +3654,7 @@ eli:LegalResourceSubdivision rdfs:subClassOf eli:LegalResource .
 a4g_shape:LegalResource-hasResourceType-resource-type a shacl:PropertyShape ;
 	shacl:path a4g:hasResourceType ;
 	shacl:name \\"has resource type\\"@en ;
+	shacl:minCount 1 ;
 	shacl:node a4g_shape:LegalResourceShape ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3604,7 +3670,6 @@ a4g_shape:Price-hasDeliveryLocation-Location a shacl:PropertyShape ;
 	shacl:targetClass dcterms:Location ;
 	shacl:path a4g:hasDeliveryLocation ;
 	shacl:name \\"has delivery location\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3612,7 +3677,6 @@ a4g_shape:ShipmentInformation-specifiesPlaceOfDespatch-Location a shacl:Property
 	shacl:targetClass dcterms:Location ;
 	shacl:path a4g:specifiesPlaceOfDespatch ;
 	shacl:name \\"specifies place of despatch\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3632,13 +3696,13 @@ a4g_shape:DespatchAdvice-comprisesDespatchLine-DespatchLine a shacl:PropertyShap
 	shacl:targetClass a4g:DespatchLine ;
 	shacl:path a4g:comprisesDespatchLine ;
 	shacl:name \\"comprises despatch line\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ContractTerm-definesPaymentExecutor-PaymentExecutor a shacl:PropertyShape ;
 	shacl:targetClass a4g:PaymentExecutor ;
 	shacl:path a4g:definesPaymentExecutor ;
 	shacl:name \\"defines payment executor\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3646,7 +3710,6 @@ a4g_shape:DeliveryAgreement-specifiesDeliveryAgreementLocation-Location a shacl:
 	shacl:targetClass dcterms:Location ;
 	shacl:path a4g:specifiesDeliveryAgreementLocation ;
 	shacl:name \\"specifies delivery agreement location\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3654,7 +3717,6 @@ a4g_shape:Notice-refersToNotice-Notice a shacl:PropertyShape ;
 	shacl:targetClass a4g:Notice ;
 	shacl:path a4g:refersToNotice ;
 	shacl:name \\"refers to notice\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3674,14 +3736,12 @@ a4g_shape:ResultNotice-announcesNoticeAwardInformation-NoticeAwardInformation a 
 	shacl:targetClass a4g:NoticeAwardInformation ;
 	shacl:path a4g:announcesNoticeAwardInformation ;
 	shacl:name \\"announces notice award information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Notice-isBasedOnImplementingRegulation-legal-basis a shacl:PropertyShape ;
 	shacl:path a4g:isBasedOnImplementingRegulation ;
 	shacl:name \\"is based on implementing regulation\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:NoticeShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3694,7 +3754,6 @@ a4g_shape:Contract-hasEstimatedDuration-Duration a shacl:PropertyShape ;
 	shacl:targetClass a4g:Duration ;
 	shacl:path a4g:hasEstimatedDuration ;
 	shacl:name \\"has estimated duration\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3710,14 +3769,12 @@ a4g_shape:ContractLotCompletionInformation-providesContractTotalPaymentValue-Mon
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:providesContractTotalPaymentValue ;
 	shacl:name \\"provides contract total payment value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:SelectionCriterion-hasSelectionCriteriaUsage-usage a shacl:PropertyShape ;
 	shacl:path a4g:hasSelectionCriteriaUsage ;
 	shacl:name \\"has selection criteria usage\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:SelectionCriterionShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3730,7 +3787,6 @@ a4g_shape:ProcurementObject-hasPurpose-Purpose a shacl:PropertyShape ;
 	shacl:targetClass a4g:Purpose ;
 	shacl:path a4g:hasPurpose ;
 	shacl:name \\"has purpose\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3746,7 +3802,6 @@ a4g_shape:DeliveryInformation-specifiesPlaceOfDelivery-Location a shacl:Property
 	shacl:targetClass dcterms:Location ;
 	shacl:path a4g:specifiesPlaceOfDelivery ;
 	shacl:name \\"specifies place of delivery\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3760,7 +3815,6 @@ a4g_shape:Organization-hasPrimaryContactPoint-ContactPoint a shacl:PropertyShape
 	shacl:targetClass m8g:ContactPoint ;
 	shacl:path a4g:hasPrimaryContactPoint ;
 	shacl:name \\"has primary contact point\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3774,7 +3828,6 @@ a4g_shape:ContractLotCompletionInformation-providesContractTotalPenaltyValue-Mon
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:providesContractTotalPenaltyValue ;
 	shacl:name \\"provides contract total penalty value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3782,6 +3835,7 @@ a4g_shape:Contract-hasLotReference-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:hasLotReference ;
 	shacl:name \\"has lot reference\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ProcurementObject-foreseesContractSpecificTerm-ContractSpecificTerm a shacl:PropertyShape ;
@@ -3800,14 +3854,12 @@ a4g_shape:PlannedProcurementPart-foreseesProcurementObject-ProcurementObject a s
 	shacl:targetClass a4g:ProcurementObject ;
 	shacl:path a4g:foreseesProcurementObject ;
 	shacl:name \\"foresees procurement object\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:VehicleInformation-specifiesCleanVehicleDirectiveVehicleCategory-vehicle-category a shacl:PropertyShape ;
 	shacl:path a4g:specifiesCleanVehicleDirectiveVehicleCategory ;
 	shacl:name \\"specifies clean vehicle directive vehicle category\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:VehicleInformationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3826,7 +3878,6 @@ a4g_shape:Organization-registeredAddress-Address a shacl:PropertyShape ;
 	shacl:targetClass locn:Address ;
 	shacl:path m8g:registeredAddress ;
 	shacl:name \\"registered address\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3868,13 +3919,13 @@ a4g_shape:NonPublishedInformation-relatesToEFormSectionIdentifier-Identifier a s
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:relatesToEFormSectionIdentifier ;
 	shacl:name \\"relates to e form section identifier\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CatalogueLine-hasCatalogueLineValidity-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasCatalogueLineValidity ;
 	shacl:name \\"has catalogue line validity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3890,14 +3941,12 @@ a4g_shape:ItemProperty-hasQualifiedValue-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasQualifiedValue ;
 	shacl:name \\"has qualified value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ContractTerm-hasEInvoicingPermission-permission a shacl:PropertyShape ;
 	shacl:path a4g:hasEInvoicingPermission ;
 	shacl:name \\"has e invoicing permission\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ContractTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -3934,7 +3983,6 @@ a4g_shape:ContractModificationInformation-relatesToEFormSectionIdentifier-Identi
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:relatesToEFormSectionIdentifier ;
 	shacl:name \\"relates to e form section identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -3942,6 +3990,7 @@ a4g_shape:ChangeInformation-relatesToEFormSectionIdentifier-Identifier a shacl:P
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:relatesToEFormSectionIdentifier ;
 	shacl:name \\"relates to e form section identifier\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ChangeInformation-concernsNotice-Notice a shacl:PropertyShape ;
@@ -3992,7 +4041,6 @@ a4g_shape:Document-hasUUID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasUUID ;
 	shacl:name \\"has uuid\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4014,7 +4062,6 @@ a4g_shape:ReviewTerm-definesReviewProcedureInformationProvider-ReviewProcedureIn
 	shacl:targetClass a4g:ReviewProcedureInformationProvider ;
 	shacl:path a4g:definesReviewProcedureInformationProvider ;
 	shacl:name \\"defines review procedure information provider\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4044,6 +4091,7 @@ a4g_shape:CompetitionNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
 	shacl:targetClass a4g:AgentInRole ;
 	shacl:path a4g:announcesRole ;
 	shacl:name \\"announces role\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CompetitionNotice-announcesProcedure-Procedure a shacl:PropertyShape ;
@@ -4080,7 +4128,6 @@ a4g_shape:OrderResponseInformation-hasDeliveryPeriod-Period a shacl:PropertyShap
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasDeliveryPeriod ;
 	shacl:name \\"has delivery period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4110,7 +4157,6 @@ a4g_shape:Requirement-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4160,7 +4206,6 @@ a4g_shape:System-isOwnedByAgent-Agent a shacl:PropertyShape ;
 	shacl:targetClass foaf:Agent ;
 	shacl:path a4g:isOwnedByAgent ;
 	shacl:name \\"is owned by agent\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4168,7 +4213,6 @@ a4g_shape:SubmissionStatisticalInformation-hasLowestReceivedTenderValue-Monetary
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasLowestReceivedTenderValue ;
 	shacl:name \\"has lowest received tender value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4207,7 +4251,6 @@ a4g_shape:Requirement-hasConcept-InformationConcept a shacl:PropertyShape ;
 a4g_shape:SubmissionTerm-hasLateSubmissionPermission-missing-info-submission a shacl:PropertyShape ;
 	shacl:path a4g:hasLateSubmissionPermission ;
 	shacl:name \\"has late submission permission\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:SubmissionTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4238,7 +4281,6 @@ a4g_shape:SubcontractingEstimate-hasSubcontractingEstimatedValue-MonetaryValue a
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasSubcontractingEstimatedValue ;
 	shacl:name \\"has subcontracting estimated value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4262,14 +4304,12 @@ a4g_shape:Catalogue-isSubordinatedToContract-Contract a shacl:PropertyShape ;
 	shacl:targetClass a4g:Contract ;
 	shacl:path a4g:isSubordinatedToContract ;
 	shacl:name \\"is subordinated to contract\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:SelectionCriterion-hasSelectionCriterionType-selection-criterion a shacl:PropertyShape ;
 	shacl:path a4g:hasSelectionCriterionType ;
 	shacl:name \\"has selection criterion type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:SelectionCriterionShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4284,13 +4324,13 @@ a4g_shape:Catalogue-comprisesCatalogueLine-CatalogueLine a shacl:PropertyShape ;
 	shacl:targetClass a4g:CatalogueLine ;
 	shacl:path a4g:comprisesCatalogueLine ;
 	shacl:name \\"comprises catalogue line\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Fund-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4304,7 +4344,6 @@ a4g_shape:Manufacturer-hasManufacturerID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasManufacturerID ;
 	shacl:name \\"has manufacturer id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4312,7 +4351,6 @@ a4g_shape:Batch-hasBatchID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasBatchID ;
 	shacl:name \\"has batch id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4329,7 +4367,6 @@ a4g_shape:ContractTerm-inScheme-contract-nature a shacl:PropertyShape ;
 a4g_shape:ContractTerm-hasContractNatureType-contract-nature a shacl:PropertyShape ;
 	shacl:path a4g:hasContractNatureType ;
 	shacl:name \\"has contract nature type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ContractTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4351,6 +4388,7 @@ a4g_shape:Purpose-inScheme-cpv a shacl:PropertyShape ;
 a4g_shape:Purpose-hasMainClassification-cpv a shacl:PropertyShape ;
 	shacl:path a4g:hasMainClassification ;
 	shacl:name \\"has main classification\\"@en ;
+	shacl:minCount 1 ;
 	shacl:node a4g_shape:PurposeShape ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4370,7 +4408,6 @@ a4g_shape:ProcurementElement-hasEstimatedValue-MonetaryValue a shacl:PropertySha
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasEstimatedValue ;
 	shacl:name \\"has estimated value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4388,6 +4425,7 @@ a4g_shape:Procedure-isSubjectToProcedureSpecificTerm-ProcedureSpecificTerm a sha
 	shacl:targetClass a4g:ProcedureSpecificTerm ;
 	shacl:path a4g:isSubjectToProcedureSpecificTerm ;
 	shacl:name \\"is subject to procedure specific term\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Procedure-hasProcedureType-procurement-procedure-type a shacl:PropertyShape ;
@@ -4405,7 +4443,6 @@ a4g_shape:Procedure-inScheme-procurement-procedure-type a shacl:PropertyShape ;
 a4g_shape:SubmissionStatisticalInformation-hasReceivedSubmissionType-received-submission-type a shacl:PropertyShape ;
 	shacl:path a4g:hasReceivedSubmissionType ;
 	shacl:name \\"has received submission type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:SubmissionStatisticalInformationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4418,7 +4455,6 @@ a4g_shape:Item-hasManufacturerItemID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasManufacturerItemID ;
 	shacl:name \\"has manufacturer item id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4438,7 +4474,6 @@ a4g_shape:DirectAwardTerm-refersToPreviousProcedure-Procedure a shacl:PropertySh
 	shacl:targetClass a4g:Procedure ;
 	shacl:path a4g:refersToPreviousProcedure ;
 	shacl:name \\"refers to previous procedure\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4464,7 +4499,6 @@ a4g_shape:Technique-hasValidityPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasValidityPeriod ;
 	shacl:name \\"has validity period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4472,7 +4506,6 @@ a4g_shape:PlannedProcurementPart-hasPlannedPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasPlannedPeriod ;
 	shacl:name \\"has planned period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4480,13 +4513,13 @@ a4g_shape:SubmissionTerm-hasTenderValidityPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasTenderValidityPeriod ;
 	shacl:name \\"has tender validity period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Period-hasTimePeriod-timeperiod a shacl:PropertyShape ;
 	shacl:path a4g:hasTimePeriod ;
 	shacl:name \\"has time period\\"@en ;
+	shacl:minCount 1 ;
 	shacl:node a4g_shape:PeriodShape ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4506,7 +4539,6 @@ a4g_shape:OrganisationGroup-leadBy-Organization a shacl:PropertyShape ;
 	shacl:targetClass org:Organization ;
 	shacl:path a4g:leadBy ;
 	shacl:name \\"lead by\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4514,12 +4546,12 @@ a4g_shape:OrganisationGroup-hasMember-Organization a shacl:PropertyShape ;
 	shacl:targetClass org:Organization ;
 	shacl:path a4g:hasMember ;
 	shacl:name \\"has member\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Notice-hasFormType-form-type a shacl:PropertyShape ;
 	shacl:path a4g:hasFormType ;
 	shacl:name \\"has form type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:NoticeShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4537,7 +4569,6 @@ a4g:DynamicPurchaseSystemTechnique rdfs:subClassOf a4g:Technique .
 a4g_shape:DynamicPurchaseSystemTechnique-hasDPSScope-dps-usage a shacl:PropertyShape ;
 	shacl:path a4g:hasDPSScope ;
 	shacl:name \\"has dps scope\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:DynamicPurchaseSystemTechniqueShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4556,7 +4587,6 @@ a4g_shape:AwardOutcome-hasAwardedValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasAwardedValue ;
 	shacl:name \\"has awarded value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4564,7 +4594,6 @@ a4g_shape:Item-hasSellerItemID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasSellerItemID ;
 	shacl:name \\"has seller item id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4572,7 +4601,6 @@ a4g_shape:NoticeAwardInformation-hasApproximateFrameworkAgreementValue-MonetaryV
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasApproximateFrameworkAgreementValue ;
 	shacl:name \\"has approximate framework agreement value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4580,6 +4608,7 @@ a4g_shape:Procedure-hasProcurementScopeDividedIntoLot-Lot a shacl:PropertyShape 
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:hasProcurementScopeDividedIntoLot ;
 	shacl:name \\"has procurement scope divided into lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:AgentInRole-playedBy-Agent a shacl:PropertyShape ;
@@ -4598,6 +4627,7 @@ a4g_shape:ProcurementServiceProvider-actsOnBehalfOf-Buyer a shacl:PropertyShape 
 	shacl:targetClass a4g:Buyer ;
 	shacl:path a4g:actsOnBehalfOf ;
 	shacl:name \\"acts on behalf of\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Buyer-delegatesAncillaryActivitiesTo-ProcurementServiceProvider a shacl:PropertyShape ;
@@ -4609,7 +4639,6 @@ a4g_shape:Buyer-delegatesAncillaryActivitiesTo-ProcurementServiceProvider a shac
 a4g_shape:AccessTerm-hasDocumentRestrictionJustification-communication-justification a shacl:PropertyShape ;
 	shacl:path a4g:hasDocumentRestrictionJustification ;
 	shacl:name \\"has document restriction justification\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AccessTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4626,7 +4655,6 @@ a4g_shape:OrderLine-refersToCatalogueLine-CatalogueLine a shacl:PropertyShape ;
 	shacl:targetClass a4g:CatalogueLine ;
 	shacl:path a4g:refersToCatalogueLine ;
 	shacl:name \\"refers to catalogue line\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4634,7 +4662,6 @@ a4g_shape:SubmissionTerm-hasTenderValidityDuration-Duration a shacl:PropertyShap
 	shacl:targetClass a4g:Duration ;
 	shacl:path a4g:hasTenderValidityDuration ;
 	shacl:name \\"has tender validity duration\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4654,7 +4681,6 @@ a4g_shape:Prize-hasPrizeValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasPrizeValue ;
 	shacl:name \\"has prize value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4676,7 +4702,6 @@ a4g_shape:ConcessionEstimate-hasEstimatedBuyerConcessionRevenue-MonetaryValue a 
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasEstimatedBuyerConcessionRevenue ;
 	shacl:name \\"has estimated buyer concession revenue\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4684,7 +4709,6 @@ a4g_shape:Address-addressID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path locn:addressID ;
 	shacl:name \\"address id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4692,7 +4716,6 @@ a4g_shape:CatalogueLine-hasMaximumOrderQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasMaximumOrderQuantity ;
 	shacl:name \\"has maximum order quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4714,14 +4737,12 @@ a4g_shape:ConcessionEstimate-hasEstimatedUserConcessionRevenue-MonetaryValue a s
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasEstimatedUserConcessionRevenue ;
 	shacl:name \\"has estimated user concession revenue\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:SubmissionTerm-hasVariantPermission-permission a shacl:PropertyShape ;
 	shacl:path a4g:hasVariantPermission ;
 	shacl:name \\"has variant permission\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:SubmissionTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4762,7 +4783,6 @@ a4g_shape:CatalogueLine-hasMinimumQuantityGuaranteedForDelivery-Quantity a shacl
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasMinimumQuantityGuaranteedForDelivery ;
 	shacl:name \\"has minimum quantity guaranteed for delivery\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4770,7 +4790,6 @@ a4g_shape:ProcurementProcessInformation-concernsLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:concernsLot ;
 	shacl:name \\"concerns lot\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4784,7 +4803,6 @@ a4g_shape:Item-hasNetQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasNetQuantity ;
 	shacl:name \\"has net quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4792,6 +4810,7 @@ a4g_shape:Order-specifiesDeliveryInformation-DeliveryInformation a shacl:Propert
 	shacl:targetClass a4g:DeliveryInformation ;
 	shacl:path a4g:specifiesDeliveryInformation ;
 	shacl:name \\"specifies delivery information\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:LotGroup-hasInternalIdentifier-Identifier a shacl:PropertyShape ;
@@ -4804,7 +4823,6 @@ a4g_shape:Person-registeredAddress-Address a shacl:PropertyShape ;
 	shacl:targetClass locn:Address ;
 	shacl:path m8g:registeredAddress ;
 	shacl:name \\"registered address\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4849,7 +4867,6 @@ a4g:CompletionNotice rdfs:subClassOf a4g:Notice .
 a4g_shape:Item-hasCountryOfOrigin-country a shacl:PropertyShape ;
 	shacl:path a4g:hasCountryOfOrigin ;
 	shacl:name \\"has country of origin\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ItemShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4881,7 +4898,6 @@ a4g_shape:TenderGroup-isSubmittedForLotGroup-LotGroup a shacl:PropertyShape ;
 a4g_shape:CatalogueLine-hasOrderableUnit-orderable-unit a shacl:PropertyShape ;
 	shacl:path a4g:hasOrderableUnit ;
 	shacl:name \\"has orderable unit\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:CatalogueLineShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4894,7 +4910,6 @@ a4g_shape:LotGroup-hasLaunchFrameworkAgreementMaximumValue-MonetaryValue a shacl
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasLaunchFrameworkAgreementMaximumValue ;
 	shacl:name \\"has launch framework agreement maximum value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4908,7 +4923,6 @@ a4g_shape:PurchaseContract-followsRulesSetBy-FrameworkAgreement a shacl:Property
 	shacl:targetClass a4g:FrameworkAgreement ;
 	shacl:path a4g:followsRulesSetBy ;
 	shacl:name \\"follows rules set by\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4920,14 +4934,12 @@ a4g_shape:Tenderer-substantiatesExclusionGround-ExclusionGround a shacl:Property
 	shacl:targetClass a4g:ExclusionGround ;
 	shacl:path a4g:substantiatesExclusionGround ;
 	shacl:name \\"substantiates exclusion ground\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CatalogueLine-hasTransactionConditionsCode-transaction-conditions a shacl:PropertyShape ;
 	shacl:path a4g:hasTransactionConditionsCode ;
 	shacl:name \\"has transaction conditions code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:CatalogueLineShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4951,7 +4963,6 @@ a4g_shape:Catalogue-specifiesBuyer-Buyer a shacl:PropertyShape ;
 a4g_shape:Technique-hasUsage-usage a shacl:PropertyShape ;
 	shacl:path a4g:hasUsage ;
 	shacl:name \\"has usage\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:TechniqueShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4971,7 +4982,6 @@ a4g_shape:Document-refersToPrevious-Document a shacl:PropertyShape ;
 a4g_shape:Catalogue-hasActivityCode-activity-code a shacl:PropertyShape ;
 	shacl:path a4g:hasActivityCode ;
 	shacl:name \\"has activity code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:CatalogueShape ;
 	shacl:nodeKind shacl:IRI .
@@ -4984,7 +4994,6 @@ a4g_shape:LotGroup-hasEstimatedValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasEstimatedValue ;
 	shacl:name \\"has estimated value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -4992,7 +5001,6 @@ a4g_shape:TenderGroup-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5009,6 +5017,7 @@ a4g_shape:Document-inScheme-language a shacl:PropertyShape ;
 a4g_shape:Document-hasOfficialLanguage-language a shacl:PropertyShape ;
 	shacl:path a4g:hasOfficialLanguage ;
 	shacl:name \\"has official language\\"@en ;
+	shacl:minCount 1 ;
 	shacl:node a4g_shape:DocumentShape ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5022,14 +5031,12 @@ a4g_shape:Purpose-hasTotalQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasTotalQuantity ;
 	shacl:name \\"has total quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DirectAwardTerm-hasDirectAwardJustification-direct-award-justification a shacl:PropertyShape ;
 	shacl:path a4g:hasDirectAwardJustification ;
 	shacl:name \\"has direct award justification\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:DirectAwardTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5042,7 +5049,6 @@ a4g_shape:SubmissionStatisticalInformation-hasHighestReceivedTenderValue-Monetar
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasHighestReceivedTenderValue ;
 	shacl:name \\"has highest received tender value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5050,14 +5056,12 @@ a4g_shape:ContractTerm-definesSubcontractingTerm-SubcontractTerm a shacl:Propert
 	shacl:targetClass a4g:SubcontractTerm ;
 	shacl:path a4g:definesSubcontractingTerm ;
 	shacl:name \\"defines subcontracting term\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ContractTerm-hasBroadPlaceOfPerformance-other-place-service a shacl:PropertyShape ;
 	shacl:path a4g:hasBroadPlaceOfPerformance ;
 	shacl:name \\"has broad place of performance\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ContractTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5070,6 +5074,7 @@ a4g_shape:CatalogueLine-hasPrice-Price a shacl:PropertyShape ;
 	shacl:targetClass a4g:Price ;
 	shacl:path a4g:hasPrice ;
 	shacl:name \\"has price\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Organization-subOrganizationOf-Organization a shacl:PropertyShape ;
@@ -5081,7 +5086,6 @@ a4g_shape:Organization-subOrganizationOf-Organization a shacl:PropertyShape ;
 a4g_shape:Organization-hasBuyerLegalType-buyer-legal-type a shacl:PropertyShape ;
 	shacl:path a4g:hasBuyerLegalType ;
 	shacl:name \\"has buyer legal type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:OrganizationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5093,7 +5097,6 @@ a4g_shape:Organization-inScheme-buyer-legal-type a shacl:PropertyShape ;
 a4g_shape:Person-hasCountryOfBirth-country a shacl:PropertyShape ;
 	shacl:path a4g:hasCountryOfBirth ;
 	shacl:name \\"has country of birth\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PersonShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5101,7 +5104,6 @@ a4g_shape:Person-hasCountryOfBirth-country a shacl:PropertyShape ;
 a4g_shape:Address-hasNutsCode-nuts a shacl:PropertyShape ;
 	shacl:path a4g:hasNutsCode ;
 	shacl:name \\"has nuts code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AddressShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5137,7 +5139,6 @@ a4g:Certifier rdfs:subClassOf a4g:AuxiliaryParty .
 a4g_shape:CatalogueLine-hasActivityCode-activity-code a shacl:PropertyShape ;
 	shacl:path a4g:hasActivityCode ;
 	shacl:name \\"has activity code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:CatalogueLineShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5150,7 +5151,6 @@ a4g_shape:Price-hasOrderabableUnitFactorRate-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasOrderabableUnitFactorRate ;
 	shacl:name \\"has orderabable unit factor rate\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5175,7 +5175,6 @@ a4g:Notice20 rdfs:subClassOf a4g:eFormsNotice, a4g:CNSocialNotice .
 a4g_shape:Organization-hasMainActivity-main-activity a shacl:PropertyShape ;
 	shacl:path a4g:hasMainActivity ;
 	shacl:name \\"has main activity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:OrganizationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5193,7 +5192,6 @@ a4g_shape:Business-hasBeneficialOwner-Person a shacl:PropertyShape ;
 a4g_shape:Business-hasBusinessSize-economic-operator-size a shacl:PropertyShape ;
 	shacl:path a4g:hasBusinessSize ;
 	shacl:name \\"has business size\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:BusinessShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5206,7 +5204,6 @@ a4g_shape:ProcurementProcessInformation-concernsProcedure-Procedure a shacl:Prop
 	shacl:targetClass a4g:Procedure ;
 	shacl:path a4g:concernsProcedure ;
 	shacl:name \\"concerns procedure\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5214,7 +5211,6 @@ a4g_shape:ProcurementObject-hasLaunchFrameworkAgreementMaximumValue-MonetaryValu
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasLaunchFrameworkAgreementMaximumValue ;
 	shacl:name \\"has launch framework agreement maximum value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5222,7 +5218,6 @@ a4g_shape:Price-hasQuantityThreshold-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasQuantityThreshold ;
 	shacl:name \\"has quantity threshold\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5230,7 +5225,6 @@ a4g_shape:Price-hasExpectedDeliveryTime-Duration a shacl:PropertyShape ;
 	shacl:targetClass a4g:Duration ;
 	shacl:path a4g:hasExpectedDeliveryTime ;
 	shacl:name \\"has expected delivery time\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5253,7 +5247,6 @@ a4g:ReceiptAdviceLine rdfs:subClassOf a4g:Line .
 a4g_shape:AwardCriterion-hasFixedValueType-number-fixed a shacl:PropertyShape ;
 	shacl:path a4g:hasFixedValueType ;
 	shacl:name \\"has fixed value type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AwardCriterionShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5265,7 +5258,6 @@ a4g_shape:AwardCriterion-inScheme-number-fixed a shacl:PropertyShape ;
 a4g_shape:AwardCriterion-hasAwardCriterionType-award-criterion-type a shacl:PropertyShape ;
 	shacl:path a4g:hasAwardCriterionType ;
 	shacl:name \\"has award criterion type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AwardCriterionShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5287,7 +5279,6 @@ a4g_shape:Constraint-inScheme-number-threshold a shacl:PropertyShape ;
 a4g_shape:ProcurementCriterion-hasWeightValueType-number-weight a shacl:PropertyShape ;
 	shacl:path a4g:hasWeightValueType ;
 	shacl:name \\"has weight value type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ProcurementCriterionShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5300,14 +5291,12 @@ a4g_shape:OpeningTerm-definesOpeningPlace-Address a shacl:PropertyShape ;
 	shacl:targetClass locn:Address ;
 	shacl:path a4g:definesOpeningPlace ;
 	shacl:name \\"defines opening place\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Address-hasCountryCode-country a shacl:PropertyShape ;
 	shacl:path a4g:hasCountryCode ;
 	shacl:name \\"has country code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AddressShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5319,7 +5308,6 @@ a4g_shape:Address-inScheme-country a shacl:PropertyShape ;
 a4g_shape:AwardOutcome-hasNonAwardJustification-non-award-justification a shacl:PropertyShape ;
 	shacl:path a4g:hasNonAwardJustification ;
 	shacl:name \\"has non award justification\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AwardOutcomeShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5332,6 +5320,7 @@ a4g_shape:TenderGroup-comprisesTender-Tender a shacl:PropertyShape ;
 	shacl:targetClass a4g:Tender ;
 	shacl:path a4g:comprisesTender ;
 	shacl:name \\"comprises tender\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CatalogueLine-hasStandardisedUnitPrice-Price a shacl:PropertyShape ;
@@ -5348,7 +5337,6 @@ a4g_shape:TransportEquipmentSeal-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5356,13 +5344,13 @@ a4g_shape:Order-comprisesOrderLine-OrderLine a shacl:PropertyShape ;
 	shacl:targetClass a4g:OrderLine ;
 	shacl:path a4g:comprisesOrderLine ;
 	shacl:name \\"comprises order line\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:OrderResponse-implementsContract-Contract a shacl:PropertyShape ;
 	shacl:targetClass a4g:Contract ;
 	shacl:path a4g:implementsContract ;
 	shacl:name \\"implements contract\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5396,13 +5384,13 @@ a4g_shape:OrderResponseLine-isSubmittedForOrderLine-OrderLine a shacl:PropertySh
 	shacl:targetClass a4g:OrderLine ;
 	shacl:path a4g:isSubmittedForOrderLine ;
 	shacl:name \\"is submitted for order line\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:OrderResponse-specifiesSeller-Seller a shacl:PropertyShape ;
 	shacl:targetClass a4g:Seller ;
 	shacl:path a4g:specifiesSeller ;
 	shacl:name \\"specifies seller\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5410,7 +5398,6 @@ a4g_shape:DeliveryInformation-hasDeliveryPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasDeliveryPeriod ;
 	shacl:name \\"has delivery period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5495,7 +5482,6 @@ a4g_shape:ReceiptAdviceLineShape a shacl:NodeShape ;
 a4g_shape:ReceiptAdviceLine-hasShortageAction-action-code a shacl:PropertyShape ;
 	shacl:path a4g:hasShortageAction ;
 	shacl:name \\"has shortage action\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ReceiptAdviceLineShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5512,13 +5498,13 @@ a4g_shape:CompetitionNotice-announcesLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:announcesLot ;
 	shacl:name \\"announces lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:PlannedProcurementPart-hasPlannedDuration-Duration a shacl:PropertyShape ;
 	shacl:targetClass a4g:Duration ;
 	shacl:path a4g:hasPlannedDuration ;
 	shacl:name \\"has planned duration\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5526,14 +5512,12 @@ a4g_shape:Price-hasBaseQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasBaseQuantity ;
 	shacl:name \\"has base quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Item-hasDeliveryClassification-delivery-item-type a shacl:PropertyShape ;
 	shacl:path a4g:hasDeliveryClassification ;
 	shacl:name \\"has delivery classification\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ItemShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5546,7 +5530,6 @@ a4g_shape:NoticeAwardInformation-hasTotalAwardedValue-MonetaryValue a shacl:Prop
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasTotalAwardedValue ;
 	shacl:name \\"has total awarded value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5554,7 +5537,6 @@ a4g_shape:NoticeAwardInformation-hasMaximumFrameworkAgreementAwardedValue-Moneta
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasMaximumFrameworkAgreementAwardedValue ;
 	shacl:name \\"has maximum framework agreement awarded value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5566,14 +5548,12 @@ a4g_shape:Contractor-needsToBeAWinner-Winner a shacl:PropertyShape ;
 	shacl:targetClass a4g:Winner ;
 	shacl:path a4g:needsToBeAWinner ;
 	shacl:name \\"needs to be a winner\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ReceiptAdviceLine-RejectionAction-action-code a shacl:PropertyShape ;
 	shacl:path a4g:RejectionAction ;
 	shacl:name \\"rejection action\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ReceiptAdviceLineShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5606,7 +5586,6 @@ a4g_shape:DespatchLine-refersToOrderLine-OrderLine a shacl:PropertyShape ;
 	shacl:targetClass a4g:OrderLine ;
 	shacl:path a4g:refersToOrderLine ;
 	shacl:name \\"refers to order line\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5619,7 +5598,6 @@ a4g_shape:Catalogue-specifiesSeller-Seller a shacl:PropertyShape ;
 a4g_shape:ReceiptAdviceLine-hasRejectReason-reject-reason a shacl:PropertyShape ;
 	shacl:path a4g:hasRejectReason ;
 	shacl:name \\"has reject reason\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ReceiptAdviceLineShape ;
 	shacl:nodeKind shacl:IRI .
@@ -5654,7 +5632,6 @@ a4g_shape:ReceiptAdviceLine-hasShortQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasShortQuantity ;
 	shacl:name \\"has short quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5668,7 +5645,6 @@ a4g_shape:ParticipationRequestTerm-definesParticipationRequestReceiver-Participa
 	shacl:targetClass a4g:ParticipationRequestReceiver ;
 	shacl:path a4g:definesParticipationRequestReceiver ;
 	shacl:name \\"defines participation request receiver\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5676,7 +5652,6 @@ a4g_shape:ParticipationRequestTerm-definesParticipationRequestProcessor-Particip
 	shacl:targetClass a4g:ParticipationRequestProcessor ;
 	shacl:path a4g:definesParticipationRequestProcessor ;
 	shacl:name \\"defines participation request processor\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5684,7 +5659,6 @@ a4g_shape:ProcedureTerm-definesBudgetProvider-BudgetProvider a shacl:PropertySha
 	shacl:targetClass a4g:BudgetProvider ;
 	shacl:path a4g:definesBudgetProvider ;
 	shacl:name \\"defines budget provider\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5710,7 +5684,6 @@ a4g_shape:InformationConcept-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5722,7 +5695,6 @@ a4g_shape:LotGroupAwardInformation-hasGroupFrameworkAgreementMaximumValue-Moneta
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasGroupFrameworkAgreementMaximumValue ;
 	shacl:name \\"has group framework agreement maximum value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5730,7 +5702,6 @@ a4g_shape:TenderGroup-hasTotalValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasTotalValue ;
 	shacl:name \\"has total value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5744,7 +5715,6 @@ a4g_shape:AccessTerm-definesProcurementProcedureInformationProvider-ProcurementP
 	shacl:targetClass a4g:ProcurementProcedureInformationProvider ;
 	shacl:path a4g:definesProcurementProcedureInformationProvider ;
 	shacl:name \\"defines procurement procedure information provider\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5752,7 +5722,6 @@ a4g_shape:AccessTerm-definesOfflineAccessProvider-OfflineAccessProvider a shacl:
 	shacl:targetClass a4g:OfflineAccessProvider ;
 	shacl:path a4g:definesOfflineAccessProvider ;
 	shacl:name \\"defines offline access provider\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5760,7 +5729,6 @@ a4g_shape:ShipmentInformation-isSpecificToDespatchLine-DespatchLine a shacl:Prop
 	shacl:targetClass a4g:DespatchLine ;
 	shacl:path a4g:isSpecificToDespatchLine ;
 	shacl:name \\"is specific to despatch line\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5768,6 +5736,7 @@ a4g_shape:DirectAwardPrenotificationNotice-announcesLot-Lot a shacl:PropertyShap
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:announcesLot ;
 	shacl:name \\"announces lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:AccessTerm-refersToPlannedPart-PlannedProcurementPart a shacl:PropertyShape ;
@@ -5818,7 +5787,6 @@ a4g_shape:NoticeAwardInformation-describesResultNotice-ResultNotice a shacl:Prop
 	shacl:targetClass a4g:ResultNotice ;
 	shacl:path a4g:describesResultNotice ;
 	shacl:name \\"describes result notice\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5826,7 +5794,6 @@ a4g_shape:Item-hasManufacturer-Manufacturer a shacl:PropertyShape ;
 	shacl:targetClass a4g:Manufacturer ;
 	shacl:path a4g:hasManufacturer ;
 	shacl:name \\"has manufacturer\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5848,7 +5815,6 @@ a4g_shape:CatalogueLine-foreseesPackage-Package a shacl:PropertyShape ;
 	shacl:targetClass a4g:Package ;
 	shacl:path a4g:foreseesPackage ;
 	shacl:name \\"foresees package\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5874,13 +5840,13 @@ a4g_shape:LotGroup-setsGroupingContextForLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:setsGroupingContextForLot ;
 	shacl:name \\"sets grouping context for lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Tender-isSubjectToGrouping-LotGroup a shacl:PropertyShape ;
 	shacl:targetClass a4g:LotGroup ;
 	shacl:path a4g:isSubjectToGrouping ;
 	shacl:name \\"is subject to grouping\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5896,7 +5862,6 @@ a4g_shape:ReceiptAdviceLine-hasReceivedQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasReceivedQuantity ;
 	shacl:name \\"has received quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5911,6 +5876,7 @@ a4g_shape:ESPDResponse-answersExclusionGround-ExclusionGround a shacl:PropertySh
 a4g_shape:ReviewRequest-hasAllegedIrregularityType-irregularity-type a shacl:PropertyShape ;
 	shacl:path a4g:hasAllegedIrregularityType ;
 	shacl:name \\"has alleged irregularity type\\"@en ;
+	shacl:minCount 1 ;
 	shacl:node a4g_shape:ReviewRequestShape ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5964,7 +5930,6 @@ a4g_shape:ReceiptAdviceLine-hasOversupplyQuantity-Quantity a shacl:PropertyShape
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasOversupplyQuantity ;
 	shacl:name \\"has oversupply quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5972,7 +5937,6 @@ a4g_shape:ReceiptAdviceLine-hasRejectedQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasRejectedQuantity ;
 	shacl:name \\"has rejected quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5988,7 +5952,6 @@ a4g_shape:ReceiptAdvice-isSubmittedForDespatchAdvice-DespatchAdvice a shacl:Prop
 	shacl:targetClass a4g:DespatchAdvice ;
 	shacl:path a4g:isSubmittedForDespatchAdvice ;
 	shacl:name \\"is submitted for despatch advice\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -5996,7 +5959,6 @@ a4g_shape:ReceiptAdvice-isSubmittedForShipment-ShipmentInformation a shacl:Prope
 	shacl:targetClass a4g:ShipmentInformation ;
 	shacl:path a4g:isSubmittedForShipment ;
 	shacl:name \\"is submitted for shipment\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6004,7 +5966,6 @@ a4g_shape:ReviewObject-refersToPreviousReview-ReviewObject a shacl:PropertyShape
 	shacl:targetClass a4g:ReviewObject ;
 	shacl:path a4g:refersToPreviousReview ;
 	shacl:name \\"refers to previous review\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6032,7 +5993,6 @@ a4g_shape:ReviewDecision-hasRemedyValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasRemedyValue ;
 	shacl:name \\"has remedy value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6040,7 +6000,6 @@ a4g_shape:ReviewRequest-hasReviewRequestFee-MonetaryValue a shacl:PropertyShape 
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasReviewRequestFee ;
 	shacl:name \\"has review request fee\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6072,7 +6031,6 @@ a4g_shape:ShipmentInformation-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6080,7 +6038,6 @@ a4g_shape:Consignment-hasGrossWeight-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasGrossWeight ;
 	shacl:name \\"has gross weight\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6122,7 +6079,6 @@ a4g_shape:Certificate-attestedByLabel-CertificationLabel a shacl:PropertyShape ;
 	shacl:targetClass a4g:CertificationLabel ;
 	shacl:path a4g:attestedByLabel ;
 	shacl:name \\"attested by label\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6130,7 +6086,6 @@ a4g_shape:Evidence-hasValidityPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasValidityPeriod ;
 	shacl:name \\"has validity period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6145,7 +6100,6 @@ a4g_shape:ItemProperty-describesItem-Item a shacl:PropertyShape ;
 a4g_shape:Evidence-confidentialityLevelType-access-rights a shacl:PropertyShape ;
 	shacl:path m8g:confidentialityLevelType ;
 	shacl:name \\"confidentiality level type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:EvidenceShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6172,13 +6126,13 @@ a4g_shape:ReceiptAdvice-specifiesConsignee-Consignee a shacl:PropertyShape ;
 	shacl:targetClass a4g:Consignee ;
 	shacl:path a4g:specifiesConsignee ;
 	shacl:name \\"specifies consignee\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ReceiptAdvice-specifiesBuyer-Buyer a shacl:PropertyShape ;
 	shacl:targetClass a4g:Buyer ;
 	shacl:path a4g:specifiesBuyer ;
 	shacl:name \\"specifies buyer\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6186,7 +6140,6 @@ a4g_shape:ReceiptAdvice-specifiesSeller-Seller a shacl:PropertyShape ;
 	shacl:targetClass a4g:Seller ;
 	shacl:path a4g:specifiesSeller ;
 	shacl:name \\"specifies seller\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6206,7 +6159,6 @@ a4g_shape:NoticeAwardInformation-hasProcurementLowestReceivedTenderValue-Monetar
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasProcurementLowestReceivedTenderValue ;
 	shacl:name \\"has procurement lowest received tender value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6239,7 +6191,6 @@ a4g_shape:CatalogueLine-hasChargeInformation-ChargeInformation a shacl:PropertyS
 a4g_shape:TaxInformation-hasTaxCategory-tax-category a shacl:PropertyShape ;
 	shacl:path a4g:hasTaxCategory ;
 	shacl:name \\"has tax category\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:TaxInformationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6251,7 +6202,6 @@ a4g_shape:TaxInformation-inScheme-tax-category a shacl:PropertyShape ;
 a4g_shape:TaxInformation-hasTaxScheme-tax-scheme a shacl:PropertyShape ;
 	shacl:path a4g:hasTaxScheme ;
 	shacl:name \\"has tax scheme\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:TaxInformationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6264,7 +6214,6 @@ a4g_shape:Consignment-hasGrossVolume-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasGrossVolume ;
 	shacl:name \\"has gross volume\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6272,7 +6221,6 @@ a4g_shape:ShipmentStage-specifiesCarrier-Carrier a shacl:PropertyShape ;
 	shacl:targetClass a4g:Carrier ;
 	shacl:path a4g:specifiesCarrier ;
 	shacl:name \\"specifies carrier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6282,7 +6230,6 @@ a4g_shape:ShipmentInformation-hasEstimatedDeliveryPeriod-Period a shacl:Property
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasEstimatedDeliveryPeriod ;
 	shacl:name \\"has estimated delivery period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6290,7 +6237,6 @@ a4g_shape:ProcurementObject-foreseesConcession-ConcessionEstimate a shacl:Proper
 	shacl:targetClass a4g:ConcessionEstimate ;
 	shacl:path a4g:foreseesConcession ;
 	shacl:name \\"foresees concession\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6298,7 +6244,6 @@ a4g_shape:ReceiptAdvice-hasAssociatedDocument-Document a shacl:PropertyShape ;
 	shacl:targetClass a4g:Document ;
 	shacl:path a4g:hasAssociatedDocument ;
 	shacl:name \\"has associated document\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6306,14 +6251,12 @@ a4g_shape:Certificate-issuedByCertifier-Certifier a shacl:PropertyShape ;
 	shacl:targetClass a4g:Certifier ;
 	shacl:path a4g:issuedByCertifier ;
 	shacl:name \\"issued by certifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CertificationLabel-hasLabelType-certification-label-type a shacl:PropertyShape ;
 	shacl:path a4g:hasLabelType ;
 	shacl:name \\"has label type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:CertificationLabelShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6326,7 +6269,6 @@ a4g_shape:NoticeAwardInformation-hasProcurementHighestReceivedTenderValue-Moneta
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasProcurementHighestReceivedTenderValue ;
 	shacl:name \\"has procurement highest received tender value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6334,6 +6276,7 @@ a4g_shape:ResultNotice-refersToRole-AgentInRole a shacl:PropertyShape ;
 	shacl:targetClass a4g:AgentInRole ;
 	shacl:path a4g:refersToRole ;
 	shacl:name \\"refers to role\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CatalogueResponseShape a shacl:NodeShape ;
@@ -6364,7 +6307,6 @@ a4g_shape:OrderLine-hasPrice-Price a shacl:PropertyShape ;
 	shacl:targetClass a4g:Price ;
 	shacl:path a4g:hasPrice ;
 	shacl:name \\"has price\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6436,7 +6378,6 @@ a4g_shape:MultipleStageProcedureTerm-hasQualificationSystemDuration-Duration a s
 	shacl:targetClass a4g:Duration ;
 	shacl:path a4g:hasQualificationSystemDuration ;
 	shacl:name \\"has qualification system duration\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6460,7 +6401,6 @@ a4g_shape:LotAwardOutcome-hasFrameworkAgreementMaximumValue-MonetaryValue a shac
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasFrameworkAgreementMaximumValue ;
 	shacl:name \\"has framework agreement maximum value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6482,7 +6422,6 @@ a4g_shape:CatalogueResponseInformation-isSpecificToCatalogueResponseLine-Catalog
 	shacl:targetClass a4g:CatalogueResponseLine ;
 	shacl:path a4g:isSpecificToCatalogueResponseLine ;
 	shacl:name \\"is specific to catalogue response line\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6490,7 +6429,6 @@ a4g_shape:DespatchAdvice-specifiesShipment-ShipmentInformation a shacl:PropertyS
 	shacl:targetClass a4g:ShipmentInformation ;
 	shacl:path a4g:specifiesShipment ;
 	shacl:name \\"specifies shipment\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6506,7 +6444,6 @@ a4g_shape:DespatchLine-hasOutstandingQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasOutstandingQuantity ;
 	shacl:name \\"has outstanding quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6514,7 +6451,6 @@ a4g_shape:DespatchLine-hasAssociatedDocument-Document a shacl:PropertyShape ;
 	shacl:targetClass a4g:Document ;
 	shacl:path a4g:hasAssociatedDocument ;
 	shacl:name \\"has associated document\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6534,7 +6470,6 @@ a4g_shape:Catalogue-hasValidityPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasValidityPeriod ;
 	shacl:name \\"has validity period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6542,6 +6477,7 @@ a4g_shape:TransportHandlingUnit-transportsItemFrom-DespatchLine a shacl:Property
 	shacl:targetClass a4g:DespatchLine ;
 	shacl:path a4g:transportsItemFrom ;
 	shacl:name \\"transports item from\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DespatchAdvice-specifiesTransportHandlingUnits-TransportHandlingUnit a shacl:PropertyShape ;
@@ -6554,7 +6490,6 @@ a4g_shape:AbstractContainer-hasGrossWeight-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasGrossWeight ;
 	shacl:name \\"has gross weight\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6562,7 +6497,6 @@ a4g_shape:Order-specifiesDespatcher-Despatcher a shacl:PropertyShape ;
 	shacl:targetClass a4g:Despatcher ;
 	shacl:path a4g:specifiesDespatcher ;
 	shacl:name \\"specifies despatcher\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6570,7 +6504,6 @@ a4g_shape:TenderAwardOutcome-indicatesAwardToWinner-Winner a shacl:PropertyShape
 	shacl:targetClass a4g:Winner ;
 	shacl:path a4g:indicatesAwardToWinner ;
 	shacl:name \\"indicates award to winner\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6592,7 +6525,6 @@ a4g_shape:Price-hasPriceSurchargeInformation-ChargeInformation a shacl:PropertyS
 	shacl:targetClass a4g:ChargeInformation ;
 	shacl:path a4g:hasPriceSurchargeInformation ;
 	shacl:name \\"has price surcharge information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6606,7 +6538,6 @@ a4g_shape:ConcessionEstimate-hasConcessionEstimatedValue-MonetaryValue a shacl:P
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasConcessionEstimatedValue ;
 	shacl:name \\"has concession estimated value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6614,14 +6545,12 @@ a4g_shape:AbstractContainer-hasGrossVolume-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasGrossVolume ;
 	shacl:name \\"has gross volume\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Package-hasPackagingType-packaging-type a shacl:PropertyShape ;
 	shacl:path a4g:hasPackagingType ;
 	shacl:name \\"has packaging type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PackageShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6633,7 +6562,6 @@ a4g_shape:Package-inScheme-packaging-type a shacl:PropertyShape ;
 a4g_shape:Consignment-hasHandlingInstructionCode-handling-instruction a shacl:PropertyShape ;
 	shacl:path a4g:hasHandlingInstructionCode ;
 	shacl:name \\"has handling instruction code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ConsignmentShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6658,7 +6586,6 @@ a4g_shape:Contract-hasTaxInformation-TaxInformation a shacl:PropertyShape ;
 	shacl:targetClass a4g:TaxInformation ;
 	shacl:path a4g:hasTaxInformation ;
 	shacl:name \\"has tax information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6701,6 +6628,7 @@ a4g_shape:LegalExpression-is_realized_by-Work a shacl:PropertyShape ;
 a4g_shape:LegalExpression-language-language a shacl:PropertyShape ;
 	shacl:path dcterms:language ;
 	shacl:name \\"language\\"@en ;
+	shacl:minCount 1 ;
 	shacl:node a4g_shape:LegalExpressionShape ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6718,6 +6646,7 @@ a4g_shape:CompletionNotice-refersToLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:refersToLot ;
 	shacl:name \\"refers to lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CompletionNotice-refersToLotGroup-LotGroup a shacl:PropertyShape ;
@@ -6749,7 +6678,6 @@ a4g_shape:LegalResourceSubdivisionShape a shacl:NodeShape ;
 a4g_shape:LegalResourceSubdivision-hasSubdivision-subdivision a shacl:PropertyShape ;
 	shacl:path a4g:hasSubdivision ;
 	shacl:name \\"has subdivision\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:LegalResourceSubdivisionShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6777,7 +6705,6 @@ a4g_shape:LegalResource-inScheme-atu a shacl:PropertyShape ;
 a4g_shape:Price-hasPriceType-price-type a shacl:PropertyShape ;
 	shacl:path a4g:hasPriceType ;
 	shacl:name \\"has price type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PriceShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6793,7 +6720,6 @@ a4g_shape:PostAwardDocumentShape a shacl:NodeShape ;
 a4g_shape:PostAwardDocument-hasDocumentType-document-type a shacl:PropertyShape ;
 	shacl:path a4g:hasDocumentType ;
 	shacl:name \\"has document type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PostAwardDocumentShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6806,7 +6732,6 @@ a4g_shape:Item-hasBuyerItemID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasBuyerItemID ;
 	shacl:name \\"has buyer item id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6866,7 +6791,6 @@ a4g_shape:LegalRepresentative-actsOnBehalfOf-OfferingParty a shacl:PropertyShape
 	shacl:targetClass a4g:OfferingParty ;
 	shacl:path a4g:actsOnBehalfOf ;
 	shacl:name \\"acts on behalf of\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6892,7 +6816,6 @@ a4g_shape:Order-hasSellerOrderID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasSellerOrderID ;
 	shacl:name \\"has seller order id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6900,7 +6823,6 @@ a4g_shape:AwardOutcome-hasBargainPrice-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasBargainPrice ;
 	shacl:name \\"has bargain price\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6940,14 +6862,12 @@ a4g_shape:Order-specifiesOriginatorInformation-OriginatorInformation a shacl:Pro
 	shacl:targetClass a4g:OriginatorInformation ;
 	shacl:path a4g:specifiesOriginatorInformation ;
 	shacl:name \\"specifies originator information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:AllowanceChargeInformation-hasAllowanceChargeReason-allowance-charge-reason a shacl:PropertyShape ;
 	shacl:path a4g:hasAllowanceChargeReason ;
 	shacl:name \\"has allowance charge reason\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:AllowanceChargeInformationShape ;
 	shacl:nodeKind shacl:IRI .
@@ -6960,7 +6880,6 @@ a4g_shape:AllowanceChargeInformation-isCalculatedOn-MonetaryValue a shacl:Proper
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:isCalculatedOn ;
 	shacl:name \\"is calculated on\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6968,7 +6887,6 @@ a4g_shape:DespatchAdvice-hasAssociatedDocument-Document a shacl:PropertyShape ;
 	shacl:targetClass a4g:Document ;
 	shacl:path a4g:hasAssociatedDocument ;
 	shacl:name \\"has associated document\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6976,7 +6894,6 @@ a4g_shape:Consignment-hasCarrierConsignmentID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasCarrierConsignmentID ;
 	shacl:name \\"has carrier consignment id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6984,7 +6901,6 @@ a4g_shape:Consignment-hasNetWeight-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasNetWeight ;
 	shacl:name \\"has net weight\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -6992,7 +6908,6 @@ a4g_shape:Consignment-hasChargeableWeight-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasChargeableWeight ;
 	shacl:name \\"has chargeable weight\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7000,7 +6915,6 @@ a4g_shape:CompletionNotice-refersToNoticeAwardInformation-NoticeAwardInformation
 	shacl:targetClass a4g:NoticeAwardInformation ;
 	shacl:path a4g:refersToNoticeAwardInformation ;
 	shacl:name \\"refers to notice award information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7008,7 +6922,6 @@ a4g_shape:Consignment-hasConsignmentDeclaredStatisticsValue-MonetaryValue a shac
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasConsignmentDeclaredStatisticsValue ;
 	shacl:name \\"has consignment declared statistics value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7016,7 +6929,6 @@ a4g_shape:Consignment-hasConsignmentFreeOnBoardValue-MonetaryValue a shacl:Prope
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasConsignmentFreeOnBoardValue ;
 	shacl:name \\"has consignment free on board value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7034,19 +6946,20 @@ a4g_shape:ShipmentAgreement-agreedByBuyer-Buyer a shacl:PropertyShape ;
 	shacl:targetClass a4g:Buyer ;
 	shacl:path a4g:agreedByBuyer ;
 	shacl:name \\"agreed by buyer\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ShipmentAgreement-agreedBySeller-Seller a shacl:PropertyShape ;
 	shacl:targetClass a4g:Seller ;
 	shacl:path a4g:agreedBySeller ;
 	shacl:name \\"agreed by seller\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DeliveryInformation-specifiesGeneralDeliveryAgreement-DeliveryAgreement a shacl:PropertyShape ;
 	shacl:targetClass a4g:DeliveryAgreement ;
 	shacl:path a4g:specifiesGeneralDeliveryAgreement ;
 	shacl:name \\"specifies general delivery agreement\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7054,14 +6967,12 @@ a4g_shape:DeliveryInformation-specifiesSpecificDeliveryAgreement-DeliveryAgreeme
 	shacl:targetClass a4g:DeliveryAgreement ;
 	shacl:path a4g:specifiesSpecificDeliveryAgreement ;
 	shacl:name \\"specifies specific delivery agreement\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:PostAwardDocument-hasDocumentStatus-document-status a shacl:PropertyShape ;
 	shacl:path a4g:hasDocumentStatus ;
 	shacl:name \\"has document status\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:PostAwardDocumentShape ;
 	shacl:nodeKind shacl:IRI .
@@ -7080,7 +6991,6 @@ a4g_shape:LotAwardOutcome-hasApproximateFrameworkAgreementValue-MonetaryValue a 
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasApproximateFrameworkAgreementValue ;
 	shacl:name \\"has approximate framework agreement value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7108,6 +7018,7 @@ a4g_shape:Consignment-containsTransportHandlingUnit-TransportHandlingUnit a shac
 	shacl:targetClass a4g:TransportHandlingUnit ;
 	shacl:path a4g:containsTransportHandlingUnit ;
 	shacl:name \\"contains transport handling unit\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:TransportHandlingUnit-usesTransportEquipment-TransportEquipment a shacl:PropertyShape ;
@@ -7126,7 +7037,6 @@ a4g_shape:Consignment-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7134,7 +7044,6 @@ a4g_shape:TransportEquipment-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7150,7 +7059,6 @@ a4g_shape:Deliverable-hasTotalValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasTotalValue ;
 	shacl:name \\"has total value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7166,6 +7074,7 @@ a4g_shape:ShipmentStage-usesTransportMeans-TransportMeans a shacl:PropertyShape 
 	shacl:targetClass a4g:TransportMeans ;
 	shacl:path a4g:usesTransportMeans ;
 	shacl:name \\"uses transport means\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:TransportMeansShape a shacl:NodeShape ;
@@ -7176,6 +7085,7 @@ a4g_shape:TransportMeans-hasDriverPerson-TransportMeansOperator a shacl:Property
 	shacl:targetClass a4g:TransportMeansOperator ;
 	shacl:path a4g:hasDriverPerson ;
 	shacl:name \\"has driver person\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g:TransportMeansOperator rdfs:subClassOf a4g:AuxiliaryParty .
@@ -7240,7 +7150,6 @@ a4g_shape:DeliveryInformation-hasTrackingID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasTrackingID ;
 	shacl:name \\"has tracking id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7248,7 +7157,6 @@ a4g_shape:Consignment-hasTransportHandlingUnitQuantity-Quantity a shacl:Property
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasTransportHandlingUnitQuantity ;
 	shacl:name \\"has transport handling unit quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7256,7 +7164,6 @@ a4g_shape:AbstractContainer-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7264,7 +7171,6 @@ a4g_shape:SelectedCandidateList-hasStartDate-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:hasStartDate ;
 	shacl:name \\"has start date\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7272,7 +7178,6 @@ a4g_shape:Line-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7280,7 +7185,6 @@ a4g_shape:ShipmentStage-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7294,14 +7198,12 @@ a4g_shape:Consignment-hasMainCarriageShipmentStage-ShipmentStage a shacl:Propert
 	shacl:targetClass a4g:ShipmentStage ;
 	shacl:path a4g:hasMainCarriageShipmentStage ;
 	shacl:name \\"has main carriage shipment stage\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ContractTerm-hasReservedExecution-applicability a shacl:PropertyShape ;
 	shacl:path a4g:hasReservedExecution ;
 	shacl:name \\"has reserved execution\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ContractTermShape ;
 	shacl:nodeKind shacl:IRI .
@@ -7324,7 +7226,6 @@ a4g_shape:TransportMeansOperator-playedBy-Person a shacl:PropertyShape ;
 	shacl:targetClass foaf:Person ;
 	shacl:path a4g:playedBy ;
 	shacl:name \\"played by\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7368,7 +7269,6 @@ a4g_shape:Consignment-hasConsigneeConsignmentID-Identifier a shacl:PropertyShape
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasConsigneeConsignmentID ;
 	shacl:name \\"has consignee consignment id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7376,7 +7276,6 @@ a4g_shape:Consignment-hasFreightForwarderConsignmentID-Identifier a shacl:Proper
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasFreightForwarderConsignmentID ;
 	shacl:name \\"has freight forwarder consignment id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7430,7 +7329,6 @@ a4g_shape:Consignment-hasTotalGoodsItemQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasTotalGoodsItemQuantity ;
 	shacl:name \\"has total goods item quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7438,7 +7336,6 @@ a4g_shape:AbstractContainer-hasTotalGoodsItemQuantity-Quantity a shacl:PropertyS
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasTotalGoodsItemQuantity ;
 	shacl:name \\"has total goods item quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7446,7 +7343,6 @@ a4g_shape:AbstractContainer-hasNetVolume-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasNetVolume ;
 	shacl:name \\"has net volume\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7454,7 +7350,6 @@ a4g_shape:AbstractContainer-hasNetWeight-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasNetWeight ;
 	shacl:name \\"has net weight\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7462,7 +7357,6 @@ a4g_shape:TemperatureSpecification-hasMinimumTemperature-Quantity a shacl:Proper
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasMinimumTemperature ;
 	shacl:name \\"has minimum temperature\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7476,13 +7370,13 @@ a4g_shape:Package-containsGoodsItem-GoodsItem a shacl:PropertyShape ;
 	shacl:targetClass a4g:GoodsItem ;
 	shacl:path a4g:containsGoodsItem ;
 	shacl:name \\"contains goods item\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:GoodsItem-hasTraceID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasTraceID ;
 	shacl:name \\"has trace id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7496,14 +7390,12 @@ a4g_shape:Consignment-hasLoadingLength-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasLoadingLength ;
 	shacl:name \\"has loading length\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DespatchAdvice-hasDespatchAdviceType-despatch-advice-type a shacl:PropertyShape ;
 	shacl:path a4g:hasDespatchAdviceType ;
 	shacl:name \\"has despatch advice type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:DespatchAdviceShape ;
 	shacl:nodeKind shacl:IRI .
@@ -7516,7 +7408,6 @@ a4g_shape:TemperatureSpecification-hasMaximumTemperature-Quantity a shacl:Proper
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasMaximumTemperature ;
 	shacl:name \\"has maximum temperature\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7524,7 +7415,6 @@ a4g_shape:AbstractContainer-hasTemperatureSpecification-TemperatureSpecification
 	shacl:targetClass a4g:TemperatureSpecification ;
 	shacl:path a4g:hasTemperatureSpecification ;
 	shacl:name \\"has temperature specification\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7532,7 +7422,6 @@ a4g_shape:AbstractContainer-hasLength-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasLength ;
 	shacl:name \\"has length\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7540,7 +7429,6 @@ a4g_shape:AbstractContainer-hasHeight-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasHeight ;
 	shacl:name \\"has height\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7548,7 +7436,6 @@ a4g_shape:AbstractContainer-hasWidth-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:hasWidth ;
 	shacl:name \\"has width\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7556,7 +7443,6 @@ a4g_shape:DespatchAdvice-refersToShipmentAgreement-ShipmentAgreement a shacl:Pro
 	shacl:targetClass a4g:ShipmentAgreement ;
 	shacl:path a4g:refersToShipmentAgreement ;
 	shacl:name \\"refers to shipment agreement\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7564,7 +7450,6 @@ a4g_shape:Consignment-hasConsignmentInvoiceValue-MonetaryValue a shacl:PropertyS
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasConsignmentInvoiceValue ;
 	shacl:name \\"has consignment invoice value\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7572,13 +7457,13 @@ a4g_shape:CompletionNotice-announcesReviewObject-ReviewObject a shacl:PropertySh
 	shacl:targetClass a4g:ReviewObject ;
 	shacl:path a4g:announcesReviewObject ;
 	shacl:name \\"announces review object\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ContractModificationNotice-refersToNoticeAwardInformation-NoticeAwardInformation a shacl:PropertyShape ;
 	shacl:targetClass a4g:NoticeAwardInformation ;
 	shacl:path a4g:refersToNoticeAwardInformation ;
 	shacl:name \\"refers to notice award information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7586,7 +7471,6 @@ a4g_shape:OriginatorInformation-concernsOriginatorRequest-OriginatorRequest a sh
 	shacl:targetClass a4g:OriginatorRequest ;
 	shacl:path a4g:concernsOriginatorRequest ;
 	shacl:name \\"concerns originator request\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7594,7 +7478,6 @@ a4g_shape:Order-refersToProject-Project a shacl:PropertyShape ;
 	shacl:targetClass a4g:Project ;
 	shacl:path a4g:refersToProject ;
 	shacl:name \\"refers to project\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7638,7 +7521,6 @@ a4g_shape:Project-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7678,7 +7560,6 @@ a4g_shape:Order-hasTotalTaxExclusiveAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasTotalTaxExclusiveAmount ;
 	shacl:name \\"has total tax exclusive amount\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7686,7 +7567,6 @@ a4g_shape:Order-hasTotalTaxInclusiveAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasTotalTaxInclusiveAmount ;
 	shacl:name \\"has total tax inclusive amount\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7694,7 +7574,6 @@ a4g_shape:PurchaseContract-resultsFromMiniCompetitionAwardOutcome-MiniCompetitio
 	shacl:targetClass a4g:MiniCompetitionAwardOutcome ;
 	shacl:path a4g:resultsFromMiniCompetitionAwardOutcome ;
 	shacl:name \\"results from mini competition award outcome\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7708,7 +7587,6 @@ a4g_shape:MiniCompetitionAwardOutcome-resultsFromUsingCandidateList-SelectedCand
 	shacl:targetClass a4g:SelectedCandidateList ;
 	shacl:path a4g:resultsFromUsingCandidateList ;
 	shacl:name \\"results from using candidate list\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7716,7 +7594,6 @@ a4g_shape:Order-hasTotalAllowanceAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasTotalAllowanceAmount ;
 	shacl:name \\"has total allowance amount\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7724,7 +7601,6 @@ a4g_shape:Order-hasTotalChargeAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasTotalChargeAmount ;
 	shacl:name \\"has total charge amount\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7732,7 +7608,6 @@ a4g_shape:Order-hasPrepaidAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasPrepaidAmount ;
 	shacl:name \\"has prepaid amount\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7740,7 +7615,6 @@ a4g_shape:Order-hasRoundingAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasRoundingAmount ;
 	shacl:name \\"has rounding amount\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7770,7 +7644,6 @@ a4g_shape:TaxInformation-hasAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:hasAmount ;
 	shacl:name \\"has amount\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7778,7 +7651,6 @@ a4g_shape:TaxInformation-isCalculatedOn-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:isCalculatedOn ;
 	shacl:name \\"is calculated on\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7786,14 +7658,12 @@ a4g_shape:AllowanceChargeInformation-hasTaxInformation-TaxInformation a shacl:Pr
 	shacl:targetClass a4g:TaxInformation ;
 	shacl:path a4g:hasTaxInformation ;
 	shacl:name \\"has tax information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:TransportMeans-hasTransportMeansType-transport-means-type a shacl:PropertyShape ;
 	shacl:path a4g:hasTransportMeansType ;
 	shacl:name \\"has transport means type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:TransportMeansShape ;
 	shacl:nodeKind shacl:IRI .
@@ -7806,7 +7676,6 @@ a4g_shape:TransportMeans-hasVehicleSegmentID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasVehicleSegmentID ;
 	shacl:name \\"has vehicle segment id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7814,7 +7683,6 @@ a4g_shape:ContactPoint-address-Address a shacl:PropertyShape ;
 	shacl:targetClass locn:Address ;
 	shacl:path locn:address ;
 	shacl:name \\"address\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7842,7 +7710,6 @@ a4g_shape:NationalPreQualificationData-providesOrganisationEmployeeQuantity-Quan
 	shacl:targetClass a4g:Quantity ;
 	shacl:path a4g:providesOrganisationEmployeeQuantity ;
 	shacl:name \\"provides organisation employee quantity\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7850,7 +7717,6 @@ a4g_shape:NationalPreQualificationData-providesOrganisationFinancialCapability-M
 	shacl:targetClass a4g:MonetaryValue ;
 	shacl:path a4g:providesOrganisationFinancialCapability ;
 	shacl:name \\"provides organisation financial capability\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7864,7 +7730,6 @@ a4g_shape:Item-hasSerialID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path a4g:hasSerialID ;
 	shacl:name \\"has serial id\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7872,7 +7737,6 @@ a4g_shape:Price-hasPriceDiscountInformation-AllowanceInformation a shacl:Propert
 	shacl:targetClass a4g:AllowanceInformation ;
 	shacl:path a4g:hasPriceDiscountInformation ;
 	shacl:name \\"has price discount information\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7880,7 +7744,6 @@ a4g_shape:LotGroup-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7888,6 +7751,7 @@ a4g_shape:ESPDResponse-specifiesResponse-Response a shacl:PropertyShape ;
 	shacl:targetClass a4g:Response ;
 	shacl:path a4g:specifiesResponse ;
 	shacl:name \\"specifies response\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Evidence-supportsValue-SupportedValue a shacl:PropertyShape ;
@@ -7928,7 +7792,6 @@ a4g_shape:Response-refersToApplicablePeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
 	shacl:path a4g:refersToApplicablePeriod ;
 	shacl:name \\"refers to applicable period\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7940,7 +7803,6 @@ a4g_shape:LegalRepresentative-hasPowerOfAttorney-PowerOfAttorney a shacl:Propert
 	shacl:targetClass a4g:PowerOfAttorney ;
 	shacl:path a4g:hasPowerOfAttorney ;
 	shacl:name \\"has power of attorney\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -7953,7 +7815,6 @@ a4g_shape:LegalRepresentative-hasMandate-Mandate a shacl:PropertyShape ;
 a4g_shape:TransportHandlingUnit-hasHandlingInstructionCode-handling-instruction a shacl:PropertyShape ;
 	shacl:path a4g:hasHandlingInstructionCode ;
 	shacl:name \\"has handling instruction code\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:TransportHandlingUnitShape ;
 	shacl:nodeKind shacl:IRI .
@@ -7966,12 +7827,14 @@ a4g_shape:ContractModificationNotice-refersToLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:refersToLot ;
 	shacl:name \\"refers to lot\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DirectAwardPrenotificationNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
 	shacl:targetClass a4g:AgentInRole ;
 	shacl:path a4g:announcesRole ;
 	shacl:name \\"announces role\\"@en ;
+	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DirectAwardPrenotificationNotice-announcesAwardDecision-AwardDecision a shacl:PropertyShape ;
@@ -8016,7 +7879,6 @@ a4g_shape:EvidenceTypeList-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -8024,7 +7886,6 @@ a4g_shape:EvidenceType-identifier-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
 	shacl:path adms:identifier ;
 	shacl:name \\"identifier\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
@@ -8045,7 +7906,6 @@ a4g_shape:Item-hasTaxInformation-TaxInformation a shacl:PropertyShape ;
 a4g_shape:Criterion-type-criterion a shacl:PropertyShape ;
 	shacl:path dcterms:type ;
 	shacl:name \\"type\\"@en ;
-	shacl:minCount 0 ;
 	shacl:maxCount 1 ;
 	shacl:node a4g_shape:CriterionShape ;
 	shacl:nodeKind shacl:IRI .

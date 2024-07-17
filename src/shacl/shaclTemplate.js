@@ -126,7 +126,7 @@ function shaclName (predicate) {
 const quantifiersTemplate = (quantifiers) => {
   const { min, max, quantifiersDeclared } = quantifiers
   return `
-${quantifiersDeclared && max ? `sh:minCount ${min} ;` : ''}
+${quantifiersDeclared && min ? `sh:minCount ${min} ;` : ''}
 ${quantifiersDeclared && max ? `sh:maxCount ${max} ;` : ''}
 `
 }
