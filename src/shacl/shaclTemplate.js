@@ -3,94 +3,41 @@ import {
 } from '../conceptualModel/const.js'
 import { ns, aliases } from '../namespaces.js'
 import { stripPrefix, toSpaced, turtlePrefixes } from '../prefix/prefix.js'
+import { defaultSHACLShapeIRI, defaultSHACLPropertyIRI } from './defaultIRIPatterns.js'
 
 const toTurtle = (
-  { nodes, edges }, { namespaces = { ...ns, ...aliases } } = {}) => {
-  const output = edges.map(edge => {
-    const template = templates[edge.type]
-    return template(edge)
-  })
-  const prefix = turtlePrefixes(namespaces)
+  { nodes, edges }, {
+    propertyIRI = defaultSHACLPropertyIRI,
+    shapeIRI = defaultSHACLShapeIRI,
+    namespaces = { ...ns, ...aliases },
 
-  const common = `
-      a4g_shape:PlainLiteral a sh:NodeShape ;
-          sh:or (
-              [ sh:datatype xsd:string ]
-              [ sh:datatype rdf:langString ]
-          ) .
-          `
-  return [prefix, common, ...output].join('\n')
-}
+  } = {}) => {
 
-function shapeIRI (edge) {
-  const { source } = edge
-  return `a4g_shape:${stripPrefix(source)}Shape`
-}
-
-const subclassTemplate = (edge) => {
-  const { source, predicate, target } = edge
-  return `
+  const subclassTemplate = (edge) => {
+    const { source, predicate, target } = edge
+    return `
     ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
     `
-}
-
-function propertyIRI (edge) {
-  const { source, predicate, target } = edge
-  // The following URI structure will be used to identify SHACL shapes:
-  //   http://data.europa.eu/a4g/shape/[target]-[path]
-  //     where the target may be a node identified as an implicit or explicit target defined by sh:targetClass (e.g., ProcurementObject).
-  //     For example, a shape that checks the property epo:isUsingEUFunds when applied to epo:ProcurementObject will be identified as follows:
-  //   http://data.europa.eu/a4g/shape/ProcurementObject-isUsingEUFunds
-
-// Update. this won't work.
-  // Properties will have distinct quantifiers depending on the Domain/Range combinations
-  // The property URI needs to be a function of both.
-  /**
-   * @startuml
-   * class "epo-ord:OrderResponse" {
-   *   epo-ord:specifiesSeller : epo-ord:Seller [0..1]
-   *   epo-ord:isSubmittedForOrder : epo-ord:Order [1]
-   * }
-   * class "epo-cat:Catalogue" {
-   *   epo:specifiesSeller : epo-ord:Seller [0..*]
-   * }
-   * class "epo-ord:Seller" {
-   *
-   * }
-   * class "epo-ord:Order" {
-   *   epo:specifiesSeller : epo-ord:Seller [1]
-   *   epo-ord:refersToCatalogue : epo-cat:Catalogue [0..*]
-   * }
-   * "epo-ord:Order" --> "1" "epo-ord:Seller" : epo:specifiesSeller
-   * "epo-ord:Order" --> "0..*" "epo-cat:Catalogue" : epo-ord:refersToCatalogue
-   * "epo-ord:OrderResponse" --> "0..1" "epo-ord:Seller" : epo-ord:specifiesSeller
-   * "epo-cat:Catalogue" --> "0..*" "epo-ord:Seller" : epo:specifiesSeller
-   * "epo-ord:OrderResponse" --> "1" "epo-ord:Order" : epo-ord:isSubmittedForOrder
-   * @enduml
-   */
-
-  return `a4g_shape:${stripPrefix(source)}-${stripPrefix(predicate)}-${stripPrefix(target)}`
-
-}
-
-const literalTemplate = (edge) => {
-  const {
-    source, predicate, target, description, quantifiers,
-  } = edge
-
-  function getDatatype (target) {
-    if (target === 'rdf:PlainLiteral') {
-      return `${propertyIRI(edge)}  sh:node a4g_shape:PlainLiteral .
-    `
-    } else {
-      return `${propertyIRI(edge)} sh:datatype ${target} .`
-    }
   }
 
-  // Using propertyIRI in this one could be dangerous. But the pattern needs to be tested.
-  // Probably the SHACL needs to be validated against the SHACL's SHACL
+  const literalTemplate = (edge) => {
+    const {
+      source, predicate, target, description, quantifiers,
+    } = edge
 
-  return `
+    function getDatatype (target) {
+      if (target === 'rdf:PlainLiteral') {
+        return `${propertyIRI(edge)}  sh:node a4g_shape:PlainLiteral .
+    `
+      } else {
+        return `${propertyIRI(edge)} sh:datatype ${target} .`
+      }
+    }
+
+    // Using propertyIRI in this one could be dangerous. But the pattern needs to be tested.
+    // Probably the SHACL needs to be validated against the SHACL's SHACL
+
+    return `
     ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
       sh:property ${propertyIRI(edge)} .
@@ -102,36 +49,12 @@ const literalTemplate = (edge) => {
          
        ${getDatatype(target)}
     `
-}
-
-function getObjectTarget (edge) {
-  const { source, target, type } = edge
-
-  if (type === 'Dependency') {
-    // Note: For enums omit enumeration values for the moment until further clarification
-    // sh:targetObjectsOf ?
-    // sh:in ( ex:Pink ex:Purple ) ?
-
-    const skosEdge = { source, predicate: 'skos:inScheme', target }
-
-    return `${propertyIRI(edge)} sh:node ${shapeIRI(skosEdge)} . 
-     ${shapeIRI(skosEdge)} a sh:NodeShape ;
-        sh:property ${propertyIRI(skosEdge)} .
-         
-     ${propertyIRI(skosEdge)} a sh:PropertyShape ;
-        a sh:PropertyShape ;
-        sh:path skos:inScheme ;
-        sh:hasValue ${target} .
-`
-  } else {
-    return `${propertyIRI(edge)} sh:targetClass ${target} .`
   }
-}
 
-const objectTemplate = (edge) => {
-  const { source, predicate, target, description, quantifiers, type } = edge
+  const objectTemplate = (edge) => {
+    const { source, predicate, target, description, quantifiers, type } = edge
 
-  return `
+    return `
     ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
       sh:property ${propertyIRI(edge)} .
@@ -144,14 +67,54 @@ const objectTemplate = (edge) => {
        
      ${getObjectTarget(edge)}
     `
-}
+  }
 
-const templates = {
-  [INHERITANCE]: subclassTemplate,
-  [ATTRIBUTE]: literalTemplate,
-  [RELATIONSHIP]: objectTemplate,
-  [INSTANCE_OF]: objectTemplate,
-  [DEPENDENCY]: objectTemplate,
+  const templates = {
+    [INHERITANCE]: subclassTemplate,
+    [ATTRIBUTE]: literalTemplate,
+    [RELATIONSHIP]: objectTemplate,
+    [INSTANCE_OF]: objectTemplate,
+    [DEPENDENCY]: objectTemplate,
+  }
+
+  const output = edges.map(edge => {
+    const template = templates[edge.type]
+    return template(edge)
+  })
+  const prefix = turtlePrefixes(namespaces)
+
+  function getObjectTarget (edge) {
+    const { source, target, type } = edge
+
+    if (type === 'Dependency') {
+      // Note: For enums omit enumeration values for the moment until further clarification
+      // sh:targetObjectsOf ?
+      // sh:in ( ex:Pink ex:Purple ) ?
+
+      const skosEdge = { source, predicate: 'skos:inScheme', target }
+
+      return `${propertyIRI(edge)} sh:node ${shapeIRI(skosEdge)} . 
+     ${shapeIRI(skosEdge)} a sh:NodeShape ;
+        sh:property ${propertyIRI(skosEdge)} .
+         
+     ${propertyIRI(skosEdge)} a sh:PropertyShape ;
+        a sh:PropertyShape ;
+        sh:path skos:inScheme ;
+        sh:hasValue ${target} .
+`
+    } else {
+      return `${propertyIRI(edge)} sh:targetClass ${target} .`
+    }
+  }
+
+  const common = `
+      a4g_shape:PlainLiteral a sh:NodeShape ;
+          sh:or (
+              [ sh:datatype xsd:string ]
+              [ sh:datatype rdf:langString ]
+          ) .
+          `
+  return [prefix, common, ...output].join('\n')
 }
 
 function shaclName (predicate) {
