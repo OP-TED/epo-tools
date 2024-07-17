@@ -38,6 +38,7 @@ function toShacl (g, { id }) {
   return toTurtle(g,
     {
       ...iriPatterns(id),
+      definedBy: `${id}-shape:${id}-shape`,
       namespaces: { ...ns, ...aliases },
     },
   )
@@ -63,17 +64,6 @@ const eaJson = {
   edges: rawJson.edges.filter(x => !hasErrors(inspectEdge(x))),
 }
 
-function attachMetadata (g, id) {
-  const { shapeIRI, propertyIRI } = iriPatterns(id)
-  return `
-  ${g.edges.flatMap(
-    edge => [
-      `${shapeIRI(edge)} rdfs:isDefinedBy ${id}-shape:${id}-shape .`,
-      `${propertyIRI(edge)} rdfs:isDefinedBy ${id}-shape:${id}-shape .`,
-    ]).join('\n')}
-  `
-}
-
 async function writeModule (module) {
   const { name, id, prefix } = module
   const targetDir = `outputs/temporal-export/implementation/${name}/shacl_shapes`
@@ -88,7 +78,6 @@ async function writeModule (module) {
 
   ${toShacl(g, module)}
   ${shaclMetadata(id)}
-  ${attachMetadata(g, id)}
   `
 
   const dataset = await rdf.dataset().
