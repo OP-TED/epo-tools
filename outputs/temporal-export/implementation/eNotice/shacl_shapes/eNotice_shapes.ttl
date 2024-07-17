@@ -1,0 +1,1125 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cpov: <http://data.europa.eu/m8g/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix at: <http://publications.europa.eu/ontology/authority/> .
+@prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+a4g_shape:PlainLiteral a shacl:NodeShape ;
+	shacl:or (
+		[
+			shacl:datatype xsd:string ;
+		]
+		[
+			shacl:datatype rdf:langString ;
+		]
+	) .
+
+a4g_shape:ResultNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ResultNotice ;
+	shacl:property a4g_shape:ResultNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation, a4g_shape:ResultNotice-announcesContract-Contract, a4g_shape:ResultNotice-refersToProcedure-Procedure, a4g_shape:ResultNotice-refersToLot-Lot, a4g_shape:ResultNotice-announcesRole-AgentInRole, a4g_shape:ResultNotice-announcesNoticeAwardInformation-NoticeAwardInformation, a4g_shape:ResultNotice-announcesAwardDecision-AwardDecision, a4g_shape:ResultNotice-refersToLotGroup-LotGroup, a4g_shape:ResultNotice-refersToRole-AgentInRole ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:ResultNotice rdfs:subClassOf a4g:Notice .
+
+a4g_shape:ResultNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroupAwardInformation ;
+	shacl:path a4g:announcesLotGroupAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces lot group award information"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ResultNotice-announcesContract-Contract a shacl:PropertyShape ;
+	shacl:targetClass a4g:Contract ;
+	shacl:path a4g:announcesContract ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces contract"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:Notice38 rdfs:subClassOf a4g:ContractModificationNotice, a4g:eFormsNotice .
+
+a4g:ContractModificationNotice rdfs:subClassOf a4g:Notice .
+
+a4g:Notice39 rdfs:subClassOf a4g:ContractModificationNotice, a4g:eFormsNotice .
+
+a4g:Notice40 rdfs:subClassOf a4g:ContractModificationNotice, a4g:eFormsNotice .
+
+a4g_shape:ResultNotice-refersToProcedure-Procedure a shacl:PropertyShape ;
+	shacl:targetClass a4g:Procedure ;
+	shacl:path a4g:refersToProcedure ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to procedure"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ResultNotice-refersToLot-Lot a shacl:PropertyShape ;
+	shacl:targetClass a4g:Lot ;
+	shacl:path a4g:refersToLot ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ResultNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:announcesRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces role"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:DirectAwardPrenotificationNotice ;
+	shacl:property a4g_shape:DirectAwardPrenotificationNotice-announcesNoticeAwardInformation-NoticeAwardInformation, a4g_shape:DirectAwardPrenotificationNotice-announcesProcedure-Procedure, a4g_shape:DirectAwardPrenotificationNotice-announcesLot-Lot, a4g_shape:DirectAwardPrenotificationNotice-announcesLotGroup-LotGroup, a4g_shape:DirectAwardPrenotificationNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation, a4g_shape:DirectAwardPrenotificationNotice-announcesContract-Contract, a4g_shape:DirectAwardPrenotificationNotice-announcesRole-AgentInRole, a4g_shape:DirectAwardPrenotificationNotice-announcesAwardDecision-AwardDecision ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:DirectAwardPrenotificationNotice rdfs:subClassOf a4g:Notice .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesNoticeAwardInformation-NoticeAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:NoticeAwardInformation ;
+	shacl:path a4g:announcesNoticeAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces notice award information"@en ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PlanningNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:PlanningNotice ;
+	shacl:property a4g_shape:PlanningNotice-announcesRole-AgentInRole, a4g_shape:PlanningNotice-announcesPlannedProcurementPart-PlannedProcurementPart ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:PlanningNotice rdfs:subClassOf a4g:Notice .
+
+a4g_shape:PlanningNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:announcesRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces role"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:PreMarketConsultationNotice rdfs:subClassOf a4g:Notice .
+
+a4g:PINProfileNotice rdfs:subClassOf a4g:PlanningNotice .
+
+a4g:PINOnlyNotice rdfs:subClassOf a4g:PlanningNotice .
+
+a4g:PINTimeLimitNotice rdfs:subClassOf a4g:PlanningNotice .
+
+a4g:Notice1 rdfs:subClassOf a4g:PINProfileNotice, a4g:eFormsNotice .
+
+a4g:Notice2 rdfs:subClassOf a4g:PINProfileNotice, a4g:eFormsNotice .
+
+a4g:Notice3 rdfs:subClassOf a4g:PINProfileNotice, a4g:eFormsNotice .
+
+a4g:Notice4 rdfs:subClassOf a4g:PINOnlyNotice, a4g:eFormsNotice .
+
+a4g:DesignContestNotice rdfs:subClassOf a4g:CompetitionNotice .
+
+a4g:CompetitionNotice rdfs:subClassOf a4g:Notice .
+
+a4g:CANStandardNotice rdfs:subClassOf a4g:ResultNotice .
+
+a4g:Notice29 rdfs:subClassOf a4g:CANStandardNotice, a4g:eFormsNotice .
+
+a4g:CANSocialNotice rdfs:subClassOf a4g:ResultNotice .
+
+a4g:DesignContestResultNotice rdfs:subClassOf a4g:ResultNotice .
+
+a4g:Notice10 rdfs:subClassOf a4g:eFormsNotice, a4g:PIN-CFCStandardNotice .
+
+a4g:PIN-CFCStandardNotice rdfs:subClassOf a4g:CompetitionNotice .
+
+a4g:Notice11 rdfs:subClassOf a4g:eFormsNotice, a4g:PIN-CFCStandardNotice .
+
+a4g:Notice5 rdfs:subClassOf a4g:PINOnlyNotice, a4g:eFormsNotice .
+
+a4g:Notice6 rdfs:subClassOf a4g:PINOnlyNotice, a4g:eFormsNotice .
+
+a4g:Notice7 rdfs:subClassOf a4g:PINTimeLimitNotice, a4g:eFormsNotice .
+
+a4g:Notice8 rdfs:subClassOf a4g:PINTimeLimitNotice, a4g:eFormsNotice .
+
+a4g:Notice9 rdfs:subClassOf a4g:PINTimeLimitNotice, a4g:eFormsNotice .
+
+a4g:Notice25 rdfs:subClassOf a4g:eFormsNotice, a4g:VoluntaryEx-AnteTransparencyNotice .
+
+a4g:VoluntaryEx-AnteTransparencyNotice rdfs:subClassOf a4g:DirectAwardPrenotificationNotice .
+
+a4g:Notice26 rdfs:subClassOf a4g:eFormsNotice, a4g:VoluntaryEx-AnteTransparencyNotice .
+
+a4g:Notice27 rdfs:subClassOf a4g:eFormsNotice, a4g:VoluntaryEx-AnteTransparencyNotice .
+
+a4g:Notice28 rdfs:subClassOf a4g:eFormsNotice, a4g:VoluntaryEx-AnteTransparencyNotice .
+
+a4g:QSNotice-D25 rdfs:subClassOf a4g:QSNotice, a4g:StandardFormsNotice .
+
+a4g:QSNotice rdfs:subClassOf a4g:CompetitionNotice .
+
+a4g:Notice30 rdfs:subClassOf a4g:CANStandardNotice, a4g:eFormsNotice .
+
+a4g:Notice31 rdfs:subClassOf a4g:CANStandardNotice, a4g:eFormsNotice .
+
+a4g:Notice32 rdfs:subClassOf a4g:CANStandardNotice, a4g:eFormsNotice .
+
+a4g:Notice33 rdfs:subClassOf a4g:eFormsNotice, a4g:CANSocialNotice .
+
+a4g:Notice22 rdfs:subClassOf a4g:eFormsNotice, a4g:SubcontractNotice .
+
+a4g:SubcontractNotice rdfs:subClassOf a4g:CompetitionNotice .
+
+a4g:Notice23 rdfs:subClassOf a4g:DesignContestNotice, a4g:eFormsNotice .
+
+a4g:Notice24 rdfs:subClassOf a4g:DesignContestNotice, a4g:eFormsNotice .
+
+a4g:PIN-CFCSocialNotice rdfs:subClassOf a4g:CompetitionNotice .
+
+a4g:Notice34 rdfs:subClassOf a4g:eFormsNotice, a4g:CANSocialNotice .
+
+a4g:Notice35 rdfs:subClassOf a4g:eFormsNotice, a4g:CANSocialNotice .
+
+a4g:Notice36 rdfs:subClassOf a4g:eFormsNotice, a4g:DesignContestResultNotice .
+
+a4g:Notice37 rdfs:subClassOf a4g:eFormsNotice, a4g:DesignContestResultNotice .
+
+a4g_shape:ContractModificationNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ContractModificationNotice ;
+	shacl:property a4g_shape:ContractModificationNotice-refersToContractToBeModified-Contract, a4g_shape:ContractModificationNotice-announcesContractAmendment-ContractAmendment, a4g_shape:ContractModificationNotice-refersToProcedure-Procedure, a4g_shape:ContractModificationNotice-announcesRole-AgentInRole, a4g_shape:ContractModificationNotice-refersToNoticeAwardInformation-NoticeAwardInformation, a4g_shape:ContractModificationNotice-refersToLotGroup-LotGroup, a4g_shape:ContractModificationNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation, a4g_shape:ContractModificationNotice-refersToAwardDecision-AwardDecision, a4g_shape:ContractModificationNotice-refersToLot-Lot ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-refersToContractToBeModified-Contract a shacl:PropertyShape ;
+	shacl:targetClass a4g:Contract ;
+	shacl:path a4g:refersToContractToBeModified ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to contract to be modified"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ResultNotice-announcesNoticeAwardInformation-NoticeAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:NoticeAwardInformation ;
+	shacl:path a4g:announcesNoticeAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces notice award information"@en ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesProcedure-Procedure a shacl:PropertyShape ;
+	shacl:targetClass a4g:Procedure ;
+	shacl:path a4g:announcesProcedure ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces procedure"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ResultNotice-announcesAwardDecision-AwardDecision a shacl:PropertyShape ;
+	shacl:targetClass a4g:AwardDecision ;
+	shacl:path a4g:announcesAwardDecision ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces award decision"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-announcesContractAmendment-ContractAmendment a shacl:PropertyShape ;
+	shacl:targetClass a4g:ContractAmendment ;
+	shacl:path a4g:announcesContractAmendment ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces contract amendment"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:PINProfile-D81 rdfs:subClassOf a4g:PINProfileNotice, a4g:StandardFormsNotice .
+
+a4g_shape:CompetitionNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:CompetitionNotice ;
+	shacl:property a4g_shape:CompetitionNotice-announcesRole-AgentInRole, a4g_shape:CompetitionNotice-announcesProcedure-Procedure, a4g_shape:CompetitionNotice-announcesLot-Lot, a4g_shape:CompetitionNotice-announcesLotGroup-LotGroup ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompetitionNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:announcesRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces role"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompetitionNotice-announcesProcedure-Procedure a shacl:PropertyShape ;
+	shacl:targetClass a4g:Procedure ;
+	shacl:path a4g:announcesProcedure ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces procedure"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:PINOnly-D24 rdfs:subClassOf a4g:PINOnlyNotice, a4g:StandardFormsNotice .
+
+a4g:PIN-RTL-D24 rdfs:subClassOf a4g:PINTimeLimitNotice, a4g:StandardFormsNotice .
+
+a4g:CNStandard-D24 rdfs:subClassOf a4g:CNStandardNotice, a4g:StandardFormsNotice .
+
+a4g:CNStandardNotice rdfs:subClassOf a4g:CompetitionNotice .
+
+a4g:CANStandard-D24 rdfs:subClassOf a4g:CANStandardNotice, a4g:StandardFormsNotice .
+
+a4g:PINProfile-D24 rdfs:subClassOf a4g:PINProfileNotice, a4g:StandardFormsNotice .
+
+a4g:Modification-D24 rdfs:subClassOf a4g:ContractModificationNotice, a4g:StandardFormsNotice .
+
+a4g:DesignContestResult-D24 rdfs:subClassOf a4g:DesignContestResultNotice, a4g:StandardFormsNotice .
+
+a4g:VEAT-D24 rdfs:subClassOf a4g:VoluntaryEx-AnteTransparencyNotice, a4g:StandardFormsNotice .
+
+a4g:PINOnly-D25 rdfs:subClassOf a4g:PINOnlyNotice, a4g:StandardFormsNotice .
+
+a4g:PIN-RTL-D25 rdfs:subClassOf a4g:PINTimeLimitNotice, a4g:StandardFormsNotice .
+
+a4g:PIN-CFCSocial-D25 rdfs:subClassOf a4g:PIN-CFCSocialNotice, a4g:StandardFormsNotice .
+
+a4g:CNSocial-D25 rdfs:subClassOf a4g:StandardFormsNotice, a4g:CNSocialNotice .
+
+a4g:CNSocialNotice rdfs:subClassOf a4g:CompetitionNotice .
+
+a4g:CANSocial-D25 rdfs:subClassOf a4g:CANSocialNotice, a4g:StandardFormsNotice .
+
+a4g:DesignContestResult-D25 rdfs:subClassOf a4g:DesignContestResultNotice, a4g:StandardFormsNotice .
+
+a4g:Modification-D25 rdfs:subClassOf a4g:ContractModificationNotice, a4g:StandardFormsNotice .
+
+a4g:DesignContest-D24 rdfs:subClassOf a4g:DesignContestNotice, a4g:StandardFormsNotice .
+
+a4g:PINDefence-D81 rdfs:subClassOf a4g:PlanningNotice .
+
+a4g:DesignContest-D25 rdfs:subClassOf a4g:DesignContestNotice, a4g:StandardFormsNotice .
+
+a4g:VEAT-D25 rdfs:subClassOf a4g:VoluntaryEx-AnteTransparencyNotice, a4g:StandardFormsNotice .
+
+a4g:PINProfile-D25 rdfs:subClassOf a4g:PINProfileNotice, a4g:StandardFormsNotice .
+
+a4g:Notice21 rdfs:subClassOf a4g:eFormsNotice, a4g:CNSocialNotice .
+
+a4g_shape:PlanningNotice-announcesPlannedProcurementPart-PlannedProcurementPart a shacl:PropertyShape ;
+	shacl:targetClass a4g:PlannedProcurementPart ;
+	shacl:path a4g:announcesPlannedProcurementPart ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces planned procurement part"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ResultNotice-refersToLotGroup-LotGroup a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroup ;
+	shacl:path a4g:refersToLotGroup ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot group"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-refersToProcedure-Procedure a shacl:PropertyShape ;
+	shacl:targetClass a4g:Procedure ;
+	shacl:path a4g:refersToProcedure ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to procedure"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:CompletionNotice rdfs:subClassOf a4g:Notice .
+
+a4g:Notice12 rdfs:subClassOf a4g:eFormsNotice, a4g:PIN-CFCSocialNotice .
+
+a4g:Notice13 rdfs:subClassOf a4g:eFormsNotice, a4g:PIN-CFCSocialNotice .
+
+a4g:Notice14 rdfs:subClassOf a4g:eFormsNotice, a4g:PIN-CFCSocialNotice .
+
+a4g:Notice15 rdfs:subClassOf a4g:eFormsNotice, a4g:QSNotice .
+
+a4g:Notice16 rdfs:subClassOf a4g:eFormsNotice, a4g:CNStandardNotice .
+
+a4g:Notice17 rdfs:subClassOf a4g:eFormsNotice, a4g:CNStandardNotice .
+
+a4g:Notice18 rdfs:subClassOf a4g:eFormsNotice, a4g:CNStandardNotice .
+
+a4g:Notice19 rdfs:subClassOf a4g:eFormsNotice, a4g:CNStandardNotice .
+
+a4g:Notice20 rdfs:subClassOf a4g:eFormsNotice, a4g:CNSocialNotice .
+
+a4g:QS-D25 rdfs:subClassOf a4g:QSNotice, a4g:StandardFormsNotice .
+
+a4g:PIN-CFCStandard-D24 rdfs:subClassOf a4g:PIN-CFCStandardNotice, a4g:StandardFormsNotice .
+
+a4g:VEAT-D23 rdfs:subClassOf a4g:VoluntaryEx-AnteTransparencyNotice, a4g:StandardFormsNotice .
+
+a4g:VEAT-D81 rdfs:subClassOf a4g:VoluntaryEx-AnteTransparencyNotice, a4g:StandardFormsNotice .
+
+a4g:CANDefence-D81 rdfs:subClassOf a4g:ResultNotice, a4g:StandardFormsNotice .
+
+a4g:Modification-D23 rdfs:subClassOf a4g:ContractModificationNotice, a4g:StandardFormsNotice .
+
+a4g:ConcessionNotice-D23 rdfs:subClassOf a4g:StandardFormsNotice .
+
+a4g:ConcessionAwardNotice-D23 rdfs:subClassOf a4g:StandardFormsNotice .
+
+a4g:SocialAndOtherSpecificServices-D23 rdfs:subClassOf a4g:StandardFormsNotice .
+
+a4g:SocialAndOtherSpecificServices-D24 rdfs:subClassOf a4g:StandardFormsNotice .
+
+a4g:PIN-CFCSocialNotice-D25 rdfs:subClassOf a4g:PIN-CFCSocialNotice, a4g:StandardFormsNotice .
+
+a4g_shape:CompletionNoticeShape a shacl:NodeShape ;
+	shacl:targetClass a4g:CompletionNotice ;
+	shacl:property a4g_shape:CompletionNotice-announcesCompletionOfContract-Contract, a4g_shape:CompletionNotice-refersToProcedure-Procedure, a4g_shape:CompletionNotice-refersToAwardDecision-AwardDecision, a4g_shape:CompletionNotice-refersToLot-Lot, a4g_shape:CompletionNotice-refersToLotGroup-LotGroup, a4g_shape:CompletionNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation, a4g_shape:CompletionNotice-refersToNoticeAwardInformation-NoticeAwardInformation, a4g_shape:CompletionNotice-refersToRole-AgentInRole, a4g_shape:CompletionNotice-announcesRole-AgentInRole, a4g_shape:CompletionNotice-announcesReviewObject-ReviewObject ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-announcesCompletionOfContract-Contract a shacl:PropertyShape ;
+	shacl:targetClass a4g:Contract ;
+	shacl:path a4g:announcesCompletionOfContract ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces completion of contract"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:Subcontract-D81 rdfs:subClassOf a4g:SubcontractNotice, a4g:StandardFormsNotice .
+
+a4g:CNDefence-D81 rdfs:subClassOf a4g:StandardFormsNotice .
+
+a4g_shape:CompetitionNotice-announcesLot-Lot a shacl:PropertyShape ;
+	shacl:targetClass a4g:Lot ;
+	shacl:path a4g:announcesLot ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces lot"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompetitionNotice-announcesLotGroup-LotGroup a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroup ;
+	shacl:path a4g:announcesLotGroup ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces lot group"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesLot-Lot a shacl:PropertyShape ;
+	shacl:targetClass a4g:Lot ;
+	shacl:path a4g:announcesLot ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces lot"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g:CNSocialNotice-D25 rdfs:subClassOf a4g:StandardFormsNotice, a4g:CNSocialNotice .
+
+a4g:CANSocialNotice-D25 rdfs:subClassOf a4g:CANSocialNotice, a4g:StandardFormsNotice .
+
+a4g_shape:ResultNotice-refersToRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:refersToRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to role"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-refersToProcedure-Procedure a shacl:PropertyShape ;
+	shacl:targetClass a4g:Procedure ;
+	shacl:path a4g:refersToProcedure ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to procedure"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesLotGroup-LotGroup a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroup ;
+	shacl:path a4g:announcesLotGroup ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces lot group"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroupAwardInformation ;
+	shacl:path a4g:announcesLotGroupAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces lot group award information"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesContract-Contract a shacl:PropertyShape ;
+	shacl:targetClass a4g:Contract ;
+	shacl:path a4g:announcesContract ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces contract"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-refersToAwardDecision-AwardDecision a shacl:PropertyShape ;
+	shacl:targetClass a4g:AwardDecision ;
+	shacl:path a4g:refersToAwardDecision ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to award decision"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-refersToLot-Lot a shacl:PropertyShape ;
+	shacl:targetClass a4g:Lot ;
+	shacl:path a4g:refersToLot ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-refersToLotGroup-LotGroup a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroup ;
+	shacl:path a4g:refersToLotGroup ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot group"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroupAwardInformation ;
+	shacl:path a4g:refersToLotGroupAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot group award information"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-refersToNoticeAwardInformation-NoticeAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:NoticeAwardInformation ;
+	shacl:path a4g:refersToNoticeAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to notice award information"@en ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-refersToRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:refersToRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to role"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:announcesRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces role"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:announcesRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces role"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-announcesReviewObject-ReviewObject a shacl:PropertyShape ;
+	shacl:targetClass a4g:ReviewObject ;
+	shacl:path a4g:announcesReviewObject ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces review object"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-refersToNoticeAwardInformation-NoticeAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:NoticeAwardInformation ;
+	shacl:path a4g:refersToNoticeAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to notice award information"@en ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-refersToLotGroup-LotGroup a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroup ;
+	shacl:path a4g:refersToLotGroup ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot group"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:LotGroupAwardInformation ;
+	shacl:path a4g:refersToLotGroupAwardInformation ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot group award information"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-refersToAwardDecision-AwardDecision a shacl:PropertyShape ;
+	shacl:targetClass a4g:AwardDecision ;
+	shacl:path a4g:refersToAwardDecision ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to award decision"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-refersToLot-Lot a shacl:PropertyShape ;
+	shacl:targetClass a4g:Lot ;
+	shacl:path a4g:refersToLot ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "refers to lot"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesRole-AgentInRole a shacl:PropertyShape ;
+	shacl:targetClass a4g:AgentInRole ;
+	shacl:path a4g:announcesRole ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces role"@en ;
+	shacl:minCount 1 ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-announcesAwardDecision-AwardDecision a shacl:PropertyShape ;
+	shacl:targetClass a4g:AwardDecision ;
+	shacl:path a4g:announcesAwardDecision ;
+	shacl:nodeKind shacl:IRI ;
+	shacl:name "announces award decision"@en ;
+	rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:not-shape a owl:Ontology ;
+	rdfs:label "eProcurement Ontology not - SHACL shapes"@en ;
+	dcterms:created "2021-06-01"^^xsd:date ;
+	dcterms:description "The eProcurement Ontology not SHACL shapes provides the datashape specifications for the eProcurement Ontology not module."@en ;
+	dcterms:issued "2024-03-21"^^xsd:date ;
+	dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
+	dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
+	dcterms:title "eProcurement Ontology not - SHACL shapes"@en ;
+	vann:preferredNamespacePrefix "epo" ;
+	vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
+	rdfs:seeAlso <https://docs.ted.europa.eu/home/index.html>, <https://github.com/OP-TED/ePO/releases>, <https://joinup.ec.europa.eu/collection/eprocurement/solution/eprocurement-ontology/about>, <https://op.europa.eu/en/web/eu-vocabularies/e-procurement> ;
+	owl:imports <http://data.europa.eu/eli/ontology#>, <http://data.europa.eu/m8g/>, <http://purl.org/dc/terms/>, <http://purl.org/vocab/vann/>, <http://www.w3.org/2004/02/skos/core>, <http://www.w3.org/2006/time>, <http://www.w3.org/ns/adms>, <http://www.w3.org/ns/locn>, <http://www.w3.org/ns/org#>, <http://www.w3.org/ns/person>, <http://xmlns.com/foaf/0.1/> ;
+	owl:incompatibleWith "3.1.0" ;
+	owl:priorVersion "http://data.europa.eu/a4g/data-shape#not-shape-4.0.2" ;
+	owl:versionIRI a4g_shape:not-shape-4.1.0 ;
+	owl:versionInfo "4.1.0" .
+
+a4g_shape:Notice38Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice38-subClassOf-ContractModificationNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice39Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice39-subClassOf-ContractModificationNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice40Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice40-subClassOf-ContractModificationNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PreMarketConsultationNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PreMarketConsultationNotice-subClassOf-Notice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfileNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfileNotice-subClassOf-PlanningNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnlyNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnlyNotice-subClassOf-PlanningNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINTimeLimitNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINTimeLimitNotice-subClassOf-PlanningNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice1Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice1-subClassOf-PINProfileNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice2Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice2-subClassOf-PINProfileNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice3Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice3-subClassOf-PINProfileNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice4Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice4-subClassOf-PINOnlyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestNotice-subClassOf-CompetitionNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANStandardNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANStandardNotice-subClassOf-ResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice1-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice2-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice29Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice29-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocialNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocialNotice-subClassOf-ResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResultNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResultNotice-subClassOf-ResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice10Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice10-subClassOf-PIN-CFCStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice11Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice11-subClassOf-PIN-CFCStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice5Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice5-subClassOf-PINOnlyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice6Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice6-subClassOf-PINOnlyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice7Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice7-subClassOf-PINTimeLimitNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice8Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice8-subClassOf-PINTimeLimitNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice9Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice9-subClassOf-PINTimeLimitNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice25-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice26Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice26-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice27Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice27-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice28Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice28-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QSNotice-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QSNotice-D25-subClassOf-QSNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice29-subClassOf-CANStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice30Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice30-subClassOf-CANStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice31Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice31-subClassOf-CANStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice32Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice32-subClassOf-CANStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice33Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice33-subClassOf-CANSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice22Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice22-subClassOf-SubcontractNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice23Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice23-subClassOf-DesignContestNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice24-subClassOf-DesignContestNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocialNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocialNotice-subClassOf-CompetitionNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice34Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice34-subClassOf-CANSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice35Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice35-subClassOf-CANSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice36Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice36-subClassOf-DesignContestResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice37Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice37-subClassOf-DesignContestResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice3-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice4-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice5-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice6-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice7-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice8-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice9-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D81Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D81-subClassOf-PINProfileNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnly-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnly-D24-subClassOf-PINOnlyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-RTL-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-RTL-D24-subClassOf-PINTimeLimitNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNStandard-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNStandard-D24-subClassOf-CNStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANStandard-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANStandard-D24-subClassOf-CANStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D24-subClassOf-PINProfileNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D24-subClassOf-ContractModificationNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResult-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResult-D24-subClassOf-DesignContestResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D24-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnly-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnly-D25-subClassOf-PINOnlyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-RTL-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-RTL-D25-subClassOf-PINTimeLimitNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocial-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocial-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocial-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocial-D25-subClassOf-CNSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocial-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocial-D25-subClassOf-CANSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResult-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResult-D25-subClassOf-DesignContestResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D25-subClassOf-ContractModificationNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContest-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContest-D24-subClassOf-DesignContestNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINDefence-D81Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINDefence-D81-subClassOf-PlanningNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContest-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContest-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContest-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocial-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D25-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D25-subClassOf-PINProfileNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice21Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice21-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PlanningNotice-subClassOf-Notice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompetitionNotice-subClassOf-Notice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DirectAwardPrenotificationNotice-subClassOf-Notice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ResultNotice-subClassOf-Notice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ContractModificationNotice-subClassOf-Notice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CompletionNotice-subClassOf-Notice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VoluntaryEx-AnteTransparencyNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VoluntaryEx-AnteTransparencyNotice-subClassOf-DirectAwardPrenotificationNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCStandardNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCStandardNotice-subClassOf-CompetitionNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QSNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QSNotice-subClassOf-CompetitionNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNStandardNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNStandardNotice-subClassOf-CompetitionNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:SubcontractNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:SubcontractNotice-subClassOf-CompetitionNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocialNoticeShape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocialNotice-subClassOf-CompetitionNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice12Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice12-subClassOf-PIN-CFCSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice13Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice13-subClassOf-PIN-CFCSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice14Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice14-subClassOf-PIN-CFCSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice15Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice15-subClassOf-QSNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice16Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice16-subClassOf-CNStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice17Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice17-subClassOf-CNStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice18Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice18-subClassOf-CNStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice19Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice19-subClassOf-CNStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice20Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice20-subClassOf-CNSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice21-subClassOf-CNSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice10-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice11-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice12-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QS-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QS-D25-subClassOf-QSNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContest-D25-subClassOf-DesignContestNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocial-D25-subClassOf-PIN-CFCSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCStandard-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCStandard-D24-subClassOf-PIN-CFCStandardNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCStandard-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QS-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNStandard-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D23Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D23-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D81Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D81-subClassOf-VoluntaryEx-AnteTransparencyNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANDefence-D81Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANDefence-D81-subClassOf-ResultNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D23Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D23-subClassOf-ContractModificationNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnly-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINOnly-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PINProfile-D81-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-RTL-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-RTL-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D23-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D81-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANDefence-D81-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResult-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Modification-D23-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ConcessionNotice-D23Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ConcessionNotice-D23-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ConcessionAwardNotice-D23Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:ConcessionAwardNotice-D23-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:SocialAndOtherSpecificServices-D23Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:SocialAndOtherSpecificServices-D23-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:SocialAndOtherSpecificServices-D24Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:SocialAndOtherSpecificServices-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocialNotice-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocialNotice-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:PIN-CFCSocialNotice-D25-subClassOf-PIN-CFCSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Subcontract-D81Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Subcontract-D81-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNDefence-D81Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNDefence-D81-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Subcontract-D81-subClassOf-SubcontractNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:VEAT-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANStandard-D24-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:DesignContestResult-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocial-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice13-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice14-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice15-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice16-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice17-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice18-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice19-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice20-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice22-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice23-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice24-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice25-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice26-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice27-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice28-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice30-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice31-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice32-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice33-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice34-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice35-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice36-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice37-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice38-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice39-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:Notice40-subClassOf-eFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocialNotice-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocialNotice-D25-subClassOf-CNSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocialNotice-D25Shape rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocialNotice-D25-subClassOf-CANSocialNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:QSNotice-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CNSocialNotice-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+
+a4g_shape:CANSocialNotice-D25-subClassOf-StandardFormsNotice rdfs:isDefinedBy a4g_shape:not-shape .
+

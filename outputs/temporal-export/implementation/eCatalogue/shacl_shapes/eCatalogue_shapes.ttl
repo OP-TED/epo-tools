@@ -1,0 +1,1118 @@
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix cpov: <http://data.europa.eu/m8g/> .
+@prefix a4g: <http://data.europa.eu/a4g/ontology#> .
+@prefix sfrml: <http://data.europa.eu/a4g/mapping/sf-rml/> .
+@prefix a4g_shape: <http://data.europa.eu/a4g/data-shape#> .
+@prefix eli: <http://data.europa.eu/eli/ontology#> .
+@prefix m8g: <http://data.europa.eu/m8g/> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix person: <http://www.w3.org/ns/person#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix org: <http://www.w3.org/ns/org#> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix at: <http://publications.europa.eu/ontology/authority/> .
+@prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+
+a4g_shape:PlainLiteral a shacl:NodeShape ;
+	shacl:or (
+		[
+			shacl:datatype xsd:string ;
+		]
+		[
+			shacl:datatype rdf:langString ;
+		]
+	) .
+
+a4g_shape:BrandShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Brand ;
+	shacl:property a4g_shape:Brand-title-PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Brand-title-PlainLiteral a shacl:PropertyShape ;
+	shacl:path dcterms:title ;
+	shacl:name "title"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemModelShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ItemModel ;
+	shacl:property a4g_shape:ItemModel-title-PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemModel-title-PlainLiteral a shacl:PropertyShape ;
+	shacl:path dcterms:title ;
+	shacl:name "title"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemRelationShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ItemRelation ;
+	shacl:property a4g_shape:ItemRelation-hasFactor-decimal, a4g_shape:ItemRelation-isRelatedToItem-Item ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemRelation-hasFactor-decimal a shacl:PropertyShape ;
+	shacl:datatype xsd:decimal ;
+	shacl:path a4g:hasFactor ;
+	shacl:name "has factor"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:LineShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Line ;
+	shacl:property a4g_shape:Line-description-PlainLiteral, a4g_shape:Line-specifiesItem-Item, a4g_shape:Line-identifier-Identifier ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Line-description-PlainLiteral a shacl:PropertyShape ;
+	shacl:path dcterms:description ;
+	shacl:name "description"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemPropertyShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ItemProperty ;
+	shacl:property a4g_shape:ItemProperty-hasAttributeType-PlainLiteral, a4g_shape:ItemProperty-hasClassificationScheme-PlainLiteral, a4g_shape:ItemProperty-hasLiteralValue-PlainLiteral, a4g_shape:ItemProperty-hasQualifiedValue-Quantity, a4g_shape:ItemProperty-describesItem-Item ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemProperty-hasAttributeType-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasAttributeType ;
+	shacl:name "has attribute type"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemProperty-hasClassificationScheme-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasClassificationScheme ;
+	shacl:name "has classification scheme"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemProperty-hasLiteralValue-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasLiteralValue ;
+	shacl:name "has literal value"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Catalogue ;
+	shacl:property a4g_shape:Catalogue-hasSpecificPaymentArrangement-PlainLiteral, a4g_shape:Catalogue-specifiesCatalogueReceiver-CatalogueReceiver, a4g_shape:Catalogue-specifiesCatalogueProvider-CatalogueProvider, a4g_shape:Catalogue-isSubordinatedToContract-Contract, a4g_shape:Catalogue-comprisesCatalogueLine-CatalogueLine, a4g_shape:Catalogue-specifiesBuyer-Buyer, a4g_shape:Catalogue-hasActivityCode-activity-code, a4g_shape:Catalogue-inScheme-activity-code, a4g_shape:Catalogue-specifiesSeller-Seller, a4g_shape:Catalogue-hasValidityPeriod-Period ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:Catalogue rdfs:subClassOf a4g:PostAwardDocument .
+
+a4g_shape:Catalogue-hasSpecificPaymentArrangement-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasSpecificPaymentArrangement ;
+	shacl:name "has specific payment arrangement"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:AllowanceChargeInformationShape a shacl:NodeShape ;
+	shacl:targetClass a4g:AllowanceChargeInformation ;
+	shacl:property a4g_shape:AllowanceChargeInformation-hasPercentage-decimal, a4g_shape:AllowanceChargeInformation-hasAmount-MonetaryValue ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:AllowanceChargeInformation-hasPercentage-decimal a shacl:PropertyShape ;
+	shacl:datatype xsd:decimal ;
+	shacl:path a4g:hasPercentage ;
+	shacl:name "has percentage"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:BatchShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Batch ;
+	shacl:property a4g_shape:Batch-hasManufactureDate-dateTime, a4g_shape:Batch-hasExpiryDate-date, a4g_shape:Batch-hasBestBeforeDate-date, a4g_shape:Batch-isProductionOf-Item, a4g_shape:Batch-hasBatchID-Identifier ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Batch-hasManufactureDate-dateTime a shacl:PropertyShape ;
+	shacl:datatype xsd:dateTime ;
+	shacl:path a4g:hasManufactureDate ;
+	shacl:name "has manufacture date"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:TaxInformationShape a shacl:NodeShape ;
+	shacl:targetClass a4g:TaxInformation ;
+	shacl:property a4g_shape:TaxInformation-hasPercentage-decimal, a4g_shape:TaxInformation-hasTaxCategory-tax-category, a4g_shape:TaxInformation-inScheme-tax-category, a4g_shape:TaxInformation-hasTaxScheme-tax-scheme, a4g_shape:TaxInformation-inScheme-tax-scheme, a4g_shape:TaxInformation-hasAmount-MonetaryValue ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:TaxInformation-hasPercentage-decimal a shacl:PropertyShape ;
+	shacl:datatype xsd:decimal ;
+	shacl:path a4g:hasPercentage ;
+	shacl:name "has percentage"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:property a4g_shape:Item-description-PlainLiteral, a4g_shape:Item-title-PlainLiteral, a4g_shape:Item-hasKeyword-PlainLiteral, a4g_shape:Item-isInStock-boolean, a4g_shape:Item-hasDimensionDescription-PlainLiteral, a4g_shape:Item-hasHazardousClass-PlainLiteral, a4g_shape:Item-hasBrand-Brand, a4g_shape:Item-hasQualifiedItemRelation-ItemRelation, a4g_shape:Item-hasModel-ItemModel, a4g_shape:Item-hasItemClassification-item-classification, a4g_shape:Item-inScheme-item-classification, a4g_shape:Item-hasPart-Item, a4g_shape:Item-hasManufacturerItemID-Identifier, a4g_shape:Item-hasSellerItemID-Identifier, a4g_shape:Item-hasItemStandardID-Identifier, a4g_shape:Item-hasNetQuantity-Quantity, a4g_shape:Item-hasCountryOfOrigin-country, a4g_shape:Item-inScheme-country, a4g_shape:Item-hasDeliveryClassification-delivery-item-type, a4g_shape:Item-inScheme-delivery-item-type, a4g_shape:Item-hasCertification-Certificate, a4g_shape:Item-hasAccessoryItem-Item, a4g_shape:Item-isReplacedBy-Item, a4g_shape:Item-hasSpecification-ProductSpecification, a4g_shape:Item-hasComplementaryItem-Item, a4g_shape:Item-hasManufacturer-Manufacturer, a4g_shape:Item-hasHazardousItemUNDGCode-dangerous-goods-list, a4g_shape:Item-inScheme-dangerous-goods-list, a4g_shape:Item-requires-Item, a4g_shape:Item-hasBuyerItemID-Identifier, a4g_shape:Item-hasExternalSpecification-Document, a4g_shape:Item-hasSerialID-Identifier, a4g_shape:Item-hasTaxInformation-TaxInformation ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-description-PlainLiteral a shacl:PropertyShape ;
+	shacl:path dcterms:description ;
+	shacl:name "description"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-title-PlainLiteral a shacl:PropertyShape ;
+	shacl:path dcterms:title ;
+	shacl:name "title"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLineShape a shacl:NodeShape ;
+	shacl:targetClass a4g:CatalogueLine ;
+	shacl:property a4g_shape:CatalogueLine-isOrderable-boolean, a4g_shape:CatalogueLine-hasOrderableUnitFactorRate-decimal, a4g_shape:CatalogueLine-hasOrderableQuantityIncrement-integer, a4g_shape:CatalogueLine-hasWarrantyInformation-PlainLiteral, a4g_shape:CatalogueLine-isContractedItem-boolean, a4g_shape:CatalogueLine-hasTransactionConditions-PlainLiteral, a4g_shape:CatalogueLine-hasCatalogueLineValidity-Period, a4g_shape:CatalogueLine-hasMaximumOrderQuantity-Quantity, a4g_shape:CatalogueLine-hasMinimumQuantityGuaranteedForDelivery-Quantity, a4g_shape:CatalogueLine-hasOrderableUnit-orderable-unit, a4g_shape:CatalogueLine-inScheme-orderable-unit, a4g_shape:CatalogueLine-hasTransactionConditionsCode-transaction-conditions, a4g_shape:CatalogueLine-inScheme-transaction-conditions, a4g_shape:CatalogueLine-hasPrice-Price, a4g_shape:CatalogueLine-hasActivityCode-activity-code, a4g_shape:CatalogueLine-inScheme-activity-code, a4g_shape:CatalogueLine-hasStandardisedUnitPrice-Price, a4g_shape:CatalogueLine-foreseesPackage-Package, a4g_shape:CatalogueLine-hasChargeInformation-ChargeInformation ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:CatalogueLine rdfs:subClassOf a4g:Line .
+
+a4g_shape:CatalogueLine-isOrderable-boolean a shacl:PropertyShape ;
+	shacl:datatype xsd:boolean ;
+	shacl:path a4g:isOrderable ;
+	shacl:name "is orderable"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasOrderableUnitFactorRate-decimal a shacl:PropertyShape ;
+	shacl:datatype xsd:decimal ;
+	shacl:path a4g:hasOrderableUnitFactorRate ;
+	shacl:name "has orderable unit factor rate"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasOrderableQuantityIncrement-integer a shacl:PropertyShape ;
+	shacl:datatype xsd:integer ;
+	shacl:path a4g:hasOrderableQuantityIncrement ;
+	shacl:name "has orderable quantity increment"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasWarrantyInformation-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasWarrantyInformation ;
+	shacl:name "has warranty information"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-isContractedItem-boolean a shacl:PropertyShape ;
+	shacl:datatype xsd:boolean ;
+	shacl:path a4g:isContractedItem ;
+	shacl:name "is contracted item"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasTransactionConditions-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasTransactionConditions ;
+	shacl:name "has transaction conditions"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasKeyword-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasKeyword ;
+	shacl:name "has keyword"@en ;
+	shacl:minCount 0 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-isInStock-boolean a shacl:PropertyShape ;
+	shacl:datatype xsd:boolean ;
+	shacl:path a4g:isInStock ;
+	shacl:name "is in stock"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Batch-hasExpiryDate-date a shacl:PropertyShape ;
+	shacl:datatype xsd:date ;
+	shacl:path a4g:hasExpiryDate ;
+	shacl:name "has expiry date"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Batch-hasBestBeforeDate-date a shacl:PropertyShape ;
+	shacl:datatype xsd:date ;
+	shacl:path a4g:hasBestBeforeDate ;
+	shacl:name "has best before date"@en ;
+	shacl:minCount 0 ;
+	shacl:maxCount 1 ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasDimensionDescription-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasDimensionDescription ;
+	shacl:name "has dimension description"@en ;
+	shacl:minCount 0 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasHazardousClass-PlainLiteral a shacl:PropertyShape ;
+	shacl:path a4g:hasHazardousClass ;
+	shacl:name "has hazardous class"@en ;
+	shacl:minCount 0 ;
+	shacl:node a4g_shape:PlainLiteral ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Batch-isProductionOf-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path a4g:isProductionOf ;
+	shacl:name "is production of"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasBrand-Brand a shacl:PropertyShape ;
+	shacl:targetClass a4g:Brand ;
+	shacl:path a4g:hasBrand ;
+	shacl:name "has brand"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemRelation-isRelatedToItem-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path a4g:isRelatedToItem ;
+	shacl:name "is related to item"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasQualifiedItemRelation-ItemRelation a shacl:PropertyShape ;
+	shacl:targetClass a4g:ItemRelation ;
+	shacl:path a4g:hasQualifiedItemRelation ;
+	shacl:name "has qualified item relation"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Catalogue-specifiesCatalogueReceiver-CatalogueReceiver a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueReceiver ;
+	shacl:path a4g:specifiesCatalogueReceiver ;
+	shacl:name "specifies catalogue receiver"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ChargeInformationShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ChargeInformation ;
+	shacl:property a4g_shape:ChargeInformation-isSpecificToOrderLine-OrderLine ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:ChargeInformation rdfs:subClassOf a4g:AllowanceChargeInformation .
+
+a4g_shape:ChargeInformation-isSpecificToOrderLine-OrderLine a shacl:PropertyShape ;
+	shacl:targetClass a4g:OrderLine ;
+	shacl:path a4g:isSpecificToOrderLine ;
+	shacl:name "is specific to order line"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:DeliverableShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Deliverable ;
+	shacl:property a4g_shape:Deliverable-hasQuantity-Quantity ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Deliverable-hasQuantity-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasQuantity ;
+	shacl:name "has quantity"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasModel-ItemModel a shacl:PropertyShape ;
+	shacl:targetClass a4g:ItemModel ;
+	shacl:path a4g:hasModel ;
+	shacl:name "has model"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasItemClassification-item-classification a shacl:PropertyShape ;
+	shacl:path a4g:hasItemClassification ;
+	shacl:name "has item classification"@en ;
+	shacl:node a4g_shape:ItemShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-inScheme-item-classification a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/item-classification> .
+
+a4g_shape:Catalogue-specifiesCatalogueProvider-CatalogueProvider a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueProvider ;
+	shacl:path a4g:specifiesCatalogueProvider ;
+	shacl:name "specifies catalogue provider"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:PriceShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Price ;
+	shacl:property a4g_shape:Price-hasDeliveryLocation-Location, a4g_shape:Price-hasPriceValidity-Period, a4g_shape:Price-hasNetMonetaryValue-MonetaryValue, a4g_shape:Price-hasOrderabableUnitFactorRate-Quantity, a4g_shape:Price-hasQuantityThreshold-Quantity, a4g_shape:Price-hasExpectedDeliveryTime-Duration, a4g_shape:Price-hasBaseQuantity-Quantity, a4g_shape:Price-hasPriceSurchargeInformation-ChargeInformation, a4g_shape:Price-hasPriceType-price-type, a4g_shape:Price-inScheme-price-type, a4g_shape:Price-hasPriceDiscountInformation-AllowanceInformation ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasDeliveryLocation-Location a shacl:PropertyShape ;
+	shacl:targetClass dcterms:Location ;
+	shacl:path a4g:hasDeliveryLocation ;
+	shacl:name "has delivery location"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasCatalogueLineValidity-Period a shacl:PropertyShape ;
+	shacl:targetClass a4g:Period ;
+	shacl:path a4g:hasCatalogueLineValidity ;
+	shacl:name "has catalogue line validity"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasPriceValidity-Period a shacl:PropertyShape ;
+	shacl:targetClass a4g:Period ;
+	shacl:path a4g:hasPriceValidity ;
+	shacl:name "has price validity"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemProperty-hasQualifiedValue-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasQualifiedValue ;
+	shacl:name "has qualified value"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:PostAwardDocument rdfs:subClassOf a4g:Document .
+
+a4g_shape:Item-hasPart-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path dcterms:hasPart ;
+	shacl:name "has part"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Catalogue-isSubordinatedToContract-Contract a shacl:PropertyShape ;
+	shacl:targetClass a4g:Contract ;
+	shacl:path a4g:isSubordinatedToContract ;
+	shacl:name "is subordinated to contract"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Catalogue-comprisesCatalogueLine-CatalogueLine a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueLine ;
+	shacl:path a4g:comprisesCatalogueLine ;
+	shacl:name "comprises catalogue line"@en ;
+	shacl:minCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ManufacturerShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Manufacturer ;
+	shacl:property a4g_shape:Manufacturer-hasManufacturerID-Identifier ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:Manufacturer rdfs:subClassOf a4g:OfferingParty .
+
+a4g_shape:Manufacturer-hasManufacturerID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasManufacturerID ;
+	shacl:name "has manufacturer id"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Batch-hasBatchID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasBatchID ;
+	shacl:name "has batch id"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasManufacturerItemID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasManufacturerItemID ;
+	shacl:name "has manufacturer item id"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasSellerItemID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasSellerItemID ;
+	shacl:name "has seller item id"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasItemStandardID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasItemStandardID ;
+	shacl:name "has item standard id"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasMaximumOrderQuantity-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasMaximumOrderQuantity ;
+	shacl:name "has maximum order quantity"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasMinimumQuantityGuaranteedForDelivery-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasMinimumQuantityGuaranteedForDelivery ;
+	shacl:name "has minimum quantity guaranteed for delivery"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasNetQuantity-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasNetQuantity ;
+	shacl:name "has net quantity"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasCountryOfOrigin-country a shacl:PropertyShape ;
+	shacl:path a4g:hasCountryOfOrigin ;
+	shacl:name "has country of origin"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:ItemShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-inScheme-country a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue atold:country .
+
+a4g_shape:CatalogueLine-hasOrderableUnit-orderable-unit a shacl:PropertyShape ;
+	shacl:path a4g:hasOrderableUnit ;
+	shacl:name "has orderable unit"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:CatalogueLineShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-inScheme-orderable-unit a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/orderable-unit> .
+
+a4g_shape:CatalogueLine-hasTransactionConditionsCode-transaction-conditions a shacl:PropertyShape ;
+	shacl:path a4g:hasTransactionConditionsCode ;
+	shacl:name "has transaction conditions code"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:CatalogueLineShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-inScheme-transaction-conditions a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/transaction-conditions> .
+
+a4g_shape:Catalogue-specifiesBuyer-Buyer a shacl:PropertyShape ;
+	shacl:targetClass a4g:Buyer ;
+	shacl:path a4g:specifiesBuyer ;
+	shacl:name "specifies buyer"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Catalogue-hasActivityCode-activity-code a shacl:PropertyShape ;
+	shacl:path a4g:hasActivityCode ;
+	shacl:name "has activity code"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:CatalogueShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Catalogue-inScheme-activity-code a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/activity-code> .
+
+a4g_shape:CatalogueLine-hasPrice-Price a shacl:PropertyShape ;
+	shacl:targetClass a4g:Price ;
+	shacl:path a4g:hasPrice ;
+	shacl:name "has price"@en ;
+	shacl:minCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasNetMonetaryValue-MonetaryValue a shacl:PropertyShape ;
+	shacl:targetClass a4g:MonetaryValue ;
+	shacl:path a4g:hasNetMonetaryValue ;
+	shacl:name "has net monetary value"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasActivityCode-activity-code a shacl:PropertyShape ;
+	shacl:path a4g:hasActivityCode ;
+	shacl:name "has activity code"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:CatalogueLineShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-inScheme-activity-code a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/activity-code> .
+
+a4g_shape:Price-hasOrderabableUnitFactorRate-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasOrderabableUnitFactorRate ;
+	shacl:name "has orderabable unit factor rate"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasQuantityThreshold-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasQuantityThreshold ;
+	shacl:name "has quantity threshold"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasExpectedDeliveryTime-Duration a shacl:PropertyShape ;
+	shacl:targetClass a4g:Duration ;
+	shacl:path a4g:hasExpectedDeliveryTime ;
+	shacl:name "has expected delivery time"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasStandardisedUnitPrice-Price a shacl:PropertyShape ;
+	shacl:targetClass a4g:Price ;
+	shacl:path a4g:hasStandardisedUnitPrice ;
+	shacl:name "has standardised unit price"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:OrderLineShape a shacl:NodeShape ;
+	shacl:targetClass a4g:OrderLine ;
+	shacl:property a4g_shape:OrderLine-hasQuantity-Quantity, a4g_shape:OrderLine-hasPrice-Price ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:OrderLine-hasQuantity-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasQuantity ;
+	shacl:name "has quantity"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:OrderShape a shacl:NodeShape ;
+	shacl:targetClass a4g:Order ;
+	shacl:property a4g_shape:Order-specifiesChargeInformation-ChargeInformation ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Order-specifiesChargeInformation-ChargeInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:ChargeInformation ;
+	shacl:path a4g:specifiesChargeInformation ;
+	shacl:name "specifies charge information"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasBaseQuantity-Quantity a shacl:PropertyShape ;
+	shacl:targetClass a4g:Quantity ;
+	shacl:path a4g:hasBaseQuantity ;
+	shacl:name "has base quantity"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasDeliveryClassification-delivery-item-type a shacl:PropertyShape ;
+	shacl:path a4g:hasDeliveryClassification ;
+	shacl:name "has delivery classification"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:ItemShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-inScheme-delivery-item-type a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/delivery-item-type> .
+
+a4g_shape:Item-hasCertification-Certificate a shacl:PropertyShape ;
+	shacl:targetClass a4g:Certificate ;
+	shacl:path a4g:hasCertification ;
+	shacl:name "has certification"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Catalogue-specifiesSeller-Seller a shacl:PropertyShape ;
+	shacl:targetClass a4g:Seller ;
+	shacl:path a4g:specifiesSeller ;
+	shacl:name "specifies seller"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:ProductSpecification rdfs:subClassOf a4g:PostAwardDocument .
+
+a4g_shape:Item-hasAccessoryItem-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path a4g:hasAccessoryItem ;
+	shacl:name "has accessory item"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-isReplacedBy-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path dcterms:isReplacedBy ;
+	shacl:name "is replaced by"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasSpecification-ProductSpecification a shacl:PropertyShape ;
+	shacl:targetClass a4g:ProductSpecification ;
+	shacl:path a4g:hasSpecification ;
+	shacl:name "has specification"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasComplementaryItem-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path a4g:hasComplementaryItem ;
+	shacl:name "has complementary item"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasManufacturer-Manufacturer a shacl:PropertyShape ;
+	shacl:targetClass a4g:Manufacturer ;
+	shacl:path a4g:hasManufacturer ;
+	shacl:name "has manufacturer"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasHazardousItemUNDGCode-dangerous-goods-list a shacl:PropertyShape ;
+	shacl:path a4g:hasHazardousItemUNDGCode ;
+	shacl:name "has hazardous item undg code"@en ;
+	shacl:node a4g_shape:ItemShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-inScheme-dangerous-goods-list a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/dangerous-goods-list> .
+
+a4g_shape:CatalogueLine-foreseesPackage-Package a shacl:PropertyShape ;
+	shacl:targetClass a4g:Package ;
+	shacl:path a4g:foreseesPackage ;
+	shacl:name "foresees package"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:ItemComposition rdfs:subClassOf a4g:ItemRelation .
+
+a4g:ItemRequirement rdfs:subClassOf a4g:ItemRelation .
+
+a4g_shape:ItemProperty-describesItem-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path a4g:describesItem ;
+	shacl:name "describes item"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:ItemReplacement rdfs:subClassOf a4g:ItemRelation .
+
+a4g_shape:Item-requires-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path dcterms:requires ;
+	shacl:name "requires"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:ItemComplementaryRelation rdfs:subClassOf a4g:ItemRelation .
+
+a4g:ItemAccessoryRelation rdfs:subClassOf a4g:ItemRelation .
+
+a4g_shape:AllowanceChargeInformation-hasAmount-MonetaryValue a shacl:PropertyShape ;
+	shacl:targetClass a4g:MonetaryValue ;
+	shacl:path a4g:hasAmount ;
+	shacl:name "has amount"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-hasChargeInformation-ChargeInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:ChargeInformation ;
+	shacl:path a4g:hasChargeInformation ;
+	shacl:name "has charge information"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:TaxInformation-hasTaxCategory-tax-category a shacl:PropertyShape ;
+	shacl:path a4g:hasTaxCategory ;
+	shacl:name "has tax category"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:TaxInformationShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:TaxInformation-inScheme-tax-category a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/tax-category> .
+
+a4g_shape:TaxInformation-hasTaxScheme-tax-scheme a shacl:PropertyShape ;
+	shacl:path a4g:hasTaxScheme ;
+	shacl:name "has tax scheme"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:TaxInformationShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:TaxInformation-inScheme-tax-scheme a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/tax-scheme> .
+
+a4g_shape:CatalogueResponseShape a shacl:NodeShape ;
+	shacl:targetClass a4g:CatalogueResponse ;
+	shacl:property a4g_shape:CatalogueResponse-comprisesCatalogueResponseLine-CatalogueResponseLine, a4g_shape:CatalogueResponse-refersToCatalogue-Catalogue, a4g_shape:CatalogueResponse-specifiesCatalogueReceiver-CatalogueReceiver, a4g_shape:CatalogueResponse-specifiesCatalogueProvider-CatalogueProvider, a4g_shape:CatalogueResponse-specifiesCatalogueResponseInformation-CatalogueResponseInformation ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:CatalogueResponse rdfs:subClassOf a4g:PostAwardDocument .
+
+a4g_shape:CatalogueResponse-comprisesCatalogueResponseLine-CatalogueResponseLine a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueResponseLine ;
+	shacl:path a4g:comprisesCatalogueResponseLine ;
+	shacl:name "comprises catalogue response line"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseLineShape a shacl:NodeShape ;
+	shacl:targetClass a4g:CatalogueResponseLine ;
+	shacl:property a4g_shape:CatalogueResponseLine-refersToCatalogueLine-CatalogueLine, a4g_shape:CatalogueResponseLine-hasUUID-Identifier ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseLine-refersToCatalogueLine-CatalogueLine a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueLine ;
+	shacl:path a4g:refersToCatalogueLine ;
+	shacl:name "refers to catalogue line"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:OrderLine-hasPrice-Price a shacl:PropertyShape ;
+	shacl:targetClass a4g:Price ;
+	shacl:path a4g:hasPrice ;
+	shacl:name "has price"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponse-refersToCatalogue-Catalogue a shacl:PropertyShape ;
+	shacl:targetClass a4g:Catalogue ;
+	shacl:path a4g:refersToCatalogue ;
+	shacl:name "refers to catalogue"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseLine-hasUUID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasUUID ;
+	shacl:name "has uuid"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponse-specifiesCatalogueReceiver-CatalogueReceiver a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueReceiver ;
+	shacl:path a4g:specifiesCatalogueReceiver ;
+	shacl:name "specifies catalogue receiver"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponse-specifiesCatalogueProvider-CatalogueProvider a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueProvider ;
+	shacl:path a4g:specifiesCatalogueProvider ;
+	shacl:name "specifies catalogue provider"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g:CatalogueResponseInformation rdfs:subClassOf a4g:InformationHub .
+
+a4g:InformationHub rdfs:subClassOf a4g:ContextDescription .
+
+a4g_shape:CatalogueResponse-specifiesCatalogueResponseInformation-CatalogueResponseInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueResponseInformation ;
+	shacl:path a4g:specifiesCatalogueResponseInformation ;
+	shacl:name "specifies catalogue response information"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseInformationShape a shacl:NodeShape ;
+	shacl:targetClass a4g:CatalogueResponseInformation ;
+	shacl:property a4g_shape:CatalogueResponseInformation-isSpecificToCatalogueResponseLine-CatalogueResponseLine, a4g_shape:CatalogueResponseInformation-hasAcceptanceStatus-ResponseStatus, a4g_shape:CatalogueResponseInformation-inScheme-ResponseStatus ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseInformation-isSpecificToCatalogueResponseLine-CatalogueResponseLine a shacl:PropertyShape ;
+	shacl:targetClass a4g:CatalogueResponseLine ;
+	shacl:path a4g:isSpecificToCatalogueResponseLine ;
+	shacl:name "is specific to catalogue response line"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseInformation-hasAcceptanceStatus-ResponseStatus a shacl:PropertyShape ;
+	shacl:path a4g:hasAcceptanceStatus ;
+	shacl:name "has acceptance status"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:CatalogueResponseInformationShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseInformation-inScheme-ResponseStatus a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/ResponseStatus> .
+
+a4g_shape:Catalogue-hasValidityPeriod-Period a shacl:PropertyShape ;
+	shacl:targetClass a4g:Period ;
+	shacl:path a4g:hasValidityPeriod ;
+	shacl:name "has validity period"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasPriceSurchargeInformation-ChargeInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:ChargeInformation ;
+	shacl:path a4g:hasPriceSurchargeInformation ;
+	shacl:name "has price surcharge information"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasPriceType-price-type a shacl:PropertyShape ;
+	shacl:path a4g:hasPriceType ;
+	shacl:name "has price type"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PriceShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-inScheme-price-type a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/price-type> .
+
+a4g_shape:PostAwardDocumentShape a shacl:NodeShape ;
+	shacl:targetClass a4g:PostAwardDocument ;
+	shacl:property a4g_shape:PostAwardDocument-hasDocumentType-document-type, a4g_shape:PostAwardDocument-inScheme-document-type, a4g_shape:PostAwardDocument-hasDocumentStatus-document-status, a4g_shape:PostAwardDocument-inScheme-document-status ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:PostAwardDocument-hasDocumentType-document-type a shacl:PropertyShape ;
+	shacl:path a4g:hasDocumentType ;
+	shacl:name "has document type"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PostAwardDocumentShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:PostAwardDocument-inScheme-document-type a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/document-type> .
+
+a4g_shape:Item-hasBuyerItemID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasBuyerItemID ;
+	shacl:name "has buyer item id"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:PostAwardDocument-hasDocumentStatus-document-status a shacl:PropertyShape ;
+	shacl:path a4g:hasDocumentStatus ;
+	shacl:name "has document status"@en ;
+	shacl:maxCount 1 ;
+	shacl:node a4g_shape:PostAwardDocumentShape ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:PostAwardDocument-inScheme-document-status a shacl:PropertyShape ;
+	shacl:path skos:inScheme ;
+	shacl:hasValue <http://unknown.org/document-status> .
+
+a4g_shape:Line-specifiesItem-Item a shacl:PropertyShape ;
+	shacl:targetClass a4g:Item ;
+	shacl:path a4g:specifiesItem ;
+	shacl:name "specifies item"@en ;
+	shacl:minCount 1 ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:InformationHubShape a shacl:NodeShape ;
+	shacl:targetClass a4g:InformationHub ;
+	shacl:property a4g_shape:InformationHub-isSpecificToLine-Line ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:InformationHub-isSpecificToLine-Line a shacl:PropertyShape ;
+	shacl:targetClass a4g:Line ;
+	shacl:path a4g:isSpecificToLine ;
+	shacl:name "is specific to line"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Line-identifier-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path adms:identifier ;
+	shacl:name "identifier"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:TaxInformation-hasAmount-MonetaryValue a shacl:PropertyShape ;
+	shacl:targetClass a4g:MonetaryValue ;
+	shacl:path a4g:hasAmount ;
+	shacl:name "has amount"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasExternalSpecification-Document a shacl:PropertyShape ;
+	shacl:targetClass a4g:Document ;
+	shacl:path a4g:hasExternalSpecification ;
+	shacl:name "has external specification"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasSerialID-Identifier a shacl:PropertyShape ;
+	shacl:targetClass adms:Identifier ;
+	shacl:path a4g:hasSerialID ;
+	shacl:name "has serial id"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Price-hasPriceDiscountInformation-AllowanceInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:AllowanceInformation ;
+	shacl:path a4g:hasPriceDiscountInformation ;
+	shacl:name "has price discount information"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Item-hasTaxInformation-TaxInformation a shacl:PropertyShape ;
+	shacl:targetClass a4g:TaxInformation ;
+	shacl:path a4g:hasTaxInformation ;
+	shacl:name "has tax information"@en ;
+	shacl:nodeKind shacl:IRI ;
+	rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:cat-shape a owl:Ontology ;
+	dcterms:title "eProcurement Ontology cat - SHACL shapes"@en ;
+	dcterms:description "The eProcurement Ontology cat SHACL shapes provides the datashape specifications for the eProcurement Ontology cat module."@en ;
+	rdfs:label "eProcurement Ontology cat - SHACL shapes"@en ;
+	dcterms:created "2021-06-01"^^xsd:date ;
+	dcterms:issued "2024-03-21"^^xsd:date ;
+	dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
+	dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
+	vann:preferredNamespacePrefix "epo" ;
+	vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
+	rdfs:seeAlso <https://docs.ted.europa.eu/home/index.html>, <https://github.com/OP-TED/ePO/releases>, <https://joinup.ec.europa.eu/collection/eprocurement/solution/eprocurement-ontology/about>, <https://op.europa.eu/en/web/eu-vocabularies/e-procurement> ;
+	owl:imports <http://data.europa.eu/eli/ontology#>, <http://data.europa.eu/m8g/>, <http://purl.org/dc/terms/>, <http://purl.org/vocab/vann/>, <http://www.w3.org/2004/02/skos/core>, <http://www.w3.org/2006/time>, <http://www.w3.org/ns/adms>, <http://www.w3.org/ns/locn>, <http://www.w3.org/ns/org#>, <http://www.w3.org/ns/person>, <http://xmlns.com/foaf/0.1/> ;
+	owl:incompatibleWith "3.1.0" ;
+	owl:priorVersion "http://data.europa.eu/a4g/data-shape#cat-shape-4.0.2" ;
+	owl:versionIRI a4g_shape:cat-shape-4.1.0 ;
+	owl:versionInfo "4.1.0" .
+
+a4g_shape:PostAwardDocument-subClassOf-Document rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ChargeInformation-subClassOf-AllowanceChargeInformation rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ProductSpecificationShape rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ProductSpecification-subClassOf-PostAwardDocument rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Manufacturer-subClassOf-OfferingParty rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemCompositionShape rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemComposition-subClassOf-ItemRelation rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemRequirementShape rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemRequirement-subClassOf-ItemRelation rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemReplacementShape rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemReplacement-subClassOf-ItemRelation rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemComplementaryRelationShape rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemComplementaryRelation-subClassOf-ItemRelation rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemAccessoryRelationShape rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:ItemAccessoryRelation-subClassOf-ItemRelation rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponse-subClassOf-PostAwardDocument rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueResponseInformation-subClassOf-InformationHub rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:InformationHub-subClassOf-ContextDescription rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:CatalogueLine-subClassOf-Line rdfs:isDefinedBy a4g_shape:cat-shape .
+
+a4g_shape:Catalogue-subClassOf-PostAwardDocument rdfs:isDefinedBy a4g_shape:cat-shape .
+
