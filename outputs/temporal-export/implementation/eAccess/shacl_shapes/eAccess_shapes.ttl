@@ -40,8 +40,6 @@ a4g_shape:ESPDRequestShape a shacl:NodeShape ;
 	rdfs:comment "An updated self-declaration used by the economic operator as a preliminary evidence in replacement of certificates issued by public authorities or third parties confirming that the economic operator fulfils the Exclusion Grounds and the Selection Criteria set out by the Buyer for a specific Procurement. WG Approval 05/03/2024" ;
 	shacl:property a4g_shape:ESPDRequest-specifiesProcurementCriterion-ProcurementCriterion, a4g_shape:ESPDRequest-refersToNotice-Notice, a4g_shape:ESPDRequest-concernsProcedure-Procedure .
 
-a4g:ESPDRequest rdfs:subClassOf a4g:ProcurementDocument .
-
 a4g_shape:acc-shape a owl:Ontology ;
 	rdfs:label "eProcurement Ontology acc - SHACL shapes"@en ;
 	dcterms:created "2021-06-01"^^xsd:date ;

@@ -72,8 +72,6 @@ a4g_shape:CertificateInformationShape a shacl:NodeShape ;
 	rdfs:comment "Information about a Certificate. WG approval 12/03/2024" ;
 	shacl:property a4g_shape:CertificateInformation-description-PlainLiteral, a4g_shape:CertificateInformation-coversAllSelectionCriteria-boolean, a4g_shape:CertificateInformation-summarisesInformationAboutCertificate-Certificate .
 
-a4g:CertificateInformation rdfs:subClassOf a4g:ContextDescription .
-
 a4g_shape:CertificateInformation-description-PlainLiteral a shacl:PropertyShape ;
 	rdfs:isDefinedBy a4g_shape:sub-shape ;
 	shacl:path dcterms:description ;
@@ -91,8 +89,6 @@ a4g_shape:CertificateInformation-coversAllSelectionCriteria-boolean a shacl:Prop
 	shacl:name "covers all selection criteria"@en ;
 	shacl:minCount 0 ;
 	shacl:maxCount 1 .
-
-a4g:ESPD rdfs:subClassOf a4g:Document .
 
 a4g_shape:ESPDShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ESPD ;
@@ -133,8 +129,6 @@ a4g_shape:LegalRepresentativeShape a shacl:NodeShape ;
 	rdfs:isDefinedBy a4g_shape:sub-shape ;
 	rdfs:comment "The Role of an Agent that can represent an Organization. WG approval 05/03/2024" ;
 	shacl:property a4g_shape:LegalRepresentative-actsOnBehalfOf-OfferingParty, a4g_shape:LegalRepresentative-hasPowerOfAttorney-PowerOfAttorney, a4g_shape:LegalRepresentative-hasMandate-Mandate .
-
-a4g:LegalRepresentative rdfs:subClassOf a4g:AuxiliaryParty .
 
 a4g_shape:LegalRepresentative-actsOnBehalfOf-OfferingParty a shacl:PropertyShape ;
 	shacl:targetClass a4g:OfferingParty ;
@@ -240,10 +234,6 @@ a4g_shape:Response-refersToApplicablePeriod-Period a shacl:PropertyShape ;
 	shacl:name "refers to applicable period"@en ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
-
-a4g:PowerOfAttorney rdfs:subClassOf a4g:Document .
-
-a4g:Mandate rdfs:subClassOf a4g:Document .
 
 a4g_shape:LegalRepresentative-hasPowerOfAttorney-PowerOfAttorney a shacl:PropertyShape ;
 	shacl:targetClass a4g:PowerOfAttorney ;

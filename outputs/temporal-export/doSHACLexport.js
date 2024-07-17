@@ -1,6 +1,7 @@
 import { writeFileSync, mkdirSync } from 'fs'
 import { Parser } from 'n3'
 import rdf from 'rdf-ext'
+import { INHERITANCE } from '../../src/conceptualModel/const.js'
 import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
 import { getJson } from '../../src/epo/readEpo.js'
 import { prettyPrintTurtle } from '../../src/io/serialization.js'
@@ -61,7 +62,7 @@ const hasErrors = x => x.some(x => x.severity === 'error')
 
 const eaJson = {
   nodes: rawJson.nodes.filter(x => !hasErrors(inspectNode(x))),
-  edges: rawJson.edges.filter(x => !hasErrors(inspectEdge(x))),
+  edges: rawJson.edges.filter(x => !hasErrors(inspectEdge(x))).filter(x=>x.type!==INHERITANCE),
 }
 
 async function writeModule (module) {

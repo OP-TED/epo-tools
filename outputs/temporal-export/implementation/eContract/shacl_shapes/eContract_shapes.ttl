@@ -39,8 +39,6 @@ a4g_shape:ContractModificationInformationShape a shacl:NodeShape ;
 	rdfs:isDefinedBy a4g_shape:con-shape ;
 	shacl:property a4g_shape:ContractModificationInformation-hasModificationDescription-PlainLiteral, a4g_shape:ContractModificationInformation-hasModificationReasonDescription-PlainLiteral, a4g_shape:ContractModificationInformation-relatesToEFormSectionIdentifier-Identifier, a4g_shape:ContractModificationInformation-concernsContractAmendment-ContractAmendment, a4g_shape:ContractModificationInformation-hasModificationJustification-modification-justification, a4g_shape:ContractModificationInformation-inScheme-modification-justification .
 
-a4g:ContractModificationInformation rdfs:subClassOf a4g:ContextDescription .
-
 a4g_shape:con-shape a owl:Ontology ;
 	rdfs:label "eProcurement Ontology con - SHACL shapes"@en ;
 	dcterms:created "2021-06-01"^^xsd:date ;
@@ -82,8 +80,6 @@ a4g_shape:ContractAmendmentShape a shacl:NodeShape ;
 	shacl:property a4g_shape:ContractAmendment-updatesContractValue-MonetaryValue, a4g_shape:ContractAmendment-amendsContract-Contract ;
 	rdfs:comment "A change to an existing Contract that is agreed by the contracting parties." .
 
-a4g:ContractAmendment rdfs:subClassOf a4g:Contract .
-
 a4g_shape:ContractAmendment-updatesContractValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	rdfs:isDefinedBy a4g_shape:con-shape ;
@@ -96,8 +92,6 @@ a4g_shape:DeliverableShape a shacl:NodeShape ;
 	shacl:targetClass a4g:Deliverable ;
 	rdfs:isDefinedBy a4g_shape:con-shape ;
 	shacl:property a4g_shape:Deliverable-hasQuantity-Quantity, a4g_shape:Deliverable-hasTotalValue-MonetaryValue .
-
-a4g:Deliverable rdfs:subClassOf a4g:Item .
 
 a4g_shape:Deliverable-hasQuantity-Quantity a shacl:PropertyShape ;
 	shacl:targetClass a4g:Quantity ;

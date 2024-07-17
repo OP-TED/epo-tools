@@ -149,8 +149,6 @@ a4g_shape:CatalogueShape a shacl:NodeShape ;
 	rdfs:comment "A Document describing a set of Items offered for purchase that can be processed in an electronic way. " ;
 	shacl:property a4g_shape:Catalogue-hasSpecificPaymentArrangement-PlainLiteral, a4g_shape:Catalogue-specifiesCatalogueReceiver-CatalogueReceiver, a4g_shape:Catalogue-specifiesCatalogueProvider-CatalogueProvider, a4g_shape:Catalogue-isSubordinatedToContract-Contract, a4g_shape:Catalogue-comprisesCatalogueLine-CatalogueLine, a4g_shape:Catalogue-specifiesBuyer-Buyer, a4g_shape:Catalogue-hasActivityCode-activity-code, a4g_shape:Catalogue-inScheme-activity-code, a4g_shape:Catalogue-specifiesSeller-Seller, a4g_shape:Catalogue-hasValidityPeriod-Period .
 
-a4g:Catalogue rdfs:subClassOf a4g:PostAwardDocument .
-
 a4g_shape:Catalogue-hasSpecificPaymentArrangement-PlainLiteral a shacl:PropertyShape ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
 	shacl:path a4g:hasSpecificPaymentArrangement ;
@@ -234,8 +232,6 @@ a4g_shape:CatalogueLineShape a shacl:NodeShape ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
 	rdfs:comment "Aggregated information about the Terms and specifications for procuring an Item. Details about an Item, like Prices, packaging, discounts, special promotions, etc. TC 440: Detailed information of an Item, Price and its composition in a Catalogue. Composition: e.g. information referring to its description, how to order it, what it is made of, properties, delivery conditions, etc. " ;
 	shacl:property a4g_shape:CatalogueLine-isOrderable-boolean, a4g_shape:CatalogueLine-hasOrderableUnitFactorRate-decimal, a4g_shape:CatalogueLine-hasOrderableQuantityIncrement-integer, a4g_shape:CatalogueLine-hasWarrantyInformation-PlainLiteral, a4g_shape:CatalogueLine-isContractedItem-boolean, a4g_shape:CatalogueLine-hasTransactionConditions-PlainLiteral, a4g_shape:CatalogueLine-hasCatalogueLineValidity-Period, a4g_shape:CatalogueLine-hasMaximumOrderQuantity-Quantity, a4g_shape:CatalogueLine-hasMinimumQuantityGuaranteedForDelivery-Quantity, a4g_shape:CatalogueLine-hasOrderableUnit-orderable-unit, a4g_shape:CatalogueLine-inScheme-orderable-unit, a4g_shape:CatalogueLine-hasTransactionConditionsCode-transaction-conditions, a4g_shape:CatalogueLine-inScheme-transaction-conditions, a4g_shape:CatalogueLine-hasPrice-Price, a4g_shape:CatalogueLine-hasActivityCode-activity-code, a4g_shape:CatalogueLine-inScheme-activity-code, a4g_shape:CatalogueLine-hasStandardisedUnitPrice-Price, a4g_shape:CatalogueLine-foreseesPackage-Package, a4g_shape:CatalogueLine-hasChargeInformation-ChargeInformation .
-
-a4g:CatalogueLine rdfs:subClassOf a4g:Line .
 
 a4g_shape:CatalogueLine-isOrderable-boolean a shacl:PropertyShape ;
 	shacl:datatype xsd:boolean ;
@@ -389,8 +385,6 @@ a4g_shape:ChargeInformationShape a shacl:NodeShape ;
 	rdfs:comment "Information about tax, fee or duty imposed. Additional Information: Charge category indicates the nature of the tax/duty/fee, for example VAT, CAR, etc. Charge category modifier may be used in case different levels, exemptions or other modifications apply. The charge can be fixed or relative to the price. WG approval 16/05/2023" ;
 	shacl:property a4g_shape:ChargeInformation-isSpecificToOrderLine-OrderLine .
 
-a4g:ChargeInformation rdfs:subClassOf a4g:AllowanceChargeInformation .
-
 a4g_shape:ChargeInformation-isSpecificToOrderLine-OrderLine a shacl:PropertyShape ;
 	shacl:targetClass a4g:OrderLine ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
@@ -482,8 +476,6 @@ a4g_shape:ItemProperty-hasQualifiedValue-Quantity a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
-a4g:PostAwardDocument rdfs:subClassOf a4g:Document .
-
 a4g_shape:Item-hasPart-Item a shacl:PropertyShape ;
 	shacl:targetClass a4g:Item ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
@@ -513,8 +505,6 @@ a4g_shape:ManufacturerShape a shacl:NodeShape ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
 	rdfs:comment "The Producer of goods or provider of services. Additional Information: Also, known as Supplier and Manufacturer. We do not care who provides these service or products we care with whom Business is done. PEPPOL - Invoice: The Supplier is the Legal Person or Organisation who provides a product and/or service. PEPPOL - Order: The supplier is the legal person or organisation who provides a product or service. Examples of supplier roles: seller, despatch party, creditor, economic operator. " ;
 	shacl:property a4g_shape:Manufacturer-hasManufacturerID-Identifier .
-
-a4g:Manufacturer rdfs:subClassOf a4g:OfferingParty .
 
 a4g_shape:Manufacturer-hasManufacturerID-Identifier a shacl:PropertyShape ;
 	shacl:targetClass adms:Identifier ;
@@ -770,8 +760,6 @@ a4g_shape:Catalogue-specifiesSeller-Seller a shacl:PropertyShape ;
 	shacl:name "specifies seller"@en ;
 	shacl:nodeKind shacl:IRI .
 
-a4g:ProductSpecification rdfs:subClassOf a4g:PostAwardDocument .
-
 a4g_shape:Item-hasAccessoryItem-Item a shacl:PropertyShape ;
 	shacl:targetClass a4g:Item ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
@@ -831,10 +819,6 @@ a4g_shape:CatalogueLine-foreseesPackage-Package a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
-a4g:ItemComposition rdfs:subClassOf a4g:ItemRelation .
-
-a4g:ItemRequirement rdfs:subClassOf a4g:ItemRelation .
-
 a4g_shape:ItemProperty-describesItem-Item a shacl:PropertyShape ;
 	shacl:targetClass a4g:Item ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
@@ -844,8 +828,6 @@ a4g_shape:ItemProperty-describesItem-Item a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
-a4g:ItemReplacement rdfs:subClassOf a4g:ItemRelation .
-
 a4g_shape:Item-requires-Item a shacl:PropertyShape ;
 	shacl:targetClass a4g:Item ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
@@ -853,10 +835,6 @@ a4g_shape:Item-requires-Item a shacl:PropertyShape ;
 	shacl:description "A related resource that is required by the described resource to support its function, delivery, or coherence. Additional Information: In the eCatalogue context, when this relation is used between two items, the resource in the definition refers to Items, i.e. one Item requires another Item. WG Approval: 30/06/2022 " ;
 	shacl:name "requires"@en ;
 	shacl:nodeKind shacl:IRI .
-
-a4g:ItemComplementaryRelation rdfs:subClassOf a4g:ItemRelation .
-
-a4g:ItemAccessoryRelation rdfs:subClassOf a4g:ItemRelation .
 
 a4g_shape:AllowanceChargeInformation-hasAmount-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
@@ -903,8 +881,6 @@ a4g_shape:CatalogueResponseShape a shacl:NodeShape ;
 	shacl:targetClass a4g:CatalogueResponse ;
 	rdfs:isDefinedBy a4g_shape:cat-shape ;
 	shacl:property a4g_shape:CatalogueResponse-comprisesCatalogueResponseLine-CatalogueResponseLine, a4g_shape:CatalogueResponse-refersToCatalogue-Catalogue, a4g_shape:CatalogueResponse-specifiesCatalogueReceiver-CatalogueReceiver, a4g_shape:CatalogueResponse-specifiesCatalogueProvider-CatalogueProvider, a4g_shape:CatalogueResponse-specifiesCatalogueResponseInformation-CatalogueResponseInformation .
-
-a4g:CatalogueResponse rdfs:subClassOf a4g:PostAwardDocument .
 
 a4g_shape:CatalogueResponse-comprisesCatalogueResponseLine-CatalogueResponseLine a shacl:PropertyShape ;
 	shacl:targetClass a4g:CatalogueResponseLine ;
@@ -971,10 +947,6 @@ a4g_shape:CatalogueResponse-specifiesCatalogueProvider-CatalogueProvider a shacl
 	shacl:minCount 1 ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
-
-a4g:CatalogueResponseInformation rdfs:subClassOf a4g:InformationHub .
-
-a4g:InformationHub rdfs:subClassOf a4g:ContextDescription .
 
 a4g_shape:CatalogueResponse-specifiesCatalogueResponseInformation-CatalogueResponseInformation a shacl:PropertyShape ;
 	shacl:targetClass a4g:CatalogueResponseInformation ;

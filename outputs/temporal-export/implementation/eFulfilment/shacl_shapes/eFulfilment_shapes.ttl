@@ -40,8 +40,6 @@ a4g_shape:ShipmentInformationShape a shacl:NodeShape ;
 	rdfs:comment "The Transportation of an identifiable collection of Goods Items from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport. Addition Information This represents the where and when." ;
 	shacl:property a4g_shape:ShipmentInformation-despatchDate-dateTime, a4g_shape:ShipmentInformation-description-PlainLiteral, a4g_shape:ShipmentInformation-specifiesPlaceOfDespatch-Location, a4g_shape:ShipmentInformation-isSpecificToDespatchLine-DespatchLine, a4g_shape:ShipmentInformation-identifier-Identifier, a4g_shape:ShipmentInformation-hasEstimatedDeliveryPeriod-Period, a4g_shape:ShipmentInformation-refersToDeliveryInformation-DeliveryInformation .
 
-a4g:ShipmentInformation rdfs:subClassOf a4g:InformationHub .
-
 a4g_shape:ful-shape a owl:Ontology ;
 	dcterms:description "The eProcurement Ontology ful SHACL shapes provides the datashape specifications for the eProcurement Ontology ful module."@en ;
 	rdfs:label "eProcurement Ontology ful - SHACL shapes"@en ;
@@ -72,8 +70,6 @@ a4g_shape:DespatchLineShape a shacl:NodeShape ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
 	shacl:property a4g_shape:DespatchLine-hasOutstandingQuantityReason-PlainLiteral, a4g_shape:DespatchLine-refersToOrderLine-OrderLine, a4g_shape:DespatchLine-hasDespatchedQuantity-Quantity, a4g_shape:DespatchLine-hasOutstandingQuantity-Quantity, a4g_shape:DespatchLine-hasAssociatedDocument-Document .
 
-a4g:DespatchLine rdfs:subClassOf a4g:Line .
-
 a4g_shape:DespatchLine-hasOutstandingQuantityReason-PlainLiteral a shacl:PropertyShape ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
 	shacl:path a4g:hasOutstandingQuantityReason ;
@@ -87,8 +83,6 @@ a4g_shape:TransportHandlingUnitShape a shacl:NodeShape ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
 	rdfs:comment "A description of Individual Handling Units in which the Line Items are packed." ;
 	shacl:property a4g_shape:TransportHandlingUnit-hasShippingMark-PlainLiteral, a4g_shape:TransportHandlingUnit-hasHandlingInstruction-PlainLiteral, a4g_shape:TransportHandlingUnit-transportsItemFrom-DespatchLine, a4g_shape:TransportHandlingUnit-usesTransportEquipment-TransportEquipment, a4g_shape:TransportHandlingUnit-hasHandlingInstructionCode-handling-instruction, a4g_shape:TransportHandlingUnit-inScheme-handling-instruction .
-
-a4g:TransportHandlingUnit rdfs:subClassOf a4g:Package .
 
 a4g_shape:TransportHandlingUnit-hasShippingMark-PlainLiteral a shacl:PropertyShape ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
@@ -173,8 +167,6 @@ a4g_shape:PackageShape a shacl:NodeShape ;
 	shacl:targetClass a4g:Package ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
 	shacl:property a4g_shape:Package-hasPackagingTypeDescription-PlainLiteral, a4g_shape:Package-hasPackagingType-packaging-type, a4g_shape:Package-inScheme-packaging-type, a4g_shape:Package-containsPackage-Package, a4g_shape:Package-containsGoodsItem-GoodsItem .
-
-a4g:Package rdfs:subClassOf a4g:AbstractContainer .
 
 a4g_shape:Package-hasPackagingTypeDescription-PlainLiteral a shacl:PropertyShape ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
@@ -282,14 +274,10 @@ a4g_shape:TransportHandlingUnit-hasHandlingInstruction-PlainLiteral a shacl:Prop
 	shacl:minCount 0 ;
 	shacl:node a4g_shape:PlainLiteral .
 
-a4g:Despatcher rdfs:subClassOf a4g:OfferingParty .
-
 a4g_shape:DespatchAdviceShape a shacl:NodeShape ;
 	shacl:targetClass a4g:DespatchAdvice ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
 	shacl:property a4g_shape:DespatchAdvice-specifiesDespatcher-Despatcher, a4g_shape:DespatchAdvice-specifiesConsignee-Consignee, a4g_shape:DespatchAdvice-specifiesOriginator-Originator, a4g_shape:DespatchAdvice-refersToOrder-Order, a4g_shape:DespatchAdvice-comprisesDespatchLine-DespatchLine, a4g_shape:DespatchAdvice-specifiesShipment-ShipmentInformation, a4g_shape:DespatchAdvice-specifiesTransportHandlingUnits-TransportHandlingUnit, a4g_shape:DespatchAdvice-hasAssociatedDocument-Document, a4g_shape:DespatchAdvice-refersToConsignment-Consignment, a4g_shape:DespatchAdvice-hasDespatchAdviceType-despatch-advice-type, a4g_shape:DespatchAdvice-inScheme-despatch-advice-type, a4g_shape:DespatchAdvice-refersToShipmentAgreement-ShipmentAgreement .
-
-a4g:DespatchAdvice rdfs:subClassOf a4g:PostAwardDocument .
 
 a4g_shape:DespatchAdvice-specifiesDespatcher-Despatcher a shacl:PropertyShape ;
 	shacl:targetClass a4g:Despatcher ;
@@ -343,16 +331,12 @@ a4g_shape:ReceiptAdviceShape a shacl:NodeShape ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
 	shacl:property a4g_shape:ReceiptAdvice-comprisesReceiptAdviceLine-ReceiptAdviceLine, a4g_shape:ReceiptAdvice-isSubmittedForDespatchAdvice-DespatchAdvice, a4g_shape:ReceiptAdvice-isSubmittedForShipment-ShipmentInformation, a4g_shape:ReceiptAdvice-specifiesDespatcher-Despatcher, a4g_shape:ReceiptAdvice-specifiesConsignee-Consignee, a4g_shape:ReceiptAdvice-specifiesBuyer-Buyer, a4g_shape:ReceiptAdvice-specifiesSeller-Seller, a4g_shape:ReceiptAdvice-hasAssociatedDocument-Document .
 
-a4g:ReceiptAdvice rdfs:subClassOf a4g:PostAwardDocument .
-
 a4g_shape:ReceiptAdvice-comprisesReceiptAdviceLine-ReceiptAdviceLine a shacl:PropertyShape ;
 	shacl:targetClass a4g:ReceiptAdviceLine ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
 	shacl:path a4g:comprisesReceiptAdviceLine ;
 	shacl:name "comprises receipt advice line"@en ;
 	shacl:nodeKind shacl:IRI .
-
-a4g:ReceiptAdviceLine rdfs:subClassOf a4g:Line .
 
 a4g_shape:TransportEquipmentSealShape a shacl:NodeShape ;
 	shacl:targetClass a4g:TransportEquipmentSeal ;
@@ -543,8 +527,6 @@ a4g_shape:ShipmentStage-specifiesCarrier-Carrier a shacl:PropertyShape ;
 	shacl:name "specifies carrier"@en ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
-
-a4g:Carrier rdfs:subClassOf a4g:AuxiliaryParty .
 
 a4g_shape:ShipmentInformation-hasEstimatedDeliveryPeriod-Period a shacl:PropertyShape ;
 	shacl:targetClass a4g:Period ;
@@ -741,8 +723,6 @@ a4g_shape:Consignment-specifiesFreightForwarder-FreightForwarder a shacl:Propert
 	shacl:name "specifies freight forwarder"@en ;
 	shacl:nodeKind shacl:IRI .
 
-a4g:FreightForwarder rdfs:subClassOf a4g:AuxiliaryParty .
-
 a4g_shape:Consignment-containsTransportHandlingUnit-TransportHandlingUnit a shacl:PropertyShape ;
 	shacl:targetClass a4g:TransportHandlingUnit ;
 	rdfs:isDefinedBy a4g_shape:ful-shape ;
@@ -820,10 +800,6 @@ a4g_shape:TransportMeans-hasDriverPerson-TransportMeansOperator a shacl:Property
 	shacl:name "has driver person"@en ;
 	shacl:minCount 1 ;
 	shacl:nodeKind shacl:IRI .
-
-a4g:TransportMeansOperator rdfs:subClassOf a4g:AuxiliaryParty .
-
-a4g:Notifier rdfs:subClassOf a4g:AuxiliaryParty .
 
 a4g_shape:ShipmentInformation-refersToDeliveryInformation-DeliveryInformation a shacl:PropertyShape ;
 	shacl:targetClass a4g:DeliveryInformation ;
