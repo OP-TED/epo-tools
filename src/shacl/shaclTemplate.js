@@ -2,16 +2,30 @@ import {
   ATTRIBUTE, INHERITANCE, INSTANCE_OF, RELATIONSHIP, DEPENDENCY,
 } from '../conceptualModel/const.js'
 import { ns, aliases } from '../namespaces.js'
-import { stripPrefix, toSpaced, turtlePrefixes } from '../prefix/prefix.js'
-import { defaultSHACLShapeIRI, defaultSHACLPropertyIRI } from './defaultIRIPatterns.js'
+import {
+  stripPrefix,
+  toOneLine,
+  toSpaced,
+  turtlePrefixes,
+} from '../prefix/prefix.js'
+import {
+  defaultSHACLShapeIRI,
+  defaultSHACLPropertyIRI,
+} from './defaultIRIPatterns.js'
 
 const toTurtle = (
   { nodes, edges }, {
     propertyIRI = defaultSHACLPropertyIRI,
     shapeIRI = defaultSHACLShapeIRI,
+    definedBy = undefined, // Attach metadata
     namespaces = { ...ns, ...aliases },
 
   } = {}) => {
+
+  const values = {}
+  for (const { name, description } of nodes) {
+    values[name] = description
+  }
 
   const common = `
       <http://data.europa.eu/a4g/data-shape#PlainLiteral> a sh:NodeShape ;
@@ -21,14 +35,14 @@ const toTurtle = (
           ) .
           `
 
-  const subclassTemplate = (edge) => {
+  function subclassTemplate (edge) {
     const { source, predicate, target } = edge
     return `
     ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
     `
   }
 
-  const literalTemplate = (edge) => {
+  function literalTemplate (edge) {
     const {
       source, predicate, target, description, quantifiers,
     } = edge
@@ -48,10 +62,14 @@ const toTurtle = (
     return `
     ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
+      ${rdfsDefinedBy(definedBy)}
+      ${rdfsComment(values[source])}
       sh:property ${propertyIRI(edge)} .
        
       ${propertyIRI(edge)} a sh:PropertyShape ;
          sh:path ${predicate} ;
+         ${rdfsDefinedBy(definedBy)}
+         ${shDescription(description)}
          ${shaclName(predicate)} ;
          ${quantifiersTemplate(quantifiers)} .
          
@@ -59,17 +77,21 @@ const toTurtle = (
     `
   }
 
-  const objectTemplate = (edge) => {
+  function objectTemplate (edge) {
     const { source, predicate, target, description, quantifiers, type } = edge
 
     return `
     ${shapeIRI(edge)} a sh:NodeShape ;
       sh:targetClass ${source} ;
+      ${rdfsDefinedBy(definedBy)}
+      ${rdfsComment(values[source])}
       sh:property ${propertyIRI(edge)} .
        
     ${propertyIRI(edge)} a sh:PropertyShape ;
         sh:path ${predicate} ;
         sh:nodeKind sh:IRI ;
+        ${rdfsDefinedBy(definedBy)}
+        ${shDescription(description)}
         ${shaclName(predicate)}
         ${quantifiersTemplate(quantifiers)} .
        
@@ -115,8 +137,19 @@ const toTurtle = (
     }
   }
 
-
   return [prefix, common, ...output].join('\n')
+}
+
+function rdfsDefinedBy (definedBy) {
+  return definedBy ? `rdfs:isDefinedBy ${definedBy} ;` : ''
+}
+
+function rdfsComment (description) {
+  return description ? `rdfs:comment """${toOneLine(description)}""" ;` : ''
+}
+
+function shDescription (description) {
+  return description ? `sh:description """${toOneLine(description)}""" ;` : ''
 }
 
 function shaclName (predicate) {

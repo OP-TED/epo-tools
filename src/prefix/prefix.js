@@ -19,6 +19,10 @@ const toSpaced = str => str && str.match(
   map(x => x.toLowerCase()).
   join(' ')
 
+const toOneLine = (def) => (def.split(/\s+/).
+  map(x => x.trim()).
+  join(' ')).replaceAll('"', '')
+
 const allPrefixes = { ...ns, ...aliases }
 
 function toTerm (value) {
@@ -48,4 +52,5 @@ export {
   toSpaced,
   toTerm,
   turtlePrefixes,
+  toOneLine
 }
