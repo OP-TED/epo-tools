@@ -22,6 +22,7 @@
 @prefix r2rml: <http://www.w3.org/ns/r2rml#> .
 @prefix at: <http://publications.europa.eu/ontology/authority/> .
 @prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 a4g_shape:SubcontractingEstimateShape shacl:property a4g_shape:SubcontractingEstimate-hasEstimatedPercentage-decimal, a4g_shape:SubcontractingEstimate-hasSubjectMatter-PlainLiteral, a4g_shape:SubcontractingEstimate-hasSubcontractingEstimatedValue-MonetaryValue, a4g_shape:SubcontractingEstimate-description-PlainLiteral .
 
