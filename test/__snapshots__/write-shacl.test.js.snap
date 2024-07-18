@@ -2689,7 +2689,7 @@ a4g_shape:Technique-description-PlainLiteral a shacl:PropertyShape ;
 a4g_shape:TenderShape a shacl:NodeShape ;
 	shacl:targetClass a4g:Tender ;
 	rdfs:comment \\"Information submitted by the Economic Operator to specify its Offer regarding a specific Lot, in response to the call for Tender. (WG approval 03/05/2022) \\" ;
-	shacl:property a4g_shape:Tender-hasElectronicSubmission-boolean, a4g_shape:Tender-isVariant-boolean, a4g_shape:Tender-hasFinancialOfferValue-MonetaryValue, a4g_shape:Tender-isSubmitedBy-Tenderer, a4g_shape:Tender-foreseesConcession-ConcessionEstimate, a4g_shape:Tender-hasSubcontracting-applicability, a4g_shape:Tender-inScheme-applicability, a4g_shape:Tender-foreseesSubcontracting-SubcontractingEstimate, a4g_shape:Tender-hasItemCountryOfOrigin-country, a4g_shape:Tender-inScheme-country, a4g_shape:Tender-specifiesSubcontractors-Subcontractor, a4g_shape:Tender-isSubjectToGrouping-LotGroup, a4g_shape:Tender-isSubmittedForLot-Lot, a4g_shape:Tender-isSupportedBy-ESPDResponse .
+	shacl:property a4g_shape:Tender-hasElectronicSubmission-boolean, a4g_shape:Tender-isVariant-boolean, a4g_shape:Tender-hasFinancialOfferValue-MonetaryValue, a4g_shape:Tender-isSubmitedBy-Tenderer, a4g_shape:Tender-foreseesConcession-ConcessionEstimate, a4g_shape:Tender-hasSubcontracting-applicability, a4g_shape:Tender-inScheme-applicability, a4g_shape:Tender-foreseesSubcontracting-SubcontractingEstimate, a4g_shape:Tender-hasItemCountryOfOrigin-country, a4g_shape:Tender-inScheme-country, a4g_shape:Tender-specifiesSubcontractors-Subcontractor, a4g_shape:Tender-isSubjectToGrouping-LotGroup, a4g_shape:Tender-isSubmittedForLot-Lot, a4g_shape:Tender-isSupportedBy-ESPD .
 
 a4g:Tender rdfs:subClassOf a4g:Document .
 
@@ -3199,7 +3199,7 @@ a4g_shape:DesignContestRegimeTerm-definesPrize-Prize a shacl:PropertyShape ;
 	shacl:name \\"defines prize\\"@en ;
 	shacl:nodeKind shacl:IRI .
 
-a4g:ESPDResponse rdfs:subClassOf a4g:Document .
+a4g:ESPD rdfs:subClassOf a4g:Document .
 
 a4g_shape:ResultNoticeShape a shacl:NodeShape ;
 	shacl:targetClass a4g:ResultNotice ;
@@ -3231,12 +3231,12 @@ a4g_shape:Contract-isFundedBy-Fund a shacl:PropertyShape ;
 	shacl:name \\"is funded by\\"@en ;
 	shacl:nodeKind shacl:IRI .
 
-a4g_shape:ESPDResponseShape a shacl:NodeShape ;
-	shacl:targetClass a4g:ESPDResponse ;
+a4g_shape:ESPDShape a shacl:NodeShape ;
+	shacl:targetClass a4g:ESPD ;
 	rdfs:comment \\"A document conveying the fulfilment or not by the economic operator of the Exclusion Grounds and the Selection Criteria set out by the Buyer for a specific Procurement using an European Single Procurement Document (ESPD) Request. WG Approval 05/03/2024\\" ;
-	shacl:property a4g_shape:ESPDResponse-providesInformationOn-Organization, a4g_shape:ESPDResponse-relatesToESPDRequest-ESPDRequest, a4g_shape:ESPDResponse-refersToOtherESPDResponse-ESPDResponse, a4g_shape:ESPDResponse-answersExclusionGround-ExclusionGround, a4g_shape:ESPDResponse-answersSelectionCriteria-SelectionCriterion, a4g_shape:ESPDResponse-specifiesResponse-Response .
+	shacl:property a4g_shape:ESPD-providesInformationOn-Organization, a4g_shape:ESPD-relatesToESPDRequest-ESPDRequest, a4g_shape:ESPD-specifiesResponse-Response .
 
-a4g_shape:ESPDResponse-providesInformationOn-Organization a shacl:PropertyShape ;
+a4g_shape:ESPD-providesInformationOn-Organization a shacl:PropertyShape ;
 	shacl:targetClass org:Organization ;
 	shacl:path a4g:providesInformationOn ;
 	shacl:description \\"Offers information about an instance of a concept. WG approval 05/03/2024\\" ;
@@ -3313,7 +3313,7 @@ a4g_shape:ESPDRequestShape a shacl:NodeShape ;
 	rdfs:comment \\"An updated self-declaration used by the economic operator as a preliminary evidence in replacement of certificates issued by public authorities or third parties confirming that the economic operator fulfils the Exclusion Grounds and the Selection Criteria set out by the Buyer for a specific Procurement. WG Approval 05/03/2024\\" ;
 	shacl:property a4g_shape:ESPDRequest-specifiesProcurementCriterion-ProcurementCriterion, a4g_shape:ESPDRequest-refersToNotice-Notice, a4g_shape:ESPDRequest-concernsProcedure-Procedure .
 
-a4g:ESPDRequest rdfs:subClassOf a4g:Document .
+a4g:ESPDRequest rdfs:subClassOf a4g:ProcurementDocument .
 
 a4g_shape:ESPDRequest-specifiesProcurementCriterion-ProcurementCriterion a shacl:PropertyShape ;
 	shacl:targetClass a4g:ProcurementCriterion ;
@@ -4853,7 +4853,7 @@ a4g:PurchaseContract rdfs:subClassOf a4g:Contract .
 
 m8g:PublicOrganisation rdfs:subClassOf org:Organization .
 
-a4g_shape:ESPDResponse-relatesToESPDRequest-ESPDRequest a shacl:PropertyShape ;
+a4g_shape:ESPD-relatesToESPDRequest-ESPDRequest a shacl:PropertyShape ;
 	shacl:targetClass a4g:ESPDRequest ;
 	shacl:path a4g:relatesToESPDRequest ;
 	shacl:description \\"Is about an European Single Procurement Document (ESPD) Request. WG approval 05/03/2024\\" ;
@@ -6401,13 +6401,6 @@ a4g_shape:Document-associatedWith-Document a shacl:PropertyShape ;
 
 a4g:CANSocialNotice-D25 rdfs:subClassOf a4g:CANSocialNotice, a4g:StandardFormsNotice .
 
-a4g_shape:ESPDResponse-refersToOtherESPDResponse-ESPDResponse a shacl:PropertyShape ;
-	shacl:targetClass a4g:ESPDResponse ;
-	shacl:path a4g:refersToOtherESPDResponse ;
-	shacl:description \\"Reference to other European Single Procurement Document (ESPD) Response. WG approval 05/03/2024\\" ;
-	shacl:name \\"refers to other espd response\\"@en ;
-	shacl:nodeKind shacl:IRI .
-
 a4g_shape:LotGroup-setsGroupingContextForLot-Lot a shacl:PropertyShape ;
 	shacl:targetClass a4g:Lot ;
 	shacl:path a4g:setsGroupingContextForLot ;
@@ -6437,14 +6430,6 @@ a4g_shape:ReceiptAdviceLine-hasReceivedQuantity-Quantity a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
-a4g_shape:ESPDResponse-answersExclusionGround-ExclusionGround a shacl:PropertyShape ;
-	shacl:targetClass a4g:ExclusionGround ;
-	shacl:path a4g:answersExclusionGround ;
-	shacl:name \\"answers exclusion ground\\"@en ;
-	shacl:minCount 1 ;
-	shacl:maxCount 1 ;
-	shacl:nodeKind shacl:IRI .
-
 a4g_shape:ReviewRequest-hasAllegedIrregularityType-irregularity-type a shacl:PropertyShape ;
 	shacl:path a4g:hasAllegedIrregularityType ;
 	shacl:description \\"Additional information: This relation corresponds in eForms to BT-791 Review Irregularity Type \\" ;
@@ -6464,16 +6449,8 @@ a4g_shape:Evidence-supportsRequirement-Requirement a shacl:PropertyShape ;
 	shacl:name \\"supports requirement\\"@en ;
 	shacl:nodeKind shacl:IRI .
 
-a4g_shape:ESPDResponse-answersSelectionCriteria-SelectionCriterion a shacl:PropertyShape ;
-	shacl:targetClass a4g:SelectionCriterion ;
-	shacl:path a4g:answersSelectionCriteria ;
-	shacl:name \\"answers selection criteria\\"@en ;
-	shacl:minCount 1 ;
-	shacl:maxCount 1 ;
-	shacl:nodeKind shacl:IRI .
-
-a4g_shape:Tender-isSupportedBy-ESPDResponse a shacl:PropertyShape ;
-	shacl:targetClass a4g:ESPDResponse ;
+a4g_shape:Tender-isSupportedBy-ESPD a shacl:PropertyShape ;
+	shacl:targetClass a4g:ESPD ;
 	shacl:path a4g:isSupportedBy ;
 	shacl:name \\"is supported by\\"@en ;
 	shacl:minCount 1 ;
@@ -8405,7 +8382,7 @@ a4g_shape:LotGroup-identifier-Identifier a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
-a4g_shape:ESPDResponse-specifiesResponse-Response a shacl:PropertyShape ;
+a4g_shape:ESPD-specifiesResponse-Response a shacl:PropertyShape ;
 	shacl:targetClass a4g:Response ;
 	shacl:path a4g:specifiesResponse ;
 	shacl:description \\"Relation indicating that an ESPD Response contains a Response. WG approval 12/03/2024\\" ;
@@ -8445,6 +8422,7 @@ a4g_shape:Response-confidentialityLevelType-access-rights a shacl:PropertyShape 
 	shacl:path m8g:confidentialityLevelType ;
 	shacl:description \\"Security classification assigned to an Evidence e.g. classified, sensitive, public. Additional Information: Classifications should be defined by an organisation/country as an outcome of a security assessment.\\" ;
 	shacl:name \\"confidentiality level type\\"@en ;
+	shacl:maxCount 1 ;
 	shacl:node a4g_shape:ResponseShape ;
 	shacl:nodeKind shacl:IRI .
 
