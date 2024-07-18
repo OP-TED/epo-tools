@@ -33,6 +33,9 @@ a4g:LegalRepresentative rdfs:subClassOf [
 		owl:onProperty a4g:hasPowerOfAttorney ;
 	] .
 
+a4g:hasPowerOfAttorney rdfs:domain a4g:LegalRepresentative ;
+	rdfs:range a4g:PowerOfAttorney .
+
 a4g:answersQuestion rdfs:domain a4g:Response ;
 	rdfs:range m8g:InformationRequirement .
 
@@ -44,6 +47,9 @@ a4g:NationalPreQualificationData rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 		owl:onProperty a4g:providesOrganisationCompletedTaskDescription ;
 	] .
+
+a4g:providesOrganisationCompletedTaskDescription rdfs:domain a4g:NationalPreQualificationData ;
+	rdfs:range rdf:PlainLiteral .
 
 a4g:hasMandate rdfs:domain a4g:LegalRepresentative ;
 	rdfs:range a4g:Mandate .
@@ -59,6 +65,9 @@ a4g:ESPD rdfs:subClassOf [
 		owl:onProperty a4g:specifiesResponse ;
 		owl:minCardinality 1 ;
 	] .
+
+a4g:specifiesResponse rdfs:domain a4g:ESPD ;
+	rdfs:range a4g:Response .
 
 a4g:providesInformationOn rdfs:domain a4g:ESPD ;
 	rdfs:range org:Organization .
@@ -88,7 +97,7 @@ a4g:sub-restriction a owl:Ontology ;
 	dcterms:title "eProcurement Ontology Submission - core restrictions"@en ;
 	vann:preferredNamespacePrefix "epo" ;
 	vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
-	rdfs:comment """This version is automatically generated from eSubmission.xml on 
+	rdfs:comment """This version is automatically generated from eSubmission.xml on
                 2024-07-10""" ;
 	rdfs:seeAlso <https://docs.ted.europa.eu/home/index.html>, <https://github.com/OP-TED/ePO/releases>, <https://joinup.ec.europa.eu/collection/eprocurement/solution/eprocurement-ontology/about>, <https://op.europa.eu/en/web/eu-vocabularies/e-procurement> ;
 	owl:imports a4g:acc, a4g:core, a4g:sub, <http://data.europa.eu/eli/ontology#>, <http://data.europa.eu/m8g/>, <http://iflastandards.info/ns/fr/frbr/frbroo/>, <http://purl.org/dc/terms/>, <http://purl.org/vocab/vann/>, <http://www.w3.org/2004/02/skos/core>, <http://www.w3.org/2006/time>, <http://www.w3.org/ns/adms>, <http://www.w3.org/ns/locn>, <http://www.w3.org/ns/org#>, <http://www.w3.org/ns/person>, <http://xmlns.com/foaf/0.1/> ;
@@ -110,28 +119,5 @@ a4g:CertificateInformation rdfs:subClassOf [
 		owl:onProperty a4g:coversAllSelectionCriteria ;
 	] .
 
-_:b1 a owl:Class ;
-	owl:unionOf (
-		a4g:Response
-		m8g:Evidence
-	) .
-
 a4g:coversAllSelectionCriteria rdfs:domain a4g:CertificateInformation ;
 	rdfs:range xsd:boolean .
-
-a4g:hasPowerOfAttorney rdfs:domain a4g:LegalRepresentative ;
-	rdfs:range a4g:PowerOfAttorney .
-
-a4g:providesOrganisationCompletedTaskDescription rdfs:domain a4g:NationalPreQualificationData ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:specifiesResponse rdfs:domain a4g:ESPD ;
-	rdfs:range a4g:Response .
-
-_:b9 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ESPD
-		a4g:Mandate
-		a4g:PowerOfAttorney
-	) .
-

@@ -37,6 +37,12 @@ a4g:Buyer rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:isContractingEntity rdfs:domain a4g:Buyer ;
+	rdfs:range xsd:boolean .
+
+a4g:hasBuyerProfile rdfs:domain a4g:Buyer ;
+	rdfs:range xsd:anyURI .
+
 a4g:amendsContract rdfs:domain a4g:ContractAmendment ;
 	rdfs:range a4g:Contract .
 
@@ -66,6 +72,30 @@ a4g:Contract rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasPurpose rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Contract
+			a4g:ProcurementObject
+		) ;
+	] ;
+	rdfs:range a4g:Purpose .
+
+a4g:hasEntryIntoForceDate rdfs:domain a4g:Contract ;
+	rdfs:range xsd:date .
+
+a4g:hasContractValue rdfs:domain a4g:Contract ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasContractConclusionDate rdfs:domain a4g:Contract ;
+	rdfs:range xsd:date .
+
+a4g:hasLotReference rdfs:domain a4g:Contract ;
+	rdfs:range a4g:Lot .
+
+a4g:hasEstimatedDuration rdfs:domain a4g:Contract ;
+	rdfs:range a4g:Duration .
+
 a4g:announcesAwardDecision rdfs:domain [
 		rdf:type owl:Class ;
 		owl:unionOf (
@@ -84,6 +114,12 @@ a4g:AwardDecision rdfs:subClassOf [
 		owl:onProperty a4g:hasAdditionalNonAwardJustification ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasAwardDecisionDate rdfs:domain a4g:AwardDecision ;
+	rdfs:range xsd:dateTime .
+
+a4g:hasAdditionalNonAwardJustification rdfs:domain a4g:AwardDecision ;
+	rdfs:range rdf:PlainLiteral .
 
 a4g:announcesCompletionOfContract rdfs:domain a4g:CompletionNotice ;
 	rdfs:range a4g:Contract .
@@ -134,6 +170,27 @@ a4g:LotGroup rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
+a4g:hasLaunchFrameworkAgreementMaximumValue rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ProcurementObject
+			a4g:LotGroup
+		) ;
+	] ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasEstimatedValue rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:LotGroup
+			a4g:ProcurementElement
+		) ;
+	] ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:setsGroupingContextForLot rdfs:domain a4g:LotGroup ;
+	rdfs:range a4g:Lot .
+
 a4g:announcesLotGroupAwardInformation rdfs:domain [
 		rdf:type owl:Class ;
 		owl:unionOf (
@@ -149,9 +206,16 @@ a4g:LotGroupAwardInformation rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:describesLotGroup ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasGroupFrameworkAgreementMaximumValue rdfs:domain a4g:LotGroupAwardInformation ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:describesLotGroup rdfs:domain a4g:LotGroupAwardInformation ;
+	rdfs:range a4g:LotGroup ;
+	a owl:FunctionalProperty .
 
 a4g:announcesNoticeAwardInformation rdfs:domain [
 		rdf:type owl:Class ;
@@ -184,6 +248,27 @@ a4g:NoticeAwardInformation rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasApproximateFrameworkAgreementValue rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:LotAwardOutcome
+			a4g:NoticeAwardInformation
+		) ;
+	] ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasTotalAwardedValue rdfs:domain a4g:NoticeAwardInformation ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasProcurementHighestReceivedTenderValue rdfs:domain a4g:NoticeAwardInformation ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasProcurementLowestReceivedTenderValue rdfs:domain a4g:NoticeAwardInformation ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasMaximumFrameworkAgreementAwardedValue rdfs:domain a4g:NoticeAwardInformation ;
+	rdfs:range a4g:MonetaryValue .
+
 a4g:announcesPlannedProcurementPart rdfs:domain a4g:PlanningNotice ;
 	rdfs:range a4g:PlannedProcurementPart .
 
@@ -200,6 +285,15 @@ a4g:PlannedProcurementPart rdfs:subClassOf [
 		owl:onProperty a4g:hasPlannedDuration ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasPlannedPeriod rdfs:domain a4g:PlannedProcurementPart ;
+	rdfs:range a4g:Period .
+
+a4g:foreseesProcurementObject rdfs:domain a4g:PlannedProcurementPart ;
+	rdfs:range a4g:ProcurementObject .
+
+a4g:hasPlannedDuration rdfs:domain a4g:PlannedProcurementPart ;
+	rdfs:range a4g:Duration .
 
 a4g:announcesProcedure rdfs:domain [
 		rdf:type owl:Class ;
@@ -236,6 +330,24 @@ a4g:Procedure rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasProcurementScopeDividedIntoLot rdfs:domain a4g:Procedure ;
+	rdfs:range a4g:Lot .
+
+a4g:isAccelerated rdfs:domain a4g:Procedure ;
+	rdfs:range xsd:boolean .
+
+a4g:isJointProcurement rdfs:domain a4g:Procedure ;
+	rdfs:range xsd:boolean .
+
+a4g:isExecutedByProcurementServiceProvider rdfs:domain a4g:Procedure ;
+	rdfs:range a4g:ProcurementServiceProvider .
+
+a4g:isSubjectToProcedureSpecificTerm rdfs:domain a4g:Procedure ;
+	rdfs:range a4g:ProcedureSpecificTerm .
+
+a4g:isDesignContest rdfs:domain a4g:Procedure ;
+	rdfs:range xsd:boolean .
+
 a4g:announcesReviewObject rdfs:domain a4g:CompletionNotice ;
 	rdfs:range a4g:ReviewObject .
 
@@ -248,6 +360,13 @@ a4g:ReviewObject rdfs:subClassOf [
 		owl:onProperty a4g:refersToPreviousReview ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasReviewURL rdfs:domain a4g:ReviewObject ;
+	rdfs:range xsd:anyURI .
+
+a4g:refersToPreviousReview rdfs:domain a4g:ReviewObject ;
+	rdfs:range a4g:ReviewObject ;
+	a owl:AsymmetricProperty .
 
 a4g:announcesRole rdfs:domain a4g:ResultNotice, [
 		rdf:type owl:Class ;
@@ -263,10 +382,28 @@ a4g:announcesRole rdfs:domain a4g:ResultNotice, [
 
 a4g:AgentInRole rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:playedBy ;
+		owl:cardinality 1 ;
 	] ;
 	a owl:Class .
+
+a4g:playedBy rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:AgentInRole
+			a4g:JuryMember
+			a4g:TransportMeansOperator
+		) ;
+	] ;
+	rdfs:range [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			foaf:Agent
+			person:Person
+			foaf:Person
+		) ;
+	] ;
+	a owl:FunctionalProperty .
 
 a4g:answersQuestion rdfs:domain a4g:Response ;
 	rdfs:range m8g:InformationRequirement .
@@ -310,6 +447,27 @@ a4g:Document rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
+a4g:hasDispatchDate rdfs:domain a4g:Document ;
+	rdfs:range xsd:dateTime .
+
+a4g:hasReceptionDate rdfs:domain a4g:Document ;
+	rdfs:range xsd:date .
+
+a4g:hasUUID rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Document
+			a4g:CatalogueResponseLine
+		) ;
+	] ;
+	rdfs:range adms:Identifier .
+
+a4g:hasVersion rdfs:domain a4g:Document ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasPublicationDate rdfs:domain a4g:Document ;
+	rdfs:range xsd:date .
+
 a4g:bindsBuyer rdfs:domain a4g:Contract ;
 	rdfs:range a4g:Buyer .
 
@@ -321,6 +479,9 @@ a4g:Contractor rdfs:subClassOf [
 		owl:onProperty a4g:needsToBeAWinner ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:needsToBeAWinner rdfs:domain a4g:Contractor ;
+	rdfs:range a4g:Winner .
 
 a4g:canProvideNonDiscriminatoryEvidence rdfs:domain org:Organization ;
 	rdfs:range m8g:Evidence .
@@ -341,6 +502,12 @@ a4g:AwardOutcome rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasBargainPrice rdfs:domain a4g:AwardOutcome ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasAwardedValue rdfs:domain a4g:AwardOutcome ;
+	rdfs:range a4g:MonetaryValue .
+
 a4g:comprisesTenderAwardOutcome rdfs:domain a4g:AwardOutcome ;
 	rdfs:range a4g:TenderAwardOutcome .
 
@@ -350,13 +517,23 @@ a4g:TenderAwardOutcome rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:concernsTender ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasAwardRank ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:indicatesAwardToWinner rdfs:domain a4g:TenderAwardOutcome ;
+	rdfs:range a4g:Winner .
+
+a4g:concernsTender rdfs:domain a4g:TenderAwardOutcome ;
+	rdfs:range a4g:Tender ;
+	a owl:FunctionalProperty .
+
+a4g:hasAwardRank rdfs:domain a4g:TenderAwardOutcome ;
+	rdfs:range xsd:integer .
 
 a4g:concernsContract rdfs:domain a4g:ContractInformation ;
 	rdfs:range a4g:Contract .
@@ -372,8 +549,8 @@ a4g:conformsToLegalBasis rdfs:domain a4g:Notice ;
 
 a4g:Notice rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:refersToProcedure ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasFormNumber ;
@@ -413,6 +590,62 @@ a4g:Notice rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
+a4g:refersToProcedure rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Notice
+			a4g:ResultNotice
+			a4g:ContractModificationNotice
+			a4g:CompletionNotice
+		) ;
+	] ;
+	rdfs:range a4g:Procedure ;
+	a owl:FunctionalProperty .
+
+a4g:hasFormNumber rdfs:domain a4g:Notice ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:refersToNotice rdfs:domain a4g:Notice, a4g:ESPDRequest ;
+	rdfs:range a4g:Notice ;
+	a owl:AsymmetricProperty .
+
+a4g:hasESenderDispatchDate rdfs:domain a4g:Notice ;
+	rdfs:range xsd:dateTime .
+
+a4g:hasOJSType rdfs:domain a4g:Notice ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasNoticePublicationNumber rdfs:domain a4g:Notice ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasAdditionalInformation rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ChangeInformation
+			a4g:Notice
+			a4g:ProcurementCriterion
+			a4g:ProcurementObject
+		) ;
+	] ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasEFormsSubtype rdfs:domain a4g:Notice ;
+	rdfs:range xsd:integer .
+
+a4g:hasOJSIssueNumber rdfs:domain a4g:Notice ;
+	rdfs:range xsd:integer .
+
+a4g:refersToLot rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Notice
+			a4g:CompletionNotice
+			a4g:ContractModificationNotice
+			a4g:ResultNotice
+		) ;
+	] ;
+	rdfs:range a4g:Lot .
+
 a4g:containsCandidate rdfs:domain a4g:SelectedCandidateList ;
 	rdfs:range a4g:Candidate .
 
@@ -421,6 +654,9 @@ a4g:SelectedCandidateList rdfs:subClassOf [
 		owl:onProperty a4g:hasStartDate ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasStartDate rdfs:domain a4g:SelectedCandidateList ;
+	rdfs:range a4g:Period .
 
 a4g:contextualisedBy rdfs:domain a4g:AgentInRole ;
 	rdfs:range a4g:ProcurementObject .
@@ -460,17 +696,41 @@ a4g:ProcurementObject rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
+a4g:isSMESuitable rdfs:domain a4g:ProcurementObject ;
+	rdfs:range xsd:boolean .
+
+a4g:isUsingEUFunds rdfs:domain a4g:ProcurementObject ;
+	rdfs:range xsd:boolean .
+
+a4g:foreseesConcession rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Tender
+			a4g:ProcurementObject
+		) ;
+	] ;
+	rdfs:range a4g:ConcessionEstimate .
+
+a4g:hasRecurrenceDescription rdfs:domain a4g:ProcurementObject ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:isRecurrent rdfs:domain a4g:ProcurementObject ;
+	rdfs:range xsd:boolean .
+
+a4g:isCoveredByGPA rdfs:domain a4g:ProcurementObject ;
+	rdfs:range xsd:boolean .
+
 a4g:core-restriction a owl:Ontology ;
+	dcterms:title "eProcurement Ontology - core restrictions"@en ;
+	dcterms:issued "2024-07-10"^^xsd:date ;
+	dcterms:description "The eProcurement Ontology core restrictions provides the restrictions and the inference-related specifications on the concepts and properties in the eProcurement Ontology core."@en ;
 	rdfs:label "eProcurement Ontology - core restrictions"@en ;
 	dcterms:created "2021-06-01"^^xsd:date ;
-	dcterms:description "The eProcurement Ontology core restrictions provides the restrictions and the inference-related specifications on the concepts and properties in the eProcurement Ontology core."@en ;
-	dcterms:issued "2024-07-10"^^xsd:date ;
 	dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
 	dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
-	dcterms:title "eProcurement Ontology - core restrictions"@en ;
 	vann:preferredNamespacePrefix "epo" ;
 	vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
-	rdfs:comment """This version is automatically generated from ePO_core.xml on 
+	rdfs:comment """This version is automatically generated from ePO_core.xml on
                 2024-07-10""" ;
 	rdfs:seeAlso <https://docs.ted.europa.eu/home/index.html>, <https://github.com/OP-TED/ePO/releases>, <https://joinup.ec.europa.eu/collection/eprocurement/solution/eprocurement-ontology/about>, <https://op.europa.eu/en/web/eu-vocabularies/e-procurement> ;
 	owl:imports a4g:acc, a4g:core, <http://data.europa.eu/eli/ontology#>, <http://data.europa.eu/m8g/>, <http://iflastandards.info/ns/fr/frbr/frbroo/>, <http://purl.org/dc/terms/>, <http://purl.org/vocab/vann/>, <http://www.w3.org/2004/02/skos/core>, <http://www.w3.org/2006/time>, <http://www.w3.org/ns/adms>, <http://www.w3.org/ns/locn>, <http://www.w3.org/ns/org#>, <http://www.w3.org/ns/person>, <http://xmlns.com/foaf/0.1/> ;
@@ -512,6 +772,27 @@ a4g:AccessTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:isProcurementDocumentRestricted rdfs:domain a4g:AccessTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:involvesProcurementDocument rdfs:domain a4g:AccessTerm ;
+	rdfs:range a4g:ProcurementDocument .
+
+a4g:definesOfflineAccessProvider rdfs:domain a4g:AccessTerm ;
+	rdfs:range a4g:OfflineAccessProvider .
+
+a4g:hasAdditionalInformationDeadline rdfs:domain a4g:AccessTerm ;
+	rdfs:range xsd:dateTime .
+
+a4g:hasPublicAccessURL rdfs:domain a4g:AccessTerm ;
+	rdfs:range xsd:anyURI .
+
+a4g:definesProcurementProcedureInformationProvider rdfs:domain a4g:AccessTerm ;
+	rdfs:range a4g:ProcurementProcedureInformationProvider .
+
+a4g:hasRestrictedAccessURL rdfs:domain a4g:AccessTerm ;
+	rdfs:range xsd:anyURI .
+
 a4g:definesCatalogueReceiver rdfs:domain a4g:AccessTerm ;
 	rdfs:range a4g:CatalogueReceiver .
 
@@ -552,6 +833,30 @@ a4g:ProcedureTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:definesMediator rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range a4g:Mediator .
+
+a4g:hasLotAwardCombination rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:definesBudgetProvider rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range a4g:BudgetProvider .
+
+a4g:hasMaximumLotSubmissionAllowed rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range xsd:integer .
+
+a4g:isSubmissionForAllLotsRequired rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasMaximumNumberOfLotsToBeAwarded rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range xsd:integer .
+
+a4g:isOneLotOnlyAllowed rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:isAwardedByCPB rdfs:domain a4g:ProcedureTerm ;
+	rdfs:range xsd:boolean .
+
 a4g:definesLotGroup rdfs:domain a4g:ProcedureTerm ;
 	rdfs:range a4g:LotGroup .
 
@@ -586,6 +891,24 @@ a4g:Prize rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasParticipationPayment rdfs:domain a4g:DesignContestRegimeTerm ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasFollowupContract rdfs:domain a4g:DesignContestRegimeTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasDescriptionOfPrizes rdfs:domain a4g:DesignContestRegimeTerm ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:isJuryDecisionBinding rdfs:domain a4g:DesignContestRegimeTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasPrizeRank rdfs:domain a4g:Prize ;
+	rdfs:range xsd:integer .
+
+a4g:hasPrizeValue rdfs:domain a4g:Prize ;
+	rdfs:range a4g:MonetaryValue .
+
 a4g:definesReviewer rdfs:domain a4g:ReviewTerm ;
 	rdfs:range a4g:Reviewer .
 
@@ -598,6 +921,12 @@ a4g:ReviewTerm rdfs:subClassOf [
 		owl:onProperty a4g:hasReviewDeadline ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:definesReviewProcedureInformationProvider rdfs:domain a4g:ReviewTerm ;
+	rdfs:range a4g:ReviewProcedureInformationProvider .
+
+a4g:hasReviewDeadline rdfs:domain a4g:ReviewTerm ;
+	rdfs:range xsd:dateTime .
 
 a4g:definesSpecificPlaceOfPerformance rdfs:domain a4g:ContractTerm ;
 	rdfs:range dcterms:Location .
@@ -648,6 +977,39 @@ a4g:ContractTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:definesContractPeriod rdfs:domain a4g:ContractTerm ;
+	rdfs:range a4g:Period .
+
+a4g:definesSubcontractingTerm rdfs:domain a4g:ContractTerm ;
+	rdfs:range a4g:SubcontractTerm .
+
+a4g:hasEInvoicing rdfs:domain a4g:ContractTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:definesContractDuration rdfs:domain a4g:ContractTerm ;
+	rdfs:range a4g:Duration .
+
+a4g:hasMaximumNumberOfRenewals rdfs:domain a4g:ContractTerm ;
+	rdfs:range xsd:integer .
+
+a4g:hasOptions rdfs:domain a4g:ContractTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasLegalFormRequirement rdfs:domain a4g:ContractTerm ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasEPayment rdfs:domain a4g:ContractTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:definesPaymentExecutor rdfs:domain a4g:ContractTerm ;
+	rdfs:range a4g:PaymentExecutor .
+
+a4g:isRenewalIndicator rdfs:domain a4g:ContractTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasEOrdering rdfs:domain a4g:ContractTerm ;
+	rdfs:range xsd:boolean .
+
 a4g:delegatesAncillaryActivitiesTo rdfs:domain a4g:Buyer ;
 	rdfs:range a4g:ProcurementServiceProvider .
 
@@ -655,6 +1017,21 @@ a4g:ProcurementServiceProvider rdfs:subClassOf [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:actsOnBehalfOf ;
 		owl:minCardinality 1 ;
+	] .
+
+a4g:actsOnBehalfOf rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ProcurementServiceProvider
+			a4g:LegalRepresentative
+		) ;
+	] ;
+	rdfs:range [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Buyer
+			a4g:OfferingParty
+		) ;
 	] .
 
 a4g:describesDirectAwardPrenotificationNotice rdfs:domain a4g:NoticeAwardInformation ;
@@ -704,8 +1081,8 @@ a4g:Tender rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:isSubmittedForLot ;
+		owl:cardinality 1 ;
 	] .
 
 a4g:SubcontractingEstimate rdfs:subClassOf [
@@ -719,6 +1096,31 @@ a4g:SubcontractingEstimate rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
+a4g:hasElectronicSubmission rdfs:domain a4g:Tender ;
+	rdfs:range xsd:boolean .
+
+a4g:isVariant rdfs:domain a4g:Tender ;
+	rdfs:range xsd:boolean .
+
+a4g:isSubjectToGrouping rdfs:domain a4g:Tender ;
+	rdfs:range a4g:LotGroup .
+
+a4g:hasFinancialOfferValue rdfs:domain a4g:Tender ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:isSubmitedBy rdfs:domain a4g:Tender ;
+	rdfs:range a4g:Tenderer .
+
+a4g:isSubmittedForLot rdfs:domain a4g:Tender ;
+	rdfs:range a4g:Lot ;
+	a owl:FunctionalProperty .
+
+a4g:hasEstimatedPercentage rdfs:domain a4g:SubcontractingEstimate ;
+	rdfs:range xsd:decimal .
+
+a4g:hasSubcontractingEstimatedValue rdfs:domain a4g:SubcontractingEstimate ;
+	rdfs:range a4g:MonetaryValue .
+
 a4g:foreseesTechnique rdfs:domain a4g:PlannedProcurementPart ;
 	rdfs:range a4g:Technique .
 
@@ -729,11 +1131,24 @@ a4g:Technique rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
+a4g:hasValidityPeriod rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			m8g:Evidence
+			a4g:Technique
+			a4g:Catalogue
+		) ;
+	] ;
+	rdfs:range a4g:Period .
+
 a4g:GreenProcurement rdfs:subClassOf [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:usesCleanVehicleDirective ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:usesCleanVehicleDirective rdfs:domain a4g:GreenProcurement ;
+	rdfs:range xsd:boolean .
 
 a4g:fulfillsRequirement rdfs:domain [
 		rdf:type owl:Class ;
@@ -766,6 +1181,9 @@ a4g:Purpose rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasTotalQuantity rdfs:domain a4g:Purpose ;
+	rdfs:range a4g:Quantity .
+
 a4g:hasAdditionalContractNature rdfs:domain a4g:ContractTerm ;
 	rdfs:range skos:Concept .
 
@@ -795,13 +1213,32 @@ a4g:ReviewRequest rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:hasNumberOfReviewRequests ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasReviewRequestFee ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasWithdrawalReason rdfs:domain a4g:ReviewRequest ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasRequestDate rdfs:domain a4g:ReviewRequest ;
+	rdfs:range xsd:date .
+
+a4g:hasWithdrawalDate rdfs:domain a4g:ReviewRequest ;
+	rdfs:range xsd:date .
+
+a4g:isWithdrawn rdfs:domain a4g:ReviewRequest ;
+	rdfs:range xsd:boolean .
+
+a4g:hasNumberOfReviewRequests rdfs:domain a4g:ReviewRequest ;
+	rdfs:range xsd:integer ;
+	a owl:FunctionalProperty .
+
+a4g:hasReviewRequestFee rdfs:domain a4g:ReviewRequest ;
+	rdfs:range a4g:MonetaryValue .
 
 a4g:hasAmount rdfs:domain [
 		rdf:type owl:Class ;
@@ -814,9 +1251,13 @@ a4g:hasAmount rdfs:domain [
 
 a4g:MonetaryValue rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:hasAmountValue ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasAmountValue rdfs:domain a4g:MonetaryValue ;
+	rdfs:range xsd:decimal ;
+	a owl:FunctionalProperty .
 
 a4g:hasAmountDueForPayment rdfs:domain a4g:Order ;
 	rdfs:range a4g:MonetaryValue .
@@ -852,6 +1293,18 @@ a4g:AwardEvaluationTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasOverallQualityAwardCriteriaPonderation rdfs:domain a4g:AwardEvaluationTerm ;
+	rdfs:range xsd:decimal .
+
+a4g:hasAwardCriteriaOrderJustification rdfs:domain a4g:AwardEvaluationTerm ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasOverallPriceAwardCriteriaPonderation rdfs:domain a4g:AwardEvaluationTerm ;
+	rdfs:range xsd:decimal .
+
+a4g:hasOverallCostAwardCriteriaPonderation rdfs:domain a4g:AwardEvaluationTerm ;
+	rdfs:range xsd:decimal .
+
 a4g:hasAwardCriterionType rdfs:domain a4g:AwardCriterion ;
 	rdfs:range skos:Concept .
 
@@ -861,9 +1314,16 @@ a4g:AwardCriterion rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:hasAwardCriteriaStatedInProcurementDocuments ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasFixedValue rdfs:domain a4g:AwardCriterion ;
+	rdfs:range xsd:decimal .
+
+a4g:hasAwardCriteriaStatedInProcurementDocuments rdfs:domain a4g:AwardCriterion ;
+	rdfs:range xsd:boolean ;
+	a owl:FunctionalProperty .
 
 a4g:hasAwardStatus rdfs:domain a4g:AwardOutcome ;
 	rdfs:range skos:Concept .
@@ -873,9 +1333,13 @@ a4g:hasBaseQuantity rdfs:domain a4g:Price ;
 
 a4g:Quantity rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:hasQuantityValue ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasQuantityValue rdfs:domain a4g:Quantity ;
+	rdfs:range xsd:decimal ;
+	a owl:FunctionalProperty .
 
 a4g:hasBatchID rdfs:domain a4g:Batch ;
 	rdfs:range adms:Identifier .
@@ -892,6 +1356,9 @@ a4g:Business rdfs:subClassOf [
 
 a4g:isBeneficialOwnerOf rdfs:domain person:Person ;
 	rdfs:range a4g:Business .
+
+a4g:isListedCompany rdfs:domain a4g:Business ;
+	rdfs:range xsd:boolean .
 
 a4g:hasBroadPlaceOfPerformance rdfs:domain a4g:ContractTerm ;
 	rdfs:range skos:Concept .
@@ -911,6 +1378,12 @@ a4g:FrameworkAgreementTerm rdfs:subClassOf [
 		owl:onProperty a4g:hasDurationExtensionJustification ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasMaximumParticipantsNumber rdfs:domain a4g:FrameworkAgreementTerm ;
+	rdfs:range xsd:integer .
+
+a4g:hasDurationExtensionJustification rdfs:domain a4g:FrameworkAgreementTerm ;
+	rdfs:range rdf:PlainLiteral .
 
 a4g:hasBuyerItemID rdfs:domain a4g:Item ;
 	rdfs:range adms:Identifier .
@@ -933,6 +1406,12 @@ a4g:Period rdfs:subClassOf [
 		owl:onProperty a4g:hasBeginning ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasEnd rdfs:domain a4g:Period ;
+	rdfs:range xsd:dateTime .
+
+a4g:hasBeginning rdfs:domain a4g:Period ;
+	rdfs:range xsd:dateTime .
 
 a4g:hasCertification rdfs:domain [
 		rdf:type owl:Class ;
@@ -958,17 +1437,26 @@ a4g:Certificate rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:issuedByCertifier rdfs:domain a4g:Certificate ;
+	rdfs:range a4g:Certifier .
+
+a4g:attestedByLabel rdfs:domain a4g:Certificate ;
+	rdfs:range a4g:CertificationLabel .
+
+a4g:hasCertificationNumber rdfs:domain a4g:Certificate ;
+	rdfs:range rdf:PlainLiteral .
+
 a4g:hasChangeDescription rdfs:domain a4g:ChangeInformation ;
 	rdfs:range rdf:PlainLiteral .
 
 a4g:ChangeInformation rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:concernsNotice ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:refersToPreviousNotice ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasAdditionalInformation ;
@@ -987,6 +1475,36 @@ a4g:ChangeInformation rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] ;
 	a owl:Class .
+
+a4g:concernsNotice rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ChangeInformation
+			a4g:NonPublishedInformation
+		) ;
+	] ;
+	rdfs:range a4g:Notice ;
+	a owl:FunctionalProperty .
+
+a4g:refersToPreviousNotice rdfs:domain a4g:ChangeInformation ;
+	rdfs:range a4g:Notice ;
+	a owl:FunctionalProperty .
+
+a4g:isProcurementDocumentChanged rdfs:domain a4g:ChangeInformation ;
+	rdfs:range xsd:boolean .
+
+a4g:relatesToEFormSectionIdentifier rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ChangeInformation
+			a4g:NonPublishedInformation
+			a4g:ContractModificationInformation
+		) ;
+	] ;
+	rdfs:range adms:Identifier .
+
+a4g:hasProcurementDocumentChangeDate rdfs:domain a4g:ChangeInformation ;
+	rdfs:range xsd:dateTime .
 
 a4g:hasChangeJustification rdfs:domain a4g:ChangeInformation ;
 	rdfs:range skos:Concept .
@@ -1013,9 +1531,19 @@ a4g:ReviewDecision rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:resolvesReviewRequest ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasRemedyValue rdfs:domain a4g:ReviewDecision ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasDecisionDate rdfs:domain a4g:ReviewDecision ;
+	rdfs:range xsd:date .
+
+a4g:resolvesReviewRequest rdfs:domain a4g:ReviewDecision ;
+	rdfs:range a4g:ReviewRequest ;
+	a owl:FunctionalProperty .
 
 a4g:hasConsigneeConsignmentID rdfs:domain a4g:Consignment ;
 	rdfs:range adms:Identifier .
@@ -1039,6 +1567,9 @@ a4g:ProcurementCriterion rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] ;
 	a owl:Class .
+
+a4g:hasFormula rdfs:domain a4g:ProcurementCriterion ;
+	rdfs:range rdf:PlainLiteral .
 
 a4g:hasConstraint rdfs:domain [
 		rdf:type owl:Class ;
@@ -1115,6 +1646,9 @@ a4g:DirectAwardTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:refersToPreviousProcedure rdfs:domain a4g:DirectAwardTerm ;
+	rdfs:range a4g:Procedure .
+
 a4g:hasDocumentRestrictionJustification rdfs:domain a4g:AccessTerm ;
 	rdfs:range skos:Concept .
 
@@ -1175,6 +1709,45 @@ a4g:SubmissionTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:isAdvancedElectronicSignatureRequired rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasReceiptParticipationRequestDeadline rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:dateTime .
+
+a4g:hasReceiptTenderDeadline rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:dateTime .
+
+a4g:isMultipleTenderSubmissionAllowed rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasReceiptExpressionDeadline rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:dateTime .
+
+a4g:hasTenderValidityDuration rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range a4g:Duration .
+
+a4g:hasReceiptPreliminaryMarketConsultationDeadline rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:dateTime .
+
+a4g:definesTenderReceiver rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range a4g:TenderReceiver .
+
+a4g:hasTenderValidityPeriod rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range a4g:Period .
+
+a4g:hasEAuctionURL rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:anyURI .
+
+a4g:isGuaranteeRequired rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:definesTenderProcessor rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range a4g:TenderProcessor .
+
+a4g:hasReceiptDeadline rdfs:domain a4g:SubmissionTerm ;
+	rdfs:range xsd:dateTime .
+
 a4g:hasEInvoicingPermission rdfs:domain a4g:ContractTerm ;
 	rdfs:range skos:Concept .
 
@@ -1190,8 +1763,8 @@ a4g:hasElectronicSignature rdfs:domain a4g:Document ;
 
 a4g:ElectronicSignature rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty dcterms:description ;
+		owl:cardinality 1 ;
 	] ;
 	a owl:Class .
 
@@ -1242,6 +1815,15 @@ a4g:Fund rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
+a4g:hasURL rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			m8g:Evidence
+			a4g:Fund
+		) ;
+	] ;
+	rdfs:range xsd:anyURI .
+
 a4g:hasGrossVolume rdfs:domain [
 		rdf:type owl:Class ;
 		owl:unionOf (
@@ -1276,6 +1858,12 @@ a4g:OrganisationGroup rdfs:subClassOf [
 		owl:minCardinality 1 ;
 	] .
 
+a4g:leadBy rdfs:domain a4g:OrganisationGroup ;
+	rdfs:range org:Organization .
+
+a4g:hasMember rdfs:domain a4g:OrganisationGroup ;
+	rdfs:range org:Organization .
+
 a4g:hasGuaranteeDescription rdfs:domain a4g:SubmissionTerm ;
 	rdfs:range rdf:PlainLiteral .
 
@@ -1284,8 +1872,8 @@ a4g:hasHeight rdfs:domain a4g:AbstractContainer ;
 
 a4g:ProcurementElement rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty adms:identifier ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasEstimatedValue ;
@@ -1307,9 +1895,13 @@ a4g:hasIrregularityType rdfs:domain a4g:ReviewIrregularitySummary ;
 
 a4g:ReviewIrregularitySummary rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:hasReviewIrregularityCount ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasReviewIrregularityCount rdfs:domain a4g:ReviewIrregularitySummary ;
+	rdfs:range xsd:integer ;
+	a owl:FunctionalProperty .
 
 a4g:hasItemCountryOfOrigin rdfs:domain a4g:Tender ;
 	rdfs:range skos:Concept .
@@ -1328,6 +1920,9 @@ a4g:CertificationLabel rdfs:subClassOf [
 		owl:onProperty a4g:hasReferenceURI ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasReferenceURI rdfs:domain a4g:CertificationLabel ;
+	rdfs:range xsd:anyURI .
 
 a4g:hasLanguage rdfs:domain a4g:SubmissionTerm ;
 	rdfs:range skos:Concept .
@@ -1439,9 +2034,15 @@ a4g:NonPublishedInformation rdfs:subClassOf [
 		owl:minCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:concernsNotice ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasConfidentialityJustification rdfs:domain a4g:NonPublishedInformation ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasAccessibilityDate rdfs:domain a4g:NonPublishedInformation ;
+	rdfs:range xsd:date .
 
 a4g:hasNoticeType rdfs:domain a4g:Notice ;
 	rdfs:range skos:Concept .
@@ -1467,13 +2068,23 @@ a4g:OpeningTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:hasOpeningDateTime ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:definesOpeningPlace ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasOpeningURL rdfs:domain a4g:OpeningTerm ;
+	rdfs:range xsd:anyURI .
+
+a4g:hasOpeningDateTime rdfs:domain a4g:OpeningTerm ;
+	rdfs:range xsd:dateTime ;
+	a owl:FunctionalProperty .
+
+a4g:definesOpeningPlace rdfs:domain a4g:OpeningTerm ;
+	rdfs:range locn:Address .
 
 a4g:hasOptionsDescription rdfs:domain a4g:ContractTerm ;
 	rdfs:range rdf:PlainLiteral .
@@ -1602,8 +2213,8 @@ a4g:SubmissionStatisticalInformation rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:summarisesInformationForAwardOutcome ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasMediumTenderPerLots ;
@@ -1617,6 +2228,70 @@ a4g:SubmissionStatisticalInformation rdfs:subClassOf [
 		owl:onProperty a4g:hasEstimatedTotalSubcontracts ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasEEAReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasReceivedParticipationRequests rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasNonEUReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasNonEEAReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasAbnormallyLowTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasLowestReceivedTenderValue rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasElectronicTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasNumberOfTenderersInvited rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasOtherCountriesReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasHighestReceivedTenderValue rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasSMEReceivedTendersExcludingSubcontractors rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasSMEReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasReceivedSmallTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasUnverifiedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasInadmissibleTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasEUReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:summarisesInformationForAwardOutcome rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range a4g:AwardOutcome ;
+	a owl:FunctionalProperty .
+
+a4g:hasMediumTenderPerLots rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasReceivedMicroTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasEstimatedTotalSubcontracts rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
 
 a4g:hasRegistrationCountry rdfs:domain org:Organization ;
 	rdfs:range skos:Concept .
@@ -1639,6 +2314,12 @@ a4g:ParticipationConditionsSummary rdfs:subClassOf [
 		owl:onProperty a4g:describesObjectiveParticipationRules ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:describesVerificationMethod rdfs:domain a4g:ParticipationConditionsSummary ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:describesObjectiveParticipationRules rdfs:domain a4g:ParticipationConditionsSummary ;
+	rdfs:range rdf:PlainLiteral .
 
 a4g:hasReservedProcurement rdfs:domain [
 		rdf:type owl:Class ;
@@ -1663,13 +2344,20 @@ a4g:hasReviewIrregularitySummary rdfs:domain a4g:ReviewRequestSummary ;
 
 a4g:ReviewRequestSummary rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:concernsReviewSummaryForLot ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasTotalNumberOfComplainants ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:concernsReviewSummaryForLot rdfs:domain a4g:ReviewRequestSummary ;
+	rdfs:range a4g:Lot ;
+	a owl:FunctionalProperty .
+
+a4g:hasTotalNumberOfComplainants rdfs:domain a4g:ReviewRequestSummary ;
+	rdfs:range xsd:integer .
 
 a4g:hasReviewProcedure rdfs:domain a4g:ReviewTerm ;
 	rdfs:range rdf:PlainLiteral .
@@ -1691,6 +2379,9 @@ a4g:SelectionCriterion rdfs:subClassOf [
 		owl:onProperty a4g:isUsedForCandidateRestriction ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:isUsedForCandidateRestriction rdfs:domain a4g:SelectionCriterion ;
+	rdfs:range xsd:boolean .
 
 a4g:hasSelectionCriterionType rdfs:domain a4g:SelectionCriterion ;
 	rdfs:range skos:Concept .
@@ -1738,6 +2429,21 @@ a4g:SubcontractTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] ;
 	a owl:Class .
+
+a4g:hasMinimumSubcontractorsProposedObligation rdfs:domain a4g:SubcontractTerm ;
+	rdfs:range xsd:decimal .
+
+a4g:hasMinimumShare rdfs:domain a4g:SubcontractTerm ;
+	rdfs:range xsd:decimal .
+
+a4g:hasSubcontractorsProposedAboveObligation rdfs:domain a4g:SubcontractTerm ;
+	rdfs:range xsd:decimal .
+
+a4g:hasMaximumShare rdfs:domain a4g:SubcontractTerm ;
+	rdfs:range xsd:decimal .
+
+a4g:hasSubcontractingInvolved rdfs:domain a4g:SubcontractTerm ;
+	rdfs:range xsd:boolean .
 
 a4g:hasSubjectMatter rdfs:domain a4g:SubcontractingEstimate ;
 	rdfs:range rdf:PlainLiteral .
@@ -1991,9 +2697,28 @@ a4g:LotAwardOutcome rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:concernsLot ;
+		owl:cardinality 1 ;
 	] .
+
+a4g:hasFrameworkAgreementMaximumValue rdfs:domain a4g:LotAwardOutcome ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasNonAwardedContractTitle rdfs:domain a4g:LotAwardOutcome ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:hasNonAwardedContractNumber rdfs:domain a4g:LotAwardOutcome ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:concernsLot rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:LotAwardOutcome
+			a4g:ProcurementProcessInformation
+		) ;
+	] ;
+	rdfs:range a4g:Lot ;
+	a owl:FunctionalProperty .
 
 a4g:signedByBuyer rdfs:domain a4g:Contract ;
 	rdfs:range a4g:Buyer .
@@ -2040,8 +2765,8 @@ a4g:VehicleInformation rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:concernsGreenProcurement ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasZeroEmissionVehicles ;
@@ -2051,6 +2776,19 @@ a4g:VehicleInformation rdfs:subClassOf [
 		owl:onProperty a4g:hasTotalVehicles ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:hasCleanVehicles rdfs:domain a4g:VehicleInformation ;
+	rdfs:range xsd:integer .
+
+a4g:concernsGreenProcurement rdfs:domain a4g:VehicleInformation ;
+	rdfs:range a4g:GreenProcurement ;
+	a owl:FunctionalProperty .
+
+a4g:hasZeroEmissionVehicles rdfs:domain a4g:VehicleInformation ;
+	rdfs:range xsd:integer .
+
+a4g:hasTotalVehicles rdfs:domain a4g:VehicleInformation ;
+	rdfs:range xsd:integer .
 
 a4g:specifiesCleanVehicleDirectiveVehicleCategory rdfs:domain a4g:VehicleInformation ;
 	rdfs:range skos:Concept .
@@ -2075,6 +2813,9 @@ a4g:ProcurementCriteriaSummary rdfs:subClassOf [
 		owl:onProperty a4g:indicatesPerformingStaffInformationRequirement ;
 		owl:maxCardinality 1 ;
 	] .
+
+a4g:indicatesPerformingStaffInformationRequirement rdfs:domain a4g:ProcurementCriteriaSummary ;
+	rdfs:range xsd:boolean .
 
 a4g:specifiesProcurementCriterion rdfs:domain [
 		rdf:type owl:Class ;
@@ -2115,8 +2856,8 @@ _:b126 a owl:Class ;
 
 a4g:SpecificDuration rdfs:subClassOf [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty time:numericDuration ;
+		owl:cardinality 1 ;
 	] .
 
 foaf:familyName rdfs:domain person:Person ;
@@ -2127,24 +2868,6 @@ foaf:givenName rdfs:domain person:Person ;
 
 foaf:name rdfs:domain person:Person ;
 	rdfs:range rdf:PlainLiteral .
-
-a4g:actsOnBehalfOf rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:ProcurementServiceProvider
-			a4g:LegalRepresentative
-		) ;
-	] ;
-	rdfs:range [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:Buyer
-			a4g:OfferingParty
-		) ;
-	] .
-
-a4g:attestedByLabel rdfs:domain a4g:Certificate ;
-	rdfs:range a4g:CertificationLabel .
 
 a4g:comprisesTender rdfs:domain a4g:TenderGroup ;
 	rdfs:range a4g:Tender .
@@ -2159,8 +2882,8 @@ a4g:TenderGroup rdfs:subClassOf [
 		owl:minCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:isSubmittedForLotGroup ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty adms:identifier ;
@@ -2168,8 +2891,17 @@ a4g:TenderGroup rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
-a4g:concernsGreenProcurement rdfs:domain a4g:VehicleInformation ;
-	rdfs:range a4g:GreenProcurement ;
+a4g:hasTotalValue rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:TenderGroup
+			a4g:Deliverable
+		) ;
+	] ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:isSubmittedForLotGroup rdfs:domain a4g:TenderGroup ;
+	rdfs:range a4g:LotGroup ;
 	a owl:FunctionalProperty .
 
 a4g:ProcurementProcessInformation rdfs:subClassOf [
@@ -2194,6 +2926,15 @@ a4g:ProcurementProcessInformation rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:isToBeRelaunched rdfs:domain a4g:ProcurementProcessInformation ;
+	rdfs:range xsd:boolean .
+
+a4g:isCompetitionTerminated rdfs:domain a4g:ProcurementProcessInformation ;
+	rdfs:range xsd:boolean .
+
+a4g:isDPSTerminated rdfs:domain a4g:ProcurementProcessInformation ;
+	rdfs:range xsd:boolean .
+
 a4g:concernsProcedure rdfs:domain [
 		rdf:type owl:Class ;
 		owl:unionOf (
@@ -2202,32 +2943,6 @@ a4g:concernsProcedure rdfs:domain [
 		) ;
 	] ;
 	rdfs:range a4g:Procedure .
-
-a4g:concernsReviewSummaryForLot rdfs:domain a4g:ReviewRequestSummary ;
-	rdfs:range a4g:Lot ;
-	a owl:FunctionalProperty .
-
-a4g:concernsTender rdfs:domain a4g:TenderAwardOutcome ;
-	rdfs:range a4g:Tender ;
-	a owl:FunctionalProperty .
-
-a4g:definesBudgetProvider rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range a4g:BudgetProvider .
-
-a4g:definesContractDuration rdfs:domain a4g:ContractTerm ;
-	rdfs:range a4g:Duration .
-
-a4g:definesContractPeriod rdfs:domain a4g:ContractTerm ;
-	rdfs:range a4g:Period .
-
-a4g:definesMediator rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range a4g:Mediator .
-
-a4g:definesOfflineAccessProvider rdfs:domain a4g:AccessTerm ;
-	rdfs:range a4g:OfflineAccessProvider .
-
-a4g:definesOpeningPlace rdfs:domain a4g:OpeningTerm ;
-	rdfs:range locn:Address .
 
 a4g:definesParticipationRequestProcessor rdfs:domain a4g:ParticipationRequestTerm ;
 	rdfs:range a4g:ParticipationRequestProcessor .
@@ -2245,24 +2960,6 @@ a4g:ParticipationRequestTerm rdfs:subClassOf [
 a4g:definesParticipationRequestReceiver rdfs:domain a4g:ParticipationRequestTerm ;
 	rdfs:range a4g:ParticipationRequestReceiver .
 
-a4g:definesPaymentExecutor rdfs:domain a4g:ContractTerm ;
-	rdfs:range a4g:PaymentExecutor .
-
-a4g:definesProcurementProcedureInformationProvider rdfs:domain a4g:AccessTerm ;
-	rdfs:range a4g:ProcurementProcedureInformationProvider .
-
-a4g:definesReviewProcedureInformationProvider rdfs:domain a4g:ReviewTerm ;
-	rdfs:range a4g:ReviewProcedureInformationProvider .
-
-a4g:definesSubcontractingTerm rdfs:domain a4g:ContractTerm ;
-	rdfs:range a4g:SubcontractTerm .
-
-a4g:definesTenderProcessor rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range a4g:TenderProcessor .
-
-a4g:definesTenderReceiver rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range a4g:TenderReceiver .
-
 a4g:describesLotCompletion rdfs:domain a4g:ContractLotCompletionInformation ;
 	rdfs:range a4g:Lot ;
 	a owl:FunctionalProperty .
@@ -2273,25 +2970,34 @@ a4g:ContractLotCompletionInformation rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:describesLotCompletion ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasPaymentValueDiscrepancyJustification ;
 		owl:maxCardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
 		owl:onProperty a4g:refersToContract ;
+		owl:cardinality 1 ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:providesContractTotalPenaltyValue ;
 		owl:maxCardinality 1 ;
 	] .
 
-a4g:describesLotGroup rdfs:domain a4g:LotGroupAwardInformation ;
-	rdfs:range a4g:LotGroup ;
+a4g:providesContractTotalPaymentValue rdfs:domain a4g:ContractLotCompletionInformation ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasPaymentValueDiscrepancyJustification rdfs:domain a4g:ContractLotCompletionInformation ;
+	rdfs:range rdf:PlainLiteral .
+
+a4g:refersToContract rdfs:domain a4g:ContractLotCompletionInformation ;
+	rdfs:range a4g:Contract ;
 	a owl:FunctionalProperty .
+
+a4g:providesContractTotalPenaltyValue rdfs:domain a4g:ContractLotCompletionInformation ;
+	rdfs:range a4g:MonetaryValue .
 
 a4g:describesMinimumLevelOfStandards rdfs:domain a4g:SelectionCriteriaSummary ;
 	rdfs:range rdf:PlainLiteral .
@@ -2306,8 +3012,8 @@ a4g:SelectionCriteriaSummary rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
-a4g:describesObjectiveParticipationRules rdfs:domain a4g:ParticipationConditionsSummary ;
-	rdfs:range rdf:PlainLiteral .
+a4g:hasSelectionCriteriaStatedInProcurementDocuments rdfs:domain a4g:SelectionCriteriaSummary ;
+	rdfs:range xsd:boolean .
 
 a4g:describesProfession rdfs:domain a4g:ProfessionalSuitabilitySummary ;
 	rdfs:range rdf:PlainLiteral .
@@ -2329,8 +3035,8 @@ a4g:ProfessionalSuitabilitySummary rdfs:subClassOf [
 a4g:describesProfessionRelevantLaw rdfs:domain a4g:ProfessionalSuitabilitySummary ;
 	rdfs:range rdf:PlainLiteral .
 
-a4g:describesVerificationMethod rdfs:domain a4g:ParticipationConditionsSummary ;
-	rdfs:range rdf:PlainLiteral .
+a4g:hasServiceReservedToParticularProfession rdfs:domain a4g:ProfessionalSuitabilitySummary ;
+	rdfs:range xsd:boolean .
 
 a4g:followsRulesSetBy rdfs:domain a4g:PurchaseContract ;
 	rdfs:range a4g:FrameworkAgreement .
@@ -2345,34 +3051,11 @@ a4g:PurchaseContract rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
-a4g:foreseesProcurementObject rdfs:domain a4g:PlannedProcurementPart ;
-	rdfs:range a4g:ProcurementObject .
-
-a4g:hasAbnormallyLowTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasAccessibilityDate rdfs:domain a4g:NonPublishedInformation ;
-	rdfs:range xsd:date .
-
-a4g:hasAdditionalInformationDeadline rdfs:domain a4g:AccessTerm ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasAdditionalNonAwardJustification rdfs:domain a4g:AwardDecision ;
-	rdfs:range rdf:PlainLiteral .
+a4g:resultsFromMiniCompetitionAwardOutcome rdfs:domain a4g:PurchaseContract ;
+	rdfs:range a4g:MiniCompetitionAwardOutcome .
 
 a4g:hasAddressURL rdfs:domain m8g:Channel ;
 	rdfs:range xsd:anyURI .
-
-a4g:hasAmountValue rdfs:domain a4g:MonetaryValue ;
-	rdfs:range xsd:decimal ;
-	a owl:FunctionalProperty .
-
-a4g:hasAwardCriteriaOrderJustification rdfs:domain a4g:AwardEvaluationTerm ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasAwardCriteriaStatedInProcurementDocuments rdfs:domain a4g:AwardCriterion ;
-	rdfs:range xsd:boolean ;
-	a owl:FunctionalProperty .
 
 a4g:hasAwardDateScheduled rdfs:domain a4g:ProcessPlanningTerm ;
 	rdfs:range xsd:date .
@@ -2391,26 +3074,14 @@ a4g:ProcessPlanningTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
-a4g:hasAwardDecisionDate rdfs:domain a4g:AwardDecision ;
-	rdfs:range xsd:dateTime .
+a4g:hasEstimatedContractNoticePublicationDate rdfs:domain a4g:ProcessPlanningTerm ;
+	rdfs:range xsd:date .
 
-a4g:hasAwardRank rdfs:domain a4g:TenderAwardOutcome ;
-	rdfs:range xsd:integer .
-
-a4g:hasAwardedValue rdfs:domain a4g:AwardOutcome ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasBargainPrice rdfs:domain a4g:AwardOutcome ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasBeginning rdfs:domain a4g:Period ;
-	rdfs:range xsd:dateTime .
+a4g:hasEstimatedTenderInvitationDate rdfs:domain a4g:ProcessPlanningTerm ;
+	rdfs:range xsd:date .
 
 a4g:hasBuyerLegalTypeDescription rdfs:domain org:Organization ;
 	rdfs:range rdf:PlainLiteral .
-
-a4g:hasBuyerProfile rdfs:domain a4g:Buyer ;
-	rdfs:range xsd:anyURI .
 
 a4g:hasCalculationMethod rdfs:domain a4g:ConcessionEstimate ;
 	rdfs:range rdf:PlainLiteral .
@@ -2433,26 +3104,17 @@ a4g:ConcessionEstimate rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
-a4g:hasCertificationNumber rdfs:domain a4g:Certificate ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasCleanVehicles rdfs:domain a4g:VehicleInformation ;
-	rdfs:range xsd:integer .
-
 a4g:hasConcessionEstimatedValue rdfs:domain a4g:ConcessionEstimate ;
 	rdfs:range a4g:MonetaryValue .
 
-a4g:hasConfidentialityJustification rdfs:domain a4g:NonPublishedInformation ;
-	rdfs:range rdf:PlainLiteral .
+a4g:hasEstimatedUserConcessionRevenue rdfs:domain a4g:ConcessionEstimate ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:hasEstimatedBuyerConcessionRevenue rdfs:domain a4g:ConcessionEstimate ;
+	rdfs:range a4g:MonetaryValue .
 
 a4g:hasContactName rdfs:domain m8g:ContactPoint ;
 	rdfs:range rdf:PlainLiteral .
-
-a4g:hasContractConclusionDate rdfs:domain a4g:Contract ;
-	rdfs:range xsd:date .
-
-a4g:hasContractValue rdfs:domain a4g:Contract ;
-	rdfs:range a4g:MonetaryValue .
 
 a4g:hasDeadline rdfs:domain a4g:SecurityClearanceTerm ;
 	rdfs:range xsd:dateTime .
@@ -2468,62 +3130,8 @@ a4g:SecurityClearanceTerm rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
-a4g:hasDecisionDate rdfs:domain a4g:ReviewDecision ;
-	rdfs:range xsd:date .
-
-a4g:hasDescriptionOfPrizes rdfs:domain a4g:DesignContestRegimeTerm ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasDispatchDate rdfs:domain a4g:Document ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasDurationExtensionJustification rdfs:domain a4g:FrameworkAgreementTerm ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasEAuctionURL rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:anyURI .
-
-a4g:hasEEAReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasEFormsSubtype rdfs:domain a4g:Notice ;
-	rdfs:range xsd:integer .
-
-a4g:hasEInvoicing rdfs:domain a4g:ContractTerm ;
+a4g:isSecurityClearanceRequired rdfs:domain a4g:SecurityClearanceTerm ;
 	rdfs:range xsd:boolean .
-
-a4g:hasEOrdering rdfs:domain a4g:ContractTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:hasEPayment rdfs:domain a4g:ContractTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:hasESenderDispatchDate rdfs:domain a4g:Notice ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasEUReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasElectronicSubmission rdfs:domain a4g:Tender ;
-	rdfs:range xsd:boolean .
-
-a4g:hasElectronicTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasEnd rdfs:domain a4g:Period ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasEntryIntoForceDate rdfs:domain a4g:Contract ;
-	rdfs:range xsd:date .
-
-a4g:hasEstimatedBuyerConcessionRevenue rdfs:domain a4g:ConcessionEstimate ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasEstimatedContractNoticePublicationDate rdfs:domain a4g:ProcessPlanningTerm ;
-	rdfs:range xsd:date .
-
-a4g:hasEstimatedDuration rdfs:domain a4g:Contract ;
-	rdfs:range a4g:Duration .
 
 a4g:hasEstimatedInvitationToExpressInterestDate rdfs:domain a4g:MultipleStageProcedureTerm ;
 	rdfs:range xsd:date .
@@ -2562,46 +3170,25 @@ a4g:MultipleStageProcedureTerm rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
+a4g:hasMaximumNumberOfCandidates rdfs:domain a4g:MultipleStageProcedureTerm ;
+	rdfs:range xsd:integer .
+
+a4g:hasNoNegotiationNecessary rdfs:domain a4g:MultipleStageProcedureTerm ;
+	rdfs:range xsd:boolean .
+
+a4g:hasSuccessiveReduction rdfs:domain a4g:MultipleStageProcedureTerm ;
+	rdfs:range xsd:boolean .
+
 a4g:hasEstimatedInvitationToTenderDate rdfs:domain a4g:MultipleStageProcedureTerm ;
 	rdfs:range xsd:date .
 
-a4g:hasEstimatedPercentage rdfs:domain a4g:SubcontractingEstimate ;
-	rdfs:range xsd:decimal .
+a4g:hasQualificationSystemDuration rdfs:domain a4g:MultipleStageProcedureTerm ;
+	rdfs:range a4g:Duration .
 
-a4g:hasEstimatedTenderInvitationDate rdfs:domain a4g:ProcessPlanningTerm ;
-	rdfs:range xsd:date .
-
-a4g:hasEstimatedTotalSubcontracts rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasEstimatedUserConcessionRevenue rdfs:domain a4g:ConcessionEstimate ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasFinancialOfferValue rdfs:domain a4g:Tender ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasFixedValue rdfs:domain a4g:AwardCriterion ;
-	rdfs:range xsd:decimal .
-
-a4g:hasFollowupContract rdfs:domain a4g:DesignContestRegimeTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:hasFormNumber rdfs:domain a4g:Notice ;
+a4g:hasQualificationSystemRenewalDescription rdfs:domain a4g:MultipleStageProcedureTerm ;
 	rdfs:range rdf:PlainLiteral .
 
-a4g:hasFormula rdfs:domain a4g:ProcurementCriterion ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasFrameworkAgreementMaximumValue rdfs:domain a4g:LotAwardOutcome ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasGroupFrameworkAgreementMaximumValue rdfs:domain a4g:LotGroupAwardInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasHighestReceivedTenderValue rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasInadmissibleTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
+a4g:hasMinimumNumberOfCandidates rdfs:domain a4g:MultipleStageProcedureTerm ;
 	rdfs:range xsd:integer .
 
 a4g:hasInternetAddress rdfs:domain [
@@ -2613,304 +3200,18 @@ a4g:hasInternetAddress rdfs:domain [
 	] ;
 	rdfs:range xsd:anyURI .
 
-a4g:hasLegalFormRequirement rdfs:domain a4g:ContractTerm ;
-	rdfs:range rdf:PlainLiteral .
-
 a4g:hasLegalFormType rdfs:domain org:Organization ;
 	rdfs:range rdf:PlainLiteral .
-
-a4g:hasLotAwardCombination rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasLotReference rdfs:domain a4g:Contract ;
-	rdfs:range a4g:Lot .
-
-a4g:hasLowestReceivedTenderValue rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range a4g:MonetaryValue .
 
 a4g:hasMainActivityDescription rdfs:domain org:Organization ;
 	rdfs:range rdf:PlainLiteral .
 
-a4g:hasMaximumFrameworkAgreementAwardedValue rdfs:domain a4g:NoticeAwardInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasMaximumLotSubmissionAllowed rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range xsd:integer .
-
-a4g:hasMaximumNumberOfCandidates rdfs:domain a4g:MultipleStageProcedureTerm ;
-	rdfs:range xsd:integer .
-
-a4g:hasMaximumNumberOfLotsToBeAwarded rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range xsd:integer .
-
-a4g:hasMaximumNumberOfRenewals rdfs:domain a4g:ContractTerm ;
-	rdfs:range xsd:integer .
-
-a4g:hasMaximumParticipantsNumber rdfs:domain a4g:FrameworkAgreementTerm ;
-	rdfs:range xsd:integer .
-
-a4g:hasMaximumShare rdfs:domain a4g:SubcontractTerm ;
-	rdfs:range xsd:decimal .
-
-a4g:hasMediumTenderPerLots rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasMember rdfs:domain a4g:OrganisationGroup ;
-	rdfs:range org:Organization .
-
-a4g:hasMinimumNumberOfCandidates rdfs:domain a4g:MultipleStageProcedureTerm ;
-	rdfs:range xsd:integer .
-
-a4g:hasMinimumShare rdfs:domain a4g:SubcontractTerm ;
-	rdfs:range xsd:decimal .
-
-a4g:hasMinimumSubcontractorsProposedObligation rdfs:domain a4g:SubcontractTerm ;
-	rdfs:range xsd:decimal .
-
-a4g:hasNoNegotiationNecessary rdfs:domain a4g:MultipleStageProcedureTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:hasNonAwardedContractNumber rdfs:domain a4g:LotAwardOutcome ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasNonAwardedContractTitle rdfs:domain a4g:LotAwardOutcome ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasNonEEAReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasNonEUReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasNoticePublicationNumber rdfs:domain a4g:Notice ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasNumberOfReviewRequests rdfs:domain a4g:ReviewRequest ;
-	rdfs:range xsd:integer ;
-	a owl:FunctionalProperty .
-
-a4g:hasNumberOfTenderersInvited rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasOJSIssueNumber rdfs:domain a4g:Notice ;
-	rdfs:range xsd:integer .
-
-a4g:hasOJSType rdfs:domain a4g:Notice ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasOpeningDateTime rdfs:domain a4g:OpeningTerm ;
-	rdfs:range xsd:dateTime ;
-	a owl:FunctionalProperty .
-
-a4g:hasOpeningURL rdfs:domain a4g:OpeningTerm ;
-	rdfs:range xsd:anyURI .
-
-a4g:hasOptions rdfs:domain a4g:ContractTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:hasOtherCountriesReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasOverallCostAwardCriteriaPonderation rdfs:domain a4g:AwardEvaluationTerm ;
-	rdfs:range xsd:decimal .
-
-a4g:hasOverallPriceAwardCriteriaPonderation rdfs:domain a4g:AwardEvaluationTerm ;
-	rdfs:range xsd:decimal .
-
-a4g:hasOverallQualityAwardCriteriaPonderation rdfs:domain a4g:AwardEvaluationTerm ;
-	rdfs:range xsd:decimal .
-
-a4g:hasParticipationPayment rdfs:domain a4g:DesignContestRegimeTerm ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasPaymentValueDiscrepancyJustification rdfs:domain a4g:ContractLotCompletionInformation ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasPlannedDuration rdfs:domain a4g:PlannedProcurementPart ;
-	rdfs:range a4g:Duration .
-
-a4g:hasPlannedPeriod rdfs:domain a4g:PlannedProcurementPart ;
-	rdfs:range a4g:Period .
-
 a4g:hasPrimaryContactPoint rdfs:domain org:Organization ;
 	rdfs:range m8g:ContactPoint .
-
-a4g:hasPrizeRank rdfs:domain a4g:Prize ;
-	rdfs:range xsd:integer .
-
-a4g:hasPrizeValue rdfs:domain a4g:Prize ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasProcurementDocumentChangeDate rdfs:domain a4g:ChangeInformation ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasProcurementHighestReceivedTenderValue rdfs:domain a4g:NoticeAwardInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasProcurementLowestReceivedTenderValue rdfs:domain a4g:NoticeAwardInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasProcurementScopeDividedIntoLot rdfs:domain a4g:Procedure ;
-	rdfs:range a4g:Lot .
-
-a4g:hasPublicAccessURL rdfs:domain a4g:AccessTerm ;
-	rdfs:range xsd:anyURI .
-
-a4g:hasPublicationDate rdfs:domain a4g:Document ;
-	rdfs:range xsd:date .
-
-a4g:hasQualificationSystemDuration rdfs:domain a4g:MultipleStageProcedureTerm ;
-	rdfs:range a4g:Duration .
-
-a4g:hasQualificationSystemRenewalDescription rdfs:domain a4g:MultipleStageProcedureTerm ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasQuantityValue rdfs:domain a4g:Quantity ;
-	rdfs:range xsd:decimal ;
-	a owl:FunctionalProperty .
-
-a4g:hasReceiptDeadline rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasReceiptExpressionDeadline rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasReceiptParticipationRequestDeadline rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasReceiptPreliminaryMarketConsultationDeadline rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasReceiptTenderDeadline rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasReceivedMicroTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasReceivedParticipationRequests rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasReceivedSmallTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasReceptionDate rdfs:domain a4g:Document ;
-	rdfs:range xsd:date .
-
-a4g:hasRecurrenceDescription rdfs:domain a4g:ProcurementObject ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasReferenceURI rdfs:domain a4g:CertificationLabel ;
-	rdfs:range xsd:anyURI .
-
-a4g:hasRemedyValue rdfs:domain a4g:ReviewDecision ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasRequestDate rdfs:domain a4g:ReviewRequest ;
-	rdfs:range xsd:date .
-
-a4g:hasRestrictedAccessURL rdfs:domain a4g:AccessTerm ;
-	rdfs:range xsd:anyURI .
-
-a4g:hasReviewDeadline rdfs:domain a4g:ReviewTerm ;
-	rdfs:range xsd:dateTime .
-
-a4g:hasReviewIrregularityCount rdfs:domain a4g:ReviewIrregularitySummary ;
-	rdfs:range xsd:integer ;
-	a owl:FunctionalProperty .
-
-a4g:hasReviewRequestFee rdfs:domain a4g:ReviewRequest ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasReviewURL rdfs:domain a4g:ReviewObject ;
-	rdfs:range xsd:anyURI .
-
-a4g:hasSMEReceivedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasSMEReceivedTendersExcludingSubcontractors rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasSelectionCriteriaStatedInProcurementDocuments rdfs:domain a4g:SelectionCriteriaSummary ;
-	rdfs:range xsd:boolean .
-
-a4g:hasServiceReservedToParticularProfession rdfs:domain a4g:ProfessionalSuitabilitySummary ;
-	rdfs:range xsd:boolean .
-
-a4g:hasStartDate rdfs:domain a4g:SelectedCandidateList ;
-	rdfs:range a4g:Period .
-
-a4g:hasSubcontractingEstimatedValue rdfs:domain a4g:SubcontractingEstimate ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasSubcontractingInvolved rdfs:domain a4g:SubcontractTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:hasSubcontractorsProposedAboveObligation rdfs:domain a4g:SubcontractTerm ;
-	rdfs:range xsd:decimal .
-
-a4g:hasSuccessiveReduction rdfs:domain a4g:MultipleStageProcedureTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:hasTenderValidityDuration rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range a4g:Duration .
-
-a4g:hasTenderValidityPeriod rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range a4g:Period .
 
 a4g:hasThresholdValue rdfs:domain m8g:Constraint ;
 	rdfs:range xsd:decimal ;
 	a owl:FunctionalProperty .
-
-a4g:hasTotalAwardedValue rdfs:domain a4g:NoticeAwardInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasTotalNumberOfComplainants rdfs:domain a4g:ReviewRequestSummary ;
-	rdfs:range xsd:integer .
-
-a4g:hasTotalQuantity rdfs:domain a4g:Purpose ;
-	rdfs:range a4g:Quantity .
-
-a4g:hasTotalValue rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:TenderGroup
-			a4g:Deliverable
-		) ;
-	] ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasTotalVehicles rdfs:domain a4g:VehicleInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasUUID rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:Document
-			a4g:CatalogueResponseLine
-		) ;
-	] ;
-	rdfs:range adms:Identifier .
-
-a4g:hasUnverifiedTenders rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range xsd:integer .
-
-a4g:hasVersion rdfs:domain a4g:Document ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasWithdrawalDate rdfs:domain a4g:ReviewRequest ;
-	rdfs:range xsd:date .
-
-a4g:hasWithdrawalReason rdfs:domain a4g:ReviewRequest ;
-	rdfs:range rdf:PlainLiteral .
-
-a4g:hasZeroEmissionVehicles rdfs:domain a4g:VehicleInformation ;
-	rdfs:range xsd:integer .
-
-a4g:indicatesAwardToWinner rdfs:domain a4g:TenderAwardOutcome ;
-	rdfs:range a4g:Winner .
 
 a4g:Winner rdfs:subClassOf [
 		rdf:type owl:Restriction ;
@@ -2918,53 +3219,8 @@ a4g:Winner rdfs:subClassOf [
 		owl:maxCardinality 1 ;
 	] .
 
-a4g:indicatesPerformingStaffInformationRequirement rdfs:domain a4g:ProcurementCriteriaSummary ;
-	rdfs:range xsd:boolean .
-
-a4g:involvesProcurementDocument rdfs:domain a4g:AccessTerm ;
-	rdfs:range a4g:ProcurementDocument .
-
-a4g:isAccelerated rdfs:domain a4g:Procedure ;
-	rdfs:range xsd:boolean .
-
-a4g:isAdvancedElectronicSignatureRequired rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isAwardedByCPB rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isCompetitionTerminated rdfs:domain a4g:ProcurementProcessInformation ;
-	rdfs:range xsd:boolean .
-
-a4g:isContractingEntity rdfs:domain a4g:Buyer ;
-	rdfs:range xsd:boolean .
-
-a4g:isCoveredByGPA rdfs:domain a4g:ProcurementObject ;
-	rdfs:range xsd:boolean .
-
-a4g:isDPSTerminated rdfs:domain a4g:ProcurementProcessInformation ;
-	rdfs:range xsd:boolean .
-
-a4g:isDesignContest rdfs:domain a4g:Procedure ;
-	rdfs:range xsd:boolean .
-
-a4g:isExecutedByProcurementServiceProvider rdfs:domain a4g:Procedure ;
-	rdfs:range a4g:ProcurementServiceProvider .
-
-a4g:isGuaranteeRequired rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isJointProcurement rdfs:domain a4g:Procedure ;
-	rdfs:range xsd:boolean .
-
-a4g:isJuryDecisionBinding rdfs:domain a4g:DesignContestRegimeTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isListedCompany rdfs:domain a4g:Business ;
-	rdfs:range xsd:boolean .
-
-a4g:isMultipleTenderSubmissionAllowed rdfs:domain a4g:SubmissionTerm ;
-	rdfs:range xsd:boolean .
+a4g:needsToBeATenderer rdfs:domain a4g:Winner ;
+	rdfs:range a4g:Tenderer .
 
 a4g:isNonDisclosureAgreementRequired rdfs:domain a4g:NonDisclosureAgreementTerm ;
 	rdfs:range xsd:boolean .
@@ -2980,9 +3236,6 @@ a4g:NonDisclosureAgreementTerm rdfs:subClassOf [
 	] ;
 	a owl:Class .
 
-a4g:isOneLotOnlyAllowed rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range xsd:boolean .
-
 a4g:isOwnedByAgent rdfs:domain a4g:System ;
 	rdfs:range foaf:Agent ;
 	owl:inverseOf a4g:ownsSystem .
@@ -2997,131 +3250,14 @@ a4g:System rdfs:subClassOf [
 a4g:ownsSystem rdfs:domain foaf:Agent ;
 	rdfs:range a4g:System .
 
-a4g:isProcurementDocumentChanged rdfs:domain a4g:ChangeInformation ;
-	rdfs:range xsd:boolean .
-
-a4g:isProcurementDocumentRestricted rdfs:domain a4g:AccessTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isRecurrent rdfs:domain a4g:ProcurementObject ;
-	rdfs:range xsd:boolean .
-
-a4g:isRenewalIndicator rdfs:domain a4g:ContractTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isSMESuitable rdfs:domain a4g:ProcurementObject ;
-	rdfs:range xsd:boolean .
-
-a4g:isSecurityClearanceRequired rdfs:domain a4g:SecurityClearanceTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isSubjectToGrouping rdfs:domain a4g:Tender ;
-	rdfs:range a4g:LotGroup .
-
-a4g:isSubjectToProcedureSpecificTerm rdfs:domain a4g:Procedure ;
-	rdfs:range a4g:ProcedureSpecificTerm .
-
-a4g:isSubmissionForAllLotsRequired rdfs:domain a4g:ProcedureTerm ;
-	rdfs:range xsd:boolean .
-
-a4g:isSubmitedBy rdfs:domain a4g:Tender ;
-	rdfs:range a4g:Tenderer .
-
 a4g:Tenderer rdfs:subClassOf [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:substantiatesExclusionGround ;
 		owl:maxCardinality 1 ;
 	] .
 
-a4g:isSubmittedForLot rdfs:domain a4g:Tender ;
-	rdfs:range a4g:Lot ;
-	a owl:FunctionalProperty .
-
-a4g:isSubmittedForLotGroup rdfs:domain a4g:TenderGroup ;
-	rdfs:range a4g:LotGroup ;
-	a owl:FunctionalProperty .
-
-a4g:isToBeRelaunched rdfs:domain a4g:ProcurementProcessInformation ;
-	rdfs:range xsd:boolean .
-
-a4g:isUsedForCandidateRestriction rdfs:domain a4g:SelectionCriterion ;
-	rdfs:range xsd:boolean .
-
-a4g:isUsingEUFunds rdfs:domain a4g:ProcurementObject ;
-	rdfs:range xsd:boolean .
-
-a4g:isVariant rdfs:domain a4g:Tender ;
-	rdfs:range xsd:boolean .
-
-a4g:isWithdrawn rdfs:domain a4g:ReviewRequest ;
-	rdfs:range xsd:boolean .
-
-a4g:issuedByCertifier rdfs:domain a4g:Certificate ;
-	rdfs:range a4g:Certifier .
-
-a4g:leadBy rdfs:domain a4g:OrganisationGroup ;
-	rdfs:range org:Organization .
-
-a4g:needsToBeATenderer rdfs:domain a4g:Winner ;
-	rdfs:range a4g:Tenderer .
-
-a4g:needsToBeAWinner rdfs:domain a4g:Contractor ;
-	rdfs:range a4g:Winner .
-
-a4g:providesContractTotalPaymentValue rdfs:domain a4g:ContractLotCompletionInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:providesContractTotalPenaltyValue rdfs:domain a4g:ContractLotCompletionInformation ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:refersToContract rdfs:domain a4g:ContractLotCompletionInformation ;
-	rdfs:range a4g:Contract ;
-	a owl:FunctionalProperty .
-
-a4g:refersToLot rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:Notice
-			a4g:CompletionNotice
-			a4g:ContractModificationNotice
-			a4g:ResultNotice
-		) ;
-	] ;
-	rdfs:range a4g:Lot .
-
-a4g:refersToNotice rdfs:domain a4g:Notice, a4g:ESPDRequest ;
-	rdfs:range a4g:Notice ;
-	a owl:AsymmetricProperty .
-
-a4g:refersToPreviousNotice rdfs:domain a4g:ChangeInformation ;
-	rdfs:range a4g:Notice ;
-	a owl:FunctionalProperty .
-
-a4g:refersToPreviousProcedure rdfs:domain a4g:DirectAwardTerm ;
-	rdfs:range a4g:Procedure .
-
-a4g:refersToPreviousReview rdfs:domain a4g:ReviewObject ;
-	rdfs:range a4g:ReviewObject ;
-	a owl:AsymmetricProperty .
-
-a4g:refersToProcedure rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:Notice
-			a4g:ResultNotice
-			a4g:ContractModificationNotice
-			a4g:CompletionNotice
-		) ;
-	] ;
-	rdfs:range a4g:Procedure ;
-	a owl:FunctionalProperty .
-
-a4g:resolvesReviewRequest rdfs:domain a4g:ReviewDecision ;
-	rdfs:range a4g:ReviewRequest ;
-	a owl:FunctionalProperty .
-
-a4g:resultsFromMiniCompetitionAwardOutcome rdfs:domain a4g:PurchaseContract ;
-	rdfs:range a4g:MiniCompetitionAwardOutcome .
+a4g:substantiatesExclusionGround rdfs:domain a4g:Tenderer ;
+	rdfs:range a4g:ExclusionGround .
 
 a4g:MiniCompetitionAwardOutcome rdfs:subClassOf [
 		rdf:type owl:Restriction ;
@@ -3131,643 +3267,3 @@ a4g:MiniCompetitionAwardOutcome rdfs:subClassOf [
 
 a4g:resultsFromUsingCandidateList rdfs:domain a4g:MiniCompetitionAwardOutcome ;
 	rdfs:range a4g:SelectedCandidateList .
-
-a4g:setsGroupingContextForLot rdfs:domain a4g:LotGroup ;
-	rdfs:range a4g:Lot .
-
-a4g:substantiatesExclusionGround rdfs:domain a4g:Tenderer ;
-	rdfs:range a4g:ExclusionGround .
-
-a4g:summarisesInformationForAwardOutcome rdfs:domain a4g:SubmissionStatisticalInformation ;
-	rdfs:range a4g:AwardOutcome ;
-	a owl:FunctionalProperty .
-
-a4g:usesCleanVehicleDirective rdfs:domain a4g:GreenProcurement ;
-	rdfs:range xsd:boolean .
-
-_:b157 a owl:Class ;
-	owl:unionOf (
-		a4g:AgentInRole
-		a4g:Document
-		a4g:Fund
-		foaf:Agent
-		a4g:LotGroup
-		a4g:ProcurementElement
-		a4g:TenderGroup
-	) .
-
-_:b165 a owl:Class ;
-	owl:unionOf (
-		m8g:InformationConcept
-		m8g:Requirement
-	) .
-
-a4g:playedBy rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:AgentInRole
-			a4g:JuryMember
-			a4g:TransportMeansOperator
-		) ;
-	] ;
-	rdfs:range [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			foaf:Agent
-			person:Person
-			foaf:Person
-		) ;
-	] ;
-	a owl:FunctionalProperty .
-
-a4g:JuryMember rdfs:subClassOf [
-		rdf:type owl:Restriction ;
-		owl:onProperty a4g:playedBy ;
-		owl:maxCardinality 1 ;
-	] .
-
-a4g:concernsLot rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:LotAwardOutcome
-			a4g:ProcurementProcessInformation
-		) ;
-	] ;
-	rdfs:range a4g:Lot ;
-	a owl:FunctionalProperty .
-
-a4g:concernsNotice rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:ChangeInformation
-			a4g:NonPublishedInformation
-		) ;
-	] ;
-	rdfs:range a4g:Notice ;
-	a owl:FunctionalProperty .
-
-a4g:foreseesConcession rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:Tender
-			a4g:ProcurementObject
-		) ;
-	] ;
-	rdfs:range a4g:ConcessionEstimate .
-
-a4g:hasApproximateFrameworkAgreementValue rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:LotAwardOutcome
-			a4g:NoticeAwardInformation
-		) ;
-	] ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasEstimatedValue rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:LotGroup
-			a4g:ProcurementElement
-		) ;
-	] ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasLaunchFrameworkAgreementMaximumValue rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:ProcurementObject
-			a4g:LotGroup
-		) ;
-	] ;
-	rdfs:range a4g:MonetaryValue .
-
-a4g:hasPurpose rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:Contract
-			a4g:ProcurementObject
-		) ;
-	] ;
-	rdfs:range a4g:Purpose .
-
-a4g:hasURL rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			m8g:Evidence
-			a4g:Fund
-		) ;
-	] ;
-	rdfs:range xsd:anyURI .
-
-a4g:hasValidityPeriod rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			m8g:Evidence
-			a4g:Technique
-			a4g:Catalogue
-		) ;
-	] ;
-	rdfs:range a4g:Period .
-
-a4g:relatesToEFormSectionIdentifier rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:ChangeInformation
-			a4g:NonPublishedInformation
-			a4g:ContractModificationInformation
-		) ;
-	] ;
-	rdfs:range adms:Identifier .
-
-_:b211 a owl:Class ;
-	owl:unionOf (
-		person:Person
-		org:Organization
-	) .
-
-_:b214 a owl:Class ;
-	owl:unionOf (
-		m8g:ContactPoint
-		dcterms:Location
-		org:Organization
-	) .
-
-a4g:hasAdditionalInformation rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:ChangeInformation
-			a4g:Notice
-			a4g:ProcurementCriterion
-			a4g:ProcurementObject
-		) ;
-	] ;
-	rdfs:range rdf:PlainLiteral .
-
-_:b274 a owl:Restriction ;
-	owl:cardinality 1 ;
-	owl:onProperty a4g:hasThresholdValue .
-
-_:b275 a owl:Restriction ;
-	owl:onProperty m8g:weight ;
-	owl:maxCardinality 1 .
-
-_:b276 a owl:Restriction ;
-	owl:onProperty m8g:weightingConsiderationDescription ;
-	owl:maxCardinality 1 .
-
-_:b277 a owl:Restriction ;
-	owl:onProperty m8g:bias ;
-	owl:maxCardinality 1 .
-
-_:b321 a owl:Restriction ;
-	owl:onProperty a4g:hasAddressURL ;
-	owl:maxCardinality 1 .
-
-_:b322 a owl:Restriction ;
-	owl:onProperty dcterms:description ;
-	owl:maxCardinality 1 .
-
-_:b323 a owl:Class ;
-	owl:unionOf (
-		m8g:Evidence
-		m8g:InformationConcept
-		m8g:Requirement
-		m8g:ContactPoint
-		m8g:Channel
-		a4g:AgentInRole
-		a4g:Document
-		a4g:ElectronicSignature
-		a4g:Fund
-		a4g:NonDisclosureAgreementTerm
-		a4g:SecurityClearanceTerm
-		a4g:SubcontractingEstimate
-		a4g:SubcontractTerm
-		a4g:System
-		a4g:Technique
-		a4g:LotGroup
-		a4g:ProcurementElement
-		a4g:TenderGroup
-	) .
-
-_:b359 a owl:Restriction ;
-	owl:onProperty adms:identifier ;
-	owl:maxCardinality 1 .
-
-_:b380 a owl:Restriction ;
-	owl:onProperty adms:identifier ;
-	owl:maxCardinality 1 .
-
-_:b381 a owl:Restriction ;
-	owl:onProperty skos:prefLabel ;
-	owl:maxCardinality 1 .
-
-_:b382 a owl:Restriction ;
-	owl:onProperty dcterms:description ;
-	owl:maxCardinality 1 .
-
-_:b383 a owl:Class ;
-	owl:unionOf (
-		m8g:Evidence
-		m8g:InformationConcept
-		m8g:Requirement
-		dcterms:Location
-		a4g:Document
-		a4g:Fund
-		a4g:Project
-		foaf:Agent
-		a4g:LotGroup
-		a4g:ProcurementElement
-		a4g:TenderGroup
-		m8g:EvidenceType
-		a4g:Consignment
-		a4g:TransportEquipment
-		a4g:ShipmentStage
-		a4g:TransportEquipmentSeal
-		m8g:EvidenceTypeList
-		a4g:ShipmentInformation
-		a4g:Line
-		a4g:AbstractContainer
-	) .
-
-_:b421 a owl:Restriction ;
-	owl:onProperty locn:address ;
-	owl:maxCardinality 1 .
-
-_:b422 a owl:Restriction ;
-	owl:onProperty a4g:hasInternetAddress ;
-	owl:maxCardinality 1 .
-
-_:b423 a owl:Restriction ;
-	owl:onProperty a4g:hasContactName ;
-	owl:maxCardinality 1 .
-
-_:b424 a owl:Restriction ;
-	owl:onProperty a4g:hasURL ;
-	owl:maxCardinality 1 .
-
-_:b425 a owl:Restriction ;
-	owl:cardinality 1 ;
-	owl:onProperty adms:identifier .
-
-_:b426 a owl:Restriction ;
-	owl:onProperty a4g:hasValidityPeriod ;
-	owl:maxCardinality 1 .
-
-_:b427 a owl:Restriction ;
-	owl:onProperty dcterms:description ;
-	owl:maxCardinality 1 .
-
-_:b428 a owl:Restriction ;
-	owl:onProperty locn:geographicIdentifier ;
-	owl:maxCardinality 1 .
-
-_:b429 a owl:Restriction ;
-	owl:onProperty locn:geometry ;
-	owl:maxCardinality 1 .
-
-_:b430 a owl:Restriction ;
-	owl:onProperty locn:geographicName ;
-	owl:maxCardinality 1 .
-
-_:b431 a owl:Restriction ;
-	owl:onProperty locn:address ;
-	owl:maxCardinality 1 .
-
-_:b432 a owl:Restriction ;
-	owl:onProperty adms:identifier ;
-	owl:maxCardinality 1 .
-
-_:b440 a owl:Restriction ;
-	owl:onProperty m8g:registeredAddress ;
-	owl:maxCardinality 1 .
-
-_:b441 a owl:Restriction ;
-	owl:onProperty m8g:birthDate ;
-	owl:maxCardinality 1 .
-
-_:b458 a owl:Restriction ;
-	owl:onProperty locn:addressArea ;
-	owl:maxCardinality 1 .
-
-_:b459 a owl:Restriction ;
-	owl:onProperty locn:fullAddress ;
-	owl:maxCardinality 1 .
-
-_:b460 a owl:Restriction ;
-	owl:onProperty locn:adminUnitL2 ;
-	owl:maxCardinality 1 .
-
-_:b461 a owl:Restriction ;
-	owl:onProperty locn:locatorDesignator ;
-	owl:maxCardinality 1 .
-
-_:b462 a owl:Restriction ;
-	owl:onProperty locn:adminUnitL1 ;
-	owl:maxCardinality 1 .
-
-_:b463 a owl:Restriction ;
-	owl:onProperty locn:locatorName ;
-	owl:maxCardinality 1 .
-
-_:b464 a owl:Restriction ;
-	owl:onProperty locn:addressID ;
-	owl:maxCardinality 1 .
-
-_:b465 a owl:Restriction ;
-	owl:onProperty locn:postCode ;
-	owl:maxCardinality 1 .
-
-_:b466 a owl:Restriction ;
-	owl:onProperty locn:postName ;
-	owl:maxCardinality 1 .
-
-_:b467 a owl:Restriction ;
-	owl:onProperty locn:thoroughfare ;
-	owl:maxCardinality 1 .
-
-_:b539 a owl:Restriction ;
-	owl:onProperty m8g:registeredAddress ;
-	owl:maxCardinality 1 .
-
-_:b540 a owl:Restriction ;
-	owl:onProperty a4g:hasMainActivityDescription ;
-	owl:maxCardinality 1 .
-
-_:b541 a owl:Restriction ;
-	owl:onProperty a4g:hasBuyerLegalTypeDescription ;
-	owl:maxCardinality 1 .
-
-_:b542 a owl:Restriction ;
-	owl:onProperty a4g:hasPrimaryContactPoint ;
-	owl:maxCardinality 1 .
-
-_:b543 a owl:Restriction ;
-	owl:onProperty a4g:hasLegalFormType ;
-	owl:maxCardinality 1 .
-
-_:b563 a owl:Restriction ;
-	owl:cardinality 1 ;
-	owl:onProperty skos:notation .
-
-_:b566 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AccessTerm
-		a4g:DesignContestRegimeTerm
-		a4g:DirectAwardTerm
-		a4g:FrameworkAgreementTerm
-		a4g:OpeningTerm
-		a4g:ProcedureTerm
-		a4g:SubmissionTerm
-		a4g:ReviewTerm
-	) .
-
-_:b575 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ReviewIrregularitySummary
-		a4g:ReviewRequestSummary
-		a4g:SubmissionStatisticalInformation
-	) .
-
-_:b579 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ReviewDecision
-		a4g:ReviewRequest
-	) .
-
-_:b582 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AcquiringParty
-		a4g:OfferingParty
-		a4g:AuxiliaryParty
-	) .
-
-_:b586 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:System
-		org:Organization
-		foaf:Person
-	) .
-
-_:b590 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AwardCriterion
-		a4g:ParticipationCondition
-		a4g:QualificationCriterion
-	) .
-
-_:b594 a owl:AllDisjointClasses ;
-	owl:members (
-		m8g:PublicOrganisation
-		a4g:Business
-		a4g:OrganisationGroup
-	) .
-
-_:b598 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AwardCriteriaSummary
-		a4g:ParticipationConditionsSummary
-		a4g:QualificationCriteriaSummary
-	) .
-
-_:b602 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:SubcontractTerm
-		a4g:ContractTerm
-		a4g:FrameworkAgreementTerm
-	) .
-
-_:b606 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ChangeInformation
-		a4g:StatisticalInformation
-		a4g:ProcurementProcessInformation
-		a4g:LotGroupAwardInformation
-		a4g:NoticeAwardInformation
-		a4g:NonPublishedInformation
-		a4g:Estimate
-		a4g:ContractLotCompletionInformation
-	) .
-
-_:b615 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AcquiringCentralPurchasingBody
-		a4g:AwardingCentralPurchasingBody
-	) .
-
-_:b618 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ExclusionGroundsSummary
-		a4g:SelectionCriteriaSummary
-	) .
-
-_:b621 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:Procedure
-		a4g:Lot
-	) .
-
-_:b624 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ProcurementObject
-		a4g:PlannedProcurementPart
-	) .
-
-_:b627 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ContractSpecificTerm
-		a4g:LotSpecificTerm
-		a4g:ProcedureSpecificTerm
-		a4g:ProcessPlanningTerm
-	) .
-
-_:b632 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:Contract
-		a4g:ProcurementDocument
-		a4g:Offer
-		a4g:RequestForClarification
-		a4g:OriginatorRequest
-		a4g:ReviewObject
-		a4g:AwardDecision
-		a4g:Notice
-		a4g:Tender
-		a4g:ExpressionOfInterest
-		a4g:RequestForParticipation
-	) .
-
-_:b644 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:GreenProcurement
-		a4g:InnovativeProcurement
-		a4g:SocialProcurement
-	) .
-
-_:b648 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ExclusionGround
-		a4g:SelectionCriterion
-	) .
-
-_:b651 a owl:AllDisjointClasses ;
-	owl:members (
-		m8g:Constraint
-		m8g:Criterion
-		m8g:InformationRequirement
-		a4g:ProcurementCriteriaSummary
-	) .
-
-_:b656 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:TaxInformationProvider
-		a4g:Certifier
-		a4g:EnvironmentalProtectionInformationProvider
-		a4g:EmploymentInformationProvider
-	) .
-
-_:b661 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:IndefiniteDuration
-		a4g:SpecificDuration
-	) .
-
-_:b664 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:DynamicPurchaseSystemTechnique
-		a4g:EAuctionTechnique
-		a4g:FrameworkAgreementTechnique
-	) .
-
-_:b668 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:EconomicStandingSummary
-		a4g:ProfessionalSuitabilitySummary
-		a4g:TechnicalAbilitySummary
-	) .
-
-_:b672 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:LeadBuyer
-		a4g:CentralPurchasingBody
-	) .
-
-_:b675 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ConcessionContract
-		a4g:PurchaseContract
-		a4g:DirectContract
-		a4g:FrameworkAgreement
-	) .
-
-_:b680 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AwardEvaluationTerm
-		a4g:SelectionEvaluationTerm
-	) .
-
-_:b683 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AccessTerm
-		a4g:DesignContestRegimeTerm
-		a4g:EvaluationTerm
-		a4g:FrameworkAgreementTerm
-		a4g:SecurityClearanceTerm
-		a4g:ParticipationRequestTerm
-		a4g:OpeningTerm
-		a4g:SubmissionTerm
-		a4g:NonDisclosureAgreementTerm
-		a4g:ReviewTerm
-		a4g:MultipleStageProcedureTerm
-	) .
-
-_:b695 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:MiniCompetitionAwardOutcome
-		a4g:LotAwardOutcome
-	) .
-
-_:b698 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:ConcessionEstimate
-		a4g:SubcontractingEstimate
-	) .
-
-_:b701 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:Candidate
-		a4g:CatalogueProvider
-		a4g:Contractor
-		a4g:Tenderer
-		a4g:OtherEntity
-		a4g:ReviewRequester
-		a4g:Subcontractor
-		a4g:OfferIssuer
-		a4g:Winner
-	) .
-
-_:b711 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:AwardOutcome
-		a4g:TenderAwardOutcome
-	) .
-
-_:b714 a owl:AllDisjointClasses ;
-	owl:members (
-		a4g:Mediator
-		a4g:JuryMember
-		a4g:ParticipationRequestProcessor
-		a4g:ProcurementServiceProvider
-		a4g:ProcurementProcedureInformationProvider
-		a4g:Reviewer
-		a4g:TenderReceiver
-		a4g:PaymentExecutor
-		a4g:Awarder
-		a4g:BudgetProvider
-		a4g:Buyer
-		a4g:OfflineAccessProvider
-		a4g:TenderProcessor
-		a4g:ReviewProcedureInformationProvider
-		a4g:CatalogueReceiver
-		a4g:ParticipationRequestReceiver
-	) .
-

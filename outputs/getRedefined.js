@@ -1,17 +1,7 @@
-import { createTriplestore, doSelect } from '../src/sparql/localStore.js'
-import rdf from 'rdf-ext'
+import { createTriplestore, doConstruct } from '../src/sparql/localStore.js'
 
 function getRedefined ({ assets }) {
   const store = createTriplestore({ assets })
-
-  function doQuery (query) {
-    const result = doSelect({ store, query })
-    const dataset = rdf.dataset()
-    for (const { s, p, o, graph } of result) {
-      dataset.add(rdf.quad(s, p, o, graph))
-    }
-    return dataset
-  }
 
   const filterUnwantedQuery = `
 PREFIX ns1: <http://www.w3.org/2006/time#>
@@ -38,9 +28,8 @@ PREFIX ns15: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ns16: <http://www.w3.org/2001/XMLSchema#>
 PREFIX eli: <http://data.europa.eu/eli/ontology#>
 
-SELECT DISTINCT ?graph ?s ?p ?o
+CONSTRUCT {?s ?p ?o }
 WHERE {
-  GRAPH ?graph {
     ?s ?p ?o
     FILTER (isURI(?s) && 
             (STRSTARTS(str(?s), str(ns1:)) ||
@@ -61,10 +50,9 @@ WHERE {
               STRSTARTS(str(?s), str(ns16:)) ||
               STRSTARTS(str(?s), str(eli:)))
            )
-  }
 }
 `
-  return doQuery(filterUnwantedQuery)
+  return doConstruct({ store, query: filterUnwantedQuery })
 }
 
 export { getRedefined }

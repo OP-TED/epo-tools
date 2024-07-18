@@ -8,7 +8,7 @@ import { getRedefined } from '../getRedefined.js'
 import { dirname } from 'path'
 
 const globPattern = `assets/ePO/feature/4.1.0-rc.3/implementation/*/owl_ontology/*.ttl`
-const assets = await getRdfAssets({ globPattern })
+const assets = await getRdfAssets({ globPattern }, (path) => rdf.DefaultGraph)
 
 for (const asset of assets) {
   const redefined = getRedefined({ assets: [asset] })
@@ -18,17 +18,11 @@ for (const asset of assets) {
     'outputs/temporal-export')
   mkdirSync(dirname(targetPath), { recursive: true })
 
-  const filtered = dataset.filter(item => !redefined.has(item))
-
-  // const toRemove = offendingBlanks(filtered)
-  // console.log(toRemove.toCanonical())
-  // const result = filtered.filter(item => !toRemove.has(item))
+  const filtered = dataset.filter(item => !redefined.has(item)).
+    map(quad => rdf.quad(quad.subject, quad.predicate, quad.object))
 
   const turtle = await prettyPrintTurtle({ dataset: filtered })
   writeFileSync(targetPath, turtle)
   console.log('wrote', dataset.size, 'triples', targetPath)
-
-  // writeFileSync(`${targetPath}.original`, await prettyPrintTurtle({ dataset }))
-
 }
 
