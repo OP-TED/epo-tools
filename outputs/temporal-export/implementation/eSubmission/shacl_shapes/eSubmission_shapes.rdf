@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:cpov="http://data.europa.eu/m8g/"
+	xmlns:a4g="http://data.europa.eu/a4g/ontology#"
+	xmlns:sfrml="http://data.europa.eu/a4g/mapping/sf-rml/"
+	xmlns:a4g_shape="http://data.europa.eu/a4g/data-shape#"
+	xmlns:eli="http://data.europa.eu/eli/ontology#"
+	xmlns:m8g="http://data.europa.eu/m8g/"
+	xmlns:time="http://www.w3.org/2006/time#"
+	xmlns:person="http://www.w3.org/ns/person#"
+	xmlns:locn="http://www.w3.org/ns/locn#"
+	xmlns:shacl="http://www.w3.org/ns/shacl#"
+	xmlns:org="http://www.w3.org/ns/org#"
+	xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:rml="http://semweb.mmlab.be/ns/rml#"
+	xmlns:r2rml="http://www.w3.org/ns/r2rml#"
+	xmlns:at="http://publications.europa.eu/ontology/authority/"
+	xmlns:atold="http://publications.europa.eu/resource/authority/"
+	xmlns:vann="http://purl.org/vocab/vann/">
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PlainLiteral">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:or rdf:nodeID="n3-28"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-28">
+		<rdf:first rdf:nodeID="n3-29"/>
+		<rdf:rest rdf:nodeID="n3-30"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-29">
+		<shacl:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-30">
+		<rdf:first rdf:nodeID="n3-31"/>
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-31">
+		<shacl:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#NationalPreQualificationDataShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#NationalPreQualificationData"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<rdfs:comment>Data that describe the distinctive features or characteristics that qualify an economic operator to take part in a tendering process. WG approval 05/03/2024</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationCompletedTaskDescription-PlainLiteral"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-concernsOrganisation-Organization"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationEmployeeQuantity-Quantity"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationFinancialCapability-MonetaryValue"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationPreQualificationListingIdentifier-Identifier"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#sub-shape">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+		<dcterms:description xml:lang="en">The eProcurement Ontology sub SHACL shapes provides the datashape specifications for the eProcurement Ontology sub module.</dcterms:description>
+		<rdfs:label xml:lang="en">eProcurement Ontology sub - SHACL shapes</rdfs:label>
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dcterms:created>
+		<dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-03-21</dcterms:issued>
+		<dcterms:license>© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/).</dcterms:license>
+		<dcterms:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</dcterms:publisher>
+		<dcterms:title xml:lang="en">eProcurement Ontology sub - SHACL shapes</dcterms:title>
+		<vann:preferredNamespacePrefix>epo</vann:preferredNamespacePrefix>
+		<vann:preferredNamespaceUri>http://data.europa.eu/a4g/ontology#</vann:preferredNamespaceUri>
+		<rdfs:seeAlso rdf:resource="https://docs.ted.europa.eu/home/index.html"/>
+		<rdfs:seeAlso rdf:resource="https://github.com/OP-TED/ePO/releases"/>
+		<rdfs:seeAlso rdf:resource="https://joinup.ec.europa.eu/collection/eprocurement/solution/eprocurement-ontology/about"/>
+		<rdfs:seeAlso rdf:resource="https://op.europa.eu/en/web/eu-vocabularies/e-procurement"/>
+		<owl:imports rdf:resource="http://data.europa.eu/eli/ontology#"/>
+		<owl:imports rdf:resource="http://data.europa.eu/m8g/"/>
+		<owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+		<owl:imports rdf:resource="http://purl.org/vocab/vann/"/>
+		<owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+		<owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/adms"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/locn"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/org#"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/person"/>
+		<owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+		<owl:incompatibleWith>3.1.0</owl:incompatibleWith>
+		<owl:priorVersion>http://data.europa.eu/a4g/data-shape#sub-shape-4.0.2</owl:priorVersion>
+		<owl:versionIRI rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape-4.1.0"/>
+		<owl:versionInfo>4.1.0</owl:versionInfo>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationCompletedTaskDescription-PlainLiteral">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationCompletedTaskDescription"/>
+		<shacl:description>Text describing the works, supplies or services executed, delivered or performed in a procurement project that can be used as an evidence for the classification of the Organization. WG approval 05/03/2024</shacl:description>
+		<shacl:name xml:lang="en">provides organisation completed task description</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:node rdf:resource="http://data.europa.eu/a4g/data-shape#PlainLiteral"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CertificateInformationShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#CertificateInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<rdfs:comment>Information about a Certificate. WG approval 12/03/2024</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CertificateInformation-description-PlainLiteral"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CertificateInformation-coversAllSelectionCriteria-boolean"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CertificateInformation-summarisesInformationAboutCertificate-Certificate"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CertificateInformation-description-PlainLiteral">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://purl.org/dc/terms/description"/>
+		<shacl:description>An account of the resource. Additional Information: Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource. WG Approval 30/05/2023 </shacl:description>
+		<shacl:name xml:lang="en">description</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:node rdf:resource="http://data.europa.eu/a4g/data-shape#PlainLiteral"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CertificateInformation-coversAllSelectionCriteria-boolean">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#coversAllSelectionCriteria"/>
+		<shacl:description>Indicator that the Certificate proves whether the Organization fulfils all Selection Criteria. WG approval 12/03/2024</shacl:description>
+		<shacl:name xml:lang="en">covers all selection criteria</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ESPDShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#ESPD"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<rdfs:comment>A document conveying the fulfilment or not by the economic operator of the Exclusion Grounds and the Selection Criteria set out by the Buyer for a specific Procurement using an European Single Procurement Document (ESPD) Request. WG Approval 05/03/2024</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ESPD-providesInformationOn-Organization"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ESPD-relatesToESPDRequest-ESPDRequest"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ESPD-specifiesResponse-Response"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ESPD-providesInformationOn-Organization">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://www.w3.org/ns/org#Organization"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#providesInformationOn"/>
+		<shacl:description>Offers information about an instance of a concept. WG approval 05/03/2024</shacl:description>
+		<shacl:name xml:lang="en">provides information on</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ESPD-relatesToESPDRequest-ESPDRequest">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#ESPDRequest"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#relatesToESPDRequest"/>
+		<shacl:description>Is about an European Single Procurement Document (ESPD) Request. WG approval 05/03/2024</shacl:description>
+		<shacl:name xml:lang="en">relates to espd request</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CertificateInformation-summarisesInformationAboutCertificate-Certificate">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Certificate"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#summarisesInformationAboutCertificate"/>
+		<shacl:description>Relation indicating the Certificate that the information refers to. WG approval 12/03/2024 </shacl:description>
+		<shacl:name xml:lang="en">summarises information about certificate</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#LegalRepresentativeShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LegalRepresentative"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<rdfs:comment>The Role of an Agent that can represent an Organization. WG approval 05/03/2024</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#LegalRepresentative-actsOnBehalfOf-OfferingParty"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#LegalRepresentative-hasPowerOfAttorney-PowerOfAttorney"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#LegalRepresentative-hasMandate-Mandate"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#LegalRepresentative-actsOnBehalfOf-OfferingParty">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#OfferingParty"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#actsOnBehalfOf"/>
+		<shacl:name xml:lang="en">acts on behalf of</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResponseShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Response"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<rdfs:comment>An answer given to a question that is part of an ESPD Request. WG approval 12/03/2024</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Response-answersQuestion-InformationRequirement"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Response-isReinforcedBy-Evidence"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Response-supportsValue-SupportedValue"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Response-confidentialityLevelType-access-rights"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Response-inScheme-access-rights"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Response-refersToApplicablePeriod-Period"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Response-answersQuestion-InformationRequirement">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/m8g/InformationRequirement"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#answersQuestion"/>
+		<shacl:description>Relation indicating that the Response replies to a question. WG approval 12/03/2024</shacl:description>
+		<shacl:name xml:lang="en">answers question</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-concernsOrganisation-Organization">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://www.w3.org/ns/org#Organization"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#concernsOrganisation"/>
+		<shacl:description>Relates to Organization. WG approval 05/03/2024 </shacl:description>
+		<shacl:name xml:lang="en">concerns organisation</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationEmployeeQuantity-Quantity">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationEmployeeQuantity"/>
+		<shacl:description>The number of people hired by the Organization. WG approval 05/03/2024</shacl:description>
+		<shacl:name xml:lang="en">provides organisation employee quantity</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationFinancialCapability-MonetaryValue">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationFinancialCapability"/>
+		<shacl:description>A monetary amount representing the financial capability of the Organization. Additional information: Used to represent the general Turnover of the Organization (for statistical purposes). WG approval 05/03/2024</shacl:description>
+		<shacl:name xml:lang="en">provides organisation financial capability</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#NationalPreQualificationData-providesOrganisationPreQualificationListingIdentifier-Identifier">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationPreQualificationListingIdentifier"/>
+		<shacl:description>The identifier assigned to an economic operator in a national pre-qualification system or official list. WG approval 05/03/2024</shacl:description>
+		<shacl:name xml:lang="en">provides organisation pre qualification listing identifier</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ESPD-specifiesResponse-Response">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Response"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesResponse"/>
+		<shacl:description>Relation indicating that an ESPD Response contains a Response. WG approval 12/03/2024</shacl:description>
+		<shacl:name xml:lang="en">specifies response</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Response-isReinforcedBy-Evidence">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/m8g/Evidence"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#isReinforcedBy"/>
+		<shacl:description>Relation indicating an Evidence that supports the Response. WG approval 12/03/2024</shacl:description>
+		<shacl:name xml:lang="en">is reinforced by</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Response-supportsValue-SupportedValue">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/m8g/SupportedValue"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/m8g/supportsValue"/>
+		<shacl:description>Supported Value that the Evidence contains.</shacl:description>
+		<shacl:name xml:lang="en">supports value</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Response-confidentialityLevelType-access-rights">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/m8g/confidentialityLevelType"/>
+		<shacl:description>Security classification assigned to an Evidence e.g. classified, sensitive, public. Additional Information: Classifications should be defined by an organisation/country as an outcome of a security assessment.</shacl:description>
+		<shacl:name xml:lang="en">confidentiality level type</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:node rdf:resource="http://data.europa.eu/a4g/data-shape#ResponseShape"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Response-inScheme-access-rights">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:path rdf:resource="http://www.w3.org/2004/02/skos/core#inScheme"/>
+		<shacl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/access-rights"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Response-refersToApplicablePeriod-Period">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Period"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToApplicablePeriod"/>
+		<shacl:description>Relation indicating the period to which the Response shall apply. WG approval 12/03/2024</shacl:description>
+		<shacl:name xml:lang="en">refers to applicable period</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#LegalRepresentative-hasPowerOfAttorney-PowerOfAttorney">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#PowerOfAttorney"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasPowerOfAttorney"/>
+		<shacl:description>Relation indicating that a Legal Representative has a Power of Attorney. WG approval 12/03/2024</shacl:description>
+		<shacl:name xml:lang="en">has power of attorney</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#LegalRepresentative-hasMandate-Mandate">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Mandate"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#sub-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasMandate"/>
+		<shacl:description>Relation indicating that a Legal Representative has a Mandate. WG approval 12/03/2024</shacl:description>
+		<shacl:name xml:lang="en">has mandate</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+</rdf:RDF>

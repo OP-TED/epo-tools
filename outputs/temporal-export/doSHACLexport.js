@@ -4,9 +4,9 @@ import rdf from 'rdf-ext'
 import { INHERITANCE } from '../../src/conceptualModel/const.js'
 import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
 import { getJson } from '../../src/epo/readEpo.js'
-import { prettyPrintTurtle } from '../../src/io/serialization.js'
+import { prettyPrintTurtle, printRDFXML } from '../../src/io/serialization.js'
 import { aliases, ns } from '../../src/namespaces.js'
-import { getPrefix, hasPrefix, stripPrefix } from '../../src/prefix/prefix.js'
+import { stripPrefix } from '../../src/prefix/prefix.js'
 import { toTurtle } from '../../src/shacl/shaclTemplate.js'
 import epoModules from './epoModules.json' assert { type: 'json' }
 import { shaclMetadata } from './metadata.js'
@@ -62,15 +62,14 @@ const hasErrors = x => x.some(x => x.severity === 'error')
 
 const eaJson = {
   nodes: rawJson.nodes.filter(x => !hasErrors(inspectNode(x))),
-  edges: rawJson.edges.filter(x => !hasErrors(inspectEdge(x))).filter(x=>x.type!==INHERITANCE),
+  edges: rawJson.edges.filter(x => !hasErrors(inspectEdge(x))).
+    filter(x => x.type !== INHERITANCE),
 }
 
 async function writeModule (module) {
   const { name, id, prefix } = module
   const targetDir = `outputs/temporal-export/implementation/${name}/shacl_shapes`
   mkdirSync(targetDir, { recursive: true })
-  const targetPath = `${targetDir}/${name}_shapes.ttl`
-  console.log('writing', targetPath)
 
   const g = filterByModule(eaJson, prefix)
 
@@ -83,9 +82,18 @@ async function writeModule (module) {
 
   const dataset = await rdf.dataset().
     addAll([...new Parser().parse(uglyturtle)])
+
+
   const turtle = await prettyPrintTurtle({ dataset })
-  writeFileSync(targetPath, turtle)
-  console.log('wrote', dataset.size, 'triples', targetPath)
+  const turtlePath = `${targetDir}/${name}_shapes.ttl`
+  writeFileSync(turtlePath, turtle)
+  console.log('wrote', dataset.size, 'triples', turtlePath)
+
+
+  const xml = await printRDFXML(({dataset}))
+  const xmlPath = `${targetDir}/${name}_shapes.rdf`
+  writeFileSync(xmlPath, xml)
+  console.log('wrote', dataset.size, 'triples', xmlPath)
 }
 
 // const access = {
