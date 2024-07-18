@@ -4415,7 +4415,7 @@ WG Approval 30/05/2023
       "quantifiers": Object {
         "quantifiersDeclared": false,
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "epo:Document",
       "type": "Generalization",
     },
@@ -4501,7 +4501,7 @@ WG approval 05/03/2024",
         "quantifiersDeclared": true,
         "raw": "0..*",
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "org:Organization",
       "type": "Association",
     },
@@ -10092,7 +10092,7 @@ WG approval 05/03/2024",
         "quantifiersDeclared": true,
         "raw": "1",
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "epo-acc:ESPDRequest",
       "type": "Association",
     },
@@ -14132,20 +14132,6 @@ WGM 01/03/2022
       "type": "Dependency",
     },
     Object {
-      "description": "Reference to other European Single Procurement Document (ESPD) Response.
-
-WG approval 05/03/2024",
-      "eaId": 5205,
-      "predicate": "epo-sub:refersToOtherESPDResponse",
-      "quantifiers": Object {
-        "quantifiersDeclared": true,
-        "raw": "0..*",
-      },
-      "source": "epo-sub:ESPDResponse",
-      "target": "epo-sub:ESPDResponse",
-      "type": "Association",
-    },
-    Object {
       "description": null,
       "eaId": 2778,
       "predicate": "epo:hasLegalBasis",
@@ -14208,7 +14194,7 @@ WG approval 05/03/2024",
         "quantifiersDeclared": false,
       },
       "source": "epo-acc:ESPDRequest",
-      "target": "epo:Document",
+      "target": "epo:ProcurementDocument",
       "type": "Generalization",
     },
     Object {
@@ -14301,20 +14287,6 @@ WG approval 05/03/2024",
       "type": "Dependency",
     },
     Object {
-      "description": null,
-      "eaId": 2822,
-      "predicate": "epo:answersExclusionGround",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 1,
-        "quantifiersDeclared": true,
-        "raw": "1",
-      },
-      "source": "epo-sub:ESPDResponse",
-      "target": "epo:ExclusionGround",
-      "type": "Association",
-    },
-    Object {
       "description": "Additional information:
 This relation corresponds in eForms to    BT-791	    Review Irregularity Type
 ",
@@ -14331,20 +14303,6 @@ This relation corresponds in eForms to    BT-791	    Review Irregularity Type
     },
     Object {
       "description": null,
-      "eaId": 2823,
-      "predicate": "epo:answersSelectionCriteria",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 1,
-        "quantifiersDeclared": true,
-        "raw": "1",
-      },
-      "source": "epo-sub:ESPDResponse",
-      "target": "epo:SelectionCriterion",
-      "type": "Association",
-    },
-    Object {
-      "description": null,
       "eaId": 2828,
       "predicate": "epo:isSupportedBy",
       "quantifiers": Object {
@@ -14354,7 +14312,7 @@ This relation corresponds in eForms to    BT-791	    Review Irregularity Type
         "raw": "1",
       },
       "source": "epo:Tender",
-      "target": "epo-sub:ESPDResponse",
+      "target": "epo-sub:ESPD",
       "type": "Association",
     },
     Object {
@@ -14426,7 +14384,7 @@ This relation corresponds in eForms to   BT-13722	    Buyer Review Lot Identifie
     Object {
       "description": null,
       "eaId": 4892,
-      "predicate": "epo:hasRejectedQuantity",
+      "predicate": "epo-ful:hasRejectedQuantity",
       "quantifiers": Object {
         "max": 1,
         "min": 0,
@@ -17636,7 +17594,8 @@ WG Approval 12/11/2019
       "eaId": 4274,
       "predicate": "epo:indicatesInvoiceeContactPoint",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "epo:Buyer",
       "target": "cpov:ContactPoint",
@@ -17897,7 +17856,8 @@ WG approval 26/07/2022
       "eaId": 4364,
       "predicate": "epo-cat:hasExternalSpecification",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "epo-cat:Item",
       "target": "epo:Document",
@@ -18053,7 +18013,7 @@ WG approval 12/03/2024",
         "quantifiersDeclared": true,
         "raw": "1..*",
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "epo-sub:Response",
       "type": "Association",
     },
@@ -18092,7 +18052,10 @@ Classifications should be defined by an organisation/country as an outcome of a 
       "eaId": 5192,
       "predicate": "cccev:confidentialityLevelType",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
       },
       "source": "epo-sub:Response",
       "target": "at-voc:access-rights",
@@ -18345,7 +18308,7 @@ WG approval 20/04/2021",
 
 WG Approval 05/03/2024",
       "eaId": 1628,
-      "name": "epo-sub:ESPDResponse",
+      "name": "epo-sub:ESPD",
       "type": "Class",
     },
     Object {
@@ -22443,7 +22406,8 @@ WG approval 16/05/2023
       "eaId": 4364,
       "predicate": "epo-cat:hasExternalSpecification",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "epo-cat:Item",
       "target": "epo:Document",
@@ -30663,7 +30627,8 @@ WG approval 26/07/2022
       "eaId": 4364,
       "predicate": "epo-cat:hasExternalSpecification",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "epo-cat:Item",
       "target": "epo:Document",
@@ -39369,7 +39334,7 @@ WGM 01/03/2022
     Object {
       "description": null,
       "eaId": 4892,
-      "predicate": "epo:hasRejectedQuantity",
+      "predicate": "epo-ful:hasRejectedQuantity",
       "quantifiers": Object {
         "max": 1,
         "min": 0,
@@ -41110,7 +41075,8 @@ WG approval 26/07/2022
       "eaId": 4364,
       "predicate": "epo-cat:hasExternalSpecification",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "epo-cat:Item",
       "target": "epo:Document",

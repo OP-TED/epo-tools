@@ -25,6 +25,7 @@ exports[`write-owl generates owl 1`] = `
 @prefix r2rml: <http://www.w3.org/ns/r2rml#> .
 @prefix at: <http://publications.europa.eu/ontology/authority/> .
 @prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 a4g:RequestForClarification a owl:Class ;
 	rdfs:label \\"request for clarification\\"@en ;
@@ -4880,5 +4881,6 @@ exports[`write-owl generates owl, empty graph 1`] = `
 @prefix r2rml: <http://www.w3.org/ns/r2rml#> .
 @prefix at: <http://publications.europa.eu/ontology/authority/> .
 @prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 "
 `;

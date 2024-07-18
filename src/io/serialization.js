@@ -1,6 +1,7 @@
 import {
   TrigSerializer,
   TurtleSerializer,
+  RdfXmlSerializer
 } from '@rdfjs-elements/formats-pretty'
 import getStream from 'get-stream'
 
@@ -32,4 +33,12 @@ async function prettyPrintTrig ({ dataset }) {
   return await getStream(stream)
 }
 
-export { prettyPrintTurtle, prettyPrintTrig }
+const rdfSink = new RdfXmlSerializer({
+  prefixes: toPlain(ns),
+})
+async function printRDFXML ({ dataset }) {
+  const stream = await rdfSink.import(dataset.toStream())
+  return await getStream(stream)
+}
+
+export { prettyPrintTurtle, prettyPrintTrig, printRDFXML}

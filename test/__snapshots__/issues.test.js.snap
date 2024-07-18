@@ -5673,7 +5673,7 @@ WG Approval 30/05/2023
       "quantifiers": Object {
         "quantifiersDeclared": false,
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "epo:Document",
       "type": "Generalization",
     },
@@ -5817,7 +5817,7 @@ WG approval 05/03/2024",
         "quantifiersDeclared": true,
         "raw": "0..*",
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "org:Organization",
       "type": "Association",
     },
@@ -13230,7 +13230,7 @@ WG approval 05/03/2024",
         "quantifiersDeclared": true,
         "raw": "1",
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "epo-acc:ESPDRequest",
       "type": "Association",
     },
@@ -13877,15 +13877,11 @@ The reference to the catalogue line is for information only, to trace the source
 Additional Information:
 The relation between a parent Requirement and a sub-Requirement can be complex. Therefore, qualified relations (see hasQualifiedRelation) can be used to represent this relationship on its own and qualify it with additional information such as a date, a place. This is left to implementers. In the case where the purpose is to link the two Requirements without additional information, the simple relationship as proposed here can be directly used.",
       "eaId": 4939,
-      "issues": Array [
-        Object {
-          "desc": "No quantifiers defined",
-          "severity": "warning",
-        },
-      ],
+      "issues": Array [],
       "predicate": "cccev:isDerivedFrom",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "cccev:Requirement",
       "target": "eli:LegalResource",
@@ -18681,21 +18677,6 @@ WGM 01/03/2022
       "type": "Dependency",
     },
     Object {
-      "description": "Reference to other European Single Procurement Document (ESPD) Response.
-
-WG approval 05/03/2024",
-      "eaId": 5205,
-      "issues": Array [],
-      "predicate": "epo-sub:refersToOtherESPDResponse",
-      "quantifiers": Object {
-        "quantifiersDeclared": true,
-        "raw": "0..*",
-      },
-      "source": "epo-sub:ESPDResponse",
-      "target": "epo-sub:ESPDResponse",
-      "type": "Association",
-    },
-    Object {
       "description": null,
       "eaId": 2778,
       "issues": Array [
@@ -18768,7 +18749,7 @@ WG approval 05/03/2024",
         "quantifiersDeclared": false,
       },
       "source": "epo-acc:ESPDRequest",
-      "target": "epo:Document",
+      "target": "epo:ProcurementDocument",
       "type": "Generalization",
     },
     Object {
@@ -18883,21 +18864,6 @@ WG approval 05/03/2024",
       "type": "Dependency",
     },
     Object {
-      "description": null,
-      "eaId": 2822,
-      "issues": Array [],
-      "predicate": "epo:answersExclusionGround",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 1,
-        "quantifiersDeclared": true,
-        "raw": "1",
-      },
-      "source": "epo-sub:ESPDResponse",
-      "target": "epo:ExclusionGround",
-      "type": "Association",
-    },
-    Object {
       "description": "Additional information:
 This relation corresponds in eForms to    BT-791	    Review Irregularity Type
 ",
@@ -18928,21 +18894,6 @@ This relation corresponds in eForms to    BT-791	    Review Irregularity Type
     },
     Object {
       "description": null,
-      "eaId": 2823,
-      "issues": Array [],
-      "predicate": "epo:answersSelectionCriteria",
-      "quantifiers": Object {
-        "max": 1,
-        "min": 1,
-        "quantifiersDeclared": true,
-        "raw": "1",
-      },
-      "source": "epo-sub:ESPDResponse",
-      "target": "epo:SelectionCriterion",
-      "type": "Association",
-    },
-    Object {
-      "description": null,
       "eaId": 2828,
       "issues": Array [],
       "predicate": "epo:isSupportedBy",
@@ -18953,7 +18904,7 @@ This relation corresponds in eForms to    BT-791	    Review Irregularity Type
         "raw": "1",
       },
       "source": "epo:Tender",
-      "target": "epo-sub:ESPDResponse",
+      "target": "epo-sub:ESPD",
       "type": "Association",
     },
     Object {
@@ -19031,7 +18982,7 @@ This relation corresponds in eForms to   BT-13722	    Buyer Review Lot Identifie
       "description": null,
       "eaId": 4892,
       "issues": Array [],
-      "predicate": "epo:hasRejectedQuantity",
+      "predicate": "epo-ful:hasRejectedQuantity",
       "quantifiers": Object {
         "max": 1,
         "min": 0,
@@ -22799,15 +22750,11 @@ WG Approval 12/11/2019
     Object {
       "description": null,
       "eaId": 4274,
-      "issues": Array [
-        Object {
-          "desc": "No quantifiers defined",
-          "severity": "warning",
-        },
-      ],
+      "issues": Array [],
       "predicate": "epo:indicatesInvoiceeContactPoint",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "epo:Buyer",
       "target": "cpov:ContactPoint",
@@ -23103,15 +23050,11 @@ Asserting the address relationship implies that the Resource has an Address.
       "description": "URI reference to external item information or specifications, e.g. web address.
 ",
       "eaId": 4364,
-      "issues": Array [
-        Object {
-          "desc": "No quantifiers defined",
-          "severity": "warning",
-        },
-      ],
+      "issues": Array [],
       "predicate": "epo-cat:hasExternalSpecification",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "quantifiersDeclared": true,
+        "raw": "0..*",
       },
       "source": "epo-cat:Item",
       "target": "epo:Document",
@@ -23277,7 +23220,7 @@ WG approval 12/03/2024",
         "quantifiersDeclared": true,
         "raw": "1..*",
       },
-      "source": "epo-sub:ESPDResponse",
+      "source": "epo-sub:ESPD",
       "target": "epo-sub:Response",
       "type": "Association",
     },
@@ -23342,15 +23285,13 @@ Additional Information:
 
 Classifications should be defined by an organisation/country as an outcome of a security assessment.",
       "eaId": 5192,
-      "issues": Array [
-        Object {
-          "desc": "No quantifiers defined",
-          "severity": "warning",
-        },
-      ],
+      "issues": Array [],
       "predicate": "cccev:confidentialityLevelType",
       "quantifiers": Object {
-        "quantifiersDeclared": false,
+        "max": 1,
+        "min": 0,
+        "quantifiersDeclared": true,
+        "raw": "0..1",
       },
       "source": "epo-sub:Response",
       "target": "at-voc:access-rights",
@@ -23746,7 +23687,7 @@ WG approval 20/04/2021",
 WG Approval 05/03/2024",
       "eaId": 1628,
       "issues": Array [],
-      "name": "epo-sub:ESPDResponse",
+      "name": "epo-sub:ESPD",
       "type": "Class",
     },
     Object {
@@ -29628,12 +29569,6 @@ Array [
       "desc": "No quantifiers defined",
       "severity": "warning",
     },
-  ],
-  Array [
-    Object {
-      "desc": "No quantifiers defined",
-      "severity": "warning",
-    },
     Object {
       "desc": "No prefix for source [result]",
       "severity": "error",
@@ -30195,24 +30130,6 @@ Array [
     Object {
       "desc": "No prefix for target [ProxyConnector]",
       "severity": "error",
-    },
-  ],
-  Array [
-    Object {
-      "desc": "No quantifiers defined",
-      "severity": "warning",
-    },
-  ],
-  Array [
-    Object {
-      "desc": "No quantifiers defined",
-      "severity": "warning",
-    },
-  ],
-  Array [
-    Object {
-      "desc": "No quantifiers defined",
-      "severity": "warning",
     },
   ],
 ]

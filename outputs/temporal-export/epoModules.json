@@ -1,0 +1,44 @@
+{
+  "modules": [
+    {
+      "name": "ePO_core",
+      "id": "core",
+      "prefix": "epo:"
+    },
+    {
+      "name": "eAccess",
+      "id": "acc",
+      "prefix": "epo-acc:"
+    },
+    {
+      "name": "eCatalogue",
+      "id": "cat",
+      "prefix": "epo-cat:"
+    },
+    {
+      "name": "eContract",
+      "id": "con",
+      "prefix": "epo-con:"
+    },
+    {
+      "name": "eFulfilment",
+      "id": "ful",
+      "prefix": "epo-ful:"
+    },
+    {
+      "name": "eNotice",
+      "id": "not",
+      "prefix": "epo-not:"
+    },
+    {
+      "name": "eOrdering",
+      "id": "ord",
+      "prefix": "epo-ord:"
+    },
+    {
+      "name": "eSubmission",
+      "id": "sub",
+      "prefix": "epo-sub:"
+    }
+  ]
+}

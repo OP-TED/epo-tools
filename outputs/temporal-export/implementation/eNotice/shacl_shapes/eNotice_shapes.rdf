@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:schema="http://schema.org/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+	xmlns:dcterms="http://purl.org/dc/terms/"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xmlns:cpov="http://data.europa.eu/m8g/"
+	xmlns:a4g="http://data.europa.eu/a4g/ontology#"
+	xmlns:sfrml="http://data.europa.eu/a4g/mapping/sf-rml/"
+	xmlns:a4g_shape="http://data.europa.eu/a4g/data-shape#"
+	xmlns:eli="http://data.europa.eu/eli/ontology#"
+	xmlns:m8g="http://data.europa.eu/m8g/"
+	xmlns:time="http://www.w3.org/2006/time#"
+	xmlns:person="http://www.w3.org/ns/person#"
+	xmlns:locn="http://www.w3.org/ns/locn#"
+	xmlns:shacl="http://www.w3.org/ns/shacl#"
+	xmlns:org="http://www.w3.org/ns/org#"
+	xmlns:adms="http://www.w3.org/ns/adms#"
+	xmlns:rml="http://semweb.mmlab.be/ns/rml#"
+	xmlns:r2rml="http://www.w3.org/ns/r2rml#"
+	xmlns:at="http://publications.europa.eu/ontology/authority/"
+	xmlns:atold="http://publications.europa.eu/resource/authority/"
+	xmlns:vann="http://purl.org/vocab/vann/">
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PlainLiteral">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:or rdf:nodeID="n3-20"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-20">
+		<rdf:first rdf:nodeID="n3-21"/>
+		<rdf:rest rdf:nodeID="n3-22"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-21">
+		<shacl:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-22">
+		<rdf:first rdf:nodeID="n3-23"/>
+		<rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:nodeID="n3-23">
+		<shacl:datatype rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#langString"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNoticeShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#ResultNotice"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<rdfs:comment>An announcement of the award or non-award of a Contract by a Buyer. (WG approval 27/03/2019)</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesContract-Contract"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToProcedure-Procedure"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToLot-Lot"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesRole-AgentInRole"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesNoticeAwardInformation-NoticeAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesAwardDecision-AwardDecision"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToLotGroup-LotGroup"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToRole-AgentInRole"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#not-shape">
+		<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+		<rdfs:label xml:lang="en">eProcurement Ontology not - SHACL shapes</rdfs:label>
+		<dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2021-06-01</dcterms:created>
+		<dcterms:description xml:lang="en">The eProcurement Ontology not SHACL shapes provides the datashape specifications for the eProcurement Ontology not module.</dcterms:description>
+		<dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2024-03-21</dcterms:issued>
+		<dcterms:license>© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/).</dcterms:license>
+		<dcterms:publisher>http://publications.europa.eu/resource/authority/corporate-body/PUBL</dcterms:publisher>
+		<dcterms:title xml:lang="en">eProcurement Ontology not - SHACL shapes</dcterms:title>
+		<vann:preferredNamespacePrefix>epo</vann:preferredNamespacePrefix>
+		<vann:preferredNamespaceUri>http://data.europa.eu/a4g/ontology#</vann:preferredNamespaceUri>
+		<rdfs:seeAlso rdf:resource="https://docs.ted.europa.eu/home/index.html"/>
+		<rdfs:seeAlso rdf:resource="https://github.com/OP-TED/ePO/releases"/>
+		<rdfs:seeAlso rdf:resource="https://joinup.ec.europa.eu/collection/eprocurement/solution/eprocurement-ontology/about"/>
+		<rdfs:seeAlso rdf:resource="https://op.europa.eu/en/web/eu-vocabularies/e-procurement"/>
+		<owl:imports rdf:resource="http://data.europa.eu/eli/ontology#"/>
+		<owl:imports rdf:resource="http://data.europa.eu/m8g/"/>
+		<owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+		<owl:imports rdf:resource="http://purl.org/vocab/vann/"/>
+		<owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+		<owl:imports rdf:resource="http://www.w3.org/2006/time"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/adms"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/locn"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/org#"/>
+		<owl:imports rdf:resource="http://www.w3.org/ns/person"/>
+		<owl:imports rdf:resource="http://xmlns.com/foaf/0.1/"/>
+		<owl:incompatibleWith>3.1.0</owl:incompatibleWith>
+		<owl:priorVersion>http://data.europa.eu/a4g/data-shape#not-shape-4.0.2</owl:priorVersion>
+		<owl:versionIRI rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape-4.1.0"/>
+		<owl:versionInfo>4.1.0</owl:versionInfo>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroupAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces lot group award information</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesContract-Contract">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesContract"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces contract</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToProcedure-Procedure">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToProcedure"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to procedure</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToLot-Lot">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLot"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces role</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNoticeShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#DirectAwardPrenotificationNotice"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<rdfs:comment>Notice which sets out the Buyer&apos;s purchasing intention to award a Contract without prior notification of Competition.</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesNoticeAwardInformation-NoticeAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesProcedure-Procedure"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesLot-Lot"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesLotGroup-LotGroup"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesContract-Contract"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesRole-AgentInRole"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesAwardDecision-AwardDecision"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesNoticeAwardInformation-NoticeAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesNoticeAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces notice award information</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PlanningNoticeShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#PlanningNotice"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<rdfs:comment>Notice which sets out the Contracting Authority&apos;s purchasing intentions. It is used by Contracting Authorities to provide Suppliers with information about a Procurement Process. </rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#PlanningNotice-announcesRole-AgentInRole"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#PlanningNotice-announcesPlannedProcurementPart-PlannedProcurementPart"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PlanningNotice-announcesRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces role</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNoticeShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#ContractModificationNotice"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<rdfs:comment>An announcement of the Modification Of a Contract/Concession during its term by a Procuring Entity.</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToContractToBeModified-Contract"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-announcesContractAmendment-ContractAmendment"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToProcedure-Procedure"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-announcesRole-AgentInRole"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToNoticeAwardInformation-NoticeAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToLotGroup-LotGroup"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToAwardDecision-AwardDecision"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToLot-Lot"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToContractToBeModified-Contract">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToContractToBeModified"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to contract to be modified</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesNoticeAwardInformation-NoticeAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesNoticeAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces notice award information</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesProcedure-Procedure">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesProcedure"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces procedure</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-announcesAwardDecision-AwardDecision">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesAwardDecision"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces award decision</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-announcesContractAmendment-ContractAmendment">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#ContractAmendment"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesContractAmendment"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces contract amendment</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompetitionNoticeShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#CompetitionNotice"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<rdfs:comment>An announcement of the launch of a Procurement Procedure by a Procuring Entity. WG approval 18/05/2018 </rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesRole-AgentInRole"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesProcedure-Procedure"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesLot-Lot"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesLotGroup-LotGroup"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces role</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesProcedure-Procedure">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesProcedure"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces procedure</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PlanningNotice-announcesPlannedProcurementPart-PlannedProcurementPart">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#PlannedProcurementPart"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesPlannedProcurementPart"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces planned procurement part</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToLotGroup-LotGroup">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroup"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot group</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToProcedure-Procedure">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToProcedure"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to procedure</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNoticeShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#CompletionNotice"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<rdfs:comment>An announcement of the end of a Procurement by a Buyer.</rdfs:comment>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-announcesCompletionOfContract-Contract"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToProcedure-Procedure"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToAwardDecision-AwardDecision"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToLot-Lot"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToLotGroup-LotGroup"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToNoticeAwardInformation-NoticeAwardInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToRole-AgentInRole"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-announcesRole-AgentInRole"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CompletionNotice-announcesReviewObject-ReviewObject"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-announcesCompletionOfContract-Contract">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesCompletionOfContract"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces completion of contract</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesLot-Lot">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLot"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces lot</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompetitionNotice-announcesLotGroup-LotGroup">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroup"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces lot group</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesLot-Lot">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLot"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces lot</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ResultNotice-refersToRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to role</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToProcedure-Procedure">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToProcedure"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to procedure</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesLotGroup-LotGroup">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroup"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces lot group</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesLotGroupAwardInformation-LotGroupAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroupAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces lot group award information</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesContract-Contract">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesContract"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces contract</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToAwardDecision-AwardDecision">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToAwardDecision"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to award decision</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToLot-Lot">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLot"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToLotGroup-LotGroup">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroup"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot group</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroupAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot group award information</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToNoticeAwardInformation-NoticeAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToNoticeAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to notice award information</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-refersToRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to role</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-announcesRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces role</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-announcesRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces role</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CompletionNotice-announcesReviewObject-ReviewObject">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#ReviewObject"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesReviewObject"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces review object</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToNoticeAwardInformation-NoticeAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToNoticeAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to notice award information</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToLotGroup-LotGroup">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroup"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot group</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToLotGroupAwardInformation-LotGroupAwardInformation">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroupAwardInformation"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot group award information</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToAwardDecision-AwardDecision">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToAwardDecision"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to award decision</shacl:name>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#ContractModificationNotice-refersToLot-Lot">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLot"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">refers to lot</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesRole-AgentInRole">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces role</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#DirectAwardPrenotificationNotice-announcesAwardDecision-AwardDecision">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#not-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesAwardDecision"/>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+		<shacl:name xml:lang="en">announces award decision</shacl:name>
+	</rdf:Description>
+</rdf:RDF>

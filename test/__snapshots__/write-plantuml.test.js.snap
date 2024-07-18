@@ -68,7 +68,7 @@ class \\"epo:Buyer\\" {
   epo:exposesInvoiceeChannel : cv:Channel [0..*]
   epo:hasActivityDescription : rdf:PlainLiteral [0..*]
   epo:hasBuyerProfile : xsd:anyURI [0..1]
-  epo:indicatesInvoiceeContactPoint : cpov:ContactPoint 
+  epo:indicatesInvoiceeContactPoint : cpov:ContactPoint [0..*]
   epo:isContractingEntity : xsd:boolean [0..1]
   epo:signsAwardDecision : epo:AwardDecision [0..*]
 }
@@ -681,7 +681,7 @@ class \\"epo:Tender\\" {
   epo:isSubjectToGrouping : epo:LotGroup [0..1]
   epo:isSubmitedBy : epo:Tenderer [0..1]
   epo:isSubmittedForLot : epo:Lot [1]
-  epo:isSupportedBy : epo-sub:ESPDResponse [1]
+  epo:isSupportedBy : epo-sub:ESPD [1]
   epo:isVariant : xsd:boolean [0..1]
   epo:specifiesSubcontractors : epo:Subcontractor [0..*]
 }
@@ -2036,12 +2036,12 @@ class \\"epo-ful:ReceiptAdvice\\" {
 class \\"epo-ful:ReceiptAdviceLine\\" {
   epo-ful:hasOversupplyQuantity : epo:Quantity [0..1]
   epo-ful:hasReceivedQuantity : epo:Quantity [0..1]
+  epo-ful:hasRejectedQuantity : epo:Quantity [0..1]
   epo-ful:hasRejectReason : at-voc-new:reject-reason [0..1]
   epo-ful:hasShortageAction : at-voc-new:action-code [0..1]
   epo-ful:hasShortQuantity : epo:Quantity [0..1]
   epo-ful:isSubmittedForDespatchLine : epo-ful:DespatchLine [1]
   epo-ful:RejectionAction : at-voc-new:action-code [0..1]
-  epo:hasRejectedQuantity : epo:Quantity [0..1]
 }
 
 class \\"epo-ful:ShipmentAgreement\\" {
@@ -3797,7 +3797,7 @@ class \\"epo-cat:Item\\" {
   epo-cat:hasCountryOfOrigin : at-voc:country [0..1]
   epo-cat:hasDeliveryClassification : at-voc-new:delivery-item-type [0..1]
   epo-cat:hasDimensionDescription : rdf:PlainLiteral [0..*]
-  epo-cat:hasExternalSpecification : epo:Document 
+  epo-cat:hasExternalSpecification : epo:Document [0..*]
   epo-cat:hasHazardousClass : rdf:PlainLiteral [0..*]
   epo-cat:hasHazardousItemUNDGCode : at-voc-new:dangerous-goods-list [0..*]
   epo-cat:hasItemClassification : at-voc-new:item-classification [0..*]
@@ -4029,13 +4029,10 @@ class \\"epo-sub:CertificateInformation\\" {
   epo-sub:summarisesInformationAboutCertificate : epo:Certificate [1]
 }
 
-class \\"epo-sub:ESPDResponse\\" {
+class \\"epo-sub:ESPD\\" {
   epo-sub:providesInformationOn : org:Organization [0..*]
-  epo-sub:refersToOtherESPDResponse : epo-sub:ESPDResponse [0..*]
   epo-sub:relatesToESPDRequest : epo-acc:ESPDRequest [1]
   epo-sub:specifiesResponse : epo-sub:Response [1..*]
-  epo:answersExclusionGround : epo:ExclusionGround [1]
-  epo:answersSelectionCriteria : epo:SelectionCriterion [1]
 }
 
 class \\"epo-sub:LegalRepresentative\\" {
@@ -4053,7 +4050,7 @@ class \\"epo-sub:NationalPreQualificationData\\" {
 }
 
 class \\"epo-sub:Response\\" {
-  cccev:confidentialityLevelType : at-voc:access-rights 
+  cccev:confidentialityLevelType : at-voc:access-rights [0..1]
   cccev:supportsValue : cccev:SupportedValue [0..*]
   epo-sub:answersQuestion : cccev:InformationRequirement [0..*]
   epo-sub:isReinforcedBy : cccev:Evidence [0..*]
@@ -4061,7 +4058,7 @@ class \\"epo-sub:Response\\" {
 }
 \\"epo:AuxiliaryParty\\" <|-- \\"epo-sub:LegalRepresentative\\"
 \\"epo:ContextDescription\\" <|-- \\"epo-sub:CertificateInformation\\"
-\\"epo:Document\\" <|-- \\"epo-sub:ESPDResponse\\"
+\\"epo:Document\\" <|-- \\"epo-sub:ESPD\\"
 \\"epo:Document\\" <|-- \\"epo-sub:Mandate\\"
 \\"epo:Document\\" <|-- \\"epo-sub:PowerOfAttorney\\"
 @enduml
@@ -4310,7 +4307,7 @@ class \\"cccev:Requirement\\" {
   cccev:hasConcept : cccev:InformationConcept [0..*]
   cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
   cccev:hasRequirement : cccev:Requirement [0..*]
-  cccev:isDerivedFrom : eli:LegalResource 
+  cccev:isDerivedFrom : eli:LegalResource [0..*]
   dct:description : rdf:PlainLiteral [0..1]
   skos:prefLabel : rdf:PlainLiteral [0..1]
 }
@@ -4416,7 +4413,7 @@ class \\"epo-acc:ESPDRequest\\" {
   epo:concernsProcedure : epo:Procedure [1]
   epo:specifiesProcurementCriterion : epo:ProcurementCriterion [1..*]
 }
-\\"epo:Document\\" <|-- \\"epo-acc:ESPDRequest\\"
+\\"epo:ProcurementDocument\\" <|-- \\"epo-acc:ESPDRequest\\"
 @enduml
 ",
     "prev": "
@@ -4498,12 +4495,9 @@ class \\"epo:RequestForClarification\\" {
 
 }
 
-class \\"epo-sub:ESPDResponse\\" {
+class \\"epo-sub:ESPD\\" {
   epo-sub:providesInformationOn : org:Organization [0..*]
   epo-sub:relatesToESPDRequest : epo-acc:ESPDRequest [1]
-  epo-sub:refersToOtherESPDResponse : epo-sub:ESPDResponse [0..*]
-  epo:answersExclusionGround : epo:ExclusionGround [1]
-  epo:answersSelectionCriteria : epo:SelectionCriterion [1]
   epo-sub:specifiesResponse : epo-sub:Response [1..*]
 }
 
@@ -4672,7 +4666,7 @@ class \\"epo:Buyer\\" {
   epo:signsAwardDecision : epo:AwardDecision [0..*]
   epo:delegatesAncillaryActivitiesTo : epo:ProcurementServiceProvider [0..*]
   epo:exposesInvoiceeChannel : cv:Channel [0..*]
-  epo:indicatesInvoiceeContactPoint : cpov:ContactPoint 
+  epo:indicatesInvoiceeContactPoint : cpov:ContactPoint [0..*]
 }
 
 class \\"epo:LotSpecificTerm\\" {
@@ -5440,7 +5434,7 @@ class \\"epo:Tender\\" {
   epo:specifiesSubcontractors : epo:Subcontractor [0..*]
   epo:isSubjectToGrouping : epo:LotGroup [0..1]
   epo:isSubmittedForLot : epo:Lot [1]
-  epo:isSupportedBy : epo-sub:ESPDResponse [1]
+  epo:isSupportedBy : epo-sub:ESPD [1]
 }
 
 class \\"epo:MonetaryValue\\" {
@@ -5494,7 +5488,7 @@ class \\"epo-cat:Item\\" {
   epo-cat:hasHazardousItemUNDGCode : at-voc-new:dangerous-goods-list [0..*]
   dct:requires : epo-cat:Item [0..*]
   epo:hasBuyerItemID : adms:Identifier [0..1]
-  epo-cat:hasExternalSpecification : epo:Document 
+  epo-cat:hasExternalSpecification : epo:Document [0..*]
   epo:hasSerialID : adms:Identifier [0..1]
   epo-ord:hasTaxInformation : epo-ord:TaxInformation [0..*]
 }
@@ -6726,7 +6720,7 @@ class \\"epo-ful:ReceiptAdviceLine\\" {
   epo-ful:hasShortQuantity : epo:Quantity [0..1]
   epo-ful:hasReceivedQuantity : epo:Quantity [0..1]
   epo-ful:hasOversupplyQuantity : epo:Quantity [0..1]
-  epo:hasRejectedQuantity : epo:Quantity [0..1]
+  epo-ful:hasRejectedQuantity : epo:Quantity [0..1]
   epo-ful:isSubmittedForDespatchLine : epo-ful:DespatchLine [1]
 }
 
@@ -6758,7 +6752,7 @@ class \\"epo-sub:Response\\" {
   epo-sub:answersQuestion : cccev:InformationRequirement [0..*]
   epo-sub:isReinforcedBy : cccev:Evidence [0..*]
   cccev:supportsValue : cccev:SupportedValue [0..*]
-  cccev:confidentialityLevelType : at-voc:access-rights 
+  cccev:confidentialityLevelType : at-voc:access-rights [0..1]
   epo-sub:refersToApplicablePeriod : epo:Period [0..1]
 }
 
@@ -6813,7 +6807,7 @@ class \\"cccev:Requirement\\" {
   skos:prefLabel : rdf:PlainLiteral [0..1]
   adms:identifier : adms:Identifier [0..1]
   cccev:hasConcept : cccev:InformationConcept [0..*]
-  cccev:isDerivedFrom : eli:LegalResource 
+  cccev:isDerivedFrom : eli:LegalResource [0..*]
   cccev:hasRequirement : cccev:Requirement [0..*]
   cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
 }
@@ -7439,7 +7433,7 @@ class \\"epo-sub:CertificateInformation\\" {
   epo-sub:coversAllSelectionCriteria : xsd:boolean [0..1]
   epo-sub:summarisesInformationAboutCertificate : epo:Certificate [1]
 }
-\\"epo:Document\\" <|-- \\"epo-sub:ESPDResponse\\"
+\\"epo:Document\\" <|-- \\"epo-sub:ESPD\\"
 \\"epo:OfferingParty\\" <|-- \\"epo:Winner\\"
 \\"epo:OfferingParty\\" <|-- \\"epo:Tenderer\\"
 \\"epo:LotSpecificTerm\\" <|-- \\"epo:OpeningTerm\\"
@@ -7727,7 +7721,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:Document\\" <|-- \\"epo:RequestForParticipation\\"
 \\"epo:Document\\" <|-- \\"epo:ExpressionOfInterest\\"
 \\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:CANSocialNotice-D25\\"
-\\"epo:Document\\" <|-- \\"epo-acc:ESPDRequest\\"
+\\"epo:ProcurementDocument\\" <|-- \\"epo-acc:ESPDRequest\\"
 \\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:QSNotice-D25\\"
 \\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CNSocialNotice-D25\\"
 \\"epo-not:StandardFormsNotice\\" <|-- \\"epo-not:CANSocialNotice-D25\\"
@@ -7808,7 +7802,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:ContractTerm\\" --> \\"0..1\\" \\"epo:Period\\" : epo:definesContractPeriod
 \\"epo:Contract\\" --> \\"0..*\\" \\"epo:Fund\\" : epo:isFundedBy
 \\"compl\\" -->  \\"at-voc:notice-type\\" : skos:inScheme
-\\"epo-sub:ESPDResponse\\" --> \\"0..*\\" \\"org:Organization\\" : epo-sub:providesInformationOn
+\\"epo-sub:ESPD\\" --> \\"0..*\\" \\"org:Organization\\" : epo-sub:providesInformationOn
 \\"epo:Tender\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo:hasFinancialOfferValue
 \\"epo:AwardOutcome\\" --> \\"0..1\\" \\"at-voc:winner-selection-status\\" : epo:hasAwardStatus
 \\"epo:Tender\\" --> \\"0..1\\" \\"epo:Tenderer\\" : epo:isSubmitedBy
@@ -8123,7 +8117,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:ContractTerm\\" --> \\"0..1\\" \\"at-voc:contract-nature\\" : epo:hasContractNatureType
 \\"epo:Purpose\\" --> \\"0..*\\" \\"at-voc:cpv\\" : epo:hasAdditionalClassification
 \\"epo:Purpose\\" --> \\"1..*\\" \\"at-voc:cpv\\" : epo:hasMainClassification
-\\"epo-sub:ESPDResponse\\" --> \\"1\\" \\"epo-acc:ESPDRequest\\" : epo-sub:relatesToESPDRequest
+\\"epo-sub:ESPD\\" --> \\"1\\" \\"epo-acc:ESPDRequest\\" : epo-sub:relatesToESPDRequest
 \\"epo:ProcurementElement\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo:hasEstimatedValue
 \\"epo:ProcurementObject\\" --> \\"0..*\\" \\"at-voc:legal-basis\\" : epo:hasLegalBasis
 \\"epo:Procedure\\" --> \\"1..*\\" \\"epo:ProcedureSpecificTerm\\" : epo:isSubjectToProcedureSpecificTerm
@@ -8156,7 +8150,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:AccessTerm\\" --> \\"0..1\\" \\"at-voc:communication-justification\\" : epo:hasDocumentRestrictionJustification
 \\"epo-ord:OrderLine\\" --> \\"0..1\\" \\"epo-cat:CatalogueLine\\" : epo-ord:refersToCatalogueLine
 \\"epo:SubmissionTerm\\" --> \\"0..1\\" \\"epo:Duration\\" : epo:hasTenderValidityDuration
-\\"cccev:Requirement\\" -->  \\"eli:LegalResource\\" : cccev:isDerivedFrom
+\\"cccev:Requirement\\" --> \\"0..*\\" \\"eli:LegalResource\\" : cccev:isDerivedFrom
 \\"epo-not:ResultNotice\\" --> \\"0..*\\" \\"epo:LotGroup\\" : epo:refersToLotGroup
 \\"epo:Prize\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo:hasPrizeValue
 \\"epo-cat:Item\\" --> \\"0..*\\" \\"adms:Identifier\\" : epo:hasItemStandardID
@@ -8339,7 +8333,6 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:Document\\" --> \\"0..*\\" \\"epo:Document\\" : epo:associatedWith
 \\"epo-not:QSNotice-D25\\" --> \\"0..1\\" \\"Form22\\" : epo:hasFormType
 \\"epo-not:CNSocialNotice-D25\\" --> \\"0..1\\" \\"Form22\\" : epo:hasFormType
-\\"epo-sub:ESPDResponse\\" --> \\"0..*\\" \\"epo-sub:ESPDResponse\\" : epo-sub:refersToOtherESPDResponse
 \\"epo-not:CANSocialNotice-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
 \\"epo:LotGroup\\" --> \\"1..*\\" \\"epo:Lot\\" : epo:setsGroupingContextForLot
 \\"epo:Tender\\" --> \\"0..1\\" \\"epo:LotGroup\\" : epo:isSubjectToGrouping
@@ -8348,16 +8341,14 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:CANSocialNotice-D25\\" --> \\"0..1\\" \\"Form22\\" : epo:hasFormType
 \\"epo-not:QSNotice-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
 \\"epo-not:CNSocialNotice-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-sub:ESPDResponse\\" --> \\"1\\" \\"epo:ExclusionGround\\" : epo:answersExclusionGround
 \\"epo:ReviewRequest\\" --> \\"1..*\\" \\"at-voc:irregularity-type\\" : epo:hasAllegedIrregularityType
 \\"cccev:Evidence\\" --> \\"0..*\\" \\"cccev:Requirement\\" : cccev:supportsRequirement
-\\"epo-sub:ESPDResponse\\" --> \\"1\\" \\"epo:SelectionCriterion\\" : epo:answersSelectionCriteria
-\\"epo:Tender\\" --> \\"1\\" \\"epo-sub:ESPDResponse\\" : epo:isSupportedBy
+\\"epo:Tender\\" --> \\"1\\" \\"epo-sub:ESPD\\" : epo:isSupportedBy
 \\"epo:AwardDecision\\" --> \\"0..*\\" \\"epo:AwardOutcome\\" : epo:comprisesAwardOutcome
 \\"epo:Document\\" --> \\"0..*\\" \\"epo:Document\\" : epo:hasElectronicDigest
 \\"epo:ReviewRequestSummary\\" --> \\"1\\" \\"epo:Lot\\" : epo:concernsReviewSummaryForLot
 \\"epo-ful:ReceiptAdviceLine\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo-ful:hasOversupplyQuantity
-\\"epo-ful:ReceiptAdviceLine\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo:hasRejectedQuantity
+\\"epo-ful:ReceiptAdviceLine\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo-ful:hasRejectedQuantity
 \\"epo-ful:ReceiptAdviceLine\\" --> \\"1\\" \\"epo-ful:DespatchLine\\" : epo-ful:isSubmittedForDespatchLine
 \\"epo-ful:ReceiptAdvice\\" --> \\"0..1\\" \\"epo-ful:DespatchAdvice\\" : epo-ful:isSubmittedForDespatchAdvice
 \\"epo-ful:ReceiptAdvice\\" --> \\"0..1\\" \\"epo-ful:ShipmentInformation\\" : epo-ful:isSubmittedForShipment
@@ -8565,7 +8556,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"cv:Channel\\" --> \\"0..*\\" \\"adms:Identifier\\" : epo:hasEndpointIdentifier
 \\"org:Organization\\" --> \\"0..*\\" \\"adms:Identifier\\" : epo:hasLegalIdentifier
 \\"org:Organization\\" --> \\"0..*\\" \\"adms:Identifier\\" : epo:hasTaxIdentifier
-\\"epo:Buyer\\" -->  \\"cpov:ContactPoint\\" : epo:indicatesInvoiceeContactPoint
+\\"epo:Buyer\\" --> \\"0..*\\" \\"cpov:ContactPoint\\" : epo:indicatesInvoiceeContactPoint
 \\"epo-ord:Order\\" --> \\"1\\" \\"epo:MonetaryValue\\" : epo-ord:hasTotalLineAmount
 \\"epo-ord:Order\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo-ord:hasTotalTaxExclusiveAmount
 \\"epo-ord:Order\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo-ord:hasTotalTaxInclusiveAmount
@@ -8584,7 +8575,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-ful:TransportMeans\\" --> \\"0..1\\" \\"adms:Identifier\\" : epo-ful:hasVehicleSegmentID
 \\"cpov:ContactPoint\\" --> \\"0..1\\" \\"locn:Address\\" : locn:address
 \\"epo:ProcurementElement\\" --> \\"0..*\\" \\"adms:Identifier\\" : epo:hasInternalIdentifier
-\\"epo-cat:Item\\" -->  \\"epo:Document\\" : epo-cat:hasExternalSpecification
+\\"epo-cat:Item\\" --> \\"0..*\\" \\"epo:Document\\" : epo-cat:hasExternalSpecification
 \\"epo-sub:NationalPreQualificationData\\" --> \\"1\\" \\"org:Organization\\" : epo-sub:concernsOrganisation
 \\"epo-sub:NationalPreQualificationData\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo-sub:providesOrganisationEmployeeQuantity
 \\"epo-sub:NationalPreQualificationData\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo-sub:providesOrganisationFinancialCapability
@@ -8592,12 +8583,12 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-cat:Item\\" --> \\"0..1\\" \\"adms:Identifier\\" : epo:hasSerialID
 \\"epo-cat:Price\\" --> \\"0..1\\" \\"epo-ord:AllowanceInformation\\" : epo-ord:hasPriceDiscountInformation
 \\"epo:LotGroup\\" --> \\"0..1\\" \\"adms:Identifier\\" : adms:identifier
-\\"epo-sub:ESPDResponse\\" --> \\"1..*\\" \\"epo-sub:Response\\" : epo-sub:specifiesResponse
+\\"epo-sub:ESPD\\" --> \\"1..*\\" \\"epo-sub:Response\\" : epo-sub:specifiesResponse
 \\"cccev:Evidence\\" --> \\"0..*\\" \\"cccev:SupportedValue\\" : cccev:supportsValue
 \\"cccev:SupportedValue\\" --> \\"0..*\\" \\"cccev:InformationConcept\\" : cccev:providesValueFor
 \\"epo-sub:Response\\" --> \\"0..*\\" \\"cccev:Evidence\\" : epo-sub:isReinforcedBy
 \\"epo-sub:Response\\" --> \\"0..*\\" \\"cccev:SupportedValue\\" : cccev:supportsValue
-\\"epo-sub:Response\\" -->  \\"at-voc:access-rights\\" : cccev:confidentialityLevelType
+\\"epo-sub:Response\\" --> \\"0..1\\" \\"at-voc:access-rights\\" : cccev:confidentialityLevelType
 \\"epo-sub:Response\\" --> \\"0..1\\" \\"epo:Period\\" : epo-sub:refersToApplicablePeriod
 \\"epo-sub:LegalRepresentative\\" --> \\"0..1\\" \\"epo-sub:PowerOfAttorney\\" : epo-sub:hasPowerOfAttorney
 \\"epo-sub:LegalRepresentative\\" --> \\"0..*\\" \\"epo-sub:Mandate\\" : epo-sub:hasMandate
@@ -8816,7 +8807,7 @@ class \\"cccev:Requirement\\" {
   cccev:hasConcept : cccev:InformationConcept [0..*]
   cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
   cccev:hasRequirement : cccev:Requirement [0..*]
-  cccev:isDerivedFrom : eli:LegalResource 
+  cccev:isDerivedFrom : eli:LegalResource [0..*]
   dct:description : rdf:PlainLiteral [0..1]
   skos:prefLabel : rdf:PlainLiteral [0..1]
 }
@@ -8999,7 +8990,7 @@ class \\"epo-cat:Item\\" {
   epo-cat:hasCountryOfOrigin : at-voc:country [0..1]
   epo-cat:hasDeliveryClassification : at-voc-new:delivery-item-type [0..1]
   epo-cat:hasDimensionDescription : rdf:PlainLiteral [0..*]
-  epo-cat:hasExternalSpecification : epo:Document 
+  epo-cat:hasExternalSpecification : epo:Document [0..*]
   epo-cat:hasHazardousClass : rdf:PlainLiteral [0..*]
   epo-cat:hasHazardousItemUNDGCode : at-voc-new:dangerous-goods-list [0..*]
   epo-cat:hasItemClassification : at-voc-new:item-classification [0..*]
@@ -9179,12 +9170,12 @@ class \\"epo-ful:ReceiptAdvice\\" {
 class \\"epo-ful:ReceiptAdviceLine\\" {
   epo-ful:hasOversupplyQuantity : epo:Quantity [0..1]
   epo-ful:hasReceivedQuantity : epo:Quantity [0..1]
+  epo-ful:hasRejectedQuantity : epo:Quantity [0..1]
   epo-ful:hasRejectReason : at-voc-new:reject-reason [0..1]
   epo-ful:hasShortageAction : at-voc-new:action-code [0..1]
   epo-ful:hasShortQuantity : epo:Quantity [0..1]
   epo-ful:isSubmittedForDespatchLine : epo-ful:DespatchLine [1]
   epo-ful:RejectionAction : at-voc-new:action-code [0..1]
-  epo:hasRejectedQuantity : epo:Quantity [0..1]
 }
 
 class \\"epo-ful:ShipmentAgreement\\" {
@@ -9875,13 +9866,10 @@ class \\"epo-sub:CertificateInformation\\" {
   epo-sub:summarisesInformationAboutCertificate : epo:Certificate [1]
 }
 
-class \\"epo-sub:ESPDResponse\\" {
+class \\"epo-sub:ESPD\\" {
   epo-sub:providesInformationOn : org:Organization [0..*]
-  epo-sub:refersToOtherESPDResponse : epo-sub:ESPDResponse [0..*]
   epo-sub:relatesToESPDRequest : epo-acc:ESPDRequest [1]
   epo-sub:specifiesResponse : epo-sub:Response [1..*]
-  epo:answersExclusionGround : epo:ExclusionGround [1]
-  epo:answersSelectionCriteria : epo:SelectionCriterion [1]
 }
 
 class \\"epo-sub:LegalRepresentative\\" {
@@ -9899,7 +9887,7 @@ class \\"epo-sub:NationalPreQualificationData\\" {
 }
 
 class \\"epo-sub:Response\\" {
-  cccev:confidentialityLevelType : at-voc:access-rights 
+  cccev:confidentialityLevelType : at-voc:access-rights [0..1]
   cccev:supportsValue : cccev:SupportedValue [0..*]
   epo-sub:answersQuestion : cccev:InformationRequirement [0..*]
   epo-sub:isReinforcedBy : cccev:Evidence [0..*]
@@ -9969,7 +9957,7 @@ class \\"epo:Buyer\\" {
   epo:exposesInvoiceeChannel : cv:Channel [0..*]
   epo:hasActivityDescription : rdf:PlainLiteral [0..*]
   epo:hasBuyerProfile : xsd:anyURI [0..1]
-  epo:indicatesInvoiceeContactPoint : cpov:ContactPoint 
+  epo:indicatesInvoiceeContactPoint : cpov:ContactPoint [0..*]
   epo:isContractingEntity : xsd:boolean [0..1]
   epo:signsAwardDecision : epo:AwardDecision [0..*]
 }
@@ -10582,7 +10570,7 @@ class \\"epo:Tender\\" {
   epo:isSubjectToGrouping : epo:LotGroup [0..1]
   epo:isSubmitedBy : epo:Tenderer [0..1]
   epo:isSubmittedForLot : epo:Lot [1]
-  epo:isSupportedBy : epo-sub:ESPDResponse [1]
+  epo:isSupportedBy : epo-sub:ESPD [1]
   epo:isVariant : xsd:boolean [0..1]
   epo:specifiesSubcontractors : epo:Subcontractor [0..*]
 }
@@ -10986,9 +10974,8 @@ class \\"veat\\" {
 \\"epo:ContractSpecificTerm\\" <|-- \\"epo:ContractTerm\\"
 \\"epo:ContractSpecificTerm\\" <|-- \\"epo:FrameworkAgreementTerm\\"
 \\"epo:ContractSpecificTerm\\" <|-- \\"epo:SubcontractTerm\\"
-\\"epo:Document\\" <|-- \\"epo-acc:ESPDRequest\\"
 \\"epo:Document\\" <|-- \\"epo-cat:PostAwardDocument\\"
-\\"epo:Document\\" <|-- \\"epo-sub:ESPDResponse\\"
+\\"epo:Document\\" <|-- \\"epo-sub:ESPD\\"
 \\"epo:Document\\" <|-- \\"epo-sub:Mandate\\"
 \\"epo:Document\\" <|-- \\"epo-sub:PowerOfAttorney\\"
 \\"epo:Document\\" <|-- \\"epo:AwardDecision\\"
@@ -11052,6 +11039,7 @@ class \\"veat\\" {
 \\"epo:ProcurementCriterion\\" <|-- \\"epo:AwardCriterion\\"
 \\"epo:ProcurementCriterion\\" <|-- \\"epo:ParticipationCondition\\"
 \\"epo:ProcurementCriterion\\" <|-- \\"epo:QualificationCriterion\\"
+\\"epo:ProcurementDocument\\" <|-- \\"epo-acc:ESPDRequest\\"
 \\"epo:ProcurementDocument\\" <|-- \\"epo:TechnicalSpecification\\"
 \\"epo:ProcurementElement\\" <|-- \\"epo:PlannedProcurementPart\\"
 \\"epo:ProcurementElement\\" <|-- \\"epo:ProcurementObject\\"

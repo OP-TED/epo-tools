@@ -1,29 +1,9 @@
-import { UNDER_REVIEW } from '../src/config.js'
-import { getRdfAssets } from '../src/io/assets.js'
-import { writeFileSync } from 'fs'
-import {
-  prettyPrintTrig,
-} from '../src/io/serialization.js'
-import { createTriplestore, doSelect } from '../src/sparql/localStore.js'
-import rdf from 'rdf-ext'
+import { createTriplestore, doConstruct } from '../src/sparql/localStore.js'
 
-const globPattern = `${UNDER_REVIEW.localPath}/implementation/**/*.ttl`
+function getRedefined ({ assets }) {
+  const store = createTriplestore({ assets })
 
-const assets = await getRdfAssets({ globPattern })
-
-const store = createTriplestore({ assets })
-
-function doQuery (query) {
-  const result = doSelect({ store, query })
-  const dataset = rdf.dataset()
-  for (const { s, p, o, graph } of result) {
-    dataset.add(rdf.quad(s, p, o, graph))
-  }
-  return dataset
-
-}
-
-const filterUnwantedQuery = `
+  const filterUnwantedQuery = `
 PREFIX ns1: <http://www.w3.org/2006/time#>
 PREFIX ns2: <http://www.w3.org/ns/locn#>
 PREFIX ns3: <http://www.w3.org/ns/org#>
@@ -45,10 +25,11 @@ PREFIX ns12: <http://www.w3.org/ns/dcat#>
 PREFIX ns13: <http://www.w3.org/2002/07/owl#>
 PREFIX ns14: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ns15: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX ns16: <http://www.w3.org/2001/XMLSchema#>
+PREFIX eli: <http://data.europa.eu/eli/ontology#>
 
-SELECT DISTINCT ?graph ?s ?p ?o
+CONSTRUCT {?s ?p ?o }
 WHERE {
-  GRAPH ?graph {
     ?s ?p ?o
     FILTER (isURI(?s) && 
             (STRSTARTS(str(?s), str(ns1:)) ||
@@ -65,12 +46,13 @@ WHERE {
               STRSTARTS(str(?s), str(ns12:)) ||
               STRSTARTS(str(?s), str(ns13:)) ||
               STRSTARTS(str(?s), str(ns14:)) ||
-              STRSTARTS(str(?s), str(ns15:)))
+              STRSTARTS(str(?s), str(ns15:)) ||
+              STRSTARTS(str(?s), str(ns16:)) ||
+              STRSTARTS(str(?s), str(eli:)))
            )
-  }
 }
 `
-const filteredDataset = doQuery(filterUnwantedQuery)
-const filteredStr = await prettyPrintTrig({ dataset: filteredDataset })
-writeFileSync('./assets/filteredStr.ttl', filteredStr)
-console.log('filteredDataset', filteredDataset.size)
+  return doConstruct({ store, query: filterUnwantedQuery })
+}
+
+export { getRedefined }

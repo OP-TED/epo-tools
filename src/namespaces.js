@@ -28,6 +28,8 @@ const ns = {
   r2rml: rdf.namespace('http://www.w3.org/ns/r2rml#'),
   at: rdf.namespace('http://publications.europa.eu/ontology/authority/'),
   atold: rdf.namespace('http://publications.europa.eu/resource/authority/'),
+  vann: rdf.namespace('http://purl.org/vocab/vann/'),
+
 }
 
 const aliases = {
