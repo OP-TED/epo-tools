@@ -82,26 +82,17 @@ async function writeModule (module) {
 
   const dataset = await rdf.dataset().
     addAll([...new Parser().parse(uglyturtle)])
-
-
+  
   const turtle = await prettyPrintTurtle({ dataset })
   const turtlePath = `${targetDir}/${name}_shapes.ttl`
   writeFileSync(turtlePath, turtle)
   console.log('wrote', dataset.size, 'triples', turtlePath)
-
 
   const xml = await printRDFXML(({dataset}))
   const xmlPath = `${targetDir}/${name}_shapes.rdf`
   writeFileSync(xmlPath, xml)
   console.log('wrote', dataset.size, 'triples', xmlPath)
 }
-
-// const access = {
-//   'name': 'eAccess',
-//   'id': 'acc',
-//   'prefix': 'epo-acc:',
-// }
-// await writeModule(access)
 
 for (const module of modules) {
   await writeModule(module)
