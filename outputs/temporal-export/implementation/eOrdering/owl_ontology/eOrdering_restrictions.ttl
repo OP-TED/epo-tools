@@ -369,7 +369,7 @@ a4g:specifiesOriginatorInformation rdfs:domain a4g:Order ;
 a4g:specifiesSpecificDeliveryAgreement rdfs:domain a4g:DeliveryInformation ;
 	rdfs:range a4g:DeliveryAgreement .
 
-_:b993 a owl:Class ;
+_:b756 a owl:Class ;
 	owl:unionOf (
 		a4g:DeliveryAgreement
 		a4g:TaxInformation
@@ -394,7 +394,7 @@ a4g:specifiesSeller rdfs:domain a4g:OrderResponse, a4g:ReceiptAdvice, [
 	rdfs:range a4g:Seller ;
 	a owl:FunctionalProperty .
 
-_:b1022 a owl:AllDisjointClasses ;
+_:b785 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:AllowanceChargeInformation
 		a4g:ContractInformation
@@ -404,13 +404,13 @@ _:b1022 a owl:AllDisjointClasses ;
 		a4g:OrderResponseInformation
 	) .
 
-_:b1029 a owl:AllDisjointClasses ;
+_:b792 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Order
 		a4g:OrderResponse
 	) .
 
-_:b1032 a owl:AllDisjointClasses ;
+_:b795 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Consignee
 		a4g:Originator

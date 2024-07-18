@@ -49,13 +49,6 @@ a4g:concernsProcedure rdfs:domain a4g:ESPDRequest ;
 a4g:hasResourceType rdfs:domain eli:LegalResource ;
 	rdfs:range skos:Concept .
 
-eli:LegalResource a owl:Class ;
-	rdfs:subClassOf [
-		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
-		owl:onProperty dcterms:description ;
-	] .
-
 a4g:hasSubdivision rdfs:domain eli:LegalResourceSubdivision ;
 	rdfs:range skos:Concept .
 
@@ -68,43 +61,23 @@ a4g:relatesToESPDRequest rdfs:domain a4g:ESPD ;
 a4g:specifiesProcurementCriterion rdfs:domain a4g:ESPDRequest ;
 	rdfs:range a4g:ProcurementCriterion .
 
-eli:LegalExpression a owl:Class ;
-	rdfs:subClassOf [
-		rdf:type owl:Restriction ;
-		owl:onProperty dcterms:title ;
-		owl:minCardinality 1 ;
-	], [
-		rdf:type owl:Restriction ;
-		owl:cardinality 1 ;
-		owl:onProperty eli:is_realized_by ;
-	] .
+_:b1187 a owl:Class ;
+	owl:unionOf (
+		eli:LegalExpression
+		eli:LegalResource
+	) .
 
-eli:jurisdiction rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			eli:LegalExpression
-			eli:LegalResource
-		) ;
-	] ;
-	rdfs:range skos:Concept .
+_:b1190 a owl:Class ;
+	owl:unionOf (
+		eli:LegalExpression
+		eli:LegalResource
+	) .
 
-eli:number rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			eli:LegalExpression
-			eli:LegalResource
-		) ;
-	] ;
-	rdfs:range xsd:string .
-
-eli:uri_schema rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			eli:LegalExpression
-			eli:LegalResourceSubdivision
-		) ;
-	] ;
-	rdfs:range adms:Identifier .
+_:b1193 a owl:Class ;
+	owl:unionOf (
+		eli:LegalExpression
+		eli:LegalResourceSubdivision
+	) .
 
 _:b1196 a owl:Class ;
 	owl:unionOf (
@@ -117,10 +90,6 @@ _:b1199 a owl:Class ;
 		m8g:EvidenceType
 		m8g:EvidenceTypeList
 	) .
-
-eli:is_realized_by a owl:FunctionalProperty ;
-	rdfs:domain eli:LegalExpression ;
-	rdfs:range eli:Work .
 
 _:b1202 a owl:Class ;
 	owl:unionOf (
@@ -138,4 +107,16 @@ _:b1206 a owl:Class ;
 _:b1209 a owl:Restriction ;
 	owl:cardinality 1 ;
 	owl:onProperty dcterms:description .
+
+_:b1210 a owl:Restriction ;
+	owl:cardinality 1 ;
+	owl:onProperty dcterms:description .
+
+_:b1211 a owl:Restriction ;
+	owl:onProperty dcterms:title ;
+	owl:minCardinality 1 .
+
+_:b1212 a owl:Restriction ;
+	owl:cardinality 1 ;
+	owl:onProperty eli:is_realized_by .
 

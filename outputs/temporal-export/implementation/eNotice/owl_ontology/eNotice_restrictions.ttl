@@ -199,7 +199,7 @@ a4g:refersToProcedure rdfs:domain [
 a4g:refersToRole rdfs:domain a4g:ResultNotice, a4g:CompletionNotice ;
 	rdfs:range a4g:AgentInRole .
 
-_:b779 a owl:AllDisjointClasses ;
+_:b846 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice33
 		a4g:CANSocial-D25
@@ -208,7 +208,7 @@ _:b779 a owl:AllDisjointClasses ;
 		a4g:Notice34
 	) .
 
-_:b785 a owl:AllDisjointClasses ;
+_:b852 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:CNSocialNotice
 		a4g:CNStandardNotice
@@ -219,7 +219,7 @@ _:b785 a owl:AllDisjointClasses ;
 		a4g:SubcontractNotice
 	) .
 
-_:b793 a owl:AllDisjointClasses ;
+_:b860 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:CNSocialNotice-D25
 		a4g:Notice20
@@ -227,7 +227,7 @@ _:b793 a owl:AllDisjointClasses ;
 		a4g:Notice21
 	) .
 
-_:b798 a owl:AllDisjointClasses ;
+_:b865 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Modification-D24
 		a4g:Notice39
@@ -237,14 +237,14 @@ _:b798 a owl:AllDisjointClasses ;
 		a4g:Notice40
 	) .
 
-_:b805 a owl:AllDisjointClasses ;
+_:b872 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:QS-D25
 		a4g:QSNotice-D25
 		a4g:Notice15
 	) .
 
-_:b809 a owl:AllDisjointClasses ;
+_:b876 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice13
 		a4g:Notice12
@@ -288,7 +288,7 @@ _:b809 a owl:AllDisjointClasses ;
 		a4g:Notice33
 	) .
 
-_:b850 a owl:AllDisjointClasses ;
+_:b917 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:DesignContest-D24
 		a4g:DesignContest-D25
@@ -296,7 +296,7 @@ _:b850 a owl:AllDisjointClasses ;
 		a4g:Notice24
 	) .
 
-_:b855 a owl:AllDisjointClasses ;
+_:b922 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice14
 		a4g:Notice13
@@ -305,7 +305,7 @@ _:b855 a owl:AllDisjointClasses ;
 		a4g:PIN-CFCSocial-D25
 	) .
 
-_:b861 a owl:AllDisjointClasses ;
+_:b928 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:PIN-RTL-D25
 		a4g:Notice9
@@ -314,7 +314,7 @@ _:b861 a owl:AllDisjointClasses ;
 		a4g:Notice8
 	) .
 
-_:b867 a owl:AllDisjointClasses ;
+_:b934 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice31
 		a4g:CANStandard-D24
@@ -323,7 +323,7 @@ _:b867 a owl:AllDisjointClasses ;
 		a4g:Notice29
 	) .
 
-_:b873 a owl:AllDisjointClasses ;
+_:b940 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice4
 		a4g:Notice5
@@ -332,7 +332,7 @@ _:b873 a owl:AllDisjointClasses ;
 		a4g:PINOnly-D25
 	) .
 
-_:b879 a owl:AllDisjointClasses ;
+_:b946 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:VEAT-D81
 		a4g:VEAT-D23
@@ -344,7 +344,7 @@ _:b879 a owl:AllDisjointClasses ;
 		a4g:Notice28
 	) .
 
-_:b888 a owl:AllDisjointClasses ;
+_:b955 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:CompetitionNotice
 		a4g:CompletionNotice
@@ -355,7 +355,7 @@ _:b888 a owl:AllDisjointClasses ;
 		a4g:ResultNotice
 	) .
 
-_:b896 a owl:AllDisjointClasses ;
+_:b963 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice36
 		a4g:Notice37
@@ -363,7 +363,7 @@ _:b896 a owl:AllDisjointClasses ;
 		a4g:DesignContestResult-D24
 	) .
 
-_:b901 a owl:AllDisjointClasses ;
+_:b968 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice2
 		a4g:PINProfile-D25
@@ -373,7 +373,7 @@ _:b901 a owl:AllDisjointClasses ;
 		a4g:Notice1
 	) .
 
-_:b908 a owl:AllDisjointClasses ;
+_:b975 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:PINOnlyNotice
 		a4g:PINProfileNotice
@@ -381,7 +381,7 @@ _:b908 a owl:AllDisjointClasses ;
 		a4g:PINDefence-D81
 	) .
 
-_:b913 a owl:AllDisjointClasses ;
+_:b980 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Notice16
 		a4g:Notice19
@@ -390,20 +390,20 @@ _:b913 a owl:AllDisjointClasses ;
 		a4g:Notice17
 	) .
 
-_:b919 a owl:AllDisjointClasses ;
+_:b986 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:PIN-CFCStandard-D24
 		a4g:Notice11
 		a4g:Notice10
 	) .
 
-_:b923 a owl:AllDisjointClasses ;
+_:b990 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:Subcontract-D81
 		a4g:Notice22
 	) .
 
-_:b926 a owl:AllDisjointClasses ;
+_:b993 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:CANSocialNotice
 		a4g:CANStandardNotice
@@ -411,7 +411,7 @@ _:b926 a owl:AllDisjointClasses ;
 		a4g:CANDefence-D81
 	) .
 
-_:b931 a owl:AllDisjointClasses ;
+_:b998 a owl:AllDisjointClasses ;
 	owl:members (
 		a4g:CANDefence-D81
 		a4g:CANSocial-D25
