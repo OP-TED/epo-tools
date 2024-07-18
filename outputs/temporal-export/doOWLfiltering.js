@@ -1,4 +1,5 @@
 import { mkdirSync, writeFileSync } from 'fs'
+import rdf from 'rdf-ext'
 import { getRdfAssets } from '../../src/io/assets.js'
 import {
   prettyPrintTurtle,
@@ -18,6 +19,11 @@ for (const asset of assets) {
   mkdirSync(dirname(targetPath), { recursive: true })
 
   const filtered = dataset.filter(item => !redefined.has(item))
+
+  // const toRemove = offendingBlanks(filtered)
+  // console.log(toRemove.toCanonical())
+  // const result = filtered.filter(item => !toRemove.has(item))
+
   const turtle = await prettyPrintTurtle({ dataset: filtered })
   writeFileSync(targetPath, turtle)
   console.log('wrote', dataset.size, 'triples', targetPath)

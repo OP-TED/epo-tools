@@ -2101,11 +2101,14 @@ a4g:usesChannel rdfs:domain a4g:ProcurementElement ;
 a4g:usesTechnique rdfs:domain a4g:ProcurementObject ;
 	rdfs:range a4g:Technique .
 
-_:b123 a owl:Class ;
-	owl:unionOf (
-		eli:LegalResourceSubdivision
-		eli:LegalExpression
-	) .
+eli:uri_schema rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			eli:LegalResourceSubdivision
+			eli:LegalExpression
+		) ;
+	] ;
+	rdfs:range adms:Identifier .
 
 _:b126 a owl:Class ;
 	owl:unionOf (
