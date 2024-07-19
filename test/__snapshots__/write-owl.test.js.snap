@@ -50,11 +50,55 @@ a4g:Estimate a owl:Class ;
 a4g:SubcontractingEstimate a owl:Class ;
 	rdfs:label \\"subcontracting estimate\\"@en ;
 	rdfs:comment \\"Information on the approximation of the foreseen Subcontracting.\\" ;
-	rdfs:subClassOf a4g:Estimate .
+	rdfs:subClassOf a4g:Estimate, [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedPercentage ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasSubjectMatter ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSubcontractingEstimatedValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:ConcessionEstimate a owl:Class ;
 	rdfs:label \\"concession estimate\\"@en ;
-	rdfs:subClassOf a4g:Estimate .
+	rdfs:subClassOf a4g:Estimate, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCalculationMethod ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedBuyerConcessionRevenue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedUserConcessionRevenue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasConcessionEstimatedValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:Originator a owl:Class ;
 	rdfs:label \\"originator\\"@en ;
@@ -69,36 +113,246 @@ a4g:Carrier a owl:Class ;
 a4g:OrderResponse a owl:Class ;
 	rdfs:label \\"order response\\"@en ;
 	rdfs:comment \\"A formal reply from the Seller to the Buyer stating the Seller's ability to fulfil the order. Additional Information: The Order Response is used to inform on the acceptance or rejection of an Order or to make a counter-offer. WG approval 20/04/2023 \\" ;
-	rdfs:subClassOf a4g:PostAwardDocument .
+	rdfs:subClassOf a4g:PostAwardDocument, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasResponseDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesOrderResponseInformation ;
+		owl:onClass a4g:OrderResponseInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:implementsContract ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesSeller ;
+		owl:onClass a4g:Seller ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesOrderResponseLine ;
+		owl:onClass a4g:OrderResponseLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmittedForOrder ;
+		owl:onClass a4g:Order ;
+	] .
 
 a4g:AwardOutcome a owl:Class ;
 	rdfs:label \\"award outcome\\"@en ;
-	rdfs:subClassOf a4g:ContextualProjection .
+	rdfs:subClassOf a4g:ContextualProjection, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardStatus ;
+		owl:onClass atold:winner-selection-status ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesTenderAwardOutcome ;
+		owl:onClass a4g:TenderAwardOutcome ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardedValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNonAwardJustification ;
+		owl:onClass atold:non-award-justification ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBargainPrice ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:AccessTerm a owl:Class ;
 	rdfs:label \\"access term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations about where and how to access the Procurement Documents. WG Approval 09/03/2021 \\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isProcurementDocumentRestricted ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAdditionalInformationDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasRestrictedAccessURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPublicAccessURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:definesCatalogueProvider ;
+		owl:onClass a4g:CatalogueProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:involvesProcurementDocument ;
+		owl:onClass a4g:ProcurementDocument ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDocumentRestrictionJustification ;
+		owl:onClass atold:communication-justification ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesProcurementProcedureInformationProvider ;
+		owl:onClass a4g:ProcurementProcedureInformationProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesOfflineAccessProvider ;
+		owl:onClass a4g:OfflineAccessProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToPlannedPart ;
+		owl:onClass a4g:PlannedProcurementPart ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:definesCatalogueReceiver ;
+		owl:onClass a4g:CatalogueReceiver ;
+	] .
 
 a4g:AwardCriterion a owl:Class ;
 	rdfs:label \\"award criterion\\"@en ;
 	rdfs:comment \\"Criterion that describes a Requirement that the Tender needs to resolve and on which the Tender is evaluated and ranked. WG approval 05/11/2018\\" ;
-	rdfs:subClassOf a4g:ProcurementCriterion .
+	rdfs:subClassOf a4g:ProcurementCriterion, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFixedValue ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardCriteriaStatedInProcurementDocuments ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFixedValueType ;
+		owl:onClass atold:number-fixed ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardCriterionType ;
+		owl:onClass atold:award-criterion-type ;
+	] .
 
 a4g:AwardDecision a owl:Class ;
 	rdfs:label \\"award decision\\"@en ;
 	rdfs:comment \\"Resolution of the Buyer as to the result of the Procurement Procedure. WG approval 14/11/2018\\" ;
-	rdfs:subClassOf a4g:Document .
+	rdfs:subClassOf a4g:Document, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardDecisionDate ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAdditionalNonAwardJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesAwardOutcome ;
+		owl:onClass a4g:AwardOutcome ;
+	] .
 
 a4g:Business a owl:Class ;
 	rdfs:label \\"business\\"@en ;
 	rdfs:comment \\"A private law company registered in a national registry. WG Approval 28/04/2020 \\" ;
-	rdfs:subClassOf org:Organization .
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isListedCompany ;
+		owl:onDataRange xsd:boolean ;
+	], org:Organization, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasBeneficialOwner ;
+		owl:onClass person:Person ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBusinessSize ;
+		owl:onClass atold:economic-operator-size ;
+	] .
 
 a4g:Buyer a owl:Class ;
 	rdfs:label \\"buyer\\"@en ;
 	rdfs:comment \\"A Role of an Agent that awards a Contract and/or purchases items. Additional information: In Public Procurement the Role of Buyer is carried out by the following types of Organisation: Contracting Authority, Contracting Entity, a defense Contractor, an international Organisation, or an organisation awarding a Contract subsidized by a Contracting Authority. In Pre-Award, the Buyer generally awards the Contract, however future purchasers may be foreseen. In Post-Award the buyer generally refers to the purchaser of items.\\" ;
-	rdfs:subClassOf a4g:AcquiringParty .
+	rdfs:subClassOf a4g:AcquiringParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isContractingEntity ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasActivityDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBuyerProfile ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:signsAwardDecision ;
+		owl:onClass a4g:AwardDecision ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:delegatesAncillaryActivitiesTo ;
+		owl:onClass a4g:ProcurementServiceProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:exposesInvoiceeChannel ;
+		owl:onClass m8g:Channel ;
+	] .
 
 a4g:LotSpecificTerm a owl:Class ;
 	rdfs:label \\"lot specific term\\"@en ;
@@ -113,36 +367,371 @@ a4g:CentralPurchasingBody a owl:Class ;
 a4g:Contract a owl:Class ;
 	rdfs:label \\"contract\\"@en ;
 	rdfs:comment \\"A voluntary, deliberate, and legally binding agreement between two or more competent parties. Additional information: This includes Concession Contracts. WG approval 01/06/2018\\" ;
-	rdfs:subClassOf a4g:Document .
+	rdfs:subClassOf a4g:Document, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasContractConclusionDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEntryIntoForceDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isFundedBy ;
+		owl:onClass a4g:Fund ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesDeliverable ;
+		owl:onClass a4g:Deliverable ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:signedByContractor ;
+		owl:onClass a4g:Contractor ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasContractValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPurpose ;
+		owl:onClass a4g:Purpose ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedDuration ;
+		owl:onClass a4g:Duration ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasLotReference ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:includesTender ;
+		owl:onClass a4g:Tender ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:bindsContractor ;
+		owl:onClass a4g:Contractor ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSubjectToContractSpecificTerm ;
+		owl:onClass a4g:ContractSpecificTerm ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:signedByBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:bindsBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTaxInformation ;
+		owl:onClass a4g:TaxInformation ;
+	] .
 
 a4g:Contractor a owl:Class ;
 	rdfs:label \\"contractor\\"@en ;
 	rdfs:comment \\"The Role of an Agent that has signed a Contract with a Buyer. WG approval 08/11/2022\\" ;
-	rdfs:subClassOf a4g:OfferingParty .
+	rdfs:subClassOf a4g:OfferingParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:needsToBeAWinner ;
+		owl:onClass a4g:Winner ;
+	] .
 
 a4g:ContractTerm a owl:Class ;
 	rdfs:label \\"contract term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of the Post Award Phase. (WG approval 23/11/2018) \\" ;
-	rdfs:subClassOf a4g:ContractSpecificTerm .
+	rdfs:subClassOf a4g:ContractSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOptions ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEOrdering ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEPayment ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEInvoicing ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isRenewalIndicator ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumNumberOfRenewals ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasRenewalDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPaymentArrangement ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPlaceOfPerformanceAdditionalInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPerformanceConditions ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasOptionsDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLegalFormRequirement ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesContractPeriod ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesContractDuration ;
+		owl:onClass a4g:Duration ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:definesSpecificPlaceOfPerformance ;
+		owl:onClass dcterms:Location ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesPaymentExecutor ;
+		owl:onClass a4g:PaymentExecutor ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEInvoicingPermission ;
+		owl:onClass atold:permission ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAdditionalContractNature ;
+		owl:onClass atold:contract-nature ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasContractNatureType ;
+		owl:onClass atold:contract-nature ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesSubcontractingTerm ;
+		owl:onClass a4g:SubcontractTerm ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBroadPlaceOfPerformance ;
+		owl:onClass atold:other-place-service ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReservedExecution ;
+		owl:onClass atold:applicability ;
+	] .
 
 a4g:DesignContestRegimeTerm a owl:Class ;
 	rdfs:label \\"design contest regime term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of a Design Contest. WG approval: 04-02-2021\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDescriptionOfPrizes ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isJuryDecisionBinding ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasParticipationPayment ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFollowupContract ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasFollowupContractInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:definesPrize ;
+		owl:onClass a4g:Prize ;
+	] .
 
 a4g:DirectAwardTerm a owl:Class ;
 	rdfs:label \\"direct award term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of the award of a Contract without prior publication. Addtional Information: Direct award may refer to a previous Procedure and/or specific Lot(s). It may also refer to other justified situations whereby there is no previous Procedure. See Directive 2014/24/EU Article 32. WG Approval 22/11/2019 \\" ;
-	rdfs:subClassOf a4g:ProcedureSpecificTerm .
+	rdfs:subClassOf a4g:ProcedureSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToPreviousProcedure ;
+		owl:onClass a4g:Procedure ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToPreviousProcedureLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDirectAwardJustification ;
+		owl:onClass atold:direct-award-justification ;
+	] .
 
 a4g:Document a owl:Class ;
 	rdfs:label \\"document\\"@en ;
-	rdfs:comment \\"A set of interrelated Business Information representing the Business facts and associated metadata. The information may be conveyed in any language, medium or form, including textual, numerical, graphic, cartographic, audio-visual forms, etc. WG Approval 23/05/2019 \\" .
+	rdfs:comment \\"A set of interrelated Business Information representing the Business facts and associated metadata. The information may be conveyed in any language, medium or form, including textual, numerical, graphic, cartographic, audio-visual forms, etc. WG Approval 23/05/2019 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAccessURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceptionDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDispatchDate ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPublicationDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:issued ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasVersion ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasUUID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasElectronicSignature ;
+		owl:onClass a4g:ElectronicSignature ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToPrevious ;
+		owl:onClass a4g:Document ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasUnofficialLanguage ;
+		owl:onClass atold:language ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasOfficialLanguage ;
+		owl:onClass atold:language ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:associatedWith ;
+		owl:onClass a4g:Document ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasElectronicDigest ;
+		owl:onClass a4g:Document ;
+	] .
 
 a4g:DynamicPurchaseSystemTechnique a owl:Class ;
 	rdfs:label \\"dynamic purchase system technique\\"@en ;
 	rdfs:comment \\"A Technique that allows the selection of Candidates throughout the Procedure via the Qualification Criteria, followed by individual Mini-Competitions for the Award of Purchase Contracts. WG approval 23/05/2023\\" ;
-	rdfs:subClassOf a4g:Technique .
+	rdfs:subClassOf a4g:Technique, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDPSScope ;
+		owl:onClass atold:dps-usage ;
+	] .
 
 a4g:EAuctionTechnique a owl:Class ;
 	rdfs:label \\"e auction technique\\"@en ;
@@ -166,7 +755,62 @@ a4g:ReviewRequester a owl:Class ;
 
 a4g:DespatchAdvice a owl:Class ;
 	rdfs:label \\"despatch advice\\"@en ;
-	rdfs:subClassOf a4g:PostAwardDocument .
+	rdfs:subClassOf a4g:PostAwardDocument, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesDespatcher ;
+		owl:onClass a4g:Despatcher ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesConsignee ;
+		owl:onClass a4g:Consignee ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesOriginator ;
+		owl:onClass a4g:Originator ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToOrder ;
+		owl:onClass a4g:Order ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesDespatchLine ;
+		owl:onClass a4g:DespatchLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesShipment ;
+		owl:onClass a4g:ShipmentInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesTransportHandlingUnits ;
+		owl:onClass a4g:TransportHandlingUnit ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAssociatedDocument ;
+		owl:onClass a4g:PostAwardDocument ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToConsignment ;
+		owl:onClass a4g:Consignment ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDespatchAdviceType ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToShipmentAgreement ;
+		owl:onClass a4g:ShipmentAgreement ;
+	] .
 
 a4g:PreMarketConsultationNotice a owl:Class ;
 	rdfs:label \\"pre market consultation notice\\"@en ;
@@ -185,7 +829,11 @@ a4g:ExclusionGround a owl:Class ;
 a4g:FrameworkAgreement a owl:Class ;
 	rdfs:label \\"framework agreement\\"@en ;
 	rdfs:comment \\"An agreement between one or more Contracting Authorities and one or more Economic Operators. Additional Information: When a Framework Agreement is concerned, the FA will result from LotAwardOutcome which describes a Lot which specifies the both the Qualification and Award Criteria. WG approval 18/05/2021\\" ;
-	rdfs:subClassOf a4g:Contract .
+	rdfs:subClassOf a4g:Contract, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:resultsFromLotAwardOutcome ;
+		owl:onClass a4g:LotAwardOutcome ;
+	] .
 
 a4g:FrameworkAgreementTechnique a owl:Class ;
 	rdfs:label \\"framework agreement technique\\"@en ;
@@ -195,11 +843,60 @@ a4g:FrameworkAgreementTechnique a owl:Class ;
 a4g:FrameworkAgreementTerm a owl:Class ;
 	rdfs:label \\"framework agreement term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities in a Framework Agreement.\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm, a4g:ContractSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm, a4g:ContractSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumParticipantsNumber ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasBuyerCategoryDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDurationExtensionJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFrameworkAgreementType ;
+		owl:onClass atold:framework-agreement ;
+	] .
 
 a4g:Fund a owl:Class ;
 	rdfs:label \\"fund\\"@en ;
-	rdfs:comment \\"A financial resource used to support the Procurement. Additional Information: In the context of EU, Funds can be divided into programmes, actions and projects. Examples of EU funds are: the European Structural and Investment Funds, European Social Fund (ESF), the Connecting Europe Facility (CEF) programme, or the ISA2 programme and its actions (e.g. Action 2016.05 European Public Procurement Initiative, which supports the eProcurement Ontology under sub-action 3). Funds may change between the lot and the contract, for example in the case of an emergency crisis, a contract may be financed by a budget that was not foreseen in the call. WG Approved 14/05/2019 \\" .
+	rdfs:comment \\"A financial resource used to support the Procurement. Additional Information: In the context of EU, Funds can be divided into programmes, actions and projects. Examples of EU funds are: the European Structural and Investment Funds, European Social Fund (ESF), the Connecting Europe Facility (CEF) programme, or the ISA2 programme and its actions (e.g. Action 2016.05 European Public Procurement Initiative, which supports the eProcurement Ontology under sub-action 3). Funds may change between the lot and the contract, for example in the case of an emergency crisis, a contract may be financed by a budget that was not foreseen in the call. WG Approved 14/05/2019 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFundProgramme ;
+		owl:onClass atold:EU-programme ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:CatalogueReceiver a owl:Class ;
 	rdfs:label \\"catalogue receiver\\"@en ;
@@ -219,26 +916,121 @@ a4g:AwardingCentralPurchasingBody a owl:Class ;
 a4g:ContractLotCompletionInformation a owl:Class ;
 	rdfs:label \\"contract lot completion information\\"@en ;
 	rdfs:comment \\"Information related to a given Lot at the end of the procurement.\\" ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPaymentValueDiscrepancyJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToContract ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesLotCompletion ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:providesContractTotalPaymentValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:providesContractTotalPenaltyValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:GreenProcurement a owl:Class ;
 	rdfs:label \\"green procurement\\"@en ;
 	rdfs:comment \\"Approach whereby Buyers seek to procure with a reduced Environmental Impact. Additional Information: The approach may apply to the complete life cycle. The reduced Environmental Impact is in comparison to goods, services and works with the same primary function that would otherwise be procured. Tightly related are article 68 - Life-cycle costing and article 67 - most economically advantageous Tender (see GPP handbook) https://ec.europa.eu/environment/gpp/pdf/Buying-Green-Handbook-3rd-Edition.pdf An instance of the class GreenProcurement is represented in eForms with the code env-imp defined in the codelist Strategic-Procurement.Paragraphs) https://ec.europa.eu/environment/gpp/pdf/Buying-Green-Handbook-3rd-Edition.pdf\\" ;
-	rdfs:subClassOf a4g:StrategicProcurement .
+	rdfs:subClassOf a4g:StrategicProcurement, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:usesCleanVehicleDirective ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:fulfillsRequirement ;
+		owl:onClass atold:green-public-procurement-criteria ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:fulfillsRequirement ;
+		owl:onClass atold:environmental-impact ;
+	] .
 
 a4g:InnovativeProcurement a owl:Class ;
 	rdfs:label \\"innovative procurement\\"@en ;
 	rdfs:comment \\"Approach whereby Buyers seek to procure an innovative work, supply or service. Additional Information: ‘innovation’ means the implementation of a new or significantly improved product, service or process, including but not limited to production, building or construction processes, a new marketing method, or a new organizational method in business practices, workplace Organisation or external relations inter alia with the purpose of helping to solve societal challenges or to support the Europe 2020 strategy for smart, sustainable and inclusive growth; See: Directive 2014/24 Articles: 2, 26 (3), 31, 67 (2.a) \\" ;
-	rdfs:subClassOf a4g:StrategicProcurement .
+	rdfs:subClassOf a4g:StrategicProcurement, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:fulfillsRequirement ;
+		owl:onClass atold:innovative-acquisition ;
+	] .
 
 a4g:Lot a owl:Class ;
 	rdfs:label \\"lot\\"@en ;
 	rdfs:comment \\"A qualitative, quantitative or strategic subdivision of the goods, services or works to be procured, allowing the award of one or more Contracts. WG approval 12/09/2018\\" ;
-	rdfs:subClassOf a4g:ProcurementObject .
+	rdfs:subClassOf a4g:ProcurementObject, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesProcurementCriterion ;
+		owl:onClass a4g:ProcurementCriterion ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSubjectToLotSpecificTerm ;
+		owl:onClass a4g:LotSpecificTerm ;
+	] .
 
 a4g:LotGroup a owl:Class ;
 	rdfs:label \\"lot group\\"@en ;
-	rdfs:comment \\"Combination of several Lots to conduct comparative assessment of the Tenders. Additional Information: The comparative assessment may refer to the Selection Criteria, Award and Value that apply to several Lots. Pending of discussion with eForms Member States may provide that, where more than one lot may be awarded to the same tenderer, contracting authorities may award contracts combining several or all lots where they have specified in the contract notice or in the invitation to confirm interest that they reserve the possibility of doing so and indicate the lots or groups of lots that may be combined.\\" .
+	rdfs:comment \\"Combination of several Lots to conduct comparative assessment of the Tenders. Additional Information: The comparative assessment may refer to the Selection Criteria, Award and Value that apply to several Lots. Pending of discussion with eForms Member States may provide that, where more than one lot may be awarded to the same tenderer, contracting authorities may award contracts combining several or all lots where they have specified in the contract notice or in the invitation to confirm interest that they reserve the possibility of doing so and indicate the lots or groups of lots that may be combined.\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesProcurementCriterion ;
+		owl:onClass a4g:ProcurementCriterion ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasInternalIdentifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLaunchFrameworkAgreementMaximumValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:setsGroupingContextForLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:Mediator a owl:Class ;
 	rdfs:label \\"mediator\\"@en ;
@@ -248,48 +1040,358 @@ a4g:Mediator a owl:Class ;
 a4g:MultipleStageProcedureTerm a owl:Class ;
 	rdfs:label \\"multiple stage procedure term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of Procedures carried out in several steps Additional Information: Generally this refers to Procedures where selection is carried out to qualify Tenderers who are then requested to submit the rest of their Tender for evaluation is Restricted Procedure. WG Approval 15/04/2021\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasQualificationSystemRenewalDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumNumberOfCandidates ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSuccessiveReduction ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMinimumNumberOfCandidates ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedInvitationToTenderDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNoNegotiationNecessary ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedInvitationToExpressInterestDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasQualificationSystemDuration ;
+		owl:onClass a4g:Duration ;
+	] .
 
 a4g:Notice a owl:Class ;
 	rdfs:label \\"notice\\"@en ;
 	rdfs:comment \\"Document published by the Buyer about market opportunities and results. WG Approval 23/05/2019 \\" ;
-	rdfs:subClassOf a4g:Document .
+	rdfs:subClassOf a4g:Document, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAdditionalInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOJSIssueNumber ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOJSType ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNoticePublicationNumber ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFormNumber ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEFormsSubtype ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasESenderDispatchDate ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToNotice ;
+		owl:onClass a4g:Notice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isBasedOnImplementingRegulation ;
+		owl:onClass atold:legal-basis ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNoticeType ;
+		owl:onClass atold:notice-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:conformsToLegalBasis ;
+		owl:onClass atold:legal-basis ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFormType ;
+		owl:onClass atold:form-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToProcedure ;
+		owl:onClass a4g:Procedure ;
+	] .
 
 a4g:OpeningTerm a owl:Class ;
 	rdfs:label \\"opening term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of the opening of Tenders. Additional Information: The opening of Tenders is the event when Tenders are made accessible for evaluation, it is generally the same date and time for all Tenders. WG Approval 15/04/2021\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOpeningURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOpeningDateTime ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasOpeningDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesOpeningPlace ;
+		owl:onClass locn:Address ;
+	] .
 
 a4g:OrganisationGroup a owl:Class ;
 	rdfs:label \\"organisation group\\"@en ;
 	rdfs:comment \\"Agreed collaboration of several Organisations. Additional Information: This concept has been created to fulfill the need to represent a grouping of Organisations that is not necessarily registered i.e, consortia. WG approval 15/04/2021\\" ;
-	rdfs:subClassOf org:Organization .
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasGroupType ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], org:Organization, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:leadBy ;
+		owl:onClass org:Organization ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasMember ;
+		owl:onClass org:Organization ;
+	] .
 
 a4g:VehicleInformation a owl:Class ;
-	rdfs:label \\"vehicle information\\"@en .
+	rdfs:label \\"vehicle information\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalVehicles ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasZeroEmissionVehicles ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCleanVehicles ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCleanVehicleDirectiveContractType ;
+		owl:onClass atold:cvd-contract-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCleanVehicleDirectiveVehicleCategory ;
+		owl:onClass atold:vehicle-category ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsGreenProcurement ;
+		owl:onClass a4g:GreenProcurement ;
+	] .
 
 a4g:NonPublishedInformation a owl:Class ;
 	rdfs:label \\"non published information\\"@en ;
 	rdfs:comment \\"Information about fields not published in this Notice. Additional Information: The non-published information may become available at a later date and may differ from one element to another within a given Document. Examples of fields that may not be immediately published are Winner, Tender and Procedure Lot Result, etc., e.g. for security reasons. \\" ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAccessibilityDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasConfidentialityJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsNotice ;
+		owl:onClass a4g:Notice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:relatesToEFormSectionIdentifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNonPublicationJustification ;
+		owl:onClass atold:non-publication-justification ;
+	] .
 
 a4g:ContractModificationInformation a owl:Class ;
 	rdfs:label \\"contract modification information\\"@en ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasModificationDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasModificationReasonDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:relatesToEFormSectionIdentifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsContractAmendment ;
+		owl:onClass a4g:ContractAmendment ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasModificationJustification ;
+		owl:onClass atold:modification-justification ;
+	] .
 
 a4g:ContractAmendment a owl:Class ;
 	rdfs:label \\"contract amendment\\"@en ;
 	rdfs:comment \\"A change to an existing Contract that is agreed by the contracting parties.\\" ;
-	rdfs:subClassOf a4g:Contract .
+	rdfs:subClassOf a4g:Contract, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:updatesContractValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:amendsContract ;
+		owl:onClass a4g:Contract ;
+	] .
 
 a4g:Period a owl:Class ;
 	rdfs:label \\"period\\"@en ;
-	rdfs:comment \\"A time interval or a Duration. (WG approval 28/04/2020) \\" .
+	rdfs:comment \\"A time interval or a Duration. (WG approval 28/04/2020) \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBeginning ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEnd ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTimePeriod ;
+		owl:onClass atold:timeperiod ;
+	] .
 
 a4g:PlannedProcurementPart a owl:Class ;
 	rdfs:label \\"planned procurement part\\"@en ;
 	rdfs:comment \\"A subdivision of a Planned Procurement that may later become one or more Lots or a self-standing Procedure. A Lot or a Procedure can also cover one or more parts of the Planned Procurement. WG Approval 20/06/2019\\" ;
-	rdfs:subClassOf a4g:ProcurementElement .
+	rdfs:subClassOf a4g:ProcurementElement, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:foreseesProcurementObject ;
+		owl:onClass a4g:ProcurementObject ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPlannedPeriod ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPlannedDuration ;
+		owl:onClass a4g:Duration ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:foreseesTechnique ;
+		owl:onClass a4g:Technique ;
+	] .
 
 a4g:SelectionEvaluationTerm a owl:Class ;
 	rdfs:label \\"selection evaluation term\\"@en ;
@@ -299,39 +1401,240 @@ a4g:SelectionEvaluationTerm a owl:Class ;
 a4g:AwardEvaluationTerm a owl:Class ;
 	rdfs:label \\"award evaluation term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of the evaluation of Award Criteria.\\" ;
-	rdfs:subClassOf a4g:EvaluationTerm .
+	rdfs:subClassOf a4g:EvaluationTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardCriteriaOrderJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAwardCriteriaEvaluationFormula ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOverallQualityAwardCriteriaPonderation ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOverallPriceAwardCriteriaPonderation ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOverallCostAwardCriteriaPonderation ;
+		owl:onDataRange xsd:decimal ;
+	] .
 
 a4g:ReviewTerm a owl:Class ;
 	rdfs:label \\"review term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of the review. WG approval 23/11/2018\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasReviewProcedure ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReviewDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasReviewDeadlineInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesReviewProcedureInformationProvider ;
+		owl:onClass a4g:ReviewProcedureInformationProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:definesReviewer ;
+		owl:onClass a4g:Reviewer ;
+	] .
 
 a4g:OrderResponseInformation a owl:Class ;
 	rdfs:label \\"order response information\\"@en ;
-	rdfs:subClassOf a4g:InformationHub .
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSpecificToOrderResponseLine ;
+		owl:onClass a4g:OrderResponseLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDeliveryPeriod ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAcceptanceStatus ;
+		owl:minCardinality 1 ;
+		owl:maxCardinality 1 ;
+	] .
 
 a4g:PostAwardDocument a owl:Class ;
 	rdfs:label \\"post award document\\"@en ;
-	rdfs:subClassOf a4g:Document .
+	rdfs:subClassOf a4g:Document, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDocumentType ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDocumentStatus ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	] .
 
 a4g:Prize a owl:Class ;
 	rdfs:label \\"prize\\"@en ;
-	rdfs:comment \\"A reward given in a Contest. WG approval: 15/04/2021\\" .
+	rdfs:comment \\"A reward given in a Contest. WG approval: 15/04/2021\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPrizeRank ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPrizeValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:Procedure a owl:Class ;
 	rdfs:label \\"procedure\\"@en ;
 	rdfs:comment \\"A legally defined set of administrative activities conducted to conclude one or more Contracts. Additional Information The Procedure is categorised in the law according to different rules determining whether the Procedure is Open, Restricted, Negotiated with or without publicity, etc. (see Procedure Type). WG Approval 20/08/2019 \\" ;
-	rdfs:subClassOf a4g:ProcurementObject .
+	rdfs:subClassOf a4g:ProcurementObject, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isDesignContest ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isJointProcurement ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isAccelerated ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAcceleratedProcedureJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasMainFeature ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:involvesBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isExecutedByProcurementServiceProvider ;
+		owl:onClass a4g:ProcurementServiceProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSubjectToProcedureSpecificTerm ;
+		owl:onClass a4g:ProcedureSpecificTerm ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasProcedureType ;
+		owl:onClass atold:procurement-procedure-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isResponsibilityOfBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasProcurementScopeDividedIntoLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesProcurementCriteriaSummary ;
+		owl:onClass a4g:ProcurementCriteriaSummary ;
+	] .
 
 a4g:Catalogue a owl:Class ;
 	rdfs:label \\"catalogue\\"@en ;
 	rdfs:comment \\"A Document describing a set of Items offered for purchase that can be processed in an electronic way. \\" ;
-	rdfs:subClassOf a4g:PostAwardDocument .
+	rdfs:subClassOf a4g:PostAwardDocument, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSpecificPaymentArrangement ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCatalogueReceiver ;
+		owl:onClass a4g:CatalogueReceiver ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCatalogueProvider ;
+		owl:onClass a4g:CatalogueProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubordinatedToContract ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesCatalogueLine ;
+		owl:onClass a4g:CatalogueLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasActivityCode ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesSeller ;
+		owl:onClass a4g:Seller ;
+	] .
 
 a4g:ParticipationRequestTerm a owl:Class ;
 	rdfs:label \\"participation request term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of requesting participation in a Procedure.\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesParticipationRequestReceiver ;
+		owl:onClass a4g:ParticipationRequestReceiver ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesParticipationRequestProcessor ;
+		owl:onClass a4g:ParticipationRequestProcessor ;
+	] .
 
 a4g:VoluntaryEx-AnteTransparencyNotice a owl:Class ;
 	rdfs:label \\"voluntary ex ante transparency notice\\"@en ;
@@ -369,16 +1672,135 @@ a4g:CANStandardNotice a owl:Class ;
 a4g:ProcedureTerm a owl:Class ;
 	rdfs:label \\"procedure term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of the Procedure. (WG approval 23/11/2018)\\" ;
-	rdfs:subClassOf a4g:ProcedureSpecificTerm .
+	rdfs:subClassOf a4g:ProcedureSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasCrossBorderLaw ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isAwardedByCPB ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmissionForAllLotsRequired ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isOneLotOnlyAllowed ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLotAwardCombination ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasNationalProcedureRules ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumLotSubmissionAllowed ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumNumberOfLotsToBeAwarded ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasGroupLotEvaluationMethod ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:definesInformationProvider ;
+		owl:onClass a4g:AuxiliaryParty ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesMediator ;
+		owl:onClass a4g:Mediator ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:definesLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesBudgetProvider ;
+		owl:onClass a4g:BudgetProvider ;
+	] .
 
 a4g:ProcurementCriterion a owl:Class ;
 	rdfs:label \\"procurement criterion\\"@en ;
 	rdfs:comment \\"A criterion specific to Procurement. Additional Information: This Procurement Criterion can be only Exclusion Ground, Selection Criterion or Award Criterion. Each of these Criteria can contain subcriteria (Criterion class). WG Approval 23/04/2020\\" ;
-	rdfs:subClassOf m8g:Criterion .
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFormula ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], m8g:Criterion, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPerformingStaffQualificationInformation ;
+		owl:onClass atold:requirement-stage ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasWeightValueType ;
+		owl:onClass atold:number-weight ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasConstraint ;
+		owl:onClass m8g:Constraint ;
+	] .
 
 a4g:TenderGroup a owl:Class ;
 	rdfs:label \\"tender group\\"@en ;
-	rdfs:comment \\"Specific Offer in response to a Lot Group. Additional Information: This class is generally used to provide the Monetary Value in response to a Lot Group. \\" .
+	rdfs:comment \\"Specific Offer in response to a Lot Group. Additional Information: This class is generally used to provide the Monetary Value in response to a Lot Group. \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmittedForLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesTender ;
+		owl:onClass a4g:Tender ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:Duration a owl:Class ;
 	rdfs:label \\"duration\\"@en ;
@@ -398,12 +1820,97 @@ a4g:ProcurementDocument a owl:Class ;
 a4g:ProcurementServiceProvider a owl:Class ;
 	rdfs:label \\"procurement service provider\\"@en ;
 	rdfs:comment \\"Role of a public or private body which offers ancillary purchasing activities on the market. Additional information Ancillary Purchasing Activities means activities consisting in the provision of support to purchasing activities, in particular in the following forms: (a) technical infrastructure enabling Contracting Authorities to award Public Contracts or to conclude Framework Agreements for works, supplies or services; (b) advice on the conduct or design of public Procurement Procedures; (c) preparation and management of Procurement Procedures on behalf and for the account of the Contracting Authority concerned; Source: Directive 2014/24/EU, Article 2, paragraphs 17 and 15. This would be equivalent to the concept of 'ProcuringEntity' in OCDS: 'The Entity managing the Procurement, which may be different from the Buyer who is paying / using the items being procured'. WG Approval 24/03/2020 \\" ;
-	rdfs:subClassOf a4g:AcquiringParty .
+	rdfs:subClassOf a4g:AcquiringParty, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:actsOnBehalfOf ;
+		owl:onClass a4g:Buyer ;
+	] .
 
 a4g:CatalogueLine a owl:Class ;
 	rdfs:label \\"catalogue line\\"@en ;
 	rdfs:comment \\"Aggregated information about the Terms and specifications for procuring an Item. Details about an Item, like Prices, packaging, discounts, special promotions, etc. TC 440: Detailed information of an Item, Price and its composition in a Catalogue. Composition: e.g. information referring to its description, how to order it, what it is made of, properties, delivery conditions, etc. \\" ;
-	rdfs:subClassOf a4g:Line .
+	rdfs:subClassOf a4g:Line, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isOrderable ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOrderableUnitFactorRate ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOrderableQuantityIncrement ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasWarrantyInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isContractedItem ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTransactionConditions ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCatalogueLineValidity ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumOrderQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMinimumQuantityGuaranteedForDelivery ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasOrderableUnit ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTransactionConditionsCode ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPrice ;
+		owl:onClass a4g:Price ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasActivityCode ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasStandardisedUnitPrice ;
+		owl:onClass a4g:Price ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasChargeInformation ;
+		owl:onClass a4g:ChargeInformation ;
+	] .
 
 a4g:ProcedureSpecificTerm a owl:Class ;
 	rdfs:label \\"procedure specific term\\"@en ;
@@ -418,21 +1925,64 @@ a4g:ItemRequirement a owl:Class ;
 a4g:NonDisclosureAgreementTerm a owl:Class ;
 	rdfs:label \\"non disclosure agreement term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isNonDisclosureAgreementRequired ;
+		owl:onDataRange xsd:boolean ;
+	] .
 
 a4g:PurchaseContract a owl:Class ;
 	rdfs:label \\"purchase contract\\"@en ;
 	rdfs:comment \\"A Contract resulting from using a Dynamic Purchasing System Technique or Framework Agreement Technique.\\" ;
-	rdfs:subClassOf a4g:Contract .
+	rdfs:subClassOf a4g:Contract, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:followsRulesSetBy ;
+		owl:onClass a4g:FrameworkAgreement ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:resultsFromMiniCompetitionAwardOutcome ;
+		owl:onClass a4g:MiniCompetitionAwardOutcome ;
+	] .
 
 a4g:Purpose a owl:Class ;
 	rdfs:label \\"purpose\\"@en ;
-	rdfs:comment \\"The description of the objectives related to a Procurement. Additional information: The description of the objectives includes the Subject Matter and Quantities. The quantification of the objectives related to a procurement. To be re-reviewed by the WG the soonest. (WG to be discussed, this was pointed out on the 09/04/2019 14:38:25 WG Meeting) The old definition read as follows: The description of the objectives related to a procurement. (WG approval 05/12/2018) \\" .
+	rdfs:comment \\"The description of the objectives related to a Procurement. Additional information: The description of the objectives includes the Subject Matter and Quantities. The quantification of the objectives related to a procurement. To be re-reviewed by the WG the soonest. (WG to be discussed, this was pointed out on the 09/04/2019 14:38:25 WG Meeting) The old definition read as follows: The description of the objectives related to a procurement. (WG approval 05/12/2018) \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAdditionalClassification ;
+		owl:onClass atold:cpv ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasMainClassification ;
+		owl:onClass atold:cpv ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalQuantity ;
+		owl:onClass a4g:Quantity ;
+	] .
 
 a4g:Reviewer a owl:Class ;
 	rdfs:label \\"reviewer\\"@en ;
 	rdfs:comment \\"Role of an Agent who investigates the overall correctness of a Procurement Procedure, producing a related report. Additional Information: Any Organisation or Person may request a review of a Procurement Procedure. WG approval: 20/04/2021\\" ;
-	rdfs:subClassOf a4g:AcquiringParty .
+	rdfs:subClassOf a4g:AcquiringParty, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasReviewBodyType ;
+		owl:onClass atold:review-body-type ;
+	] .
 
 a4g:Offer a owl:Class ;
 	rdfs:label \\"offer\\"@en ;
@@ -442,17 +1992,55 @@ a4g:Offer a owl:Class ;
 a4g:SecurityClearanceTerm a owl:Class ;
 	rdfs:label \\"security clearance term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations about the status requested of individuals allowing them access to classified information (state or organisational secrets) or to restricted areas, after completion of a thorough background check. Additional information: This corresponds in eForms to BT-578, BT-78, BT-732 . WG approval 20/06/2023 \\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSecurityClearanceRequired ;
+		owl:onDataRange xsd:boolean ;
+	] .
 
 a4g:SelectionCriterion a owl:Class ;
 	rdfs:label \\"selection criterion\\"@en ;
 	rdfs:comment \\"Criterion that describes a capacity Requirement that the Economic Operator needs to fulfill to participate in the procurement. Additional Information: Selection criteria may relate to: (a) suitability to pursue the professional activity; (b) economic and financial standing; (c) technical and professional ability WG approval 31/10/2018\\" ;
-	rdfs:subClassOf a4g:QualificationCriterion .
+	rdfs:subClassOf a4g:QualificationCriterion, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isUsedForCandidateRestriction ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSelectionCriteriaUsage ;
+		owl:onClass atold:usage ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSelectionCriterionType ;
+		owl:onClass atold:selection-criterion ;
+	] .
 
 a4g:SocialProcurement a owl:Class ;
 	rdfs:label \\"social procurement\\"@en ;
 	rdfs:comment \\"Approach whereby Buyers seek to procure by fulfilling social objectives. Additional Information: Socially Responsible Public Procurement (SRPP) - ‘SRPP’ means Procurement Operations that take into account one or more of the following social considerations: employment opportunities, decent work, compliance with social and labour rights, social inclusion (including persons with disabilities), equal opportunities, accessibility design for all, taking account of sustainability criteria, including ethical trade issues and wider voluntary compliance with corporate social responsibility (CSR), while observing the principles enshrined in the Treaty for the European Union (TFEU) and the Procurement Directives. Source: Buying Social - A Guide to Taking Account of Social Considerations in Public Procurement (Publications Office of the European Union, 2011) https://op.europa.eu/en/publication-detail/-/publication/cb70c481-0e29-4040-9be2-c408cddf081f/language-en See Article 18 and Annex X Directive 2014/24.\\" ;
-	rdfs:subClassOf a4g:StrategicProcurement .
+	rdfs:subClassOf a4g:StrategicProcurement, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:fulfillsRequirement ;
+		owl:onClass atold:social-objective ;
+	] .
 
 a4g:StatisticalInformation a owl:Class ;
 	rdfs:label \\"statistical information\\"@en ;
@@ -461,7 +2049,20 @@ a4g:StatisticalInformation a owl:Class ;
 
 a4g:StrategicProcurement a owl:Class ;
 	rdfs:label \\"strategic procurement\\"@en ;
-	rdfs:comment \\"Public Procurement that contributes to achieving pressing policy goals. Additional Information: Specific strategic goals could be, for example, Environmental Protection, innovation, job creation and the development of small and medium enterprises. This corresponds in eForms to BG-713 Strategic Procurement. The subclasses are given by the choices in BT-06 Strategic Procurement. Based on https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0411 (see paragraph on background information. WG Approval 10/03/2020\\" .
+	rdfs:comment \\"Public Procurement that contributes to achieving pressing policy goals. Additional Information: Specific strategic goals could be, for example, Environmental Protection, innovation, job creation and the development of small and medium enterprises. This corresponds in eForms to BG-713 Strategic Procurement. The subclasses are given by the choices in BT-06 Strategic Procurement. Based on https://legalinstruments.oecd.org/en/instruments/OECD-LEGAL-0411 (see paragraph on background information. WG Approval 10/03/2020\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasStrategicProcurementDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasNonAccessibilityCriterionJustification ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:includesAccessibilityCriterion ;
+		owl:onClass atold:accessibility ;
+	] .
 
 a4g:Subcontractor a owl:Class ;
 	rdfs:label \\"subcontractor\\"@en ;
@@ -471,48 +2072,482 @@ a4g:Subcontractor a owl:Class ;
 a4g:SubcontractTerm a owl:Class ;
 	rdfs:label \\"subcontract term\\"@en ;
 	rdfs:comment \\"A concept to describe the main information regarding the share of parts of the Contract to third parties.\\" ;
-	rdfs:subClassOf a4g:ContractSpecificTerm .
+	rdfs:subClassOf a4g:ContractSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumShare ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMinimumShare ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSubcontractingInvolved ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMinimumSubcontractorsProposedObligation ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSubcontractorsProposedAboveObligation ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasSubcontractingObligation ;
+		owl:onClass atold:subcontracting-obligation ;
+	] .
 
 a4g:SubmissionTerm a owl:Class ;
 	rdfs:label \\"submission term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of submitting Documents to the Buyer. Additional Information: These Documents can be Tenders, Request To Participate and expressions of interest. WG Approval 14/07/2020\\" ;
-	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm .
+	rdfs:subClassOf a4g:LotSpecificTerm, a4g:ProcedureSpecificTerm, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasSubmissionURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEAuctionURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceiptPreliminaryMarketConsultationDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceiptParticipationRequestDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceiptTenderDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceiptExpressionDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceiptDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isGuaranteeRequired ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasGuaranteeDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasNonElectronicSubmissionDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isAdvancedElectronicSignatureRequired ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isMultipleTenderSubmissionAllowed ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasLateSubmissionInformationDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasLanguage ;
+		owl:onClass atold:language ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasECataloguePermission ;
+		owl:onClass atold:permission ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTenderSubcontractingInformation ;
+		owl:onClass atold:subcontracting-indication ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasESubmissionPermission ;
+		owl:onClass atold:permission ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasNonElectronicSubmissionJustification ;
+		owl:onClass atold:communication-justification ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesTenderProcessor ;
+		owl:onClass a4g:TenderProcessor ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:definesTenderReceiver ;
+		owl:onClass a4g:TenderReceiver ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLateSubmissionPermission ;
+		owl:onClass atold:missing-info-submission ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTenderValidityPeriod ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTenderValidityDuration ;
+		owl:onClass a4g:Duration ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasVariantPermission ;
+		owl:onClass atold:permission ;
+	] .
 
 a4g:System a owl:Class ;
 	rdfs:label \\"system\\"@en ;
 	rdfs:comment \\"Software application used for performing Procurement activities. WG Approval 28/04/2020 \\" ;
-	rdfs:subClassOf foaf:Agent .
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], foaf:Agent, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isOwnedByAgent ;
+		owl:onClass foaf:Agent ;
+	] .
 
 a4g:Technique a owl:Class ;
 	rdfs:label \\"technique\\"@en ;
-	rdfs:comment \\"Method used for conducting Procurement Procedures. Addtional information: This corresponds in eForms to BG-706 Techniques. Several Techniques can be combined in one single Procurement Procedure (e.g. eAuction can be carried out in a Framework Agreement or DPS). WG Approval 19/09/2019 \\" .
+	rdfs:comment \\"Method used for conducting Procurement Procedures. Addtional information: This corresponds in eForms to BG-706 Techniques. Several Techniques can be combined in one single Procurement Procedure (e.g. eAuction can be carried out in a Framework Agreement or DPS). WG Approval 19/09/2019 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasValidityPeriod ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasUsage ;
+		owl:onClass atold:usage ;
+	] .
 
 a4g:Tenderer a owl:Class ;
 	rdfs:label \\"tenderer\\"@en ;
 	rdfs:comment \\"A Role of an Agent that has submitted a Tender. Additional Information: A Tenderer is an Economic Operator or group of Economic Operators that has submitted a Tender. WG approval 05/08/2021\\" ;
-	rdfs:subClassOf a4g:OfferingParty .
+	rdfs:subClassOf a4g:OfferingParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:substantiatesExclusionGround ;
+		owl:onClass a4g:ExclusionGround ;
+	] .
 
 a4g:Tender a owl:Class ;
 	rdfs:label \\"tender\\"@en ;
 	rdfs:comment \\"Information submitted by the Economic Operator to specify its Offer regarding a specific Lot, in response to the call for Tender. (WG approval 03/05/2022) \\" ;
-	rdfs:subClassOf a4g:Document .
+	rdfs:subClassOf a4g:Document, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasElectronicSubmission ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isVariant ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFinancialOfferValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmitedBy ;
+		owl:onClass a4g:Tenderer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:foreseesConcession ;
+		owl:onClass a4g:ConcessionEstimate ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSubcontracting ;
+		owl:onClass atold:applicability ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:foreseesSubcontracting ;
+		owl:onClass a4g:SubcontractingEstimate ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasItemCountryOfOrigin ;
+		owl:onClass atold:country ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesSubcontractors ;
+		owl:onClass a4g:Subcontractor ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubjectToGrouping ;
+		owl:onClass a4g:LotGroup ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmittedForLot ;
+		owl:onClass a4g:Lot ;
+	] .
 
 a4g:MonetaryValue a owl:Class ;
 	rdfs:label \\"monetary value\\"@en ;
-	rdfs:comment \\"A number of monetary units specified using a given unit of currency. Additional information: In the pre-award phase of the procurement, all monetary values are considered to exclude VAT based on the Directive 2014/24/EU. WG approval 13/04/2021 \\" .
+	rdfs:comment \\"A number of monetary units specified using a given unit of currency. Additional information: In the pre-award phase of the procurement, all monetary values are considered to exclude VAT based on the Directive 2014/24/EU. WG approval 13/04/2021 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasCurrencyCodeListAgencyID ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasCurrencyCodeListAgencyName ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasCurrencyCodeListID ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAmountValue ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCurrency ;
+		owl:onClass atold:currency ;
+	] .
 
 a4g:Winner a owl:Class ;
 	rdfs:label \\"winner\\"@en ;
 	rdfs:comment \\"A Role of an Agent to whom a Lot is awarded. WG approval 05/08/2021 (revised 26/10/2021)\\" ;
-	rdfs:subClassOf a4g:OfferingParty .
+	rdfs:subClassOf a4g:OfferingParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:needsToBeATenderer ;
+		owl:onClass a4g:Tenderer ;
+	] .
 
 a4g:Item a owl:Class ;
 	rdfs:label \\"item\\"@en ;
-	rdfs:comment \\"A product, work, service or any combination of them. Additional Information: An Item can be an atomic Thing or a composition of things that together are seen as a unit, e.g. a tetrabrik of milk or an indivisible package of six tetrabriks. No distinction is provided between services, goods and works to leave room for innovation. WG approval 30/06/2022\\" .
+	rdfs:comment \\"A product, work, service or any combination of them. Additional Information: An Item can be an atomic Thing or a composition of things that together are seen as a unit, e.g. a tetrabrik of milk or an indivisible package of six tetrabriks. No distinction is provided between services, goods and works to leave room for innovation. WG approval 30/06/2022\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasKeyword ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isInStock ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDimensionDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasHazardousClass ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBrand ;
+		owl:onClass a4g:Brand ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasQualifiedItemRelation ;
+		owl:onClass a4g:ItemRelation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasModel ;
+		owl:onClass a4g:ItemModel ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasItemClassification ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:hasPart ;
+		owl:onClass a4g:Item ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasManufacturerItemID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSellerItemID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasItemStandardID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNetQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCountryOfOrigin ;
+		owl:onClass atold:country ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDeliveryClassification ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasCertification ;
+		owl:onClass a4g:Certificate ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAccessoryItem ;
+		owl:onClass a4g:Item ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:isReplacedBy ;
+		owl:onClass a4g:Item ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasSpecification ;
+		owl:onClass a4g:ProductSpecification ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasComplementaryItem ;
+		owl:onClass a4g:Item ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasManufacturer ;
+		owl:onClass a4g:Manufacturer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasHazardousItemUNDGCode ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:requires ;
+		owl:onClass a4g:Item ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBuyerItemID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSerialID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTaxInformation ;
+		owl:onClass a4g:TaxInformation ;
+	] .
 
 a4g:JuryMember a owl:Class ;
 	rdfs:label \\"jury member\\"@en ;
-	rdfs:subClassOf a4g:AcquiringParty .
+	rdfs:subClassOf a4g:AcquiringParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:playedBy ;
+		owl:onClass person:Person ;
+	] .
 
 a4g:ProcurementProcedureInformationProvider a owl:Class ;
 	rdfs:label \\"procurement procedure information provider\\"@en ;
@@ -522,40 +2557,309 @@ a4g:ProcurementProcedureInformationProvider a owl:Class ;
 a4g:PlanningNotice a owl:Class ;
 	rdfs:label \\"planning notice\\"@en ;
 	rdfs:comment \\"Notice which sets out the Contracting Authority's purchasing intentions. It is used by Contracting Authorities to provide Suppliers with information about a Procurement Process. \\" ;
-	rdfs:subClassOf a4g:Notice .
+	rdfs:subClassOf a4g:Notice, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesRole ;
+		owl:onClass a4g:AgentInRole ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesPlannedProcurementPart ;
+		owl:onClass a4g:PlannedProcurementPart ;
+	] .
 
 a4g:CompetitionNotice a owl:Class ;
 	rdfs:label \\"competition notice\\"@en ;
 	rdfs:comment \\"An announcement of the launch of a Procurement Procedure by a Procuring Entity. WG approval 18/05/2018 \\" ;
-	rdfs:subClassOf a4g:Notice .
+	rdfs:subClassOf a4g:Notice, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesRole ;
+		owl:onClass a4g:AgentInRole ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:announcesProcedure ;
+		owl:onClass a4g:Procedure ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	] .
 
 a4g:Quantity a owl:Class ;
 	rdfs:label \\"quantity\\"@en ;
-	rdfs:comment \\"A counted number of non-monetary units possibly including fractions. \\" .
+	rdfs:comment \\"A counted number of non-monetary units possibly including fractions. \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasQuantityValue ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasUnitDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasUnitCode ;
+		owl:onClass atold:measurement-unit ;
+	] .
 
 a4g:DirectAwardPrenotificationNotice a owl:Class ;
 	rdfs:label \\"direct award prenotification notice\\"@en ;
 	rdfs:comment \\"Notice which sets out the Buyer's purchasing intention to award a Contract without prior notification of Competition.\\" ;
-	rdfs:subClassOf a4g:Notice .
+	rdfs:subClassOf a4g:Notice, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:announcesNoticeAwardInformation ;
+		owl:onClass a4g:NoticeAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:announcesProcedure ;
+		owl:onClass a4g:Procedure ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesLotGroupAwardInformation ;
+		owl:onClass a4g:LotGroupAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesContract ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesRole ;
+		owl:onClass a4g:AgentInRole ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesAwardDecision ;
+		owl:onClass a4g:AwardDecision ;
+	] .
 
 a4g:ResultNotice a owl:Class ;
 	rdfs:label \\"result notice\\"@en ;
 	rdfs:comment \\"An announcement of the award or non-award of a Contract by a Buyer. (WG approval 27/03/2019)\\" ;
-	rdfs:subClassOf a4g:Notice .
+	rdfs:subClassOf a4g:Notice, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesLotGroupAwardInformation ;
+		owl:onClass a4g:LotGroupAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesContract ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToProcedure ;
+		owl:onClass a4g:Procedure ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesRole ;
+		owl:onClass a4g:AgentInRole ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:announcesNoticeAwardInformation ;
+		owl:onClass a4g:NoticeAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesAwardDecision ;
+		owl:onClass a4g:AwardDecision ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToRole ;
+		owl:onClass a4g:AgentInRole ;
+	] .
 
 a4g:ContractModificationNotice a owl:Class ;
 	rdfs:label \\"contract modification notice\\"@en ;
 	rdfs:comment \\"An announcement of the Modification Of a Contract/Concession during its term by a Procuring Entity.\\" ;
-	rdfs:subClassOf a4g:Notice .
+	rdfs:subClassOf a4g:Notice, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToContractToBeModified ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:announcesContractAmendment ;
+		owl:onClass a4g:ContractAmendment ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToProcedure ;
+		owl:onClass a4g:Procedure ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesRole ;
+		owl:onClass a4g:AgentInRole ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToNoticeAwardInformation ;
+		owl:onClass a4g:NoticeAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLotGroupAwardInformation ;
+		owl:onClass a4g:LotGroupAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToAwardDecision ;
+		owl:onClass a4g:AwardDecision ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLot ;
+		owl:onClass a4g:Lot ;
+	] .
 
 a4g:CompletionNotice a owl:Class ;
 	rdfs:label \\"completion notice\\"@en ;
 	rdfs:comment \\"An announcement of the end of a Procurement by a Buyer.\\" ;
-	rdfs:subClassOf a4g:Notice .
+	rdfs:subClassOf a4g:Notice, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:announcesCompletionOfContract ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToProcedure ;
+		owl:onClass a4g:Procedure ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToAwardDecision ;
+		owl:onClass a4g:AwardDecision ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToLotGroupAwardInformation ;
+		owl:onClass a4g:LotGroupAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToNoticeAwardInformation ;
+		owl:onClass a4g:NoticeAwardInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToRole ;
+		owl:onClass a4g:AgentInRole ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesRole ;
+		owl:onClass a4g:AgentInRole ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:announcesReviewObject ;
+		owl:onClass a4g:ReviewObject ;
+	] .
 
 a4g:Price a owl:Class ;
 	rdfs:label \\"price\\"@en ;
-	rdfs:comment \\"Amount of money required or given in exchange for Items. Additional information: The Price excludes any charges (such as taxes, duties and fees) and discounts. WG approval 26/07/2022\\" .
+	rdfs:comment \\"Amount of money required or given in exchange for Items. Additional information: The Price excludes any charges (such as taxes, duties and fees) and discounts. WG approval 26/07/2022\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDeliveryLocation ;
+		owl:onClass dcterms:Location ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPriceValidity ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNetMonetaryValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOrderabableUnitFactorRate ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasQuantityThreshold ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasExpectedDeliveryTime ;
+		owl:onClass a4g:Duration ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBaseQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPriceSurchargeInformation ;
+		owl:onClass a4g:ChargeInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPriceType ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPriceDiscountInformation ;
+		owl:onClass a4g:AllowanceInformation ;
+	] .
 
 a4g:Despatcher a owl:Class ;
 	rdfs:label \\"despatcher\\"@en ;
@@ -583,7 +2887,47 @@ a4g:PINTimeLimitNotice a owl:Class ;
 a4g:ShipmentInformation a owl:Class ;
 	rdfs:label \\"shipment information\\"@en ;
 	rdfs:comment \\"The Transportation of an identifiable collection of Goods Items from one party (the Despatch Party) to another party (the Consignee) via one or more modes of transport. Addition Information This represents the where and when.\\" ;
-	rdfs:subClassOf a4g:InformationHub .
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:despatchDate ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesPlaceOfDespatch ;
+		owl:onClass dcterms:Location ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSpecificToDespatchLine ;
+		owl:onClass a4g:DespatchLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedDeliveryPeriod ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToDeliveryInformation ;
+		owl:onClass a4g:DeliveryInformation ;
+	] .
 
 a4g:OriginatorRequest a owl:Class ;
 	rdfs:label \\"originator request\\"@en ;
@@ -609,7 +2953,28 @@ a4g:Notice11 a owl:Class ;
 a4g:TransportHandlingUnit a owl:Class ;
 	rdfs:label \\"transport handling unit\\"@en ;
 	rdfs:comment \\"A description of Individual Handling Units in which the Line Items are packed.\\" ;
-	rdfs:subClassOf a4g:Package .
+	rdfs:subClassOf a4g:Package, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasShippingMark ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasHandlingInstruction ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:transportsItemFrom ;
+		owl:onClass a4g:DespatchLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:usesTransportEquipment ;
+		owl:onClass a4g:TransportEquipment ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasHandlingInstructionCode ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	] .
 
 a4g:Notice25 a owl:Class ;
 	rdfs:label \\"notice25\\"@en ;
@@ -856,7 +3221,37 @@ a4g:ReviewProcedureInformationProvider a owl:Class ;
 
 a4g:DespatchLine a owl:Class ;
 	rdfs:label \\"despatch line\\"@en ;
-	rdfs:subClassOf a4g:Line .
+	rdfs:subClassOf a4g:Line, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOutstandingQuantityReason ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDespatchedQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOutstandingQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAssociatedDocument ;
+		owl:onClass a4g:PostAwardDocument ;
+	] .
 
 a4g:Modification-D25 a owl:Class ;
 	rdfs:label \\"modification d 25\\"@en ;
@@ -934,32 +3329,180 @@ a4g:Term a owl:Class ;
 a4g:TenderAwardOutcome a owl:Class ;
 	rdfs:label \\"tender award outcome\\"@en ;
 	rdfs:comment \\"Result concerning the Tender attributed by the Awarder.\\" ;
-	rdfs:subClassOf a4g:ContextualProjection .
+	rdfs:subClassOf a4g:ContextualProjection, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardRank ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsTender ;
+		owl:onClass a4g:Tender ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:indicatesAwardToWinner ;
+		owl:onClass a4g:Winner ;
+	] .
 
 a4g:LotAwardOutcome a owl:Class ;
 	rdfs:label \\"lot award outcome\\"@en ;
 	rdfs:comment \\"Result concerning the Lot attributed by the Awarder.\\" ;
-	rdfs:subClassOf a4g:AwardOutcome .
+	rdfs:subClassOf a4g:AwardOutcome, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNonAwardedContractTitle ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNonAwardedContractNumber ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFrameworkAgreementMaximumValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasApproximateFrameworkAgreementValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:ReviewRequestSummary a owl:Class ;
 	rdfs:label \\"review request summary\\"@en ;
 	rdfs:comment \\"Summary information about the requests the Buyer received to review any of its decisions (e.g. the technical specifications, award decision), as set out in Art. 1(5) of Directive 89/665/EEC and Directive 92/13/EEC, and about the complainants that submitted the requests. Additional information: This class corresponds in eForms to BG-612 Buyer Review Summary.\\" ;
-	rdfs:subClassOf a4g:StatisticalInformation .
+	rdfs:subClassOf a4g:StatisticalInformation, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalNumberOfComplainants ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsReviewSummaryForLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasReviewIrregularitySummary ;
+		owl:onClass a4g:ReviewIrregularitySummary ;
+	] .
 
 a4g:LotGroupAwardInformation a owl:Class ;
 	rdfs:label \\"lot group award information\\"@en ;
 	rdfs:comment \\"Award information related to a given Group of Lots.\\" ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasGroupFrameworkAgreementMaximumValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesLotGroup ;
+		owl:onClass a4g:LotGroup ;
+	] .
 
 a4g:NoticeAwardInformation a owl:Class ;
 	rdfs:label \\"notice award information\\"@en ;
 	rdfs:comment \\"Information about an Award Notice.\\" ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesDirectAwardPrenotificationNotice ;
+		owl:onClass a4g:DirectAwardPrenotificationNotice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasApproximateFrameworkAgreementValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalAwardedValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumFrameworkAgreementAwardedValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesResultNotice ;
+		owl:onClass a4g:ResultNotice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasProcurementLowestReceivedTenderValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasProcurementHighestReceivedTenderValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:ReviewDecision a owl:Class ;
 	rdfs:label \\"review decision\\"@en ;
 	rdfs:comment \\"Information about Review Decisions. \\" ;
-	rdfs:subClassOf a4g:ReviewObject .
+	rdfs:subClassOf a4g:ReviewObject, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDecisionDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasConfirmedIrregularityType ;
+		owl:onClass atold:irregularity-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasReviewDecisionType ;
+		owl:onClass atold:review-decision-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasRemedyValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:resolvesReviewRequest ;
+		owl:onClass a4g:ReviewRequest ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:providesRulingOnRemedy ;
+		owl:onClass atold:remedy-type ;
+	] .
 
 a4g:ProductSpecification a owl:Class ;
 	rdfs:label \\"product specification\\"@en ;
@@ -968,7 +3511,34 @@ a4g:ProductSpecification a owl:Class ;
 
 a4g:AgentInRole a owl:Class ;
 	rdfs:label \\"agent in role\\"@en ;
-	rdfs:comment \\"Relative concept that ties an Agent to a part they play in a given Situational Context. Additional information: The classification of roles is based is based on the degree of involvement into the Procurement Process: - Primary (Procurement) Pole is directly involved in the Procurement Process; - Secondary (Procurement sub-) Role is secondary to the Procurement Process - Tertiary (Related) Role is not involved in the Procurement Process.\\" .
+	rdfs:comment \\"Relative concept that ties an Agent to a part they play in a given Situational Context. Additional information: The classification of roles is based is based on the degree of involvement into the Procurement Process: - Primary (Procurement) Pole is directly involved in the Procurement Process; - Secondary (Procurement sub-) Role is secondary to the Procurement Process - Tertiary (Related) Role is not involved in the Procurement Process.\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasContactPointInRole ;
+		owl:onClass m8g:ContactPoint ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:playedBy ;
+		owl:onClass foaf:Agent ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:contextualisedBy ;
+		owl:onClass a4g:ProcurementObject ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:exposesChannel ;
+		owl:onClass m8g:Channel ;
+	] .
 
 a4g:TaxInformationProvider a owl:Class ;
 	rdfs:label \\"tax information provider\\"@en ;
@@ -993,12 +3563,182 @@ a4g:Awarder a owl:Class ;
 a4g:ReviewRequest a owl:Class ;
 	rdfs:label \\"review request\\"@en ;
 	rdfs:comment \\"Information about requests to review procedures. \\" ;
-	rdfs:subClassOf a4g:ReviewObject .
+	rdfs:subClassOf a4g:ReviewObject, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasRequestDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNumberOfReviewRequests ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isWithdrawn ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasWithdrawalDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasWithdrawalReason ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAllegedIrregularityType ;
+		owl:onClass atold:irregularity-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:requestsRemedyType ;
+		owl:onClass atold:remedy-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReviewRequestFee ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:SubmissionStatisticalInformation a owl:Class ;
 	rdfs:label \\"submission statistical information\\"@en ;
 	rdfs:comment \\"Statistical information about submissions on a given competition, either at Lot level or Mini-Competition level. WG approval 30/05/2023\\" ;
-	rdfs:subClassOf a4g:StatisticalInformation .
+	rdfs:subClassOf a4g:StatisticalInformation, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNonEUReceivedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEUReceivedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOtherCountriesReceivedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEEAReceivedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceivedParticipationRequests ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNonEEAReceivedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSMEReceivedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceivedMicroTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceivedSmallTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMediumTenderPerLots ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceivedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasInadmissibleTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAbnormallyLowTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasUnverifiedTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasElectronicTenders ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedTotalSubcontracts ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNumberOfTenderersInvited ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLowestReceivedTenderValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceivedSubmissionType ;
+		owl:onClass atold:received-submission-type ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasHighestReceivedTenderValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:summarisesInformationForAwardOutcome ;
+		owl:onClass a4g:AwardOutcome ;
+	] .
 
 a4g:PINProfile-D81 a owl:Class ;
 	rdfs:label \\"pin profile d 81\\"@en ;
@@ -1038,32 +3778,204 @@ a4g:ItemComposition a owl:Class ;
 
 a4g:ItemProperty a owl:Class ;
 	rdfs:label \\"item property\\"@en ;
-	rdfs:comment \\"Construct meant to represent the association between an attribute defined in an external classification scheme and the value ascribed to it. WG approval 26/07/2022\\" .
+	rdfs:comment \\"Construct meant to represent the association between an attribute defined in an external classification scheme and the value ascribed to it. WG approval 26/07/2022\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAttributeType ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasClassificationScheme ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLiteralValue ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasQualifiedValue ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesItem ;
+		owl:onClass a4g:Item ;
+	] .
 
 a4g:ProcurementObject a owl:Class ;
 	rdfs:label \\"procurement object\\"@en ;
 	rdfs:comment \\"The whole or a division of goods, services or works to be procured. Additional Information: Anything that can specify the procurement content (i.e. goods, services, work) is a Procurement Object. In a sense, such an object can constitute the object of a Contract. To test whether something is a Procedure Object check if it can have a Purpose and/or CPV classification (<i>The CPV establishes a single classification system for public procurement aimed at standardising the references used by Contracting Authorities and entities to describe the subject of Procurement Contracts.</i>). Note: Procedure, seems to be an exception from this rule. Because it is a conflated term: it carries process properties and purpose properties. \\" ;
-	rdfs:subClassOf a4g:ProcurementElement .
+	rdfs:subClassOf a4g:ProcurementElement, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSMESuitable ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isUsingEUFunds ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isRecurrent ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasRecurrenceDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isCoveredByGPA ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAdditionalInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasLegalBasisDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSubjectToTerm ;
+		owl:onClass a4g:Term ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPurpose ;
+		owl:onClass a4g:Purpose ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isFundedBy ;
+		owl:onClass a4g:Fund ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:foreseesContractSpecificTerm ;
+		owl:onClass a4g:ContractSpecificTerm ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasLegalBasis ;
+		owl:onClass atold:legal-basis ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:fulfillsStrategicProcurement ;
+		owl:onClass a4g:StrategicProcurement ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLaunchFrameworkAgreementMaximumValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:usesTechnique ;
+		owl:onClass a4g:Technique ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:foreseesConcession ;
+		owl:onClass a4g:ConcessionEstimate ;
+	] .
 
 a4g:OrderLine a owl:Class ;
 	rdfs:label \\"order line\\"@en ;
 	rdfs:comment \\"Details concerning a given unit of goods, services or works requested in the Order. Additional information: In general, an Order Line contains the Quantity and Price of the goods, services and goods requested in the Order. However, in certain cases, the Price may not be known, as the Price may fluctuate from one day to the other. WG approval 20/04/2023\\" ;
-	rdfs:subClassOf a4g:Line .
+	rdfs:subClassOf a4g:Line, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToCatalogueLine ;
+		owl:onClass a4g:CatalogueLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPrice ;
+		owl:onClass a4g:Price ;
+	] .
 
 a4g:AllowanceInformation a owl:Class ;
 	rdfs:label \\"allowance information\\"@en ;
 	rdfs:comment \\"Information about the discounts imposed. WG approval 16/05/2023 \\" ;
-	rdfs:subClassOf a4g:AllowanceChargeInformation .
+	rdfs:subClassOf a4g:AllowanceChargeInformation, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSpecificToOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	] .
 
 a4g:AllowanceChargeInformation a owl:Class ;
 	rdfs:label \\"allowance charge information\\"@en ;
 	rdfs:comment \\"Information about discounts, taxes, duties and fees imposed. WG approval 16/05/2023\\" ;
-	rdfs:subClassOf a4g:InformationHub .
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPercentage ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAllowanceChargeReasonDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasAllowanceChargeReason ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isCalculatedOn ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTaxInformation ;
+		owl:onClass a4g:TaxInformation ;
+	] .
 
 a4g:Manufacturer a owl:Class ;
 	rdfs:label \\"manufacturer\\"@en ;
 	rdfs:comment \\"The Producer of goods or provider of services. Additional Information: Also, known as Supplier and Manufacturer. We do not care who provides these service or products we care with whom Business is done. PEPPOL - Invoice: The Supplier is the Legal Person or Organisation who provides a product and/or service. PEPPOL - Order: The supplier is the legal person or organisation who provides a product or service. Examples of supplier roles: seller, despatch party, creditor, economic operator. \\" ;
-	rdfs:subClassOf a4g:OfferingParty .
+	rdfs:subClassOf a4g:OfferingParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasManufacturerID ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:ContextDescription a owl:Class ;
 	rdfs:label \\"context description\\"@en ;
@@ -1075,15 +3987,60 @@ a4g:ContextualProjection a owl:Class ;
 
 a4g:Batch a owl:Class ;
 	rdfs:label \\"batch\\"@en ;
-	rdfs:comment \\"A production Lot in which the Item instances were produced. WG Acceptance 10/03/2022 \\" .
+	rdfs:comment \\"A production Lot in which the Item instances were produced. WG Acceptance 10/03/2022 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasManufactureDate ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasExpiryDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBestBeforeDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isProductionOf ;
+		owl:onClass a4g:Item ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasBatchID ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:Brand a owl:Class ;
 	rdfs:label \\"brand\\"@en ;
-	rdfs:comment \\"Name given by an organisation to its product or service, or range of products or services. Additional information: Brand name allows economic operators to distinctively describe an item in their eCatalogue. This may be different from the item name. WG acceptance 10/03/2022 \\" .
+	rdfs:comment \\"Name given by an organisation to its product or service, or range of products or services. Additional information: Brand name allows economic operators to distinctively describe an item in their eCatalogue. This may be different from the item name. WG acceptance 10/03/2022 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	] .
 
 a4g:ItemModel a owl:Class ;
 	rdfs:label \\"item model\\"@en ;
-	rdfs:comment \\"A specific design or version of a product or service. Additional information: This class is meant as a reusable reference to the model name rather than as a set of specifications of an Item of this particular model. WG acceptance 10/03/2022 \\" .
+	rdfs:comment \\"A specific design or version of a product or service. Additional information: This class is meant as a reusable reference to the model name rather than as a set of specifications of an Item of this particular model. WG acceptance 10/03/2022 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	] .
 
 a4g:QSNotice-D25 a owl:Class ;
 	rdfs:label \\"qs notice d 25\\"@en ;
@@ -1103,17 +4060,93 @@ a4g:CANSocialNotice-D25 a owl:Class ;
 a4g:ChangeInformation a owl:Class ;
 	rdfs:label \\"change information\\"@en ;
 	rdfs:comment \\"Alteration to previously provided details.\\" ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasChangeDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isProcurementDocumentChanged ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasChangeReasonDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasProcurementDocumentChangeDate ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAdditionalInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToPreviousNotice ;
+		owl:onClass a4g:Notice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:relatesToEFormSectionIdentifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsNotice ;
+		owl:onClass a4g:Notice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasChangeJustification ;
+		owl:onClass atold:change-corrig-justification ;
+	] .
 
 a4g:ReviewObject a owl:Class ;
 	rdfs:label \\"review object\\"@en ;
 	rdfs:comment \\"Information about a Review Request or a Review Decision. Additional information: This class corresponds to the BG-714 Review in eForms. \\" ;
-	rdfs:subClassOf a4g:Document .
+	rdfs:subClassOf a4g:Document, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasElementReference ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReviewURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToPreviousReview ;
+		owl:onClass a4g:ReviewObject ;
+	] .
 
 a4g:ReviewIrregularitySummary a owl:Class ;
 	rdfs:label \\"review irregularity summary\\"@en ;
 	rdfs:comment \\"Information about the number and type of requests the Buyer received to review any of its decisions (e.g. the Technical Specifications, Award Decision). Additional information: This class corresponds in eForms to BG-613 Buyer Review Requests. \\" ;
-	rdfs:subClassOf a4g:StatisticalInformation .
+	rdfs:subClassOf a4g:StatisticalInformation, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReviewIrregularityCount ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasIrregularityType ;
+		owl:onClass atold:irregularity-type ;
+	] .
 
 a4g:ItemReplacement a owl:Class ;
 	rdfs:label \\"item replacement\\"@en ;
@@ -1133,11 +4166,42 @@ a4g:ConcessionContract a owl:Class ;
 a4g:ProcessPlanningTerm a owl:Class ;
 	rdfs:label \\"process planning term\\"@en ;
 	rdfs:comment \\"Conditions and stipulations defining particularities of the unfolding of the Procurement Process.\\" ;
-	rdfs:subClassOf a4g:Term .
+	rdfs:subClassOf a4g:Term, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAwardDateScheduled ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedTenderInvitationDate ;
+		owl:onDataRange xsd:date ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedContractNoticePublicationDate ;
+		owl:onDataRange xsd:date ;
+	] .
 
 a4g:ItemRelation a owl:Class ;
 	rdfs:label \\"item relation\\"@en ;
-	rdfs:comment \\"Connection between two Items. WG Approval: 30/06/2022 \\" .
+	rdfs:comment \\"Connection between two Items. WG Approval: 30/06/2022 \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFactor ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isRelatedToItem ;
+		owl:onClass a4g:Item ;
+	] .
 
 a4g:ItemAccessoryRelation a owl:Class ;
 	rdfs:label \\"item accessory relation\\"@en ;
@@ -1152,12 +4216,53 @@ a4g:ItemComplementaryRelation a owl:Class ;
 a4g:ProcurementProcessInformation a owl:Class ;
 	rdfs:label \\"procurement process information\\"@en ;
 	rdfs:comment \\"Information about the temporal unfolding or succession of Procurement Objects.\\" ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isCompetitionTerminated ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isToBeRelaunched ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isDPSTerminated ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsLot ;
+		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsProcedure ;
+		owl:onClass a4g:Procedure ;
+	] .
 
 a4g:CertificationLabel a owl:Class ;
 	rdfs:label \\"certification label\\"@en ;
 	rdfs:comment \\"Concept that stands for a set of norms, expectations, standards and policies. Additional Information: Such standards may relate to social, ethical and quality etc. WG approval 26/07/2022 \\" ;
-	rdfs:subClassOf m8g:InformationConcept .
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReferenceURI ;
+		owl:onDataRange xsd:anyURI ;
+	], m8g:InformationConcept, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasLabelType ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	] .
 
 a4g:Certifier a owl:Class ;
 	rdfs:label \\"certifier\\"@en ;
@@ -1167,17 +4272,95 @@ a4g:Certifier a owl:Class ;
 a4g:Certificate a owl:Class ;
 	rdfs:label \\"certificate\\"@en ;
 	rdfs:comment \\"Proof of conformance of the instance of the concept to a defined set of criteria. Additional Information: Certificates provide assurance of credibility, trust, and transparency in the procurement process. WG approval 16/05/2023 \\" ;
-	rdfs:subClassOf m8g:Evidence .
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCertificationNumber ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:attestedByLabel ;
+		owl:onClass a4g:CertificationLabel ;
+	], m8g:Evidence, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:issuedByCertifier ;
+		owl:onClass a4g:Certifier ;
+	] .
 
 a4g:ChargeInformation a owl:Class ;
 	rdfs:label \\"charge information\\"@en ;
 	rdfs:comment \\"Information about tax, fee or duty imposed. Additional Information: Charge category indicates the nature of the tax/duty/fee, for example VAT, CAR, etc. Charge category modifier may be used in case different levels, exemptions or other modifications apply. The charge can be fixed or relative to the price. WG approval 16/05/2023\\" ;
-	rdfs:subClassOf a4g:AllowanceChargeInformation .
+	rdfs:subClassOf a4g:AllowanceChargeInformation, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSpecificToOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	] .
 
 a4g:DeliveryInformation a owl:Class ;
 	rdfs:label \\"delivery information\\"@en ;
 	rdfs:comment \\"Information about the timing, the delivery destination, the delivery agreement and the involved parties. WG approval 16/05/2023 \\" ;
-	rdfs:subClassOf a4g:InformationHub .
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasShippingMark ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDeliveryDeadline ;
+		owl:onDataRange xsd:dateTime ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsConsignee ;
+		owl:onClass a4g:Consignee ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesPlaceOfDelivery ;
+		owl:onClass dcterms:Location ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasDeliveryPeriod ;
+		owl:onClass a4g:Period ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSpecificToOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesGeneralDeliveryAgreement ;
+		owl:onClass a4g:DeliveryAgreement ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesSpecificDeliveryAgreement ;
+		owl:onClass a4g:DeliveryAgreement ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTrackingID ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:AcquiringParty a owl:Class ;
 	rdfs:label \\"acquiring party\\"@en ;
@@ -1196,7 +4379,19 @@ a4g:OtherEntity a owl:Class ;
 
 a4g:SpecificDuration a owl:Class ;
 	rdfs:label \\"specific duration\\"@en ;
-	rdfs:subClassOf a4g:Duration .
+	rdfs:subClassOf a4g:Duration, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty time:numericDuration ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty time:unitType ;
+		owl:onClass time:TemporalUnit ;
+	] .
 
 a4g:IndefiniteDuration a owl:Class ;
 	rdfs:label \\"indefinite duration\\"@en ;
@@ -1205,11 +4400,44 @@ a4g:IndefiniteDuration a owl:Class ;
 a4g:OrderResponseLine a owl:Class ;
 	rdfs:label \\"order response line\\"@en ;
 	rdfs:comment \\"Details concerning the Seller's ability to fulfil a given Order Line. Additional Information: The Order Response Line is used to inform on the acceptance or rejection of an Order Line or to make a counter-offer. WG approval 20/04/2023\\" ;
-	rdfs:subClassOf a4g:OrderLine .
+	rdfs:subClassOf a4g:OrderLine, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSubmittedForOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	] .
 
 a4g:ProcurementElement a owl:Class ;
 	rdfs:label \\"procurement element\\"@en ;
-	rdfs:comment \\"Gathering class for critical/central elements in the Procurement Process. TODO: add definition Additional information: Alias: ProcurementComponent\\" .
+	rdfs:comment \\"Gathering class for critical/central elements in the Procurement Process. TODO: add definition Additional information: Alias: ProcurementComponent\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:title ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:usesChannel ;
+		owl:onClass m8g:Channel ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasEstimatedValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasInternalIdentifier ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:LeadBuyer a owl:Class ;
 	rdfs:label \\"lead buyer\\"@en ;
@@ -1219,20 +4447,61 @@ a4g:LeadBuyer a owl:Class ;
 a4g:ContractInformation a owl:Class ;
 	rdfs:label \\"contract information\\"@en ;
 	rdfs:comment \\"Information about the Contract. WG approval 20/04/2023\\" ;
-	rdfs:subClassOf a4g:InformationHub .
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsContract ;
+		owl:onClass a4g:Contract ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSpecificToOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	] .
 
 a4g:OriginatorInformation a owl:Class ;
 	rdfs:label \\"originator information\\"@en ;
 	rdfs:comment \\"Information about the Originator of the Order. WG approval 20/03/2023\\" ;
-	rdfs:subClassOf a4g:InformationHub .
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSpecificToOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsOriginator ;
+		owl:onClass a4g:Originator ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsOriginatorRequest ;
+		owl:onClass a4g:OriginatorRequest ;
+	] .
 
 a4g:DeliveryAgreement a owl:Class ;
 	rdfs:label \\"delivery agreement\\"@en ;
-	rdfs:comment \\"Term applying to the delivery of goods, services and works. Additional Information: Delivery terms identifier can normally be Incoterms accompanied by the description of specific conditions related to the delivery. WG approval 16/05/2023\\" .
+	rdfs:comment \\"Term applying to the delivery of goods, services and works. Additional Information: Delivery terms identifier can normally be Incoterms accompanied by the description of specific conditions related to the delivery. WG approval 16/05/2023\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesDeliveryAgreementLocation ;
+		owl:onClass dcterms:Location ;
+	] .
 
 a4g:DirectContract a owl:Class ;
 	rdfs:label \\"direct contract\\"@en ;
-	rdfs:subClassOf a4g:Contract .
+	rdfs:subClassOf a4g:Contract, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:resultsFromLotAwardOutcome ;
+		owl:onClass a4g:LotAwardOutcome ;
+	] .
 
 a4g:AwardCriteriaSummary a owl:Class ;
 	rdfs:label \\"award criteria summary\\"@en ;
@@ -1240,7 +4509,165 @@ a4g:AwardCriteriaSummary a owl:Class ;
 
 a4g:Consignment a owl:Class ;
 	rdfs:label \\"consignment\\"@en ;
-	rdfs:comment \\"A batch of goods destined for or delivered to someone. Additional information: Consignment it is a Transport Agreement. They do not care about the content of what is being shipped. (only if there are dangerous goods, and temperature requirements). How to move from place a to place B.\\" .
+	rdfs:comment \\"A batch of goods destined for or delivered to someone. Additional information: Consignment it is a Transport Agreement. They do not care about the content of what is being shipped. (only if there are dangerous goods, and temperature requirements). How to move from place a to place B.\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasVehicleDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isHazardousRisk ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasHandlingInstruction ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasCarrierServiceInstruction ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasSpecialInstruction ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDeliveryInstruction ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasSpecialServiceInstruction ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasGrossWeight ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasGrossVolume ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasHandlingInstructionCode ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCarrierConsignmentID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNetWeight ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasChargeableWeight ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasConsignmentDeclaredStatisticsValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasConsignmentFreeOnBoardValue ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesFreightForwarder ;
+		owl:onClass a4g:FreightForwarder ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:containsTransportHandlingUnit ;
+		owl:onClass a4g:TransportHandlingUnit ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasFreightAllowanceCharge ;
+		owl:onClass a4g:ChargeInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasRequestedPickUpInformation ;
+		owl:onClass a4g:ShipmentInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTransportHandlingUnitQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesNotifier ;
+		owl:onClass a4g:Notifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMainCarriageShipmentStage ;
+		owl:onClass a4g:ShipmentStage ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPreCarriageShipmentStage ;
+		owl:onClass a4g:ShipmentStage ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasOnCarriageShipmentStage ;
+		owl:onClass a4g:ShipmentStage ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasConsigneeConsignmentID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasFreightForwarderConsignmentID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalGoodsItemQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLoadingLength ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasConsignmentInvoiceValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:FreightForwarder a owl:Class ;
 	rdfs:label \\"freight forwarder\\"@en ;
@@ -1252,51 +4679,236 @@ a4g:Notifier a owl:Class ;
 	rdfs:subClassOf a4g:AuxiliaryParty .
 
 a4g:TransportEquipment a owl:Class ;
-	rdfs:label \\"transport equipment\\"@en .
+	rdfs:label \\"transport equipment\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isReturnable ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isRefrigerated ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isPowerIndicated ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTransportEquipmentSeal ;
+		owl:onClass a4g:TransportEquipmentSeal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTransportEquipmentType ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasSizeType ;
+	] .
 
 a4g:Package a owl:Class ;
 	rdfs:label \\"package\\"@en ;
-	rdfs:subClassOf a4g:AbstractContainer .
+	rdfs:subClassOf a4g:AbstractContainer, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPackagingTypeDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasPackagingType ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:containsPackage ;
+		owl:onClass a4g:Package ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:containsGoodsItem ;
+		owl:onClass a4g:GoodsItem ;
+	] .
 
 a4g:ShipmentStage a owl:Class ;
-	rdfs:label \\"shipment stage\\"@en .
+	rdfs:label \\"shipment stage\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isHazardousRisk ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCarrier ;
+		owl:onClass a4g:Carrier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:usesTransportMeans ;
+		owl:onClass a4g:TransportMeans ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasArrivalShipmentInformation ;
+		owl:onClass a4g:ShipmentInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDepartureShipmentInformation ;
+		owl:onClass a4g:ShipmentInformation ;
+	] .
 
 a4g:TransportMeans a owl:Class ;
-	rdfs:label \\"transport means\\"@en .
+	rdfs:label \\"transport means\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDriverPerson ;
+		owl:onClass a4g:TransportMeansOperator ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTransportMode ;
+		owl:minCardinality 1 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasVehicleID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTransportMeansType ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasVehicleSegmentID ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:TransportEquipmentSeal a owl:Class ;
-	rdfs:label \\"transport equipment seal\\"@en .
+	rdfs:label \\"transport equipment seal\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:ShipmentAgreement a owl:Class ;
 	rdfs:label \\"shipment agreement\\"@en ;
-	rdfs:comment \\"The Commercial Agreement between the Commercial Parties. Additional Information: It describes items being shipped. What is being moved. \\" .
+	rdfs:comment \\"The Commercial Agreement between the Commercial Parties. Additional Information: It describes items being shipped. What is being moved. \\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:agreedByBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:agreedBySeller ;
+		owl:onClass a4g:Seller ;
+	] .
 
 a4g:OfferIssuer a owl:Class ;
 	rdfs:label \\"offer issuer\\"@en ;
 	rdfs:comment \\"The Role of an Agent that distributes an Offer. WG approval 09/02/2023\\" ;
-	rdfs:subClassOf a4g:OfferingParty .
+	rdfs:subClassOf a4g:OfferingParty, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:distributesOffer ;
+		owl:onClass a4g:Offer ;
+	] .
 
 a4g:Line a owl:Class ;
-	rdfs:label \\"line\\"@en .
+	rdfs:label \\"line\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesItem ;
+		owl:onClass a4g:Item ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:InformationHub a owl:Class ;
 	rdfs:label \\"information hub\\"@en ;
 	rdfs:comment \\"Grouping of data that may be associated to various concepts. Additional Information: For example, AllowanceChargeInformation may be associated to the Order or the Catalogue (either at the Line level or at the Document level), amongst others. WG approval 16/05/2023\\" ;
-	rdfs:subClassOf a4g:ContextDescription .
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isSpecificToLine ;
+		owl:onClass a4g:Line ;
+	] .
 
 a4g:ParticipationCondition a owl:Class ;
 	rdfs:label \\"participation condition\\"@en ;
 	rdfs:comment \\"Criterion that describes a Requirement to take part in a procurement. WG approval 30/05/2023\\" ;
-	rdfs:subClassOf a4g:ProcurementCriterion .
+	rdfs:subClassOf a4g:ProcurementCriterion, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasReservedProcurement ;
+		owl:onClass atold:reserved-procurement ;
+	] .
 
 a4g:ProcurementCriteriaSummary a owl:Class ;
 	rdfs:label \\"procurement criteria summary\\"@en ;
 	rdfs:comment \\"WG approval 24/01/2023\\" ;
-	rdfs:subClassOf m8g:Requirement .
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:indicatesPerformingStaffInformationRequirement ;
+		owl:onDataRange xsd:boolean ;
+	], m8g:Requirement .
 
 a4g:ParticipationConditionsSummary a owl:Class ;
 	rdfs:label \\"participation conditions summary\\"@en ;
-	rdfs:subClassOf a4g:ProcurementCriteriaSummary .
+	rdfs:subClassOf a4g:ProcurementCriteriaSummary, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesObjectiveParticipationRules ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesVerificationMethod ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasReservedProcurement ;
+		owl:onClass atold:reserved-procurement ;
+	] .
 
 a4g:ExclusionGroundsSummary a owl:Class ;
 	rdfs:label \\"exclusion grounds summary\\"@en ;
@@ -1304,16 +4916,79 @@ a4g:ExclusionGroundsSummary a owl:Class ;
 
 a4g:SelectionCriteriaSummary a owl:Class ;
 	rdfs:label \\"selection criteria summary\\"@en ;
-	rdfs:subClassOf a4g:QualificationCriteriaSummary .
+	rdfs:subClassOf a4g:QualificationCriteriaSummary, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSelectionCriteriaStatedInProcurementDocuments ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesMinimumLevelOfStandards ;
+		owl:onDataRange rdf:PlainLiteral ;
+	] .
 
 a4g:GoodsItem a owl:Class ;
 	rdfs:label \\"goods item\\"@en ;
-	rdfs:comment \\"An Item including its initial packaging during transportation. Additional information: For example, the Item being bought is the computer. The weight of the computer is X. The weight of the Goods Item is the weight of the computer plus the weight of the initial packaging. During transportation you have for example trace ID which is applied to the GoodsItem, rather than on the Item itself. The declared statistical value can only apply once you have a GoodsItem. WG approval 30/03/2023\\" .
+	rdfs:comment \\"An Item including its initial packaging during transportation. Additional information: For example, the Item being bought is the computer. The weight of the computer is X. The weight of the Goods Item is the weight of the computer plus the weight of the initial packaging. During transportation you have for example trace ID which is applied to the GoodsItem, rather than on the Item itself. The declared statistical value can only apply once you have a GoodsItem. WG approval 30/03/2023\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToDespatchLine ;
+		owl:onClass a4g:DespatchLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTraceID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasDeclaredStatisticalValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:TaxInformation a owl:Class ;
 	rdfs:label \\"tax information\\"@en ;
 	rdfs:comment \\"Information about the imposition of mandatory levies required by law. WG approval 25/04/2023 \\" ;
-	rdfs:subClassOf a4g:InformationHub .
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPercentage ;
+		owl:onDataRange xsd:decimal ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTaxCategory ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasTaxScheme ;
+		owl:minCardinality 0 ;
+		owl:maxCardinality 1 ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isCalculatedOn ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:Candidate a owl:Class ;
 	rdfs:label \\"candidate\\"@en ;
@@ -1322,29 +4997,158 @@ a4g:Candidate a owl:Class ;
 
 a4g:TransportMeansOperator a owl:Class ;
 	rdfs:label \\"transport means operator\\"@en ;
-	rdfs:subClassOf a4g:AuxiliaryParty .
+	rdfs:subClassOf a4g:AuxiliaryParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:playedBy ;
+		owl:onClass foaf:Person ;
+	] .
 
 a4g:AbstractContainer a owl:Class ;
-	rdfs:label \\"abstract container\\"@en .
+	rdfs:label \\"abstract container\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isReturnableMaterial ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isHazardousRisk ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasGrossWeight ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasGrossVolume ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalGoodsItemQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNetVolume ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasNetWeight ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTemperatureSpecification ;
+		owl:onClass a4g:TemperatureSpecification ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasLength ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasHeight ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasWidth ;
+		owl:onClass a4g:Quantity ;
+	] .
 
 a4g:TemperatureSpecification a owl:Class ;
-	rdfs:label \\"temperature specification\\"@en .
+	rdfs:label \\"temperature specification\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMinimumTemperature ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasMaximumTemperature ;
+		owl:onClass a4g:Quantity ;
+	] .
 
 a4g:Project a owl:Class ;
 	rdfs:label \\"project\\"@en ;
-	rdfs:comment \\"A collaborative enterprise that is carefully planned to achieve a particular aim.\\" .
+	rdfs:comment \\"A collaborative enterprise that is carefully planned to achieve a particular aim.\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
+	] .
 
 a4g:SelectedCandidateList a owl:Class ;
 	rdfs:label \\"selected candidate list\\"@en ;
-	rdfs:comment \\"Record of Candidates admitted to take part in award phases of procurements. WG approval 30/05/2023\\" .
+	rdfs:comment \\"Record of Candidates admitted to take part in award phases of procurements. WG approval 30/05/2023\\" ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:containsCandidate ;
+		owl:onClass a4g:Candidate ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasStartDate ;
+		owl:onClass a4g:Period ;
+	] .
 
 a4g:MiniCompetitionAwardOutcome a owl:Class ;
 	rdfs:label \\"mini competition award outcome\\"@en ;
 	rdfs:comment \\"Result concerning the process where multiple winners or candidates of previous stages of a procedure bid for a specific procurement attributed by the Awarder. Additional Information: It is typically used in framework agreements where the suppliers have already been pre-selected, and the mini competition is used to determine which supplier is best suited for a particular project or contract. It is also used in a Dynamic Purchasing System where the suppliers come from a list of Candidates.\\" ;
-	rdfs:subClassOf a4g:AwardOutcome .
+	rdfs:subClassOf a4g:AwardOutcome, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:resultsFromUsingCandidateList ;
+		owl:onClass a4g:SelectedCandidateList ;
+	] .
 
 a4g:ElectronicSignature a owl:Class ;
-	rdfs:label \\"electronic signature\\"@en .
+	rdfs:label \\"electronic signature\\"@en ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	] .
 
 a4g:AdHocChannel a owl:Class ;
 	rdfs:label \\"ad hoc channel\\"@en ;
@@ -1353,16 +5157,166 @@ a4g:AdHocChannel a owl:Class ;
 
 a4g:Deliverable a owl:Class ;
 	rdfs:label \\"deliverable\\"@en ;
-	rdfs:subClassOf a4g:Item .
+	rdfs:subClassOf a4g:Item, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalValue ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:Order a owl:Class ;
 	rdfs:label \\"order\\"@en ;
 	rdfs:comment \\"A formal request of the Buyer to the Seller specifying the goods, services or works to be delivered. Additional Information: A Buyer submits an Order for delivery of goods, services or works to a Seller. WG approval 23/04/2023 \\" ;
-	rdfs:subClassOf a4g:PostAwardDocument .
+	rdfs:subClassOf a4g:PostAwardDocument, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPaymentTerm ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasCustomerReference ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAccountingCost ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesSeller ;
+		owl:onClass a4g:Seller ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToCatalogue ;
+		owl:onClass a4g:Catalogue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesDeliveryInformation ;
+		owl:onClass a4g:DeliveryInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesOrderLine ;
+		owl:onClass a4g:OrderLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesContractInformation ;
+		owl:onClass a4g:ContractInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesChargeInformation ;
+		owl:onClass a4g:ChargeInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesDespatcher ;
+		owl:onClass a4g:Despatcher ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesAllowanceInformation ;
+		owl:onClass a4g:AllowanceInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesOriginatorInformation ;
+		owl:onClass a4g:OriginatorInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToProject ;
+		owl:onClass a4g:Project ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalLineAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalTaxExclusiveAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalTaxInclusiveAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalAllowanceAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasTotalChargeAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPrepaidAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasRoundingAmount ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAmountDueForPayment ;
+		owl:onClass a4g:MonetaryValue ;
+	] .
 
 a4g:ProfessionalSuitabilitySummary a owl:Class ;
 	rdfs:label \\"professional suitability summary\\"@en ;
-	rdfs:subClassOf a4g:SelectionCriteriaSummary .
+	rdfs:subClassOf a4g:SelectionCriteriaSummary, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesProfessionRelevantLaw ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasServiceReservedToParticularProfession ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:describesProfession ;
+		owl:onDataRange rdf:PlainLiteral ;
+	] .
 
 a4g:EconomicStandingSummary a owl:Class ;
 	rdfs:label \\"economic standing summary\\"@en ;
@@ -1374,7 +5328,15 @@ a4g:TechnicalAbilitySummary a owl:Class ;
 
 a4g:QualificationCriteriaSummary a owl:Class ;
 	rdfs:label \\"qualification criteria summary\\"@en ;
-	rdfs:subClassOf a4g:ProcurementCriteriaSummary .
+	rdfs:subClassOf a4g:ProcurementCriteriaSummary, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasQualificationCondition ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasConditionVerificationMethod ;
+		owl:onDataRange rdf:PlainLiteral ;
+	] .
 
 a4g:QualificationCriterion a owl:Class ;
 	rdfs:label \\"qualification criterion\\"@en ;

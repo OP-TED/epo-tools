@@ -28,21 +28,6 @@ const subclassTemplate = (edge) => {
     `
 }
 
-const datatypePropertyTemplate = (edge) => {
-  const {
-    source, predicate, target, description, quantifiers,
-  } = edge
-
-  return `
-    ${predicate} a owl:DatatypeProperty ;
-         ${rdfsLabel(predicate)}
-         ${rdfsCommentTemplate(description)}
-         ${domainRangeTemplate(edge)}
-                  
-    `
-  //    ${quantifiersTemplate(edge)}
-}
-
 function isValidTarget (target) {
   return target && hasPrefix(target) && aliases[getPrefix(target)] !== UNKNOWN
 }
@@ -62,6 +47,21 @@ function domainRangeTemplate (edge) {
 
 }
 
+const datatypePropertyTemplate = (edge) => {
+  const {
+    source, predicate, target, description, quantifiers,
+  } = edge
+
+  return `
+    ${predicate} a owl:DatatypeProperty ;
+         ${rdfsLabel(predicate)}
+         ${rdfsCommentTemplate(description)}
+         ${domainRangeTemplate(edge)}
+         
+    ${quantifiersTemplate(edge)}         
+    `
+}
+
 const objectTemplate = (edge) => {
   const { source, predicate, target, description, quantifiers, type } = edge
   return `
@@ -69,9 +69,9 @@ const objectTemplate = (edge) => {
          ${rdfsLabel(predicate)}
          ${rdfsCommentTemplate(description)}
          ${domainRangeTemplate(edge)}
-   
+    
+    ${quantifiersTemplate(edge)}
     `
-  // ${quantifiersTemplate(edge)}
 }
 
 const relationTemplates = {
@@ -106,35 +106,35 @@ function rdfsCommentTemplate (def) {
 }
 
 // No cardinalities for Owl
-// const quantifiersTemplate = (edge) => {
-//   const { source, predicate, target, quantifiers } = edge
-//   const { min, max, quantifiersDeclared } = quantifiers
-//
-//   if (quantifiersDeclared) {
-//
-//     if (isValidTarget(target)) {
-//       return `
-//     ${source} rdfs:subClassOf [
-//         a owl:Restriction ;
-//         owl:onProperty ${predicate} ;
-//         ${max ? `owl:minQualifiedCardinality ${min} ;` : ''}
-//         ${max ? `owl:maxQualifiedCardinality ${max} ;` : ''}
-//         owl:onClass ${target}
-//     ] .
-//     `
-//     } else {
-//       return `
-//     ${source} rdfs:subClassOf [
-//         a owl:Restriction ;
-//         ${max ? `owl:minCardinality ${min} ;` : ''}
-//         ${max ? `owl:maxCardinality ${max} ;` : ''}
-//         owl:onProperty ${predicate}
-//     ] .
-//     `
-//     }
-//   }
-//   return ''
-//
-// }
+const quantifiersTemplate = (edge) => {
+  const { source, predicate, target, quantifiers, type } = edge
+  const { min, max, quantifiersDeclared } = quantifiers
+
+  if (quantifiersDeclared) {
+
+    if (isValidTarget(target)) {
+      return `
+    ${source} rdfs:subClassOf [
+        a owl:Restriction ;
+        ${max ? `owl:minQualifiedCardinality ${min} ;` : ''}
+        ${max ? `owl:maxQualifiedCardinality ${max} ;` : ''}
+        owl:onProperty ${predicate} ;
+        ${type === ATTRIBUTE ? 'owl:onDataRange' : 'owl:onClass'} ${target}
+    ] .
+    `
+    } else {
+      return `
+    ${source} rdfs:subClassOf [
+        a owl:Restriction ;
+        ${max ? `owl:minCardinality ${min} ;` : ''}
+        ${max ? `owl:maxCardinality ${max} ;` : ''}
+        owl:onProperty ${predicate}
+    ] .
+    `
+    }
+  }
+  return ''
+
+}
 
 export { toTurtle }
