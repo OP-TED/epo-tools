@@ -12,129 +12,144 @@ import {
 
 const toTurtle = (
   { nodes, edges }, { namespaces = { ...ns, ...aliases } } = {}) => {
+
+  const relationTemplates = {
+    [INHERITANCE]: subClassOf,
+    [ATTRIBUTE]: dataPropertyDefinition,
+    [RELATIONSHIP]: objectPropertyDefinition,
+    [INSTANCE_OF]: objectPropertyDefinition,
+    [DEPENDENCY]: objectPropertyDefinition,
+  }
+
+  const qEdges = edges.filter(
+    edge => edge.type === RELATIONSHIP || edge.type === ATTRIBUTE)
+
+  const domainRange = []
+  for (const predicate of [...new Set(qEdges.map(edge => edge.predicate))]) {
+    const e = edges.filter(edge => edge.predicate === predicate)
+    const sources = [...new Set(e.map(x => x.source))]
+    const targets = [...new Set(e.map(x => x.target))]
+    domainRange.push(domainAndRange(sources, predicate, targets))
+  }
+
+  const quantifiers = qEdges.map(quantifiersTemplate)
+
   const output = [
-    ...nodes.map(nodeTemplate), ...edges.map(edge => {
+    ...nodes.map(classTemplate),
+    ...edges.map(edge => {
       const template = relationTemplates[edge.type]
       return template(edge)
-    })]
+    }),
+    ...domainRange,
+    ...quantifiers,
+  ]
+
   const prefix = turtlePrefixes(namespaces)
-  return prefix + output.join('\n')
-}
-
-const subclassTemplate = (edge) => {
-  const { source, predicate, target } = edge
-  return `
-    ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
-    `
-}
-
-const datatypePropertyTemplate = (edge) => {
-  const {
-    source, predicate, target, description, quantifiers,
-  } = edge
-
-  return `
-    ${predicate} a owl:DatatypeProperty ;
-         ${rdfsLabel(predicate)}
-         ${rdfsCommentTemplate(description)}
-         ${domainRangeTemplate(edge)}
-                  
-    `
-  //    ${quantifiersTemplate(edge)}
+  return `${prefix} ${output.join('\n')}`
 }
 
 function isValidTarget (target) {
   return target && hasPrefix(target) && aliases[getPrefix(target)] !== UNKNOWN
 }
 
-function domainRangeTemplate (edge) {
-  const { source, target } = edge
-  if (isValidTarget(target)) {
+function domainAndRange (sources, predicate, targets) {
+  function maybeMultiple (arr) {
+    if (arr.length === 1) {
+      return arr[0]
+    }
     return `
-     rdfs:domain  ${source} ;
-     rdfs:range  ${target} .
-    `
-  } else {
-    return `
-    rdfs:domain  ${source} .
+    [ 
+      rdf:type owl:Class ;
+	    owl:unionOf (
+        ${arr.join('\n')}
+	    ) ;
+	  ]
     `
   }
 
+  return `  
+    ${predicate} rdfs:domain ${maybeMultiple(sources)} .
+    ${predicate} rdfs:range ${maybeMultiple(targets)} .            
+  `
 }
 
-const objectTemplate = (edge) => {
-  const { source, predicate, target, description, quantifiers, type } = edge
-  return `
-    ${predicate} a owl:ObjectProperty ;
-         ${rdfsLabel(predicate)}
-         ${rdfsCommentTemplate(description)}
-         ${domainRangeTemplate(edge)}
-   
-    `
-  // ${quantifiersTemplate(edge)}
-}
-
-const relationTemplates = {
-  [INHERITANCE]: subclassTemplate,
-  [ATTRIBUTE]: datatypePropertyTemplate,
-  [RELATIONSHIP]: objectTemplate,
-  [INSTANCE_OF]: objectTemplate,
-  [DEPENDENCY]: objectTemplate,
-}
-
-const nodeTemplate = (node) => {
+function classTemplate (node) {
   const { name, description } = node
   return `
-      ${name} a owl:Class ;
-        ${rdfsLabel(name)}
-        ${rdfsCommentTemplate(description)}
+      ${name} ${rdfsLabel(name)}       
+        ${rdfsComment(description)}
         a owl:Class .
 `
 }
 
-function rdfsLabel (prefixedName) {
-  return prefixedName
-    ? `rdfs:label "${toSpaced(stripPrefix(prefixedName))}"@en ;`
-    : ''
+function dataPropertyDefinition (edge) {
+  const {
+    source, predicate, target, description, quantifiers,
+  } = edge
+
+  return `
+    ${predicate} ${rdfsComment(description)}
+         ${rdfsLabel(predicate)}
+         a owl:DatatypeProperty .
+    `
 }
 
-function rdfsCommentTemplate (def) {
-  // return def ? `skos:definition """${def}"""" ;` : ''
+function objectPropertyDefinition (edge) {
+  const { source, predicate, target, description, quantifiers, type } = edge
+  return `
+    ${predicate} ${rdfsComment(description)}
+         ${rdfsLabel(predicate)}
+         a owl:ObjectProperty .
+    `
+}
+
+function subClassOf (edge) {
+  const { source, predicate, target } = edge
+  return `
+    ${source} ${predicate ?? 'rdfs:subClassOf'} ${target} .
+    `
+}
+
+function rdfsLabel (prefixedName) {
+  return prefixedName ? `rdfs:label "${toSpaced(
+    stripPrefix(prefixedName))}"@en ;` : ''
+}
+
+function rdfsComment (def) {
   return def ? `rdfs:comment "${(def.split(/\s+/).
     map(x => x.trim()).
     join(' ')).replaceAll('"', '')}" ;` : ''
 }
 
-// No cardinalities for Owl
-// const quantifiersTemplate = (edge) => {
-//   const { source, predicate, target, quantifiers } = edge
-//   const { min, max, quantifiersDeclared } = quantifiers
-//
-//   if (quantifiersDeclared) {
-//
-//     if (isValidTarget(target)) {
-//       return `
-//     ${source} rdfs:subClassOf [
-//         a owl:Restriction ;
-//         owl:onProperty ${predicate} ;
-//         ${max ? `owl:minQualifiedCardinality ${min} ;` : ''}
-//         ${max ? `owl:maxQualifiedCardinality ${max} ;` : ''}
-//         owl:onClass ${target}
-//     ] .
-//     `
-//     } else {
-//       return `
-//     ${source} rdfs:subClassOf [
-//         a owl:Restriction ;
-//         ${max ? `owl:minCardinality ${min} ;` : ''}
-//         ${max ? `owl:maxCardinality ${max} ;` : ''}
-//         owl:onProperty ${predicate}
-//     ] .
-//     `
-//     }
-//   }
-//   return ''
-//
-// }
+function quantifiersTemplate (edge) {
+  const { source, predicate, target, quantifiers, type } = edge
+  const { min, max, quantifiersDeclared } = quantifiers
+
+  if (quantifiersDeclared) {
+
+    if (isValidTarget(target)) {
+      return `
+    ${source} rdfs:subClassOf [
+        a owl:Restriction ;
+        ${max ? `owl:minQualifiedCardinality ${min} ;` : ''}
+        ${max ? `owl:maxQualifiedCardinality ${max} ;` : ''}
+        owl:onProperty ${predicate} ;
+        ${type === ATTRIBUTE ? 'owl:onDataRange' : 'owl:onClass'} ${target}
+    ] .
+    `
+    } else {
+      return `
+      ${source} rdfs:subClassOf [
+          a owl:Restriction ;
+          ${max ? `owl:minCardinality ${min} ;` : ''}
+          ${max ? `owl:maxCardinality ${max} ;` : ''}
+          owl:onProperty ${predicate}
+      ] .
+      `
+    }
+  }
+  return ''
+
+}
 
 export { toTurtle }

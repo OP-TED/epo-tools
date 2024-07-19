@@ -22,6 +22,7 @@
 @prefix r2rml: <http://www.w3.org/ns/r2rml#> .
 @prefix at: <http://publications.europa.eu/ontology/authority/> .
 @prefix atold: <http://publications.europa.eu/resource/authority/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
 
 a4g:ReviewRequest rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:ReviewDecision .
@@ -878,6 +879,108 @@ a4g:eFormsNotice rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:PINProfileNotice rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:PINTimeLimitNotice, a4g:PINDefence-D81, a4g:PINOnlyNotice .
+
+_:n3-0 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-101 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-105 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-108 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-111 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-114 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-117 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-121 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-124 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-138 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-141 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-144 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-147 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-151 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-154 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-157 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-160 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-163 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-166 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-169 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-172 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-175 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-178 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-181 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-184 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-188 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-191 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-194 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-197 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-200 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-203 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-21 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-31 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-35 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-38 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-41 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-45 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-48 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-51 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-54 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-57 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-62 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-67 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-70 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-73 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-76 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-82 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-85 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-91 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-94 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-97 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasHighestReceivedTenderValue rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
