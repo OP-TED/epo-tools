@@ -2290,12 +2290,12 @@ class \\"epo-ful:TransportMeansOperator\\" {
 @startuml
 class \\"epo-not:CANDefence-D81\\" {
   epo:hasFormType : Form18 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:CANSocial-D25\\" {
   epo:hasFormType : Form6 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CANSocialNotice\\" {
@@ -2304,12 +2304,12 @@ class \\"epo-not:CANSocialNotice\\" {
 
 class \\"epo-not:CANSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CANStandard-D24\\" {
   epo:hasFormType : Form3 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:CANStandardNotice\\" {
@@ -2318,12 +2318,12 @@ class \\"epo-not:CANStandardNotice\\" {
 
 class \\"epo-not:CNDefence-D81\\" {
   epo:hasFormType : Form17 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:CNSocial-D25\\" {
   epo:hasFormType : Form5 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNSocialNotice\\" {
@@ -2332,12 +2332,12 @@ class \\"epo-not:CNSocialNotice\\" {
 
 class \\"epo-not:CNSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNStandard-D24\\" {
   epo:hasFormType : Form2 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:CNStandardNotice\\" {
@@ -2367,12 +2367,12 @@ class \\"epo-not:CompletionNotice\\" {
 
 class \\"epo-not:ConcessionAwardNotice-D23\\" {
   epo:hasFormType : Form25 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:ConcessionNotice-D23\\" {
   epo:hasFormType : Form24 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:ContractModificationNotice\\" {
@@ -2390,12 +2390,12 @@ class \\"epo-not:ContractModificationNotice\\" {
 
 class \\"epo-not:DesignContest-D24\\" {
   epo:hasFormType : Form12 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:DesignContest-D25\\" {
   epo:hasFormType : Form12 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:DesignContestNotice\\" {
@@ -2404,12 +2404,12 @@ class \\"epo-not:DesignContestNotice\\" {
 
 class \\"epo-not:DesignContestResult-D24\\" {
   epo:hasFormType : Form13 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:DesignContestResult-D25\\" {
   epo:hasFormType : Form13 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:DesignContestResultNotice\\" {
@@ -2429,222 +2429,222 @@ class \\"epo-not:DirectAwardPrenotificationNotice\\" {
 
 class \\"epo-not:Modification-D23\\" {
   epo:hasFormType : Form20 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Modification-D24\\" {
-  epo-not:hasLegalBasis : Directive 24 [0..1]
+  epo-not:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form20 [0..1]
 }
 
 class \\"epo-not:Modification-D25\\" {
   epo:hasFormType : Form20 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice1\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice10\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice11\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice12\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice13\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice14\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice15\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice16\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice17\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice18\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice19\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice2\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice20\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice21\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice22\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice23\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice24\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice25\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice26\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice27\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice28\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice29\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice3\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice30\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice31\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice32\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice33\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice34\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice35\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice36\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice37\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice38\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice39\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice4\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice40\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice5\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice6\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice7\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice8\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice9\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocial-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocialNotice\\" {
@@ -2653,12 +2653,12 @@ class \\"epo-not:PIN-CFCSocialNotice\\" {
 
 class \\"epo-not:PIN-CFCSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCStandard-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PIN-CFCStandardNotice\\" {
@@ -2667,27 +2667,27 @@ class \\"epo-not:PIN-CFCStandardNotice\\" {
 
 class \\"epo-not:PIN-RTL-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PIN-RTL-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINDefence-D81\\" {
   epo:hasFormType : Form16 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PINOnly-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PINOnly-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINOnlyNotice\\" {
@@ -2696,17 +2696,17 @@ class \\"epo-not:PINOnlyNotice\\" {
 
 class \\"epo-not:PINProfile-D24\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PINProfile-D25\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINProfile-D81\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PINProfileNotice\\" {
@@ -2728,7 +2728,7 @@ class \\"epo-not:PreMarketConsultationNotice\\" {
 
 class \\"epo-not:QS-D25\\" {
   epo:hasFormType : Form7 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:QSNotice\\" {
@@ -2737,7 +2737,7 @@ class \\"epo-not:QSNotice\\" {
 
 class \\"epo-not:QSNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:ResultNotice\\" {
@@ -2754,21 +2754,21 @@ class \\"epo-not:ResultNotice\\" {
 
 class \\"epo-not:SocialAndOtherSpecificServices-D23\\" {
   epo:hasFormType : Form23 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:SocialAndOtherSpecificServices-D24\\" {
   epo:hasFormType : Form21 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:StandardFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2015/1986 [0..1]
+  epo:hasImplementingRegulation : (EU)_2015/1986 [0..1]
 }
 
 class \\"epo-not:Subcontract-D81\\" {
   epo:hasFormType : Form19 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:SubcontractNotice\\" {
@@ -2777,22 +2777,22 @@ class \\"epo-not:SubcontractNotice\\" {
 
 class \\"epo-not:VEAT-D23\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:VEAT-D24\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:VEAT-D25\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:VEAT-D81\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
@@ -2800,7 +2800,7 @@ class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
 }
 
 class \\"epo-not:eFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2019/1780 [0..1]
+  epo:hasImplementingRegulation : (EU)_2019/1780 [0..1]
 }
 \\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:CANSocial-D25\\"
 \\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:CANSocialNotice-D25\\"
@@ -2977,12 +2977,12 @@ class \\"epo-not:eFormsNotice\\" {
 @startuml
 class \\"epo-not:CANDefence-D81\\" {
   epo:hasFormType : Form18 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:CANSocial-D25\\" {
   epo:hasFormType : Form6 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CANSocialNotice\\" {
@@ -2991,12 +2991,12 @@ class \\"epo-not:CANSocialNotice\\" {
 
 class \\"epo-not:CANSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CANStandard-D24\\" {
   epo:hasFormType : Form3 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:CANStandardNotice\\" {
@@ -3005,12 +3005,12 @@ class \\"epo-not:CANStandardNotice\\" {
 
 class \\"epo-not:CNDefence-D81\\" {
   epo:hasFormType : Form17 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:CNSocial-D25\\" {
   epo:hasFormType : Form5 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNSocialNotice\\" {
@@ -3019,12 +3019,12 @@ class \\"epo-not:CNSocialNotice\\" {
 
 class \\"epo-not:CNSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNStandard-D24\\" {
   epo:hasFormType : Form2 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:CNStandardNotice\\" {
@@ -3054,12 +3054,12 @@ class \\"epo-not:CompletionNotice\\" {
 
 class \\"epo-not:ConcessionAwardNotice-D23\\" {
   epo:hasFormType : Form25 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:ConcessionNotice-D23\\" {
   epo:hasFormType : Form24 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:ContractModificationNotice\\" {
@@ -3077,12 +3077,12 @@ class \\"epo-not:ContractModificationNotice\\" {
 
 class \\"epo-not:DesignContest-D24\\" {
   epo:hasFormType : Form12 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:DesignContest-D25\\" {
   epo:hasFormType : Form12 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:DesignContestNotice\\" {
@@ -3091,12 +3091,12 @@ class \\"epo-not:DesignContestNotice\\" {
 
 class \\"epo-not:DesignContestResult-D24\\" {
   epo:hasFormType : Form13 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:DesignContestResult-D25\\" {
   epo:hasFormType : Form13 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:DesignContestResultNotice\\" {
@@ -3116,222 +3116,222 @@ class \\"epo-not:DirectAwardPrenotificationNotice\\" {
 
 class \\"epo-not:Modification-D23\\" {
   epo:hasFormType : Form20 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Modification-D24\\" {
-  epo-not:hasLegalBasis : Directive 24 [0..1]
+  epo-not:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form20 [0..1]
 }
 
 class \\"epo-not:Modification-D25\\" {
   epo:hasFormType : Form20 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice1\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice10\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice11\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice12\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice13\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice14\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice15\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice16\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice17\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice18\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice19\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice2\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice20\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice21\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice22\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice23\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice24\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice25\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice26\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice27\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice28\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice29\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice3\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice30\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice31\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice32\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice33\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice34\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice35\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice36\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice37\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice38\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice39\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice4\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice40\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice5\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice6\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice7\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice8\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice9\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocial-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocialNotice\\" {
@@ -3340,12 +3340,12 @@ class \\"epo-not:PIN-CFCSocialNotice\\" {
 
 class \\"epo-not:PIN-CFCSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCStandard-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PIN-CFCStandardNotice\\" {
@@ -3354,27 +3354,27 @@ class \\"epo-not:PIN-CFCStandardNotice\\" {
 
 class \\"epo-not:PIN-RTL-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PIN-RTL-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINDefence-D81\\" {
   epo:hasFormType : Form16 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PINOnly-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PINOnly-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINOnlyNotice\\" {
@@ -3383,17 +3383,17 @@ class \\"epo-not:PINOnlyNotice\\" {
 
 class \\"epo-not:PINProfile-D24\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PINProfile-D25\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINProfile-D81\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PINProfileNotice\\" {
@@ -3415,7 +3415,7 @@ class \\"epo-not:PreMarketConsultationNotice\\" {
 
 class \\"epo-not:QS-D25\\" {
   epo:hasFormType : Form7 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:QSNotice\\" {
@@ -3424,7 +3424,7 @@ class \\"epo-not:QSNotice\\" {
 
 class \\"epo-not:QSNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:ResultNotice\\" {
@@ -3441,21 +3441,21 @@ class \\"epo-not:ResultNotice\\" {
 
 class \\"epo-not:SocialAndOtherSpecificServices-D23\\" {
   epo:hasFormType : Form23 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:SocialAndOtherSpecificServices-D24\\" {
   epo:hasFormType : Form21 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:StandardFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2015/1986 [0..1]
+  epo:hasImplementingRegulation : (EU)_2015/1986 [0..1]
 }
 
 class \\"epo-not:Subcontract-D81\\" {
   epo:hasFormType : Form19 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:SubcontractNotice\\" {
@@ -3464,22 +3464,22 @@ class \\"epo-not:SubcontractNotice\\" {
 
 class \\"epo-not:VEAT-D23\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:VEAT-D24\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:VEAT-D25\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:VEAT-D81\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
@@ -3487,7 +3487,7 @@ class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
 }
 
 class \\"epo-not:eFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2019/1780 [0..1]
+  epo:hasImplementingRegulation : (EU)_2019/1780 [0..1]
 }
 \\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:CANSocial-D25\\"
 \\"epo-not:CANSocialNotice\\" <|-- \\"epo-not:CANSocialNotice-D25\\"
@@ -4505,32 +4505,32 @@ enum \\"at-voc:received-submission-type\\" {
 
 }
 
-class \\"pmc\\" {
-  skos:inScheme : at-voc:notice-type 
+object pmc {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"planning\\" {
-  skos:inScheme : at-voc:form-type 
+object planning {
+  skos:inScheme = at-voc:form-type
 }
 
-class \\"competition\\" {
-  skos:inScheme : at-voc:form-type 
+object competition {
+  skos:inScheme = at-voc:form-type
 }
 
-class \\"dir-awa-pre\\" {
-  skos:inScheme : at-voc:form-type 
+object dir-awa-pre {
+  skos:inScheme = at-voc:form-type
 }
 
-class \\"result\\" {
-  skos:inScheme : at-voc:form-type 
+object result {
+  skos:inScheme = at-voc:form-type
 }
 
-class \\"cont-modif\\" {
-  skos:inScheme : at-voc:form-type 
+object cont-modif {
+  skos:inScheme = at-voc:form-type
 }
 
-class \\"compl\\" {
-  skos:inScheme : at-voc:notice-type 
+object compl {
+  skos:inScheme = at-voc:notice-type
 }
 
 class \\"epo:ExpressionOfInterest\\" {
@@ -4552,8 +4552,8 @@ class \\"epo:SubcontractingEstimate\\" {
   epo:hasSubcontractingEstimatedValue : epo:MonetaryValue [0..1]
 }
 
-class \\"change\\" {
-  skos:inScheme : at-voc:form-type 
+object change {
+  skos:inScheme = at-voc:form-type
 }
 
 enum \\"at-voc:currency\\" {
@@ -4673,9 +4673,7 @@ class \\"epo:LotSpecificTerm\\" {
 
 }
 
-class \\"xsd:boolean\\" {
-
-}
+entity xsd:boolean
 
 class \\"epo:CentralPurchasingBody\\" {
 
@@ -4880,9 +4878,7 @@ class \\"epo:ContractLotCompletionInformation\\" {
   epo:providesContractTotalPenaltyValue : epo:MonetaryValue [0..1]
 }
 
-class \\"xsd:anyURI\\" {
-
-}
+entity xsd:anyURI
 
 class \\"epo:InnovativeProcurement\\" {
   epo:fulfillsRequirement : at-voc:innovative-acquisition [0..*]
@@ -5124,60 +5120,60 @@ class \\"locn:Geometry\\" {
   cv:latitude : rdf:PlainLiteral [0..*]
 }
 
-class \\"can-standard\\" {
-  skos:inScheme : at-voc:notice-type 
+object can-standard {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"veat\\" {
-  skos:inScheme : at-voc:notice-type 
+object veat {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"cn-desg\\" {
-  skos:inScheme : at-voc:notice-type 
+object cn-desg {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"cn-social\\" {
-  skos:inScheme : at-voc:notice-type 
+object cn-social {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"cn-standard\\" {
-  skos:inScheme : at-voc:notice-type 
+object cn-standard {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"pin-cfc-standard\\" {
-  skos:inScheme : at-voc:notice-type 
+object pin-cfc-standard {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"pin-buyer\\" {
-  skos:inScheme : at-voc:notice-type 
+object pin-buyer {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"pin-rtl\\" {
-  skos:inScheme : at-voc:notice-type 
+object pin-rtl {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"pin-only\\" {
-  skos:inScheme : at-voc:notice-type 
+object pin-only {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"qu-sy\\" {
-  skos:inScheme : at-voc:notice-type 
+object qu-sy {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"Directive 23\\" {
-  skos:inScheme : at-voc:legal-basis 
+object Directive_23 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"Directive 24\\" {
-  skos:inScheme : at-voc:legal-basis 
+object Directive_24 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"Directive 25\\" {
-  skos:inScheme : at-voc:legal-basis 
+object Directive_25 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"Directive 81\\" {
-  skos:inScheme : at-voc:legal-basis 
+object Directive_81 {
+  skos:inScheme = at-voc:legal-basis
 }
 
 class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
@@ -5257,8 +5253,8 @@ class \\"epo-ord:Consignee\\" {
 
 }
 
-class \\"(EU) 2019/1780\\" {
-  skos:inScheme : at-voc:legal-basis 
+object (EU)_2019/1780 {
+  skos:inScheme = at-voc:legal-basis
 }
 
 class \\"epo:ProcurementDocument\\" {
@@ -5328,8 +5324,8 @@ class \\"epo:Offer\\" {
 
 }
 
-class \\"bri\\" {
-  skos:inScheme : at-voc:form-type 
+object bri {
+  skos:inScheme = at-voc:form-type
 }
 
 class \\"epo:SecurityClearanceTerm\\" {
@@ -5408,9 +5404,7 @@ class \\"epo:TechnicalSpecification\\" {
 
 }
 
-class \\"xsd:date\\" {
-
-}
+entity xsd:date
 
 class \\"epo:Technique\\" {
   dct:description : rdf:PlainLiteral [0..*]
@@ -5637,13 +5631,9 @@ class \\"epo:ProcurementProcedureInformationProvider\\" {
 
 }
 
-class \\"xsd:boolean\\" {
+entity xsd:boolean
 
-}
-
-class \\"xsd:anyURI\\" {
-
-}
+entity xsd:anyURI
 
 enum \\"at-voc:form-type\\" {
 
@@ -5769,24 +5759,24 @@ class \\"epo-not:PINTimeLimitNotice\\" {
   epo:hasNoticeType : pin-rtl [1]
 }
 
-class \\"brin-ecs\\" {
-  skos:inScheme : at-voc:notice-type 
+object brin-ecs {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"subco\\" {
-  skos:inScheme : at-voc:notice-type 
+object subco {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"can-desg\\" {
-  skos:inScheme : at-voc:notice-type 
+object can-desg {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"can-modif\\" {
-  skos:inScheme : at-voc:notice-type 
+object can-modif {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"can-social\\" {
-  skos:inScheme : at-voc:notice-type 
+object can-social {
+  skos:inScheme = at-voc:notice-type
 }
 
 class \\"epo-ful:ShipmentInformation\\" {
@@ -5812,22 +5802,18 @@ class \\"epo-not:DesignContestResultNotice\\" {
 }
 
 class \\"epo-not:Notice10\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice11\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
-class \\"xsd:date\\" {
+entity xsd:date
 
-}
-
-class \\"xsd:dateTime\\" {
-
-}
+entity xsd:dateTime
 
 class \\"epo-ful:TransportHandlingUnit\\" {
   epo-ful:hasShippingMark : rdf:PlainLiteral [0..*]
@@ -5838,247 +5824,247 @@ class \\"epo-ful:TransportHandlingUnit\\" {
 }
 
 class \\"epo-not:Notice25\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : dir-awa-pre [0..1]
 }
 
 class \\"epo-not:Notice26\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : dir-awa-pre [0..1]
 }
 
 class \\"epo-not:Notice27\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : dir-awa-pre [0..1]
 }
 
 class \\"epo-not:Notice28\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : dir-awa-pre [0..1]
 }
 
 class \\"epo-not:Notice29\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice30\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice31\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice32\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice33\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice34\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice35\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice36\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice37\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : result [0..1]
 }
 
 class \\"epo-not:Notice12\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice13\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice14\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice15\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice16\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice17\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice18\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice19\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice20\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice21\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice22\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice23\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice24\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : competition [0..1]
 }
 
 class \\"epo-not:Notice38\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : cont-modif [0..1]
 }
 
 class \\"epo-not:Notice39\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : cont-modif [0..1]
 }
 
 class \\"epo-not:Notice40\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : cont-modif [0..1]
 }
 
 class \\"epo-not:Notice1\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice2\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice3\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice4\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice5\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice6\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice7\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice8\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:Notice9\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : planning [0..1]
 }
 
 class \\"epo-not:VEAT-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form15 [0..1]
 }
 
 class \\"epo-not:Modification-D24\\" {
-  epo-not:hasLegalBasis : Directive 24 [0..1]
+  epo-not:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form20 [0..1]
 }
 
 class \\"epo-not:SocialAndOtherSpecificServices-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form21 [0..1]
 }
 
 class \\"epo-not:PINOnly-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNSocial-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form5 [0..1]
 }
 
 class \\"epo-not:CANSocial-D25\\" {
   epo:hasFormType : Form6 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:QS-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form7 [0..1]
 }
 
 class \\"epo-not:PINProfile-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form8 [0..1]
 }
 
 class \\"epo-not:DesignContest-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form12 [0..1]
 }
 
 class \\"epo-not:DesignContestResult-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form13 [0..1]
 }
 
 class \\"epo-not:VEAT-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form15 [0..1]
 }
 
@@ -6086,28 +6072,28 @@ enum \\"epo-not:StandardForm\\" {
 
 }
 
-class \\"Form1\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form1 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form2\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form2 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form3\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form3 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form4\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form4 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form16\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form16 {
+  skos:inScheme = epo-not:StandardForm
 }
 
 class \\"epo-not:eFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2019/1780 [0..1]
+  epo:hasImplementingRegulation : (EU)_2019/1780 [0..1]
 }
 
 class \\"cccev:Evidence\\" {
@@ -6168,159 +6154,159 @@ enum \\"at-voc-new:packaging-type\\" {
 
 class \\"epo-not:Modification-D25\\" {
   epo:hasFormType : Form20 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocialNotice-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form22 [0..1]
 }
 
 class \\"epo-not:PIN-RTL-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form1 [0..1]
 }
 
 class \\"epo-not:PIN-CFCStandard-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form1 [0..1]
 }
 
 class \\"epo-not:PIN-RTL-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocial-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form4 [0..1]
 }
 
 class \\"epo-not:VEAT-D23\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : Form15 [0..1]
 }
 
 class \\"epo-not:Modification-D23\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : Form20 [0..1]
 }
 
 class \\"epo-not:SocialAndOtherSpecificServices-D23\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : Form23 [0..1]
 }
 
 class \\"epo-not:ConcessionNotice-D23\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : Form24 [0..1]
 }
 
 class \\"epo-not:ConcessionAwardNotice-D23\\" {
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
   epo:hasFormType : Form25 [0..1]
 }
 
-class \\"Form5\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form5 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form6\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form6 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form7\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form7 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form8\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form8 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form12\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form12 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form13\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form13 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form14\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form14 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form15\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form15 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"pin-cfc-social\\" {
-  skos:inScheme : at-voc:notice-type 
+object pin-cfc-social {
+  skos:inScheme = at-voc:notice-type
 }
 
-class \\"Form17\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form17 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form18\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form18 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form19\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form19 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form20\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form20 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form21\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form21 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form22\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form22 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form23\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form23 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form24\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form24 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"Form25\\" {
-  skos:inScheme : epo-not:StandardForm 
+object Form25 {
+  skos:inScheme = epo-not:StandardForm
 }
 
 class \\"epo-not:PINOnly-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form1 [0..1]
 }
 
 class \\"epo-not:CNStandard-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form2 [0..1]
 }
 
 class \\"epo-not:CANStandard-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form3 [0..1]
 }
 
 class \\"epo-not:PINProfile-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form8 [0..1]
 }
 
 class \\"epo-not:DesignContest-D24\\" {
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form12 [0..1]
 }
 
 class \\"epo-not:DesignContestResult-D24\\" {
   epo:hasFormType : Form13 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo:Term\\" {
@@ -6436,62 +6422,52 @@ class \\"epo:SubmissionStatisticalInformation\\" {
   epo:summarisesInformationForAwardOutcome : epo:AwardOutcome [1]
 }
 
-class \\"xsd:boolean\\" {
+entity xsd:boolean
 
-}
+entity xsd:anyURI
 
-class \\"xsd:anyURI\\" {
+entity xsd:date
 
-}
+entity xsd:dateTime
 
-class \\"xsd:date\\" {
-
-}
-
-class \\"xsd:dateTime\\" {
-
-}
-
-class \\"xsd:integer\\" {
-
-}
+entity xsd:integer
 
 class \\"epo-not:PINProfile-D81\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : Form8 [0..1]
 }
 
 class \\"epo-not:VEAT-D81\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : Form15 [0..1]
 }
 
 class \\"epo-not:PINDefence-D81\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : Form16 [0..1]
 }
 
 class \\"epo-not:CNDefence-D81\\" {
   epo:hasFormType : Form17 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:CANDefence-D81\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : Form18 [0..1]
 }
 
 class \\"epo-not:Subcontract-D81\\" {
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
   epo:hasFormType : Form19 [0..1]
 }
 
-class \\"(EU) 2015/1986\\" {
-  skos:inScheme : at-voc:legal-basis 
+object (EU)_2015/1986 {
+  skos:inScheme = at-voc:legal-basis
 }
 
 class \\"epo-not:StandardFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2015/1986 [0..1]
+  epo:hasImplementingRegulation : (EU)_2015/1986 [0..1]
 }
 
 class \\"cccev:InformationConcept\\" {
@@ -6500,37 +6476,21 @@ class \\"cccev:InformationConcept\\" {
   adms:identifier : adms:Identifier [0..1]
 }
 
-class \\"xsd:decimal\\" {
+entity xsd:decimal
 
-}
+entity rdf:PlainLiteral
 
-class \\"rdf:PlainLiteral\\" {
+entity xsd:boolean
 
-}
+entity xsd:anyURI
 
-class \\"xsd:boolean\\" {
+entity xsd:date
 
-}
+entity xsd:dateTime
 
-class \\"xsd:anyURI\\" {
+entity xsd:integer
 
-}
-
-class \\"xsd:date\\" {
-
-}
-
-class \\"xsd:dateTime\\" {
-
-}
-
-class \\"xsd:integer\\" {
-
-}
-
-class \\"xsd:decimal\\" {
-
-}
+entity xsd:decimal
 
 class \\"epo-not:SubcontractNotice\\" {
   epo:hasNoticeType : subco [1]
@@ -6540,9 +6500,7 @@ enum \\"at-voc:access-rights\\" {
 
 }
 
-class \\"rdf:PlainLiteral\\" {
-
-}
+entity rdf:PlainLiteral
 
 class \\"epo-cat:ItemComposition\\" {
 
@@ -6583,13 +6541,9 @@ enum \\"at-voc-new:delivery-item-type\\" {
 
 }
 
-class \\"xsd:boolean\\" {
+entity xsd:boolean
 
-}
-
-class \\"xsd:anyURI\\" {
-
-}
+entity xsd:anyURI
 
 class \\"epo-ord:OrderLine\\" {
   epo-ord:refersToCatalogueLine : epo-cat:CatalogueLine [0..1]
@@ -6652,16 +6606,16 @@ enum \\"at-voc-new:item-classification\\" {
 
 class \\"epo-not:QSNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CANSocialNotice-D25\\" {
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
   epo:hasFormType : Form22 [0..1]
 }
 
@@ -6728,17 +6682,11 @@ class \\"epo-cat:ItemReplacement\\" {
 
 }
 
-class \\"xsd:boolean\\" {
+entity xsd:boolean
 
-}
+entity xsd:anyURI
 
-class \\"xsd:anyURI\\" {
-
-}
-
-class \\"xsd:date\\" {
-
-}
+entity xsd:date
 
 class \\"epo-sub:NationalPreQualificationData\\" {
   epo-sub:providesOrganisationCompletedTaskDescription : rdf:PlainLiteral [0..1]
@@ -6756,17 +6704,11 @@ class \\"epo-sub:Response\\" {
   epo-sub:refersToApplicablePeriod : epo:Period [0..1]
 }
 
-class \\"xsd:integer\\" {
+entity xsd:integer
 
-}
+entity xsd:decimal
 
-class \\"xsd:decimal\\" {
-
-}
-
-class \\"rdf:PlainLiteral\\" {
-
-}
+entity rdf:PlainLiteral
 
 enum \\"at-voc-new:action-code\\" {
 
@@ -6868,13 +6810,9 @@ class \\"epo:Certificate\\" {
   epo:issuedByCertifier : epo:Certifier [0..1]
 }
 
-class \\"xsd:dateTime\\" {
+entity xsd:dateTime
 
-}
-
-class \\"xsd:integer\\" {
-
-}
+entity xsd:integer
 
 class \\"epo-cat:ChargeInformation\\" {
   epo-ord:isSpecificToOrderLine : epo-ord:OrderLine [0..*]
@@ -6888,25 +6826,15 @@ enum \\"at-voc-new:tax-scheme\\" {
 
 }
 
-class \\"xsd:date\\" {
+entity xsd:date
 
-}
+entity xsd:dateTime
 
-class \\"xsd:dateTime\\" {
+entity xsd:integer
 
-}
+entity xsd:decimal
 
-class \\"xsd:integer\\" {
-
-}
-
-class \\"xsd:decimal\\" {
-
-}
-
-class \\"rdf:PlainLiteral\\" {
-
-}
+entity rdf:PlainLiteral
 
 class \\"time:Duration\\" {
 
@@ -6941,17 +6869,11 @@ class \\"epo-ord:DeliveryInformation\\" {
   epo-ful:hasTrackingID : adms:Identifier [0..1]
 }
 
-class \\"xsd:decimal\\" {
+entity xsd:decimal
 
-}
+entity xsd:dateTime
 
-class \\"xsd:dateTime\\" {
-
-}
-
-class \\"xsd:integer\\" {
-
-}
+entity xsd:integer
 
 enum \\"at-voc:subdivision\\" {
 
@@ -6996,21 +6918,13 @@ class \\"epo:OtherEntity\\" {
 
 }
 
-class \\"xsd:boolean\\" {
+entity xsd:boolean
 
-}
+entity xsd:anyURI
 
-class \\"xsd:anyURI\\" {
+entity xsd:date
 
-}
-
-class \\"xsd:date\\" {
-
-}
-
-class \\"xsd:dateTime\\" {
-
-}
+entity xsd:dateTime
 
 class \\"epo:SpecificDuration\\" {
   time:numericDuration : xsd:decimal [1..1]
@@ -7038,29 +6952,19 @@ class \\"epo:ProcurementElement\\" {
   epo:hasInternalIdentifier : adms:Identifier [0..*]
 }
 
-class \\"rdf:PlainLiteral\\" {
+entity rdf:PlainLiteral
 
-}
+entity xsd:decimal
 
-class \\"xsd:decimal\\" {
+entity xsd:integer
 
-}
-
-class \\"xsd:integer\\" {
-
-}
-
-class \\"xsd:decimal\\" {
-
-}
+entity xsd:decimal
 
 class \\"epo:LeadBuyer\\" {
 
 }
 
-class \\"rdf:PlainLiteral\\" {
-
-}
+entity rdf:PlainLiteral
 
 class \\"epo-ord:ContractInformation\\" {
   epo-ord:concernsContract : epo:Contract [1]
@@ -7073,37 +6977,21 @@ class \\"epo-ord:OriginatorInformation\\" {
   epo-ord:concernsOriginatorRequest : epo:OriginatorRequest [0..1]
 }
 
-class \\"rdf:PlainLiteral\\" {
+entity rdf:PlainLiteral
 
-}
+entity xsd:boolean
 
-class \\"xsd:boolean\\" {
+entity xsd:anyURI
 
-}
+entity xsd:date
 
-class \\"xsd:anyURI\\" {
+entity xsd:dateTime
 
-}
+entity xsd:integer
 
-class \\"xsd:date\\" {
+entity xsd:decimal
 
-}
-
-class \\"xsd:dateTime\\" {
-
-}
-
-class \\"xsd:integer\\" {
-
-}
-
-class \\"xsd:decimal\\" {
-
-}
-
-class \\"rdf:PlainLiteral\\" {
-
-}
+entity rdf:PlainLiteral
 
 class \\"epo-ord:DeliveryAgreement\\" {
   dct:description : rdf:PlainLiteral [0..*]
@@ -7810,19 +7698,19 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-cat:Item\\" --> \\"0..1\\" \\"epo-cat:Brand\\" : epo-cat:hasBrand
 \\"epo-not:ResultNotice\\" --> \\"0..*\\" \\"epo:Contract\\" : epo:announcesContract
 \\"epo-acc:ESPDRequest\\" --> \\"1..*\\" \\"epo:ProcurementCriterion\\" : epo:specifiesProcurementCriterion
-\\"epo-not:Notice10\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice11\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice13\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice15\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice16\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice19\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:Notice20\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice21\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice24\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice23\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice38\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice39\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice40\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
+\\"epo-not:Notice10\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice11\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice13\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice15\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice16\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice19\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:Notice20\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice21\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice24\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice23\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice38\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice39\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice40\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
 \\"epo-not:PINProfileNotice\\" --> \\"1\\" \\"pin-buyer\\" : epo:hasNoticeType
 \\"epo-not:PINOnlyNotice\\" --> \\"1\\" \\"pin-only\\" : epo:hasNoticeType
 \\"epo-not:ResultNotice\\" --> \\"1\\" \\"epo:Procedure\\" : epo:refersToProcedure
@@ -7882,24 +7770,24 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:SubcontractNotice\\" --> \\"1\\" \\"subco\\" : epo:hasNoticeType
 \\"epo-not:DesignContestNotice\\" --> \\"1\\" \\"cn-desg\\" : epo:hasNoticeType
 \\"epo-not:CNSocialNotice\\" --> \\"1\\" \\"cn-social\\" : epo:hasNoticeType
-\\"epo-not:PINOnly-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:CNStandard-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
+\\"epo-not:PINOnly-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:CNStandard-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
 \\"epo-not:PINOnly-D24\\" --> \\"0..1\\" \\"Form1\\" : epo:hasFormType
-\\"epo-not:eFormsNotice\\" --> \\"0..1\\" \\"(EU) 2019/1780\\" : epo:hasImplementingRegulation
+\\"epo-not:eFormsNotice\\" --> \\"0..1\\" \\"(EU)_2019/1780\\" : epo:hasImplementingRegulation
 \\"epo:GreenProcurement\\" --> \\"0..*\\" \\"at-voc:green-public-procurement-criteria\\" : epo:fulfillsRequirement
 \\"epo:VehicleInformation\\" --> \\"0..1\\" \\"at-voc:cvd-contract-type\\" : epo:specifiesCleanVehicleDirectiveContractType
 \\"epo-not:CANStandardNotice\\" --> \\"1\\" \\"can-standard\\" : epo:hasNoticeType
 \\"epo-not:CANSocialNotice\\" --> \\"1\\" \\"can-social\\" : epo:hasNoticeType
 \\"epo-not:DesignContestResultNotice\\" --> \\"1\\" \\"can-desg\\" : epo:hasNoticeType
-\\"epo-not:Notice1\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice2\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice3\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:Notice4\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice5\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice6\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:Notice7\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice8\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice9\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
+\\"epo-not:Notice1\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice2\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice3\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:Notice4\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice5\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice6\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:Notice7\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice8\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice9\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
 \\"epo:MonetaryValue\\" --> \\"0..1\\" \\"at-voc:currency\\" : epo:hasCurrency
 \\"epo:AccessTerm\\" --> \\"0..1\\" \\"epo:ProcurementDocument\\" : epo:involvesProcurementDocument
 \\"epo:LotGroup\\" --> \\"0..*\\" \\"epo:ProcurementCriterion\\" : epo:specifiesProcurementCriterion
@@ -7910,37 +7798,37 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:Contract\\" --> \\"0..1\\" \\"epo:Purpose\\" : epo:hasPurpose
 \\"dct:Location\\" --> \\"0..1\\" \\"locn:Geometry\\" : locn:geometry
 \\"dct:Location\\" --> \\"0..1\\" \\"locn:Address\\" : locn:address
-\\"epo-not:Notice25\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice26\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice27\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:Notice28\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:Notice18\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:Notice22\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:Notice17\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice14\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:Notice12\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
+\\"epo-not:Notice25\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice26\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice27\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:Notice28\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:Notice18\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:Notice22\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:Notice17\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice14\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:Notice12\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
 \\"epo-ful:DespatchAdvice\\" --> \\"0..*\\" \\"epo-ord:Originator\\" : epo-ful:specifiesOriginator
 \\"epo-ful:DespatchAdvice\\" --> \\"0..1\\" \\"epo-ord:Order\\" : epo-ful:refersToOrder
 \\"epo-ord:OrderResponse\\" --> \\"0..1\\" \\"epo:Buyer\\" : epo-ord:specifiesBuyer
 \\"epo:ContractTerm\\" --> \\"0..*\\" \\"dct:Location\\" : epo:definesSpecificPlaceOfPerformance
-\\"epo-not:CANStandard-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:PINProfile-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:DesignContest-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:DesignContestResult-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:VEAT-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Modification-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo-not:hasLegalBasis
-\\"epo-not:SocialAndOtherSpecificServices-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
+\\"epo-not:CANStandard-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:PINProfile-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:DesignContest-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:DesignContestResult-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:VEAT-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Modification-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo-not:hasLegalBasis
+\\"epo-not:SocialAndOtherSpecificServices-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
 \\"epo-not:CNStandard-D24\\" --> \\"0..1\\" \\"Form2\\" : epo:hasFormType
 \\"dct:Location\\" --> \\"0..1\\" \\"at-voc:nuts\\" : epo:hasNutsCode
-\\"epo-not:Notice31\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:Notice30\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice34\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice37\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:Notice29\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice33\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:Notice35\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:Notice32\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:Notice36\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
+\\"epo-not:Notice31\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:Notice30\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice34\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice37\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:Notice29\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice33\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:Notice35\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:Notice32\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:Notice36\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
 \\"Form1\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"Form2\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
 \\"Form3\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
@@ -7955,10 +7843,10 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"eli:LegalResource\\" --> \\"1..*\\" \\"at-voc:resource-type\\" : epo:hasResourceType
 \\"epo-not:Modification-D24\\" --> \\"0..1\\" \\"Form20\\" : epo:hasFormType
 \\"epo-not:SocialAndOtherSpecificServices-D24\\" --> \\"0..1\\" \\"Form21\\" : epo:hasFormType
-\\"epo-not:CNSocial-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:CANSocial-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:QS-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:PINProfile-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
+\\"epo-not:CNSocial-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:CANSocial-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:QS-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:PINProfile-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
 \\"epo-cat:Price\\" --> \\"0..1\\" \\"dct:Location\\" : epo-cat:hasDeliveryLocation
 \\"epo-ful:ShipmentInformation\\" --> \\"0..1\\" \\"dct:Location\\" : epo-ful:specifiesPlaceOfDespatch
 \\"Form22\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
@@ -8018,18 +7906,18 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:Notice22\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
 \\"epo-not:Notice24\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
 \\"epo-not:Notice25\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
-\\"epo-not:DesignContest-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:DesignContestResult-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:VEAT-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:PIN-CFCSocialNotice-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:PIN-RTL-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
-\\"epo-not:PIN-CFCStandard-D24\\" --> \\"0..1\\" \\"Directive 24\\" : epo:hasLegalBasis
+\\"epo-not:DesignContest-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:DesignContestResult-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:VEAT-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:PIN-CFCSocialNotice-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:PIN-RTL-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
+\\"epo-not:PIN-CFCStandard-D24\\" --> \\"0..1\\" \\"Directive_24\\" : epo:hasLegalBasis
 \\"epo-not:PIN-RTL-D24\\" --> \\"0..1\\" \\"Form1\\" : epo:hasFormType
 \\"epo-not:PINOnly-D25\\" --> \\"0..1\\" \\"Form4\\" : epo:hasFormType
 \\"epo-not:PIN-RTL-D25\\" --> \\"0..1\\" \\"Form4\\" : epo:hasFormType
 \\"epo-not:PIN-CFCStandard-D24\\" --> \\"0..1\\" \\"Form1\\" : epo:hasFormType
-\\"epo-not:PIN-RTL-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:PIN-CFCSocial-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
+\\"epo-not:PIN-RTL-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:PIN-CFCSocial-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
 \\"epo-not:CNSocial-D25\\" --> \\"0..1\\" \\"Form5\\" : epo:hasFormType
 \\"epo-con:ContractModificationInformation\\" --> \\"0..1\\" \\"adms:Identifier\\" : epo:relatesToEFormSectionIdentifier
 \\"epo:ChangeInformation\\" --> \\"1..*\\" \\"adms:Identifier\\" : epo:relatesToEFormSectionIdentifier
@@ -8053,8 +7941,8 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:VEAT-D25\\" --> \\"0..1\\" \\"Form15\\" : epo:hasFormType
 \\"epo-not:Modification-D25\\" --> \\"0..1\\" \\"Form20\\" : epo:hasFormType
 \\"epo-not:PIN-CFCSocialNotice-D25\\" --> \\"0..1\\" \\"Form22\\" : epo:hasFormType
-\\"epo-not:VEAT-D23\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:Modification-D23\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
+\\"epo-not:VEAT-D23\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:Modification-D23\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
 \\"competition\\" -->  \\"at-voc:form-type\\" : skos:inScheme
 \\"epo-ord:OrderResponse\\" --> \\"0..*\\" \\"epo-ord:OrderResponseInformation\\" : epo-ord:specifiesOrderResponseInformation
 \\"epo-not:Notice36\\" --> \\"0..1\\" \\"result\\" : epo:hasFormType
@@ -8066,19 +7954,19 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:CompetitionNotice\\" --> \\"1\\" \\"epo:Procedure\\" : epo:announcesProcedure
 \\"epo:Notice\\" --> \\"1\\" \\"at-voc:notice-type\\" : epo:hasNoticeType
 \\"epo-ord:OrderResponseInformation\\" --> \\"0..*\\" \\"epo-ord:OrderResponseLine\\" : epo-ord:isSpecificToOrderResponseLine
-\\"epo-not:ConcessionAwardNotice-D23\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:SocialAndOtherSpecificServices-D23\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
+\\"epo-not:ConcessionAwardNotice-D23\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:SocialAndOtherSpecificServices-D23\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
 \\"epo-not:VEAT-D23\\" --> \\"0..1\\" \\"Form15\\" : epo:hasFormType
 \\"epo-not:Modification-D23\\" --> \\"0..1\\" \\"Form20\\" : epo:hasFormType
 \\"epo-not:ConcessionAwardNotice-D23\\" --> \\"0..1\\" \\"Form25\\" : epo:hasFormType
 \\"epo-not:SocialAndOtherSpecificServices-D23\\" --> \\"0..1\\" \\"Form23\\" : epo:hasFormType
 \\"epo-ord:OrderResponseInformation\\" --> \\"0..1\\" \\"epo:Period\\" : epo-ord:hasDeliveryPeriod
 \\"epo-ord:OrderResponseInformation\\" --> \\"1\\" \\"at-voc-new:ResponseStatus\\" : epo-ord:hasAcceptanceStatus
-\\"epo-not:PINProfile-D81\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:VEAT-D81\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:PINDefence-D81\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:CANDefence-D81\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
-\\"epo-not:Subcontract-D81\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
+\\"epo-not:PINProfile-D81\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:VEAT-D81\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:PINDefence-D81\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:CANDefence-D81\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
+\\"epo-not:Subcontract-D81\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
 \\"epo-not:PINDefence-D81\\" --> \\"0..1\\" \\"Form16\\" : epo:hasFormType
 \\"epo-not:VEAT-D81\\" --> \\"0..1\\" \\"Form15\\" : epo:hasFormType
 \\"Form16\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
@@ -8093,9 +7981,9 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-not:CNDefence-D81\\" --> \\"0..1\\" \\"Form17\\" : epo:hasFormType
 \\"epo-not:Subcontract-D81\\" --> \\"0..1\\" \\"Form19\\" : epo:hasFormType
 \\"cccev:Requirement\\" --> \\"0..1\\" \\"adms:Identifier\\" : adms:identifier
-\\"(EU) 2019/1780\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
-\\"(EU) 2015/1986\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
-\\"epo-not:StandardFormsNotice\\" --> \\"0..1\\" \\"(EU) 2015/1986\\" : epo:hasImplementingRegulation
+\\"(EU)_2019/1780\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
+\\"(EU)_2015/1986\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
+\\"epo-not:StandardFormsNotice\\" --> \\"0..1\\" \\"(EU)_2015/1986\\" : epo:hasImplementingRegulation
 \\"epo:System\\" --> \\"0..1\\" \\"foaf:Agent\\" : epo:isOwnedByAgent
 \\"epo:SubmissionStatisticalInformation\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo:hasLowestReceivedTenderValue
 \\"epo-cat:Item\\" --> \\"0..*\\" \\"epo-cat:Item\\" : dct:hasPart
@@ -8192,7 +8080,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:Tender\\" --> \\"0..*\\" \\"epo:Subcontractor\\" : epo:specifiesSubcontractors
 \\"brin-ecs\\" -->  \\"at-voc:notice-type\\" : skos:inScheme
 \\"epo-not:Notice27\\" --> \\"0..1\\" \\"dir-awa-pre\\" : epo:hasFormType
-\\"epo-not:Modification-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
+\\"epo-not:Modification-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
 \\"epo-cat:Catalogue\\" --> \\"0..*\\" \\"epo:Buyer\\" : epo:specifiesBuyer
 \\"epo:Technique\\" --> \\"0..1\\" \\"at-voc:usage\\" : epo:hasUsage
 \\"epo:Document\\" --> \\"0..*\\" \\"epo:Document\\" : epo:refersToPrevious
@@ -8226,7 +8114,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-cat:Price\\" --> \\"1\\" \\"epo:MonetaryValue\\" : epo-cat:hasNetMonetaryValue
 \\"epo:AgentInRole\\" --> \\"0..*\\" \\"epo:ProcurementObject\\" : epo:contextualisedBy
 \\"epo-cat:CatalogueLine\\" --> \\"0..1\\" \\"at-voc-new:activity-code\\" : epo-cat:hasActivityCode
-\\"Directive 81\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
+\\"Directive_81\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
 \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" --> \\"1\\" \\"veat\\" : epo:hasNoticeType
 \\"epo-cat:Price\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo-cat:hasOrderabableUnitFactorRate
 \\"Form8\\" -->  \\"epo-not:StandardForm\\" : skos:inScheme
@@ -8262,10 +8150,10 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:OpeningTerm\\" --> \\"0..1\\" \\"locn:Address\\" : epo:definesOpeningPlace
 \\"locn:Address\\" --> \\"0..1\\" \\"at-voc:country\\" : epo:hasCountryCode
 \\"pin-only\\" -->  \\"at-voc:notice-type\\" : skos:inScheme
-\\"Directive 23\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
+\\"Directive_23\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
 \\"epo:AwardOutcome\\" --> \\"0..1\\" \\"at-voc:non-award-justification\\" : epo:hasNonAwardJustification
-\\"Directive 24\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
-\\"Directive 25\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
+\\"Directive_24\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
+\\"Directive_25\\" -->  \\"at-voc:legal-basis\\" : skos:inScheme
 \\"epo:TenderGroup\\" --> \\"1..*\\" \\"epo:Tender\\" : epo:comprisesTender
 \\"epo-cat:CatalogueLine\\" --> \\"0..*\\" \\"epo-cat:Price\\" : epo-cat:hasStandardisedUnitPrice
 \\"cont-modif\\" -->  \\"at-voc:form-type\\" : skos:inScheme
@@ -8294,7 +8182,7 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:NoticeAwardInformation\\" --> \\"0..1\\" \\"epo:MonetaryValue\\" : epo:hasMaximumFrameworkAgreementAwardedValue
 \\"epo-not:Notice23\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
 \\"epo-not:Notice11\\" --> \\"0..1\\" \\"competition\\" : epo:hasFormType
-\\"epo-not:PINOnly-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
+\\"epo-not:PINOnly-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
 \\"epo:Contractor\\" --> \\"0..1\\" \\"epo:Winner\\" : epo:needsToBeAWinner
 \\"epo-ful:ReceiptAdviceLine\\" --> \\"0..1\\" \\"at-voc-new:action-code\\" : epo-ful:RejectionAction
 \\"epo-not:CompetitionNotice\\" --> \\"0..*\\" \\"epo:LotGroup\\" : epo:announcesLotGroup
@@ -8333,14 +8221,14 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo:Document\\" --> \\"0..*\\" \\"epo:Document\\" : epo:associatedWith
 \\"epo-not:QSNotice-D25\\" --> \\"0..1\\" \\"Form22\\" : epo:hasFormType
 \\"epo-not:CNSocialNotice-D25\\" --> \\"0..1\\" \\"Form22\\" : epo:hasFormType
-\\"epo-not:CANSocialNotice-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
+\\"epo-not:CANSocialNotice-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
 \\"epo:LotGroup\\" --> \\"1..*\\" \\"epo:Lot\\" : epo:setsGroupingContextForLot
 \\"epo:Tender\\" --> \\"0..1\\" \\"epo:LotGroup\\" : epo:isSubjectToGrouping
 \\"epo:Tender\\" --> \\"1\\" \\"epo:Lot\\" : epo:isSubmittedForLot
 \\"epo-ful:ReceiptAdviceLine\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo-ful:hasReceivedQuantity
 \\"epo-not:CANSocialNotice-D25\\" --> \\"0..1\\" \\"Form22\\" : epo:hasFormType
-\\"epo-not:QSNotice-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
-\\"epo-not:CNSocialNotice-D25\\" --> \\"0..1\\" \\"Directive 25\\" : epo:hasLegalBasis
+\\"epo-not:QSNotice-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
+\\"epo-not:CNSocialNotice-D25\\" --> \\"0..1\\" \\"Directive_25\\" : epo:hasLegalBasis
 \\"epo:ReviewRequest\\" --> \\"1..*\\" \\"at-voc:irregularity-type\\" : epo:hasAllegedIrregularityType
 \\"cccev:Evidence\\" --> \\"0..*\\" \\"cccev:Requirement\\" : cccev:supportsRequirement
 \\"epo:Tender\\" --> \\"1\\" \\"epo-sub:ESPD\\" : epo:isSupportedBy
@@ -8383,8 +8271,8 @@ class \\"epo-sub:CertificateInformation\\" {
 \\"epo-cat:CatalogueLine\\" --> \\"0..*\\" \\"epo-cat:ChargeInformation\\" : epo-cat:hasChargeInformation
 \\"epo-ord:TaxInformation\\" --> \\"0..1\\" \\"at-voc-new:tax-category\\" : epo-cat:hasTaxCategory
 \\"epo-ord:TaxInformation\\" --> \\"0..1\\" \\"at-voc-new:tax-scheme\\" : epo-cat:hasTaxScheme
-\\"epo-not:ConcessionNotice-D23\\" --> \\"0..1\\" \\"Directive 23\\" : epo:hasLegalBasis
-\\"epo-not:CNDefence-D81\\" --> \\"0..1\\" \\"Directive 81\\" : epo:hasLegalBasis
+\\"epo-not:ConcessionNotice-D23\\" --> \\"0..1\\" \\"Directive_23\\" : epo:hasLegalBasis
+\\"epo-not:CNDefence-D81\\" --> \\"0..1\\" \\"Directive_81\\" : epo:hasLegalBasis
 \\"epo-not:CANDefence-D81\\" --> \\"0..1\\" \\"Form18\\" : epo:hasFormType
 \\"epo-ful:Consignment\\" --> \\"0..1\\" \\"epo:Quantity\\" : epo-ful:hasGrossVolume
 \\"epo-ful:ShipmentStage\\" --> \\"0..1\\" \\"epo-ful:Carrier\\" : epo:specifiesCarrier
@@ -8612,147 +8500,11 @@ class \\"epo-sub:CertificateInformation\\" {
 exports[`write-plantuml generates plantuml simple 1`] = `
 "
 @startuml
-class \\"(EU) 2015/1986\\" {
-  skos:inScheme : at-voc:legal-basis 
-}
-
-class \\"(EU) 2019/1780\\" {
-  skos:inScheme : at-voc:legal-basis 
-}
-
-class \\"Directive 23\\" {
-  skos:inScheme : at-voc:legal-basis 
-}
-
-class \\"Directive 24\\" {
-  skos:inScheme : at-voc:legal-basis 
-}
-
-class \\"Directive 25\\" {
-  skos:inScheme : at-voc:legal-basis 
-}
-
-class \\"Directive 81\\" {
-  skos:inScheme : at-voc:legal-basis 
-}
-
-class \\"Form1\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form12\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form13\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form14\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form15\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form16\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form17\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form18\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form19\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form2\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form20\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form21\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form22\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form23\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form24\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form25\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form3\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form4\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form5\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form6\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form7\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
-class \\"Form8\\" {
-  skos:inScheme : epo-not:StandardForm 
-}
-
 class \\"adms:Identifier\\" {
   adms:schemaAgency : rdf:PlainLiteral [0..*]
   epo:hasScheme : rdf:PlainLiteral [0..*]
   epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
   skos:notation : rdf:PlainLiteral [1..1]
-}
-
-class \\"bri\\" {
-  skos:inScheme : at-voc:form-type 
-}
-
-class \\"brin-ecs\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"can-desg\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"can-modif\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"can-social\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"can-standard\\" {
-  skos:inScheme : at-voc:notice-type 
 }
 
 class \\"cccev:Constraint\\" {
@@ -8817,34 +8569,6 @@ class \\"cccev:SupportedValue\\" {
   cccev:value : rdf:PlainLiteral [0..*]
 }
 
-class \\"change\\" {
-  skos:inScheme : at-voc:form-type 
-}
-
-class \\"cn-desg\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"cn-social\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"cn-standard\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"competition\\" {
-  skos:inScheme : at-voc:form-type 
-}
-
-class \\"compl\\" {
-  skos:inScheme : at-voc:notice-type 
-}
-
-class \\"cont-modif\\" {
-  skos:inScheme : at-voc:form-type 
-}
-
 class \\"cpov:ContactPoint\\" {
   cpov:email : rdf:PlainLiteral [0..*]
   cpov:telephone : rdf:PlainLiteral [0..*]
@@ -8869,10 +8593,6 @@ class \\"dct:Location\\" {
   locn:geographicIdentifier : adms:Identifier [0..1]
   locn:geographicName : rdf:PlainLiteral [0..1]
   locn:geometry : locn:Geometry [0..1]
-}
-
-class \\"dir-awa-pre\\" {
-  skos:inScheme : at-voc:form-type 
 }
 
 class \\"eli:LegalExpression\\" {
@@ -9245,12 +8965,12 @@ class \\"epo-ful:TransportMeansOperator\\" {
 
 class \\"epo-not:CANDefence-D81\\" {
   epo:hasFormType : Form18 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:CANSocial-D25\\" {
   epo:hasFormType : Form6 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CANSocialNotice\\" {
@@ -9259,12 +8979,12 @@ class \\"epo-not:CANSocialNotice\\" {
 
 class \\"epo-not:CANSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CANStandard-D24\\" {
   epo:hasFormType : Form3 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:CANStandardNotice\\" {
@@ -9273,12 +8993,12 @@ class \\"epo-not:CANStandardNotice\\" {
 
 class \\"epo-not:CNDefence-D81\\" {
   epo:hasFormType : Form17 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:CNSocial-D25\\" {
   epo:hasFormType : Form5 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNSocialNotice\\" {
@@ -9287,12 +9007,12 @@ class \\"epo-not:CNSocialNotice\\" {
 
 class \\"epo-not:CNSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:CNStandard-D24\\" {
   epo:hasFormType : Form2 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:CNStandardNotice\\" {
@@ -9322,12 +9042,12 @@ class \\"epo-not:CompletionNotice\\" {
 
 class \\"epo-not:ConcessionAwardNotice-D23\\" {
   epo:hasFormType : Form25 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:ConcessionNotice-D23\\" {
   epo:hasFormType : Form24 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:ContractModificationNotice\\" {
@@ -9345,12 +9065,12 @@ class \\"epo-not:ContractModificationNotice\\" {
 
 class \\"epo-not:DesignContest-D24\\" {
   epo:hasFormType : Form12 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:DesignContest-D25\\" {
   epo:hasFormType : Form12 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:DesignContestNotice\\" {
@@ -9359,12 +9079,12 @@ class \\"epo-not:DesignContestNotice\\" {
 
 class \\"epo-not:DesignContestResult-D24\\" {
   epo:hasFormType : Form13 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:DesignContestResult-D25\\" {
   epo:hasFormType : Form13 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:DesignContestResultNotice\\" {
@@ -9384,222 +9104,222 @@ class \\"epo-not:DirectAwardPrenotificationNotice\\" {
 
 class \\"epo-not:Modification-D23\\" {
   epo:hasFormType : Form20 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Modification-D24\\" {
-  epo-not:hasLegalBasis : Directive 24 [0..1]
+  epo-not:hasLegalBasis : Directive_24 [0..1]
   epo:hasFormType : Form20 [0..1]
 }
 
 class \\"epo-not:Modification-D25\\" {
   epo:hasFormType : Form20 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice1\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice10\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice11\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice12\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice13\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice14\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice15\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice16\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice17\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice18\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice19\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice2\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice20\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice21\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice22\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice23\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice24\\" {
   epo:hasFormType : competition [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice25\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice26\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice27\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice28\\" {
   epo:hasFormType : dir-awa-pre [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice29\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice3\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice30\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice31\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice32\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice33\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice34\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice35\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice36\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice37\\" {
   epo:hasFormType : result [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice38\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice39\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice4\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice40\\" {
   epo:hasFormType : cont-modif [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:Notice5\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice6\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:Notice7\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:Notice8\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:Notice9\\" {
   epo:hasFormType : planning [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocial-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCSocialNotice\\" {
@@ -9608,12 +9328,12 @@ class \\"epo-not:PIN-CFCSocialNotice\\" {
 
 class \\"epo-not:PIN-CFCSocialNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PIN-CFCStandard-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PIN-CFCStandardNotice\\" {
@@ -9622,27 +9342,27 @@ class \\"epo-not:PIN-CFCStandardNotice\\" {
 
 class \\"epo-not:PIN-RTL-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PIN-RTL-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINDefence-D81\\" {
   epo:hasFormType : Form16 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PINOnly-D24\\" {
   epo:hasFormType : Form1 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PINOnly-D25\\" {
   epo:hasFormType : Form4 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINOnlyNotice\\" {
@@ -9651,17 +9371,17 @@ class \\"epo-not:PINOnlyNotice\\" {
 
 class \\"epo-not:PINProfile-D24\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:PINProfile-D25\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:PINProfile-D81\\" {
   epo:hasFormType : Form8 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:PINProfileNotice\\" {
@@ -9683,7 +9403,7 @@ class \\"epo-not:PreMarketConsultationNotice\\" {
 
 class \\"epo-not:QS-D25\\" {
   epo:hasFormType : Form7 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:QSNotice\\" {
@@ -9692,7 +9412,7 @@ class \\"epo-not:QSNotice\\" {
 
 class \\"epo-not:QSNotice-D25\\" {
   epo:hasFormType : Form22 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:ResultNotice\\" {
@@ -9709,21 +9429,21 @@ class \\"epo-not:ResultNotice\\" {
 
 class \\"epo-not:SocialAndOtherSpecificServices-D23\\" {
   epo:hasFormType : Form23 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:SocialAndOtherSpecificServices-D24\\" {
   epo:hasFormType : Form21 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:StandardFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2015/1986 [0..1]
+  epo:hasImplementingRegulation : (EU)_2015/1986 [0..1]
 }
 
 class \\"epo-not:Subcontract-D81\\" {
   epo:hasFormType : Form19 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:SubcontractNotice\\" {
@@ -9732,22 +9452,22 @@ class \\"epo-not:SubcontractNotice\\" {
 
 class \\"epo-not:VEAT-D23\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 23 [0..1]
+  epo:hasLegalBasis : Directive_23 [0..1]
 }
 
 class \\"epo-not:VEAT-D24\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 24 [0..1]
+  epo:hasLegalBasis : Directive_24 [0..1]
 }
 
 class \\"epo-not:VEAT-D25\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 25 [0..1]
+  epo:hasLegalBasis : Directive_25 [0..1]
 }
 
 class \\"epo-not:VEAT-D81\\" {
   epo:hasFormType : Form15 [0..1]
-  epo:hasLegalBasis : Directive 81 [0..1]
+  epo:hasLegalBasis : Directive_81 [0..1]
 }
 
 class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
@@ -9755,7 +9475,7 @@ class \\"epo-not:VoluntaryEx-AnteTransparencyNotice\\" {
 }
 
 class \\"epo-not:eFormsNotice\\" {
-  epo:hasImplementingRegulation : (EU) 2019/1780 [0..1]
+  epo:hasImplementingRegulation : (EU)_2019/1780 [0..1]
 }
 
 class \\"epo-ord:AllowanceChargeInformation\\" {
@@ -10671,48 +10391,216 @@ class \\"person:Person\\" {
   person:patronymicName : rdf:PlainLiteral [0..*]
 }
 
-class \\"pin-buyer\\" {
-  skos:inScheme : at-voc:notice-type 
+object (EU)_2015/1986 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"pin-cfc-social\\" {
-  skos:inScheme : at-voc:notice-type 
+object (EU)_2019/1780 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"pin-cfc-standard\\" {
-  skos:inScheme : at-voc:notice-type 
+object Directive_23 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"pin-only\\" {
-  skos:inScheme : at-voc:notice-type 
+object Directive_24 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"pin-rtl\\" {
-  skos:inScheme : at-voc:notice-type 
+object Directive_25 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"planning\\" {
-  skos:inScheme : at-voc:form-type 
+object Directive_81 {
+  skos:inScheme = at-voc:legal-basis
 }
 
-class \\"pmc\\" {
-  skos:inScheme : at-voc:notice-type 
+object Form1 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"qu-sy\\" {
-  skos:inScheme : at-voc:notice-type 
+object Form12 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"result\\" {
-  skos:inScheme : at-voc:form-type 
+object Form13 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"subco\\" {
-  skos:inScheme : at-voc:notice-type 
+object Form14 {
+  skos:inScheme = epo-not:StandardForm
 }
 
-class \\"veat\\" {
-  skos:inScheme : at-voc:notice-type 
+object Form15 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form16 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form17 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form18 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form19 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form2 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form20 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form21 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form22 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form23 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form24 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form25 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form3 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form4 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form5 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form6 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form7 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object Form8 {
+  skos:inScheme = epo-not:StandardForm
+}
+
+object bri {
+  skos:inScheme = at-voc:form-type
+}
+
+object brin-ecs {
+  skos:inScheme = at-voc:notice-type
+}
+
+object can-desg {
+  skos:inScheme = at-voc:notice-type
+}
+
+object can-modif {
+  skos:inScheme = at-voc:notice-type
+}
+
+object can-social {
+  skos:inScheme = at-voc:notice-type
+}
+
+object can-standard {
+  skos:inScheme = at-voc:notice-type
+}
+
+object change {
+  skos:inScheme = at-voc:form-type
+}
+
+object cn-desg {
+  skos:inScheme = at-voc:notice-type
+}
+
+object cn-social {
+  skos:inScheme = at-voc:notice-type
+}
+
+object cn-standard {
+  skos:inScheme = at-voc:notice-type
+}
+
+object competition {
+  skos:inScheme = at-voc:form-type
+}
+
+object compl {
+  skos:inScheme = at-voc:notice-type
+}
+
+object cont-modif {
+  skos:inScheme = at-voc:form-type
+}
+
+object dir-awa-pre {
+  skos:inScheme = at-voc:form-type
+}
+
+object pin-buyer {
+  skos:inScheme = at-voc:notice-type
+}
+
+object pin-cfc-social {
+  skos:inScheme = at-voc:notice-type
+}
+
+object pin-cfc-standard {
+  skos:inScheme = at-voc:notice-type
+}
+
+object pin-only {
+  skos:inScheme = at-voc:notice-type
+}
+
+object pin-rtl {
+  skos:inScheme = at-voc:notice-type
+}
+
+object planning {
+  skos:inScheme = at-voc:form-type
+}
+
+object pmc {
+  skos:inScheme = at-voc:notice-type
+}
+
+object qu-sy {
+  skos:inScheme = at-voc:notice-type
+}
+
+object result {
+  skos:inScheme = at-voc:form-type
+}
+
+object subco {
+  skos:inScheme = at-voc:notice-type
+}
+
+object veat {
+  skos:inScheme = at-voc:notice-type
 }
 \\"ProxyConnector\\" <|-- \\"ProxyConnector\\"
 \\"cccev:Criterion\\" <|-- \\"epo:ProcurementCriterion\\"

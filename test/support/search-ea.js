@@ -3,7 +3,7 @@ import MDBReader from 'mdb-reader'
 import { UNDER_REVIEW } from '../../src/config.js'
 
 // Utility to search for some text in EA
-const assetsPath = UNDER_REVIEW.localDirectory
+const assetsPath = UNDER_REVIEW.localPath
 
 const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
 console.log('reading database', databasePath)
