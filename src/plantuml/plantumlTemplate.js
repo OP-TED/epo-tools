@@ -20,8 +20,14 @@ function toPlantuml ({ nodes, edges }, { shrink, sorted } = {
           filter(edge => edge.type !== INHERITANCE),
       )
 
-    const template = node.type === 'Enumeration' ? enumTemplate : nodeTemplate
+    const templates = {
+      'Enumeration': enumTemplate,
+      'Class': nodeTemplate,
+      'Object': objectTemplate,
+      'DataType': datatypeTemplate,
+    }
 
+    const template = templates[node.type]
     return (shrink && classPredicates.length === 0) ? undefined : template(
       node,
       classPredicates)
@@ -41,25 +47,36 @@ ${maybeSorted(noDuplicates(relations)).join('\n')}
 `
 }
 
-const nodeTemplate = ({ name }, edges) => `class "${name}" {
+function noSpaces (name) {
+  return name.replaceAll(' ', '_')
+}
+
+const nodeTemplate = ({ name }, edges) => `class "${noSpaces(name)}" {
 ${noDuplicates(edges.map(
-  x => `  ${x.predicate} : ${x.target} ${displayQuantifiers(x.quantifiers,
+  x => `  ${noSpaces(x.predicate)} : ${noSpaces(x.target)} ${displayQuantifiers(x.quantifiers,
     x => `[${x}]`)}`)).join('\n')}
 }`
 
-const enumTemplate = ({ name }, edges) => `enum "${name}" {
+const enumTemplate = ({ name }, edges) => `enum "${noSpaces(name)}" {
 ${noDuplicates(edges.map(
-  x => `  ${x.predicate}`)).join('\n')}
+  x => `  ${noSpaces(x.predicate)}`)).join('\n')}
 }`
+
+const objectTemplate = ({ name }, edges) => `object ${noSpaces(name)} {
+${noDuplicates(edges.map(
+  x => `  ${noSpaces(x.predicate)} = ${noSpaces(x.target)}`)).join('\n')}
+}`
+
+const datatypeTemplate = ({ name }, edges) => `entity ${noSpaces(name)}`
 
 const subclassTemplate = ({
   source, predicate, target,
-}) => `"${target}" <|-- "${source}"`
+}) => `"${noSpaces(target)}" <|-- "${noSpaces(source)}"`
 
 const relationTemplate = ({
   source, predicate, target, quantifiers,
-}) => `"${source}" --> ${displayQuantifiers(quantifiers,
-  x => `"${x}"`)} "${target}" ${displayPredicateName(predicate)}`
+}) => `"${noSpaces(source)}" --> ${displayQuantifiers(quantifiers,
+  x => `"${x}"`)} "${noSpaces(target)}" ${displayPredicateName(predicate)}`
 
 function displayQuantifiers ({ quantifiersDeclared, min, max, raw }, wrap) {
   if (quantifiersDeclared) {
