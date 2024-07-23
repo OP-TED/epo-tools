@@ -116,22 +116,39 @@ const toTurtle = (
   function getObjectTarget (edge) {
     const { source, target, type } = edge
 
+
     if (type === 'Dependency') {
       // Note: For enums omit enumeration values for the moment until further clarification
       // sh:targetObjectsOf ?
       // sh:in ( ex:Pink ex:Purple ) ?
+/**
+    # Shape for hasCountryOfOrigin property
+      a4g_shape:Item-hasCountryOfOrigin-country a shacl:PropertyShape ;
+      rdfs:isDefinedBy a4g_shape:cat-shape ;
+      shacl:path a4g:hasCountryOfOrigin ;
+      shacl:name "has country of origin"@en ;
+      shacl:maxCount 1 ;
+      shacl:node a4g_shape:CountryShape ;
+      shacl:nodeKind shacl:IRI .
 
-      const skosEdge = { source, predicate: 'skos:inScheme', target }
+    # Shape for the value of hasCountryOfOrigin property
+      a4g_shape:CountryShape a shacl:NodeShape ;
+        shacl:property [
+          shacl:path skos:inScheme ;
+        shacl:hasValue atold:country ;
+      ] ;
+      shacl:nodeKind shacl:IRI .
+ **/
 
-      return `${propertyIRI(edge)} sh:node ${shapeIRI(skosEdge)} . 
-     ${shapeIRI(skosEdge)} a sh:NodeShape ;
-        sh:property ${propertyIRI(skosEdge)} .
-         
-     ${propertyIRI(skosEdge)} a sh:PropertyShape ;
-        a sh:PropertyShape ;
-        sh:path skos:inScheme ;
-        sh:hasValue ${target} .
-`
+      return `
+
+     ${propertyIRI(edge)} shacl:node [
+         a shacl:NodeShape ;
+         shacl:property [
+            shacl:path skos:inScheme ;
+            shacl:hasValue ${target} 
+         ]
+      ] .`
     } else {
       return `${propertyIRI(edge)} sh:targetClass ${target} .`
     }

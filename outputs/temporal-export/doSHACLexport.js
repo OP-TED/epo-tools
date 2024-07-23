@@ -3,7 +3,12 @@ import { Parser } from 'n3'
 import rdf from 'rdf-ext'
 import { INHERITANCE } from '../../src/conceptualModel/const.js'
 import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
-import { getJson } from '../../src/epo/readEpo.js'
+import { UNDER_REVIEW } from '../../src/config.js'
+import {
+  getJson,
+  noObjectNodes,
+  noTemporaryVocab,
+} from '../../src/epo/readEpo.js'
 import { prettyPrintTurtle, printRDFXML } from '../../src/io/serialization.js'
 import { aliases, ns } from '../../src/namespaces.js'
 import { stripPrefix } from '../../src/prefix/prefix.js'
@@ -12,8 +17,9 @@ import epoModules from './epoModules.json' assert { type: 'json' }
 import { shaclMetadata } from './metadata.js'
 
 const { modules } = epoModules
+const { localPath } = UNDER_REVIEW
 
-const databasePath = `assets/ePO/feature/4.1.0-rc.3/analysis_and_design/conceptual_model/ePO_CM.eap`
+const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
 
 function iriPatterns (id) {
   // Example: sub-shape:epo-sub-CertificateInformation-dct-description.
@@ -57,7 +63,8 @@ function filterByModule (g, prefix) {
   return { edges, nodes }
 }
 
-const rawJson = getJson({ databasePath })
+const rawJson = noTemporaryVocab(getJson({ databasePath }))
+
 const hasErrors = x => x.some(x => x.severity === 'error')
 
 const eaJson = {
@@ -82,13 +89,13 @@ async function writeModule (module) {
 
   const dataset = await rdf.dataset().
     addAll([...new Parser().parse(uglyturtle)])
-  
+
   const turtle = await prettyPrintTurtle({ dataset })
   const turtlePath = `${targetDir}/${name}_shapes.ttl`
   writeFileSync(turtlePath, turtle)
   console.log('wrote', dataset.size, 'triples', turtlePath)
 
-  const xml = await printRDFXML(({dataset}))
+  const xml = await printRDFXML(({ dataset }))
   const xmlPath = `${targetDir}/${name}_shapes.rdf`
   writeFileSync(xmlPath, xml)
   console.log('wrote', dataset.size, 'triples', xmlPath)

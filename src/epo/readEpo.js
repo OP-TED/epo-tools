@@ -14,4 +14,25 @@ function getEpoJson ({ databasePath }) {
   return narrowToEpo(json)
 }
 
-export { getJson,getEpoJson }
+function noObjectNodes (g) {
+  const toFilter = new Set(
+    g.nodes.filter(x => x.type === 'Object').map(x => x.name))
+  return {
+    nodes: g.nodes.filter(x => !toFilter.has(x.name)),
+    edges: g.edges.filter(
+      x => !(toFilter.has(x.source) || toFilter.has(x.target))),
+  }
+}
+
+function noTemporaryVocab (g) {
+  const toFilter = new Set(
+    g.nodes.filter(x => x.name.startsWith('at-voc-new')).map(x => x.name))
+  return {
+    nodes: g.nodes.filter(x => !toFilter.has(x.name)),
+    edges: g.edges.filter(
+      x => !(toFilter.has(x.source) || toFilter.has(x.target))),
+  }
+}
+
+
+export { getJson, getEpoJson, noObjectNodes, noTemporaryVocab }
