@@ -56,6 +56,8 @@
 		<rdfs:comment>Information about the imposition of mandatory levies required by law. WG approval 25/04/2023 </rdfs:comment>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-description-PlainLiteral"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasPercentage-decimal"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxCategory-tax-category"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxScheme-tax-scheme"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasAmount-MonetaryValue"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-isCalculatedOn-MonetaryValue"/>
 	</rdf:Description>
@@ -111,6 +113,7 @@
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#AllowanceChargeInformation-hasPercentage-decimal"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#AllowanceChargeInformation-hasAllowanceChargeReasonDescription-PlainLiteral"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#AllowanceChargeInformation-hasAmount-MonetaryValue"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#AllowanceChargeInformation-hasAllowanceChargeReason-allowance-charge-reason"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#AllowanceChargeInformation-isCalculatedOn-MonetaryValue"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#AllowanceChargeInformation-hasTaxInformation-TaxInformation"/>
 	</rdf:Description>
@@ -371,6 +374,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#OrderResponseInformation-isSpecificToOrderResponseLine-OrderResponseLine"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#OrderResponseInformation-hasDeliveryPeriod-Period"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#OrderResponseInformation-hasAcceptanceStatus-ResponseStatus"/>
 	</rdf:Description>
 
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#OrderResponseInformation-isSpecificToOrderResponseLine-OrderResponseLine">
@@ -388,6 +392,16 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDeliveryPeriod"/>
 		<shacl:name xml:lang="en">has delivery period</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#OrderResponseInformation-hasAcceptanceStatus-ResponseStatus">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAcceptanceStatus"/>
+		<shacl:name xml:lang="en">has acceptance status</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
 		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -561,6 +575,24 @@
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxCategory-tax-category">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTaxCategory"/>
+		<shacl:name xml:lang="en">has tax category</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxScheme-tax-scheme">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTaxScheme"/>
+		<shacl:name xml:lang="en">has tax scheme</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#OrderLine-hasPrice-Price">
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Price"/>
@@ -617,6 +649,23 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#isSubmittedForOrder"/>
 		<shacl:name xml:lang="en">is submitted for order</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueResponseInformationShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#CatalogueResponseInformation"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueResponseInformation-hasAcceptanceStatus-ResponseStatus"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueResponseInformation-hasAcceptanceStatus-ResponseStatus">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAcceptanceStatus"/>
+		<shacl:name xml:lang="en">has acceptance status</shacl:name>
 		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
 		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -716,6 +765,16 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesOriginatorInformation"/>
 		<shacl:name xml:lang="en">specifies originator information</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#AllowanceChargeInformation-hasAllowanceChargeReason-allowance-charge-reason">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#ord-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAllowanceChargeReason"/>
+		<shacl:description>https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL5189/ https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL7161/</shacl:description>
+		<shacl:name xml:lang="en">has allowance charge reason</shacl:name>
 		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>

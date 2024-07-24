@@ -1601,6 +1601,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#core-shape"/>
 		<rdfs:comment>Concept that stands for a set of norms, expectations, standards and policies. Additional Information: Such standards may relate to social, ethical and quality etc. WG approval 26/07/2022 </rdfs:comment>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CertificationLabel-hasReferenceURI-anyURI"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CertificationLabel-hasLabelType-certification-label-type"/>
 	</rdf:Description>
 
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CertificationLabel-hasReferenceURI-anyURI">
@@ -7164,6 +7165,16 @@
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CertificationLabel-hasLabelType-certification-label-type">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#core-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasLabelType"/>
+		<shacl:description>The label type such environmental, quality, social etc.</shacl:description>
+		<shacl:name xml:lang="en">has label type</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#NoticeAwardInformation-hasProcurementHighestReceivedTenderValue-MonetaryValue">
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>
@@ -7613,6 +7624,23 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#core-shape"/>
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToNoticeAwardInformation"/>
 		<shacl:name xml:lang="en">refers to notice award information</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PostAwardDocumentShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#PostAwardDocument"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#core-shape"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#PostAwardDocument-hasDocumentStatus-document-status"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PostAwardDocument-hasDocumentStatus-document-status">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#core-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDocumentStatus"/>
+		<shacl:description>https://test-docs.peppol.eu/logistics/transport-execution/codelist/DocumentStatusCode/</shacl:description>
+		<shacl:name xml:lang="en">has document status</shacl:name>
 		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>

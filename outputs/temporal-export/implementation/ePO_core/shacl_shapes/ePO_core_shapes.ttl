@@ -1051,7 +1051,7 @@ a4g_shape:CertificationLabelShape a shacl:NodeShape ;
 	shacl:targetClass a4g:CertificationLabel ;
 	rdfs:isDefinedBy a4g_shape:core-shape ;
 	rdfs:comment "Concept that stands for a set of norms, expectations, standards and policies. Additional Information: Such standards may relate to social, ethical and quality etc. WG approval 26/07/2022 " ;
-	shacl:property a4g_shape:CertificationLabel-hasReferenceURI-anyURI .
+	shacl:property a4g_shape:CertificationLabel-hasReferenceURI-anyURI, a4g_shape:CertificationLabel-hasLabelType-certification-label-type .
 
 a4g_shape:CertificationLabel-hasReferenceURI-anyURI a shacl:PropertyShape ;
 	shacl:datatype xsd:anyURI ;
@@ -5231,6 +5231,14 @@ a4g_shape:Certificate-issuedByCertifier-Certifier a shacl:PropertyShape ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 
+a4g_shape:CertificationLabel-hasLabelType-certification-label-type a shacl:PropertyShape ;
+	rdfs:isDefinedBy a4g_shape:core-shape ;
+	shacl:path a4g:hasLabelType ;
+	shacl:description "The label type such environmental, quality, social etc." ;
+	shacl:name "has label type"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI .
+
 a4g_shape:NoticeAwardInformation-hasProcurementHighestReceivedTenderValue-MonetaryValue a shacl:PropertyShape ;
 	shacl:targetClass a4g:MonetaryValue ;
 	rdfs:isDefinedBy a4g_shape:core-shape ;
@@ -5584,6 +5592,19 @@ a4g_shape:CompletionNotice-refersToNoticeAwardInformation-NoticeAwardInformation
 	rdfs:isDefinedBy a4g_shape:core-shape ;
 	shacl:path a4g:refersToNoticeAwardInformation ;
 	shacl:name "refers to notice award information"@en ;
+	shacl:maxCount 1 ;
+	shacl:nodeKind shacl:IRI .
+
+a4g_shape:PostAwardDocumentShape a shacl:NodeShape ;
+	shacl:targetClass a4g:PostAwardDocument ;
+	rdfs:isDefinedBy a4g_shape:core-shape ;
+	shacl:property a4g_shape:PostAwardDocument-hasDocumentStatus-document-status .
+
+a4g_shape:PostAwardDocument-hasDocumentStatus-document-status a shacl:PropertyShape ;
+	rdfs:isDefinedBy a4g_shape:core-shape ;
+	shacl:path a4g:hasDocumentStatus ;
+	shacl:description "https://test-docs.peppol.eu/logistics/transport-execution/codelist/DocumentStatusCode/" ;
+	shacl:name "has document status"@en ;
 	shacl:maxCount 1 ;
 	shacl:nodeKind shacl:IRI .
 

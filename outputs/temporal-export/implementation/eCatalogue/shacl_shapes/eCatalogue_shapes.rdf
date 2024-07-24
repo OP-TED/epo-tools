@@ -215,6 +215,7 @@
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Catalogue-isSubordinatedToContract-Contract"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Catalogue-comprisesCatalogueLine-CatalogueLine"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Catalogue-specifiesBuyer-Buyer"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Catalogue-hasActivityCode-activity-code"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Catalogue-specifiesSeller-Seller"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Catalogue-hasValidityPeriod-Period"/>
 	</rdf:Description>
@@ -279,6 +280,8 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
 		<rdfs:comment>Information about the imposition of mandatory levies required by law. WG approval 25/04/2023 </rdfs:comment>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasPercentage-decimal"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxCategory-tax-category"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxScheme-tax-scheme"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#TaxInformation-hasAmount-MonetaryValue"/>
 	</rdf:Description>
 
@@ -307,18 +310,21 @@
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasBrand-Brand"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasQualifiedItemRelation-ItemRelation"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasModel-ItemModel"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasItemClassification-item-classification"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasPart-Item"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasManufacturerItemID-Identifier"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasSellerItemID-Identifier"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasItemStandardID-Identifier"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasNetQuantity-Quantity"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasCountryOfOrigin-country"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasDeliveryClassification-delivery-item-type"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasCertification-Certificate"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasAccessoryItem-Item"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-isReplacedBy-Item"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasSpecification-ProductSpecification"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasComplementaryItem-Item"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasManufacturer-Manufacturer"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasHazardousItemUNDGCode-dangerous-goods-list"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-requires-Item"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasBuyerItemID-Identifier"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Item-hasExternalSpecification-Document"/>
@@ -362,7 +368,10 @@
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasCatalogueLineValidity-Period"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasMaximumOrderQuantity-Quantity"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasMinimumQuantityGuaranteedForDelivery-Quantity"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasOrderableUnit-orderable-unit"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasTransactionConditionsCode-transaction-conditions"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasPrice-Price"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasActivityCode-activity-code"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasStandardisedUnitPrice-Price"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-foreseesPackage-Package"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasChargeInformation-ChargeInformation"/>
@@ -593,6 +602,15 @@
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Item-hasItemClassification-item-classification">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasItemClassification"/>
+		<shacl:description>A classification of this item according to a specific system for classifying products or services. Additional information: Examples of classification schemes are: CPV, UNSPC, eCl@ss, GPC, ... WG acceptance 10/03/2022</shacl:description>
+		<shacl:name xml:lang="en">has item classification</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Catalogue-specifiesCatalogueProvider-CatalogueProvider">
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#CatalogueProvider"/>
@@ -616,6 +634,7 @@
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Price-hasExpectedDeliveryTime-Duration"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Price-hasBaseQuantity-Quantity"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Price-hasPriceSurchargeInformation-ChargeInformation"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Price-hasPriceType-price-type"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#Price-hasPriceDiscountInformation-AllowanceInformation"/>
 	</rdf:Description>
 
@@ -808,12 +827,41 @@
 		<shacl:hasValue rdf:resource="http://publications.europa.eu/resource/authority/country"/>
 	</rdf:Description>
 
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasOrderableUnit-orderable-unit">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasOrderableUnit"/>
+		<shacl:description>The unit in which the item described in this catalogue line can be ordered.</shacl:description>
+		<shacl:name xml:lang="en">has orderable unit</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasTransactionConditionsCode-transaction-conditions">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTransactionConditionsCode"/>
+		<shacl:description>Coded description of the specific transaction conditions (purchasing, sales, payment) for an item. </shacl:description>
+		<shacl:name xml:lang="en">has transaction conditions code</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Catalogue-specifiesBuyer-Buyer">
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Buyer"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesBuyer"/>
 		<shacl:name xml:lang="en">specifies buyer</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Catalogue-hasActivityCode-activity-code">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasActivityCode"/>
+		<shacl:name xml:lang="en">has activity code</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
@@ -834,6 +882,15 @@
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasNetMonetaryValue"/>
 		<shacl:name xml:lang="en">has net monetary value</shacl:name>
 		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueLine-hasActivityCode-activity-code">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasActivityCode"/>
+		<shacl:name xml:lang="en">has activity code</shacl:name>
 		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -927,6 +984,15 @@
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Item-hasDeliveryClassification-delivery-item-type">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDeliveryClassification"/>
+		<shacl:name xml:lang="en">has delivery classification</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Item-hasCertification-Certificate">
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Certificate"/>
@@ -995,6 +1061,15 @@
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Item-hasHazardousItemUNDGCode-dangerous-goods-list">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasHazardousItemUNDGCode"/>
+		<shacl:description>Specification of the hazardous nature of an item according to the UNDG classification schema. Provides detail of the classification and nature of a hazardous item. </shacl:description>
+		<shacl:name xml:lang="en">has hazardous item undg code</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueLine-foreseesPackage-Package">
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#Package"/>
@@ -1044,6 +1119,24 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasChargeInformation"/>
 		<shacl:name xml:lang="en">has charge information</shacl:name>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxCategory-tax-category">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTaxCategory"/>
+		<shacl:name xml:lang="en">has tax category</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#TaxInformation-hasTaxScheme-tax-scheme">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTaxScheme"/>
+		<shacl:name xml:lang="en">has tax scheme</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
@@ -1157,6 +1250,7 @@
 		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#CatalogueResponseInformation"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
 		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueResponseInformation-isSpecificToCatalogueResponseLine-CatalogueResponseLine"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#CatalogueResponseInformation-hasAcceptanceStatus-ResponseStatus"/>
 	</rdf:Description>
 
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueResponseInformation-isSpecificToCatalogueResponseLine-CatalogueResponseLine">
@@ -1165,6 +1259,16 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#isSpecificToCatalogueResponseLine"/>
 		<shacl:name xml:lang="en">is specific to catalogue response line</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#CatalogueResponseInformation-hasAcceptanceStatus-ResponseStatus">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAcceptanceStatus"/>
+		<shacl:name xml:lang="en">has acceptance status</shacl:name>
+		<shacl:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:minCount>
 		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -1190,6 +1294,32 @@
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Price-hasPriceType-price-type">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasPriceType"/>
+		<shacl:name xml:lang="en">has price type</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PostAwardDocumentShape">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#NodeShape"/>
+		<shacl:targetClass rdf:resource="http://data.europa.eu/a4g/ontology#PostAwardDocument"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#PostAwardDocument-hasDocumentType-document-type"/>
+		<shacl:property rdf:resource="http://data.europa.eu/a4g/data-shape#PostAwardDocument-hasDocumentStatus-document-status"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PostAwardDocument-hasDocumentType-document-type">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDocumentType"/>
+		<shacl:name xml:lang="en">has document type</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
 	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#Item-hasBuyerItemID-Identifier">
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<shacl:targetClass rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1197,6 +1327,16 @@
 		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasBuyerItemID"/>
 		<shacl:description>The general identifier assigned to the concept as defined by the Buyer.​ WG approval 16/05/2023 </shacl:description>
 		<shacl:name xml:lang="en">has buyer item id</shacl:name>
+		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
+		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
+	</rdf:Description>
+
+	<rdf:Description rdf:about="http://data.europa.eu/a4g/data-shape#PostAwardDocument-hasDocumentStatus-document-status">
+		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
+		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape#cat-shape"/>
+		<shacl:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDocumentStatus"/>
+		<shacl:description>https://test-docs.peppol.eu/logistics/transport-execution/codelist/DocumentStatusCode/</shacl:description>
+		<shacl:name xml:lang="en">has document status</shacl:name>
 		<shacl:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</shacl:maxCount>
 		<shacl:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>

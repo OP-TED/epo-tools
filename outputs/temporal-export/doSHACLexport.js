@@ -6,8 +6,6 @@ import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
 import { UNDER_REVIEW } from '../../src/config.js'
 import {
   getJson,
-  noObjectNodes,
-  noTemporaryVocab,
 } from '../../src/epo/readEpo.js'
 import { prettyPrintTurtle, printRDFXML } from '../../src/io/serialization.js'
 import { aliases, ns } from '../../src/namespaces.js'
@@ -63,7 +61,7 @@ function filterByModule (g, prefix) {
   return { edges, nodes }
 }
 
-const rawJson = noTemporaryVocab(getJson({ databasePath }))
+const rawJson = getJson({ databasePath })
 
 const hasErrors = x => x.some(x => x.severity === 'error')
 
