@@ -3792,13 +3792,6 @@ a4g_shape:Item-hasItemClassification-item-classification a shacl:PropertyShape ;
 	shacl:path a4g:hasItemClassification ;
 	shacl:description \\"A classification of this item according to a specific system for classifying products or services. Additional information: Examples of classification schemes are: CPV, UNSPC, eCl@ss, GPC, ... WG acceptance 10/03/2022\\" ;
 	shacl:name \\"has item classification\\"@en ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/item-classification> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:AccessTerm-definesCatalogueProvider-CatalogueProvider a shacl:PropertyShape ;
@@ -4628,13 +4621,6 @@ a4g_shape:OrderResponseInformation-hasAcceptanceStatus-ResponseStatus a shacl:Pr
 	shacl:name \\"has acceptance status\\"@en ;
 	shacl:minCount 1 ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/ResponseStatus> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ESPDRequest-refersToNotice-Notice a shacl:PropertyShape ;
@@ -5528,13 +5514,6 @@ a4g_shape:CatalogueLine-hasOrderableUnit-orderable-unit a shacl:PropertyShape ;
 	shacl:description \\"The unit in which the item described in this catalogue line can be ordered.\\" ;
 	shacl:name \\"has orderable unit\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/orderable-unit> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:LotGroup-hasLaunchFrameworkAgreementMaximumValue-MonetaryValue a shacl:PropertyShape ;
@@ -5575,13 +5554,6 @@ a4g_shape:CatalogueLine-hasTransactionConditionsCode-transaction-conditions a sh
 	shacl:description \\"Coded description of the specific transaction conditions (purchasing, sales, payment) for an item. \\" ;
 	shacl:name \\"has transaction conditions code\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/transaction-conditions> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Tender-specifiesSubcontractors-Subcontractor a shacl:PropertyShape ;
@@ -5622,13 +5594,6 @@ a4g_shape:Catalogue-hasActivityCode-activity-code a shacl:PropertyShape ;
 	shacl:path a4g:hasActivityCode ;
 	shacl:name \\"has activity code\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/activity-code> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:LotGroup-hasEstimatedValue-MonetaryValue a shacl:PropertyShape ;
@@ -5818,13 +5783,6 @@ a4g_shape:CatalogueLine-hasActivityCode-activity-code a shacl:PropertyShape ;
 	shacl:path a4g:hasActivityCode ;
 	shacl:name \\"has activity code\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/activity-code> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Price-hasOrderabableUnitFactorRate-Quantity a shacl:PropertyShape ;
@@ -6201,13 +6159,6 @@ a4g_shape:ReceiptAdviceLine-hasShortageAction-action-code a shacl:PropertyShape 
 	shacl:path a4g:hasShortageAction ;
 	shacl:name \\"has shortage action\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/action-code> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g:Subcontract-D81 rdfs:subClassOf a4g:SubcontractNotice, a4g:StandardFormsNotice .
@@ -6240,13 +6191,6 @@ a4g_shape:Item-hasDeliveryClassification-delivery-item-type a shacl:PropertyShap
 	shacl:path a4g:hasDeliveryClassification ;
 	shacl:name \\"has delivery classification\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/delivery-item-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:NoticeAwardInformation-hasTotalAwardedValue-MonetaryValue a shacl:PropertyShape ;
@@ -6282,13 +6226,6 @@ a4g_shape:ReceiptAdviceLine-RejectionAction-action-code a shacl:PropertyShape ;
 	shacl:path a4g:RejectionAction ;
 	shacl:name \\"rejection action\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/action-code> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:CompetitionNotice-announcesLotGroup-LotGroup a shacl:PropertyShape ;
@@ -6335,13 +6272,6 @@ a4g_shape:ReceiptAdviceLine-hasRejectReason-reject-reason a shacl:PropertyShape 
 	shacl:path a4g:hasRejectReason ;
 	shacl:name \\"has reject reason\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/reject-reason> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g:ProductSpecification rdfs:subClassOf a4g:PostAwardDocument .
@@ -6558,13 +6488,6 @@ a4g_shape:Item-hasHazardousItemUNDGCode-dangerous-goods-list a shacl:PropertySha
 	shacl:path a4g:hasHazardousItemUNDGCode ;
 	shacl:description \\"Specification of the hazardous nature of an item according to the UNDG classification schema. Provides detail of the classification and nature of a hazardous item. \\" ;
 	shacl:name \\"has hazardous item undg code\\"@en ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/dangerous-goods-list> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g:RequestForClarification rdfs:subClassOf a4g:Document .
@@ -6966,26 +6889,12 @@ a4g_shape:TaxInformation-hasTaxCategory-tax-category a shacl:PropertyShape ;
 	shacl:path a4g:hasTaxCategory ;
 	shacl:name \\"has tax category\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/tax-category> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:TaxInformation-hasTaxScheme-tax-scheme a shacl:PropertyShape ;
 	shacl:path a4g:hasTaxScheme ;
 	shacl:name \\"has tax scheme\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/tax-scheme> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Consignment-hasGrossVolume-Quantity a shacl:PropertyShape ;
@@ -7038,13 +6947,6 @@ a4g_shape:CertificationLabel-hasLabelType-certification-label-type a shacl:Prope
 	shacl:description \\"The label type such environmental, quality, social etc.\\" ;
 	shacl:name \\"has label type\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/certification-label-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:NoticeAwardInformation-hasProcurementHighestReceivedTenderValue-MonetaryValue a shacl:PropertyShape ;
@@ -7246,13 +7148,6 @@ a4g_shape:CatalogueResponseInformation-hasAcceptanceStatus-ResponseStatus a shac
 	shacl:name \\"has acceptance status\\"@en ;
 	shacl:minCount 1 ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/ResponseStatus> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Catalogue-hasValidityPeriod-Period a shacl:PropertyShape ;
@@ -7345,26 +7240,12 @@ a4g_shape:Package-hasPackagingType-packaging-type a shacl:PropertyShape ;
 	shacl:path a4g:hasPackagingType ;
 	shacl:name \\"has packaging type\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/packaging-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Consignment-hasHandlingInstructionCode-handling-instruction a shacl:PropertyShape ;
 	shacl:path a4g:hasHandlingInstructionCode ;
 	shacl:name \\"has handling instruction code\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/handling-instruction> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:DirectContractShape a shacl:NodeShape ;
@@ -7516,13 +7397,6 @@ a4g_shape:Price-hasPriceType-price-type a shacl:PropertyShape ;
 	shacl:path a4g:hasPriceType ;
 	shacl:name \\"has price type\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/price-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:PostAwardDocumentShape a shacl:NodeShape ;
@@ -7533,13 +7407,6 @@ a4g_shape:PostAwardDocument-hasDocumentType-document-type a shacl:PropertyShape 
 	shacl:path a4g:hasDocumentType ;
 	shacl:name \\"has document type\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/document-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Item-hasBuyerItemID-Identifier a shacl:PropertyShape ;
@@ -7700,13 +7567,6 @@ a4g_shape:AllowanceChargeInformation-hasAllowanceChargeReason-allowance-charge-r
 	shacl:description \\"https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL5189/ https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL7161/\\" ;
 	shacl:name \\"has allowance charge reason\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/allowance-charge-reason> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:AllowanceChargeInformation-isCalculatedOn-MonetaryValue a shacl:PropertyShape ;
@@ -7811,13 +7671,6 @@ a4g_shape:PostAwardDocument-hasDocumentStatus-document-status a shacl:PropertySh
 	shacl:description \\"https://test-docs.peppol.eu/logistics/transport-execution/codelist/DocumentStatusCode/\\" ;
 	shacl:name \\"has document status\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/document-status> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Person-hasCertification-Certificate a shacl:PropertyShape ;
@@ -8097,13 +7950,6 @@ a4g_shape:TransportMeans-hasTransportMode-transport-mode a shacl:PropertyShape ;
 	shacl:name \\"has transport mode\\"@en ;
 	shacl:minCount 1 ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/transport-mode> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:GoodsItemShape a shacl:NodeShape ;
@@ -8162,25 +8008,11 @@ a4g_shape:TransportEquipment-hasTransportEquipmentSeal-TransportEquipmentSeal a 
 a4g_shape:TransportEquipment-hasTransportEquipmentType-transport-equipment-type a shacl:PropertyShape ;
 	shacl:path a4g:hasTransportEquipmentType ;
 	shacl:name \\"has transport equipment type\\"@en ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/transport-equipment-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:TransportEquipment-hasSizeType-size-type a shacl:PropertyShape ;
 	shacl:path a4g:hasSizeType ;
 	shacl:name \\"has size type\\"@en ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/size-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:Consignment-hasTotalGoodsItemQuantity-Quantity a shacl:PropertyShape ;
@@ -8257,13 +8089,6 @@ a4g_shape:DespatchAdvice-hasDespatchAdviceType-despatch-advice-type a shacl:Prop
 	shacl:description \\"https://test-docs.peppol.eu/logistics/transport-execution/codelist/DespatchAdviceTypeCode/ \\" ;
 	shacl:name \\"has despatch advice type\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/despatch-advice-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:TemperatureSpecification-hasMaximumTemperature-Quantity a shacl:PropertyShape ;
@@ -8536,13 +8361,6 @@ a4g_shape:TransportMeans-hasTransportMeansType-transport-means-type a shacl:Prop
 	shacl:path a4g:hasTransportMeansType ;
 	shacl:name \\"has transport means type\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/transport-means-type> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:TransportMeans-hasVehicleSegmentID-Identifier a shacl:PropertyShape ;
@@ -8709,13 +8527,6 @@ a4g_shape:TransportHandlingUnit-hasHandlingInstructionCode-handling-instruction 
 	shacl:path a4g:hasHandlingInstructionCode ;
 	shacl:name \\"has handling instruction code\\"@en ;
 	shacl:maxCount 1 ;
-	shacl:node [
-		rdf:type shacl:NodeShape ;
-		shacl:property [
-			shacl:path skos:inScheme ;
-			shacl:hasValue <http://unknown.org/handling-instruction> ;
-		] ;
-	] ;
 	shacl:nodeKind shacl:IRI .
 
 a4g_shape:ContractModificationNotice-refersToLot-Lot a shacl:PropertyShape ;

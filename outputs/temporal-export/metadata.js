@@ -3,7 +3,7 @@ const currentVersion = `4.1.0`
 const dateIssued = `2024-03-21`
 
 const shaclMetadata = (id) => `
-${id}-shape:${id}-shape a owl:Ontology ;
+${id}-shape: a owl:Ontology ;
     rdfs:label "eProcurement Ontology ${id} - SHACL shapes"@en ;
     dcterms:created "2021-06-01"^^xsd:date ;
     dcterms:description "The eProcurement Ontology ${id} SHACL shapes provides the datashape specifications for the eProcurement Ontology ${id} module."@en ;

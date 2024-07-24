@@ -1,7 +1,7 @@
 import {
   TrigSerializer,
   TurtleSerializer,
-  RdfXmlSerializer
+  RdfXmlSerializer,
 } from '@rdfjs-elements/formats-pretty'
 import getStream from 'get-stream'
 
@@ -15,30 +15,29 @@ function toPlain (prefixes) {
   return result
 }
 
-const turtleSink = new TurtleSerializer({
-  prefixes: toPlain(ns),
-})
+async function prettyPrintTurtle ({ dataset, namespaces }) {
+  const turtleSink = new TurtleSerializer({
+    prefixes: toPlain(namespaces ?? ns),
+  })
 
-const trigSink = new TrigSerializer({
-  prefixes: toPlain(ns),
-})
-
-async function prettyPrintTurtle ({ dataset }) {
   const stream = await turtleSink.import(dataset.toStream())
   return await getStream(stream)
 }
 
-async function prettyPrintTrig ({ dataset }) {
+async function prettyPrintTrig ({ dataset, namespaces }) {
+  const trigSink = new TrigSerializer({
+    prefixes: toPlain(namespaces ?? ns),
+  })
   const stream = await trigSink.import(dataset.toStream())
   return await getStream(stream)
 }
 
-const rdfSink = new RdfXmlSerializer({
-  prefixes: toPlain(ns),
-})
-async function printRDFXML ({ dataset }) {
+async function printRDFXML ({ dataset, namespaces }) {
+  const rdfSink = new RdfXmlSerializer({
+    prefixes: toPlain(namespaces ?? ns),
+  })
   const stream = await rdfSink.import(dataset.toStream())
   return await getStream(stream)
 }
 
-export { prettyPrintTurtle, prettyPrintTrig, printRDFXML}
+export { prettyPrintTurtle, prettyPrintTrig, printRDFXML }

@@ -43,7 +43,7 @@ function toShacl (g, { id }) {
   return toTurtle(g,
     {
       ...iriPatterns(id),
-      definedBy: `${id}-shape:${id}-shape`,
+      definedBy: `${id}-shape:`,
       namespaces: { ...ns, ...aliases },
     },
   )
@@ -77,9 +77,12 @@ async function writeModule (module) {
   mkdirSync(targetDir, { recursive: true })
 
   const g = filterByModule(eaJson, prefix)
+  const shapePrefix = `${id}-shape`
+  const shapeNamespace = `http://data.europa.eu/a4g/data-shape/${id}/`
+  const namespaces = { ...ns, [shapePrefix]: rdf.namespace(shapeNamespace) }
 
   const uglyturtle = `
-  @prefix ${id}-shape: <http://data.europa.eu/a4g/data-shape#> .
+  @prefix ${shapePrefix}: <${shapeNamespace}> .
 
   ${toShacl(g, module)}
   ${shaclMetadata(id)}
@@ -88,12 +91,15 @@ async function writeModule (module) {
   const dataset = await rdf.dataset().
     addAll([...new Parser().parse(uglyturtle)])
 
-  const turtle = await prettyPrintTurtle({ dataset })
+  const turtle = await prettyPrintTurtle({
+    dataset,
+    namespaces,
+  })
   const turtlePath = `${targetDir}/${name}_shapes.ttl`
   writeFileSync(turtlePath, turtle)
   console.log('wrote', dataset.size, 'triples', turtlePath)
 
-  const xml = await printRDFXML(({ dataset }))
+  const xml = await printRDFXML(({ dataset, namespaces }))
   const xmlPath = `${targetDir}/${name}_shapes.rdf`
   writeFileSync(xmlPath, xml)
   console.log('wrote', dataset.size, 'triples', xmlPath)
