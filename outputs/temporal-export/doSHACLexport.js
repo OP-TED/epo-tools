@@ -5,6 +5,7 @@ import { INHERITANCE } from '../../src/conceptualModel/const.js'
 import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
 import { UNDER_REVIEW } from '../../src/config.js'
 import {
+  filterByModule,
   getJson,
 } from '../../src/epo/readEpo.js'
 import { prettyPrintTurtle, printRDFXML } from '../../src/io/serialization.js'
@@ -47,18 +48,6 @@ function toShacl (g, { id }) {
       namespaces: { ...ns, ...aliases },
     },
   )
-}
-
-// For a module
-// Include all edges that have prefix as s or p
-// Include all s of such edges
-function filterByModule (g, prefix) {
-  const edges = eaJson.edges.filter(
-    ({ source, predicate }) => source.startsWith(prefix) ||
-      predicate.startsWith(prefix))
-  const allNodes = new Set(edges.map(x => x.source))
-  const nodes = eaJson.nodes.filter(x => allNodes.has(x.name))
-  return { edges, nodes }
 }
 
 const rawJson = getJson({ databasePath })

@@ -2288,6 +2288,99 @@ class \\"epo-ful:TransportMeansOperator\\" {
   Object {
     "current": "
 @startuml
+class \\"locn:Address\\" {
+  epo:hasCountryCode : at-voc:country [0..1]
+  epo:hasNutsCode : at-voc:nuts [0..1]
+  locn:addressArea : rdf:PlainLiteral [0..1]
+  locn:addressID : adms:Identifier [0..1]
+  locn:adminUnitL1 : rdf:PlainLiteral [0..1]
+  locn:adminUnitL2 : rdf:PlainLiteral [0..1]
+  locn:fullAddress : rdf:PlainLiteral [0..1]
+  locn:locatorDesignator : rdf:PlainLiteral [0..1]
+  locn:locatorName : rdf:PlainLiteral [0..1]
+  locn:postCode : rdf:PlainLiteral [0..1]
+  locn:postName : rdf:PlainLiteral [0..1]
+  locn:thoroughfare : rdf:PlainLiteral [0..1]
+}
+
+class \\"locn:Geometry\\" {
+  cv:coordinates : rdf:PlainLiteral [0..*]
+  cv:latitude : rdf:PlainLiteral [0..*]
+  cv:longitude : rdf:PlainLiteral [0..*]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+class \\"locn:Address\\" {
+  epo:hasCountryCode : at-voc:country [0..1]
+  epo:hasNutsCode : at-voc:nuts [0..1]
+}
+
+@enduml
+",
+    "title": "locn",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"foaf:Agent\\" {
+  adms:identifier : adms:Identifier [0..*]
+  dct:title : rdf:PlainLiteral [0..*]
+  epo:hasAlias : rdf:PlainLiteral [0..*]
+}
+
+class \\"foaf:Person\\" {
+  epo:hasCertification : epo:Certificate [0..*]
+}
+\\"foaf:Agent\\" <|-- \\"foaf:Person\\"
+@enduml
+",
+    "prev": "
+@startuml
+class \\"foaf:Agent\\" {
+  epo:hasAlias : rdf:PlainLiteral [0..*]
+}
+
+class \\"foaf:Person\\" {
+  epo:hasCertification : epo:Certificate [0..*]
+}
+
+@enduml
+",
+    "title": "foaf",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"cpov:ContactPoint\\" {
+  cpov:email : rdf:PlainLiteral [0..*]
+  cpov:telephone : rdf:PlainLiteral [0..*]
+  dct:description : rdf:PlainLiteral [0..*]
+  epo:hasContactName : rdf:PlainLiteral [0..1]
+  epo:hasFax : rdf:PlainLiteral [0..*]
+  epo:hasInternetAddress : xsd:anyURI [0..1]
+  locn:address : locn:Address [0..1]
+}
+\\"org:Organization\\" <|-- \\"cpov:PublicOrganisation\\"
+@enduml
+",
+    "prev": "
+@startuml
+class \\"cpov:ContactPoint\\" {
+  epo:hasContactName : rdf:PlainLiteral [0..1]
+  epo:hasFax : rdf:PlainLiteral [0..*]
+  epo:hasInternetAddress : xsd:anyURI [0..1]
+}
+
+@enduml
+",
+    "title": "cpov",
+  },
+  Object {
+    "current": "
+@startuml
 class \\"epo-not:CANDefence-D81\\" {
   epo:hasFormType : Form18 [0..1]
   epo:hasLegalBasis : Directive_81 [0..1]
@@ -3665,6 +3758,78 @@ class \\"epo-not:eFormsNotice\\" {
   Object {
     "current": "
 @startuml
+class \\"org:Organization\\" {
+  cv:registeredAddress : locn:Address [0..1]
+  epo:canProvideNonDiscriminatoryEvidence : cccev:Evidence [0..*]
+  epo:canProvideTaxAndSocialSecuritiesEvidence : cccev:Evidence [0..*]
+  epo:hasBuyerLegalType : at-voc:buyer-legal-type [0..1]
+  epo:hasBuyerLegalTypeDescription : rdf:PlainLiteral [0..1]
+  epo:hasCertification : epo:Certificate [0..*]
+  epo:hasInternetAddress : xsd:anyURI [0..*]
+  epo:hasLegalFormType : rdf:PlainLiteral [0..1]
+  epo:hasLegalIdentifier : adms:Identifier [0..*]
+  epo:hasLegalName : rdf:PlainLiteral [0..*]
+  epo:hasMainActivity : at-voc:main-activity [0..1]
+  epo:hasMainActivityDescription : rdf:PlainLiteral [0..1]
+  epo:hasPrimaryContactPoint : cpov:ContactPoint [0..1]
+  epo:hasRegistrationCountry : at-voc:country [0..1]
+  epo:hasTaxIdentifier : adms:Identifier [0..*]
+  locn:address : locn:Address [0..*]
+  org:subOrganizationOf : org:Organization [0..*]
+}
+\\"foaf:Agent\\" <|-- \\"org:Organization\\"
+@enduml
+",
+    "prev": "
+@startuml
+class \\"org:Organization\\" {
+  epo:hasBuyerLegalType : at-voc:buyer-legal-type [0..1]
+  epo:hasBuyerLegalTypeDescription : rdf:PlainLiteral [0..1]
+  epo:hasCertification : epo:Certificate [0..*]
+  epo:hasInternetAddress : xsd:anyURI [0..*]
+  epo:hasLegalFormType : rdf:PlainLiteral [0..1]
+  epo:hasLegalIdentifier : adms:Identifier [0..*]
+  epo:hasLegalName : rdf:PlainLiteral [0..*]
+  epo:hasMainActivity : at-voc:main-activity [0..1]
+  epo:hasMainActivityDescription : rdf:PlainLiteral [0..1]
+  epo:hasPrimaryContactPoint : cpov:ContactPoint [0..*]
+  epo:hasRegistrationCountry : at-voc:country [0..1]
+  epo:hasTaxIdentifier : adms:Identifier [0..*]
+}
+
+@enduml
+",
+    "title": "org",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"dct:Location\\" {
+  adms:identifier : adms:Identifier [0..1]
+  epo:hasCountryCode : at-voc:country [0..1]
+  epo:hasNutsCode : at-voc:nuts [0..1]
+  locn:address : locn:Address [0..1]
+  locn:geographicIdentifier : adms:Identifier [0..1]
+  locn:geographicName : rdf:PlainLiteral [0..1]
+  locn:geometry : locn:Geometry [0..1]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+class \\"dct:Location\\" {
+  epo:hasCountryCode : at-voc:country [0..1]
+  epo:hasNutsCode : at-voc:nuts [0..1]
+}
+
+@enduml
+",
+    "title": "dct",
+  },
+  Object {
+    "current": "
+@startuml
 class \\"epo-con:ContractAmendment\\" {
   epo:amendsContract : epo:Contract [1]
   epo:updatesContractValue : epo:MonetaryValue [0..1]
@@ -4023,6 +4188,164 @@ class \\"epo-cat:Price\\" {
   Object {
     "current": "
 @startuml
+class \\"person:Person\\" {
+  cv:birthDate : xsd:date [0..1]
+  cv:registeredAddress : locn:Address [0..1]
+  dct:alternative : rdf:PlainLiteral [0..*]
+  epo:hasCountryOfBirth : at-voc:country [0..1]
+  epo:hasNationality : at-voc:country [0..*]
+  foaf:familyName : rdf:PlainLiteral [0..*]
+  foaf:givenName : rdf:PlainLiteral [0..*]
+  foaf:name : rdf:PlainLiteral [0..*]
+  person:birthName : rdf:PlainLiteral [0..*]
+  person:patronymicName : rdf:PlainLiteral [0..*]
+}
+\\"foaf:Person\\" <|-- \\"person:Person\\"
+@enduml
+",
+    "prev": "
+@startuml
+class \\"person:Person\\" {
+  epo:hasCountryOfBirth : at-voc:country [0..1]
+  epo:hasNationality : at-voc:country [0..*]
+}
+
+@enduml
+",
+    "title": "person",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"adms:Identifier\\" {
+  adms:schemaAgency : rdf:PlainLiteral [0..*]
+  epo:hasScheme : rdf:PlainLiteral [0..*]
+  epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
+  skos:notation : rdf:PlainLiteral [1..1]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+class \\"adms:Identifier\\" {
+  epo:hasScheme : rdf:PlainLiteral [0..*]
+  epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
+}
+
+@enduml
+",
+    "title": "adms",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"cccev:Constraint\\" {
+  cccev:constrains : cccev:InformationConcept [0..*]
+  epo:hasThresholdType : at-voc:number-threshold [0..*]
+  epo:hasThresholdValue : xsd:decimal [1..1]
+}
+
+class \\"cccev:Criterion\\" {
+  cccev:bias : xsd:decimal [0..1]
+  cccev:weight : xsd:decimal [0..1]
+  cccev:weightingConsiderationDescription : rdf:PlainLiteral [0..1]
+  dct:type : at-voc:criterion [0..1]
+}
+
+class \\"cccev:Evidence\\" {
+  adms:identifier : adms:Identifier [1]
+  cccev:confidentialityLevelType : at-voc:access-rights [0..1]
+  cccev:supportsConcept : cccev:InformationConcept [0..*]
+  cccev:supportsRequirement : cccev:Requirement [0..*]
+  cccev:supportsValue : cccev:SupportedValue [0..*]
+  dct:conformsTo : cccev:EvidenceType [0..*]
+  dct:description : rdf:PlainLiteral [0..1]
+  epo:hasURL : xsd:anyURI [0..1]
+  epo:hasValidityPeriod : epo:Period [0..1]
+}
+
+class \\"cccev:EvidenceType\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:validityPeriodConstraint : epo:Period [0..*]
+}
+
+class \\"cccev:EvidenceTypeList\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:specifiesEvidenceType : cccev:EvidenceType [0..*]
+  dct:description : rdf:PlainLiteral [1..1]
+  skos:prefLabel : rdf:PlainLiteral [0..*]
+}
+
+class \\"cccev:InformationConcept\\" {
+  adms:identifier : adms:Identifier [0..1]
+  dct:description : rdf:PlainLiteral [0..*]
+  skos:prefLabel : rdf:PlainLiteral [0..*]
+}
+
+class \\"cccev:InformationRequirement\\" {
+  epo:hasConstraint : cccev:Constraint [0..*]
+}
+
+class \\"cccev:Requirement\\" {
+  adms:identifier : adms:Identifier [0..1]
+  cccev:hasConcept : cccev:InformationConcept [0..*]
+  cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
+  cccev:hasRequirement : cccev:Requirement [0..*]
+  cccev:isDerivedFrom : eli:LegalResource [0..*]
+  dct:description : rdf:PlainLiteral [0..1]
+  skos:prefLabel : rdf:PlainLiteral [0..1]
+}
+
+class \\"cccev:SupportedValue\\" {
+  cccev:providesValueFor : cccev:InformationConcept [0..*]
+  cccev:value : rdf:PlainLiteral [0..*]
+}
+\\"cccev:Requirement\\" <|-- \\"cccev:Constraint\\"
+\\"cccev:Requirement\\" <|-- \\"cccev:Criterion\\"
+\\"cccev:Requirement\\" <|-- \\"cccev:InformationRequirement\\"
+@enduml
+",
+    "prev": "
+@startuml
+class \\"cccev:Constraint\\" {
+  epo:hasThresholdType : at-voc:number-threshold [0..*]
+  epo:hasThresholdValue : xsd:decimal [1..1]
+}
+
+class \\"cccev:Evidence\\" {
+  epo:hasValidityPeriod : epo:Period [0..1]
+}
+
+@enduml
+",
+    "title": "cccev",
+  },
+  Object {
+    "current": "
+@startuml
+class \\"cv:Channel\\" {
+  dct:description : rdf:PlainLiteral [0..1]
+  epo:hasAddressURL : xsd:anyURI [0..1]
+  epo:hasEndpointIdentifier : adms:Identifier [0..*]
+}
+
+@enduml
+",
+    "prev": "
+@startuml
+class \\"cv:Channel\\" {
+  epo:hasAddressURL : xsd:anyURI [0..1]
+  epo:hasEndpointIdentifier : adms:Identifier [0..*]
+}
+
+@enduml
+",
+    "title": "cv",
+  },
+  Object {
+    "current": "
+@startuml
 class \\"epo-sub:CertificateInformation\\" {
   dct:description : rdf:PlainLiteral [0..1]
   epo-sub:coversAllSelectionCriteria : xsd:boolean [0..1]
@@ -4104,63 +4427,6 @@ class \\"epo-sub:Response\\" {
   Object {
     "current": "
 @startuml
-class \\"locn:Address\\" {
-  epo:hasCountryCode : at-voc:country [0..1]
-  epo:hasNutsCode : at-voc:nuts [0..1]
-  locn:addressArea : rdf:PlainLiteral [0..1]
-  locn:addressID : adms:Identifier [0..1]
-  locn:adminUnitL1 : rdf:PlainLiteral [0..1]
-  locn:adminUnitL2 : rdf:PlainLiteral [0..1]
-  locn:fullAddress : rdf:PlainLiteral [0..1]
-  locn:locatorDesignator : rdf:PlainLiteral [0..1]
-  locn:locatorName : rdf:PlainLiteral [0..1]
-  locn:postCode : rdf:PlainLiteral [0..1]
-  locn:postName : rdf:PlainLiteral [0..1]
-  locn:thoroughfare : rdf:PlainLiteral [0..1]
-}
-
-class \\"locn:Geometry\\" {
-  cv:coordinates : rdf:PlainLiteral [0..*]
-  cv:latitude : rdf:PlainLiteral [0..*]
-  cv:longitude : rdf:PlainLiteral [0..*]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "locn",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"foaf:Agent\\" {
-  adms:identifier : adms:Identifier [0..*]
-  dct:title : rdf:PlainLiteral [0..*]
-  epo:hasAlias : rdf:PlainLiteral [0..*]
-}
-
-class \\"foaf:Person\\" {
-  epo:hasCertification : epo:Certificate [0..*]
-}
-\\"foaf:Agent\\" <|-- \\"foaf:Person\\"
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "foaf",
-  },
-  Object {
-    "current": "
-@startuml
 
 
 @enduml
@@ -4176,188 +4442,6 @@ class \\"foaf:Person\\" {
   Object {
     "current": "
 @startuml
-class \\"cpov:ContactPoint\\" {
-  cpov:email : rdf:PlainLiteral [0..*]
-  cpov:telephone : rdf:PlainLiteral [0..*]
-  dct:description : rdf:PlainLiteral [0..*]
-  epo:hasContactName : rdf:PlainLiteral [0..1]
-  epo:hasFax : rdf:PlainLiteral [0..*]
-  epo:hasInternetAddress : xsd:anyURI [0..1]
-  locn:address : locn:Address [0..1]
-}
-\\"org:Organization\\" <|-- \\"cpov:PublicOrganisation\\"
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "cpov",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"org:Organization\\" {
-  cv:registeredAddress : locn:Address [0..1]
-  epo:canProvideNonDiscriminatoryEvidence : cccev:Evidence [0..*]
-  epo:canProvideTaxAndSocialSecuritiesEvidence : cccev:Evidence [0..*]
-  epo:hasBuyerLegalType : at-voc:buyer-legal-type [0..1]
-  epo:hasBuyerLegalTypeDescription : rdf:PlainLiteral [0..1]
-  epo:hasCertification : epo:Certificate [0..*]
-  epo:hasInternetAddress : xsd:anyURI [0..*]
-  epo:hasLegalFormType : rdf:PlainLiteral [0..1]
-  epo:hasLegalIdentifier : adms:Identifier [0..*]
-  epo:hasLegalName : rdf:PlainLiteral [0..*]
-  epo:hasMainActivity : at-voc:main-activity [0..1]
-  epo:hasMainActivityDescription : rdf:PlainLiteral [0..1]
-  epo:hasPrimaryContactPoint : cpov:ContactPoint [0..1]
-  epo:hasRegistrationCountry : at-voc:country [0..1]
-  epo:hasTaxIdentifier : adms:Identifier [0..*]
-  locn:address : locn:Address [0..*]
-  org:subOrganizationOf : org:Organization [0..*]
-}
-\\"foaf:Agent\\" <|-- \\"org:Organization\\"
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "org",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"dct:Location\\" {
-  adms:identifier : adms:Identifier [0..1]
-  epo:hasCountryCode : at-voc:country [0..1]
-  epo:hasNutsCode : at-voc:nuts [0..1]
-  locn:address : locn:Address [0..1]
-  locn:geographicIdentifier : adms:Identifier [0..1]
-  locn:geographicName : rdf:PlainLiteral [0..1]
-  locn:geometry : locn:Geometry [0..1]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "dct",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"cccev:Constraint\\" {
-  cccev:constrains : cccev:InformationConcept [0..*]
-  epo:hasThresholdType : at-voc:number-threshold [0..*]
-  epo:hasThresholdValue : xsd:decimal [1..1]
-}
-
-class \\"cccev:Criterion\\" {
-  cccev:bias : xsd:decimal [0..1]
-  cccev:weight : xsd:decimal [0..1]
-  cccev:weightingConsiderationDescription : rdf:PlainLiteral [0..1]
-  dct:type : at-voc:criterion [0..1]
-}
-
-class \\"cccev:Evidence\\" {
-  adms:identifier : adms:Identifier [1]
-  cccev:confidentialityLevelType : at-voc:access-rights [0..1]
-  cccev:supportsConcept : cccev:InformationConcept [0..*]
-  cccev:supportsRequirement : cccev:Requirement [0..*]
-  cccev:supportsValue : cccev:SupportedValue [0..*]
-  dct:conformsTo : cccev:EvidenceType [0..*]
-  dct:description : rdf:PlainLiteral [0..1]
-  epo:hasURL : xsd:anyURI [0..1]
-  epo:hasValidityPeriod : epo:Period [0..1]
-}
-
-class \\"cccev:EvidenceType\\" {
-  adms:identifier : adms:Identifier [0..1]
-  cccev:validityPeriodConstraint : epo:Period [0..*]
-}
-
-class \\"cccev:EvidenceTypeList\\" {
-  adms:identifier : adms:Identifier [0..1]
-  cccev:specifiesEvidenceType : cccev:EvidenceType [0..*]
-  dct:description : rdf:PlainLiteral [1..1]
-  skos:prefLabel : rdf:PlainLiteral [0..*]
-}
-
-class \\"cccev:InformationConcept\\" {
-  adms:identifier : adms:Identifier [0..1]
-  dct:description : rdf:PlainLiteral [0..*]
-  skos:prefLabel : rdf:PlainLiteral [0..*]
-}
-
-class \\"cccev:InformationRequirement\\" {
-  epo:hasConstraint : cccev:Constraint [0..*]
-}
-
-class \\"cccev:Requirement\\" {
-  adms:identifier : adms:Identifier [0..1]
-  cccev:hasConcept : cccev:InformationConcept [0..*]
-  cccev:hasEvidenceTypeList : cccev:EvidenceTypeList [0..*]
-  cccev:hasRequirement : cccev:Requirement [0..*]
-  cccev:isDerivedFrom : eli:LegalResource [0..*]
-  dct:description : rdf:PlainLiteral [0..1]
-  skos:prefLabel : rdf:PlainLiteral [0..1]
-}
-
-class \\"cccev:SupportedValue\\" {
-  cccev:providesValueFor : cccev:InformationConcept [0..*]
-  cccev:value : rdf:PlainLiteral [0..*]
-}
-\\"cccev:Requirement\\" <|-- \\"cccev:Constraint\\"
-\\"cccev:Requirement\\" <|-- \\"cccev:Criterion\\"
-\\"cccev:Requirement\\" <|-- \\"cccev:InformationRequirement\\"
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "cccev",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"person:Person\\" {
-  cv:birthDate : xsd:date [0..1]
-  cv:registeredAddress : locn:Address [0..1]
-  dct:alternative : rdf:PlainLiteral [0..*]
-  epo:hasCountryOfBirth : at-voc:country [0..1]
-  epo:hasNationality : at-voc:country [0..*]
-  foaf:familyName : rdf:PlainLiteral [0..*]
-  foaf:givenName : rdf:PlainLiteral [0..*]
-  foaf:name : rdf:PlainLiteral [0..*]
-  person:birthName : rdf:PlainLiteral [0..*]
-  person:patronymicName : rdf:PlainLiteral [0..*]
-}
-\\"foaf:Person\\" <|-- \\"person:Person\\"
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "person",
-  },
-  Object {
-    "current": "
-@startuml
 
 
 @enduml
@@ -4369,26 +4453,6 @@ class \\"person:Person\\" {
 @enduml
 ",
     "title": "time",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"adms:Identifier\\" {
-  adms:schemaAgency : rdf:PlainLiteral [0..*]
-  epo:hasScheme : rdf:PlainLiteral [0..*]
-  epo:hasSchemeVersion : rdf:PlainLiteral [0..*]
-  skos:notation : rdf:PlainLiteral [1..1]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "adms",
   },
   Object {
     "current": "
@@ -4465,25 +4529,6 @@ class \\"eli:Work\\" {
 @enduml
 ",
     "title": "eli",
-  },
-  Object {
-    "current": "
-@startuml
-class \\"cv:Channel\\" {
-  dct:description : rdf:PlainLiteral [0..1]
-  epo:hasAddressURL : xsd:anyURI [0..1]
-  epo:hasEndpointIdentifier : adms:Identifier [0..*]
-}
-
-@enduml
-",
-    "prev": "
-@startuml
-
-
-@enduml
-",
-    "title": "cv",
   },
 ]
 `;

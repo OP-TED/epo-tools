@@ -1,38 +1,26 @@
 import { readFileSync } from 'fs'
 import { bufferToJson } from '../conceptualModel/ea-to-json.js'
-import { startsWith } from '../conceptualModel/filter.js'
 
 function getJson ({ databasePath }) {
   const buffer = readFileSync(databasePath)
   return bufferToJson({ buffer })
 }
 
-const narrowToEpo = (g) => startsWith(g, 'epo')
-
 function getEpoJson ({ databasePath }) {
-  const json = getJson({ databasePath })
-  return narrowToEpo(json)
+  const g = getJson({ databasePath })
+  return filterByModule(g, 'epo')
 }
 
-function noObjectNodes (g) {
-  const toFilter = new Set(
-    g.nodes.filter(x => x.type === 'Object').map(x => x.name))
-  return {
-    nodes: g.nodes.filter(x => !toFilter.has(x.name)),
-    edges: g.edges.filter(
-      x => !(toFilter.has(x.source) || toFilter.has(x.target))),
-  }
+// For a module
+// Include all edges that have prefix as s or p
+// Include all s of such edges
+function filterByModule (g, prefix) {
+  const edges = g.edges.filter(
+    ({ source, predicate }) => source.startsWith(prefix) ||
+      predicate.startsWith(prefix))
+  const allNodes = new Set(edges.map(x => x.source))
+  const nodes = g.nodes.filter(x => allNodes.has(x.name))
+  return { edges, nodes }
 }
 
-function noTemporaryVocab (g) {
-  const toFilter = new Set(
-    g.nodes.filter(x => x.name.startsWith('at-voc-new')).map(x => x.name))
-  return {
-    nodes: g.nodes.filter(x => !toFilter.has(x.name)),
-    edges: g.edges.filter(
-      x => !(toFilter.has(x.source) || toFilter.has(x.target))),
-  }
-}
-
-
-export { getJson, getEpoJson, noObjectNodes, noTemporaryVocab }
+export { getJson, getEpoJson, filterByModule }
