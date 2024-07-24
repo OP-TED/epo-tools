@@ -113,8 +113,6 @@ a4g:Modification-D25 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 a4g:ProcurementObject rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:PlannedProcurementPart .
 
-a4g:ContextualProjection rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:BudgetProvider rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:Reviewer, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
 
@@ -269,6 +267,8 @@ a4g:DirectAwardTerm rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 a4g:Notice28 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Notice40, a4g:Notice34, a4g:Notice19, a4g:Notice29, a4g:Notice6, a4g:Notice18, a4g:Notice9, a4g:Notice12, a4g:Notice17, a4g:Notice32, a4g:Notice30, a4g:Notice7, a4g:Notice24, a4g:Notice35, a4g:Notice13, a4g:Notice31, a4g:Notice8, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:Notice16, a4g:Notice39, a4g:VEAT-D25, a4g:Notice10, a4g:Notice14, a4g:Notice23, a4g:Notice15, a4g:Notice36, a4g:Notice26, a4g:Notice5, a4g:Notice38, a4g:Notice25, a4g:Notice22, a4g:Notice3, a4g:Notice33, a4g:Notice27, a4g:Notice21, a4g:Notice11, a4g:Notice1, a4g:Notice2, a4g:Notice4, a4g:Notice37, a4g:Notice20 .
 
+org:Organization rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:QSNotice rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:CNSocialNotice, a4g:PIN-CFCSocialNotice, a4g:PIN-CFCStandardNotice, a4g:DesignContestNotice, a4g:CNStandardNotice, a4g:SubcontractNotice .
 
@@ -384,6 +384,8 @@ a4g:OriginatorInformation rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> 
 a4g:DesignContestNotice rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:CNSocialNotice, a4g:PIN-CFCSocialNotice, a4g:QSNotice, a4g:PIN-CFCStandardNotice, a4g:CNStandardNotice, a4g:SubcontractNotice .
 
+dcterms:Location rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:Batch rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:Modification-D23 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
@@ -412,6 +414,8 @@ a4g:TenderAwardOutcome rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 
 a4g:QSNotice-D25 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Modification-D25, a4g:Subcontract-D81, a4g:DesignContestResult-D24, a4g:PINOnly-D24, a4g:PIN-CFCSocialNotice-D25, a4g:PINProfile-D24, a4g:CNSocial-D25, a4g:PIN-CFCSocial-D25, a4g:VEAT-D23, a4g:PIN-RTL-D25, a4g:VEAT-D81, a4g:Modification-D23, a4g:VEAT-D24, a4g:VEAT-D25, a4g:DesignContestResult-D25, a4g:ConcessionNotice-D23, a4g:PIN-CFCStandard-D24, a4g:Notice15, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:Modification-D24, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:QS-D25, a4g:ConcessionAwardNotice-D23, a4g:CANSocialNotice-D25, a4g:CANDefence-D81, a4g:PIN-RTL-D24, a4g:CANSocial-D25, a4g:CNSocialNotice-D25, a4g:DesignContest-D24, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:DesignContest-D25, a4g:PINOnly-D25, a4g:PINProfile-D25 .
+
+foaf:Person rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:SocialProcurement rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:InnovativeProcurement, a4g:GreenProcurement .
@@ -454,6 +458,8 @@ a4g:Business rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 a4g:NonDisclosureAgreementTerm rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:ParticipationRequestTerm, a4g:OpeningTerm, a4g:AccessTerm, a4g:SecurityClearanceTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm .
 
+m8g:Constraint rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:ConcessionNotice-D23 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Modification-D25, a4g:Subcontract-D81, a4g:DesignContestResult-D24, a4g:PINOnly-D24, a4g:PIN-CFCSocialNotice-D25, a4g:PINProfile-D24, a4g:CNSocial-D25, a4g:PIN-CFCSocial-D25, a4g:VEAT-D23, a4g:PIN-RTL-D25, a4g:VEAT-D81, a4g:Modification-D23, a4g:VEAT-D24, a4g:QSNotice-D25, a4g:VEAT-D25, a4g:DesignContestResult-D25, a4g:PIN-CFCStandard-D24, a4g:CNDefence-D81, a4g:SocialAndOtherSpecificServices-D23, a4g:Modification-D24, a4g:CANStandard-D24, a4g:CNStandard-D24, a4g:QS-D25, a4g:ConcessionAwardNotice-D23, a4g:CANSocialNotice-D25, a4g:CANDefence-D81, a4g:PIN-RTL-D24, a4g:CANSocial-D25, a4g:CNSocialNotice-D25, a4g:DesignContest-D24, a4g:SocialAndOtherSpecificServices-D24, a4g:PINProfile-D81, a4g:DesignContest-D25, a4g:PINOnly-D25, a4g:PINProfile-D25 .
 
@@ -471,6 +477,8 @@ a4g:PIN-CFCStandard-D24 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 
 a4g:TransportEquipment rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+foaf:Agent rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:DespatchLine rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:OrderLine, a4g:CatalogueLine .
 
@@ -480,10 +488,12 @@ a4g:ChangeInformation rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 a4g:Estimate rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:ContractLotCompletionInformation, a4g:InformationHub, a4g:ContractModificationInformation, a4g:StatisticalInformation, a4g:NoticeAwardInformation, a4g:ChangeInformation, a4g:NonPublishedInformation, a4g:ProcurementProcessInformation, a4g:LotGroupAwardInformation .
 
-a4g:Term rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+person:Person rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:Notice23 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Notice40, a4g:Notice34, a4g:Notice19, a4g:Notice29, a4g:Notice6, a4g:Notice18, a4g:Notice9, a4g:Notice12, a4g:Notice17, a4g:Notice32, a4g:Notice30, a4g:Notice28, a4g:Notice7, a4g:Notice24, a4g:Notice35, a4g:Notice13, a4g:Notice31, a4g:Notice8, a4g:Notice16, a4g:Notice39, a4g:Notice10, a4g:Notice14, a4g:Notice15, a4g:Notice36, a4g:Notice26, a4g:Notice5, a4g:Notice38, a4g:Notice25, a4g:Notice22, a4g:Notice3, a4g:Notice33, a4g:DesignContest-D24, a4g:Notice27, a4g:Notice21, a4g:Notice11, a4g:Notice1, a4g:Notice2, a4g:DesignContest-D25, a4g:Notice4, a4g:Notice37, a4g:Notice20 .
+
+adms:Identifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:Notice15 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Notice40, a4g:Notice34, a4g:Notice19, a4g:Notice29, a4g:Notice6, a4g:Notice18, a4g:Notice9, a4g:Notice12, a4g:Notice17, a4g:Notice32, a4g:Notice30, a4g:Notice28, a4g:Notice7, a4g:Notice24, a4g:Notice35, a4g:Notice13, a4g:Notice31, a4g:Notice8, a4g:Notice16, a4g:QSNotice-D25, a4g:Notice39, a4g:Notice10, a4g:Notice14, a4g:Notice23, a4g:Notice36, a4g:Notice26, a4g:Notice5, a4g:QS-D25, a4g:Notice38, a4g:Notice25, a4g:Notice22, a4g:Notice3, a4g:Notice33, a4g:Notice27, a4g:Notice21, a4g:Notice11, a4g:Notice1, a4g:Notice2, a4g:Notice4, a4g:Notice37, a4g:Notice20 .
@@ -500,6 +510,8 @@ a4g:SelectionCriterion rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 a4g:Price rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:VehicleInformation rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+m8g:ContactPoint rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:ExpressionOfInterest rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:PostAwardDocument, a4g:Tender, a4g:RequestForClarification, a4g:AwardDecision, a4g:Offer, a4g:ProcurementDocument, a4g:Notice, a4g:ReviewObject, a4g:RequestForParticipation, a4g:OriginatorRequest, a4g:Contract .
@@ -520,8 +532,6 @@ a4g:CNDefence-D81 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 
 a4g:OpeningTerm rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:MultipleStageProcedureTerm, a4g:EvaluationTerm, a4g:ProcedureTerm, a4g:DirectAwardTerm, a4g:DesignContestRegimeTerm, a4g:ReviewTerm, a4g:NonDisclosureAgreementTerm, a4g:ParticipationRequestTerm, a4g:AccessTerm, a4g:SecurityClearanceTerm, a4g:FrameworkAgreementTerm, a4g:SubmissionTerm .
-
-a4g:ContextDescription rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:Reviewer rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Buyer, a4g:ReviewProcedureInformationProvider, a4g:BudgetProvider, a4g:ParticipationRequestReceiver, a4g:CatalogueReceiver, a4g:PaymentExecutor, a4g:ProcurementProcedureInformationProvider, a4g:Originator, a4g:Mediator, a4g:Awarder, a4g:TenderProcessor, a4g:ProcurementServiceProvider, a4g:JuryMember, a4g:TenderReceiver, a4g:ParticipationRequestProcessor, a4g:Consignee, a4g:OfflineAccessProvider .
@@ -601,6 +611,10 @@ a4g:QS-D25 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 a4g:OfferIssuer rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:Candidate, a4g:Contractor .
 
+m8g:Channel rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+m8g:Evidence rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:Candidate rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Contractor .
 
@@ -653,6 +667,8 @@ a4g:PIN-RTL-D24 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 
 a4g:Notice25 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:Notice40, a4g:Notice34, a4g:Notice19, a4g:Notice29, a4g:Notice6, a4g:Notice18, a4g:Notice9, a4g:Notice12, a4g:Notice17, a4g:Notice32, a4g:Notice30, a4g:Notice28, a4g:Notice7, a4g:Notice24, a4g:Notice35, a4g:Notice13, a4g:Notice31, a4g:Notice8, a4g:VEAT-D23, a4g:VEAT-D81, a4g:VEAT-D24, a4g:Notice16, a4g:Notice39, a4g:VEAT-D25, a4g:Notice10, a4g:Notice14, a4g:Notice23, a4g:Notice15, a4g:Notice36, a4g:Notice26, a4g:Notice5, a4g:Notice38, a4g:Notice22, a4g:Notice3, a4g:Notice33, a4g:Notice27, a4g:Notice21, a4g:Notice11, a4g:Notice1, a4g:Notice2, a4g:Notice4, a4g:Notice37, a4g:Notice20 .
+
+locn:Address rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:Prize rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -800,8 +816,6 @@ a4g:StandardFormsNotice rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 a4g:QualificationCriterion rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:AwardCriterion, a4g:ParticipationCondition .
 
-a4g:StandardForm rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
-
 a4g:Contractor rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 	owl:disjointWith a4g:CatalogueProvider, a4g:OtherEntity, a4g:ReviewRequester, a4g:Subcontractor, a4g:Manufacturer, a4g:Tenderer, a4g:Despatcher, a4g:Winner, a4g:Seller, a4g:OfferIssuer, a4g:Candidate .
 
@@ -882,9 +896,9 @@ a4g:PINProfileNotice rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> ;
 
 _:n3-0 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-101 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-100 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-105 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-104 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-108 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -894,11 +908,11 @@ _:n3-114 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-117 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-121 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-120 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-124 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-138 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-127 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-141 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -906,9 +920,9 @@ _:n3-144 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-147 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-151 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-150 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-154 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-153 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-157 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -924,11 +938,11 @@ _:n3-172 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-175 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-178 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-179 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-181 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-182 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-184 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-185 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-188 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -936,13 +950,19 @@ _:n3-191 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-194 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-197 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-198 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-200 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-201 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-203 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-204 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-207 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-21 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-210 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+_:n3-213 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-31 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -952,7 +972,7 @@ _:n3-38 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-41 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-45 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-44 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-48 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -962,9 +982,9 @@ _:n3-54 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-57 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-62 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-60 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-67 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-65 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-70 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -972,11 +992,11 @@ _:n3-73 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-76 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-82 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-79 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-85 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
-_:n3-91 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+_:n3-88 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 _:n3-94 rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -989,6 +1009,8 @@ a4g:hasBroadPlaceOfPerformance rdfs:isDefinedBy <http://data.europa.eu/a4g/ontol
 a4g:isSubmittedForLot rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasReceivedSubmissionType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+a4g:hasBuyerLegalType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:refersToDeliveryInformation rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -1039,6 +1061,8 @@ a4g:hasTraceID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 a4g:hasManufacturer rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasValidityPeriod rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+a4g:hasLegalIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:relatesToEFormSectionIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -1242,6 +1266,8 @@ a4g:hasRoundingAmount rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasConfirmedIrregularityType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+a4g:hasCountryCode rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:specifiesGeneralDeliveryAgreement rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:conformsToLegalBasis rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1302,6 +1328,8 @@ a4g:definesCatalogueReceiver rdfs:isDefinedBy <http://data.europa.eu/a4g/ontolog
 
 a4g:describesItem rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+a4g:hasMainActivity rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:isSubjectToTerm rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasConsigneeConsignmentID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1352,6 +1380,8 @@ a4g:specifiesSeller rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasDocumentStatus rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+a4g:hasThresholdType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:providesContractTotalPenaltyValue rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasAmount rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1369,6 +1399,8 @@ a4g:foreseesTechnique rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 a4g:hasLength rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:definesOpeningPlace rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+a4g:hasPrimaryContactPoint rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasHazardousItemUNDGCode rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -1458,6 +1490,8 @@ a4g:hasAwardCriterionType rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> 
 
 a4g:specifiesCarrier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+a4g:hasNutsCode rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:comprisesTender rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasDPSScope rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1542,6 +1576,8 @@ a4g:hasDeclaredStatisticalValue rdfs:isDefinedBy <http://data.europa.eu/a4g/onto
 
 a4g:hasAwardedValue rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+a4g:hasCountryOfBirth rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:resolvesReviewRequest rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasReviewIrregularitySummary rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1585,6 +1621,8 @@ a4g:hasSerialID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 a4g:hasLateSubmissionPermission rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasOnCarriageShipmentStage rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+a4g:hasNationality rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:announcesAwardDecision rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
@@ -1700,6 +1738,8 @@ a4g:definesSpecificPlaceOfPerformance rdfs:isDefinedBy <http://data.europa.eu/a4
 
 a4g:specifiesDespatcher rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+a4g:hasTaxIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:specifiesBuyer rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:isProductionOf rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
@@ -1772,9 +1812,13 @@ a4g:comprisesOrderLine rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasFreightForwarderConsignmentID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
+a4g:hasEndpointIdentifier rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
 a4g:contextualisedBy rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasBatchID rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
+
+a4g:hasRegistrationCountry rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 
 a4g:hasVariantPermission rdfs:isDefinedBy <http://data.europa.eu/a4g/ontology> .
 

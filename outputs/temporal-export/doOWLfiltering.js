@@ -6,15 +6,17 @@ import {
 } from '../../src/io/serialization.js'
 import { getRedefined } from '../getRedefined.js'
 import { dirname } from 'path'
+import { UNDER_REVIEW } from '../../src/config.js'
 
-const globPattern = `assets/ePO/feature/4.1.0-rc.3/implementation/*/owl_ontology/*.ttl`
+const { localPath } = UNDER_REVIEW
+const globPattern = `${localPath}/implementation/*/owl_ontology/*.ttl`
 const assets = await getRdfAssets({ globPattern }, (path) => rdf.DefaultGraph)
 
 for (const asset of assets) {
   const redefined = getRedefined({ assets: [asset] })
 
   const { path, dataset } = asset
-  const targetPath = path.replaceAll('assets/ePO/feature/4.1.0-rc.3',
+  const targetPath = path.replaceAll(`${localPath}`,
     'outputs/temporal-export')
   mkdirSync(dirname(targetPath), { recursive: true })
 

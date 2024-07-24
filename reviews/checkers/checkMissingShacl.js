@@ -1,4 +1,6 @@
 import { writeFileSync, mkdirSync } from 'fs'
+import { INHERITANCE } from '../../src/conceptualModel/const.js'
+import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
 import { getEpoJson } from '../../src/epo/readEpo.js'
 import { getRdfAssets } from '../../src/io/assets.js'
 import { createTriplestore, doSelect } from '../../src/sparql/localStore.js'
@@ -13,7 +15,15 @@ async function checkMissingShacl ({
   const databasePath = `${sourceDirectory}/analysis_and_design/conceptual_model/ePO_CM.eap`
   const assets = await getRdfAssets({ globPattern })
   const store = createTriplestore({ assets })
-  const { nodes, edges } = getEpoJson({ databasePath })
+  const rawJson = getEpoJson({ databasePath })
+
+  const hasErrors = x => x.some(x => x.severity === 'error')
+
+  const { nodes, edges } = {
+    nodes: rawJson.nodes.filter(x => !hasErrors(inspectNode(x))),
+    edges: rawJson.edges.filter(x => !hasErrors(inspectEdge(x))).
+      filter(x => x.type !== INHERITANCE),
+  }
 
   function queryShapeForClass (clazz) {
 

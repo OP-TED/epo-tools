@@ -3,7 +3,11 @@ import { Parser } from 'n3'
 import rdf from 'rdf-ext'
 import { INHERITANCE } from '../../src/conceptualModel/const.js'
 import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
-import { getJson } from '../../src/epo/readEpo.js'
+import { UNDER_REVIEW } from '../../src/config.js'
+import {
+  filterByModule,
+  getJson,
+} from '../../src/epo/readEpo.js'
 import { prettyPrintTurtle, printRDFXML } from '../../src/io/serialization.js'
 import { aliases, ns } from '../../src/namespaces.js'
 import { stripPrefix } from '../../src/prefix/prefix.js'
@@ -12,8 +16,9 @@ import epoModules from './epoModules.json' assert { type: 'json' }
 import { shaclMetadata } from './metadata.js'
 
 const { modules } = epoModules
+const { localPath } = UNDER_REVIEW
 
-const databasePath = `assets/ePO/feature/4.1.0-rc.3/analysis_and_design/conceptual_model/ePO_CM.eap`
+const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
 
 function iriPatterns (id) {
   // Example: sub-shape:epo-sub-CertificateInformation-dct-description.
@@ -39,25 +44,14 @@ function toShacl (g, { id }) {
   return toTurtle(g,
     {
       ...iriPatterns(id),
-      definedBy: `${id}-shape:${id}-shape`,
+      definedBy: `${id}-shape:`,
       namespaces: { ...ns, ...aliases },
     },
   )
 }
 
-// For a module
-// Include all edges that have prefix as s or p
-// Include all s of such edges
-function filterByModule (g, prefix) {
-  const edges = eaJson.edges.filter(
-    ({ source, predicate }) => source.startsWith(prefix) ||
-      predicate.startsWith(prefix))
-  const allNodes = new Set(edges.map(x => x.source))
-  const nodes = eaJson.nodes.filter(x => allNodes.has(x.name))
-  return { edges, nodes }
-}
-
 const rawJson = getJson({ databasePath })
+
 const hasErrors = x => x.some(x => x.severity === 'error')
 
 const eaJson = {
@@ -72,9 +66,12 @@ async function writeModule (module) {
   mkdirSync(targetDir, { recursive: true })
 
   const g = filterByModule(eaJson, prefix)
+  const shapePrefix = `${id}-shape`
+  const shapeNamespace = `http://data.europa.eu/a4g/data-shape/${id}/`
+  const namespaces = { ...ns, [shapePrefix]: rdf.namespace(shapeNamespace) }
 
   const uglyturtle = `
-  @prefix ${id}-shape: <http://data.europa.eu/a4g/data-shape#> .
+  @prefix ${shapePrefix}: <${shapeNamespace}> .
 
   ${toShacl(g, module)}
   ${shaclMetadata(id)}
@@ -82,13 +79,16 @@ async function writeModule (module) {
 
   const dataset = await rdf.dataset().
     addAll([...new Parser().parse(uglyturtle)])
-  
-  const turtle = await prettyPrintTurtle({ dataset })
+
+  const turtle = await prettyPrintTurtle({
+    dataset,
+    namespaces,
+  })
   const turtlePath = `${targetDir}/${name}_shapes.ttl`
   writeFileSync(turtlePath, turtle)
   console.log('wrote', dataset.size, 'triples', turtlePath)
 
-  const xml = await printRDFXML(({dataset}))
+  const xml = await printRDFXML(({ dataset, namespaces }))
   const xmlPath = `${targetDir}/${name}_shapes.rdf`
   writeFileSync(xmlPath, xml)
   console.log('wrote', dataset.size, 'triples', xmlPath)

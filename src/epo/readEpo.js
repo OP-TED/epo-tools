@@ -1,17 +1,26 @@
 import { readFileSync } from 'fs'
 import { bufferToJson } from '../conceptualModel/ea-to-json.js'
-import { startsWith } from '../conceptualModel/filter.js'
 
 function getJson ({ databasePath }) {
   const buffer = readFileSync(databasePath)
   return bufferToJson({ buffer })
 }
 
-const narrowToEpo = (g) => startsWith(g, 'epo')
-
 function getEpoJson ({ databasePath }) {
-  const json = getJson({ databasePath })
-  return narrowToEpo(json)
+  const g = getJson({ databasePath })
+  return filterByModule(g, 'epo')
 }
 
-export { getJson,getEpoJson }
+// For a module
+// Include all edges that have prefix as s or p
+// Include all s of such edges
+function filterByModule (g, prefix) {
+  const edges = g.edges.filter(
+    ({ source, predicate }) => source.startsWith(prefix) ||
+      predicate.startsWith(prefix))
+  const allNodes = new Set(edges.map(x => x.source))
+  const nodes = g.nodes.filter(x => allNodes.has(x.name))
+  return { edges, nodes }
+}
+
+export { getJson, getEpoJson, filterByModule }
