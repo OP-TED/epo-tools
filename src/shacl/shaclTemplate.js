@@ -3,6 +3,7 @@ import {
 } from '../conceptualModel/const.js'
 import { ns, aliases } from '../namespaces.js'
 import {
+  capitalizeFirst,
   stripPrefix,
   toOneLine,
   toSpaced,
@@ -27,14 +28,6 @@ const toTurtle = (
     values[name] = description
   }
 
-  const common = `
-      <http://data.europa.eu/a4g/data-shape#PlainLiteral> a sh:NodeShape ;
-          sh:or (
-              [ sh:datatype xsd:string ]
-              [ sh:datatype rdf:langString ]
-          ) .
-          `
-
   function subclassTemplate (edge) {
     const { source, predicate, target } = edge
     return `
@@ -49,8 +42,10 @@ const toTurtle = (
 
     function getDatatype (target) {
       if (target === 'rdf:PlainLiteral') {
-        return `${propertyIRI(edge)}  sh:node <http://data.europa.eu/a4g/data-shape#PlainLiteral> .
-    `
+        return `${propertyIRI(edge)} sh:or ( [ sh:datatype xsd:string ] [ sh:datatype rdf:langString ] ) .
+        `
+        // return `${propertyIRI(edge)}  sh:node <http://data.europa.eu/a4g/data-shape#PlainLiteral> .
+        // `
       } else {
         return `${propertyIRI(edge)} sh:datatype ${target} .`
       }
@@ -124,40 +119,21 @@ const toTurtle = (
       // Note: For enums omit enumeration values for the moment until further clarification
       // sh:targetObjectsOf ?
       // sh:in ( ex:Pink ex:Purple ) ?
-      /**
-       # Shape for hasCountryOfOrigin property
-       a4g_shape:Item-hasCountryOfOrigin-country a shacl:PropertyShape ;
-       rdfs:isDefinedBy a4g_shape:cat-shape ;
-       shacl:path a4g:hasCountryOfOrigin ;
-       shacl:name "has country of origin"@en ;
-       shacl:maxCount 1 ;
-       shacl:node a4g_shape:CountryShape ;
-       shacl:nodeKind shacl:IRI .
-
-       # Shape for the value of hasCountryOfOrigin property
-       a4g_shape:CountryShape a shacl:NodeShape ;
-       shacl:property [
-       shacl:path skos:inScheme ;
-       shacl:hasValue atold:country ;
-       ] ;
-       shacl:nodeKind shacl:IRI .
-       **/
-
       return `
 
-     ${propertyIRI(edge)} shacl:node [
-         a shacl:NodeShape ;
-         shacl:property [
-            shacl:path skos:inScheme ;
-            shacl:hasValue ${target} 
+     ${propertyIRI(edge)} sh:node [
+         a sh:NodeShape ;
+         sh:property [
+            sh:path skos:inScheme ;
+            sh:hasValue ${target} 
          ]
       ] .`
     } else {
-      return `${propertyIRI(edge)} sh:targetClass ${target} .`
+      return `${propertyIRI(edge)} sh:class ${target} .`
     }
   }
 
-  return [prefix, common, ...output].join('\n')
+  return [prefix, ...output].join('\n')
 }
 
 function rdfsDefinedBy (definedBy) {
@@ -173,7 +149,8 @@ function shDescription (description) {
 }
 
 function shaclName (predicate) {
-  return predicate ? `sh:name "${toSpaced(stripPrefix(predicate))}"@en ;` : ''
+  return predicate ? `sh:name "${capitalizeFirst(
+    toSpaced(stripPrefix(predicate)))}";` : ''
 }
 
 const quantifiersTemplate = (quantifiers) => {

@@ -10,7 +10,7 @@ import {
 } from '../../src/epo/readEpo.js'
 import { prettyPrintTurtle, printRDFXML } from '../../src/io/serialization.js'
 import { aliases, ns } from '../../src/namespaces.js'
-import { stripPrefix } from '../../src/prefix/prefix.js'
+import { getPrefix, stripPrefix } from '../../src/prefix/prefix.js'
 import { toTurtle } from '../../src/shacl/shaclTemplate.js'
 import epoModules from './epoModules.json' assert { type: 'json' }
 import { shaclMetadata } from './metadata.js'
@@ -22,8 +22,8 @@ const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.e
 
 function iriPatterns (id) {
   // Example: sub-shape:epo-sub-CertificateInformation-dct-description.
-  // const s = (str) => `${getPrefix(str)}-${stripPrefix(str)}`
-  const s = (str) => `${stripPrefix(str)}`
+  const s = (str) => `${getPrefix(str)}-${stripPrefix(str)}`
+  // const s = (str) => `${stripPrefix(str)}`
 
   function shapeIRI (edge) {
     const { source } = edge
@@ -32,7 +32,9 @@ function iriPatterns (id) {
 
   function propertyIRI (edge) {
     const { source, predicate, target } = edge
-    return `${id}-shape:${s(source)}-${s(predicate)}-${s(target)}`
+    // return `${id}-shape:${s(source)}-${s(predicate)}-${s(target)}`
+    return `${id}-shape:${s(source)}-${s(predicate)}`
+
   }
 
   return {

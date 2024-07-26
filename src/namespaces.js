@@ -21,7 +21,7 @@ const ns = {
   time: rdf.namespace('http://www.w3.org/2006/time#'),
   person: rdf.namespace('http://www.w3.org/ns/person#'),
   locn: rdf.namespace('http://www.w3.org/ns/locn#'),
-  shacl: rdf.namespace('http://www.w3.org/ns/shacl#'),
+  sh: rdf.namespace('http://www.w3.org/ns/shacl#'),
   org: rdf.namespace('http://www.w3.org/ns/org#'),
   adms: rdf.namespace('http://www.w3.org/ns/adms#'),
   rml: rdf.namespace('http://semweb.mmlab.be/ns/rml#'),
