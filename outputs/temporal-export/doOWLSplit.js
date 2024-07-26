@@ -26,8 +26,13 @@ for (const asset of assets) {
   mkdirSync(dirname(targetPath), { recursive: true })
 
   const wantedTurtle = await prettyPrintTurtle({ dataset: wanted })
-  const wantedPath = `${targetPath}`
-  writeFileSync(wantedPath, wantedTurtle)
+  writeFileSync(targetPath, wantedTurtle)
+
+  const debugPath = path.replaceAll(`${localPath}`,
+    'outputs/removed')
+  mkdirSync(dirname(debugPath), { recursive: true })
+  const unwantedTurtle = await prettyPrintTurtle({ dataset: unwanted })
+  writeFileSync(debugPath, unwantedTurtle)
 
 }
 
