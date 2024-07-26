@@ -75,7 +75,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasModificationDescription"/>
 		<sh:description>An explanatory text about this context. Additional Information This corresponds in Standard forms to Field VII.2.1 in F20 This corresponds in eForms to BT-202 . WG Approval 5/11/2019 </sh:description>
-		<sh:name>has modification description</sh:name>
+		<sh:name>Has modification description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-582"/>
@@ -104,7 +104,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasModificationReasonDescription"/>
 		<sh:description>An explanation about the reasons for using the concept. Additional Information This corresponds in Standard forms to Field VII.2.2.2 and VII.2.2.4 in F20. This corresponds in eForms to BT-201 . WG Approval 5/11/2019 </sh:description>
-		<sh:name>has modification reason description</sh:name>
+		<sh:name>Has modification reason description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-586"/>
@@ -141,7 +141,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#updatesContractValue"/>
-		<sh:name>updates contract value</sh:name>
+		<sh:name>Updates contract value</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>
@@ -159,7 +159,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasQuantity"/>
-		<sh:name>has quantity</sh:name>
+		<sh:name>Has quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -169,7 +169,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#amendsContract"/>
-		<sh:name>amends contract</sh:name>
+		<sh:name>Amends contract</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -180,7 +180,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#relatesToEFormSectionIdentifier"/>
-		<sh:name>relates to e form section identifier</sh:name>
+		<sh:name>Relates to e form section identifier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -190,7 +190,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#concernsContractAmendment"/>
-		<sh:name>concerns contract amendment</sh:name>
+		<sh:name>Concerns contract amendment</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -202,7 +202,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasModificationJustification"/>
 		<sh:description>Explanation of why a contract was modified. WG Approval 09/11/2021 The codelist to be used is at-voc:modification-justification which is available at http://publications.europa.eu/resource/dataset/modification-justification Additional Information This corresponds in Standard forms to Field VII.2.2.1 and VII.2.2.3 in F20 . This corresponds in eForms to BT-200. </sh:description>
-		<sh:name>has modification justification</sh:name>
+		<sh:name>Has modification justification</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -223,7 +223,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/con/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTotalValue"/>
-		<sh:name>has total value</sh:name>
+		<sh:name>Has total value</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>

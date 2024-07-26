@@ -52,21 +52,21 @@ not-shape:epo-not-ResultNotice-epo-announcesLotGroupAwardInformation a sh:Proper
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesLotGroupAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces lot group award information" ;
+	sh:name "Announces lot group award information" ;
 	sh:class a4g:LotGroupAwardInformation .
 
 not-shape:epo-not-ResultNotice-epo-announcesContract a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesContract ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces contract" ;
+	sh:name "Announces contract" ;
 	sh:class a4g:Contract .
 
 not-shape:epo-not-ResultNotice-epo-refersToProcedure a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToProcedure ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to procedure" ;
+	sh:name "Refers to procedure" ;
 	sh:class a4g:Procedure ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -75,7 +75,7 @@ not-shape:epo-not-ResultNotice-epo-refersToLot a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLot ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot" ;
+	sh:name "Refers to lot" ;
 	sh:class a4g:Lot ;
 	sh:minCount 1 .
 
@@ -83,7 +83,7 @@ not-shape:epo-not-ResultNotice-epo-not-announcesRole a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces role" ;
+	sh:name "Announces role" ;
 	sh:class a4g:AgentInRole .
 
 not-shape:epo-not-DirectAwardPrenotificationNoticeShape a sh:NodeShape ;
@@ -96,7 +96,7 @@ not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesNoticeAwardInfor
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesNoticeAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces notice award information" ;
+	sh:name "Announces notice award information" ;
 	sh:class a4g:NoticeAwardInformation ;
 	sh:maxCount 1 .
 
@@ -110,7 +110,7 @@ not-shape:epo-not-PlanningNotice-epo-announcesRole a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces role" ;
+	sh:name "Announces role" ;
 	sh:class a4g:AgentInRole ;
 	sh:minCount 1 .
 
@@ -124,7 +124,7 @@ not-shape:epo-not-ContractModificationNotice-epo-refersToContractToBeModified a 
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToContractToBeModified ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to contract to be modified" ;
+	sh:name "Refers to contract to be modified" ;
 	sh:class a4g:Contract ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -133,7 +133,7 @@ not-shape:epo-not-ResultNotice-epo-announcesNoticeAwardInformation a sh:Property
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesNoticeAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces notice award information" ;
+	sh:name "Announces notice award information" ;
 	sh:class a4g:NoticeAwardInformation ;
 	sh:maxCount 1 .
 
@@ -141,7 +141,7 @@ not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesProcedure a sh:P
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesProcedure ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces procedure" ;
+	sh:name "Announces procedure" ;
 	sh:class a4g:Procedure ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -150,14 +150,14 @@ not-shape:epo-not-ResultNotice-epo-announcesAwardDecision a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesAwardDecision ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces award decision" ;
+	sh:name "Announces award decision" ;
 	sh:class a4g:AwardDecision .
 
 not-shape:epo-not-ContractModificationNotice-epo-announcesContractAmendment a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesContractAmendment ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces contract amendment" ;
+	sh:name "Announces contract amendment" ;
 	sh:class a4g:ContractAmendment ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -172,7 +172,7 @@ not-shape:epo-not-CompetitionNotice-epo-announcesRole a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces role" ;
+	sh:name "Announces role" ;
 	sh:class a4g:AgentInRole ;
 	sh:minCount 1 .
 
@@ -180,7 +180,7 @@ not-shape:epo-not-CompetitionNotice-epo-announcesProcedure a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesProcedure ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces procedure" ;
+	sh:name "Announces procedure" ;
 	sh:class a4g:Procedure ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -189,21 +189,21 @@ not-shape:epo-not-PlanningNotice-epo-announcesPlannedProcurementPart a sh:Proper
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesPlannedProcurementPart ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces planned procurement part" ;
+	sh:name "Announces planned procurement part" ;
 	sh:class a4g:PlannedProcurementPart .
 
 not-shape:epo-not-ResultNotice-epo-refersToLotGroup a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLotGroup ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot group" ;
+	sh:name "Refers to lot group" ;
 	sh:class a4g:LotGroup .
 
 not-shape:epo-not-ContractModificationNotice-epo-refersToProcedure a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToProcedure ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to procedure" ;
+	sh:name "Refers to procedure" ;
 	sh:class a4g:Procedure ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -218,7 +218,7 @@ not-shape:epo-not-CompletionNotice-epo-announcesCompletionOfContract a sh:Proper
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesCompletionOfContract ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces completion of contract" ;
+	sh:name "Announces completion of contract" ;
 	sh:class a4g:Contract ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -227,7 +227,7 @@ not-shape:epo-not-CompetitionNotice-epo-announcesLot a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesLot ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces lot" ;
+	sh:name "Announces lot" ;
 	sh:class a4g:Lot ;
 	sh:minCount 1 .
 
@@ -235,14 +235,14 @@ not-shape:epo-not-CompetitionNotice-epo-announcesLotGroup a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesLotGroup ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces lot group" ;
+	sh:name "Announces lot group" ;
 	sh:class a4g:LotGroup .
 
 not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesLot a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesLot ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces lot" ;
+	sh:name "Announces lot" ;
 	sh:class a4g:Lot ;
 	sh:minCount 1 .
 
@@ -250,7 +250,7 @@ not-shape:epo-not-ResultNotice-epo-not-refersToRole a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to role" ;
+	sh:name "Refers to role" ;
 	sh:class a4g:AgentInRole ;
 	sh:minCount 1 .
 
@@ -258,7 +258,7 @@ not-shape:epo-not-CompletionNotice-epo-refersToProcedure a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToProcedure ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to procedure" ;
+	sh:name "Refers to procedure" ;
 	sh:class a4g:Procedure ;
 	sh:minCount 1 ;
 	sh:maxCount 1 .
@@ -267,35 +267,35 @@ not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesLotGroup a sh:Pr
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesLotGroup ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces lot group" ;
+	sh:name "Announces lot group" ;
 	sh:class a4g:LotGroup .
 
 not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesLotGroupAwardInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesLotGroupAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces lot group award information" ;
+	sh:name "Announces lot group award information" ;
 	sh:class a4g:LotGroupAwardInformation .
 
 not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesContract a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesContract ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces contract" ;
+	sh:name "Announces contract" ;
 	sh:class a4g:Contract .
 
 not-shape:epo-not-CompletionNotice-epo-refersToAwardDecision a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToAwardDecision ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to award decision" ;
+	sh:name "Refers to award decision" ;
 	sh:class a4g:AwardDecision .
 
 not-shape:epo-not-CompletionNotice-epo-refersToLot a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLot ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot" ;
+	sh:name "Refers to lot" ;
 	sh:class a4g:Lot ;
 	sh:minCount 1 .
 
@@ -303,21 +303,21 @@ not-shape:epo-not-CompletionNotice-epo-refersToLotGroup a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLotGroup ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot group" ;
+	sh:name "Refers to lot group" ;
 	sh:class a4g:LotGroup .
 
 not-shape:epo-not-CompletionNotice-epo-refersToLotGroupAwardInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLotGroupAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot group award information" ;
+	sh:name "Refers to lot group award information" ;
 	sh:class a4g:LotGroupAwardInformation .
 
 not-shape:epo-not-CompletionNotice-epo-refersToNoticeAwardInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToNoticeAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to notice award information" ;
+	sh:name "Refers to notice award information" ;
 	sh:class a4g:NoticeAwardInformation ;
 	sh:maxCount 1 .
 
@@ -325,28 +325,28 @@ not-shape:epo-not-CompletionNotice-epo-refersToRole a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to role" ;
+	sh:name "Refers to role" ;
 	sh:class a4g:AgentInRole .
 
 not-shape:epo-not-CompletionNotice-epo-announcesRole a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces role" ;
+	sh:name "Announces role" ;
 	sh:class a4g:AgentInRole .
 
 not-shape:epo-not-ContractModificationNotice-epo-announcesRole a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces role" ;
+	sh:name "Announces role" ;
 	sh:class a4g:AgentInRole .
 
 not-shape:epo-not-CompletionNotice-epo-announcesReviewObject a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesReviewObject ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces review object" ;
+	sh:name "Announces review object" ;
 	sh:class a4g:ReviewObject ;
 	sh:minCount 1 .
 
@@ -354,7 +354,7 @@ not-shape:epo-not-ContractModificationNotice-epo-refersToNoticeAwardInformation 
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToNoticeAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to notice award information" ;
+	sh:name "Refers to notice award information" ;
 	sh:class a4g:NoticeAwardInformation ;
 	sh:maxCount 1 .
 
@@ -362,28 +362,28 @@ not-shape:epo-not-ContractModificationNotice-epo-refersToLotGroup a sh:PropertyS
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLotGroup ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot group" ;
+	sh:name "Refers to lot group" ;
 	sh:class a4g:LotGroup .
 
 not-shape:epo-not-ContractModificationNotice-epo-refersToLotGroupAwardInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLotGroupAwardInformation ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot group award information" ;
+	sh:name "Refers to lot group award information" ;
 	sh:class a4g:LotGroupAwardInformation .
 
 not-shape:epo-not-ContractModificationNotice-epo-refersToAwardDecision a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToAwardDecision ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to award decision" ;
+	sh:name "Refers to award decision" ;
 	sh:class a4g:AwardDecision .
 
 not-shape:epo-not-ContractModificationNotice-epo-refersToLot a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:refersToLot ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to lot" ;
+	sh:name "Refers to lot" ;
 	sh:class a4g:Lot ;
 	sh:minCount 1 .
 
@@ -391,7 +391,7 @@ not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesRole a sh:Proper
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesRole ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces role" ;
+	sh:name "Announces role" ;
 	sh:class a4g:AgentInRole ;
 	sh:minCount 1 .
 
@@ -399,6 +399,6 @@ not-shape:epo-not-DirectAwardPrenotificationNotice-epo-announcesAwardDecision a 
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/not/> ;
 	sh:path a4g:announcesAwardDecision ;
 	sh:nodeKind sh:IRI ;
-	sh:name "announces award decision" ;
+	sh:name "Announces award decision" ;
 	sh:class a4g:AwardDecision .
 

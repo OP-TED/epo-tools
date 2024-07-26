@@ -52,7 +52,7 @@ acc-shape:epo-acc-ESPDRequest-epo-specifiesProcurementCriterion a sh:PropertySha
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/acc/> ;
 	sh:path a4g:specifiesProcurementCriterion ;
 	sh:nodeKind sh:IRI ;
-	sh:name "specifies procurement criterion" ;
+	sh:name "Specifies procurement criterion" ;
 	sh:minCount 1 ;
 	sh:class a4g:ProcurementCriterion .
 
@@ -60,7 +60,7 @@ acc-shape:epo-acc-ESPDRequest-epo-acc-refersToNotice a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/acc/> ;
 	sh:path a4g:refersToNotice ;
 	sh:nodeKind sh:IRI ;
-	sh:name "refers to notice" ;
+	sh:name "Refers to notice" ;
 	sh:class a4g:Notice ;
 	sh:description "Reference to a Notice. WG approval 12/03/2024" .
 
@@ -68,7 +68,7 @@ acc-shape:epo-acc-ESPDRequest-epo-concernsProcedure a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/acc/> ;
 	sh:path a4g:concernsProcedure ;
 	sh:nodeKind sh:IRI ;
-	sh:name "concerns procedure" ;
+	sh:name "Concerns procedure" ;
 	sh:minCount 1 ;
 	sh:class a4g:Procedure ;
 	sh:description "Relates to Procedure. WG approval 05/03/2024 " ;

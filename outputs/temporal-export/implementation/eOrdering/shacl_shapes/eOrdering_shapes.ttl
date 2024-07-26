@@ -52,7 +52,7 @@ ord-shape:epo-ord-TaxInformation-dct-description a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path dcterms:description ;
 	sh:description "An account of the resource. Additional Information: Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource. WG Approval 30/05/2023 " ;
-	sh:name "description" ;
+	sh:name "Description" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:or (
@@ -74,7 +74,7 @@ ord-shape:epo-ord-AllowanceChargeInformation-epo-cat-hasPercentage a sh:Property
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasPercentage ;
 	sh:description "The factor relative to the price charged in addition. WG approval 26/07/2022" ;
-	sh:name "has percentage" ;
+	sh:name "Has percentage" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:datatype xsd:decimal .
@@ -88,7 +88,7 @@ ord-shape:epo-ord-DeliveryInformationShape a sh:NodeShape ;
 ord-shape:epo-ord-DeliveryInformation-epo-ord-hasShippingMark a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasShippingMark ;
-	sh:name "has shipping mark" ;
+	sh:name "Has shipping mark" ;
 	sh:minCount 0 ;
 	sh:or (
 		[
@@ -109,7 +109,7 @@ ord-shape:epo-ord-OrderResponse-epo-ord-hasResponseDescription a sh:PropertyShap
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasResponseDescription ;
 	sh:description "Response clarification of the Supplier decision. " ;
-	sh:name "has response description" ;
+	sh:name "Has response description" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:or (
@@ -130,7 +130,7 @@ ord-shape:epo-ord-OrderShape a sh:NodeShape ;
 ord-shape:epo-ord-Order-epo-ord-hasPaymentTerm a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasPaymentTerm ;
-	sh:name "has payment term" ;
+	sh:name "Has payment term" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:or (
@@ -146,7 +146,7 @@ ord-shape:epo-ord-Order-epo-ord-hasCustomerReference a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasCustomerReference ;
 	sh:description "A supplementary reference for the order. Additional information: This information can be used for the buyer's internal processes. This reference can also be used in the invoice. WG approval 2023-01-26" ;
-	sh:name "has customer reference" ;
+	sh:name "Has customer reference" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:datatype xsd:boolean .
@@ -155,7 +155,7 @@ ord-shape:epo-ord-Order-epo-ord-hasAccountingCost a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAccountingCost ;
 	sh:description "The accounting reference used by the Buyer to specify the account to which the order and the corresponding invoice are booked. WG approval 2023-01-26" ;
-	sh:name "has accounting cost" ;
+	sh:name "Has accounting cost" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:or (
@@ -171,7 +171,7 @@ ord-shape:epo-ord-TaxInformation-epo-cat-hasPercentage a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasPercentage ;
 	sh:description "The factor relative to the price charged in addition. WG approval 26/07/2022 " ;
-	sh:name "has percentage" ;
+	sh:name "Has percentage" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:datatype xsd:decimal .
@@ -179,7 +179,7 @@ ord-shape:epo-ord-TaxInformation-epo-cat-hasPercentage a sh:PropertyShape ;
 ord-shape:epo-ord-AllowanceChargeInformation-epo-ful-hasAllowanceChargeReasonDescription a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAllowanceChargeReasonDescription ;
-	sh:name "has allowance charge reason description" ;
+	sh:name "Has allowance charge reason description" ;
 	sh:minCount 0 ;
 	sh:or (
 		[
@@ -193,7 +193,7 @@ ord-shape:epo-ord-AllowanceChargeInformation-epo-ful-hasAllowanceChargeReasonDes
 ord-shape:epo-ord-DeliveryInformation-epo-ord-hasDeliveryDeadline a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasDeliveryDeadline ;
-	sh:name "has delivery deadline" ;
+	sh:name "Has delivery deadline" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:datatype xsd:dateTime .
@@ -208,7 +208,7 @@ ord-shape:epo-ord-DeliveryAgreement-dct-description a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path dcterms:description ;
 	sh:description "An account of the resource. Additional Information: Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource. WG Approval 30/05/2023" ;
-	sh:name "description" ;
+	sh:name "Description" ;
 	sh:minCount 0 ;
 	sh:or (
 		[
@@ -222,7 +222,7 @@ ord-shape:epo-ord-DeliveryAgreement-dct-description a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-specifiesSeller a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesSeller ;
-	sh:name "specifies seller" ;
+	sh:name "Specifies seller" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -231,7 +231,7 @@ ord-shape:epo-ord-Order-epo-specifiesSeller a sh:PropertyShape ;
 ord-shape:epo-ord-DeliveryInformation-epo-ord-concernsConsignee a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:concernsConsignee ;
-	sh:name "concerns consignee" ;
+	sh:name "Concerns consignee" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Consignee .
@@ -246,14 +246,14 @@ ord-shape:epo-cat-ChargeInformation-epo-ord-isSpecificToOrderLine a sh:PropertyS
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSpecificToOrderLine ;
 	sh:description "Information that is particular to one or multiple Order Lines. " ;
-	sh:name "is specific to order line" ;
+	sh:name "Is specific to order line" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderLine .
 
 ord-shape:epo-ord-OrderResponse-epo-ord-specifiesBuyer a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesBuyer ;
-	sh:name "specifies buyer" ;
+	sh:name "Specifies buyer" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Buyer .
@@ -261,7 +261,7 @@ ord-shape:epo-ord-OrderResponse-epo-ord-specifiesBuyer a sh:PropertyShape ;
 ord-shape:epo-ord-DeliveryAgreement-epo-ord-specifiesDeliveryAgreementLocation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesDeliveryAgreementLocation ;
-	sh:name "specifies delivery agreement location" ;
+	sh:name "Specifies delivery agreement location" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class dcterms:Location .
@@ -269,7 +269,7 @@ ord-shape:epo-ord-DeliveryAgreement-epo-ord-specifiesDeliveryAgreementLocation a
 ord-shape:epo-ord-DeliveryInformation-epo-ord-specifiesPlaceOfDelivery a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesPlaceOfDelivery ;
-	sh:name "specifies place of delivery" ;
+	sh:name "Specifies place of delivery" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class dcterms:Location .
@@ -277,7 +277,7 @@ ord-shape:epo-ord-DeliveryInformation-epo-ord-specifiesPlaceOfDelivery a sh:Prop
 ord-shape:epo-ord-OrderResponse-epo-ord-specifiesOrderResponseInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesOrderResponseInformation ;
-	sh:name "specifies order response information" ;
+	sh:name "Specifies order response information" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderResponseInformation .
 
@@ -289,14 +289,14 @@ ord-shape:epo-ord-OrderResponseInformationShape a sh:NodeShape ;
 ord-shape:epo-ord-OrderResponseInformation-epo-ord-isSpecificToOrderResponseLine a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSpecificToOrderResponseLine ;
-	sh:name "is specific to order response line" ;
+	sh:name "Is specific to order response line" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderResponseLine .
 
 ord-shape:epo-ord-OrderResponseInformation-epo-ord-hasDeliveryPeriod a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasDeliveryPeriod ;
-	sh:name "has delivery period" ;
+	sh:name "Has delivery period" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Period .
@@ -304,7 +304,7 @@ ord-shape:epo-ord-OrderResponseInformation-epo-ord-hasDeliveryPeriod a sh:Proper
 ord-shape:epo-ord-OrderResponseInformation-epo-ord-hasAcceptanceStatus a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAcceptanceStatus ;
-	sh:name "has acceptance status" ;
+	sh:name "Has acceptance status" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI .
@@ -319,7 +319,7 @@ ord-shape:epo-ord-OrderLine-epo-ord-refersToCatalogueLine a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:refersToCatalogueLine ;
 	sh:description " Additional Information: The reference to the catalogue line is for information only, to trace the source of the information provided in the order line. " ;
-	sh:name "refers to catalogue line" ;
+	sh:name "Refers to catalogue line" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:CatalogueLine .
@@ -328,14 +328,14 @@ ord-shape:epo-ord-Order-epo-ord-refersToCatalogue a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:refersToCatalogue ;
 	sh:description " Additional information: If an order refers to multiple catalogues then all these catalogues ideally are subordinated to the same contract. Some countries however may allow multiple contracts per order (i.e Italy). " ;
-	sh:name "refers to catalogue" ;
+	sh:name "Refers to catalogue" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Catalogue .
 
 ord-shape:epo-ord-Order-epo-ord-specifiesDeliveryInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesDeliveryInformation ;
-	sh:name "specifies delivery information" ;
+	sh:name "Specifies delivery information" ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:DeliveryInformation .
@@ -343,7 +343,7 @@ ord-shape:epo-ord-Order-epo-ord-specifiesDeliveryInformation a sh:PropertyShape 
 ord-shape:epo-ord-Order-epo-ord-comprisesOrderLine a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:comprisesOrderLine ;
-	sh:name "comprises order line" ;
+	sh:name "Comprises order line" ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderLine .
@@ -351,7 +351,7 @@ ord-shape:epo-ord-Order-epo-ord-comprisesOrderLine a sh:PropertyShape ;
 ord-shape:epo-ord-OrderResponse-epo-ord-implementsContract a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:implementsContract ;
-	sh:name "implements contract" ;
+	sh:name "Implements contract" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Contract .
@@ -359,7 +359,7 @@ ord-shape:epo-ord-OrderResponse-epo-ord-implementsContract a sh:PropertyShape ;
 ord-shape:epo-ord-OrderLine-epo-cat-hasQuantity a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasQuantity ;
-	sh:name "has quantity" ;
+	sh:name "Has quantity" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -374,7 +374,7 @@ ord-shape:epo-ord-OrderResponseLineShape a sh:NodeShape ;
 ord-shape:epo-ord-OrderResponseLine-epo-ord-isSubmittedForOrderLine a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSubmittedForOrderLine ;
-	sh:name "is submitted for order line" ;
+	sh:name "Is submitted for order line" ;
 	sh:minCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderLine .
@@ -382,7 +382,7 @@ ord-shape:epo-ord-OrderResponseLine-epo-ord-isSubmittedForOrderLine a sh:Propert
 ord-shape:epo-ord-OrderResponse-epo-ord-specifiesSeller a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesSeller ;
-	sh:name "specifies seller" ;
+	sh:name "Specifies seller" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Seller .
@@ -390,7 +390,7 @@ ord-shape:epo-ord-OrderResponse-epo-ord-specifiesSeller a sh:PropertyShape ;
 ord-shape:epo-ord-DeliveryInformation-epo-ord-hasDeliveryPeriod a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasDeliveryPeriod ;
-	sh:name "has delivery period" ;
+	sh:name "Has delivery period" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Period .
@@ -399,14 +399,14 @@ ord-shape:epo-ord-Order-epo-ord-specifiesContractInformation a sh:PropertyShape 
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesContractInformation ;
 	sh:description " " ;
-	sh:name "specifies contract information" ;
+	sh:name "Specifies contract information" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:ContractInformation .
 
 ord-shape:epo-ord-Order-epo-cat-specifiesChargeInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesChargeInformation ;
-	sh:name "specifies charge information" ;
+	sh:name "Specifies charge information" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:ChargeInformation .
 
@@ -414,7 +414,7 @@ ord-shape:epo-ord-DeliveryInformation-epo-ord-isSpecificToOrderLine a sh:Propert
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSpecificToOrderLine ;
 	sh:description "Information that is particular to one or multiple Order Lines." ;
-	sh:name "is specific to order line" ;
+	sh:name "Is specific to order line" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderLine .
 
@@ -428,7 +428,7 @@ ord-shape:epo-ord-AllowanceInformation-epo-ord-isSpecificToOrderLine a sh:Proper
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSpecificToOrderLine ;
 	sh:description "Information that is particular to one or multiple Order Lines. " ;
-	sh:name "is specific to order line" ;
+	sh:name "Is specific to order line" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderLine .
 
@@ -436,7 +436,7 @@ ord-shape:epo-ord-AllowanceChargeInformation-epo-cat-hasAmount a sh:PropertyShap
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAmount ;
 	sh:description "The predetermined monetary value charged in addition to the price. WG approval 26/07/2022" ;
-	sh:name "has amount" ;
+	sh:name "Has amount" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -445,21 +445,21 @@ ord-shape:epo-ord-AllowanceChargeInformation-epo-cat-hasAmount a sh:PropertyShap
 ord-shape:epo-ord-TaxInformation-epo-cat-hasTaxCategory a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTaxCategory ;
-	sh:name "has tax category" ;
+	sh:name "Has tax category" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI .
 
 ord-shape:epo-ord-TaxInformation-epo-cat-hasTaxScheme a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTaxScheme ;
-	sh:name "has tax scheme" ;
+	sh:name "Has tax scheme" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI .
 
 ord-shape:epo-ord-OrderLine-epo-cat-hasPrice a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasPrice ;
-	sh:name "has price" ;
+	sh:name "Has price" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Price .
@@ -467,7 +467,7 @@ ord-shape:epo-ord-OrderLine-epo-cat-hasPrice a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-specifiesBuyer a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesBuyer ;
-	sh:name "specifies buyer" ;
+	sh:name "Specifies buyer" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -483,21 +483,21 @@ ord-shape:epo-ord-OriginatorInformation-epo-ord-isSpecificToOrderLine a sh:Prope
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSpecificToOrderLine ;
 	sh:description "Information that is particular to one or multiple Order Lines. " ;
-	sh:name "is specific to order line" ;
+	sh:name "Is specific to order line" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderLine .
 
 ord-shape:epo-ord-OrderResponse-epo-ord-comprisesOrderResponseLine a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:comprisesOrderResponseLine ;
-	sh:name "comprises order response line" ;
+	sh:name "Comprises order response line" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderResponseLine .
 
 ord-shape:epo-ord-OrderResponse-epo-ord-isSubmittedForOrder a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSubmittedForOrder ;
-	sh:name "is submitted for order" ;
+	sh:name "Is submitted for order" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -511,7 +511,7 @@ ord-shape:epo-cat-CatalogueResponseInformationShape a sh:NodeShape ;
 ord-shape:epo-cat-CatalogueResponseInformation-epo-ord-hasAcceptanceStatus a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAcceptanceStatus ;
-	sh:name "has acceptance status" ;
+	sh:name "Has acceptance status" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI .
@@ -519,7 +519,7 @@ ord-shape:epo-cat-CatalogueResponseInformation-epo-ord-hasAcceptanceStatus a sh:
 ord-shape:epo-ord-Order-epo-specifiesDespatcher a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesDespatcher ;
-	sh:name "specifies despatcher" ;
+	sh:name "Specifies despatcher" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Despatcher .
@@ -533,7 +533,7 @@ ord-shape:epo-ContractShape a sh:NodeShape ;
 ord-shape:epo-Contract-epo-ord-hasTaxInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTaxInformation ;
-	sh:name "has tax information" ;
+	sh:name "Has tax information" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:TaxInformation .
@@ -541,7 +541,7 @@ ord-shape:epo-Contract-epo-ord-hasTaxInformation a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasSellerOrderID a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasSellerOrderID ;
-	sh:name "has seller order id" ;
+	sh:name "Has seller order id" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class adms:Identifier .
@@ -555,7 +555,7 @@ ord-shape:epo-ord-ContractInformationShape a sh:NodeShape ;
 ord-shape:epo-ord-ContractInformation-epo-ord-concernsContract a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:concernsContract ;
-	sh:name "concerns contract" ;
+	sh:name "Concerns contract" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -565,21 +565,21 @@ ord-shape:epo-ord-ContractInformation-epo-ord-isSpecificToOrderLine a sh:Propert
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isSpecificToOrderLine ;
 	sh:description "Information that is particular to one or multiple Order Lines." ;
-	sh:name "is specific to order line" ;
+	sh:name "Is specific to order line" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OrderLine .
 
 ord-shape:epo-ord-Order-epo-ord-specifiesAllowanceInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesAllowanceInformation ;
-	sh:name "specifies allowance information" ;
+	sh:name "Specifies allowance information" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:AllowanceInformation .
 
 ord-shape:epo-ord-OriginatorInformation-epo-ord-concernsOriginator a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:concernsOriginator ;
-	sh:name "concerns originator" ;
+	sh:name "Concerns originator" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -588,7 +588,7 @@ ord-shape:epo-ord-OriginatorInformation-epo-ord-concernsOriginator a sh:Property
 ord-shape:epo-ord-Order-epo-ord-specifiesOriginatorInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesOriginatorInformation ;
-	sh:name "specifies originator information" ;
+	sh:name "Specifies originator information" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OriginatorInformation .
@@ -597,7 +597,7 @@ ord-shape:epo-ord-AllowanceChargeInformation-epo-ful-hasAllowanceChargeReason a 
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAllowanceChargeReason ;
 	sh:description "https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL5189/ https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL7161/" ;
-	sh:name "has allowance charge reason" ;
+	sh:name "Has allowance charge reason" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI .
 
@@ -605,7 +605,7 @@ ord-shape:epo-ord-AllowanceChargeInformation-epo-isCalculatedOn a sh:PropertySha
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isCalculatedOn ;
 	sh:description "The monetary amount to which the multiplier factor is applied in calculating the amount of this allowance or charge. " ;
-	sh:name "is calculated on" ;
+	sh:name "Is calculated on" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -613,7 +613,7 @@ ord-shape:epo-ord-AllowanceChargeInformation-epo-isCalculatedOn a sh:PropertySha
 ord-shape:epo-ord-DeliveryInformation-epo-ord-specifiesGeneralDeliveryAgreement a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesGeneralDeliveryAgreement ;
-	sh:name "specifies general delivery agreement" ;
+	sh:name "Specifies general delivery agreement" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:DeliveryAgreement .
@@ -621,7 +621,7 @@ ord-shape:epo-ord-DeliveryInformation-epo-ord-specifiesGeneralDeliveryAgreement 
 ord-shape:epo-ord-DeliveryInformation-epo-ord-specifiesSpecificDeliveryAgreement a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:specifiesSpecificDeliveryAgreement ;
-	sh:name "specifies specific delivery agreement" ;
+	sh:name "Specifies specific delivery agreement" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:DeliveryAgreement .
@@ -629,7 +629,7 @@ ord-shape:epo-ord-DeliveryInformation-epo-ord-specifiesSpecificDeliveryAgreement
 ord-shape:epo-ord-DeliveryInformation-epo-ful-hasTrackingID a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTrackingID ;
-	sh:name "has tracking id" ;
+	sh:name "Has tracking id" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class adms:Identifier .
@@ -637,7 +637,7 @@ ord-shape:epo-ord-DeliveryInformation-epo-ful-hasTrackingID a sh:PropertyShape ;
 ord-shape:epo-ord-OriginatorInformation-epo-ord-concernsOriginatorRequest a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:concernsOriginatorRequest ;
-	sh:name "concerns originator request" ;
+	sh:name "Concerns originator request" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:OriginatorRequest .
@@ -645,7 +645,7 @@ ord-shape:epo-ord-OriginatorInformation-epo-ord-concernsOriginatorRequest a sh:P
 ord-shape:epo-ord-Order-epo-refersToProject a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:refersToProject ;
-	sh:name "refers to project" ;
+	sh:name "Refers to project" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Project .
@@ -653,7 +653,7 @@ ord-shape:epo-ord-Order-epo-refersToProject a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasTotalLineAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTotalLineAmount ;
-	sh:name "has total line amount" ;
+	sh:name "Has total line amount" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -662,7 +662,7 @@ ord-shape:epo-ord-Order-epo-ord-hasTotalLineAmount a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasTotalTaxExclusiveAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTotalTaxExclusiveAmount ;
-	sh:name "has total tax exclusive amount" ;
+	sh:name "Has total tax exclusive amount" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -670,7 +670,7 @@ ord-shape:epo-ord-Order-epo-ord-hasTotalTaxExclusiveAmount a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasTotalTaxInclusiveAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTotalTaxInclusiveAmount ;
-	sh:name "has total tax inclusive amount" ;
+	sh:name "Has total tax inclusive amount" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -678,7 +678,7 @@ ord-shape:epo-ord-Order-epo-ord-hasTotalTaxInclusiveAmount a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasTotalAllowanceAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTotalAllowanceAmount ;
-	sh:name "has total allowance amount" ;
+	sh:name "Has total allowance amount" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -686,7 +686,7 @@ ord-shape:epo-ord-Order-epo-ord-hasTotalAllowanceAmount a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasTotalChargeAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTotalChargeAmount ;
-	sh:name "has total charge amount" ;
+	sh:name "Has total charge amount" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -694,7 +694,7 @@ ord-shape:epo-ord-Order-epo-ord-hasTotalChargeAmount a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasPrepaidAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasPrepaidAmount ;
-	sh:name "has prepaid amount" ;
+	sh:name "Has prepaid amount" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -702,7 +702,7 @@ ord-shape:epo-ord-Order-epo-ord-hasPrepaidAmount a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasRoundingAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasRoundingAmount ;
-	sh:name "has rounding amount" ;
+	sh:name "Has rounding amount" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -710,7 +710,7 @@ ord-shape:epo-ord-Order-epo-ord-hasRoundingAmount a sh:PropertyShape ;
 ord-shape:epo-ord-Order-epo-ord-hasAmountDueForPayment a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAmountDueForPayment ;
-	sh:name "has amount due for payment" ;
+	sh:name "Has amount due for payment" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -720,7 +720,7 @@ ord-shape:epo-ord-TaxInformation-epo-cat-hasAmount a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasAmount ;
 	sh:description "The predetermined monetary value charged in addition to the price. WG approval 26/07/2022 " ;
-	sh:name "has amount" ;
+	sh:name "Has amount" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -729,7 +729,7 @@ ord-shape:epo-ord-TaxInformation-epo-isCalculatedOn a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:isCalculatedOn ;
 	sh:description "The monetary amount to which the multiplier factor is applied in calculating the amount of this allowance or charge." ;
-	sh:name "is calculated on" ;
+	sh:name "Is calculated on" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -737,7 +737,7 @@ ord-shape:epo-ord-TaxInformation-epo-isCalculatedOn a sh:PropertyShape ;
 ord-shape:epo-ord-AllowanceChargeInformation-epo-ord-hasTaxInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTaxInformation ;
-	sh:name "has tax information" ;
+	sh:name "Has tax information" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:TaxInformation .
@@ -751,7 +751,7 @@ ord-shape:epo-cat-PriceShape a sh:NodeShape ;
 ord-shape:epo-cat-Price-epo-ord-hasPriceDiscountInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasPriceDiscountInformation ;
-	sh:name "has price discount information" ;
+	sh:name "Has price discount information" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:AllowanceInformation .
@@ -765,7 +765,7 @@ ord-shape:epo-cat-ItemShape a sh:NodeShape ;
 ord-shape:epo-cat-Item-epo-ord-hasTaxInformation a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/ord/> ;
 	sh:path a4g:hasTaxInformation ;
-	sh:name "has tax information" ;
+	sh:name "Has tax information" ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:TaxInformation .
 

@@ -1,5 +1,9 @@
 const epo = [
   {
+    tag: 'v4.1.0-rc.3',
+    conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
+  },
+  {
     tag: 'v4.0.2',
     conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
   },

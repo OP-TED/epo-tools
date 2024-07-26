@@ -80,7 +80,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroupAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces lot group award information</sh:name>
+		<sh:name>Announces lot group award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
 	</rdf:Description>
 
@@ -89,7 +89,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesContract"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces contract</sh:name>
+		<sh:name>Announces contract</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
 	</rdf:Description>
 
@@ -98,7 +98,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToProcedure"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to procedure</sh:name>
+		<sh:name>Refers to procedure</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -109,7 +109,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLot"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot</sh:name>
+		<sh:name>Refers to lot</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -119,7 +119,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces role</sh:name>
+		<sh:name>Announces role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 	</rdf:Description>
 
@@ -143,7 +143,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesNoticeAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces notice award information</sh:name>
+		<sh:name>Announces notice award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 	</rdf:Description>
@@ -162,7 +162,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces role</sh:name>
+		<sh:name>Announces role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -188,7 +188,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToContractToBeModified"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to contract to be modified</sh:name>
+		<sh:name>Refers to contract to be modified</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -199,7 +199,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesNoticeAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces notice award information</sh:name>
+		<sh:name>Announces notice award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 	</rdf:Description>
@@ -209,7 +209,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesProcedure"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces procedure</sh:name>
+		<sh:name>Announces procedure</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -220,7 +220,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesAwardDecision"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces award decision</sh:name>
+		<sh:name>Announces award decision</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
 	</rdf:Description>
 
@@ -229,7 +229,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesContractAmendment"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces contract amendment</sh:name>
+		<sh:name>Announces contract amendment</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ContractAmendment"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -251,7 +251,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces role</sh:name>
+		<sh:name>Announces role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -261,7 +261,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesProcedure"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces procedure</sh:name>
+		<sh:name>Announces procedure</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -272,7 +272,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesPlannedProcurementPart"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces planned procurement part</sh:name>
+		<sh:name>Announces planned procurement part</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#PlannedProcurementPart"/>
 	</rdf:Description>
 
@@ -281,7 +281,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroup"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot group</sh:name>
+		<sh:name>Refers to lot group</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
 	</rdf:Description>
 
@@ -290,7 +290,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToProcedure"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to procedure</sh:name>
+		<sh:name>Refers to procedure</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -318,7 +318,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesCompletionOfContract"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces completion of contract</sh:name>
+		<sh:name>Announces completion of contract</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -329,7 +329,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLot"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces lot</sh:name>
+		<sh:name>Announces lot</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -339,7 +339,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroup"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces lot group</sh:name>
+		<sh:name>Announces lot group</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
 	</rdf:Description>
 
@@ -348,7 +348,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLot"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces lot</sh:name>
+		<sh:name>Announces lot</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -358,7 +358,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to role</sh:name>
+		<sh:name>Refers to role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -368,7 +368,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToProcedure"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to procedure</sh:name>
+		<sh:name>Refers to procedure</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
@@ -379,7 +379,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroup"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces lot group</sh:name>
+		<sh:name>Announces lot group</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
 	</rdf:Description>
 
@@ -388,7 +388,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesLotGroupAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces lot group award information</sh:name>
+		<sh:name>Announces lot group award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
 	</rdf:Description>
 
@@ -397,7 +397,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesContract"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces contract</sh:name>
+		<sh:name>Announces contract</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Contract"/>
 	</rdf:Description>
 
@@ -406,7 +406,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToAwardDecision"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to award decision</sh:name>
+		<sh:name>Refers to award decision</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
 	</rdf:Description>
 
@@ -415,7 +415,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLot"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot</sh:name>
+		<sh:name>Refers to lot</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -425,7 +425,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroup"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot group</sh:name>
+		<sh:name>Refers to lot group</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
 	</rdf:Description>
 
@@ -434,7 +434,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroupAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot group award information</sh:name>
+		<sh:name>Refers to lot group award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
 	</rdf:Description>
 
@@ -443,7 +443,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToNoticeAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to notice award information</sh:name>
+		<sh:name>Refers to notice award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 	</rdf:Description>
@@ -453,7 +453,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to role</sh:name>
+		<sh:name>Refers to role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 	</rdf:Description>
 
@@ -462,7 +462,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces role</sh:name>
+		<sh:name>Announces role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 	</rdf:Description>
 
@@ -471,7 +471,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces role</sh:name>
+		<sh:name>Announces role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 	</rdf:Description>
 
@@ -480,7 +480,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesReviewObject"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces review object</sh:name>
+		<sh:name>Announces review object</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ReviewObject"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -490,7 +490,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToNoticeAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to notice award information</sh:name>
+		<sh:name>Refers to notice award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#NoticeAwardInformation"/>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 	</rdf:Description>
@@ -500,7 +500,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroup"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot group</sh:name>
+		<sh:name>Refers to lot group</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroup"/>
 	</rdf:Description>
 
@@ -509,7 +509,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLotGroupAwardInformation"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot group award information</sh:name>
+		<sh:name>Refers to lot group award information</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#LotGroupAwardInformation"/>
 	</rdf:Description>
 
@@ -518,7 +518,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToAwardDecision"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to award decision</sh:name>
+		<sh:name>Refers to award decision</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
 	</rdf:Description>
 
@@ -527,7 +527,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToLot"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to lot</sh:name>
+		<sh:name>Refers to lot</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Lot"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -537,7 +537,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesRole"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces role</sh:name>
+		<sh:name>Announces role</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AgentInRole"/>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 	</rdf:Description>
@@ -547,7 +547,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/not/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#announcesAwardDecision"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>announces award decision</sh:name>
+		<sh:name>Announces award decision</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#AwardDecision"/>
 	</rdf:Description>
 </rdf:RDF>

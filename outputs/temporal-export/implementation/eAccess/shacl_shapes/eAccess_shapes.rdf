@@ -74,7 +74,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/acc/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesProcurementCriterion"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>specifies procurement criterion</sh:name>
+		<sh:name>Specifies procurement criterion</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ProcurementCriterion"/>
 	</rdf:Description>
@@ -84,7 +84,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/acc/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToNotice"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>refers to notice</sh:name>
+		<sh:name>Refers to notice</sh:name>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Notice"/>
 		<sh:description>Reference to a Notice. WG approval 12/03/2024</sh:description>
 	</rdf:Description>
@@ -94,7 +94,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/acc/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#concernsProcedure"/>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
-		<sh:name>concerns procedure</sh:name>
+		<sh:name>Concerns procedure</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Procedure"/>
 		<sh:description>Relates to Procedure. WG approval 05/03/2024 </sh:description>

@@ -51,7 +51,7 @@ con-shape:epo-con-ContractModificationInformation-epo-hasModificationDescription
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:hasModificationDescription ;
 	sh:description "An explanatory text about this context. Additional Information This corresponds in Standard forms to Field VII.2.1 in F20 This corresponds in eForms to BT-202 . WG Approval 5/11/2019 " ;
-	sh:name "has modification description" ;
+	sh:name "Has modification description" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:or (
@@ -67,7 +67,7 @@ con-shape:epo-con-ContractModificationInformation-epo-hasModificationReasonDescr
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:hasModificationReasonDescription ;
 	sh:description "An explanation about the reasons for using the concept. Additional Information This corresponds in Standard forms to Field VII.2.2.2 and VII.2.2.4 in F20. This corresponds in eForms to BT-201 . WG Approval 5/11/2019 " ;
-	sh:name "has modification reason description" ;
+	sh:name "Has modification reason description" ;
 	sh:minCount 0 ;
 	sh:maxCount 1 ;
 	sh:or (
@@ -88,7 +88,7 @@ con-shape:epo-con-ContractAmendmentShape a sh:NodeShape ;
 con-shape:epo-con-ContractAmendment-epo-updatesContractValue a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:updatesContractValue ;
-	sh:name "updates contract value" ;
+	sh:name "Updates contract value" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .
@@ -101,7 +101,7 @@ con-shape:epo-con-DeliverableShape a sh:NodeShape ;
 con-shape:epo-con-Deliverable-epo-cat-hasQuantity a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:hasQuantity ;
-	sh:name "has quantity" ;
+	sh:name "Has quantity" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:Quantity .
@@ -109,7 +109,7 @@ con-shape:epo-con-Deliverable-epo-cat-hasQuantity a sh:PropertyShape ;
 con-shape:epo-con-ContractAmendment-epo-amendsContract a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:amendsContract ;
-	sh:name "amends contract" ;
+	sh:name "Amends contract" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -118,7 +118,7 @@ con-shape:epo-con-ContractAmendment-epo-amendsContract a sh:PropertyShape ;
 con-shape:epo-con-ContractModificationInformation-epo-relatesToEFormSectionIdentifier a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:relatesToEFormSectionIdentifier ;
-	sh:name "relates to e form section identifier" ;
+	sh:name "Relates to e form section identifier" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class adms:Identifier .
@@ -126,7 +126,7 @@ con-shape:epo-con-ContractModificationInformation-epo-relatesToEFormSectionIdent
 con-shape:epo-con-ContractModificationInformation-epo-concernsContractAmendment a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:concernsContractAmendment ;
-	sh:name "concerns contract amendment" ;
+	sh:name "Concerns contract amendment" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -136,7 +136,7 @@ con-shape:epo-con-ContractModificationInformation-epo-hasModificationJustificati
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:hasModificationJustification ;
 	sh:description "Explanation of why a contract was modified. WG Approval 09/11/2021 The codelist to be used is at-voc:modification-justification which is available at http://publications.europa.eu/resource/dataset/modification-justification Additional Information This corresponds in Standard forms to Field VII.2.2.1 and VII.2.2.3 in F20 . This corresponds in eForms to BT-200. " ;
-	sh:name "has modification justification" ;
+	sh:name "Has modification justification" ;
 	sh:minCount 1 ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
@@ -151,7 +151,7 @@ con-shape:epo-con-ContractModificationInformation-epo-hasModificationJustificati
 con-shape:epo-con-Deliverable-epo-hasTotalValue a sh:PropertyShape ;
 	rdfs:isDefinedBy <http://data.europa.eu/a4g/data-shape/con/> ;
 	sh:path a4g:hasTotalValue ;
-	sh:name "has total value" ;
+	sh:name "Has total value" ;
 	sh:maxCount 1 ;
 	sh:nodeKind sh:IRI ;
 	sh:class a4g:MonetaryValue .

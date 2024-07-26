@@ -76,7 +76,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationCompletedTaskDescription"/>
 		<sh:description>Text describing the works, supplies or services executed, delivered or performed in a procurement project that can be used as an evidence for the classification of the Organization. WG approval 05/03/2024</sh:description>
-		<sh:name>provides organisation completed task description</sh:name>
+		<sh:name>Provides organisation completed task description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-676"/>
@@ -115,7 +115,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://purl.org/dc/terms/description"/>
 		<sh:description>An account of the resource. Additional Information: Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource. WG Approval 30/05/2023 </sh:description>
-		<sh:name>description</sh:name>
+		<sh:name>Description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-680"/>
@@ -144,7 +144,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#coversAllSelectionCriteria"/>
 		<sh:description>Indicator that the Certificate proves whether the Organization fulfils all Selection Criteria. WG approval 12/03/2024</sh:description>
-		<sh:name>covers all selection criteria</sh:name>
+		<sh:name>Covers all selection criteria</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -165,7 +165,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#providesInformationOn"/>
 		<sh:description>Offers information about an instance of a concept. WG approval 05/03/2024</sh:description>
-		<sh:name>provides information on</sh:name>
+		<sh:name>Provides information on</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/org#Organization"/>
 	</rdf:Description>
@@ -175,7 +175,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#relatesToESPDRequest"/>
 		<sh:description>Is about an European Single Procurement Document (ESPD) Request. WG approval 05/03/2024</sh:description>
-		<sh:name>relates to espd request</sh:name>
+		<sh:name>Relates to espd request</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -187,7 +187,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#summarisesInformationAboutCertificate"/>
 		<sh:description>Relation indicating the Certificate that the information refers to. WG approval 12/03/2024 </sh:description>
-		<sh:name>summarises information about certificate</sh:name>
+		<sh:name>Summarises information about certificate</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -208,7 +208,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#actsOnBehalfOf"/>
-		<sh:name>acts on behalf of</sh:name>
+		<sh:name>Acts on behalf of</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#OfferingParty"/>
@@ -231,7 +231,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#answersQuestion"/>
 		<sh:description>Relation indicating that the Response replies to a question. WG approval 12/03/2024</sh:description>
-		<sh:name>answers question</sh:name>
+		<sh:name>Answers question</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/m8g/InformationRequirement"/>
 	</rdf:Description>
@@ -241,7 +241,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#concernsOrganisation"/>
 		<sh:description>Relates to Organization. WG approval 05/03/2024 </sh:description>
-		<sh:name>concerns organisation</sh:name>
+		<sh:name>Concerns organisation</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -253,7 +253,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationEmployeeQuantity"/>
 		<sh:description>The number of people hired by the Organization. WG approval 05/03/2024</sh:description>
-		<sh:name>provides organisation employee quantity</sh:name>
+		<sh:name>Provides organisation employee quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -264,7 +264,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationFinancialCapability"/>
 		<sh:description>A monetary amount representing the financial capability of the Organization. Additional information: Used to represent the general Turnover of the Organization (for statistical purposes). WG approval 05/03/2024</sh:description>
-		<sh:name>provides organisation financial capability</sh:name>
+		<sh:name>Provides organisation financial capability</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>
@@ -275,7 +275,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#providesOrganisationPreQualificationListingIdentifier"/>
 		<sh:description>The identifier assigned to an economic operator in a national pre-qualification system or official list. WG approval 05/03/2024</sh:description>
-		<sh:name>provides organisation pre qualification listing identifier</sh:name>
+		<sh:name>Provides organisation pre qualification listing identifier</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
 	</rdf:Description>
@@ -285,7 +285,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesResponse"/>
 		<sh:description>Relation indicating that an ESPD Response contains a Response. WG approval 12/03/2024</sh:description>
-		<sh:name>specifies response</sh:name>
+		<sh:name>Specifies response</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Response"/>
@@ -296,7 +296,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isReinforcedBy"/>
 		<sh:description>Relation indicating an Evidence that supports the Response. WG approval 12/03/2024</sh:description>
-		<sh:name>is reinforced by</sh:name>
+		<sh:name>Is reinforced by</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/m8g/Evidence"/>
 	</rdf:Description>
@@ -306,7 +306,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/m8g/supportsValue"/>
 		<sh:description>Supported Value that the Evidence contains.</sh:description>
-		<sh:name>supports value</sh:name>
+		<sh:name>Supports value</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/m8g/SupportedValue"/>
 	</rdf:Description>
@@ -316,7 +316,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/m8g/confidentialityLevelType"/>
 		<sh:description>Security classification assigned to an Evidence e.g. classified, sensitive, public. Additional Information: Classifications should be defined by an organisation/country as an outcome of a security assessment.</sh:description>
-		<sh:name>confidentiality level type</sh:name>
+		<sh:name>Confidentiality level type</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:node rdf:nodeID="n3-684"/>
@@ -337,7 +337,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToApplicablePeriod"/>
 		<sh:description>Relation indicating the period to which the Response shall apply. WG approval 12/03/2024</sh:description>
-		<sh:name>refers to applicable period</sh:name>
+		<sh:name>Refers to applicable period</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Period"/>
@@ -348,7 +348,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasPowerOfAttorney"/>
 		<sh:description>Relation indicating that a Legal Representative has a Power of Attorney. WG approval 12/03/2024</sh:description>
-		<sh:name>has power of attorney</sh:name>
+		<sh:name>Has power of attorney</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#PowerOfAttorney"/>
@@ -359,7 +359,7 @@
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/sub/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasMandate"/>
 		<sh:description>Relation indicating that a Legal Representative has a Mandate. WG approval 12/03/2024</sh:description>
-		<sh:name>has mandate</sh:name>
+		<sh:name>Has mandate</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Mandate"/>
 	</rdf:Description>

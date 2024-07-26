@@ -77,7 +77,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#despatchDate"/>
-		<sh:name>despatch date</sh:name>
+		<sh:name>Despatch date</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
@@ -98,7 +98,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasOutstandingQuantityReason"/>
-		<sh:name>has outstanding quantity reason</sh:name>
+		<sh:name>Has outstanding quantity reason</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-592"/>
@@ -138,7 +138,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasShippingMark"/>
-		<sh:name>has shipping mark</sh:name>
+		<sh:name>Has shipping mark</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-596"/>
 	</rdf:Description>
@@ -165,7 +165,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://purl.org/dc/terms/description"/>
-		<sh:name>description</sh:name>
+		<sh:name>Description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-600"/>
 		<sh:description>An account of the resource. Additional Information: Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource. WG Approval 30/05/2023</sh:description>
@@ -230,7 +230,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasVehicleDescription"/>
-		<sh:name>has vehicle description</sh:name>
+		<sh:name>Has vehicle description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-604"/>
@@ -272,7 +272,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isReturnable"/>
-		<sh:name>is returnable</sh:name>
+		<sh:name>Is returnable</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -282,7 +282,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isRefrigerated"/>
-		<sh:name>is refrigerated</sh:name>
+		<sh:name>Is refrigerated</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -292,7 +292,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://purl.org/dc/terms/description"/>
-		<sh:name>description</sh:name>
+		<sh:name>Description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-608"/>
 		<sh:description>An account of the resource. Additional Information: Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource. WG Approval 30/05/2023</sh:description>
@@ -320,7 +320,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isPowerIndicated"/>
-		<sh:name>is power indicated</sh:name>
+		<sh:name>Is power indicated</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -348,7 +348,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isReturnableMaterial"/>
-		<sh:name>is returnable material</sh:name>
+		<sh:name>Is returnable material</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -368,7 +368,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasPackagingTypeDescription"/>
-		<sh:name>has packaging type description</sh:name>
+		<sh:name>Has packaging type description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-612"/>
@@ -408,7 +408,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isHazardousRisk"/>
-		<sh:name>is hazardous risk</sh:name>
+		<sh:name>Is hazardous risk</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -418,7 +418,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isHazardousRisk"/>
-		<sh:name>is hazardous risk</sh:name>
+		<sh:name>Is hazardous risk</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -428,7 +428,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isHazardousRisk"/>
-		<sh:name>is hazardous risk</sh:name>
+		<sh:name>Is hazardous risk</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:datatype rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
@@ -447,7 +447,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://purl.org/dc/terms/description"/>
-		<sh:name>description</sh:name>
+		<sh:name>Description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:or rdf:nodeID="n3-616"/>
@@ -476,7 +476,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasHandlingInstruction"/>
-		<sh:name>has handling instruction</sh:name>
+		<sh:name>Has handling instruction</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-620"/>
 	</rdf:Description>
@@ -503,7 +503,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasCarrierServiceInstruction"/>
-		<sh:name>has carrier service instruction</sh:name>
+		<sh:name>Has carrier service instruction</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-624"/>
 	</rdf:Description>
@@ -530,7 +530,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasSpecialInstruction"/>
-		<sh:name>has special instruction</sh:name>
+		<sh:name>Has special instruction</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-628"/>
 	</rdf:Description>
@@ -557,7 +557,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDeliveryInstruction"/>
-		<sh:name>has delivery instruction</sh:name>
+		<sh:name>Has delivery instruction</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-632"/>
 	</rdf:Description>
@@ -593,7 +593,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAllowanceChargeReasonDescription"/>
-		<sh:name>has allowance charge reason description</sh:name>
+		<sh:name>Has allowance charge reason description</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-636"/>
 	</rdf:Description>
@@ -620,7 +620,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasSpecialServiceInstruction"/>
-		<sh:name>has special service instruction</sh:name>
+		<sh:name>Has special service instruction</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-640"/>
 	</rdf:Description>
@@ -647,7 +647,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasHandlingInstruction"/>
-		<sh:name>has handling instruction</sh:name>
+		<sh:name>Has handling instruction</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</sh:minCount>
 		<sh:or rdf:nodeID="n3-644"/>
 	</rdf:Description>
@@ -691,7 +691,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesDespatcher"/>
-		<sh:name>specifies despatcher</sh:name>
+		<sh:name>Specifies despatcher</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Despatcher"/>
@@ -701,7 +701,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesConsignee"/>
-		<sh:name>specifies consignee</sh:name>
+		<sh:name>Specifies consignee</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Consignee"/>
@@ -711,7 +711,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesOriginator"/>
-		<sh:name>specifies originator</sh:name>
+		<sh:name>Specifies originator</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Originator"/>
 	</rdf:Description>
@@ -720,7 +720,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToOrder"/>
-		<sh:name>refers to order</sh:name>
+		<sh:name>Refers to order</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Order"/>
@@ -730,7 +730,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesPlaceOfDespatch"/>
-		<sh:name>specifies place of despatch</sh:name>
+		<sh:name>Specifies place of despatch</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://purl.org/dc/terms/Location"/>
@@ -740,7 +740,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#comprisesDespatchLine"/>
-		<sh:name>comprises despatch line</sh:name>
+		<sh:name>Comprises despatch line</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#DespatchLine"/>
@@ -764,7 +764,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#comprisesReceiptAdviceLine"/>
-		<sh:name>comprises receipt advice line</sh:name>
+		<sh:name>Comprises receipt advice line</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ReceiptAdviceLine"/>
 	</rdf:Description>
@@ -780,7 +780,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-		<sh:name>identifier</sh:name>
+		<sh:name>Identifier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -804,7 +804,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasShortageAction"/>
-		<sh:name>has shortage action</sh:name>
+		<sh:name>Has shortage action</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -813,7 +813,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#RejectionAction"/>
-		<sh:name>rejection action</sh:name>
+		<sh:name>Rejection action</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -822,7 +822,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToOrderLine"/>
-		<sh:name>refers to order line</sh:name>
+		<sh:name>Refers to order line</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#OrderLine"/>
@@ -832,7 +832,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasRejectReason"/>
-		<sh:name>has reject reason</sh:name>
+		<sh:name>Has reject reason</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -841,7 +841,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasShortQuantity"/>
-		<sh:name>has short quantity</sh:name>
+		<sh:name>Has short quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -851,7 +851,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isSpecificToDespatchLine"/>
-		<sh:name>is specific to despatch line</sh:name>
+		<sh:name>Is specific to despatch line</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#DespatchLine"/>
@@ -861,7 +861,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasReceivedQuantity"/>
-		<sh:name>has received quantity</sh:name>
+		<sh:name>Has received quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -871,7 +871,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasOversupplyQuantity"/>
-		<sh:name>has oversupply quantity</sh:name>
+		<sh:name>Has oversupply quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -881,7 +881,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasRejectedQuantity"/>
-		<sh:name>has rejected quantity</sh:name>
+		<sh:name>Has rejected quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -891,7 +891,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isSubmittedForDespatchLine"/>
-		<sh:name>is submitted for despatch line</sh:name>
+		<sh:name>Is submitted for despatch line</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -902,7 +902,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isSubmittedForDespatchAdvice"/>
-		<sh:name>is submitted for despatch advice</sh:name>
+		<sh:name>Is submitted for despatch advice</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>Additional information: In PEPPOL (https://test-docs.peppol.eu/logistics/qa/codelist/ReceiptAdviceTypeCode/) this predicate is used for option D - Response to the Advanced Despatch Advice document.</sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -913,7 +913,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#isSubmittedForShipment"/>
-		<sh:name>is submitted for shipment</sh:name>
+		<sh:name>Is submitted for shipment</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentInformation"/>
@@ -923,7 +923,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-		<sh:name>identifier</sh:name>
+		<sh:name>Identifier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>Links a resource to an adms:Identifier class.</sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -934,7 +934,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasGrossWeight"/>
-		<sh:name>has gross weight</sh:name>
+		<sh:name>Has gross weight</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -944,7 +944,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesDespatcher"/>
-		<sh:name>specifies despatcher</sh:name>
+		<sh:name>Specifies despatcher</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -955,7 +955,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesConsignee"/>
-		<sh:name>specifies consignee</sh:name>
+		<sh:name>Specifies consignee</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Consignee"/>
@@ -965,7 +965,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesBuyer"/>
-		<sh:name>specifies buyer</sh:name>
+		<sh:name>Specifies buyer</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Buyer"/>
@@ -975,7 +975,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesSeller"/>
-		<sh:name>specifies seller</sh:name>
+		<sh:name>Specifies seller</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Seller"/>
@@ -985,7 +985,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasGrossVolume"/>
-		<sh:name>has gross volume</sh:name>
+		<sh:name>Has gross volume</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -995,7 +995,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesCarrier"/>
-		<sh:name>specifies carrier</sh:name>
+		<sh:name>Specifies carrier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Carrier"/>
@@ -1005,7 +1005,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasEstimatedDeliveryPeriod"/>
-		<sh:name>has estimated delivery period</sh:name>
+		<sh:name>Has estimated delivery period</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Period"/>
@@ -1015,7 +1015,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAssociatedDocument"/>
-		<sh:name>has associated document</sh:name>
+		<sh:name>Has associated document</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Document"/>
@@ -1025,7 +1025,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesShipment"/>
-		<sh:name>specifies shipment</sh:name>
+		<sh:name>Specifies shipment</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentInformation"/>
@@ -1035,7 +1035,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDespatchedQuantity"/>
-		<sh:name>has despatched quantity</sh:name>
+		<sh:name>Has despatched quantity</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>Quantity despatched for delivered.</sh:description>
@@ -1047,7 +1047,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasOutstandingQuantity"/>
-		<sh:name>has outstanding quantity</sh:name>
+		<sh:name>Has outstanding quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1057,7 +1057,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAssociatedDocument"/>
-		<sh:name>has associated document</sh:name>
+		<sh:name>Has associated document</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Document"/>
@@ -1067,7 +1067,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#transportsItemFrom"/>
-		<sh:name>transports item from</sh:name>
+		<sh:name>Transports item from</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#DespatchLine"/>
@@ -1077,7 +1077,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesTransportHandlingUnits"/>
-		<sh:name>specifies transport handling units</sh:name>
+		<sh:name>Specifies transport handling units</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#TransportHandlingUnit"/>
 	</rdf:Description>
@@ -1086,7 +1086,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasGrossWeight"/>
-		<sh:name>has gross weight</sh:name>
+		<sh:name>Has gross weight</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1096,7 +1096,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasGrossVolume"/>
-		<sh:name>has gross volume</sh:name>
+		<sh:name>Has gross volume</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1106,7 +1106,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasPackagingType"/>
-		<sh:name>has packaging type</sh:name>
+		<sh:name>Has packaging type</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -1115,7 +1115,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasHandlingInstructionCode"/>
-		<sh:name>has handling instruction code</sh:name>
+		<sh:name>Has handling instruction code</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -1124,7 +1124,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAllowanceChargeReason"/>
-		<sh:name>has allowance charge reason</sh:name>
+		<sh:name>Has allowance charge reason</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL5189/ https://docs.peppol.eu/poacc/billing/3.0/codelist/UNCL7161/</sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1134,7 +1134,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasAssociatedDocument"/>
-		<sh:name>has associated document</sh:name>
+		<sh:name>Has associated document</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Document"/>
@@ -1144,7 +1144,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasCarrierConsignmentID"/>
-		<sh:name>has carrier consignment id</sh:name>
+		<sh:name>Has carrier consignment id</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1154,7 +1154,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasNetWeight"/>
-		<sh:name>has net weight</sh:name>
+		<sh:name>Has net weight</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1164,7 +1164,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasChargeableWeight"/>
-		<sh:name>has chargeable weight</sh:name>
+		<sh:name>Has chargeable weight</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1174,7 +1174,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasConsignmentDeclaredStatisticsValue"/>
-		<sh:name>has consignment declared statistics value</sh:name>
+		<sh:name>Has consignment declared statistics value</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>
@@ -1184,7 +1184,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasConsignmentFreeOnBoardValue"/>
-		<sh:name>has consignment free on board value</sh:name>
+		<sh:name>Has consignment free on board value</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>
@@ -1203,7 +1203,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#agreedByBuyer"/>
-		<sh:name>agreed by buyer</sh:name>
+		<sh:name>Agreed by buyer</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Buyer"/>
@@ -1213,7 +1213,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#agreedBySeller"/>
-		<sh:name>agreed by seller</sh:name>
+		<sh:name>Agreed by seller</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Seller"/>
@@ -1223,7 +1223,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesFreightForwarder"/>
-		<sh:name>specifies freight forwarder</sh:name>
+		<sh:name>Specifies freight forwarder</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#FreightForwarder"/>
 	</rdf:Description>
@@ -1232,7 +1232,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#containsTransportHandlingUnit"/>
-		<sh:name>contains transport handling unit</sh:name>
+		<sh:name>Contains transport handling unit</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#TransportHandlingUnit"/>
@@ -1242,7 +1242,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#usesTransportEquipment"/>
-		<sh:name>uses transport equipment</sh:name>
+		<sh:name>Uses transport equipment</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#TransportEquipment"/>
 	</rdf:Description>
@@ -1251,7 +1251,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasFreightAllowanceCharge"/>
-		<sh:name>has freight allowance charge</sh:name>
+		<sh:name>Has freight allowance charge</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ChargeInformation"/>
 	</rdf:Description>
@@ -1260,7 +1260,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-		<sh:name>identifier</sh:name>
+		<sh:name>Identifier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>Links a resource to an adms:Identifier class.</sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1271,7 +1271,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-		<sh:name>identifier</sh:name>
+		<sh:name>Identifier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1281,7 +1281,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasRequestedPickUpInformation"/>
-		<sh:name>has requested pick up information</sh:name>
+		<sh:name>Has requested pick up information</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1292,7 +1292,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToConsignment"/>
-		<sh:name>refers to consignment</sh:name>
+		<sh:name>Refers to consignment</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1303,7 +1303,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#usesTransportMeans"/>
-		<sh:name>uses transport means</sh:name>
+		<sh:name>Uses transport means</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#TransportMeans"/>
@@ -1324,7 +1324,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDriverPerson"/>
-		<sh:name>has driver person</sh:name>
+		<sh:name>Has driver person</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#TransportMeansOperator"/>
@@ -1334,7 +1334,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToDeliveryInformation"/>
-		<sh:name>refers to delivery information</sh:name>
+		<sh:name>Refers to delivery information</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1353,7 +1353,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTrackingID"/>
-		<sh:name>has tracking id</sh:name>
+		<sh:name>Has tracking id</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1363,7 +1363,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTransportHandlingUnitQuantity"/>
-		<sh:name>has transport handling unit quantity</sh:name>
+		<sh:name>Has transport handling unit quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1373,7 +1373,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-		<sh:name>identifier</sh:name>
+		<sh:name>Identifier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>Links a resource to an adms:Identifier class.</sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1384,7 +1384,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://www.w3.org/ns/adms#identifier"/>
-		<sh:name>identifier</sh:name>
+		<sh:name>Identifier</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1394,7 +1394,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#specifiesNotifier"/>
-		<sh:name>specifies notifier</sh:name>
+		<sh:name>Specifies notifier</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Notifier"/>
 	</rdf:Description>
@@ -1403,7 +1403,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasMainCarriageShipmentStage"/>
-		<sh:name>has main carriage shipment stage</sh:name>
+		<sh:name>Has main carriage shipment stage</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentStage"/>
@@ -1420,7 +1420,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#playedBy"/>
-		<sh:name>played by</sh:name>
+		<sh:name>Played by</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
@@ -1430,7 +1430,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasPreCarriageShipmentStage"/>
-		<sh:name>has pre carriage shipment stage</sh:name>
+		<sh:name>Has pre carriage shipment stage</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentStage"/>
 	</rdf:Description>
@@ -1439,7 +1439,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasOnCarriageShipmentStage"/>
-		<sh:name>has on carriage shipment stage</sh:name>
+		<sh:name>Has on carriage shipment stage</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentStage"/>
 	</rdf:Description>
@@ -1448,7 +1448,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTransportMode"/>
-		<sh:name>has transport mode</sh:name>
+		<sh:name>Has transport mode</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1468,7 +1468,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToDespatchLine"/>
-		<sh:name>refers to despatch line</sh:name>
+		<sh:name>Refers to despatch line</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1479,7 +1479,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasConsigneeConsignmentID"/>
-		<sh:name>has consignee consignment id</sh:name>
+		<sh:name>Has consignee consignment id</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1489,7 +1489,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasFreightForwarderConsignmentID"/>
-		<sh:name>has freight forwarder consignment id</sh:name>
+		<sh:name>Has freight forwarder consignment id</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1499,7 +1499,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasVehicleID"/>
-		<sh:name>has vehicle id</sh:name>
+		<sh:name>Has vehicle id</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1510,7 +1510,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasArrivalShipmentInformation"/>
-		<sh:name>has arrival shipment information</sh:name>
+		<sh:name>Has arrival shipment information</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentInformation"/>
 	</rdf:Description>
@@ -1519,7 +1519,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDepartureShipmentInformation"/>
-		<sh:name>has departure shipment information</sh:name>
+		<sh:name>Has departure shipment information</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentInformation"/>
 	</rdf:Description>
@@ -1528,7 +1528,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTransportEquipmentSeal"/>
-		<sh:name>has transport equipment seal</sh:name>
+		<sh:name>Has transport equipment seal</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#TransportEquipmentSeal"/>
 	</rdf:Description>
@@ -1537,7 +1537,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTransportEquipmentType"/>
-		<sh:name>has transport equipment type</sh:name>
+		<sh:name>Has transport equipment type</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
@@ -1545,7 +1545,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasSizeType"/>
-		<sh:name>has size type</sh:name>
+		<sh:name>Has size type</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
 
@@ -1553,7 +1553,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTotalGoodsItemQuantity"/>
-		<sh:name>has total goods item quantity</sh:name>
+		<sh:name>Has total goods item quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1563,7 +1563,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTotalGoodsItemQuantity"/>
-		<sh:name>has total goods item quantity</sh:name>
+		<sh:name>Has total goods item quantity</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1573,7 +1573,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasNetVolume"/>
-		<sh:name>has net volume</sh:name>
+		<sh:name>Has net volume</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1583,7 +1583,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasNetWeight"/>
-		<sh:name>has net weight</sh:name>
+		<sh:name>Has net weight</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1593,7 +1593,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasMinimumTemperature"/>
-		<sh:name>has minimum temperature</sh:name>
+		<sh:name>Has minimum temperature</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1603,7 +1603,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#containsPackage"/>
-		<sh:name>contains package</sh:name>
+		<sh:name>Contains package</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Package"/>
 	</rdf:Description>
@@ -1612,7 +1612,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#containsGoodsItem"/>
-		<sh:name>contains goods item</sh:name>
+		<sh:name>Contains goods item</sh:name>
 		<sh:minCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:minCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#GoodsItem"/>
@@ -1622,7 +1622,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTraceID"/>
-		<sh:name>has trace id</sh:name>
+		<sh:name>Has trace id</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>The identifier used for tracking the goods item Additional information: An example is the EPC number used in RFID. WG approval 21/09/2023 </sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1633,7 +1633,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDeclaredStatisticalValue"/>
-		<sh:name>has declared statistical value</sh:name>
+		<sh:name>Has declared statistical value</sh:name>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#MonetaryValue"/>
 	</rdf:Description>
@@ -1642,7 +1642,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasLoadingLength"/>
-		<sh:name>has loading length</sh:name>
+		<sh:name>Has loading length</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1652,7 +1652,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasDespatchAdviceType"/>
-		<sh:name>has despatch advice type</sh:name>
+		<sh:name>Has despatch advice type</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>https://test-docs.peppol.eu/logistics/transport-execution/codelist/DespatchAdviceTypeCode/ </sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1662,7 +1662,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasMaximumTemperature"/>
-		<sh:name>has maximum temperature</sh:name>
+		<sh:name>Has maximum temperature</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1672,7 +1672,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTemperatureSpecification"/>
-		<sh:name>has temperature specification</sh:name>
+		<sh:name>Has temperature specification</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#TemperatureSpecification"/>
@@ -1682,7 +1682,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasLength"/>
-		<sh:name>has length</sh:name>
+		<sh:name>Has length</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1692,7 +1692,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasHeight"/>
-		<sh:name>has height</sh:name>
+		<sh:name>Has height</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1702,7 +1702,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasWidth"/>
-		<sh:name>has width</sh:name>
+		<sh:name>Has width</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#Quantity"/>
@@ -1712,7 +1712,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#refersToShipmentAgreement"/>
-		<sh:name>refers to shipment agreement</sh:name>
+		<sh:name>Refers to shipment agreement</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://data.europa.eu/a4g/ontology#ShipmentAgreement"/>
@@ -1722,7 +1722,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasConsignmentInvoiceValue"/>
-		<sh:name>has consignment invoice value</sh:name>
+		<sh:name>Has consignment invoice value</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:description>Declared amount of the Consignment. Additional Information: This is a logistics information needed for logistics, security measures, customs check, etc.</sh:description>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
@@ -1733,7 +1733,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasTransportMeansType"/>
-		<sh:name>has transport means type</sh:name>
+		<sh:name>Has transport means type</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
@@ -1742,7 +1742,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasVehicleSegmentID"/>
-		<sh:name>has vehicle segment id</sh:name>
+		<sh:name>Has vehicle segment id</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 		<sh:class rdf:resource="http://www.w3.org/ns/adms#Identifier"/>
@@ -1752,7 +1752,7 @@
 		<rdf:type rdf:resource="http://www.w3.org/ns/shacl#PropertyShape"/>
 		<rdfs:isDefinedBy rdf:resource="http://data.europa.eu/a4g/data-shape/ful/"/>
 		<sh:path rdf:resource="http://data.europa.eu/a4g/ontology#hasHandlingInstructionCode"/>
-		<sh:name>has handling instruction code</sh:name>
+		<sh:name>Has handling instruction code</sh:name>
 		<sh:maxCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</sh:maxCount>
 		<sh:nodeKind rdf:resource="http://www.w3.org/ns/shacl#IRI"/>
 	</rdf:Description>
