@@ -1,6 +1,35 @@
+import rdf from 'rdf-ext'
+import { ns } from '../src/namespaces.js'
 import { createTriplestore, doConstruct } from '../src/sparql/localStore.js'
 
-function getRedefined ({ assets }) {
+function filterDataset (redefined, dataset) {
+  // Subjects to remove
+  const subjects = rdf.termSet()
+  for (const quad of redefined) {
+    subjects.add(quad.subject)
+  }
+  // Traverse the dataset, go deeper if is a blank but do not follow ePO subjects
+  const traverser = rdf.traverser(({
+    dataset,
+    level,
+    quad,
+  }) => !quad.subject.value.startsWith(ns.a4g().value) ||
+    quad.subject.termType === 'BlankNode')
+
+  const unwanted = rdf.dataset()
+  for (const term of [...subjects]) {
+    traverser.forEach({ term, dataset }, ({ dataset, level, quad }) => {
+      unwanted.add(quad)
+    })
+  }
+
+  const wanted = dataset.difference(unwanted)
+
+  return { wanted, unwanted }
+
+}
+
+function fixRedefined ({ assets }) {
   const store = createTriplestore({ assets })
 
   const filterUnwantedQuery = `
@@ -55,4 +84,4 @@ WHERE {
   return doConstruct({ store, query: filterUnwantedQuery })
 }
 
-export { getRedefined }
+export { fixRedefined, filterDataset }

@@ -65,7 +65,8 @@ function doConstruct ({ store, query }) {
   const result = rdf.dataset()
   for (const current of store.query(query)) {
     const quad = rdf.quad(termInstance(current.subject),
-      termInstance(current.predicate), termInstance(current.object))
+      termInstance(current.predicate), termInstance(current.object),
+      rdf.defaultGraph())
     result.add(quad)
   }
   console.log(`store: ${store.size} elements, results: ${result.size}`)

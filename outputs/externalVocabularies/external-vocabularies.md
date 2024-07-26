@@ -13,7 +13,7 @@
 }
 ```
 
-[source](./externalVocabularies.js) 2024-07-10T11:13:34.475Z
+[source](./externalVocabularies.js) 2024-07-26T13:25:32.384Z
 
 ## ePO relations using external vocabulary as Domain
 

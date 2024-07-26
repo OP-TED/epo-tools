@@ -9,19 +9,19 @@ function getMimetype (path) {
   }
   return 'text/turtle'
 }
+
 function getGraph (path) {
   // Normalize for windows
-  path = path.replace(/\\/g, '/');
+  path = path.replace(/\\/g, '/')
 
   // Add necessary file URI prefixes
   if (/^[a-zA-Z]:/.test(path)) {
-    path = `file:///${path}`;
+    path = `file:///${path}`
   } else {
-    path = `file://${path.startsWith('/') ? '' : './'}${path}`;
+    path = `file://${path.startsWith('/') ? '' : './'}${path}`
   }
   return rdf.namedNode(`file://${path}`)
 }
-
 
 async function applyGlob (globPattern) {
   const files = await glob(globPattern, {
@@ -37,6 +37,7 @@ async function applyGlob (globPattern) {
   return files
 }
 
+// (path) => rdf.defaultGraph() // If not namedGraph is needed
 async function getRdfAssets ({ globPattern }, graphFactory = getGraph) {
 
   const turtleFiles = await applyGlob(globPattern)
