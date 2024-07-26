@@ -12,6 +12,11 @@ function getAllPrefixes ({ nodes, edges }) {
   return noDuplicates(nodes.map(x => x.name).filter(hasPrefix).map(getPrefix))
 }
 
+function capitalizeFirst (phrase) {
+  return phrase.length === 0 ? '' : phrase.charAt(0).toUpperCase() +
+    phrase.slice(1)
+}
+
 // modified from: https://www.30secondsofcode.org/js/s/string-case-conversion/
 const toSpaced = str => str && str.match(
   /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).
@@ -49,8 +54,9 @@ export {
   getPrefix,
   stripPrefix,
   getAllPrefixes,
+  capitalizeFirst,
   toSpaced,
   toTerm,
   turtlePrefixes,
-  toOneLine
+  toOneLine,
 }
