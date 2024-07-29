@@ -21,8 +21,8 @@ const PRODUCTION = {
 const UNDER_REVIEW = {
   owner: 'OP-TED',
   repo: 'ePO',
-  branch: 'develop',
-  localPath: `assets/ePO/develop`,
+  branch: 'feature/4.2.0-rc.1',
+  localPath: `assets/feature/4.2.0-rc.1`,
   databasePath: `assets/ePO/develop/analysis_and_design/conceptual_model/ePO_CM.eap`,
 }
 
