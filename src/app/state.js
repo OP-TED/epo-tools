@@ -57,7 +57,7 @@ export const useStore = defineStore('counter', () => {
   const suggestedNodes = computed(() => {
     const candidates = new Set(
       eaJson.value.edges.filter(x => x.type !== ATTRIBUTE).
-        flatMap(({ source, target }) => [source, target]))
+        flatMap(({ source, predicate, target }) => [source, predicate, target]))
     return [...candidates]
   })
 

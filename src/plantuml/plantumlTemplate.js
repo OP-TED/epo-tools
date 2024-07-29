@@ -47,36 +47,36 @@ ${maybeSorted(noDuplicates(relations)).join('\n')}
 `
 }
 
-function noSpaces (name) {
-  return name.replaceAll(' ', '_')
+function noSpacesNoSlashes (name) {
+  return name.replaceAll(' ', '_').replaceAll('-','_')
 }
 
-const nodeTemplate = ({ name }, edges) => `class "${noSpaces(name)}" {
+const nodeTemplate = ({ name }, edges) => `class "${noSpacesNoSlashes(name)}" {
 ${noDuplicates(edges.map(
-  x => `  ${noSpaces(x.predicate)} : ${noSpaces(x.target)} ${displayQuantifiers(x.quantifiers,
+  x => `  ${noSpacesNoSlashes(x.predicate)} : ${noSpacesNoSlashes(x.target)} ${displayQuantifiers(x.quantifiers,
     x => `[${x}]`)}`)).join('\n')}
 }`
 
-const enumTemplate = ({ name }, edges) => `enum "${noSpaces(name)}" {
+const enumTemplate = ({ name }, edges) => `enum "${noSpacesNoSlashes(name)}" {
 ${noDuplicates(edges.map(
-  x => `  ${noSpaces(x.predicate)}`)).join('\n')}
+  x => `  ${noSpacesNoSlashes(x.predicate)}`)).join('\n')}
 }`
 
-const objectTemplate = ({ name }, edges) => `object ${noSpaces(name)} {
+const objectTemplate = ({ name }, edges) => `object ${noSpacesNoSlashes(name)} {
 ${noDuplicates(edges.map(
-  x => `  ${noSpaces(x.predicate)} = ${noSpaces(x.target)}`)).join('\n')}
+  x => `  ${noSpacesNoSlashes(x.predicate)} = ${noSpacesNoSlashes(x.target)}`)).join('\n')}
 }`
 
-const datatypeTemplate = ({ name }, edges) => `entity ${noSpaces(name)}`
+const datatypeTemplate = ({ name }, edges) => `entity ${noSpacesNoSlashes(name)}`
 
 const subclassTemplate = ({
   source, predicate, target,
-}) => `"${noSpaces(target)}" <|-- "${noSpaces(source)}"`
+}) => `"${noSpacesNoSlashes(target)}" <|-- "${noSpacesNoSlashes(source)}"`
 
 const relationTemplate = ({
   source, predicate, target, quantifiers,
-}) => `"${noSpaces(source)}" --> ${displayQuantifiers(quantifiers,
-  x => `"${x}"`)} "${noSpaces(target)}" ${displayPredicateName(predicate)}`
+}) => `"${noSpacesNoSlashes(source)}" --> ${displayQuantifiers(quantifiers,
+  x => `"${x}"`)} "${noSpacesNoSlashes(target)}" ${displayPredicateName(predicate)}`
 
 function displayQuantifiers ({ quantifiersDeclared, min, max, raw }, wrap) {
   if (quantifiersDeclared) {
