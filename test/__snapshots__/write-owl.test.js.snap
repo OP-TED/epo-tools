@@ -18,7 +18,7 @@ exports[`write-owl generates owl 1`] = `
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix person: <http://www.w3.org/ns/person#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
@@ -8882,7 +8882,7 @@ exports[`write-owl generates owl, empty graph 1`] = `
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix person: <http://www.w3.org/ns/person#> .
 @prefix locn: <http://www.w3.org/ns/locn#> .
-@prefix shacl: <http://www.w3.org/ns/shacl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix org: <http://www.w3.org/ns/org#> .
 @prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix rml: <http://semweb.mmlab.be/ns/rml#> .
