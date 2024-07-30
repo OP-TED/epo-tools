@@ -42,6 +42,7 @@ const aliases = {
   'epo-not': rdf.namespace('http://data.europa.eu/a4g/ontology#'),
   'epo-acc': rdf.namespace('http://data.europa.eu/a4g/ontology#'),
   'epo-sub': rdf.namespace('http://data.europa.eu/a4g/ontology#'),
+  'epo-inv': rdf.namespace('http://data.europa.eu/a4g/ontology#'),
   cccev: rdf.namespace('http://data.europa.eu/m8g/'),
   cv: rdf.namespace('http://data.europa.eu/m8g/'),
   sh: rdf.namespace('http://www.w3.org/ns/shacl#'),

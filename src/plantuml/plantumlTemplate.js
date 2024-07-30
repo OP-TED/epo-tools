@@ -62,6 +62,7 @@ ${noDuplicates(edges.map(
   x => `  ${noSpacesNoSlashes(x.predicate)}`)).join('\n')}
 }`
 
+// This one is problematic
 const objectTemplate = ({ name }, edges) => `object ${noSpacesNoSlashes(name)} {
 ${noDuplicates(edges.map(
   x => `  ${noSpacesNoSlashes(x.predicate)} = ${noSpacesNoSlashes(x.target)}`)).join('\n')}
