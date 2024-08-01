@@ -56,6 +56,7 @@ PREFIX ns14: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 PREFIX ns15: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX ns16: <http://www.w3.org/2001/XMLSchema#>
 PREFIX eli: <http://data.europa.eu/eli/ontology#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>    
 
 CONSTRUCT {?s ?p ?o }
 WHERE {
@@ -77,7 +78,8 @@ WHERE {
               STRSTARTS(str(?s), str(ns14:)) ||
               STRSTARTS(str(?s), str(ns15:)) ||
               STRSTARTS(str(?s), str(ns16:)) ||
-              STRSTARTS(str(?s), str(eli:)))
+              STRSTARTS(str(?s), str(eli:)) ||
+              STRSTARTS(str(?s), str(foaf:)))
            )
 }
 `
