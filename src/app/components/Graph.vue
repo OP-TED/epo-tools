@@ -1,14 +1,16 @@
 <script setup lang="js">
-import { NButton, NCard, NDrawer, NDrawerContent, NEllipsis, NTable } from 'naive-ui'
+import { NButton, NCard, NDrawer, NDrawerContent, NEllipsis, NSelect, NTable } from 'naive-ui'
 import { storeToRefs } from 'pinia'
-import { onMounted, ref, watch } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
+import { ATTRIBUTE } from '../../conceptualModel/const.js'
 import { toSigmaGraph } from '../../epo/toSigmaGraph.js'
 import { useStore } from '../state.js'
 import SigmaGraph from './SigmaGraph.vue'
+import NodeDetails from './NodeDetails.vue'
 
 const store = useStore()
 
-const { eaJson } = storeToRefs(useStore())
+const { eaJson } = storeToRefs(store)
 
 const sigmaData = ref()
 
@@ -36,65 +38,43 @@ function handleNodeSelected (node) {
   }
 }
 
+const options = computed(() => {
+  const candidates = new Set(
+      eaJson.value.edges.filter(x => x.type !== ATTRIBUTE).
+          flatMap(({ source, target }) => [source, target]))
+  return [...candidates].map(tag => {
+    return {
+      label: tag,
+      value: tag,
+    }
+  })
+})
+
 const displayDetail = ref(false)
 
-const { toggleFilterTerm } = store
+const test = ref()
 
 </script>
 
 <template>
   <n-drawer v-model:show="displayDetail" :width="1200" placement="right">
     <n-drawer-content>
-
-      <n-card
-          :contentClass="current.type"
-          :title="current.name" size="small">
-         {{ current.description }} ({{current.type}})
-      </n-card>
-
-      <!--  Outgoing-->
-      <template v-if="eaJson.edges.find(x=>x.source===current.name)">
-        <n-card title="Outgoing" size="small">
-          <n-table :bordered="false" :single-line="false">
-            <template v-for="out of eaJson.edges.filter(x=>x.source===current.name)">
-              <tr>
-                <td>{{ out.predicate }} {{ out.quantifiers?.raw }}</td>
-                <td>
-                  <NButton @click="()=>handleNodeSelected(out.target)"> {{ out.target }}</NButton>
-                </td>
-                <td width="400">
-                  <n-ellipsis :line-clamp="2">{{ out.description }}</n-ellipsis>
-                </td>
-              </tr>
-            </template>
-          </n-table>
-        </n-card>
-      </template>
-      <!--      Incoming-->
-      <template v-if="eaJson.edges.find(x=>x.target===current.name)">
-        <n-card title="Incoming" size="small">
-          <n-table :bordered="false" :single-line="false">
-            <template v-for="out of eaJson.edges.filter(x=>x.target===current.name)">
-              <tr>
-                <td>
-                  <NButton @click="()=>handleNodeSelected(out.source)"> {{ out.source }}</NButton>
-                </td>
-                <td>{{ out.predicate }} {{ out.quantifiers?.raw }}</td>
-                <td width="400">
-                  <n-ellipsis :line-clamp="2">{{ out.description }}</n-ellipsis>
-                </td>
-              </tr>
-            </template>
-          </n-table>
-        </n-card>
-      </template>
-
-      <n-card title="Dev zone" size="small">
-      {{ current }}
-      <n-button @click="()=>toggleFilterTerm(current.name)">Toggle filters</n-button>
-      </n-card>
+      <NodeDetails :node="current" :graph="eaJson" @node-selected="handleNodeSelected"/>
     </n-drawer-content>
   </n-drawer>
+
+  <div style="display: flex;">
+    <n-select
+        placeholder="Search a term"
+        v-model:value="test"
+        filterable
+        :options="options"
+        :reset-menu-on-options-change="true"
+        style="flex: 8;"
+        @update:value="handleNodeSelected"
+    />
+
+  </div>
 
   <div>
     <template v-if="sigmaData">
