@@ -41,42 +41,55 @@ function toPlantuml ({ nodes, edges }, { shrink, sorted } = {
 
   return `
 @startuml
+skinparam object {
+    BackgroundColor LightYellow
+}
 ${maybeSorted(classDefinitions).join('\n\n')}
 ${maybeSorted(noDuplicates(relations)).join('\n')}
 @enduml
 `
 }
 
-function noSpacesNoSlashes (name) {
-  return name.replaceAll(' ', '_').replaceAll('-','_')
+// To defeat a tragic inconsistency of plantuml regarding objects and datatypes
+function sanitize (name) {
+  return name.replaceAll(' ', '_')
+  .replaceAll('-', '_')
+  .replaceAll('(', '_')
+  .replaceAll(')', '_')
+  .replaceAll('/', '_');
 }
 
-const nodeTemplate = ({ name }, edges) => `class "${noSpacesNoSlashes(name)}" {
+const nodeTemplate = (
+  { name }, edges) => `class "${name}" as ${sanitize(name)} {
 ${noDuplicates(edges.map(
-  x => `  ${noSpacesNoSlashes(x.predicate)} : ${noSpacesNoSlashes(x.target)} ${displayQuantifiers(x.quantifiers,
+  x => `  ${x.predicate} : ${x.target} ${displayQuantifiers(x.quantifiers,
     x => `[${x}]`)}`)).join('\n')}
 }`
 
-const enumTemplate = ({ name }, edges) => `enum "${noSpacesNoSlashes(name)}" {
+const enumTemplate = (
+  { name }, edges) => `enum "${name}" as ${sanitize(name)} {
 ${noDuplicates(edges.map(
-  x => `  ${noSpacesNoSlashes(x.predicate)}`)).join('\n')}
+  x => `  ${x.predicate}`)).join('\n')}
 }`
 
-const objectTemplate = ({ name }, edges) => `object ${noSpacesNoSlashes(name)} {
+const objectTemplate = (
+  { name }, edges) => `object "${name}" as ${sanitize(name)} {
 ${noDuplicates(edges.map(
-  x => `  ${noSpacesNoSlashes(x.predicate)} = ${noSpacesNoSlashes(x.target)}`)).join('\n')}
+  x => `  ${x.predicate} = ${x.target}`)).join('\n')}
 }`
 
-const datatypeTemplate = ({ name }, edges) => `entity ${noSpacesNoSlashes(name)}`
+const datatypeTemplate = (
+  { name }, edges) => `entity "${name}" as ${sanitize(name)}`
 
 const subclassTemplate = ({
   source, predicate, target,
-}) => `"${noSpacesNoSlashes(target)}" <|-- "${noSpacesNoSlashes(source)}"`
+}) => `"${sanitize(target)}" <|-- "${sanitize(source)}"`
 
 const relationTemplate = ({
   source, predicate, target, quantifiers,
-}) => `"${noSpacesNoSlashes(source)}" --> ${displayQuantifiers(quantifiers,
-  x => `"${x}"`)} "${noSpacesNoSlashes(target)}" ${displayPredicateName(predicate)}`
+}) => `"${sanitize(source)}" --> ${displayQuantifiers(quantifiers,
+  x => `"${x}"`)} "${sanitize(target)}" ${displayPredicateName(
+  predicate)}`
 
 function displayQuantifiers ({ quantifiersDeclared, min, max, raw }, wrap) {
   if (quantifiersDeclared) {
