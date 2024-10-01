@@ -32,6 +32,25 @@ a4g:RequestForClarification rdfs:label \\"request for clarification\\"@en ;
 	a owl:Class ;
 	rdfs:subClassOf a4g:Document .
 
+a4g:ESPD rdfs:label \\"espd\\"@en ;
+	rdfs:comment \\"A document conveying the fulfilment or not by the economic operator of the Exclusion Grounds and the Selection Criteria set out by the Buyer for a specific Procurement using an European Single Procurement Document (ESPD) Request. WG Approval 05/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:Document, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:providesInformationOn ;
+		owl:onClass org:Organization ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:relatesToESPDRequest ;
+		owl:onClass a4g:ESPDRequest ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesResponse ;
+		owl:onClass a4g:Response ;
+	] .
+
 a4g:ExpressionOfInterest rdfs:label \\"expression of interest\\"@en ;
 	rdfs:comment \\"Document presenting an Economic Operator's Request to be considered for Procedures covering a specific domain. WG approval 13/04/2021\\" ;
 	a owl:Class ;
@@ -329,6 +348,10 @@ a4g:Buyer rdfs:label \\"buyer\\"@en ;
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:exposesInvoiceeChannel ;
 		owl:onClass m8g:Channel ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:indicatesInvoiceeContactPoint ;
+		owl:onClass m8g:ContactPoint ;
 	] .
 
 a4g:LotSpecificTerm rdfs:label \\"lot specific term\\"@en ;
@@ -742,7 +765,7 @@ a4g:DespatchAdvice rdfs:label \\"despatch advice\\"@en ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasAssociatedDocument ;
-		owl:onClass a4g:PostAwardDocument ;
+		owl:onClass a4g:Document ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 1 ;
@@ -831,6 +854,17 @@ a4g:Fund rdfs:label \\"fund\\"@en ;
 		owl:onClass adms:Identifier ;
 	] .
 
+a4g:GreenProcurement rdfs:label \\"green procurement\\"@en ;
+	rdfs:comment \\"Approach whereby Buyers seek to procure with a reduced Environmental Impact. Additional Information: The approach may apply to the complete life cycle. The reduced Environmental Impact is in comparison to goods, services and works with the same primary function that would otherwise be procured. Tightly related are article 68 - Life-cycle costing and article 67 - most economically advantageous Tender (see GPP handbook) https://ec.europa.eu/environment/gpp/pdf/Buying-Green-Handbook-3rd-Edition.pdf An instance of the class GreenProcurement is represented in eForms with the code env-imp defined in the codelist Strategic-Procurement.Paragraphs) https://ec.europa.eu/environment/gpp/pdf/Buying-Green-Handbook-3rd-Edition.pdf\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:StrategicProcurement, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:usesCleanVehicleDirective ;
+		owl:onDataRange xsd:boolean ;
+	] .
+
 a4g:CatalogueReceiver rdfs:label \\"catalogue receiver\\"@en ;
 	rdfs:comment \\"A Role of an Agent processing a Catalogue. Additional Information: The Catalogue Receiver may not only receive it but also validate it, process it, etc. The Catalogue Receiver role is usually played by the agent that acts as a Buyer, or by another Agent that acts on behalf of the Buyer. WG Approval 28/01/2021\\" ;
 	a owl:Class ;
@@ -879,17 +913,6 @@ a4g:ContractLotCompletionInformation rdfs:label \\"contract lot completion infor
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:providesContractTotalPenaltyValue ;
 		owl:onClass a4g:MonetaryValue ;
-	] .
-
-a4g:GreenProcurement rdfs:label \\"green procurement\\"@en ;
-	rdfs:comment \\"Approach whereby Buyers seek to procure with a reduced Environmental Impact. Additional Information: The approach may apply to the complete life cycle. The reduced Environmental Impact is in comparison to goods, services and works with the same primary function that would otherwise be procured. Tightly related are article 68 - Life-cycle costing and article 67 - most economically advantageous Tender (see GPP handbook) https://ec.europa.eu/environment/gpp/pdf/Buying-Green-Handbook-3rd-Edition.pdf An instance of the class GreenProcurement is represented in eForms with the code env-imp defined in the codelist Strategic-Procurement.Paragraphs) https://ec.europa.eu/environment/gpp/pdf/Buying-Green-Handbook-3rd-Edition.pdf\\" ;
-	a owl:Class ;
-	rdfs:subClassOf a4g:StrategicProcurement, [
-		rdf:type owl:Restriction ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
-		owl:onProperty a4g:usesCleanVehicleDirective ;
-		owl:onDataRange xsd:boolean ;
 	] .
 
 a4g:InnovativeProcurement rdfs:label \\"innovative procurement\\"@en ;
@@ -1025,7 +1048,7 @@ a4g:Notice rdfs:label \\"notice\\"@en ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasOJSIssueNumber ;
-		owl:onDataRange rdf:PlainLiteral ;
+		owl:onDataRange xsd:integer ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
@@ -1132,12 +1155,22 @@ org:Organization rdfs:label \\"organization\\"@en ;
 		owl:onDataRange rdf:PlainLiteral ;
 	], [
 		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasPrimaryContactPoint ;
 		owl:onClass m8g:ContactPoint ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasCertification ;
 		owl:onClass a4g:Certificate ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:canProvideTaxAndSocialSecuritiesEvidence ;
+		owl:onClass m8g:Evidence ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:canProvideNonDiscriminatoryEvidence ;
+		owl:onClass m8g:Evidence ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasLegalIdentifier ;
@@ -1272,7 +1305,7 @@ a4g:ContractAmendment rdfs:label \\"contract amendment\\"@en ;
 	] .
 
 a4g:Period rdfs:label \\"period\\"@en ;
-	rdfs:comment \\"A time interval or a Duration. (WG approval 28/04/2020) \\" ;
+	rdfs:comment \\"A time interval or a Duration. WG approval 28/04/2020 \\" ;
 	a owl:Class ;
 	rdfs:subClassOf [
 		rdf:type owl:Restriction ;
@@ -1287,6 +1320,10 @@ a4g:Period rdfs:label \\"period\\"@en ;
 		owl:onProperty a4g:hasEnd ;
 		owl:onDataRange xsd:dateTime ;
 	] .
+
+person:Person rdfs:label \\"person\\"@en ;
+	rdfs:comment \\"A individual human being who may be dead or alive, but not imaginary. \\" ;
+	a owl:Class .
 
 a4g:PlannedProcurementPart rdfs:label \\"planned procurement part\\"@en ;
 	rdfs:comment \\"A subdivision of a Planned Procurement that may later become one or more Lots or a self-standing Procedure. A Lot or a Procedure can also cover one or more parts of the Planned Procurement. WG Approval 20/06/2019\\" ;
@@ -1513,6 +1550,12 @@ a4g:Catalogue rdfs:label \\"catalogue\\"@en ;
 		rdf:type owl:Restriction ;
 		owl:onProperty a4g:specifiesSeller ;
 		owl:onClass a4g:Seller ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasValidityPeriod ;
+		owl:onClass a4g:Period ;
 	] .
 
 a4g:ParticipationRequestTerm rdfs:label \\"participation request term\\"@en ;
@@ -1642,6 +1685,12 @@ a4g:ProcurementCriterion rdfs:label \\"procurement criterion\\"@en ;
 	rdfs:comment \\"A criterion specific to Procurement. Additional Information: This Procurement Criterion can be only Exclusion Ground, Selection Criterion or Award Criterion. Each of these Criteria can contain subcriteria (Criterion class). WG Approval 23/04/2020\\" ;
 	a owl:Class ;
 	rdfs:subClassOf m8g:Criterion, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAdditionalInformation ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
@@ -1779,6 +1828,12 @@ a4g:CatalogueLine rdfs:label \\"catalogue line\\"@en ;
 		owl:onClass a4g:Price ;
 	], [
 		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:foreseesPackage ;
+		owl:onClass a4g:Package ;
+	], [
+		rdf:type owl:Restriction ;
 		owl:onProperty a4g:hasChargeInformation ;
 		owl:onClass a4g:ChargeInformation ;
 	] .
@@ -1904,7 +1959,7 @@ a4g:StrategicProcurement rdfs:label \\"strategic procurement\\"@en ;
 	] .
 
 a4g:Subcontractor rdfs:label \\"subcontractor\\"@en ;
-	rdfs:comment \\"A Role of an Agent that has an agreement to perform part or all of the obligations of another Agents's Contract. Additional information For some Procedures, the Subcontractor signs as well the Contract between the Buyer and the Contractor. At tendering time, entities relied upon by the Economic Operators can be Subcontractors or not. When modelling ESPD we well analyze whether we need or not a Role named relied upon. WG approval 05/08/2021 \\" ;
+	rdfs:comment \\"A Role of an Agent that has an agreement to perform part or all of the obligations of another Agents's Contract. Additional information For some Procedures, the Subcontractor signs as well the Contract between the Buyer and the Contractor. At tendering time, entities relied upon by the Economic Operators can be Subcontractors or not. When modelling ESPD we will analyze whether we need or not a Role named relied upon. WG approval 05/08/2021 \\" ;
 	a owl:Class ;
 	rdfs:subClassOf a4g:OfferingParty .
 
@@ -2061,6 +2116,11 @@ a4g:System rdfs:label \\"system\\"@en ;
 		owl:onClass foaf:Agent ;
 	] .
 
+a4g:TechnicalSpecification rdfs:label \\"technical specification\\"@en ;
+	rdfs:comment \\"A set of documented Requirements applicable to the object of the Procurement. Additional Information: A specification often includes technical standards. WG approval: 20/04/2021\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:ProcurementDocument .
+
 a4g:Technique rdfs:label \\"technique\\"@en ;
 	rdfs:comment \\"Method used for conducting Procurement Procedures. Addtional information: This corresponds in eForms to BG-706 Techniques. Several Techniques can be combined in one single Procurement Procedure (e.g. eAuction can be carried out in a Framework Agreement or DPS). WG Approval 19/09/2019 \\" ;
 	a owl:Class ;
@@ -2140,6 +2200,12 @@ a4g:Tender rdfs:label \\"tender\\"@en ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:isSubmittedForLot ;
 		owl:onClass a4g:Lot ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSupportedBy ;
+		owl:onClass a4g:ESPD ;
 	] .
 
 a4g:MonetaryValue rdfs:label \\"monetary value\\"@en ;
@@ -2289,6 +2355,10 @@ a4g:Item rdfs:label \\"item\\"@en ;
 		owl:onClass adms:Identifier ;
 	], [
 		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasExternalSpecification ;
+		owl:onClass a4g:Document ;
+	], [
+		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasSerialID ;
@@ -2308,10 +2378,6 @@ a4g:JuryMember rdfs:label \\"jury member\\"@en ;
 		owl:onProperty a4g:playedBy ;
 		owl:onClass person:Person ;
 	] .
-
-person:Person rdfs:label \\"person\\"@en ;
-	rdfs:comment \\"A individual human being who may be dead or alive, but not imaginary. \\" ;
-	a owl:Class .
 
 a4g:ProcurementProcedureInformationProvider rdfs:label \\"procurement procedure information provider\\"@en ;
 	rdfs:comment \\"A Role of an Agent responsible for providing additional information about the Procurement Procedure.\\" ;
@@ -2938,9 +3004,15 @@ a4g:eFormsNotice rdfs:label \\"e forms notice\\"@en ;
 	a owl:Class .
 
 m8g:Evidence rdfs:label \\"evidence\\"@en ;
-	rdfs:comment \\"Proof that a Requirement is met. \\" ;
+	rdfs:comment \\"Proof that a Requirement is met. Additional Information: The class Evidence provides the means to support responses to Criteria or to a concrete Information Requirement or to an Information Concept inside an Information Requirement. The proof described by an Evidence can [1] verify a claim (i.e. is it true that John is 25, yes/no), [2] prove a condition (i.e. is John 18+, yes/no), or [3] simply provide data (i.e. the age of a person, namely 25). The proof can be given through documents or extracts of base registries, independently from its structure, format or medium used to exchange it: a pdf document, a video, a recording, etc. \\" ;
 	a owl:Class ;
 	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasURL ;
+		owl:onDataRange xsd:anyURI ;
+	], [
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
@@ -3019,7 +3091,7 @@ a4g:DespatchLine rdfs:label \\"despatch line\\"@en ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasAssociatedDocument ;
-		owl:onClass a4g:PostAwardDocument ;
+		owl:onClass a4g:Document ;
 	] .
 
 a4g:Modification-D25 rdfs:label \\"modification d 25\\"@en ;
@@ -3309,7 +3381,7 @@ a4g:EnvironmentalProtectionInformationProvider rdfs:label \\"environmental prote
 	rdfs:subClassOf a4g:AuxiliaryParty .
 
 a4g:Awarder rdfs:label \\"awarder\\"@en ;
-	rdfs:comment \\"A Role of an Agent that signs the Award Decision. Additional Information: BT-08 can be Awarding CBP; BG-03 is the Buyer. But Awarding CPB is not the same as the Buyer; the organisations may differ for these roles. Having the Awarder Role allows us to specify which Organisation is involved in the Award Decision.\\" ;
+	rdfs:comment \\"A Role of an Agent that signs the Award Decision. Additional information: BT-08 can be Awarding CBP; BG-03 is the Buyer. But Awarding CPB is not the same as the Buyer; the organisations may differ for these roles. Having the Awarder Role allows us to specify which Organisation is involved in the Award Decision. \\" ;
 	a owl:Class ;
 	rdfs:subClassOf a4g:AcquiringParty .
 
@@ -3463,6 +3535,12 @@ a4g:SubmissionStatisticalInformation rdfs:label \\"submission statistical inform
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSMEReceivedTendersExcludingSubcontractors ;
+		owl:onDataRange xsd:integer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasLowestReceivedTenderValue ;
 		owl:onClass a4g:MonetaryValue ;
 	], [
@@ -3548,6 +3626,15 @@ a4g:ItemProperty rdfs:label \\"item property\\"@en ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:describesItem ;
 		owl:onClass a4g:Item ;
+	] .
+
+m8g:InformationRequirement rdfs:label \\"information requirement\\"@en ;
+	rdfs:comment \\"Requested data that is to be proven by Evidence. Additional Information: Information Requirements are the most neutral kind of Requirements. They aim to request information in any form, e.g. a person's date of birth or a company's turnover. They represent requests for data that prove one or more facts of the real world in a formal manner, or that leads to the source of such a proof. They can be understood as 'requests for Evidences'. The response to an Information Requirement is an Evidence when the issuer of the response is an authoritative source (e.g. a Civil Registry providing data about a natural person for the provision of public service through the Single Digital Gateway). In other cases, the responses might not be issued by an authoritative source, but the issuer supports the responses with Evidences (or commits to support them timely, e.g. a self-declaration or a declaration of oath). The Information Requirement can require structured data or documents of any form. For structured data, the Requirement can use 'Concepts' to specify the structure and type of the data expected in the response. For both structured and unstructured data, the Information Requirement can indicate the expected Type of Evidence, its format, source, and other properties related to the Evidence.\\" ;
+	a owl:Class ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasConstraint ;
+		owl:onClass m8g:Constraint ;
 	] .
 
 a4g:ProcurementObject rdfs:label \\"procurement object\\"@en ;
@@ -3779,6 +3866,25 @@ a4g:CANSocialNotice-D25 rdfs:label \\"can social notice d 25\\"@en ;
 	a owl:Class ;
 	rdfs:subClassOf a4g:CANSocialNotice, a4g:StandardFormsNotice .
 
+a4g:ESPDRequest rdfs:label \\"espd request\\"@en ;
+	rdfs:comment \\"An updated self-declaration used by the economic operator as a preliminary evidence in replacement of certificates issued by public authorities or third parties confirming that the economic operator fulfils the Exclusion Grounds and the Selection Criteria set out by the Buyer for a specific Procurement. WG Approval 05/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:ProcurementDocument, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesProcurementCriterion ;
+		owl:onClass a4g:ProcurementCriterion ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:refersToNotice ;
+		owl:onClass a4g:Notice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsProcedure ;
+		owl:onClass a4g:Procedure ;
+	] .
+
 a4g:ChangeInformation rdfs:label \\"change information\\"@en ;
 	rdfs:comment \\"Alteration to previously provided details.\\" ;
 	a owl:Class ;
@@ -3858,10 +3964,206 @@ a4g:ReviewIrregularitySummary rdfs:label \\"review irregularity summary\\"@en ;
 		owl:onDataRange xsd:integer ;
 	] .
 
+a4g:ReceiptAdvice rdfs:label \\"receipt advice\\"@en ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:PostAwardDocument, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesReceiptAdviceLine ;
+		owl:onClass a4g:ReceiptAdviceLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmittedForDespatchAdvice ;
+		owl:onClass a4g:DespatchAdvice ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmittedForShipment ;
+		owl:onClass a4g:ShipmentInformation ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesDespatcher ;
+		owl:onClass a4g:Despatcher ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:specifiesConsignee ;
+		owl:onClass a4g:Consignee ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesBuyer ;
+		owl:onClass a4g:Buyer ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesSeller ;
+		owl:onClass a4g:Seller ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasAssociatedDocument ;
+		owl:onClass a4g:Document ;
+	] .
+
+a4g:ReceiptAdviceLine rdfs:label \\"receipt advice line\\"@en ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:Line, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasShortQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasReceivedQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasOversupplyQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasRejectedQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSubmittedForDespatchLine ;
+		owl:onClass a4g:DespatchLine ;
+	] .
+
 a4g:ItemReplacement rdfs:label \\"item replacement\\"@en ;
 	rdfs:comment \\"Supplantment, displacement or suspension of an Item by the described Item. WG Approval: 30/06/2022 \\" ;
 	a owl:Class ;
 	rdfs:subClassOf a4g:ItemRelation .
+
+a4g:NationalPreQualificationData rdfs:label \\"national pre qualification data\\"@en ;
+	rdfs:comment \\"Data that describe the distinctive features or characteristics that qualify an economic operator to take part in a tendering process. WG approval 05/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:providesOrganisationCompletedTaskDescription ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:concernsOrganisation ;
+		owl:onClass org:Organization ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:providesOrganisationEmployeeQuantity ;
+		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:providesOrganisationFinancialCapability ;
+		owl:onClass a4g:MonetaryValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:providesOrganisationPreQualificationListingIdentifier ;
+		owl:onClass adms:Identifier ;
+	] .
+
+a4g:Response rdfs:label \\"response\\"@en ;
+	rdfs:comment \\"An answer given to a question that is part of an ESPD Request. WG approval 12/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:answersQuestion ;
+		owl:onClass m8g:InformationRequirement ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:isReinforcedBy ;
+		owl:onClass m8g:Evidence ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty m8g:supportsValue ;
+		owl:onClass m8g:SupportedValue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToApplicablePeriod ;
+		owl:onClass a4g:Period ;
+	] .
+
+a4g:CatalogueResponse rdfs:label \\"catalogue response\\"@en ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:PostAwardDocument, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:comprisesCatalogueResponseLine ;
+		owl:onClass a4g:CatalogueResponseLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToCatalogue ;
+		owl:onClass a4g:Catalogue ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCatalogueReceiver ;
+		owl:onClass a4g:CatalogueReceiver ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCatalogueProvider ;
+		owl:onClass a4g:CatalogueProvider ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:specifiesCatalogueResponseInformation ;
+		owl:onClass a4g:CatalogueResponseInformation ;
+	] .
+
+a4g:CatalogueResponseLine rdfs:label \\"catalogue response line\\"@en ;
+	a owl:Class ;
+	rdfs:subClassOf [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:refersToCatalogueLine ;
+		owl:onClass a4g:CatalogueLine ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasUUID ;
+		owl:onClass adms:Identifier ;
+	] .
+
+a4g:CatalogueResponseInformation rdfs:label \\"catalogue response information\\"@en ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:InformationHub, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:isSpecificToCatalogueResponseLine ;
+		owl:onClass a4g:CatalogueResponseLine ;
+	] .
 
 a4g:ContractSpecificTerm rdfs:label \\"contract specific term\\"@en ;
 	rdfs:comment \\"Gathering class for conditions and stipulations related to a contract in the Post-Award Phase.\\" ;
@@ -4001,17 +4303,11 @@ a4g:Certificate rdfs:label \\"certificate\\"@en ;
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
-		owl:onProperty a4g:hasURL ;
-		owl:onDataRange xsd:anyURI ;
-	], [
-		rdf:type owl:Restriction ;
-		owl:minQualifiedCardinality 1 ;
-		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasCertificationNumber ;
 		owl:onDataRange rdf:PlainLiteral ;
 	], [
 		rdf:type owl:Restriction ;
-		owl:minQualifiedCardinality 1 ;
+		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:attestedByLabel ;
 		owl:onClass a4g:CertificationLabel ;
@@ -4031,6 +4327,14 @@ a4g:ChargeInformation rdfs:label \\"charge information\\"@en ;
 		owl:onProperty a4g:isSpecificToOrderLine ;
 		owl:onClass a4g:OrderLine ;
 	] .
+
+eli:LegalResourceSubdivision rdfs:label \\"legal resource subdivision\\"@en ;
+	rdfs:comment \\"A component of a legal act, at an arbitrary level of precision, like a chapter, an article, an alinea, a paragraph or an list item.\\" ;
+	a owl:Class .
+
+eli:LegalResource rdfs:label \\"legal resource\\"@en ;
+	rdfs:comment \\"A work in a legislative corpus. This applies to acts that have been legally enacted (whether or not they are still in force). For example, the abstract concept of the legal resource; e.g. act 3 of 2005 (adapted from Akoma Ntoso) A legal resource can represent a legal act or any component of a legal act, like an article. Legal resources can be linked together using properties defined in the model. Note that ELI ontology accommodates different point of view on what should be considered a new legal resource, or a new legal expression of the same resource. Typically, a consolidated version can be viewed, in the context of ELI, either as separate legal resource (linked to original version and previous consolidated version using corresponding ELI relations), or as a different legal expression of the same legal resource. \\" ;
+	a owl:Class .
 
 a4g:DeliveryInformation rdfs:label \\"delivery information\\"@en ;
 	rdfs:comment \\"Information about the timing, the delivery destination, the delivery agreement and the involved parties. WG approval 16/05/2023 \\" ;
@@ -4698,12 +5002,6 @@ a4g:AbstractContainer rdfs:label \\"abstract container\\"@en ;
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
 		owl:maxQualifiedCardinality 1 ;
-		owl:onProperty adms:identifier ;
-		owl:onClass adms:Identifier ;
-	], [
-		rdf:type owl:Restriction ;
-		owl:minQualifiedCardinality 0 ;
-		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasGrossWeight ;
 		owl:onClass a4g:Quantity ;
 	], [
@@ -4712,6 +5010,12 @@ a4g:AbstractContainer rdfs:label \\"abstract container\\"@en ;
 		owl:maxQualifiedCardinality 1 ;
 		owl:onProperty a4g:hasGrossVolume ;
 		owl:onClass a4g:Quantity ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty adms:identifier ;
+		owl:onClass adms:Identifier ;
 	], [
 		rdf:type owl:Restriction ;
 		owl:minQualifiedCardinality 0 ;
@@ -4922,6 +5226,12 @@ a4g:Order rdfs:label \\"order\\"@en ;
 		owl:onClass a4g:Despatcher ;
 	], [
 		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasSellerOrderID ;
+		owl:onClass adms:Identifier ;
+	], [
+		rdf:type owl:Restriction ;
 		owl:onProperty a4g:specifiesAllowanceInformation ;
 		owl:onClass a4g:AllowanceInformation ;
 	], [
@@ -4986,6 +5296,37 @@ a4g:Order rdfs:label \\"order\\"@en ;
 		owl:onClass a4g:MonetaryValue ;
 	] .
 
+a4g:LegalRepresentative rdfs:label \\"legal representative\\"@en ;
+	rdfs:comment \\"The Role of an Agent that can represent an Organization. WG approval 05/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:AuxiliaryParty, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:actsOnBehalfOf ;
+		owl:onClass a4g:OfferingParty ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:hasPowerOfAttorney ;
+		owl:onClass a4g:PowerOfAttorney ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:hasMandate ;
+		owl:onClass a4g:Mandate ;
+	] .
+
+a4g:Mandate rdfs:label \\"mandate\\"@en ;
+	rdfs:comment \\"An authorization to act as a representative of an Organization. WG approval 05/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:Document .
+
+a4g:PowerOfAttorney rdfs:label \\"power of attorney\\"@en ;
+	rdfs:comment \\"A legal document that grants someone the authority to make decisions on behalf of an Organization. WG approval 05/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:Document .
+
 a4g:ProfessionalSuitabilitySummary rdfs:label \\"professional suitability summary\\"@en ;
 	a owl:Class ;
 	rdfs:subClassOf a4g:SelectionCriteriaSummary, [
@@ -5031,7 +5372,34 @@ a4g:QualificationCriteriaSummary rdfs:label \\"qualification criteria summary\\"
 a4g:QualificationCriterion rdfs:label \\"qualification criterion\\"@en ;
 	rdfs:comment \\"Criterion used in the first stage of procurement. WG approval 30/05/2023\\" ;
 	a owl:Class ;
-	rdfs:subClassOf a4g:ProcurementCriterion .
+	rdfs:subClassOf a4g:ProcurementCriterion, [
+		rdf:type owl:Restriction ;
+		owl:onProperty a4g:includesNationalCriterion ;
+		owl:onClass a4g:QualificationCriterion ;
+	] .
+
+a4g:CertificateInformation rdfs:label \\"certificate information\\"@en ;
+	rdfs:comment \\"Information about a Certificate. WG approval 12/03/2024\\" ;
+	a owl:Class ;
+	rdfs:subClassOf a4g:ContextDescription, [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty dcterms:description ;
+		owl:onDataRange rdf:PlainLiteral ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 0 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:coversAllSelectionCriteria ;
+		owl:onDataRange xsd:boolean ;
+	], [
+		rdf:type owl:Restriction ;
+		owl:minQualifiedCardinality 1 ;
+		owl:maxQualifiedCardinality 1 ;
+		owl:onProperty a4g:summarisesInformationAboutCertificate ;
+		owl:onClass a4g:Certificate ;
+	] .
 
 a4g:isProcurementDocumentRestricted rdfs:label \\"is procurement document restricted\\"@en ;
 	rdfs:comment \\"The access to certain procurement documents is restricted. Additional Information: This corresponds in eForms to BT-14 Documents Restricted. WG Approval 10/10/2019\\" ;
@@ -5094,6 +5462,7 @@ dcterms:description rdfs:label \\"description\\"@en ;
 			a4g:DeliveryAgreement
 			a4g:Document
 			a4g:ElectronicSignature
+			a4g:CertificateInformation
 			a4g:NonDisclosureAgreementTerm
 		) ;
 	] ;
@@ -5351,6 +5720,7 @@ a4g:hasAdditionalInformation rdfs:label \\"has additional information\\"@en ;
 		rdf:type owl:Class ;
 		owl:unionOf (
 			a4g:Notice
+			a4g:ProcurementCriterion
 			a4g:ProcurementObject
 			a4g:ChangeInformation
 		) ;
@@ -5564,7 +5934,7 @@ a4g:hasURL rdfs:label \\"has url\\"@en ;
 	rdfs:domain [
 		rdf:type owl:Class ;
 		owl:unionOf (
-			a4g:Certificate
+			m8g:Evidence
 			a4g:Fund
 		) ;
 	] ;
@@ -6272,6 +6642,12 @@ a4g:hasNonElectronicSubmissionDescription rdfs:label \\"has non electronic submi
 	rdfs:domain a4g:SubmissionTerm ;
 	rdfs:range rdf:PlainLiteral .
 
+a4g:providesOrganisationCompletedTaskDescription rdfs:label \\"provides organisation completed task description\\"@en ;
+	rdfs:comment \\"Text describing the works, supplies or services executed, delivered or performed in a procurement project that can be used as an evidence for the classification of the Organization. WG approval 05/03/2024\\" ;
+	a owl:DatatypeProperty ;
+	rdfs:domain a4g:NationalPreQualificationData ;
+	rdfs:range rdf:PlainLiteral .
+
 a4g:isAdvancedElectronicSignatureRequired rdfs:label \\"is advanced electronic signature required\\"@en ;
 	rdfs:comment \\"Advanced or qualified electronic signature or seal (as defined in Regulation (EU) No 910/2014) is required. The submitted information is required to be signed electronically. Additional Information: Signature can be defined as data in electronic form which is attached to or logically associated with other data in electronic form and which is used by the signatory to sign. For more details on the meaning and uses of electronic signature you may consult different authoritative sources, a relevant one being for instance the Regulation (EU) 910/2014 on electronic identification and trust services for electronic transactions in the internal market. WG Approval 21/07/2020 \\" ;
 	a owl:DatatypeProperty ;
@@ -6402,6 +6778,17 @@ a4g:hasLegalBasisDescription rdfs:label \\"has legal basis description\\"@en ;
 	rdfs:domain a4g:ProcurementObject ;
 	rdfs:range rdf:PlainLiteral .
 
+a4g:coversAllSelectionCriteria rdfs:label \\"covers all selection criteria\\"@en ;
+	rdfs:comment \\"Indicator that the Certificate proves whether the Organization fulfils all Selection Criteria. WG approval 12/03/2024\\" ;
+	a owl:DatatypeProperty ;
+	rdfs:domain a4g:CertificateInformation ;
+	rdfs:range xsd:boolean .
+
+a4g:hasSMEReceivedTendersExcludingSubcontractors rdfs:label \\"has sme received tenders excluding subcontractors\\"@en ;
+	a owl:DatatypeProperty ;
+	rdfs:domain a4g:SubmissionStatisticalInformation ;
+	rdfs:range xsd:integer .
+
 a4g:hasAmountValue rdfs:label \\"has amount value\\"@en ;
 	rdfs:comment \\"The numeric value of the amount, including decimals.\\" ;
 	a owl:DatatypeProperty ;
@@ -6411,7 +6798,7 @@ a4g:hasAmountValue rdfs:label \\"has amount value\\"@en ;
 a4g:hasOJSIssueNumber rdfs:label \\"has ojs issue number\\"@en ;
 	a owl:DatatypeProperty ;
 	rdfs:domain a4g:Notice ;
-	rdfs:range rdf:PlainLiteral .
+	rdfs:range xsd:integer .
 
 a4g:hasOJSType rdfs:label \\"has ojs type\\"@en ;
 	a owl:DatatypeProperty ;
@@ -6555,6 +6942,12 @@ a4g:isFundedBy rdfs:label \\"is funded by\\"@en ;
 	] ;
 	rdfs:range a4g:Fund .
 
+a4g:providesInformationOn rdfs:label \\"provides information on\\"@en ;
+	rdfs:comment \\"Offers information about an instance of a concept. WG approval 05/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ESPD ;
+	rdfs:range org:Organization .
+
 a4g:hasFinancialOfferValue rdfs:label \\"has financial offer value\\"@en ;
 	rdfs:comment \\"The value offered by the Tenderer for a Lot. Additional Information: This value is normally the one awarded for a winning Tender Lot. In case of negotiated procedures the original financial value may be reviewed and the offer updated. This corresponds to BT-720 in eForms.\\" ;
 	a owl:ObjectProperty ;
@@ -6591,6 +6984,18 @@ a4g:announcesContract rdfs:label \\"announces contract\\"@en ;
 		) ;
 	] ;
 	rdfs:range a4g:Contract .
+
+a4g:specifiesProcurementCriterion rdfs:label \\"specifies procurement criterion\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ESPDRequest
+			a4g:LotGroup
+			a4g:Lot
+		) ;
+	] ;
+	rdfs:range a4g:ProcurementCriterion .
 
 a4g:refersToProcedure rdfs:label \\"refers to procedure\\"@en ;
 	a owl:ObjectProperty ;
@@ -6672,7 +7077,7 @@ a4g:definesContractDuration rdfs:label \\"defines contract duration\\"@en ;
 
 a4g:specifiesSeller rdfs:label \\"specifies seller\\"@en ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:OrderResponse, [
+	rdfs:domain a4g:OrderResponse, a4g:ReceiptAdvice, [
 		rdf:type owl:Class ;
 		owl:unionOf (
 			a4g:Order
@@ -6688,7 +7093,13 @@ a4g:concernsConsignee rdfs:label \\"concerns consignee\\"@en ;
 
 a4g:specifiesCatalogueReceiver rdfs:label \\"specifies catalogue receiver\\"@en ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:Catalogue ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Catalogue
+			a4g:CatalogueResponse
+		) ;
+	] ;
 	rdfs:range a4g:CatalogueReceiver .
 
 a4g:isSpecificToOrderLine rdfs:label \\"is specific to order line\\"@en ;
@@ -6712,12 +7123,24 @@ a4g:includesAccessibilityCriterion rdfs:label \\"includes accessibility criterio
 
 a4g:specifiesDespatcher rdfs:label \\"specifies despatcher\\"@en ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:DespatchAdvice, a4g:Order ;
+	rdfs:domain a4g:Order, [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:DespatchAdvice
+			a4g:ReceiptAdvice
+		) ;
+	] ;
 	rdfs:range a4g:Despatcher .
 
 a4g:specifiesConsignee rdfs:label \\"specifies consignee\\"@en ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:DespatchAdvice ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:DespatchAdvice
+			a4g:ReceiptAdvice
+		) ;
+	] ;
 	rdfs:range a4g:Consignee .
 
 a4g:hasSubcontracting rdfs:label \\"has subcontracting\\"@en ;
@@ -6888,7 +7311,13 @@ a4g:definesCatalogueProvider rdfs:label \\"defines catalogue provider\\"@en ;
 
 a4g:specifiesCatalogueProvider rdfs:label \\"specifies catalogue provider\\"@en ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:Catalogue ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Catalogue
+			a4g:CatalogueResponse
+		) ;
+	] ;
 	rdfs:range a4g:CatalogueProvider .
 
 a4g:fulfillsRequirement rdfs:label \\"fulfills requirement\\"@en ;
@@ -6906,17 +7335,6 @@ a4g:involvesProcurementDocument rdfs:label \\"involves procurement document\\"@e
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:AccessTerm ;
 	rdfs:range a4g:ProcurementDocument .
-
-a4g:specifiesProcurementCriterion rdfs:label \\"specifies procurement criterion\\"@en ;
-	a owl:ObjectProperty ;
-	rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:LotGroup
-			a4g:Lot
-		) ;
-	] ;
-	rdfs:range a4g:ProcurementCriterion .
 
 a4g:definesTenderProcessor rdfs:label \\"defines tender processor\\"@en ;
 	rdfs:comment \\"Relation indicating a SubmissionTerm has a TenderProcessor.\\" ;
@@ -6964,7 +7382,7 @@ a4g:refersToOrder rdfs:label \\"refers to order\\"@en ;
 
 a4g:specifiesBuyer rdfs:label \\"specifies buyer\\"@en ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:OrderResponse, [
+	rdfs:domain a4g:OrderResponse, a4g:ReceiptAdvice, [
 		rdf:type owl:Class ;
 		owl:unionOf (
 			a4g:Catalogue
@@ -6984,6 +7402,9 @@ a4g:hasNutsCode rdfs:label \\"has nuts code\\"@en ;
 
 a4g:hasCountryCode rdfs:label \\"has country code\\"@en ;
 	rdfs:comment \\" \\" ;
+	a owl:ObjectProperty .
+
+a4g:hasResourceType rdfs:label \\"has resource type\\"@en ;
 	a owl:ObjectProperty .
 
 a4g:hasDeliveryLocation rdfs:label \\"has delivery location\\"@en ;
@@ -7019,8 +7440,9 @@ a4g:specifiesDeliveryAgreementLocation rdfs:label \\"specifies delivery agreemen
 	rdfs:range dcterms:Location .
 
 a4g:refersToNotice rdfs:label \\"refers to notice\\"@en ;
+	rdfs:comment \\"Reference to a Notice. WG approval 12/03/2024\\" ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:Notice ;
+	rdfs:domain a4g:Notice, a4g:ESPDRequest ;
 	rdfs:range a4g:Notice .
 
 a4g:refersToContractToBeModified rdfs:label \\"refers to contract to be modified\\"@en ;
@@ -7150,6 +7572,7 @@ a4g:relatesToEFormSectionIdentifier rdfs:label \\"relates to e form section iden
 	rdfs:range adms:Identifier .
 
 a4g:hasCatalogueLineValidity rdfs:label \\"has catalogue line validity\\"@en ;
+	rdfs:comment \\"The relation indicating until when a Catalogue Line instance is applicable. WG approval 21/09/2023\\" ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:CatalogueLine ;
 	rdfs:range a4g:Period .
@@ -7208,10 +7631,10 @@ adms:identifier rdfs:label \\"identifier\\"@en ;
 			a4g:ProcurementElement
 			a4g:TenderGroup
 			a4g:TransportEquipmentSeal
-			a4g:AbstractContainer
 			a4g:ShipmentInformation
 			a4g:Consignment
 			a4g:TransportEquipment
+			a4g:AbstractContainer
 			a4g:Line
 			a4g:ShipmentStage
 			a4g:Project
@@ -7221,9 +7644,15 @@ adms:identifier rdfs:label \\"identifier\\"@en ;
 	rdfs:range adms:Identifier .
 
 a4g:hasUUID rdfs:label \\"has uuid\\"@en ;
-	rdfs:comment \\"A universally unique identifier for an instance of this document. WG Approval 12/05/2020\\" ;
+	rdfs:comment \\"A universally unique identifier for an instance of this document. WG Approval 12/05/2020\\", \\"A universally unique identifier for an instance of this document. WG Approval 12/05/2020 \\" ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:Document ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Document
+			a4g:CatalogueResponseLine
+		) ;
+	] ;
 	rdfs:range adms:Identifier .
 
 a4g:hasChangeJustification rdfs:label \\"has change justification\\"@en ;
@@ -7286,6 +7715,18 @@ dcterms:hasPart rdfs:label \\"has part\\"@en ;
 	rdfs:domain a4g:Item ;
 	rdfs:range a4g:Item .
 
+a4g:concernsProcedure rdfs:label \\"concerns procedure\\"@en ;
+	rdfs:comment \\"Relates to Procedure. WG approval 05/03/2024 \\", \\"Relates to Procedure.\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ESPDRequest
+			a4g:ProcurementProcessInformation
+		) ;
+	] ;
+	rdfs:range a4g:Procedure .
+
 a4g:hasLateSubmissionPermission rdfs:label \\"has late submission permission\\"@en ;
 	rdfs:comment \\"Whether economic operator-related information can be supplemented even after the submission deadline. Additional Information This is specific to the information on the economic operator and not the actual offer. This does not apply to the requests for clarification. WG Approval 21/07/2020 \\" ;
 	a owl:ObjectProperty .
@@ -7345,6 +7786,12 @@ a4g:hasAdditionalClassification rdfs:label \\"has additional classification\\"@e
 a4g:hasMainClassification rdfs:label \\"has main classification\\"@en ;
 	a owl:ObjectProperty .
 
+a4g:relatesToESPDRequest rdfs:label \\"relates to espd request\\"@en ;
+	rdfs:comment \\"Is about an European Single Procurement Document (ESPD) Request. WG approval 05/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ESPD ;
+	rdfs:range a4g:ESPDRequest .
+
 a4g:hasEstimatedValue rdfs:label \\"has estimated value\\"@en ;
 	rdfs:comment \\"A forecast of the value of the procurement before competition. Additional Information: Different cases of estimated values may refer to a lot, the global value of the procedure, or of a combinatorial value of a group of lots. The forecast is calculated by the buyer and covers all revenues whether coming from the buyer or third parties. See for example recital (19), Article 5 of Directive 2014/24/EU and other articles from the rest of Directives about procurement. In the case of framework agreements and dynamic purchasing systems this refers to the maximum estimated value. This property corresponds to BT-27 in eForms (for Lot and Procedure) and can be used for BT-157 (for LotGroup). <b> </b><b>WG Approval 05/12/2019</b> \\", \\"A forecast of the value of the procurement before competition. Additional Information: Different cases of estimated values may refer to a lot, the global value of the procedure, or of a combinatorial value of a group of lots. The forecast is calculated by the buyer and covers all revenues whether coming from the buyer or third parties. See for example recital (19), Article 5 of Directive 2014/24/EU and other articles from the rest of Directives about procurement. In the case of framework agreements and dynamic purchasing systems this refers to the maximum estimated value. This property corresponds to BT-27 in eForms (for Lot and Procedure) and can be used for BT-157 (for LotGroup). <b> </b>WG Approval 05/12/2019 \\" ;
 	a owl:ObjectProperty ;
@@ -7374,7 +7821,7 @@ a4g:hasReceivedSubmissionType rdfs:label \\"has received submission type\\"@en ;
 	a owl:ObjectProperty .
 
 a4g:hasManufacturerItemID rdfs:label \\"has manufacturer item id\\"@en ;
-	rdfs:comment \\"This refers to the general identifier for the concept as defined by the manufacturer. WG Approval 16/05/2023 \\" ;
+	rdfs:comment \\"The general identifier assigned to the concept as defined by the Manufacturer. ​ WG approval 16/05/2023 \\" ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Item ;
 	rdfs:range adms:Identifier .
@@ -7411,6 +7858,7 @@ a4g:hasValidityPeriod rdfs:label \\"has validity period\\"@en ;
 		owl:unionOf (
 			a4g:Technique
 			m8g:Evidence
+			a4g:Catalogue
 		) ;
 	] ;
 	rdfs:range a4g:Period .
@@ -7437,6 +7885,7 @@ a4g:isResponsibilityOfBuyer rdfs:label \\"is responsibility of buyer\\"@en ;
 	rdfs:range a4g:Buyer .
 
 a4g:leadBy rdfs:label \\"lead by\\"@en ;
+	rdfs:comment \\"The epo:OrganisationGroup epo:leadBy org:Organization was implemented to be used in case of an Economic Operator Group.\\" ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:OrganisationGroup ;
 	rdfs:range org:Organization .
@@ -7467,7 +7916,7 @@ a4g:hasAwardedValue rdfs:label \\"has awarded value\\"@en ;
 	rdfs:range a4g:MonetaryValue .
 
 a4g:hasSellerItemID rdfs:label \\"has seller item id\\"@en ;
-	rdfs:comment \\" The general identifier for the concept as defined by the seller. WG Approval 16/05/2023 \\" ;
+	rdfs:comment \\"The general identifier assigned to the concept as defined by the Seller.​ WG approval 16/05/2023 \\" ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Item ;
 	rdfs:range adms:Identifier .
@@ -7492,8 +7941,20 @@ a4g:hasProcurementScopeDividedIntoLot rdfs:label \\"has procurement scope divide
 a4g:actsOnBehalfOf rdfs:label \\"acts on behalf of\\"@en ;
 	rdfs:comment \\"Represents.\\" ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:ProcurementServiceProvider ;
-	rdfs:range a4g:Buyer .
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ProcurementServiceProvider
+			a4g:LegalRepresentative
+		) ;
+	] ;
+	rdfs:range [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:Buyer
+			a4g:OfferingParty
+		) ;
+	] .
 
 a4g:delegatesAncillaryActivitiesTo rdfs:label \\"delegates ancillary activities to\\"@en ;
 	rdfs:comment \\"Entrusts ancillary purchasing activities to ProcurementServiceProvider. Additional Information: Directive 2014/24/EU describes ancillary purchasing activities as activities consisting in the provision of support to purchasing activities, in particular in the following forms: (a) technical infrastructure enabling contracting authorities to award public contracts or to conclude framework agreements for works, supplies or services; (b) advice on the conduct or design of public procurement procedures; (c) preparation and management of procurement procedures on behalf and for the account of the contracting authority concerned;\\" ;
@@ -7508,7 +7969,7 @@ a4g:hasDocumentRestrictionJustification rdfs:label \\"has document restriction j
 a4g:refersToCatalogueLine rdfs:label \\"refers to catalogue line\\"@en ;
 	rdfs:comment \\" Additional Information: The reference to the catalogue line is for information only, to trace the source of the information provided in the order line. \\" ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:OrderLine ;
+	rdfs:domain a4g:OrderLine, a4g:CatalogueResponseLine ;
 	rdfs:range a4g:CatalogueLine .
 
 a4g:hasTenderValidityDuration rdfs:label \\"has tender validity duration\\"@en ;
@@ -7535,7 +7996,7 @@ a4g:hasPrizeValue rdfs:label \\"has prize value\\"@en ;
 	rdfs:range a4g:MonetaryValue .
 
 a4g:hasItemStandardID rdfs:label \\"has item standard id\\"@en ;
-	rdfs:comment \\"The identifier for the instance of the concept based on a standard scheme. Additional information: For example the GTIN scheme (Global Trade Item Number). WG Approval 24/02/2022 \\" ;
+	rdfs:comment \\"The general identifier assigned to the concept based on a standard scheme.​ Additional information: For example the GTIN scheme (Global Trade Item Number). WG approval 16/05/2023\\" ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Item ;
 	rdfs:range adms:Identifier .
@@ -7555,7 +8016,7 @@ a4g:hasMaximumOrderQuantity rdfs:label \\"has maximum order quantity\\"@en ;
 a4g:refersToCatalogue rdfs:label \\"refers to catalogue\\"@en ;
 	rdfs:comment \\" Additional information: If an order refers to multiple catalogues then all these catalogues ideally are subordinated to the same contract. Some countries however may allow multiple contracts per order (i.e Italy). \\" ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:Order ;
+	rdfs:domain a4g:CatalogueResponse, a4g:Order ;
 	rdfs:range a4g:Catalogue .
 
 a4g:hasEstimatedUserConcessionRevenue rdfs:label \\"has estimated user concession revenue\\"@en ;
@@ -7762,12 +8223,6 @@ a4g:hasBusinessSize rdfs:label \\"has business size\\"@en ;
 	rdfs:comment \\"The category of the business depending on number of employees and turnover. Additional information: See Commission Recommendation of 6 May 2003 concerning the definition of micro, small and medium-sized enterprises. WG Approval 28/05/2020 \\" ;
 	a owl:ObjectProperty .
 
-a4g:concernsProcedure rdfs:label \\"concerns procedure\\"@en ;
-	rdfs:comment \\"Relates to Procedure.\\" ;
-	a owl:ObjectProperty ;
-	rdfs:domain a4g:ProcurementProcessInformation ;
-	rdfs:range a4g:Procedure .
-
 a4g:hasQuantityThreshold rdfs:label \\"has quantity threshold\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Price ;
@@ -7778,6 +8233,11 @@ a4g:hasExpectedDeliveryTime rdfs:label \\"has expected delivery time\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Price ;
 	rdfs:range a4g:Duration .
+
+a4g:comprisesReceiptAdviceLine rdfs:label \\"comprises receipt advice line\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdvice ;
+	rdfs:range a4g:ReceiptAdviceLine .
 
 a4g:hasFixedValueType rdfs:label \\"has fixed value type\\"@en ;
 	rdfs:comment \\"The method to interpret the fixed value as pertaining to a total or unit. WG Approval 17/09/2019 \\" ;
@@ -7856,6 +8316,9 @@ a4g:announcesCompletionOfContract rdfs:label \\"announces completion of contract
 	rdfs:domain a4g:CompletionNotice ;
 	rdfs:range a4g:Contract .
 
+a4g:hasShortageAction rdfs:label \\"has shortage action\\"@en ;
+	a owl:ObjectProperty .
+
 a4g:announcesLot rdfs:label \\"announces lot\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain [
@@ -7899,6 +8362,9 @@ a4g:needsToBeAWinner rdfs:label \\"needs to be a winner\\"@en ;
 	rdfs:domain a4g:Contractor ;
 	rdfs:range a4g:Winner .
 
+a4g:RejectionAction rdfs:label \\"rejection action\\"@en ;
+	a owl:ObjectProperty .
+
 a4g:announcesLotGroup rdfs:label \\"announces lot group\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain [
@@ -7931,10 +8397,18 @@ a4g:refersToOrderLine rdfs:label \\"refers to order line\\"@en ;
 	rdfs:domain a4g:DespatchLine ;
 	rdfs:range a4g:OrderLine .
 
+a4g:hasRejectReason rdfs:label \\"has reject reason\\"@en ;
+	a owl:ObjectProperty .
+
 a4g:specifiesProcurementCriteriaSummary rdfs:label \\"specifies procurement criteria summary\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Procedure ;
 	rdfs:range a4g:ProcurementCriteriaSummary .
+
+a4g:hasShortQuantity rdfs:label \\"has short quantity\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdviceLine ;
+	rdfs:range a4g:Quantity .
 
 a4g:definesParticipationRequestReceiver rdfs:label \\"defines participation request receiver\\"@en ;
 	rdfs:comment \\"Relation indicating a ParticipationRequestTerm has a ParticipationRequestReceiver.\\" ;
@@ -8018,7 +8492,13 @@ a4g:hasComplementaryItem rdfs:label \\"has complementary item\\"@en ;
 
 a4g:hasConstraint rdfs:label \\"has constraint\\"@en ;
 	a owl:ObjectProperty ;
-	rdfs:domain a4g:ProcurementCriterion ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ProcurementCriterion
+			m8g:InformationRequirement
+		) ;
+	] ;
 	rdfs:range m8g:Constraint .
 
 a4g:distributesOffer rdfs:label \\"distributes offer\\"@en ;
@@ -8044,6 +8524,11 @@ a4g:hasHazardousItemUNDGCode rdfs:label \\"has hazardous item undg code\\"@en ;
 	rdfs:comment \\"Specification of the hazardous nature of an item according to the UNDG classification schema. Provides detail of the classification and nature of a hazardous item. \\" ;
 	a owl:ObjectProperty .
 
+a4g:foreseesPackage rdfs:label \\"foresees package\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:CatalogueLine ;
+	rdfs:range a4g:Package .
+
 a4g:associatedWith rdfs:label \\"associated with\\"@en ;
 	rdfs:comment \\"The document to which a document is associated. WGM 01/03/2022 \\" ;
 	a owl:ObjectProperty ;
@@ -8065,9 +8550,19 @@ a4g:isSubmittedForLot rdfs:label \\"is submitted for lot\\"@en ;
 	rdfs:domain a4g:Tender ;
 	rdfs:range a4g:Lot .
 
+a4g:hasReceivedQuantity rdfs:label \\"has received quantity\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdviceLine ;
+	rdfs:range a4g:Quantity .
+
 a4g:hasAllegedIrregularityType rdfs:label \\"has alleged irregularity type\\"@en ;
 	rdfs:comment \\"Additional information: This relation corresponds in eForms to BT-791 Review Irregularity Type \\" ;
 	a owl:ObjectProperty .
+
+a4g:isSupportedBy rdfs:label \\"is supported by\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:Tender ;
+	rdfs:range a4g:ESPD .
 
 a4g:comprisesAwardOutcome rdfs:label \\"comprises award outcome\\"@en ;
 	rdfs:comment \\"Incorporates AwardOutcome.\\" ;
@@ -8085,6 +8580,32 @@ a4g:concernsReviewSummaryForLot rdfs:label \\"concerns review summary for lot\\"
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:ReviewRequestSummary ;
 	rdfs:range a4g:Lot .
+
+a4g:hasOversupplyQuantity rdfs:label \\"has oversupply quantity\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdviceLine ;
+	rdfs:range a4g:Quantity .
+
+a4g:hasRejectedQuantity rdfs:label \\"has rejected quantity\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdviceLine ;
+	rdfs:range a4g:Quantity .
+
+a4g:isSubmittedForDespatchLine rdfs:label \\"is submitted for despatch line\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdviceLine ;
+	rdfs:range a4g:DespatchLine .
+
+a4g:isSubmittedForDespatchAdvice rdfs:label \\"is submitted for despatch advice\\"@en ;
+	rdfs:comment \\"Additional information: In PEPPOL (https://test-docs.peppol.eu/logistics/qa/codelist/ReceiptAdviceTypeCode/) this predicate is used for option D - Response to the Advanced Despatch Advice document.\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdvice ;
+	rdfs:range a4g:DespatchAdvice .
+
+a4g:isSubmittedForShipment rdfs:label \\"is submitted for shipment\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ReceiptAdvice ;
+	rdfs:range a4g:ShipmentInformation .
 
 a4g:refersToPreviousReview rdfs:label \\"refers to previous review\\"@en ;
 	rdfs:comment \\"Additional information: This relation corresponds in eForms to BT-785 Review Previous Identifier.\\" ;
@@ -8236,6 +8757,18 @@ a4g:hasEstimatedDeliveryPeriod rdfs:label \\"has estimated delivery period\\"@en
 	rdfs:domain a4g:ShipmentInformation ;
 	rdfs:range a4g:Period .
 
+a4g:hasAssociatedDocument rdfs:label \\"has associated document\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain [
+		rdf:type owl:Class ;
+		owl:unionOf (
+			a4g:ReceiptAdvice
+			a4g:DespatchLine
+			a4g:DespatchAdvice
+		) ;
+	] ;
+	rdfs:range a4g:Document .
+
 a4g:issuedByCertifier rdfs:label \\"issued by certifier\\"@en ;
 	rdfs:comment \\"Relation indicating the Certifier responsible for providing the ItemCertificate. Additional Information: Certifier is a role played by an organisation. WG approval 26/07/2022\\" ;
 	a owl:ObjectProperty ;
@@ -8256,6 +8789,11 @@ a4g:refersToRole rdfs:label \\"refers to role\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:ResultNotice, a4g:CompletionNotice ;
 	rdfs:range a4g:AgentInRole .
+
+a4g:comprisesCatalogueResponseLine rdfs:label \\"comprises catalogue response line\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:CatalogueResponse ;
+	rdfs:range a4g:CatalogueResponseLine .
 
 a4g:isSubjectToContractSpecificTerm rdfs:label \\"is subject to contract specific term\\"@en ;
 	a owl:ObjectProperty ;
@@ -8287,6 +8825,16 @@ a4g:hasFrameworkAgreementMaximumValue rdfs:label \\"has framework agreement maxi
 	rdfs:domain a4g:LotAwardOutcome ;
 	rdfs:range a4g:MonetaryValue .
 
+a4g:specifiesCatalogueResponseInformation rdfs:label \\"specifies catalogue response information\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:CatalogueResponse ;
+	rdfs:range a4g:CatalogueResponseInformation .
+
+a4g:isSpecificToCatalogueResponseLine rdfs:label \\"is specific to catalogue response line\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:CatalogueResponseInformation ;
+	rdfs:range a4g:CatalogueResponseLine .
+
 a4g:specifiesShipment rdfs:label \\"specifies shipment\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:DespatchAdvice ;
@@ -8302,17 +8850,6 @@ a4g:hasOutstandingQuantity rdfs:label \\"has outstanding quantity\\"@en ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:DespatchLine ;
 	rdfs:range a4g:Quantity .
-
-a4g:hasAssociatedDocument rdfs:label \\"has associated document\\"@en ;
-	a owl:ObjectProperty ;
-	rdfs:domain [
-		rdf:type owl:Class ;
-		owl:unionOf (
-			a4g:DespatchLine
-			a4g:DespatchAdvice
-		) ;
-	] ;
-	rdfs:range a4g:PostAwardDocument .
 
 a4g:transportsItemFrom rdfs:label \\"transports item from\\"@en ;
 	a owl:ObjectProperty ;
@@ -8391,6 +8928,9 @@ a4g:refersToLotGroupAwardInformation rdfs:label \\"refers to lot group award inf
 	] ;
 	rdfs:range a4g:LotGroupAwardInformation .
 
+a4g:hasSubdivision rdfs:label \\"has subdivision\\"@en ;
+	a owl:ObjectProperty .
+
 a4g:hasPriceType rdfs:label \\"has price type\\"@en ;
 	a owl:ObjectProperty .
 
@@ -8398,9 +8938,44 @@ a4g:hasDocumentType rdfs:label \\"has document type\\"@en ;
 	a owl:ObjectProperty .
 
 a4g:hasBuyerItemID rdfs:label \\"has buyer item id\\"@en ;
-	rdfs:comment \\"This refers to the identifier for the specific instance of the produced concept. WG Approval 16/05/2023 \\" ;
+	rdfs:comment \\"The general identifier assigned to the concept as defined by the Buyer.​ WG approval 16/05/2023 \\" ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Item ;
+	rdfs:range adms:Identifier .
+
+a4g:includesNationalCriterion rdfs:label \\"includes national criterion\\"@en ;
+	rdfs:comment \\"Relation indicating that a Criterion contains a Criterion that is specific to a given Member State. Additional Information: In the ESPD, a Subcriterion is used to define national sub-criteria; maps to a UBL-2.3 cac:SubTenderingCriterion class. It is currently used only for purely national criteria, to be able to establish the mapping from eCertis. WG approval 07/11/2023 \\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:QualificationCriterion ;
+	rdfs:range a4g:QualificationCriterion .
+
+a4g:summarisesInformationAboutCertificate rdfs:label \\"summarises information about certificate\\"@en ;
+	rdfs:comment \\"Relation indicating the Certificate that the information refers to. WG approval 12/03/2024 \\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:CertificateInformation ;
+	rdfs:range a4g:Certificate .
+
+a4g:canProvideTaxAndSocialSecuritiesEvidence rdfs:label \\"can provide tax and social securities evidence\\"@en ;
+	rdfs:comment \\"Relation showing that an Organization can supply an Evidence with regard to the payment of social security contributions and taxes. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain org:Organization ;
+	rdfs:range m8g:Evidence .
+
+a4g:canProvideNonDiscriminatoryEvidence rdfs:label \\"can provide non discriminatory evidence\\"@en ;
+	rdfs:comment \\"Relation showing that an Organization can supply an Evidence with regard to the fulfilment of non-discriminatory criteria or the rules applied in order to reduce the number of participants. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain org:Organization ;
+	rdfs:range m8g:Evidence .
+
+a4g:answersQuestion rdfs:label \\"answers question\\"@en ;
+	rdfs:comment \\"Relation indicating that the Response replies to a question. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:Response ;
+	rdfs:range m8g:InformationRequirement .
+
+a4g:hasSellerOrderID rdfs:label \\"has seller order id\\"@en ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:Order ;
 	rdfs:range adms:Identifier .
 
 a4g:hasBargainPrice rdfs:label \\"has bargain price\\"@en ;
@@ -8689,6 +9264,7 @@ a4g:containsGoodsItem rdfs:label \\"contains goods item\\"@en ;
 	rdfs:range a4g:GoodsItem .
 
 a4g:hasTraceID rdfs:label \\"has trace id\\"@en ;
+	rdfs:comment \\"The identifier used for tracking the goods item Additional information: An example is the EPC number used in RFID. WG approval 21/09/2023 \\" ;
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:GoodsItem ;
 	rdfs:range adms:Identifier .
@@ -8850,6 +9426,30 @@ a4g:hasExternalSpecification rdfs:label \\"has external specification\\"@en ;
 	rdfs:domain a4g:Item ;
 	rdfs:range a4g:Document .
 
+a4g:concernsOrganisation rdfs:label \\"concerns organisation\\"@en ;
+	rdfs:comment \\"Relates to Organization. WG approval 05/03/2024 \\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:NationalPreQualificationData ;
+	rdfs:range org:Organization .
+
+a4g:providesOrganisationEmployeeQuantity rdfs:label \\"provides organisation employee quantity\\"@en ;
+	rdfs:comment \\"The number of people hired by the Organization. WG approval 05/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:NationalPreQualificationData ;
+	rdfs:range a4g:Quantity .
+
+a4g:providesOrganisationFinancialCapability rdfs:label \\"provides organisation financial capability\\"@en ;
+	rdfs:comment \\"A monetary amount representing the financial capability of the Organization. Additional information: Used to represent the general Turnover of the Organization (for statistical purposes). WG approval 05/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:NationalPreQualificationData ;
+	rdfs:range a4g:MonetaryValue .
+
+a4g:providesOrganisationPreQualificationListingIdentifier rdfs:label \\"provides organisation pre qualification listing identifier\\"@en ;
+	rdfs:comment \\"The identifier assigned to an economic operator in a national pre-qualification system or official list. WG approval 05/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:NationalPreQualificationData ;
+	rdfs:range adms:Identifier .
+
 a4g:hasSerialID rdfs:label \\"has serial id\\"@en ;
 	rdfs:comment \\"The identifier assigned to the specific instance of the produced concept. WG Approval 16/05/2023 \\" ;
 	a owl:ObjectProperty ;
@@ -8860,6 +9460,46 @@ a4g:hasPriceDiscountInformation rdfs:label \\"has price discount information\\"@
 	a owl:ObjectProperty ;
 	rdfs:domain a4g:Price ;
 	rdfs:range a4g:AllowanceInformation .
+
+a4g:specifiesResponse rdfs:label \\"specifies response\\"@en ;
+	rdfs:comment \\"Relation indicating that an ESPD Response contains a Response. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:ESPD ;
+	rdfs:range a4g:Response .
+
+a4g:isReinforcedBy rdfs:label \\"is reinforced by\\"@en ;
+	rdfs:comment \\"Relation indicating an Evidence that supports the Response. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:Response ;
+	rdfs:range m8g:Evidence .
+
+m8g:supportsValue rdfs:label \\"supports value\\"@en ;
+	rdfs:comment \\"Supported Value that the Evidence contains.\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:Response ;
+	rdfs:range m8g:SupportedValue .
+
+m8g:confidentialityLevelType rdfs:label \\"confidentiality level type\\"@en ;
+	rdfs:comment \\"Security classification assigned to an Evidence e.g. classified, sensitive, public. Additional Information: Classifications should be defined by an organisation/country as an outcome of a security assessment.\\" ;
+	a owl:ObjectProperty .
+
+a4g:refersToApplicablePeriod rdfs:label \\"refers to applicable period\\"@en ;
+	rdfs:comment \\"Relation indicating the period to which the Response shall apply. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:Response ;
+	rdfs:range a4g:Period .
+
+a4g:hasPowerOfAttorney rdfs:label \\"has power of attorney\\"@en ;
+	rdfs:comment \\"Relation indicating that a Legal Representative has a Power of Attorney. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:LegalRepresentative ;
+	rdfs:range a4g:PowerOfAttorney .
+
+a4g:hasMandate rdfs:label \\"has mandate\\"@en ;
+	rdfs:comment \\"Relation indicating that a Legal Representative has a Mandate. WG approval 12/03/2024\\" ;
+	a owl:ObjectProperty ;
+	rdfs:domain a4g:LegalRepresentative ;
+	rdfs:range a4g:Mandate .
 
 "
 `;
