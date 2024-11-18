@@ -1,13 +1,13 @@
 import { writeFileSync } from 'fs'
 import { Store } from 'oxigraph'
-import { PRODUCTION } from '../src/config.js'
+import { EPO_LATEST } from '../src/config.js'
 import { prettyPrintTurtle } from '../src/io/serialization.js'
 import { toOwl } from '../src/shacl/model2Owl.js'
 import { getEpoJson } from '../src/epo/readEpo.js'
 import { doConstruct } from '../src/sparql/localStore.js'
 import rdf from 'rdf-ext'
 
-const { databasePath, tag } = PRODUCTION
+const { databasePath, tag } = EPO_LATEST
 const filePrefix = `outputs/owl/epo_${tag}`
 const onlyEPO = getEpoJson({ databasePath })
 

@@ -1,6 +1,0 @@
-{
-  "dct:hasPart": {
-    "epo-cat:Item": "[0..*]"
-  },
-  "epo-cat:hasAccessoryItem": "epo-cat:Item [0..*]"
-}

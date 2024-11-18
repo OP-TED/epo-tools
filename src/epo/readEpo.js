@@ -1,15 +1,30 @@
 import { readFileSync } from 'fs'
-import { bufferToJson } from '../conceptualModel/ea-to-json.js'
+import { eapToJson } from '../conceptualModel/eap-to-json.js'
+import { qeaToJson } from '../conceptualModel/qea-to-json.js'
 
-function getJson ({ databasePath }) {
+function getJsonFromEap ({ databasePath }) {
   const buffer = readFileSync(databasePath)
-  return bufferToJson({ buffer })
+  return eapToJson({ buffer })
 }
 
-function getEpoJson ({ databasePath }) {
-  const g = getJson({ databasePath })
-  return filterByModule(g, 'epo')
+function getJsonFromQea ({ databasePath }) {
+  return qeaToJson({ databasePath })
 }
+
+function toJson ({ databasePath }) {
+  if (databasePath.endsWith('.eap')) {
+    return getJsonFromEap({ databasePath })
+  }
+  if (databasePath.endsWith('.qea')) {
+    return getJsonFromQea({ databasePath })
+  }
+  throw Error(`I don't know how to parse ${name}`)
+}
+
+// function getEpoJson ({ databasePath }) {
+//   const g = getJson({ databasePath })
+//   return filterByModule(g, 'epo')
+// }
 
 // For a module
 // Include all edges that have prefix as s or p
@@ -23,4 +38,4 @@ function filterByModule (g, prefix) {
   return { edges, nodes }
 }
 
-export { getJson, getEpoJson, filterByModule }
+export { getJsonFromEap, getJsonFromQea, toJson, filterByModule }
