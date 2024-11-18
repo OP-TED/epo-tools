@@ -39,6 +39,11 @@
       "name": "eSubmission",
       "id": "sub",
       "prefix": "epo-sub:"
+    },
+    {
+      "name": "eInvoicing",
+      "id": "inv",
+      "prefix": "epo-inv:"
     }
   ]
 }

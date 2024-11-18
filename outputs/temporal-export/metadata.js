@@ -1,16 +1,16 @@
-const priorVersion = `4.0.2`
-const currentVersion = `4.1.0`
-const dateIssued = `2024-03-21`
+const currentVersion = `4.2.0`
+const priorVersion = `4.1.0`
+const dateIssued = `2024-07-23`
 
-const shaclMetadata = (id) => `
+const shaclMetadata = (id, name) => `
 ${id}-shape: a owl:Ontology ;
-    rdfs:label "eProcurement Ontology ${id} - SHACL shapes"@en ;
+    rdfs:label "eProcurement Ontology ${name} - SHACL shapes"@en ;
     dcterms:created "2021-06-01"^^xsd:date ;
-    dcterms:description "The eProcurement Ontology ${id} SHACL shapes provides the datashape specifications for the eProcurement Ontology ${id} module."@en ;
+    dcterms:description "The eProcurement Ontology ${name} SHACL shapes provides the datashape specifications for the eProcurement Ontology ${id} module."@en ;
     dcterms:issued "${dateIssued}"^^xsd:date ;
     dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
     dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
-    dcterms:title "eProcurement Ontology ${id} - SHACL shapes"@en ;
+    dcterms:title "eProcurement Ontology ${name} - SHACL shapes"@en ;
     vann:preferredNamespacePrefix "epo" ;
     vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
     rdfs:seeAlso <https://docs.ted.europa.eu/home/index.html>,

@@ -76,7 +76,7 @@ async function writeModule (module) {
   @prefix ${shapePrefix}: <${shapeNamespace}> .
 
   ${toShacl(g, module)}
-  ${shaclMetadata(id)}
+  ${shaclMetadata(id, name)}
   `
 
   const dataset = await rdf.dataset().
