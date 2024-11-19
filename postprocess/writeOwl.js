@@ -1,24 +1,27 @@
-import { writeFileSync } from 'fs'
+import { mkdirSync, writeFileSync } from 'fs'
 import { Store } from 'oxigraph'
 import { EPO_LATEST } from '../src/config.js'
 import { prettyPrintTurtle } from '../src/io/serialization.js'
 import { toOwl } from '../src/shacl/model2Owl.js'
-import { getEpoJson } from '../src/epo/readEpo.js'
+import { getEpoJson, getJson } from '../src/epo/readEpo.js'
 import { doConstruct } from '../src/sparql/localStore.js'
 import rdf from 'rdf-ext'
 
-const { databasePath, tag } = EPO_LATEST
-const filePrefix = `outputs/owl/epo_${tag}`
-const onlyEPO = getEpoJson({ databasePath })
+const databasePath = `assets/ePO/feature/4.2.0-rc.2/analysis_and_design/conceptual_model/ePO_CM.qea`
 
-const { dataset, turtle, errors } = await toOwl(onlyEPO)
+const targetDir = 'postprocess/debug'
+mkdirSync(targetDir, { recursive: true })
+
+const g = getJson({ databasePath })
+
+const { dataset, turtle, errors } = await toOwl(g)
 
 /**
  * Write OWL
  */
-const path = `${filePrefix}.owl.ttl`
-writeFileSync(path, turtle)
-console.log('wrote', dataset.size, 'quads at', path)
+const outputPath = `${targetDir}/owl.ttl`
+writeFileSync(outputPath, turtle)
+console.log('wrote', dataset.size, 'quads at', outputPath)
 
 /**
  * Append OWL disjoints
@@ -67,15 +70,18 @@ for (const query of [isDefinedBy, disjoints]) {
   }
 }
 
-const inferredFile = `${filePrefix}.owl.inferred.ttl`
+const inferredPath = `${targetDir}/owl.inferred.ttl`
+
 const prettyTurtle = await
   prettyPrintTurtle({ dataset: inferredToExport })
-writeFileSync(inferredFile, prettyTurtle)
-console.log('wrote', inferredToExport.size, 'quads at', inferredFile)
+writeFileSync(inferredPath, prettyTurtle)
+console.log('wrote', inferredToExport.size, 'quads at', inferredPath)
 
 /**
  * Write source errors
  */
-const errorFile = `${filePrefix}.owl.errors.json`
-writeFileSync(errorFile, JSON.stringify(errors, null, 2))
-console.log('wrote', errors.edges.length, 'edges with errors at', errorFile)
+
+const errorPath = `${targetDir}/owl.error.json`
+
+writeFileSync(errorPath, JSON.stringify(errors, null, 2))
+console.log('wrote', errors.edges.length, 'edges with errors at', errorPath)

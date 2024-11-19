@@ -11,7 +11,7 @@ function getJsonFromQea ({ databasePath }) {
   return qeaToJson({ databasePath })
 }
 
-function toJson ({ databasePath }) {
+function getJson ({ databasePath }) {
   if (databasePath.endsWith('.eap')) {
     return getJsonFromEap({ databasePath })
   }
@@ -21,10 +21,10 @@ function toJson ({ databasePath }) {
   throw Error(`I don't know how to parse ${name}`)
 }
 
-// function getEpoJson ({ databasePath }) {
-//   const g = getJson({ databasePath })
-//   return filterByModule(g, 'epo')
-// }
+function getEpoJson ({ databasePath }) {
+  const g = getJson({ databasePath })
+  return filterByModule(g, 'epo')
+}
 
 // For a module
 // Include all edges that have prefix as s or p
@@ -38,4 +38,4 @@ function filterByModule (g, prefix) {
   return { edges, nodes }
 }
 
-export { getJsonFromEap, getJsonFromQea, toJson, filterByModule }
+export { getJsonFromEap, getJsonFromQea, getJson, filterByModule, getEpoJson }

@@ -4,7 +4,6 @@ import { NButton, NCard } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { eapToJson } from '../../conceptualModel/eap-to-json.js'
-import { qeaToJson } from '../../conceptualModel/qea-to-json.js'
 
 import { repositories } from '../../epo/knownEpo.js'
 
@@ -15,7 +14,8 @@ const store = useStore()
 const { library } = storeToRefs(store)
 
 const { files, open, reset, onChange } = useFileDialog({
-  accept: '*.eap, *.qea',
+  // accept: '*.eap, *.qea',
+  accept: '*.eap',
   multiple: false,
 })
 
@@ -32,16 +32,22 @@ function toJson (buffer, name) {
   if (name.endsWith('.eap')) {
     return eapToJson({ buffer: Buffer.from(buffer) })
   }
-  if (name.endsWith('.qea')) {
-    return qeaToJson({ buffer: Buffer.from(buffer) })
-  }
+  // if (name.endsWith('.eap')) {
+  //  Expects a path
+  //   return qeaToJson({ buffer: Buffer.from(buffer) })
+  // }
   throw Error(`I don't know how to parse ${name}`)
 }
 
 function handleUserUpload (buffer, file) {
   const { name } = file
 
-  const eaJson = toJson(buffer, name)
+
+  if (name.endsWith('.eap')) {
+
+  }
+
+  const eaJson = toJson(buffer,na)
   const key = name
   const repo = {
     title: name,

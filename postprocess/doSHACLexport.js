@@ -1,56 +1,22 @@
 import { writeFileSync, mkdirSync } from 'fs'
 import { Parser } from 'n3'
 import rdf from 'rdf-ext'
-import { INHERITANCE } from '../../src/conceptualModel/const.js'
-import { inspectEdge, inspectNode } from '../../src/conceptualModel/issues.js'
-import { UNDER_REVIEW } from '../../src/config.js'
+import { INHERITANCE } from '../src/conceptualModel/const.js'
+import { inspectEdge, inspectNode } from '../src/conceptualModel/issues.js'
 import {
   filterByModule,
   getJson,
-} from '../../src/epo/readEpo.js'
-import { prettyPrintTurtle, printRDFXML } from '../../src/io/serialization.js'
-import { aliases, ns } from '../../src/namespaces.js'
-import { getPrefix, stripPrefix } from '../../src/prefix/prefix.js'
-import { toTurtle } from '../../src/shacl/shaclTemplate.js'
+} from '../src/epo/readEpo.js'
+import { prettyPrintTurtle, printRDFXML } from '../src/io/serialization.js'
+import { aliases, ns } from '../src/namespaces.js'
+import { getPrefix, stripPrefix } from '../src/prefix/prefix.js'
+import { toTurtle } from '../src/shacl/shaclTemplate.js'
 import epoModules from './epoModules.json' assert { type: 'json' }
 import { shaclMetadata } from './metadata.js'
 
-const { modules } = epoModules
-const { localPath } = UNDER_REVIEW
+const localPath = `assets/ePO/feature/4.2.0-rc.2`
 
-const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
-
-function iriPatterns (id) {
-  // Example: sub-shape:epo-sub-CertificateInformation-dct-description.
-  const s = (str) => `${getPrefix(str)}-${stripPrefix(str)}`
-  // const s = (str) => `${stripPrefix(str)}`
-
-  function shapeIRI (edge) {
-    const { source } = edge
-    return `${id}-shape:${s(source)}Shape`
-  }
-
-  function propertyIRI (edge) {
-    const { source, predicate, target } = edge
-    // return `${id}-shape:${s(source)}-${s(predicate)}-${s(target)}`
-    return `${id}-shape:${s(source)}-${s(predicate)}`
-
-  }
-
-  return {
-    shapeIRI, propertyIRI,
-  }
-}
-
-function toShacl (g, { id }) {
-  return toTurtle(g,
-    {
-      ...iriPatterns(id),
-      definedBy: `${id}-shape:`,
-      namespaces: { ...ns, ...aliases },
-    },
-  )
-}
+const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.qea`
 
 const rawJson = getJson({ databasePath })
 
@@ -62,9 +28,14 @@ const eaJson = {
     filter(x => x.type !== INHERITANCE),
 }
 
+for (const module of epoModules.modules) {
+  await writeModule(module)
+}
+
 async function writeModule (module) {
   const { name, id, prefix } = module
-  const targetDir = `outputs/temporal-export/implementation/${name}/shacl_shapes`
+
+  const targetDir = `postprocess/result/implementation/${name}/shacl_shapes`
   mkdirSync(targetDir, { recursive: true })
 
   const g = filterByModule(eaJson, prefix)
@@ -96,7 +67,35 @@ async function writeModule (module) {
   console.log('wrote', dataset.size, 'triples', xmlPath)
 }
 
-for (const module of modules) {
-  await writeModule(module)
+function iriPatterns (id) {
+  // Example: sub-shape:epo-sub-CertificateInformation-dct-description.
+  const s = (str) => `${getPrefix(str)}-${stripPrefix(str)}`
+
+  // const s = (str) => `${stripPrefix(str)}`
+
+  function shapeIRI (edge) {
+    const { source } = edge
+    return `${id}-shape:${s(source)}Shape`
+  }
+
+  function propertyIRI (edge) {
+    const { source, predicate, target } = edge
+    // return `${id}-shape:${s(source)}-${s(predicate)}-${s(target)}`
+    return `${id}-shape:${s(source)}-${s(predicate)}`
+
+  }
+
+  return {
+    shapeIRI, propertyIRI,
+  }
 }
 
+function toShacl (g, { id }) {
+  return toTurtle(g,
+    {
+      ...iriPatterns(id),
+      definedBy: `${id}-shape:`,
+      namespaces: { ...ns, ...aliases },
+    },
+  )
+}

@@ -1,6 +1,6 @@
 import { ATTRIBUTE, INHERITANCE, RELATIONSHIP, INSTANCE_OF } from './const.js'
 
-function dbToJson ({ objects, attributes, connectors }) {
+function dbToJson ({ objects, objectProperties, attributes, connectors }) {
 
   const nodeIndex = {}
   for (const { Object_ID, Name } of objects) {
@@ -21,6 +21,12 @@ function dbToJson ({ objects, attributes, connectors }) {
       const result = {
         eaId: Object_ID,
         name: nodeIndex[Object_ID], description: Note, type: Object_Type,
+        tags: objectProperties.filter(x => x.Object_ID === Object_ID).
+          map(x => {
+            return {
+              property: x.Property, value: x.Value,
+            }
+          }),
       }
       // Objects might come with a Classifier,
       // i.e. (EU) 2015/1986 instance of at-voc:legal-basis

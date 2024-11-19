@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from 'fs'
 import fetch from 'node-fetch'
 import { repositories } from './knownEpo.js'
-import { getJsonFromEap } from './readEpo.js'
+import { getEpoJson, getJson, getJsonFromEap } from './readEpo.js'
 
 function fixKnownBugs (g) {
   const removeWhiteSpace = (name) => name?.replaceAll('epo :', 'epo:')
@@ -22,10 +22,11 @@ async function downloadAndTransform ({ fileUrl, tag, appUrl }) {
   console.log(`downloading ${fileUrl}`)
   const response = await fetch(fileUrl)
   const arrayBuffer = await response.arrayBuffer()
-  const databasePath = `assets/models/ePO_CM_${tag}.eap`
+  const fileName = fileUrl.split('/').at(-1)
+  const databasePath = `assets/models/${tag.replaceAll('.', '_')}_${fileName}`
   writeFileSync(databasePath, Buffer.from(arrayBuffer))
   console.log(`Wrote to ${databasePath}`)
-  const json = getJsonFromEap({ databasePath })
+  const json = getJson({ databasePath })
   const g = fixKnownBugs(json)
   const jsonPath = `./public/${appUrl}`
   writeFileSync(jsonPath, JSON.stringify(g, null, 2))

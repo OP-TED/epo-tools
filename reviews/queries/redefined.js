@@ -1,38 +1,5 @@
-import rdf from 'rdf-ext'
-import { ns } from '../src/namespaces.js'
-import { createTriplestore, doConstruct } from '../src/sparql/localStore.js'
-
-function filterDataset (redefined, dataset) {
-  // Subjects to remove
-  const subjects = rdf.termSet()
-  for (const quad of redefined) {
-    subjects.add(quad.subject)
-  }
-  // Traverse the dataset, go deeper if is a blank but do not follow ePO subjects
-  const traverser = rdf.traverser(({
-    dataset,
-    level,
-    quad,
-  }) => !quad.subject.value.startsWith(ns.a4g().value) ||
-    quad.subject.termType === 'BlankNode')
-
-  const unwanted = rdf.dataset()
-  for (const term of [...subjects]) {
-    traverser.forEach({ term, dataset }, ({ dataset, level, quad }) => {
-      unwanted.add(quad)
-    })
-  }
-
-  const wanted = dataset.difference(unwanted)
-
-  return { wanted, unwanted }
-
-}
-
-function fixRedefined ({ assets }) {
-  const store = createTriplestore({ assets })
-
-  const filterUnwantedQuery = `
+const getRedefined = `
+PREFIX authority: <http://publications.europa.eu/resource/authority>
 PREFIX ns1: <http://www.w3.org/2006/time#>
 PREFIX ns2: <http://www.w3.org/ns/locn#>
 PREFIX ns3: <http://www.w3.org/ns/org#>
@@ -60,9 +27,12 @@ PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 
 CONSTRUCT {?s ?p ?o }
 WHERE {
+
+    GRAPH ?g {
     ?s ?p ?o
     FILTER (isURI(?s) && 
-            (STRSTARTS(str(?s), str(ns1:)) ||
+            (STRSTARTS(str(?s), str(authority:)) ||
+              STRSTARTS(str(?s), str(ns1:)) ||
               STRSTARTS(str(?s), str(ns2:)) ||
               STRSTARTS(str(?s), str(ns3:)) ||
               STRSTARTS(str(?s), str(ns4:)) ||
@@ -81,9 +51,8 @@ WHERE {
               STRSTARTS(str(?s), str(eli:)) ||
               STRSTARTS(str(?s), str(foaf:)))
            )
+    }
 }
 `
-  return doConstruct({ store, query: filterUnwantedQuery })
-}
 
-export { fixRedefined, filterDataset }
+export { getRedefined }

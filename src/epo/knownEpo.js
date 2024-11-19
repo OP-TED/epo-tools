@@ -8,8 +8,8 @@ const epo = [
     conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
   },
   // {
-  //   tag: 'v4.1.0-rc.3',
-  //   conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
+  //   branch: 'feature/4.2.0-rc.2',
+  //   conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.qea',
   // },
   {
     tag: 'v4.1.0',
