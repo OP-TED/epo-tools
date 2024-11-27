@@ -2,8 +2,11 @@ node_modules
 dist
 assets
 /.idea
-outputs/ePO
+postprocess/result
+postprocess/debug
+
 widoco
 
 # Local Netlify folder
 .netlify
+.run

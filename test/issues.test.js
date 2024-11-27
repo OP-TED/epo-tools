@@ -6,14 +6,14 @@ import {
   inspectEdge,
   inspectNode,
 } from '../src/conceptualModel/issues.js'
-import { UNDER_REVIEW } from '../src/config.js'
-import { getJson } from '../src/epo/readEpo.js'
+
+import eaJson from '../public/models/ePO_CM_v4.1.1.json' assert { type: 'json' }
 
 expect.extend({ toMatchSnapshot })
 
 describe('issues', () => {
 
-  const { edges, nodes } = getJson(UNDER_REVIEW)
+  const { edges, nodes } = eaJson
 
   it(`appendIssues`, function () {
     const result = appendIssues({ edges, nodes, hello: 'world' })

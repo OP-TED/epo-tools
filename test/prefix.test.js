@@ -1,17 +1,16 @@
 import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
-import { UNDER_REVIEW } from '../src/config.js'
-import { getJson } from '../src/epo/readEpo.js'
 import { getAllPrefixes } from '../src/prefix/prefix.js'
+
+import eaJson from '../public/models/ePO_CM_v4.1.1.json' assert { type: 'json' }
 
 expect.extend({ toMatchSnapshot })
 
 describe('prefix', () => {
-  const epoJson = getJson(UNDER_REVIEW)
 
   it(`getAllPrefixes`, function () {
-    const allPrefixes = getAllPrefixes(epoJson)
+    const allPrefixes = getAllPrefixes(eaJson)
     expect(allPrefixes).toMatchSnapshot(this)
   })
 })

@@ -7,14 +7,12 @@ import {
   filterBy,
   startsWith,
 } from '../src/conceptualModel/filter.js'
-import { UNDER_REVIEW } from '../src/config.js'
-import { getJson } from '../src/epo/readEpo.js'
+
+import eaJson from '../public/models/ePO_CM_v4.1.1.json' assert { type: 'json' }
 
 expect.extend({ toMatchSnapshot })
 
 describe('filter', () => {
-
-  const eaJson = getJson(UNDER_REVIEW)
 
   it(`allEpo`, function () {
     const result = startsWith(eaJson, 'epo')
@@ -60,7 +58,6 @@ describe('filter', () => {
     const filtered = filterBy(eaJson, view)
     expect(filtered).toMatchSnapshot(this)
   })
-
 
   const graph = {
     nodes: [

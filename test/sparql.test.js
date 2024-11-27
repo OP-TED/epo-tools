@@ -2,18 +2,16 @@ import { expect } from 'expect'
 import toMatchSnapshot from 'expect-mocha-snapshot'
 import { readFileSync } from 'fs'
 import { describe, it } from 'mocha'
-import { UNDER_REVIEW } from '../src/config.js'
-import { getJson } from '../src/epo/readEpo.js'
 import { applyGlob } from '../src/io/assets.js'
 
 import { termsFromQuery } from '../src/sparql/extractFromQuery.js'
 import { validateAgainstGraph } from '../src/sparql/validate.js'
+import eaJson from '../public/models/ePO_CM_v4.1.1.json' assert { type: 'json' }
 
 expect.extend({ toMatchSnapshot })
 
 const globPattern = `test/support/queries/**`
 const assets = await applyGlob(globPattern)
-const epoJson = getJson(UNDER_REVIEW)
 
 describe('extract terms', async () => {
 
@@ -37,7 +35,7 @@ describe('validate against conceptual model', async () => {
     const queryStr = readFileSync(path).toString()
 
     it(`asset:${path}`, async function () {
-      const result = validateAgainstGraph(epoJson,
+      const result = validateAgainstGraph(eaJson,
         { queryStr, filter: ['epo*'] })
       expect(result).toMatchSnapshot(this)
     })

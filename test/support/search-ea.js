@@ -1,11 +1,9 @@
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
-import { UNDER_REVIEW } from '../../src/config.js'
+import { EPO_LATEST } from '../../src/config.js'
 
-// Utility to search for some text in EA
-const assetsPath = UNDER_REVIEW.localPath
+const databasePath = EPO_LATEST.databasePath
 
-const databasePath = `${assetsPath}/analysis_and_design/conceptual_model/ePO_CM.eap`
 console.log('reading database', databasePath)
 
 const buffer = readFileSync(databasePath)

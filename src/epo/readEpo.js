@@ -1,9 +1,24 @@
 import { readFileSync } from 'fs'
-import { bufferToJson } from '../conceptualModel/ea-to-json.js'
+import { eapToJson } from '../conceptualModel/eap-to-json.js'
+import { qeaToJson } from '../conceptualModel/qea-to-json.js'
+
+function getJsonFromEap ({ databasePath }) {
+  const buffer = readFileSync(databasePath)
+  return eapToJson({ buffer })
+}
+
+function getJsonFromQea ({ databasePath }) {
+  return qeaToJson({ databasePath })
+}
 
 function getJson ({ databasePath }) {
-  const buffer = readFileSync(databasePath)
-  return bufferToJson({ buffer })
+  if (databasePath.endsWith('.eap')) {
+    return getJsonFromEap({ databasePath })
+  }
+  if (databasePath.endsWith('.qea')) {
+    return getJsonFromQea({ databasePath })
+  }
+  throw Error(`I don't know how to parse ${name}`)
 }
 
 function getEpoJson ({ databasePath }) {
@@ -23,4 +38,4 @@ function filterByModule (g, prefix) {
   return { edges, nodes }
 }
 
-export { getJson, getEpoJson, filterByModule }
+export { getJsonFromEap, getJsonFromQea, getJson, filterByModule, getEpoJson }
