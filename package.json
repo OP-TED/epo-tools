@@ -23,6 +23,7 @@
   "homepage": "https://github.com/OP-TED/ePO-tools#readme",
   "dependencies": {
     "better-sqlite3": "^11.5.0",
+    "rdflib": "^2.2.35",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {

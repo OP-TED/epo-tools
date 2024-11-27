@@ -7,7 +7,7 @@ import { filterDataset, getRedefined } from './fixRedefined.js'
 import { dirname } from 'path'
 import rdf from 'rdf-ext'
 
-const localPath = `assets/ePO/feature/4.2.0-rc.2`
+const localPath = `assets/ePO/develop`
 const globPattern = `${localPath}/implementation/*/owl_ontology/*.ttl`
 
 const assets = await getRdfAssets({ globPattern }, (path) => rdf.defaultGraph())
@@ -33,5 +33,3 @@ for (const asset of assets) {
   writeFileSync(debugPath, unwantedTurtle)
 
 }
-
-

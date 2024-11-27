@@ -13,8 +13,9 @@ import { getPrefix, stripPrefix } from '../src/prefix/prefix.js'
 import { toTurtle } from '../src/shacl/shaclTemplate.js'
 import epoModules from './epoModules.json' assert { type: 'json' }
 import { shaclMetadata } from './metadata.js'
+import { rewriteTerms } from './temporalFix.js'
 
-const localPath = `assets/ePO/feature/4.2.0-rc.2`
+const localPath = `assets/ePO/develop`
 
 const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.qea`
 
@@ -54,17 +55,12 @@ async function writeModule (module) {
     addAll([...new Parser().parse(uglyturtle)])
 
   const turtle = await prettyPrintTurtle({
-    dataset,
+    dataset: rewriteTerms(dataset),
     namespaces,
   })
   const turtlePath = `${targetDir}/${name}_shapes.ttl`
   writeFileSync(turtlePath, turtle)
   console.log('wrote', dataset.size, 'triples', turtlePath)
-
-  const xml = await printRDFXML(({ dataset, namespaces }))
-  const xmlPath = `${targetDir}/${name}_shapes.rdf`
-  writeFileSync(xmlPath, xml)
-  console.log('wrote', dataset.size, 'triples', xmlPath)
 }
 
 function iriPatterns (id) {
