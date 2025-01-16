@@ -19,6 +19,12 @@ const localPath = `assets/ePO/develop`
 
 const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.qea`
 
+const metadata = shaclMetadata({
+  currentVersion: `4.2.0`,
+  priorVersion: `4.1.0`,
+  dateIssued: `2024-11-12`,
+})
+
 const rawJson = getJson({ databasePath })
 
 const hasErrors = x => x.some(x => x.severity === 'error')
@@ -48,7 +54,7 @@ async function writeModule (module) {
   @prefix ${shapePrefix}: <${shapeNamespace}> .
 
   ${toShacl(g, module)}
-  ${shaclMetadata(id, name)}
+  ${metadata(id, name)}
   `
 
   const dataset = await rdf.dataset().

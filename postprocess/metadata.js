@@ -1,15 +1,11 @@
-const currentVersion = `4.2.0`
-const priorVersion = `4.1.0`
-const dateIssued = `2024-07-23`
-
-const shaclMetadata = (id, name) => `
+const shaclMetadata = ({ currentVersion, priorVersion, dateIssued }) => (id, name) => `
 ${id}-shape: a owl:Ontology ;
     rdfs:label "eProcurement Ontology ${name} - SHACL shapes"@en ;
     dcterms:created "2021-06-01"^^xsd:date ;
     dcterms:description "The eProcurement Ontology ${name} SHACL shapes provides the datashape specifications for the eProcurement Ontology ${id} module."@en ;
     dcterms:issued "${dateIssued}"^^xsd:date ;
     dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
-    dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
+    dcterms:publisher <http://publications.europa.eu/resource/authority/corporate-body/PUBL> ;
     dcterms:title "eProcurement Ontology ${name} - SHACL shapes"@en ;
     vann:preferredNamespacePrefix "epo" ;
     vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
@@ -30,7 +26,7 @@ ${id}-shape: a owl:Ontology ;
         <http://www.w3.org/ns/person>,
         foaf: ;
     owl:incompatibleWith "3.1.0" ;
-    owl:priorVersion "http://data.europa.eu/a4g/data-shape#${id}-shape-${priorVersion}" ;
+    owl:priorVersion ${id}-shape:${id}-shape-${priorVersion} ;
     owl:versionIRI ${id}-shape:${id}-shape-${currentVersion} ;
     owl:versionInfo "${currentVersion}" .
 `
