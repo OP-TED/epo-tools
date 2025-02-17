@@ -1,8 +1,7 @@
 import { readFileSync } from 'fs'
 import MDBReader from 'mdb-reader'
-import { EPO_LATEST } from '../../src/config.js'
 
-const databasePath = EPO_LATEST.databasePath
+const databasePath = './test/support/ePO_CM.eap'
 
 console.log('reading database', databasePath)
 

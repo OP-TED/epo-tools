@@ -3,7 +3,7 @@ import { dbToJson } from './db-to-json.js'
 
 function eapToJson ({ buffer }) {
   const reader = new MDBReader(buffer)
-  const objects = reader.getTable('t_objectproperties').getData()
+  const objects = reader.getTable('t_object').getData()
   const objectProperties = reader.getTable('t_objectproperties').getData()
   const attributes = reader.getTable('t_attribute').getData()
   const connectors = reader.getTable('t_connector').getData()

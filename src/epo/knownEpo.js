@@ -1,16 +1,12 @@
 const epo = [
   {
+    tag: 'v4.2.0',
+    conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.qea',
+  },
+  {
     tag: 'v4.1.1',
     conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
   },
-  {
-    tag: 'v4.2.0-rc.1',
-    conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
-  },
-  // {
-  //   branch: 'feature/4.2.0-rc.2',
-  //   conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.qea',
-  // },
   {
     tag: 'v4.1.0',
     conceptualModelPath: 'analysis_and_design/conceptual_model/ePO_CM.eap',
