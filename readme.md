@@ -24,4 +24,4 @@ it contains an application to compare two conceptual models and more
 npm run dev
 ```
 
-- Demo : https://epo-tools.netlify.app/
+- [Demo](https://docs.ted.europa.eu/epo-tools/)
