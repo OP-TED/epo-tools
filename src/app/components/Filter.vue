@@ -10,14 +10,18 @@ import {
   NDynamicTags,
   NSelect,
   NSpace,
+  NTag,
 } from 'naive-ui'
 import { storeToRefs } from 'pinia'
 import { computed, ref } from 'vue'
 import { useStore } from '../state.js'
 import FiltersPanel from './FiltersPanel.vue'
+import { h } from 'vue'
+import NodeDetails from './NodeDetails.vue'
+
 
 const store = useStore()
-const { filterOptions, suggestedNodes } = storeToRefs(store)
+const { filterOptions, suggestedNodes, eaJson } = storeToRefs(store)
 const { addFilterTerms } = store
 
 const options = computed(() => {
@@ -43,9 +47,58 @@ function toggleSaved () {
   displaySavedActive.value = true
 }
 
+const removeTag = (index) => {
+  filterOptions.value.filter.splice(index, 1)
+}
+
+const customRenderTag = (tag, index) => {
+  return h(
+      NTag,
+      {
+        type: 'primary',
+        round: true,
+        closable: true,
+        onClose: () => removeTag(index),
+        style: { cursor: 'pointer' },
+      },
+      {
+        default: () =>
+            h(
+                'a',
+                {
+                  href: '#',
+                  style: { textDecoration: 'none', color: 'inherit' },
+                  onClick: (event) => {
+                    event.preventDefault() // Prevent navigation
+                    handleNodeSelected(tag)
+                  }
+                },
+                tag
+            )
+      }
+  )
+}
+
+
+function handleNodeSelected (node) {
+  const maybeNode = eaJson.value.nodes.find(x => x.name === node) || eaJson.value.nodes.find(x => x.name === node)
+  if (maybeNode) {
+    current.value = maybeNode
+    displayDetail.value = true
+  }
+}
+
+const displayDetail = ref(false)
+const current = ref()
+
 </script>
 
 <template>
+  <n-drawer v-model:show="displayDetail" :width="1200" placement="right">
+    <n-drawer-content>
+      <NodeDetails :node="current" :graph="eaJson" @node-selected="handleNodeSelected"/>
+    </n-drawer-content>
+  </n-drawer>
   <n-drawer v-model:show="displaySavedActive" :width="502" placement="top">
     <n-drawer-content>
       <FiltersPanel/>
@@ -71,8 +124,10 @@ function toggleSaved () {
     </div>
 
     <n-dynamic-tags
+        v-model:value="filterOptions.filter"
+        :render-tag="customRenderTag"
         round
-        v-model:value="filterOptions.filter"/>
+    />
 
     <n-collapse arrow-placement="right">
       <n-collapse-item title="..." name="1">
