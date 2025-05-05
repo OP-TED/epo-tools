@@ -47,7 +47,7 @@ function handleUserUpload (buffer, file) {
 
   }
 
-  const eaJson = toJson(buffer,na)
+  const eaJson = toJson(buffer,name)
   const key = name
   const repo = {
     title: name,
