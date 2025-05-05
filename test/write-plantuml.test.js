@@ -5,9 +5,9 @@ import { describe, it } from 'mocha'
 import { getComparisonChunks } from '../src/plantuml/comparison.js'
 import { toPlantuml } from '../src/plantuml/plantumlTemplate.js'
 
-import before from '../public/models/ePO_CM_v4.0.0.json' assert { type: 'json' }
+import before from '../public/models/ePO_CM_v4.0.0.json' with { type: 'json' }
 import after
-  from '../public/models/ePO_CM_v4.1.1.json' assert { type: 'json' }
+  from '../public/models/ePO_CM_v4.1.1.json' with { type: 'json' }
 
 expect.extend({ toMatchSnapshot })
 

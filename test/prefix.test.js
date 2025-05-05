@@ -3,7 +3,7 @@ import toMatchSnapshot from 'expect-mocha-snapshot'
 import { describe, it } from 'mocha'
 import { getAllPrefixes } from '../src/prefix/prefix.js'
 
-import eaJson from '../public/models/ePO_CM_v4.1.1.json' assert { type: 'json' }
+import eaJson from '../public/models/ePO_CM_v4.1.1.json' with { type: 'json' }
 
 expect.extend({ toMatchSnapshot })
 

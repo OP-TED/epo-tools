@@ -6,7 +6,7 @@ import { applyGlob } from '../src/io/assets.js'
 
 import { termsFromQuery } from '../src/sparql/extractFromQuery.js'
 import { validateAgainstGraph } from '../src/sparql/validate.js'
-import eaJson from '../public/models/ePO_CM_v4.1.1.json' assert { type: 'json' }
+import eaJson from '../public/models/ePO_CM_v4.1.1.json' with { type: 'json' }
 
 expect.extend({ toMatchSnapshot })
 
