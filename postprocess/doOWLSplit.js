@@ -6,8 +6,10 @@ import {
 import { filterDataset, getRedefined } from './fixRedefined.js'
 import { dirname } from 'path'
 import rdf from 'rdf-ext'
+import model from './model.json' with { type: 'json' }
 
-const localPath = `assets/ePO/develop`
+const { localPath } = model
+
 const globPattern = `${localPath}/implementation/*/owl_ontology/*.ttl`
 
 const assets = await getRdfAssets({ globPattern }, (path) => rdf.defaultGraph())

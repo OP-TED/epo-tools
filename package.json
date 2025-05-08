@@ -22,10 +22,10 @@
   },
   "homepage": "https://github.com/OP-TED/ePO-tools#readme",
   "dependencies": {
-    "rdflib": "^2.2.35",
-    "better-sqlite3": "^11.8.1"
+    "rdflib": "^2.2.35"
   },
   "devDependencies": {
+    "better-sqlite3": "^11.8.1",
     "@rdfjs-elements/formats-pretty": "^0.6.7",
     "@sigma/edge-curve": "^3.0.0-beta.7",
     "@sigma/node-border": "^3.0.0-beta.3",

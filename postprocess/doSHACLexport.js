@@ -11,18 +11,18 @@ import { prettyPrintTurtle, printRDFXML } from '../src/io/serialization.js'
 import { aliases, ns } from '../src/namespaces.js'
 import { getPrefix, stripPrefix } from '../src/prefix/prefix.js'
 import { toTurtle } from '../src/shacl/shaclTemplate.js'
-import epoModules from './epoModules.json' assert { type: 'json' }
+import epoModules from './epoModules.json' with { type: 'json' }
 import { shaclMetadata } from './metadata.js'
 import { rewriteTerms } from './temporalFix.js'
 
-const localPath = `assets/ePO/develop`
+import model from './model.json' with { type: 'json' }
 
-const databasePath = `${localPath}/analysis_and_design/conceptual_model/ePO_CM.qea`
+const { databasePath } = model
 
 const metadata = shaclMetadata({
-  currentVersion: `4.2.0`,
-  priorVersion: `4.1.0`,
-  dateIssued: `2024-11-12`,
+  currentVersion: `5.0.0`,
+  priorVersion: `4.2.0`,
+  dateIssued: `2025-05-08`,
 })
 
 const rawJson = getJson({ databasePath })

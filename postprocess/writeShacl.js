@@ -5,7 +5,9 @@ import { toShacl } from '../src/shacl/model2Shacl.js'
 import { getJson } from '../src/epo/readEpo.js'
 import { doConstruct } from '../src/sparql/localStore.js'
 
-const databasePath = `assets/ePO/feature/4.2.0-rc.2/analysis_and_design/conceptual_model/ePO_CM.qea`
+import model from './model.json' with { type: 'json' }
+
+const { databasePath } = model
 
 const targetDir = 'postprocess/debug'
 mkdirSync(targetDir, { recursive: true })

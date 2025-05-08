@@ -6,7 +6,9 @@ import { getEpoJson, getJson } from '../src/epo/readEpo.js'
 import { doConstruct } from '../src/sparql/localStore.js'
 import rdf from 'rdf-ext'
 
-const databasePath = `assets/develop/analysis_and_design/conceptual_model/ePO_CM.qea`
+import model from './model.json' with { type: 'json' }
+
+const { databasePath } = model
 
 const targetDir = 'postprocess/debug'
 mkdirSync(targetDir, { recursive: true })

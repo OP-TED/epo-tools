@@ -44,6 +44,26 @@
       "name": "eInvoicing",
       "id": "inv",
       "prefix": "epo-inv:"
+    },
+    {
+      "name": "eEvaluation",
+      "id": "eva",
+      "prefix": "epo-eva:"
+    },
+    {
+      "name": "eAwarding",
+      "id": "awa",
+      "prefix": "epo-awa:"
+    },
+    {
+      "name": "eQualification",
+      "id": "qua",
+      "prefix": "epo-qua:"
+    },
+    {
+      "name": "eRequest",
+      "id": "req",
+      "prefix": "epo-req:"
     }
   ]
 }
