@@ -3,7 +3,7 @@
 import marimo
 
 __generated_with = "0.12.10"
-app = marimo.App(width="full", app_title="SHACL review")
+app = marimo.App(width="full", app_title="Metadata display")
 
 
 @app.cell
@@ -101,7 +101,6 @@ def _(g, pretty_query):
         ?preferredNamespaceUri
         ?preferredNamespacePrefix
         (GROUP_CONCAT(DISTINCT ?import; separator=", ") as ?imports)
-        (GROUP_CONCAT(DISTINCT ?seeAlso; separator=", ") as ?documentation)
         ?comment
     WHERE {
         ?ontology a owl:Ontology .
@@ -118,12 +117,45 @@ def _(g, pretty_query):
         OPTIONAL { ?ontology vann:preferredNamespaceUri ?preferredNamespaceUri }
         OPTIONAL { ?ontology vann:preferredNamespacePrefix ?preferredNamespacePrefix }
         OPTIONAL { ?ontology owl:imports ?import }
-        OPTIONAL { ?ontology rdfs:seeAlso ?seeAlso }
         OPTIONAL { ?ontology rdfs:comment ?comment }
     }
     GROUP BY ?ontology ?title ?label ?versionInfo ?versionIRI ?description 
              ?issued ?created ?license ?rights ?preferredNamespaceUri 
              ?preferredNamespacePrefix ?comment
+
+            """
+        }, graph=g)
+    return
+
+
+@app.cell
+def _(g, pretty_query):
+    pretty_query({
+            "title": "## See also links",
+            "query": """
+
+    SELECT DISTINCT ?ontology ?seeAlso
+    WHERE {
+        ?ontology a owl:Ontology .
+        ?ontology rdfs:seeAlso ?seeAlso .
+    }
+
+            """
+        }, graph=g)
+    return
+
+
+@app.cell
+def _(g, pretty_query):
+    pretty_query({
+            "title": "## Imports",
+            "query": """
+
+    SELECT DISTINCT ?ontology ?import
+    WHERE {
+        ?ontology a owl:Ontology .
+        ?ontology owl:imports ?import .
+    }
 
             """
         }, graph=g)
