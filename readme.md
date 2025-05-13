@@ -6,7 +6,23 @@ The intention is to eventually delete this repository once its purpose is fulfil
 
 Any valuable components may be migrated to their respective repositories
 
-## install
+## Notebook based reviews
+
+To install dependencies
+
+```shell
+poetry install
+```
+
+To access the marimo notebooks
+
+```sh
+marimo edit  notebooks/
+```
+
+Currently there are notebooks to review SHACL, OWL and metadata of both.
+
+## Web application
 
 The scripts require node.js installed and npm
 
@@ -16,12 +32,14 @@ Install dependencies
 npm install
 ```
 
-## App
-
-it contains an application to compare two conceptual models and more
-
 ```sh
 npm run dev
 ```
 
+Will run the application to compare two conceptual models and more
+
 - [Demo](https://docs.ted.europa.eu/epo-tools/)
+
+
+
+

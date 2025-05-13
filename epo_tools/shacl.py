@@ -1,83 +1,50 @@
 from rdflib import Graph, RDF, URIRef, RDFS
 from rdflib.namespace import SH
+from rdflib import Graph, URIRef, BNode, RDF, Namespace
+import marimo as mo
 
-def get_local_name(uri):
-    """Extract the local name from a URI."""
-    if not uri:
-        return ""
-    uri_str = str(uri)
-    return uri_str.split('#')[-1] if '#' in uri_str else uri_str.split('/')[-1]
+SH = Namespace("http://www.w3.org/ns/shacl#")
 
-def extract_shacl_shapes(graph: Graph):
-    """
-    Extract SHACL shapes from an RDF graph into simple dictionary structures.
+def extract_subgraph(g: Graph, root) -> Graph:
+    """Recursively extracts all SHACL-related triples connected to the given root node."""
+    subg = Graph()
+    visited = set()
 
-    Args:
-        graph: RDF graph containing SHACL shapes
+    def traverse(node):
+        if node in visited:
+            return
+        visited.add(node)
 
-    Returns:
-        List of dictionaries representing SHACL shapes
-    """
-    shapes = []
+        for p, o in g.predicate_objects(subject=node):
+            subg.add((node, p, o))
 
-    # Get all node shapes
-    for shape_node in graph.subjects(RDF.type, SH.NodeShape):
-        properties = []
+            # Recurse into blank nodes
+            if isinstance(o, BNode):
+                traverse(o)
 
-        # Process each property of the shape
-        for prop in graph.objects(shape_node, SH.property):
-            property_attrs = {}
+            # Optionally recurse into shapes pointed to by sh:node, sh:property, etc.
+            # even if they are URIRefs (you can adjust this based on your data model)
+            if p in {
+                SH.property, SH.node, SH.or_, SH.and_, SH.not_, SH.xone, SH.qualifiedValueShape
+            }:
+                if isinstance(o, (BNode, URIRef)):
+                    traverse(o)
 
-            # Collect all property attributes
-            for pred, obj in graph.predicate_objects(prop):
-                property_attrs[pred] = obj
+    traverse(root)
+    return subg
 
-            path = property_attrs.get(SH.path)
+def pretty_node(n, g):
+    # Define the shape node to extract
+    uri = URIRef(n['uri'])
+    message = n['message']
+    # Extract and serialize the subgraph
+    subg = extract_subgraph(g, uri)
+    return mo.md(f"""
+## {uri}
 
-            # Basic property info
-            property_dict = {
-                'path': str(path),
-                'name': get_local_name(path)
-            }
+{message}
 
-            # Add optional attributes only if they exist
-            if SH.datatype in property_attrs:
-                property_dict['datatype'] = str(property_attrs[SH.datatype])
-            if SH['class'] in property_attrs:
-                property_dict['target'] = str(property_attrs[SH['class']])
-            if SH.minCount in property_attrs:
-                property_dict['min_count'] = int(property_attrs[SH.minCount].value)
-            if SH.maxCount in property_attrs:
-                property_dict['max_count'] = int(property_attrs[SH.maxCount].value)
-            if SH.pattern in property_attrs:
-                property_dict['pattern'] = str(property_attrs[SH.pattern])
-            if SH.description in property_attrs:
-                property_dict['description'] = str(property_attrs[SH.description])
-
-            properties.append(property_dict)
-
-        # Create the shape dictionary
-        shape_dict = {
-            'uri': str(shape_node),
-            'name': get_local_name(shape_node),
-            'properties': properties
-        }
-
-        # Add shape target class if it exists
-        target_class = next((str(obj) for obj in graph.objects(shape_node, SH.targetClass)), None)
-        if target_class:
-            shape_dict['source'] = target_class
-
-        # Add shape class if it exists
-        shape_class = next((str(obj) for obj in graph.objects(shape_node, SH['class'])), None)
-        if shape_class:
-            shape_dict['class'] = shape_class
-
-        # Add shape description if it exists
-        description = next((str(obj) for obj in graph.objects(shape_node, SH.description)), None)
-        if description:
-            shape_dict['description'] = description
-
-        shapes.append(shape_dict)
-
-    return shapes
+```turtle
+{subg.serialize(format="turtle")}
+```
+""")

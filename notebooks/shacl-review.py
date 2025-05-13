@@ -17,17 +17,18 @@ def _():
     import os
     import json
     import glob as glob_lib
-    from rdflib import Graph
-    return Graph, glob_lib, json, os
+    from rdflib import Graph, URIRef, BNode
+    return BNode, Graph, URIRef, glob_lib, json, os
 
 
 @app.cell
 def _():
     from epo_tools.widgets import pretty_query
-    return (pretty_query,)
+    from epo_tools.shacl import pretty_node
+    return pretty_node, pretty_query
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
@@ -131,10 +132,10 @@ def _(g, pretty_query):
                CONCAT(?shapeName, "Shape")) AS ?shapeProperName)
     WHERE {
         ?shape a sh:NodeShape .
-    
+
         # Filter out shapes that don't have a fragment identifier (#)
         FILTER(CONTAINS(STR(?shape), "#"))
-    
+
         # Alternative if shapes use / instead of #
         # BIND(STRAFTER(STR(?shape), "/") AS ?shapeName)
     }
@@ -164,13 +165,13 @@ def _(g, pretty_query):
     WHERE {
         ?shape a sh:PropertyShape ;
                sh:name ?name .
-    
+
         # Split CamelCase into spaces
         BIND(REPLACE(?name, 
             "([a-z])([A-Z])",
             "$1 $2"
         ) AS ?splitCamel)
-    
+
         # Convert to lowercase and clean up
         BIND(LCASE(?splitCamel) AS ?transformedName)
     }
@@ -178,6 +179,78 @@ def _(g, pretty_query):
 
             """
         }, graph=g)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+        ## Inspection of Ranges
+
+        Currently the SHACL shapes do not specify what's the range
+
+        """
+    )
+    return
+
+
+@app.cell
+def _(g, pretty_node):
+    pretty_node({
+        "message": "It is not clear what is expected as range. Are these the official vocabularies?",
+        "uri": "http://data.europa.eu/a4g/data-shape#epo-req-RequestForOffer-epo-hasDestinationCountryCode"
+    }, g)
+    return
+
+
+@app.cell
+def _(g, pretty_node):
+    pretty_node({
+        "message": "It is not clear what is expected as range. Is it a Language?",
+        "uri": "http://data.europa.eu/a4g/data-shape#epo-AccessTerm-epo-providesProcurementDocumentsInOfficialLanguage"
+    }, g)
+    return
+
+
+@app.cell
+def _(g, pretty_node):
+    pretty_node({
+        "message": "Shapes are restrictive, meaning that accept any `skos:Concept` is this the intended behaviour?",
+        "uri": "http://data.europa.eu/a4g/data-shape#epo-Document-epo-hasDocumentType"
+    }, g)
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(r"""# Search utilities""")
+    return
+
+
+@app.cell
+def _(mo):
+    search_term = mo.ui.text("ProcurementDocumentsInOfficialLanguage", full_width=True)
+    return (search_term,)
+
+
+@app.cell
+def _(g, mo, pretty_query, search_term):
+    mo.vstack([
+    search_term,
+    pretty_query({
+            "title": "## Search URIs by name",
+            "query": f"""
+    SELECT DISTINCT ?uri
+    WHERE {{
+      ?uri ?p ?o .
+      FILTER(CONTAINS(STR(?uri), "{search_term.value}"))
+    }}
+            """
+        }, graph=g)
+    ])
+
+
     return
 
 

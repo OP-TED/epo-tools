@@ -76,7 +76,7 @@ def _(Graph, table):
     return g, path
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(g, pretty_query):
     pretty_query({
             "title": "## Metadata",
@@ -96,6 +96,7 @@ def _(g, pretty_query):
         ?description 
         ?issued 
         ?created
+        ?modified
         ?license
         ?rights
         ?preferredNamespaceUri
@@ -112,6 +113,7 @@ def _(g, pretty_query):
         OPTIONAL { ?ontology dcterms:description ?description }
         OPTIONAL { ?ontology dcterms:issued ?issued }
         OPTIONAL { ?ontology dcterms:created ?created }
+        OPTIONAL { ?ontology dcterms:modified ?modified }
         OPTIONAL { ?ontology dcterms:license ?license }
         OPTIONAL { ?ontology dcterms:rights ?rights }
         OPTIONAL { ?ontology vann:preferredNamespaceUri ?preferredNamespaceUri }
@@ -120,7 +122,7 @@ def _(g, pretty_query):
         OPTIONAL { ?ontology rdfs:comment ?comment }
     }
     GROUP BY ?ontology ?title ?label ?versionInfo ?versionIRI ?description 
-             ?issued ?created ?license ?rights ?preferredNamespaceUri 
+             ?issued ?created ?modified ?license ?rights ?preferredNamespaceUri 
              ?preferredNamespacePrefix ?comment
 
             """
@@ -129,12 +131,35 @@ def _(g, pretty_query):
 
 
 @app.cell
+def _():
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(
+        r"""
+        # About dates
+
+        -  dcterms:created "2025-02-15"^^xsd:date means the shape was first created on February 15, 2025
+        -  dcterms:issued "2025-03-01"^^xsd:date means the shape was officially published on March 1, 2025
+        -  dcterms:modified "2025-05-01"^^xsd:date means the shape was last updated on May 1, 2025
+        """
+    )
+    return
+
+
+@app.cell
 def _(g, pretty_query):
     pretty_query({
-            "title": "## See also links",
+            "title": """## See also links
+        
+            Consider revising https://docs.ted.europa.eu/home/index.html that is not Ontology related
+        
+            """,
             "query": """
 
-    SELECT DISTINCT ?ontology ?seeAlso
+    SELECT DISTINCT ?seeAlso
     WHERE {
         ?ontology a owl:Ontology .
         ?ontology rdfs:seeAlso ?seeAlso .
@@ -145,11 +170,15 @@ def _(g, pretty_query):
     return
 
 
-@app.cell
-def _(g, pretty_query):
-    pretty_query({
-            "title": "## Imports",
-            "query": """
+app._unparsable_cell(
+    r"""
+    \"pretty_query({
+            \"title\": \"\"\"## Imports
+        
+            SHACL 
+        
+            \"\"\",
+            \"query\": \"\"\"
 
     SELECT DISTINCT ?ontology ?import
     WHERE {
@@ -157,9 +186,11 @@ def _(g, pretty_query):
         ?ontology owl:imports ?import .
     }
 
-            """
+            \"\"\"
         }, graph=g)
-    return
+    """,
+    name="_"
+)
 
 
 if __name__ == "__main__":

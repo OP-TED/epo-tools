@@ -25,7 +25,7 @@ ${id}-shape: a owl:Ontology ;
         org:,
         <http://www.w3.org/ns/person>,
         foaf: ;
-    owl:incompatibleWith "3.1.0" ;
+    owl:incompatibleWith "4.2.0" ;
     owl:priorVersion ${id}-shape:${id}-shape-${priorVersion} ;
     owl:versionIRI ${id}-shape:${id}-shape-${currentVersion} ;
     owl:versionInfo "${currentVersion}" .
