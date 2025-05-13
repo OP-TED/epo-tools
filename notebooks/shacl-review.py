@@ -3,7 +3,11 @@
 import marimo
 
 __generated_with = "0.12.10"
-app = marimo.App(width="full", app_title="SHACL review")
+app = marimo.App(
+    width="full",
+    app_title="SHACL review",
+    auto_download=["html"],
+)
 
 
 @app.cell
@@ -80,7 +84,10 @@ def _(Graph, table):
 @app.cell
 def _(g, pretty_query):
     pretty_query({
-            "title": "## Missing sh:nodeKind sh:IRI in properties that point to a class",
+            "title": """## Missing sh:nodeKind sh:IRI
+
+            Some sh:nodeKind sh:IRI are missing in properties that point to a class
+            """,
             "query": """
 
     PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -99,7 +106,11 @@ def _(g, pretty_query):
 @app.cell
 def _(g, pretty_query):
     pretty_query({
-            "title": "## Missing rdfs:isDefinedBy to connect to metadata",
+            "title": """## Missing rdfs:isDefinedBy
+
+        Some SHACL properties miss `rdfs:isDefinedBy` to specify to their corresponding metadata
+
+        """,
             "query": """
 
     PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -119,7 +130,12 @@ def _(g, pretty_query):
 @app.cell
 def _(g, pretty_query):
     pretty_query({
-            "title": "## Current node shape naming",
+            "title": """## SHACL Node naming
+
+            This one is optional, but by convention Shapes are postfixed 'Shape'
+
+
+            """,
             "query": """
 
     PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -150,7 +166,12 @@ def _(g, pretty_query):
 @app.cell
 def _(g, pretty_query):
     pretty_query({
-            "title": "## Current property naming",
+            "title": """## SHACL property sh:name
+
+            This one is optional (suggest: Initial capital, space-separated, subsequent words lowercase)
+
+
+            """,
             "query": """
 
     PREFIX sh: <http://www.w3.org/ns/shacl#>
@@ -188,8 +209,9 @@ def _(mo):
         r"""
         ## Inspection of Ranges
 
-        Currently the SHACL shapes do not specify what's the range
+        The current property shapes do not specify what skos:Concept is expected. Is this by design?
 
+        Below 3 examples
         """
     )
     return
@@ -198,7 +220,7 @@ def _(mo):
 @app.cell
 def _(g, pretty_node):
     pretty_node({
-        "message": "It is not clear what is expected as range. Are these the official vocabularies?",
+        "message": "It is not clear what is expected as range. Are these countries from a official vocabulary?",
         "uri": "http://data.europa.eu/a4g/data-shape#epo-req-RequestForOffer-epo-hasDestinationCountryCode"
     }, g)
     return
@@ -207,7 +229,7 @@ def _(g, pretty_node):
 @app.cell
 def _(g, pretty_node):
     pretty_node({
-        "message": "It is not clear what is expected as range. Is it a Language?",
+        "message": "It is not clear what is expected as range. Is it a Language from official vocabularies?",
         "uri": "http://data.europa.eu/a4g/data-shape#epo-AccessTerm-epo-providesProcurementDocumentsInOfficialLanguage"
     }, g)
     return
@@ -216,7 +238,7 @@ def _(g, pretty_node):
 @app.cell
 def _(g, pretty_node):
     pretty_node({
-        "message": "Shapes are restrictive, meaning that accept any `skos:Concept` is this the intended behaviour?",
+        "message": "Same",
         "uri": "http://data.europa.eu/a4g/data-shape#epo-Document-epo-hasDocumentType"
     }, g)
     return

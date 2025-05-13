@@ -3,7 +3,11 @@
 import marimo
 
 __generated_with = "0.12.10"
-app = marimo.App(width="full", app_title="Metadata display")
+app = marimo.App(
+    width="full",
+    app_title="Metadata display",
+    auto_download=["html"],
+)
 
 
 @app.cell
@@ -43,22 +47,22 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    shacl_files_pattern = mo.ui.text("assets/release/5.0.0/implementation/**/*.ttl", full_width=True)
-    return (shacl_files_pattern,)
+    files_pattern = mo.ui.text("assets/release/5.0.0/implementation/**/*.ttl", full_width=True)
+    return (files_pattern,)
 
 
 @app.cell
-def _(glob_lib, mo, shacl_files_pattern):
-    shacl_files = glob_lib.glob(shacl_files_pattern.value, recursive=True)
+def _(files_pattern, glob_lib, mo):
+    files = glob_lib.glob(files_pattern.value, recursive=True)
     table = mo.ui.table(
-        data=shacl_files, 
+        data=files, 
         pagination=True, 
     )
     mo.vstack([
-        shacl_files_pattern,
+        files_pattern,
         table
     ])
-    return shacl_files, table
+    return files, table
 
 
 @app.cell
@@ -79,7 +83,7 @@ def _(Graph, table):
 @app.cell(hide_code=True)
 def _(g, pretty_query):
     pretty_query({
-            "title": "## Metadata",
+            "title": "## Summary of the current metadata",
             "query": """
 
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -131,19 +135,59 @@ def _(g, pretty_query):
 
 
 @app.cell
-def _():
-    return
-
-
-@app.cell
 def _(mo):
     mo.md(
         r"""
-        # About dates
+        # Recommended modifications
+
+        ## Dates
 
         -  dcterms:created "2025-02-15"^^xsd:date means the shape was first created on February 15, 2025
-        -  dcterms:issued "2025-03-01"^^xsd:date means the shape was officially published on March 1, 2025
-        -  dcterms:modified "2025-05-01"^^xsd:date means the shape was last updated on May 1, 2025
+        -  dcterms:modified "2025-05-01"^^xsd:date means the shape was last updated on May 1, 2025. Use this for the Model2Owl generation
+        -  dcterms:issued "2025-03-01"^^xsd:date means the shape was officially published on March 1, 2025. Use this to specify publication in Vocabularies
+
+        ## See also links
+
+        Consider revising https://docs.ted.europa.eu/home/index.html that is not related to Owl or SHACL 
+
+        ## SHACL metadata
+
+        - Imports in the SHACL metadata should be the corresponding SHACL modules, now is pointing to OWL.
+        - Revisit titles
+            - eProcurement Ontology Access - core shapes"
+        	- should be: "eProcurement Ontology eAccess - SHACL shapes"
+
+        Example, now is:
+
+        ```turtle
+        ord-shape:ord-shape a owl:Ontology ;
+            rdfs:label "eProcurement Ontology Ordering - core shapes"@en ;
+            dcterms:created "2025-05-07"^^xsd:date ;
+            dcterms:description "The eProcurement Ontology Ordering core shapes provides the generic datashape specifications for the eProcurement Ontology Ordering core."@en ;
+            dcterms:issued "2025-05-07"^^xsd:date ;
+            dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
+            dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
+            dcterms:title "eProcurement Ontology Ordering - core shapes"@en ;
+            vann:preferredNamespacePrefix "epo" ;
+            vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
+
+        ```
+
+        Proposed changes:
+
+        ```turtle
+        ord-shape:ord-shape a owl:Ontology ;
+            rdfs:label "eProcurement Ontology Ordering - SHACL shapes"@en ;
+            dcterms:created "2021-06-01"^^xsd:date ;
+            dcterms:description "The eProcurement Ontology Ordering core shapes provides the SHACL specifications for the eProcurement Ontology Ordering core."@en ;
+            dcterms:modified "2025-05-07"^^xsd:date ;
+            dcterms:issued "2025-05-12"^^xsd:date ;
+            dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
+            dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
+            dcterms:title "eProcurement Ontology Ordering - SHACL shapes"@en ;
+            vann:preferredNamespacePrefix "epo-shape" ;
+            vann:preferredNamespaceUri "http://data.europa.eu/a4g/data-shape#" ;
+        ```
         """
     )
     return
@@ -152,10 +196,7 @@ def _(mo):
 @app.cell
 def _(g, pretty_query):
     pretty_query({
-            "title": """## See also links
-        
-            Consider revising https://docs.ted.europa.eu/home/index.html that is not Ontology related
-        
+            "title": """## All also links        
             """,
             "query": """
 
@@ -170,15 +211,15 @@ def _(g, pretty_query):
     return
 
 
-app._unparsable_cell(
-    r"""
-    \"pretty_query({
-            \"title\": \"\"\"## Imports
-        
+@app.cell
+def _(g, pretty_query):
+    pretty_query({
+            "title": """## All Imports
+
             SHACL 
-        
-            \"\"\",
-            \"query\": \"\"\"
+
+            """,
+            "query": """
 
     SELECT DISTINCT ?ontology ?import
     WHERE {
@@ -186,11 +227,9 @@ app._unparsable_cell(
         ?ontology owl:imports ?import .
     }
 
-            \"\"\"
+            """
         }, graph=g)
-    """,
-    name="_"
-)
+    return
 
 
 if __name__ == "__main__":

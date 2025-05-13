@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.12.10"
-app = marimo.App(width="full", app_title="OWL Review")
+app = marimo.App(width="full", app_title="OWL Review", auto_download=["html"])
 
 
 @app.cell
