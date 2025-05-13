@@ -60,18 +60,35 @@ def _(glob_lib, mo, ontology_files_pattern):
 
 
 @app.cell
-def _(Graph, table):
-    g = Graph()
+def _(mo):
+    mo.md(
+        r"""
+        # List of redefined external vocabularies
 
-    for path in table.value:
-        g.parse(path, format="turtle")
-    return g, path
+        Compromised files
+
+        - assets/release/5.0.0/implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.ttl
+        - assets/release/5.0.0/implementation/eAccess/owl_ontology/eAccess_restrictions.ttl
+        - assets/release/5.0.0/implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl
+
+
+        """
+    )
+    return
 
 
 @app.cell
-def _(g, pretty_query):
-    pretty_query({
-            "title": "## List of redefined external vocabularies",
+def _(Graph, mo, pretty_query, table):
+
+
+    results = []
+
+    for path in table.value:
+        g = Graph()
+        g.parse(path, format="turtle")
+        current = pretty_query({
+            "title": f"""### {path}    
+            """,
             "query": """PREFIX a4g: <http://data.europa.eu/a4g/ontology#>
 
                SELECT ?s ?p ?o
@@ -81,6 +98,13 @@ def _(g, pretty_query):
                 }
             """
         }, graph=g)
+        results.append(current)
+    mo.vstack(results)
+    return current, g, path, results
+
+
+@app.cell
+def _():
     return
 
 
