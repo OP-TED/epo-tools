@@ -41,37 +41,35 @@ def _(mo):
 
 
 @app.cell
-def _(mo):
-    shacl_files_pattern = mo.ui.text("assets/release/5.0.0/implementation/**/shacl_shapes/*.ttl", full_width=True)
+def _():
+    shacl_files_pattern = (
+        "assets/release/5.0.0/implementation/**/shacl_shapes/*.ttl"
+    )
+    # shacl_files_pattern = "assets/debug/**/*.ttl"
     return (shacl_files_pattern,)
 
 
 @app.cell
-def _(glob_lib, mo, shacl_files_pattern):
-    shacl_files = glob_lib.glob(shacl_files_pattern.value, recursive=True)
-    table = mo.ui.table(
-        data=shacl_files, 
-        pagination=True, 
+def _(glob_lib, shacl_files_pattern):
+    shacl_files = glob_lib.glob(
+        shacl_files_pattern, recursive=True
     )
-    mo.vstack([
-        shacl_files_pattern,
-        table
-    ])
-    return (table,)
+    return (shacl_files,)
 
 
 @app.cell
-def _(Graph, table):
+def _(Graph, shacl_files):
     g = Graph()
 
-    for path in table.value:
+    for path in shacl_files:
         g.parse(path, format="turtle")
     return (g,)
 
 
 @app.cell
 def _(g, pretty_query):
-    pretty_query({
+    pretty_query(
+        {
             "title": """## Missing sh:nodeKind sh:IRI
 
             Some sh:nodeKind sh:IRI are missing in properties that point to a class
@@ -86,14 +84,17 @@ def _(g, pretty_query):
         FILTER NOT EXISTS { ?shape sh:nodeKind sh:IRI }
     }
 
-            """
-        }, graph=g)
+            """,
+        },
+        graph=g,
+    )
     return
 
 
 @app.cell
 def _(g, pretty_query):
-    pretty_query({
+    pretty_query(
+        {
             "title": """## Missing rdfs:isDefinedBy
 
         Some SHACL properties miss `rdfs:isDefinedBy` to specify to their corresponding metadata
@@ -110,14 +111,17 @@ def _(g, pretty_query):
     }
 
 
-            """
-        }, graph=g)
+            """,
+        },
+        graph=g,
+    )
     return
 
 
 @app.cell
 def _(g, pretty_query):
-    pretty_query({
+    pretty_query(
+        {
             "title": """## SHACL Node naming
 
             This one is optional, but by convention Shapes are postfixed 'Shape'
@@ -146,14 +150,17 @@ def _(g, pretty_query):
     ORDER BY ?shapeName
 
 
-            """
-        }, graph=g)
+            """,
+        },
+        graph=g,
+    )
     return
 
 
 @app.cell
 def _(g, pretty_query):
-    pretty_query({
+    pretty_query(
+        {
             "title": """## SHACL property sh:name
 
             This one is optional (suggest: Initial capital, space-separated, subsequent words lowercase)
@@ -186,8 +193,10 @@ def _(g, pretty_query):
     }
 
 
-            """
-        }, graph=g)
+            """,
+        },
+        graph=g,
+    )
     return
 
 
@@ -207,28 +216,51 @@ def _(mo):
 
 @app.cell
 def _(g, pretty_node):
-    pretty_node({
-        "message": "It is not clear what is expected as range. Are these countries from a official vocabulary?",
-        "uri": "http://data.europa.eu/a4g/data-shape#epo-req-RequestForOffer-epo-hasDestinationCountryCode"
-    }, g)
+    pretty_node(
+        {
+            "message": "It is not clear what is expected as range. Are these countries from a official vocabulary?",
+            "uri": "http://data.europa.eu/a4g/data-shape#epo-req-RequestForOffer-epo-hasDestinationCountryCode",
+        },
+        g,
+    )
     return
 
 
 @app.cell
 def _(g, pretty_node):
-    pretty_node({
-        "message": "It is not clear what is expected as range. Is it a Language from official vocabularies?",
-        "uri": "http://data.europa.eu/a4g/data-shape#epo-AccessTerm-epo-providesProcurementDocumentsInOfficialLanguage"
-    }, g)
+    pretty_node(
+        {
+            "message": "It is not clear what is expected as range. Is it a Language from official vocabularies?",
+            "uri": "http://data.europa.eu/a4g/data-shape#epo-AccessTerm-epo-providesProcurementDocumentsInOfficialLanguage",
+        },
+        g,
+    )
     return
 
 
 @app.cell
 def _(g, pretty_node):
-    pretty_node({
-        "message": "Same",
-        "uri": "http://data.europa.eu/a4g/data-shape#epo-Document-epo-hasDocumentType"
-    }, g)
+    pretty_node(
+        {
+            "message": "Same",
+            "uri": "http://data.europa.eu/a4g/data-shape#epo-Document-epo-hasDocumentType",
+        },
+        g,
+    )
+    return
+
+
+@app.cell
+def _(g, pretty_node):
+    pretty_node(
+        {
+            "message": """## Minor
+    
+        This one declares the sh:sparql two times. This is a detail that could be fixed""",
+            "uri": "http://data.europa.eu/a4g/data-shape#epo-sub-ESPD-epo-sub-relatesToESPDRequest",
+        },
+        g,
+    )
     return
 
 
@@ -240,27 +272,32 @@ def _(mo):
 
 @app.cell
 def _(mo):
-    search_term = mo.ui.text("ProcurementDocumentsInOfficialLanguage", full_width=True)
+    search_term = mo.ui.text(
+        "ProcurementDocumentsInOfficialLanguage", full_width=True
+    )
     return (search_term,)
 
 
 @app.cell
 def _(g, mo, pretty_query, search_term):
-    mo.vstack([
-    search_term,
-    pretty_query({
-            "title": "## Search URIs by name",
-            "query": f"""
+    mo.vstack(
+        [
+            search_term,
+            pretty_query(
+                {
+                    "title": "## Search URIs by name",
+                    "query": f"""
     SELECT DISTINCT ?uri
     WHERE {{
       ?uri ?p ?o .
       FILTER(CONTAINS(STR(?uri), "{search_term.value}"))
     }}
-            """
-        }, graph=g)
-    ])
-
-
+            """,
+                },
+                graph=g,
+            ),
+        ]
+    )
     return
 
 

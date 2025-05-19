@@ -1,8 +1,6 @@
-
-
 import marimo
 
-__generated_with = "0.12.10"
+__generated_with = "0.13.9"
 app = marimo.App(width="full", app_title="Metadata display")
 
 
@@ -18,7 +16,7 @@ def _():
     import json
     import glob as glob_lib
     from rdflib import Graph
-    return Graph, glob_lib, json, os
+    return Graph, glob_lib
 
 
 @app.cell
@@ -31,43 +29,37 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        # ePO Metadata v5.0.0-RC1
+    # ePO Metadata v5.0.0-RC1
 
-        ## Minimal Quality checks
+    ## Minimal Quality checks
 
-        Corresponds to a list of scripts that check for regressions
-        """
+    Corresponds to a list of scripts that check for regressions
+    """
     )
     return
 
 
 @app.cell
-def _(mo):
-    files_pattern = mo.ui.text("assets/release/5.0.0/implementation/**/*.ttl", full_width=True)
+def _():
+    files_pattern = "assets/release/5.0.0/implementation/**/*.ttl"
+    # files_pattern = "assets/debug/**/*.ttl"
     return (files_pattern,)
 
 
 @app.cell
-def _(files_pattern, glob_lib, mo):
-    files = glob_lib.glob(files_pattern.value, recursive=True)
-    table = mo.ui.table(
-        data=files, 
-        pagination=True, 
-    )
-    mo.vstack([
-        files_pattern,
-        table
-    ])
-    return files, table
+def _(files_pattern, glob_lib):
+    files = glob_lib.glob(files_pattern, recursive=True)
+    files
+    return (files,)
 
 
 @app.cell
-def _(Graph, table):
+def _(Graph, files):
     g = Graph()
 
-    for path in table.value:
+    for path in files:
         g.parse(path, format="turtle")
-    return g, path
+    return (g,)
 
 
 @app.cell(hide_code=True)
@@ -124,61 +116,61 @@ def _(g, pretty_query):
     return
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _(mo):
     mo.md(
         r"""
-        # Recommended modifications
+    # Recommended modifications
 
-        ## Dates
+    ## Dates
 
-        -  dcterms:created "2025-02-15"^^xsd:date means the shape was first created on February 15, 2025
-        -  dcterms:modified "2025-05-01"^^xsd:date means the shape was last updated on May 1, 2025. Use this for the Model2Owl generation
-        -  dcterms:issued "2025-03-01"^^xsd:date means the shape was officially published on March 1, 2025. Use this to specify publication in Vocabularies
+    -  dcterms:created "2025-02-15"^^xsd:date means the shape was first created on February 15, 2025
+    -  dcterms:modified "2025-05-01"^^xsd:date means the shape was last updated on May 1, 2025. Use this for the Model2Owl generation
+    -  dcterms:issued "2025-03-01"^^xsd:date means the shape was officially published on March 1, 2025. Use this to specify publication in Vocabularies
 
-        ## See also links
+    ## See also links
 
-        Consider revising https://docs.ted.europa.eu/home/index.html that is not related to Owl or SHACL 
+    Consider revising https://docs.ted.europa.eu/home/index.html that is not related to Owl or SHACL 
 
-        ## SHACL metadata
+    ## SHACL metadata
 
-        - Imports in the SHACL metadata should be the corresponding SHACL modules, now is pointing to OWL.
-        - Revisit titles
-            - eProcurement Ontology Access - core shapes"
-        	- should be: "eProcurement Ontology eAccess - SHACL shapes"
+    - Imports in the SHACL metadata should be the corresponding SHACL modules, now is pointing to OWL.
+    - Revisit titles
+        - eProcurement Ontology Access - core shapes"
+    	- should be: "eProcurement Ontology eAccess - SHACL shapes"
 
-        Example, now is:
+    Example, now is:
 
-        ```turtle
-        ord-shape:ord-shape a owl:Ontology ;
-            rdfs:label "eProcurement Ontology Ordering - core shapes"@en ;
-            dcterms:created "2025-05-07"^^xsd:date ;
-            dcterms:description "The eProcurement Ontology Ordering core shapes provides the generic datashape specifications for the eProcurement Ontology Ordering core."@en ;
-            dcterms:issued "2025-05-07"^^xsd:date ;
-            dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
-            dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
-            dcterms:title "eProcurement Ontology Ordering - core shapes"@en ;
-            vann:preferredNamespacePrefix "epo" ;
-            vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
+    ```turtle
+    ord-shape:ord-shape a owl:Ontology ;
+        rdfs:label "eProcurement Ontology Ordering - core shapes"@en ;
+        dcterms:created "2025-05-07"^^xsd:date ;
+        dcterms:description "The eProcurement Ontology Ordering core shapes provides the generic datashape specifications for the eProcurement Ontology Ordering core."@en ;
+        dcterms:issued "2025-05-07"^^xsd:date ;
+        dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
+        dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
+        dcterms:title "eProcurement Ontology Ordering - core shapes"@en ;
+        vann:preferredNamespacePrefix "epo" ;
+        vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
 
-        ```
+    ```
 
-        Proposed changes:
+    Proposed changes:
 
-        ```turtle
-        ord-shape:ord-shape a owl:Ontology ;
-            rdfs:label "eProcurement Ontology Ordering - SHACL shapes"@en ;
-            dcterms:created "2021-06-01"^^xsd:date ;
-            dcterms:description "The eProcurement Ontology Ordering core shapes provides the SHACL specifications for the eProcurement Ontology Ordering core."@en ;
-            dcterms:modified "2025-05-07"^^xsd:date ;
-            dcterms:issued "2025-05-12"^^xsd:date ;
-            dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
-            dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
-            dcterms:title "eProcurement Ontology Ordering - SHACL shapes"@en ;
-            vann:preferredNamespacePrefix "epo-shape" ;
-            vann:preferredNamespaceUri "http://data.europa.eu/a4g/data-shape#" ;
-        ```
-        """
+    ```turtle
+    ord-shape:ord-shape a owl:Ontology ;
+        rdfs:label "eProcurement Ontology Ordering - SHACL shapes"@en ;
+        dcterms:created "2021-06-01"^^xsd:date ;
+        dcterms:description "The eProcurement Ontology Ordering core shapes provides the SHACL specifications for the eProcurement Ontology Ordering core."@en ;
+        dcterms:modified "2025-05-07"^^xsd:date ;
+        dcterms:issued "2025-05-12"^^xsd:date ;
+        dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
+        dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
+        dcterms:title "eProcurement Ontology Ordering - SHACL shapes"@en ;
+        vann:preferredNamespacePrefix "epo-shape" ;
+        vann:preferredNamespaceUri "http://data.europa.eu/a4g/data-shape#" ;
+    ```
+    """
     )
     return
 

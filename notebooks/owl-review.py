@@ -22,7 +22,8 @@ def _():
 @app.cell
 def _():
     from epo_tools.widgets import pretty_query
-    return (pretty_query,)
+    from epo_tools.post_process import filter_dataset
+    return filter_dataset, pretty_query
 
 
 @app.cell
@@ -74,63 +75,45 @@ def _(Graph, table):
 def _(Graph, results):
     all_graphs = Graph()
     for _ in results:
-        all_graphs = all_graphs + _['graph']
+        all_graphs = all_graphs + _["graph"]
     return (all_graphs,)
 
 
 @app.cell
-def _(mo):
-    mo.md(
-        r"""
-    # List of redefined external vocabularies
+def _(filter_dataset, mo, results):
+    unwanted_display = [
+        mo.md(
+            "# The following elements were found and need to be filtered out since they redefine external vocabs"
+        )
+    ]
+    for current in results:
+        wanted, unwanted = filter_dataset(current["graph"])
+        # print(len(wanted), len(unwanted))
+        if len(unwanted):
+            current = mo.md(f"""
+    ## File path: {current["path"]}
 
-    Compromised files
+    Elements to be filtered out
 
-    - assets/release/5.0.0/implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.ttl
-    - assets/release/5.0.0/implementation/eAccess/owl_ontology/eAccess_restrictions.ttl
-    - assets/release/5.0.0/implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl
-    """
-    )
-    return
+    ```turtle
+    {unwanted.serialize()}
+    ```
 
+    """)
+            unwanted_display.append(current)
 
-@app.cell
-def _(mo, pretty_query, results):
-    def redefined():
-        result = []
-        for r in results:
-            g = r["graph"]
-            current = pretty_query(
-                {
-                    "title": f"""### {r["path"]}    
-                """,
-                    "query": """PREFIX a4g: <http://data.europa.eu/a4g/ontology#>
-    
-                   SELECT ?s ?p ?o
-                    WHERE {
-                        ?s ?p ?o
-                        FILTER (isURI(?s) && (!STRSTARTS(str(?s), str(a4g:))))
-                    }
-                """,
-                },
-                graph=g,
-            )
-            result.append(current)
-        return mo.vstack(result)
-
-
-    redefined()
+    mo.vstack(unwanted_display)
     return
 
 
 @app.cell
 def _(all_graphs, pretty_query):
     pretty_query(
-                {
-                    "title": f"""## Missing isDefinedBy
+        {
+            "title": f"""## Missing isDefinedBy
 
                 """,
-                    "query": """
+            "query": """
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
@@ -148,45 +131,9 @@ def _(all_graphs, pretty_query):
     }
 
     """,
-                },
-                graph=all_graphs,
-            )
-    return
-
-
-@app.cell
-def _(mo, pretty_query, results):
-    def missing_isDefinedBy():
-        result = []
-        for r in results:
-            g = r["graph"]
-            current = pretty_query(
-                {
-                    "title": """## Missing rdfs:isDefinedBy
-
-        Some SHACL properties miss `rdfs:isDefinedBy` to specify to their corresponding metadata
-
-        """,
-                    "query": """
-
-    PREFIX sh: <http://www.w3.org/ns/shacl#>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    SELECT DISTINCT ?shape
-    WHERE {
-        ?shape a sh:PropertyShape .
-        FILTER NOT EXISTS { ?shape rdfs:isDefinedBy ?def }
-    }
-
-
-            """,
-                },
-                graph=g,
-            )
-            result.append(current)
-        return mo.vstack(result)
-
-
-    missing_isDefinedBy()
+        },
+        graph=all_graphs,
+    )
     return
 
 
