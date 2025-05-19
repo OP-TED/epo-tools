@@ -3,11 +3,7 @@
 import marimo
 
 __generated_with = "0.12.10"
-app = marimo.App(
-    width="full",
-    app_title="Metadata display",
-    auto_download=["html"],
-)
+app = marimo.App(width="full", app_title="Metadata display")
 
 
 @app.cell
@@ -63,12 +59,6 @@ def _(files_pattern, glob_lib, mo):
         table
     ])
     return files, table
-
-
-@app.cell
-def _(table):
-    table.value
-    return
 
 
 @app.cell

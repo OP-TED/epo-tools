@@ -3,11 +3,7 @@
 import marimo
 
 __generated_with = "0.12.10"
-app = marimo.App(
-    width="full",
-    app_title="SHACL review",
-    auto_download=["html"],
-)
+app = marimo.App(width="full", app_title="SHACL review")
 
 
 @app.cell
@@ -64,12 +60,6 @@ def _(glob_lib, mo, shacl_files_pattern):
         table
     ])
     return shacl_files, table
-
-
-@app.cell
-def _(table):
-    table.value
-    return
 
 
 @app.cell

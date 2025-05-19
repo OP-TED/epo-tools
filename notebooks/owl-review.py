@@ -1,7 +1,7 @@
 import marimo
 
 __generated_with = "0.12.10"
-app = marimo.App(width="full", app_title="OWL Review", auto_download=["html"])
+app = marimo.App(width="full", app_title="OWL Review")
 
 
 @app.cell
@@ -70,8 +70,6 @@ def _(mo):
         - assets/release/5.0.0/implementation/eCatalogue/owl_ontology/eCatalogue_restrictions.ttl
         - assets/release/5.0.0/implementation/eAccess/owl_ontology/eAccess_restrictions.ttl
         - assets/release/5.0.0/implementation/ePO_core/owl_ontology/ePO_core_restrictions.ttl
-
-
         """
     )
     return

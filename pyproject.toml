@@ -2,12 +2,10 @@
 name = "epo-tools"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Your Name",email = "you@example.com"}
-]
-license = {text = "MIT"}
-readme = "readme.md"
+authors = [{ name = "Your Name", email = "you@example.com" }]
 requires-python = ">=3.12"
+readme = "readme.md"
+license = { text = "MIT" }
 dependencies = [
     "marimo (>=0.12.10,<0.13.0)",
     "altair (>=5.5.0,<6.0.0)",
@@ -16,13 +14,15 @@ dependencies = [
     "sqlwrapper (>=0.1,<0.2)",
     "requests (>=2.32.3,<3.0.0)",
     "lxml (>=5.3.2,<6.0.0)",
-    "openpyxl (>=3.1.5,<4.0.0)"
+    "openpyxl (>=3.1.5,<4.0.0)",
 ]
 
-
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.poetry.group.dev.dependencies]
-pip = ">=25.0.1,<26.0.0"
+[dependency-groups]
+dev = ["pip>=25.0.1,<26.0.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["epo_tools"]

@@ -10,3 +10,4 @@ widoco
 # Local Netlify folder
 .netlify
 .run
+.venv

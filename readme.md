@@ -8,21 +8,23 @@ Any valuable components may be migrated to their respective repositories
 
 ## Notebook based reviews
 
-To install dependencies
+To install dependencies using [UV](https://github.com/astral-sh/uv)
 
 ```shell
-poetry install
+uv sync
 ```
 
 To access the marimo notebooks
 
 ```sh
-marimo edit  notebooks/
+uv run marimo edit notebooks/
 ```
 
 Currently there are notebooks to review SHACL, OWL and metadata of both.
 
 ## Web application
+
+This repository contains an Ontology explorer, to be replaced by Model2Owl developments in the future.
 
 The scripts require node.js installed and npm
 
