@@ -1,8 +1,6 @@
-
-
 import marimo
 
-__generated_with = "0.12.10"
+__generated_with = "0.13.9"
 app = marimo.App(width="full", app_title="SHACL review")
 
 
@@ -18,7 +16,7 @@ def _():
     import json
     import glob as glob_lib
     from rdflib import Graph, URIRef, BNode
-    return BNode, Graph, URIRef, glob_lib, json, os
+    return Graph, glob_lib
 
 
 @app.cell
@@ -32,12 +30,12 @@ def _():
 def _(mo):
     mo.md(
         r"""
-        # ePO SHACL v5.0.0-RC1
+    # ePO SHACL v5.0.0-RC1
 
-        ## Minimal Quality checks
+    ## Minimal Quality checks
 
-        Corresponds to a list of scripts that check for regressions
-        """
+    Corresponds to a list of scripts that check for regressions
+    """
     )
     return
 
@@ -59,7 +57,7 @@ def _(glob_lib, mo, shacl_files_pattern):
         shacl_files_pattern,
         table
     ])
-    return shacl_files, table
+    return (table,)
 
 
 @app.cell
@@ -68,7 +66,7 @@ def _(Graph, table):
 
     for path in table.value:
         g.parse(path, format="turtle")
-    return g, path
+    return (g,)
 
 
 @app.cell
@@ -197,12 +195,12 @@ def _(g, pretty_query):
 def _(mo):
     mo.md(
         r"""
-        ## Inspection of Ranges
+    ## Inspection of Ranges
 
-        The current property shapes do not specify what skos:Concept is expected. Is this by design?
+    The current property shapes do not specify what skos:Concept is expected. Is this by design?
 
-        Below 3 examples
-        """
+    Below 3 examples
+    """
     )
     return
 

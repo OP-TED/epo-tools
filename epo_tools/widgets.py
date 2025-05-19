@@ -38,30 +38,3 @@ def pretty_query(q, graph):
 {str(e)}
 ```
 """)
-
-def render_rdf_diffs(g1, g2):
-
-    only_in_first = g1 - g2
-    only_in_second = g2 - g1
-
-    ui_blocks = []
-    data_a = [
-        {"Subject": str(s), "Predicate": str(p), "Object": str(o)}
-        for (s, p, o) in only_in_first
-    ]
-    data_b = [
-        {"Subject": str(s), "Predicate": str(p), "Object": str(o)}
-        for (s, p, o) in only_in_second
-    ]
-    table_a = mo.ui.table(
-        data=data_a,
-        label=f"Only in A: {os.path.basename(path_a)}",
-        pagination=True
-    )
-
-    table_b = mo.ui.table(
-        data=data_b,
-        label=f"Only in B: {os.path.basename(path_b)}",
-        pagination=True
-    )
-    return mo.hstack([table_a, table_b])
