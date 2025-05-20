@@ -34,7 +34,8 @@ def _():
         add_node_iri,
         add_isDefinedBy,
         fix_shape_names,
-        fix_propertyshape_names, fix_metadata_imports
+        fix_propertyshape_names,
+        fix_metadata_imports,
     )
     return (
         add_isDefinedBy,
@@ -120,8 +121,8 @@ def _(metadata_nodes, process_shacl, shacl_graphs):
 
 
 @app.cell
-def _(output_debug, shacl_graphs_result):
-    output_debug(shacl_graphs_result, "assets/debug/shacl")
+def _(prepare_patch, shacl_graphs_result):
+    prepare_patch(shacl_graphs_result)
     return
 
 
@@ -178,6 +179,12 @@ def _(ontology_graphs, process_ontology):
 
 
 @app.cell
+def _(ontology_graphs_result, prepare_patch):
+    prepare_patch(ontology_graphs_result)
+    return
+
+
+@app.cell
 def _(ontology_graphs_result, prepare_zip):
     prepare_zip(ontology_graphs_result, "assets/ePO 5.0.0 artefacts - owl.zip")
     return
@@ -210,22 +217,45 @@ def _(os, zipfile):
 
 @app.cell
 def _(os):
-    def output_debug(results, debug_path):
-        os.makedirs(debug_path, exist_ok=True)
+    def prepare_patch(
+        results,
+        transform_path=lambda path: path.replace(
+            "assets/release", "assets/patch", 1
+        ),
+    ):
         for current in results:
             try:
                 g = current["graph"]
                 file_path = current["path"]
+
+                if not file_path.startswith("assets/release"):
+                    print(f"✖ Unexpected file path structure: {file_path}")
+                    continue
+
+                patch_path = transform_path(file_path)
+                os.makedirs(os.path.dirname(patch_path), exist_ok=True)
+
                 base_name = os.path.basename(file_path)
-                rdf_name = os.path.splitext(base_name)[0] + ".ttl"
-                rdf_data = g.serialize(format="turtle")
-                out_file = os.path.join(debug_path, rdf_name)
-                with open(out_file, "w", encoding="utf-8") as f:
-                    f.write(rdf_data)
-                print(f"✔ Written Turtle file: {out_file}")
+                name_no_ext = os.path.splitext(base_name)[0]
+
+                ttl_path = os.path.join(
+                    os.path.dirname(patch_path), name_no_ext + ".ttl"
+                )
+                rdf_path = os.path.join(
+                    os.path.dirname(patch_path), name_no_ext + ".rdf"
+                )
+
+                with open(ttl_path, "w", encoding="utf-8") as f:
+                    f.write(g.serialize(format="turtle"))
+                print(f"✔ Written Turtle file: {ttl_path}")
+
+                with open(rdf_path, "w", encoding="utf-8") as f:
+                    f.write(g.serialize(format="xml"))
+                print(f"✔ Written RDF/XML file: {rdf_path}")
+
             except Exception as e:
                 print(f"✖ Failed to process {file_path}: {e}")
-    return (output_debug,)
+    return (prepare_patch,)
 
 
 @app.cell
@@ -248,7 +278,7 @@ def _(filter_dataset, mo):
     ```turtle
     {unwanted.serialize()}
     ```
-    
+
         """)
                 result.append(current)
         return mo.vstack(result)

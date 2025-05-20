@@ -95,6 +95,41 @@ def _(g, pretty_query):
 def _(g, pretty_query):
     pretty_query(
         {
+            "title": """## More than one value
+
+
+            """,
+            "query": """
+
+    SELECT ?subject ?property 
+           (COUNT(?object) AS ?objectCount)
+           (SAMPLE(?object) AS ?sample1)
+    WHERE {
+      ?subject ?property ?object .
+  
+      FILTER NOT EXISTS {
+        VALUES ?excludedProperty {
+          <http://www.w3.org/ns/shacl#property>
+          <http://www.w3.org/2002/07/owl#imports>
+          <http://www.w3.org/2000/01/rdf-schema#seeAlso>
+        }
+        FILTER(?property = ?excludedProperty)
+      }
+    }
+    GROUP BY ?subject ?property
+    HAVING (COUNT(?object) > 1)
+
+            """,
+        },
+        graph=g,
+    )
+    return
+
+
+@app.cell
+def _(g, pretty_query):
+    pretty_query(
+        {
             "title": """## Missing rdfs:isDefinedBy
 
         Some SHACL properties miss `rdfs:isDefinedBy` to specify to their corresponding metadata
@@ -255,7 +290,7 @@ def _(g, pretty_node):
     pretty_node(
         {
             "message": """## Minor
-    
+
         This one declares the sh:sparql two times. This is a detail that could be fixed""",
             "uri": "http://data.europa.eu/a4g/data-shape#epo-sub-ESPD-epo-sub-relatesToESPDRequest",
         },
