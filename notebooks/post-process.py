@@ -23,7 +23,8 @@ def _():
     import zipfile
     from rdflib import Graph, BNode, Namespace, URIRef
     from rdflib.namespace import RDF, RDFS, OWL
-    return Graph, OWL, RDF, glob_lib, os, zipfile
+    from datetime import datetime
+    return Graph, Namespace, OWL, RDF, datetime, glob_lib, os, zipfile
 
 
 @app.cell
@@ -49,8 +50,16 @@ def _():
 
 @app.cell
 def _(mo):
-    mo.md(rf"""# ePO SHACL v5.0.0-RC1 postprocessing script""")
+    mo.md(r"""# Config""")
     return
+
+
+@app.cell
+def _(glob_lib):
+    ontology_files = glob_lib.glob(
+        "assets/release/5.0.0/implementation/**/owl_ontology/*.ttl", recursive=True
+    )
+    return (ontology_files,)
 
 
 @app.cell
@@ -58,8 +67,62 @@ def _(glob_lib):
     shacl_files = glob_lib.glob(
         "assets/release/5.0.0/implementation/**/shacl_shapes/*.ttl", recursive=True
     )
-    shacl_files
     return (shacl_files,)
+
+
+@app.cell
+def _(mo):
+    do_postprocessing = mo.ui.run_button(label="Do postprocessing")
+    do_postprocessing
+    return (do_postprocessing,)
+
+
+@app.cell
+def _(
+    datetime,
+    do_postprocessing,
+    ontology_graphs_result,
+    prepare_patch,
+    prepare_zip,
+    shacl_graphs_result,
+):
+    if do_postprocessing.value:
+        prepare_zip(ontology_graphs_result, "assets/ePO 5.0.0 artefacts - owl.zip")
+        prepare_patch(ontology_graphs_result)
+        prepare_zip(shacl_graphs_result, "assets/ePO 5.0.0 artefacts - shacl.zip")
+        prepare_patch(shacl_graphs_result)
+        this_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(f"Finished at: {this_date}")
+    return
+
+
+@app.cell
+def _(mo):
+    mo.md(rf"""# ePO SHACL v5.0.0-RC1 postprocessing script""")
+    return
+
+
+@app.cell
+def _(Namespace):
+    def serialize_with_prefixes(g, format="turtle"):
+        g.bind("epo", Namespace("http://data.europa.eu/a4g/ontology#"))
+        g.bind("epo-shape", Namespace("http://data.europa.eu/a4g/data-shape#"))
+        g.bind("adms", Namespace("http://www.w3.org/ns/adms#"))
+        g.bind("xsd", Namespace("http://www.w3.org/2001/XMLSchema#"))
+        return g.serialize(format=format)
+    return (serialize_with_prefixes,)
+
+
+@app.cell
+def _(mo, shacl_files):
+    mo.md(
+        rf"""
+    ## Current SHACL files
+
+    {mo.ui.data_editor(shacl_files)}
+    """
+    )
+    return
 
 
 @app.cell
@@ -121,34 +184,20 @@ def _(metadata_nodes, process_shacl, shacl_graphs):
 
 
 @app.cell
-def _(prepare_patch, shacl_graphs_result):
-    prepare_patch(shacl_graphs_result)
-    return
-
-
-@app.cell
-def _(prepare_zip, shacl_graphs_result):
-    prepare_zip(shacl_graphs_result, "assets/ePO 5.0.0 artefacts - shacl.zip")
-    return
-
-
-@app.cell
 def _(mo):
     mo.md(r"""# ePO OWL v5.0.0-RC1 postprocessing script""")
     return
 
 
 @app.cell
-def _(glob_lib):
-    ontology_files = glob_lib.glob(
-        "assets/release/5.0.0/implementation/**/owl_ontology/*.ttl", recursive=True
+def _(mo, ontology_files):
+    mo.md(
+        rf"""
+    ## Current OWL files
+
+    {mo.ui.data_editor(ontology_files)}
+    """
     )
-    return (ontology_files,)
-
-
-@app.cell
-def _(ontology_files):
-    ontology_files
     return
 
 
@@ -179,25 +228,13 @@ def _(ontology_graphs, process_ontology):
 
 
 @app.cell
-def _(ontology_graphs_result, prepare_patch):
-    prepare_patch(ontology_graphs_result)
-    return
-
-
-@app.cell
-def _(ontology_graphs_result, prepare_zip):
-    prepare_zip(ontology_graphs_result, "assets/ePO 5.0.0 artefacts - owl.zip")
-    return
-
-
-@app.cell
 def _(mo):
     mo.md(r"""# Notebook implementation""")
     return
 
 
 @app.cell
-def _(os, zipfile):
+def _(os, serialize_with_prefixes, zipfile):
     def prepare_zip(results, output_zip_path):
         with zipfile.ZipFile(output_zip_path, "w") as zipf:
             for current in results:
@@ -206,7 +243,7 @@ def _(os, zipfile):
                     file_path = current["path"]
                     base_name = os.path.basename(file_path)
                     rdf_name = os.path.splitext(base_name)[0] + ".rdf"
-                    rdf_data = g.serialize(format="xml")
+                    rdf_data = serialize_with_prefixes(g, format="xml")
                     zipf.writestr(rdf_name, rdf_data)
                     print(f"✔ Converted and added: {rdf_name}")
                 except Exception as e:
@@ -216,7 +253,7 @@ def _(os, zipfile):
 
 
 @app.cell
-def _(os):
+def _(os, serialize_with_prefixes):
     def prepare_patch(
         results,
         transform_path=lambda path: path.replace(
@@ -246,11 +283,11 @@ def _(os):
                 )
 
                 with open(ttl_path, "w", encoding="utf-8") as f:
-                    f.write(g.serialize(format="turtle"))
+                    f.write(serialize_with_prefixes(g, format="turtle"))
                 print(f"✔ Written Turtle file: {ttl_path}")
 
                 with open(rdf_path, "w", encoding="utf-8") as f:
-                    f.write(g.serialize(format="xml"))
+                    f.write(serialize_with_prefixes(g, format="xml"))
                 print(f"✔ Written RDF/XML file: {rdf_path}")
 
             except Exception as e:

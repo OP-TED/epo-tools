@@ -21,8 +21,8 @@ def _():
 
 @app.cell
 def _():
-    from epo_tools.widgets import pretty_query
-    return (pretty_query,)
+    from epo_tools.widgets import pretty_query, pretty_query_table
+    return pretty_query, pretty_query_table
 
 
 @app.cell
@@ -62,57 +62,18 @@ def _(Graph, files):
     return (g,)
 
 
-@app.cell(hide_code=True)
-def _(g, pretty_query):
-    pretty_query({
-            "title": "## Summary of the current metadata",
-            "query": """
+@app.cell
+def _(g, metadata_summary, mo):
+    mo.md(
+        rf"""
+    ## Summary of the current metadata
 
-    PREFIX owl: <http://www.w3.org/2002/07/owl#>
-    PREFIX dcterms: <http://purl.org/dc/terms/>
-    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-    PREFIX vann: <http://purl.org/vocab/vann/>
+    {metadata_summary}
 
-    SELECT DISTINCT 
-        ?ontology 
-        ?title 
-        ?label 
-        ?versionInfo 
-        ?versionIRI
-        ?description 
-        ?issued 
-        ?created
-        ?modified
-        ?license
-        ?rights
-        ?preferredNamespaceUri
-        ?preferredNamespacePrefix
-        (GROUP_CONCAT(DISTINCT ?import; separator=", ") as ?imports)
-        ?comment
-    WHERE {
-        ?ontology a owl:Ontology .
-
-        OPTIONAL { ?ontology dcterms:title ?title }
-        OPTIONAL { ?ontology rdfs:label ?label }
-        OPTIONAL { ?ontology owl:versionInfo ?versionInfo }
-        OPTIONAL { ?ontology owl:versionIRI ?versionIRI }
-        OPTIONAL { ?ontology dcterms:description ?description }
-        OPTIONAL { ?ontology dcterms:issued ?issued }
-        OPTIONAL { ?ontology dcterms:created ?created }
-        OPTIONAL { ?ontology dcterms:modified ?modified }
-        OPTIONAL { ?ontology dcterms:license ?license }
-        OPTIONAL { ?ontology dcterms:rights ?rights }
-        OPTIONAL { ?ontology vann:preferredNamespaceUri ?preferredNamespaceUri }
-        OPTIONAL { ?ontology vann:preferredNamespacePrefix ?preferredNamespacePrefix }
-        OPTIONAL { ?ontology owl:imports ?import }
-        OPTIONAL { ?ontology rdfs:comment ?comment }
-    }
-    GROUP BY ?ontology ?title ?label ?versionInfo ?versionIRI ?description 
-             ?issued ?created ?modified ?license ?rights ?preferredNamespaceUri 
-             ?preferredNamespacePrefix ?comment
-
-            """
-        }, graph=g)
+    - Results: {len(metadata_summary.data)}
+    - Total triple count {len(g)}
+    """
+    )
     return
 
 
@@ -177,7 +138,8 @@ def _(mo):
 
 @app.cell
 def _(g, pretty_query):
-    pretty_query({
+    pretty_query(
+        {
             "title": """## All also links        
             """,
             "query": """
@@ -188,14 +150,17 @@ def _(g, pretty_query):
         ?ontology rdfs:seeAlso ?seeAlso .
     }
 
-            """
-        }, graph=g)
+            """,
+        },
+        graph=g,
+    )
     return
 
 
 @app.cell
 def _(g, pretty_query):
-    pretty_query({
+    pretty_query(
+        {
             "title": """## All Imports
 
             SHACL 
@@ -209,9 +174,63 @@ def _(g, pretty_query):
         ?ontology owl:imports ?import .
     }
 
-            """
-        }, graph=g)
+            """,
+        },
+        graph=g,
+    )
     return
+
+
+@app.cell
+def _(g, pretty_query_table):
+    metadata_summary = pretty_query_table(
+        """    
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX dcterms: <http://purl.org/dc/terms/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX vann: <http://purl.org/vocab/vann/>
+
+    SELECT DISTINCT 
+        ?ontology 
+        ?title 
+        ?label 
+        ?versionInfo 
+        ?versionIRI
+        ?description 
+        ?issued 
+        ?created
+        ?modified
+        ?license
+        ?rights
+        ?preferredNamespaceUri
+        ?preferredNamespacePrefix
+        (GROUP_CONCAT(DISTINCT ?import; separator=", ") as ?imports)
+        ?comment
+    WHERE {
+        ?ontology a owl:Ontology .
+
+        OPTIONAL { ?ontology dcterms:title ?title }
+        OPTIONAL { ?ontology rdfs:label ?label }
+        OPTIONAL { ?ontology owl:versionInfo ?versionInfo }
+        OPTIONAL { ?ontology owl:versionIRI ?versionIRI }
+        OPTIONAL { ?ontology dcterms:description ?description }
+        OPTIONAL { ?ontology dcterms:issued ?issued }
+        OPTIONAL { ?ontology dcterms:created ?created }
+        OPTIONAL { ?ontology dcterms:modified ?modified }
+        OPTIONAL { ?ontology dcterms:license ?license }
+        OPTIONAL { ?ontology dcterms:rights ?rights }
+        OPTIONAL { ?ontology vann:preferredNamespaceUri ?preferredNamespaceUri }
+        OPTIONAL { ?ontology vann:preferredNamespacePrefix ?preferredNamespacePrefix }
+        OPTIONAL { ?ontology owl:imports ?import }
+        OPTIONAL { ?ontology rdfs:comment ?comment }
+    }
+    GROUP BY ?ontology ?title ?label ?versionInfo ?versionIRI ?description 
+             ?issued ?created ?modified ?license ?rights ?preferredNamespaceUri 
+             ?preferredNamespacePrefix ?comment
+            """,
+        graph=g,
+    )
+    return (metadata_summary,)
 
 
 if __name__ == "__main__":
