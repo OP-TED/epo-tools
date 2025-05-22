@@ -101,12 +101,12 @@ def _(g, pretty_query):
             """,
             "query": """
 
-    SELECT ?subject ?property 
+    SELECT ?subject ?property
            (COUNT(?object) AS ?objectCount)
            (SAMPLE(?object) AS ?sample1)
     WHERE {
       ?subject ?property ?object .
-  
+
       FILTER NOT EXISTS {
         VALUES ?excludedProperty {
           <http://www.w3.org/ns/shacl#property>
@@ -168,7 +168,7 @@ def _(g, pretty_query):
     PREFIX sh: <http://www.w3.org/ns/shacl#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-    SELECT DISTINCT ?shape 
+    SELECT DISTINCT ?shape
            (STRAFTER(STR(?shape), "#") AS ?shapeName)
            (IF(STRENDS(?shapeName, "Shape"),
                ?shapeName,
@@ -218,7 +218,7 @@ def _(g, pretty_query):
                sh:name ?name .
 
         # Split CamelCase into spaces
-        BIND(REPLACE(?name, 
+        BIND(REPLACE(?name,
             "([a-z])([A-Z])",
             "$1 $2"
         ) AS ?splitCamel)
@@ -293,6 +293,23 @@ def _(g, pretty_node):
 
         This one declares the sh:sparql two times. This is a detail that could be fixed""",
             "uri": "http://data.europa.eu/a4g/data-shape#epo-sub-ESPD-epo-sub-relatesToESPDRequest",
+        },
+        g,
+    )
+    return
+
+
+@app.cell
+def _(g, pretty_node):
+
+
+
+    pretty_node(
+        {
+            "message": """## Minor
+
+        This one declares the sh:sparql two times. This is a detail that could be fixed""",
+            "uri": "epo-shape:cccev-InformationRequirement-epo-concernsProcedure",
         },
         g,
     )
