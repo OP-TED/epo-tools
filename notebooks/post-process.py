@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.13.9"
+__generated_with = "0.13.15"
 app = marimo.App(
     width="full",
     app_title="Postprocess",
@@ -55,17 +55,25 @@ def _(mo):
 
 
 @app.cell
-def _(glob_lib):
+def _():
+    version = "5.1.0"
+    return (version,)
+
+
+@app.cell
+def _(glob_lib, version):
     ontology_files = glob_lib.glob(
-        "assets/release/5.0.0/implementation/**/owl_ontology/*.ttl", recursive=True
+        f"assets/release/{version}/implementation/**/owl_ontology/*.ttl",
+        recursive=True,
     )
     return (ontology_files,)
 
 
 @app.cell
-def _(glob_lib):
+def _(glob_lib, version):
     shacl_files = glob_lib.glob(
-        "assets/release/5.0.0/implementation/**/shacl_shapes/*.ttl", recursive=True
+        f"assets/release/{version}/implementation/**/shacl_shapes/*.ttl",
+        recursive=True,
     )
     return (shacl_files,)
 
@@ -85,11 +93,16 @@ def _(
     prepare_patch,
     prepare_zip,
     shacl_graphs_result,
+    version,
 ):
     if do_postprocessing.value:
-        prepare_zip(ontology_graphs_result, "assets/ePO 5.0.0 artefacts - owl.zip")
+        prepare_zip(
+            ontology_graphs_result, f"assets/ePO {version} artefacts - owl.zip"
+        )
         prepare_patch(ontology_graphs_result)
-        prepare_zip(shacl_graphs_result, "assets/ePO 5.0.0 artefacts - shacl.zip")
+        prepare_zip(
+            shacl_graphs_result, f"assets/ePO {version} artefacts - shacl.zip"
+        )
         prepare_patch(shacl_graphs_result)
         this_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"Finished at: {this_date}")
@@ -97,8 +110,8 @@ def _(
 
 
 @app.cell
-def _(mo):
-    mo.md(rf"""# ePO SHACL v5.0.0-RC1 postprocessing script""")
+def _(mo, version):
+    mo.md(rf"""# ePO SHACL v{version}-RC1 postprocessing script""")
     return
 
 

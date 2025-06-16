@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.13.9"
+__generated_with = "0.13.15"
 app = marimo.App(width="full", app_title="SHACL review")
 
 
@@ -26,11 +26,17 @@ def _():
     return pretty_node, pretty_query
 
 
+@app.cell
+def _():
+    version = "5.1.0"
+    return (version,)
+
+
 @app.cell(hide_code=True)
-def _(mo):
+def _(mo, version):
     mo.md(
-        r"""
-    # ePO SHACL v5.0.0-RC1
+        rf"""
+    # ePO SHACL v{version}-RC1
 
     ## Minimal Quality checks
 
@@ -41,9 +47,9 @@ def _(mo):
 
 
 @app.cell
-def _():
+def _(version):
     shacl_files_pattern = (
-        "assets/release/5.0.0/implementation/**/shacl_shapes/*.ttl"
+        f"assets/release/{version}/implementation/**/shacl_shapes/*.ttl"
     )
     # shacl_files_pattern = "assets/debug/**/*.ttl"
     return (shacl_files_pattern,)
@@ -51,9 +57,7 @@ def _():
 
 @app.cell
 def _(glob_lib, shacl_files_pattern):
-    shacl_files = glob_lib.glob(
-        shacl_files_pattern, recursive=True
-    )
+    shacl_files = glob_lib.glob(shacl_files_pattern, recursive=True)
     return (shacl_files,)
 
 
@@ -301,9 +305,6 @@ def _(g, pretty_node):
 
 @app.cell
 def _(g, pretty_node):
-
-
-
     pretty_node(
         {
             "message": """## Minor

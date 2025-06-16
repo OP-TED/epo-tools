@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.13.9"
+__generated_with = "0.13.15"
 app = marimo.App(width="full", app_title="OWL Review")
 
 
@@ -27,10 +27,16 @@ def _():
 
 
 @app.cell
-def _(mo):
+def _():
+    version = "5.1.0"
+    return (version,)
+
+
+@app.cell
+def _(mo, version):
     mo.md(
-        r"""
-    # ePO OWL v5.0.0-RC1
+        rf"""
+    # ePO OWL v{version}-RC1
 
     ## Minimal Quality checks
 
@@ -41,9 +47,10 @@ def _(mo):
 
 
 @app.cell
-def _(mo):
+def _(mo, version):
     ontology_files_pattern = mo.ui.text(
-        "assets/release/5.0.0/implementation/**/owl_ontology/*.ttl", full_width=True
+        f"assets/release/{version}/implementation/**/owl_ontology/*.ttl",
+        full_width=True,
     )
     return (ontology_files_pattern,)
 
