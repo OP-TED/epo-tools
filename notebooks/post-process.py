@@ -94,6 +94,7 @@ def _(
     prepare_zip,
     shacl_graphs_result,
     version,
+    write_combined_turtle_file,
 ):
     if do_postprocessing.value:
         prepare_zip(
@@ -104,6 +105,7 @@ def _(
             shacl_graphs_result, f"assets/ePO {version} artefacts - shacl.zip"
         )
         prepare_patch(shacl_graphs_result)
+        write_combined_turtle_file(shacl_graphs_result,f"assets/ePO {version} combined - shacl.ttl")
         this_date = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         print(f"Finished at: {this_date}")
     return
@@ -263,6 +265,38 @@ def _(os, serialize_with_prefixes, zipfile):
                     print(f"✖ Failed to process {file_path}: {e}")
             print(f"✔ Wrote: {output_zip_path}")
     return (prepare_zip,)
+
+
+@app.cell
+def _(Graph, os, serialize_with_prefixes):
+    def write_combined_turtle_file(results, output_ttl_path):
+        combined_graph = Graph()
+
+        for current in results:
+            try:
+                g = current["graph"]
+                file_path = current["path"]
+
+                if not file_path.startswith("assets/release"):
+                    print(f"✖ Unexpected file path structure: {file_path}")
+                    continue
+
+                combined_graph += g
+                print(f"✔ Added graph from: {file_path}")
+
+            except Exception as e:
+                print(f"✖ Failed to process {file_path}: {e}")
+
+        try:
+            os.makedirs(os.path.dirname(output_ttl_path), exist_ok=True)
+
+            with open(output_ttl_path, "w", encoding="utf-8") as f:
+                f.write(serialize_with_prefixes(combined_graph, format="turtle"))
+
+            print(f"✔ Written combined Turtle file: {output_ttl_path}")
+        except Exception as e:
+            print(f"✖ Failed to write combined Turtle file: {e}")
+    return (write_combined_turtle_file,)
 
 
 @app.cell
