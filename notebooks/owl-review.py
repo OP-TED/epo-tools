@@ -87,6 +87,63 @@ def _(Graph, results):
 
 
 @app.cell
+def _(all_graphs, pretty_query):
+    pretty_query(
+        {
+            "title": f"""## Stats
+                """,
+            "query": """
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+    SELECT ?category (COUNT(DISTINCT ?entity) AS ?count)
+    WHERE {
+      {
+        ?entity a owl:Class .
+        BIND("Classes" AS ?category)
+      }
+      UNION
+      {
+        ?entity a owl:ObjectProperty .
+        BIND("Object Properties" AS ?category)
+      }
+      UNION
+      {
+        ?entity a owl:DatatypeProperty .
+        BIND("Datatype Properties" AS ?category)
+      }
+      UNION
+      {
+        ?entity a owl:AnnotationProperty .
+        BIND("Annotation Properties" AS ?category)
+      }
+      UNION
+      {
+        ?entity a owl:NamedIndividual .
+        BIND("Individuals" AS ?category)
+      }
+      UNION
+      {
+        ?entity a rdf:Property .
+        FILTER NOT EXISTS { ?entity a owl:ObjectProperty }
+        FILTER NOT EXISTS { ?entity a owl:DatatypeProperty }
+        FILTER NOT EXISTS { ?entity a owl:AnnotationProperty }
+        BIND("Other RDF Properties" AS ?category)
+      }
+    }
+    GROUP BY ?category
+    ORDER BY ?category
+
+
+    """,
+        },
+        graph=all_graphs,
+    )
+    return
+
+
+@app.cell
 def _(filter_dataset, mo, results):
     unwanted_display = [
         mo.md(
