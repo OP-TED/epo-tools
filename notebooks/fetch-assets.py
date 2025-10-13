@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.13.9"
+__generated_with = "0.13.15"
 app = marimo.App(width="full", app_title="Install assets")
 
 
@@ -22,7 +22,12 @@ def _():
 
 @app.cell
 def _():
-    branch = "release/5.1.0"
+    branch = "release/5.2.0"
+    return (branch,)
+
+
+@app.cell
+def _(branch):
     tarball_url = (
         f"https://github.com/OP-TED/ePO/archive/refs/heads/{branch}.tar.gz"
     )

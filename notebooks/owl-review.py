@@ -28,7 +28,7 @@ def _():
 
 @app.cell
 def _():
-    version = "5.1.0"
+    version = "5.2.0"
     return (version,)
 
 

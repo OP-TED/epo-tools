@@ -28,7 +28,7 @@ def _():
 
 @app.cell
 def _():
-    version = "5.1.0"
+    version = "5.2.0"
     return (version,)
 
 
@@ -48,10 +48,13 @@ def _(mo, version):
 
 @app.cell
 def _(version):
+    pattern = f"assets/release/{version}/implementation/**/shacl_shapes/*.ttl"
+    #pattern = f"assets/patch/{version}/implementation/**/shacl_shapes/*.ttl"
+
     shacl_files_pattern = (
-        f"assets/release/{version}/implementation/**/shacl_shapes/*.ttl"
+        pattern
     )
-    # shacl_files_pattern = "assets/debug/**/*.ttl"
+
     return (shacl_files_pattern,)
 
 

@@ -1,6 +1,6 @@
 import marimo
 
-__generated_with = "0.13.9"
+__generated_with = "0.13.15"
 app = marimo.App(width="full", app_title="Metadata display")
 
 
@@ -26,10 +26,16 @@ def _():
 
 
 @app.cell
-def _(mo):
+def _():
+    version = "5.2.0"
+    return (version,)
+
+
+@app.cell
+def _(mo, version):
     mo.md(
-        r"""
-    # ePO Metadata v5.0.0-RC1
+        rf"""
+    # ePO Metadata v{version}
 
     ## Minimal Quality checks
 
@@ -41,7 +47,7 @@ def _(mo):
 
 @app.cell
 def _():
-    files_pattern = "assets/release/5.0.0/implementation/**/*.ttl"
+    files_pattern = "assets/release/5.2.0/implementation/**/*.ttl"
     # files_pattern = "assets/debug/**/*.ttl"
     return (files_pattern,)
 
@@ -73,110 +79,6 @@ def _(g, metadata_summary, mo):
     - Results: {len(metadata_summary.data)}
     - Total triple count {len(g)}
     """
-    )
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    mo.md(
-        r"""
-    # Recommended modifications
-
-    ## Dates
-
-    -  dcterms:created "2025-02-15"^^xsd:date means the shape was first created on February 15, 2025
-    -  dcterms:modified "2025-05-01"^^xsd:date means the shape was last updated on May 1, 2025. Use this for the Model2Owl generation
-    -  dcterms:issued "2025-03-01"^^xsd:date means the shape was officially published on March 1, 2025. Use this to specify publication in Vocabularies
-
-    ## See also links
-
-    Consider revising https://docs.ted.europa.eu/home/index.html that is not related to Owl or SHACL 
-
-    ## SHACL metadata
-
-    - Imports in the SHACL metadata should be the corresponding SHACL modules, now is pointing to OWL.
-    - Revisit titles
-        - eProcurement Ontology Access - core shapes"
-    	- should be: "eProcurement Ontology eAccess - SHACL shapes"
-
-    Example, now is:
-
-    ```turtle
-    ord-shape:ord-shape a owl:Ontology ;
-        rdfs:label "eProcurement Ontology Ordering - core shapes"@en ;
-        dcterms:created "2025-05-07"^^xsd:date ;
-        dcterms:description "The eProcurement Ontology Ordering core shapes provides the generic datashape specifications for the eProcurement Ontology Ordering core."@en ;
-        dcterms:issued "2025-05-07"^^xsd:date ;
-        dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
-        dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
-        dcterms:title "eProcurement Ontology Ordering - core shapes"@en ;
-        vann:preferredNamespacePrefix "epo" ;
-        vann:preferredNamespaceUri "http://data.europa.eu/a4g/ontology#" ;
-
-    ```
-
-    Proposed changes:
-
-    ```turtle
-    ord-shape:ord-shape a owl:Ontology ;
-        rdfs:label "eProcurement Ontology Ordering - SHACL shapes"@en ;
-        dcterms:created "2021-06-01"^^xsd:date ;
-        dcterms:description "The eProcurement Ontology Ordering core shapes provides the SHACL specifications for the eProcurement Ontology Ordering core."@en ;
-        dcterms:modified "2025-05-07"^^xsd:date ;
-        dcterms:issued "2025-05-12"^^xsd:date ;
-        dcterms:license "© European Union, 2014. Unless otherwise noted, the reuse of the Ontology is authorised under the European Union Public Licence v1.2 (https://eupl.eu/)." ;
-        dcterms:publisher "http://publications.europa.eu/resource/authority/corporate-body/PUBL" ;
-        dcterms:title "eProcurement Ontology Ordering - SHACL shapes"@en ;
-        vann:preferredNamespacePrefix "epo-shape" ;
-        vann:preferredNamespaceUri "http://data.europa.eu/a4g/data-shape#" ;
-    ```
-    """
-    )
-    return
-
-
-@app.cell
-def _(g, pretty_query):
-    pretty_query(
-        {
-            "title": """## All also links        
-            """,
-            "query": """
-
-    SELECT DISTINCT ?seeAlso
-    WHERE {
-        ?ontology a owl:Ontology .
-        ?ontology rdfs:seeAlso ?seeAlso .
-    }
-
-            """,
-        },
-        graph=g,
-    )
-    return
-
-
-@app.cell
-def _(g, pretty_query):
-    pretty_query(
-        {
-            "title": """## All Imports
-
-            SHACL 
-
-            """,
-            "query": """
-
-    SELECT DISTINCT ?ontology ?import
-    WHERE {
-        ?ontology a owl:Ontology .
-        ?ontology owl:imports ?import .
-    }
-
-            """,
-        },
-        graph=g,
     )
     return
 
@@ -231,6 +133,51 @@ def _(g, pretty_query_table):
         graph=g,
     )
     return (metadata_summary,)
+
+
+@app.cell
+def _(g, pretty_query):
+    pretty_query(
+        {
+            "title": """## All also links        
+            """,
+            "query": """
+
+    SELECT DISTINCT ?seeAlso
+    WHERE {
+        ?ontology a owl:Ontology .
+        ?ontology rdfs:seeAlso ?seeAlso .
+    }
+
+            """,
+        },
+        graph=g,
+    )
+    return
+
+
+@app.cell
+def _(g, pretty_query):
+    pretty_query(
+        {
+            "title": """## All Imports
+
+            SHACL 
+
+            """,
+            "query": """
+
+    SELECT DISTINCT ?ontology ?import
+    WHERE {
+        ?ontology a owl:Ontology .
+        ?ontology owl:imports ?import .
+    }
+
+            """,
+        },
+        graph=g,
+    )
+    return
 
 
 if __name__ == "__main__":
