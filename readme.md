@@ -42,6 +42,7 @@ Will run the application to compare two conceptual models and more
 
 - [Demo](https://docs.ted.europa.eu/epo-tools/)
 
+### Add a new movel version to the application
 
-
-
+- Add the new model to the [repositories](./repositories.js) list
+- Run `node src/updateModels.js`

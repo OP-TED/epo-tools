@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from 'fs'
 import fetch from 'node-fetch'
-import { repositories } from './knownEpo.js'
-import { getEpoJson, getJson, getJsonFromEap } from './readEpo.js'
+import { repositories } from '../repositories.js'
+import { getJson } from './epo/readEpo.js'
 
 function fixKnownBugs (g) {
   const removeWhiteSpace = (name) => name?.replaceAll('epo :', 'epo:')

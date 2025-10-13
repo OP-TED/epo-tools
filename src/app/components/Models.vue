@@ -5,7 +5,7 @@ import { storeToRefs } from 'pinia'
 import { computed } from 'vue'
 import { eapToJson } from '../../conceptualModel/eap-to-json.js'
 
-import { repositories } from '../../epo/knownEpo.js'
+import { repositories } from '../../../repositories.js'
 
 import { useStore } from '../state.js'
 
