@@ -15,15 +15,22 @@ def _():
     import os
     import json
     import glob as glob_lib
-    from rdflib import Graph
-    return Graph, glob_lib
+    return (glob_lib,)
+
+
+@app.cell
+def _():
+    from typing import Tuple
+    from rdflib import Graph, BNode, Namespace, URIRef, Literal
+    from rdflib.namespace import RDF, RDFS, OWL
+    import re
+    return BNode, Graph, Tuple, URIRef
 
 
 @app.cell
 def _():
     from epo_tools.widgets import pretty_query
-    from epo_tools.post_process import filter_dataset
-    return filter_dataset, pretty_query
+    return (pretty_query,)
 
 
 @app.cell
@@ -382,6 +389,63 @@ def _(all_graphs, pretty_query):
         graph=all_graphs,
     )
     return
+
+
+@app.cell
+def _(BNode, Graph, Tuple, URIRef):
+    def filter_dataset(dataset: Graph) -> Tuple[Graph, Graph]:
+        """
+        Split a dataset into wanted and unwanted parts based on redefined triples.
+
+        Args:
+            dataset: Original dataset to be filtered
+
+        Returns:
+            Tuple of (wanted, unwanted) graphs
+        """
+        # Create new graphs for results
+        unwanted = Graph()
+        wanted = Graph()
+
+        # Get redefined triples
+        query = """
+        CONSTRUCT {?s ?p ?o}
+        WHERE {
+            ?s ?p ?o
+            FILTER (isURI(?s) && (!STRSTARTS(str(?s), str("http://data.europa.eu/a4g/ontology#"))))
+        }
+        """
+        redefined = dataset.query(query).graph
+
+        # Get all subjects from redefined graph
+        subjects = set(redefined.subjects())
+
+        def should_traverse(subject):
+            # Don't follow subjects starting with a4g: unless they're blank nodes
+            if isinstance(subject, BNode):
+                return True
+            if isinstance(subject, URIRef):
+                return not str(subject).startswith("http://data.europa.eu/a4g/ontology#")
+            return False
+
+        # Helper function to recursively collect unwanted triples
+        def collect_unwanted(subject):
+            for s, p, o in dataset.triples((subject, None, None)):
+                unwanted.add((s, p, o))
+                if should_traverse(o):
+                    collect_unwanted(o)
+
+        # Process each subject from redefined graph
+        for subject in subjects:
+            collect_unwanted(subject)
+
+        # Wanted is everything in dataset that's not in unwanted
+        for triple in dataset:
+            if triple not in unwanted:
+                wanted.add(triple)
+
+        return wanted, unwanted
+    return (filter_dataset,)
 
 
 if __name__ == "__main__":

@@ -22,6 +22,15 @@ uv run marimo edit notebooks/
 
 Currently there are notebooks to review SHACL, OWL and metadata of both.
 
+### Post-processing step. 
+
+Until Model2Owl is in place, there is a Marimo notebook that performs the postprocessing and packaging of the artefacts.
+
+For this: 
+
+1. Run [notebooks/fetch-assets.py](./notebooks/fetch-assets.py) to fetch the OWL 
+
+
 ## Web application
 
 This repository contains an Ontology explorer, to be replaced by Model2Owl developments in the future.
@@ -42,7 +51,7 @@ Will run the application to compare two conceptual models and more
 
 - [Demo](https://docs.ted.europa.eu/epo-tools/)
 
-### Add a new movel version to the application
+### Add a new model version to the application
 
 - Add the new model to the [repositories](./repositories.js) list
 - Run `node src/updateModels.js`
