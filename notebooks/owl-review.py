@@ -54,12 +54,21 @@ def _(mo, version):
 
 
 @app.cell
-def _(mo, version):
+def _(mo):
     ontology_files_pattern = mo.ui.text(
-        f"assets/release/{version}/implementation/**/owl_ontology/*.ttl",
+        f"assets/output/**/*.rdf",
         full_width=True,
-    )
+    ) 
     return (ontology_files_pattern,)
+
+
+@app.cell
+def _():
+    # ontology_files_pattern = mo.ui.text(
+    #     f"assets/release/{version}/implementation/**/owl_ontology/*.ttl",
+    #     full_width=True,
+    # )
+    return
 
 
 @app.cell
@@ -77,7 +86,7 @@ def _(glob_lib, mo, ontology_files_pattern):
 def _(Graph, table):
     def load_graph(path):
         g = Graph()
-        g.parse(path, format="turtle")
+        g.parse(path, format="xml")
         return {"path": path, "graph": g}
 
 

@@ -22,8 +22,8 @@ def _():
 @app.cell
 def _():
     from epo_tools.widgets import pretty_query
-    from epo_tools.shacl import pretty_node
-    return pretty_node, pretty_query
+
+    return (pretty_query,)
 
 
 @app.cell

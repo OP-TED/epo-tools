@@ -6,6 +6,10 @@ The intention is to eventually delete this repository once its purpose is fulfil
 
 Any valuable components may be migrated to their respective repositories
 
+## Python
+
+Install `python >=3.12` and `pip` or `uv`
+
 ## Notebook based reviews
 
 To install dependencies using [UV](https://github.com/astral-sh/uv)
@@ -53,5 +57,7 @@ Will run the application to compare two conceptual models and more
 
 ### Add a new model version to the application
 
-- Add the new model to the [repositories](./repositories.js) list
-- Run `node src/updateModels.js`
+1. Add the model to the [repositories](./repositories.js) list
+2. Run `node src/updateModels.js`, this will produce a json file for each model
+3. Commit and push the files to the repository
+   - Alternatively, run it locally with `npm run dev`

@@ -51,6 +51,33 @@ def _():
 
 @app.cell
 def _(mo):
+    mo.md(
+        r"""
+    # Post-processing script
+
+    What this script does:
+
+    ## OWL
+
+    1. Remove redefinitions of external vocabularies
+
+    ## SHACL 
+
+    1. add node-iri
+    2. add isDefinedBy
+    3. fix shape names
+    4. fix propertyshape names
+
+    ## Packaging
+
+    - Prepare a zip file to send to the Cellar team. Currently Cellar requires the OWL ontology to publish in Cellar-triplestore and in the Vocabulary portal. SHACL is published only in Vocabulary portal.
+    """
+    )
+    return
+
+
+@app.cell
+def _(mo):
     mo.md(r"""# Config""")
     return
 
